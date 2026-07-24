@@ -1,0 +1,292 @@
+// App shell: Sidebar · Topbar · Command Palette · Notifications · Copilot dock.
+import { html, cx, fmt, useState, useEffect, useRef, Fragment } from "./core.js";
+import { Icon } from "./icons.js";
+import { Avatar, Btn, Dropdown, MenuItem, Pill } from "./ui.js";
+import { NAV, NAV_FLAT, labelFor } from "./nav.js";
+import { navigate, parsePath } from "./router.js";
+import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES, licenseStatus, byId } from "./data.js";
+import { getCollection } from "./store.js";
+
+const ME = USERS[0]; // Layla Al-Rashid, General Counsel
+
+/* ---------------- Theme ---------------- */
+export function getTheme() { return localStorage.getItem("legalos-theme") || "light"; }
+export function setTheme(t) {
+  localStorage.setItem("legalos-theme", t);
+  document.documentElement.dataset.theme = t;
+}
+
+/* ---------------- Sidebar ---------------- */
+function Sidebar({ path, collapsed }) {
+  const { base } = parsePath(path);
+  return html`<aside class="sidebar">
+    <div class="sidebar__brand">
+      <svg class="sidebar__brand-logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0d7a3f"/><path d="M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z" fill="white"/></svg>
+      <div class="sidebar__brand-text">
+        <div class="sidebar__brand-name">LegalOS</div>
+        <div class="sidebar__brand-sub">Enterprise</div>
+      </div>
+    </div>
+
+    <${Dropdown} align="left" width=${220} trigger=${html`<div class="workspace">
+      <div class="workspace__logo">${COMPANY.short}</div>
+      <div class="workspace__meta"><div class="workspace__name">${COMPANY.name}</div><div class="workspace__type">All entities · Global</div></div>
+      <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
+    </div>`}>
+      <div class="menu__label">Legal entities</div>
+      ${COMPANY.entities.map((e) => html`<${MenuItem} key=${e} icon="building">${e}</${MenuItem}>`)}
+      <div class="menu__sep"></div>
+      <${MenuItem} icon="plus">Add entity</${MenuItem}>
+    </${Dropdown}>
+
+    <nav class="nav">
+      ${NAV.map((sec) => html`<div class="nav__section" key=${sec.section}>
+        <div class="nav__label">${sec.section}</div>
+        ${sec.items.map((it) => html`<div key=${it.path}
+          class=${cx("nav__item", base === it.path && "active")}
+          onClick=${() => navigate(it.path)}>
+          <${Icon} name=${it.icon} size=17 />
+          <span>${it.label}</span>
+          ${it.badge && html`<span class=${cx("nav__badge", it.alert && "nav__badge--alert")}>${it.badge}</span>`}
+        </div>`)}
+      </div>`)}
+    </nav>
+
+    <div class="sidebar__foot">
+      <${Dropdown} align="left" width=${220} trigger=${html`<div class="sidebar__user">
+        <${Avatar} name=${ME.name} size="md" />
+        <div class="sidebar__user-meta"><div class="sidebar__user-name">${ME.name}</div><div class="sidebar__user-role">${ME.role}</div></div>
+        <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
+      </div>`}>
+        <${MenuItem} icon="user">Profile</${MenuItem}>
+        <${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>
+        <${MenuItem} icon="help">Help & support</${MenuItem}>
+        <div class="menu__sep"></div>
+        <${MenuItem} icon="logout" danger=${true}>Sign out</${MenuItem}>
+      </${Dropdown}>
+    </div>
+  </aside>`;
+}
+
+/* ---------------- Notifications panel ---------------- */
+// Auto license alerts (Feature 1) — derived on mount, keyed by licenseId+status
+// so reloading never stacks duplicates.
+function licenseNotifs() {
+  const licenses = getCollection("licenses") || LICENSES;
+  return licenses
+    .map((l) => ({ l, s: licenseStatus(l) }))
+    .filter((x) => x.s.key !== "Valid")
+    .sort((a, b) => a.s.days - b.s.days)
+    .map(({ l, s }) => ({
+      id: "lic-" + l.id + "-" + s.key,
+      type: "license",
+      title: `${l.name} — ${l.entity} ${s.key === "Expired" ? "expired " + Math.abs(s.days) + "d ago" : "expires " + fmt.until(l.expiryDate)}`,
+      time: new Date().toISOString(),
+      unread: true,
+      tone: s.key === "Expired" ? "red" : "amber",
+      icon: s.key === "Expired" ? "alertTriangle" : "clock",
+    }));
+}
+function dedupeById(arr) {
+  const seen = new Set();
+  return arr.filter((n) => (seen.has(n.id) ? false : (seen.add(n.id), true)));
+}
+
+function NotifButton() {
+  const [items, setItems] = useState(() => dedupeById([...licenseNotifs(), ...NOTIFICATIONS]));
+  const unread = items.filter((n) => n.unread).length;
+  const toneBg = { amber: "var(--warning-bg)", red: "var(--danger-bg)", blue: "var(--brand-soft)", purple: "var(--accent-soft)", green: "var(--success-bg)" };
+  const toneFg = { amber: "var(--warning)", red: "var(--danger)", blue: "var(--brand)", purple: "var(--accent-500)", green: "var(--success)" };
+  return html`<${Dropdown} width=${380} trigger=${html`<button class="iconbtn"><${Icon} name="bell" size=18 />${unread > 0 && html`<span class="iconbtn__dot"></span>`}</button>`}>
+    <div class="row" style="padding:6px 10px 10px">
+      <span class="strong">Notifications</span>
+      <span class="spacer"></span>
+      <button class="tiny" style="color:var(--brand);font-weight:600" onClick=${(e) => { e.stopPropagation(); setItems(items.map((n) => ({ ...n, unread: false }))); }}>Mark all read</button>
+    </div>
+    <div style="max-height:400px;overflow-y:auto;margin:0 -6px">
+      ${items.map((n) => html`<div key=${n.id} class=${cx("notif", n.unread && "notif--unread")}>
+        <div class="notif__ico" style=${`background:${toneBg[n.tone]};color:${toneFg[n.tone]}`}><${Icon} name=${n.icon} size=16 /></div>
+        <div style="flex:1"><div class="notif__text">${n.title}</div><div class="notif__time">${fmt.rel(n.time)}</div></div>
+      </div>`)}
+    </div>
+  </${Dropdown}>`;
+}
+
+/* ---------------- Command Palette ---------------- */
+function CommandPalette({ onClose }) {
+  const [q, setQ] = useState("");
+  const [active, setActive] = useState(0);
+  const inputRef = useRef(null);
+  useEffect(() => { inputRef.current && inputRef.current.focus(); }, []);
+
+  const ql = q.toLowerCase();
+  const navResults = NAV_FLAT.filter((i) => i.label.toLowerCase().includes(ql)).map((i) => ({ group: "Navigate", label: i.label, icon: i.icon, path: i.path }));
+  const actions = [
+    { group: "Actions", label: "New Legal Request", icon: "plus", path: "/requests" },
+    { group: "Actions", label: "Upload contract for AI review", icon: "scan", path: "/reviews" },
+    { group: "Actions", label: "Generate NDA from template", icon: "sparkles", path: "/templates" },
+    { group: "Actions", label: "Ask AI Copilot", icon: "robot", path: "/copilot" },
+  ].filter((a) => a.label.toLowerCase().includes(ql));
+  const companies = getCollection("companies") || COMPANIES;
+  const entities = [
+    ...CONTRACTS.slice(0, 6).map((c) => ({ group: "Contracts", label: `${c.id} · ${c.title}`, icon: "file", path: "/contracts/" + c.id })),
+    ...MATTERS.slice(0, 6).map((m) => ({ group: "Matters", label: `${m.id} · ${m.title}`, icon: "folder", path: "/matters/" + m.id })),
+    ...companies.map((c) => ({ group: "Companies", label: c.name, icon: "building", path: "/companies/" + c.id })),
+  ].filter((e) => e.label.toLowerCase().includes(ql));
+
+  const results = [...actions, ...navResults, ...(ql ? entities : [])];
+  const groups = [...new Set(results.map((r) => r.group))];
+
+  const go = (r) => { navigate(r.path); onClose(); };
+  useEffect(() => {
+    const h = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => Math.min(a + 1, results.length - 1)); }
+      if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }
+      if (e.key === "Enter" && results[active]) go(results[active]);
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [active, results]);
+
+  let idx = -1;
+  return html`<div class="overlay" onClick=${onClose}>
+    <div class="cmdk" onClick=${(e) => e.stopPropagation()}>
+      <div class="cmdk__input">
+        <${Icon} name="search" size=19 style=${{ color: "var(--text-3)" }} />
+        <input ref=${inputRef} placeholder="Search or run a command…" value=${q} onInput=${(e) => { setQ(e.target.value); setActive(0); }} />
+        <span class="kbd">ESC</span>
+      </div>
+      <div class="cmdk__list">
+        ${results.length === 0 && html`<div class="empty" style="padding:30px"><div>No results for "${q}"</div></div>`}
+        ${groups.map((g) => html`<div key=${g}>
+          <div class="cmdk__group">${g}</div>
+          ${results.filter((r) => r.group === g).map((r) => {
+            idx++;
+            const my = idx;
+            return html`<div key=${r.label} class=${cx("cmdk__item", active === my && "active")}
+              onMouseEnter=${() => setActive(my)} onClick=${() => go(r)}>
+              <div class="cmdk__ico"><${Icon} name=${r.icon} size=16 /></div>
+              <span>${r.label}</span>
+            </div>`;
+          })}
+        </div>`)}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ---------------- Topbar ---------------- */
+function Topbar({ path, onSearch, onToggleTheme, theme }) {
+  const { base, id } = parsePath(path);
+  return html`<header class="topbar">
+    <div class="topbar__crumbs">
+      <span class="clickable hoverline" onClick=${() => navigate("/dashboard")}>${COMPANY.short}</span>
+      <${Icon} name="chevronRight" size=14 />
+      ${id ? html`<span class="clickable hoverline" onClick=${() => navigate(base)}>${labelFor(base)}</span>
+        <${Icon} name="chevronRight" size=14 /><b>${id}</b>`
+        : html`<b>${labelFor(base)}</b>`}
+    </div>
+    <div class="topbar__spacer"></div>
+    <button class="searchbtn" onClick=${onSearch}>
+      <${Icon} name="search" size=15 />
+      <span>Search matters, contracts, clauses…</span>
+      <kbd>⌘K</kbd>
+    </button>
+    <button class="iconbtn" title="Toggle theme" onClick=${onToggleTheme}><${Icon} name=${theme === "dark" ? "sun" : "moon"} size=18 /></button>
+    <${NotifButton} />
+    <div style="width:1px;height:24px;background:var(--border);margin:0 2px"></div>
+    <${Avatar} name=${ME.name} size="md" />
+  </header>`;
+}
+
+/* ---------------- Copilot dock ---------------- */
+const CANNED = [
+  { q: /risk|risky|exposure/i, a: "Across the active portfolio, 43 contracts are **Critical** and 168 **High** risk. The largest single exposure is the ACWA Power PPA (SAR 48M) — its termination-for-convenience and change-in-law clauses are still open. Want me to open that matter?" },
+  { q: /renew|expir/i, a: "23 contracts expire within 30 days; 3 will **auto-renew** (Salesforce, Oracle NetSuite, Adobe CC) at a combined +$310K uplift. I can draft opt-out notices for all three." },
+  { q: /nda/i, a: "I can generate a Mutual NDA from template T-01 (v4.2). Based on the counterparty jurisdiction I'll insert the right governing-law and confidentiality-term clauses. Shall I pre-fill it?" },
+  { q: /summar/i, a: "Here's the 20-second read: 37 reviews are pending (2 breaching SLA today), 12 approvals await sign-off, and the Neom Solar PPA is the critical path this week. TAT is trending down to 3.4 days — a 29% improvement YoY." },
+  { q: /workload|capacity|balance/i, a: "Sarah Chen is at 90% capacity (18/20) and owns 4 of the 5 highest-risk matters. Tom Bennett has headroom (12/18). I'd recommend reassigning the Deloitte SOW and Adobe renewal to rebalance." },
+];
+function respond(text) {
+  const hit = CANNED.find((c) => c.q.test(text));
+  return hit ? hit.a : "I've reviewed the request across matters, contracts and the clause library. I can summarize, compare versions, assess risk, draft from a template, or recommend an approver — tell me which and I'll take it from here.";
+}
+function mdBold(t) {
+  const parts = t.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((p, i) => p.startsWith("**") ? html`<b key=${i}>${p.slice(2, -2)}</b>` : p);
+}
+
+function CopilotDock({ open, onClose }) {
+  const [msgs, setMsgs] = useState([
+    { role: "ai", text: "Hi Layla — I'm your Legal Copilot. I have full context on your matters, contracts and clause library. What can I do?" },
+  ]);
+  const [input, setInput] = useState("");
+  const scRef = useRef(null);
+  useEffect(() => { if (scRef.current) scRef.current.scrollTop = scRef.current.scrollHeight; }, [msgs, open]);
+  const send = (text) => {
+    const t = (text || input).trim();
+    if (!t) return;
+    setMsgs((m) => [...m, { role: "user", text: t }]);
+    setInput("");
+    setTimeout(() => setMsgs((m) => [...m, { role: "ai", text: respond(t) }]), 480);
+  };
+  const suggestions = ["Summarize what needs my attention", "Which renewals are at risk?", "Assess portfolio risk", "Rebalance the team's workload"];
+
+  return html`<${Fragment}>
+    ${open && html`<div class="copilot-panel">
+      <div class="modal__head" style="background:linear-gradient(135deg,var(--brand-soft),var(--accent-soft))">
+        <div class="metric__icon" style="background:linear-gradient(135deg,#0d7a3f,#0891b2);color:#fff"><${Icon} name="sparkles" size=17 /></div>
+        <div><div class="modal__title" style="font-size:14px">Legal Copilot</div><div class="tiny muted">Context: 1,284 contracts · 12 matters</div></div>
+        <div class="spacer"></div>
+        <button class="iconbtn" onClick=${onClose}><${Icon} name="x" size=18 /></button>
+      </div>
+      <div class="chat" ref=${scRef}>
+        ${msgs.map((m, i) => html`<div key=${i} class=${cx("msg", `msg--${m.role}`)}>
+          ${m.role === "ai" && html`<div class="metric__icon" style="width:28px;height:28px;flex:none;background:var(--accent-soft);color:var(--accent-500)"><${Icon} name="sparkles" size=14 /></div>`}
+          <div class="msg__bubble">${mdBold(m.text)}</div>
+        </div>`)}
+      </div>
+      <div style="padding:0 12px 8px">
+        <div class="suggest">${suggestions.map((s) => html`<button key=${s} onClick=${() => send(s)}>${s}</button>`)}</div>
+      </div>
+      <div class="chat__input">
+        <textarea class="textarea" rows=1 placeholder="Ask anything…" style="min-height:38px;max-height:100px" value=${input}
+          onInput=${(e) => setInput(e.target.value)}
+          onKeyDown=${(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}></textarea>
+        <${Btn} variant="primary" icon="send" onClick=${() => send()} />
+      </div>
+    </div>`}
+    <button class="copilot-fab" onClick=${() => open ? onClose() : onClose(true)} title="AI Copilot">
+      <${Icon} name=${open ? "chevronDown" : "sparkles"} size=22 />
+    </button>
+  </${Fragment}>`;
+}
+
+/* ---------------- Shell ---------------- */
+export function Shell({ path, children }) {
+  const [theme, setThemeState] = useState(getTheme());
+  const [palette, setPalette] = useState(false);
+  const [copilot, setCopilot] = useState(false);
+
+  useEffect(() => { setTheme(theme); }, [theme]);
+  useEffect(() => {
+    const h = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); setPalette(true); }
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, []);
+
+  return html`<div class="app">
+    <${Sidebar} path=${path} />
+    <div class="main">
+      <${Topbar} path=${path} theme=${theme}
+        onSearch=${() => setPalette(true)}
+        onToggleTheme=${() => setThemeState(theme === "dark" ? "light" : "dark")} />
+      <div class="content">${children}</div>
+    </div>
+    ${palette && html`<${CommandPalette} onClose=${() => setPalette(false)} />`}
+    <${CopilotDock} open=${copilot} onClose=${(v) => setCopilot(v === true)} />
+  </div>`;
+}

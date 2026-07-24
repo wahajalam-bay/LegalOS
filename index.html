@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>LegalOS — Enterprise Legal Operations</title>
+    <meta name="description" content="LegalOS — the AI-native operating system for enterprise legal departments." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d7a3f'/%3E%3Cpath d='M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z' fill='white'/%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/assets/styles.css" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.2.0",
+          "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
+          "htm": "https://esm.sh/htm@3.1.1"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot">
+        <div class="boot__mark">
+          <svg viewBox="0 0 32 32" width="46" height="46" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="#0d7a3f" />
+            <path d="M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z" fill="white" />
+          </svg>
+        </div>
+        <div class="boot__spinner"></div>
+        <div class="boot__text">Loading LegalOS…</div>
+      </div>
+    </div>
+
+    <div id="boot-error" style="display:none">
+      <div class="boot boot--error">
+        <div class="boot__text" style="max-width:520px;text-align:center">
+          <strong>LegalOS hit an error while starting.</strong><br /><br />
+          <span id="boot-error-msg" style="font-family:monospace;font-size:12px;color:#ef4444;word-break:break-word"></span>
+          <br /><br />
+          <span style="font-size:12px;color:#6b7280">First load needs internet (React loads from a CDN). If this persists, share this message.</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Surface any fatal error (module load, or runtime) instead of a blank screen.
+      function legalosFail(msg) {
+        var be = document.getElementById("boot-error");
+        if (!be) return;
+        be.style.display = "block";
+        var t = document.getElementById("boot-error-msg");
+        if (t && msg) t.textContent = msg;
+      }
+      window.addEventListener("error", function (e) {
+        legalosFail(e && (e.message || (e.error && e.error.message)) || "Unknown error");
+      });
+      window.addEventListener("unhandledrejection", function (e) {
+        legalosFail("Load failed: " + (e && e.reason && (e.reason.message || e.reason)));
+      });
+      window.__legalos_boot = setTimeout(function () {
+        var root = document.getElementById("root");
+        if (root && root.querySelector(".boot")) {
+          legalosFail("Runtime did not start within 12s — likely the React CDN was blocked. Check your connection.");
+        }
+      }, 12000);
+    </script>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

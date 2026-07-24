@@ -1,0 +1,286 @@
+// Contracts — CLM portfolio + contract workspace (preview · clauses · AI review).
+import { html, cx, fmt, useState } from "../core.js";
+import { Icon } from "../icons.js";
+import { Btn, Avatar, Risk, Pill, Status, Tabs, Stepper, AICard, Dropdown, MenuItem, Progress, Modal, Field, Input } from "../ui.js";
+import { PageHead, Toolbar, DataTable, StatStrip } from "../parts.js";
+import { navigate } from "../router.js";
+import { BUSINESS_UNITS, COUNTRIES, WORK_CATEGORIES, inferCategory, nameOf } from "../data.js";
+import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow } from "../store.js";
+import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories } from "../shared.js";
+
+// Burn helpers (Feature 2)
+const burnPct = (c) => ((c.value || 0) ? Math.round(((c.spendToDate || 0) / c.value) * 100) : 0);
+const commitBurnPct = (c) => ((c.value || 0) ? Math.round((((c.spendToDate || 0) + (c.committedSpend || 0)) / c.value) * 100) : 0);
+
+const CLM_STAGES = ["Request", "Intake", "Review", "Drafting", "Negotiation", "Approval", "Signature", "Executed", "Active", "Renewal"];
+const CONTRACT_TYPES = ["MSA", "SaaS / MSA", "Vendor", "Consultancy", "Lease", "Partnership", "Framework", "Supply", "SOW", "Insurance", "Reseller"];
+const CURRENCIES = ["USD", "SAR", "AED", "GBP", "EUR", "PKR"];
+
+function NewContractModal({ onClose, onCreate }) {
+  const [f, setF] = useState({ title: "", counterparty: "", type: "MSA", bu: BUSINESS_UNITS[0], value: "", currency: "USD", risk: "medium", jurisdiction: COUNTRIES[0], category: inferCategory({ type: "MSA" }) });
+  const set = (k, v) => setF((s) => ({ ...s, [k]: v }));
+  const submit = () => {
+    onCreate({
+      id: nextId("contracts", "CTR-"), title: f.title.trim() || "Untitled contract", type: f.type,
+      counterparty: f.counterparty || "—", bu: f.bu, status: "Drafting", risk: f.risk,
+      category: f.category || inferCategory({ type: f.type, title: f.title }), companyTags: [],
+      spendToDate: 0, committedSpend: 0, spendEntries: [], rounds: [],
+      value: f.value ? Number(String(f.value).replace(/[^0-9.]/g, "")) : 0, currency: f.currency,
+      owner: "u5", start: nowIso(), expiry: daysFromNow(365), autoRenew: false, jurisdiction: f.jurisdiction, stage: "Drafting",
+    });
+    onClose();
+  };
+  return html`<${Modal} title="New Contract" icon="file" width=${580} onClose=${onClose}
+    footer=${html`<${Btn} variant="ghost" onClick=${onClose}>Cancel</${Btn}><${Btn} variant="primary" icon="check" onClick=${submit}>Create contract</${Btn}>`}>
+    <div class="col" style="gap:16px">
+      <${Field} label="Contract title"><${Input} placeholder="e.g. Salesforce Enterprise License Agreement" value=${f.title} onInput=${(e) => set("title", e.target.value)} /></${Field}>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+        <${Field} label="Counterparty"><${Input} placeholder="e.g. Salesforce Inc." value=${f.counterparty} onInput=${(e) => set("counterparty", e.target.value)} /></${Field}>
+        <${Field} label="Type"><select class="select" value=${f.type} onChange=${(e) => set("type", e.target.value)}>${CONTRACT_TYPES.map((t) => html`<option key=${t}>${t}</option>`)}</select></${Field}>
+        <${Field} label="Business Unit"><select class="select" value=${f.bu} onChange=${(e) => set("bu", e.target.value)}>${BUSINESS_UNITS.map((b) => html`<option key=${b}>${b}</option>`)}</select></${Field}>
+        <${Field} label="Jurisdiction"><select class="select" value=${f.jurisdiction} onChange=${(e) => set("jurisdiction", e.target.value)}>${COUNTRIES.map((c) => html`<option key=${c}>${c}</option>`)}</select></${Field}>
+        <${Field} label="Value"><${Input} placeholder="e.g. 2400000" value=${f.value} onInput=${(e) => set("value", e.target.value)} /></${Field}>
+        <${Field} label="Currency"><select class="select" value=${f.currency} onChange=${(e) => set("currency", e.target.value)}>${CURRENCIES.map((c) => html`<option key=${c}>${c}</option>`)}</select></${Field}>
+        <${Field} label="Risk"><select class="select" value=${f.risk} onChange=${(e) => set("risk", e.target.value)}><option value="critical">Critical</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></${Field}>
+        <${Field} label="Category"><select class="select" value=${f.category} onChange=${(e) => set("category", e.target.value)}>${WORK_CATEGORIES.map((c) => html`<option key=${c}>${c}</option>`)}</select></${Field}>
+      </div>
+      <${AICard} title="On create">I'll start the contract at the <b>Drafting</b> stage, generate a first draft from the matching template, and queue an AI clause review.</${AICard}>
+    </div>
+  </${Modal}>`;
+}
+
+const CLAUSES_NAV = [
+  { n: "1", t: "Parties & Recitals", risk: null },
+  { n: "2", t: "Definitions", risk: null },
+  { n: "3", t: "Scope of Services", risk: null },
+  { n: "4", t: "Term & Renewal", risk: "medium" },
+  { n: "5", t: "Fees & Payment", risk: null },
+  { n: "6", t: "Limitation of Liability", risk: "high" },
+  { n: "7", t: "Data Protection", risk: "high" },
+  { n: "8", t: "Confidentiality", risk: null },
+  { n: "9", t: "Termination", risk: "medium" },
+  { n: "10", t: "Governing Law & Disputes", risk: null },
+];
+
+/* ---- Feature 2: Spend tab + add-expense ---- */
+function AddExpenseModal({ c, onClose }) {
+  const [f, setF] = useState({ date: new Date().toISOString().slice(0, 10), description: "", amount: "", invoiceRef: "" });
+  const set = (k, v) => setF((s) => ({ ...s, [k]: v }));
+  const submit = () => {
+    const amt = Number(String(f.amount).replace(/[^0-9.]/g, "")) || 0;
+    const entry = { id: c.id + "-E" + ((c.spendEntries || []).length + 1) + "-" + Date.now().toString().slice(-4), date: new Date(f.date + "T00:00:00").toISOString(), description: f.description.trim() || "Expense", amount: amt, invoiceRef: f.invoiceRef.trim() || "—", by: "u1" };
+    updateItem("contracts", c.id, { spendEntries: [entry, ...(c.spendEntries || [])], spendToDate: (c.spendToDate || 0) + amt });
+    onClose();
+  };
+  return html`<${Modal} title="Add expense" icon="dollar" width=${520} onClose=${onClose}
+    footer=${html`<${Btn} variant="ghost" onClick=${onClose}>Cancel</${Btn}><${Btn} variant="primary" icon="check" onClick=${submit}>Add expense</${Btn}>`}>
+    <div class="col" style="gap:16px">
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+        <${Field} label="Date"><${Input} type="date" value=${f.date} onInput=${(e) => set("date", e.target.value)} /></${Field}>
+        <${Field} label=${`Amount (${c.currency})`}><${Input} placeholder="e.g. 120000" value=${f.amount} onInput=${(e) => set("amount", e.target.value)} /></${Field}>
+      </div>
+      <${Field} label="Description"><${Input} placeholder="e.g. Q3 milestone invoice" value=${f.description} onInput=${(e) => set("description", e.target.value)} /></${Field}>
+      <${Field} label="Invoice reference"><${Input} placeholder="e.g. INV-2026-0142" value=${f.invoiceRef} onInput=${(e) => set("invoiceRef", e.target.value)} /></${Field}>
+    </div>
+  </${Modal}>`;
+}
+
+function SpendTab({ c }) {
+  const [add, setAdd] = useState(false);
+  const total = c.value || 0, spend = c.spendToDate || 0, committed = c.committedSpend || 0;
+  const remaining = total - spend - committed;
+  const commitBurn = commitBurnPct(c);
+  const tone = commitBurn > 100 ? "red" : commitBurn > 80 ? "amber" : "";
+  const entries = c.spendEntries || [];
+  return html`<div class="col" style="gap:16px">
+    <${StatStrip} stats=${[
+      { value: fmt.money(total, c.currency), label: "Total value" },
+      { value: fmt.money(spend, c.currency), label: "Spend to date" },
+      { value: fmt.money(committed, c.currency), label: "Committed" },
+      { value: fmt.money(remaining, c.currency), label: "Remaining" },
+      { value: burnPct(c) + "%", label: "Burn" },
+    ]} />
+    <div class="card card--pad col" style="gap:10px">
+      <div class="row"><span class="strong tiny">Budget burn</span><div class="spacer"></div><span class=${cx("tiny strong", tone === "red" && "risk--critical", tone === "amber" && "risk--high")}>${commitBurn}% committed</span></div>
+      <${Progress} value=${Math.min(100, commitBurn)} tone=${tone} />
+      ${commitBurn > 100 ? html`<div class="banner banner--warn"><${Icon} name="alertTriangle" size=15 />Over budget — spend + commitments exceed the total contract value.</div>` : ""}
+    </div>
+    <div class="row"><span class="strong">Expense entries</span><div class="spacer"></div><${Btn} variant="primary" size="sm" icon="plus" onClick=${() => setAdd(true)}>Add expense</${Btn}></div>
+    <${DataTable} columns=${[
+      { key: "date", label: "Date", render: (e) => html`<span class="tiny">${fmt.date(e.date)}</span>` },
+      { key: "description", label: "Description", render: (e) => html`<span class="cell-strong">${e.description}</span>` },
+      { key: "invoiceRef", label: "Invoice", render: (e) => html`<span class="tiny mono">${e.invoiceRef}</span>` },
+      { key: "by", label: "By", render: (e) => html`<${Avatar} name=${nameOf(e.by)} size="sm" />` },
+      { key: "amount", label: "Amount", align: "right", render: (e) => html`<span class="strong">${fmt.money(e.amount, c.currency)}</span>` },
+    ]} rows=${entries} empty=${html`<div class="empty" style="padding:26px"><${Icon} name="dollar" size=30 /><div>No expenses recorded yet.</div></div>`} />
+    ${add && html`<${AddExpenseModal} c=${c} onClose=${() => setAdd(false)} />`}
+  </div>`;
+}
+
+/* ---- Feature 4: condensed read-only negotiation history mirror ---- */
+function NegHistoryMini({ c }) {
+  const rounds = [...(c.rounds || [])].sort((a, b) => b.round - a.round);
+  if (!rounds.length) return null;
+  return html`<div class="card card--pad col" style="gap:10px">
+    <div class="row"><span class="strong">Negotiation history</span><div class="spacer"></div><${Pill} tone="amber">Round ${rounds[0].round}</${Pill}></div>
+    ${rounds.slice(0, 3).map((r) => html`<div key=${r.id} class="row" style="gap:9px">
+      <div class="notif__ico" style="width:28px;height:28px;background:var(--surface-3);color:var(--text-2)"><${Icon} name="gitbranch" size=14 /></div>
+      <div style="flex:1;min-width:0"><div class="strong tiny" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.versionLabel}</div><div class="tiny muted">${r.direction === "sent" ? "Sent" : "Received"} · ${fmt.dateShort(r.date)}</div></div>
+    </div>`)}
+    <button class="tiny" style="color:var(--brand);font-weight:600;text-align:left" onClick=${() => navigate("/negotiations")}>Open in Negotiations →</button>
+  </div>`;
+}
+
+function ContractList() {
+  const CONTRACTS = useCollection("contracts");
+  const [q, setQ] = useState("");
+  const [tab, setTab] = useState("all");
+  const [modal, setModal] = useState(false);
+  const [cats, setCats] = useState([]);
+  const toggleCat = (c) => setCats((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
+  const tabs = [
+    { key: "all", label: "All", count: CONTRACTS.length },
+    { key: "Active", label: "Active", count: CONTRACTS.filter((c) => c.status === "Active").length },
+    { key: "Expiring", label: "Expiring", count: CONTRACTS.filter((c) => c.status === "Expiring").length },
+    { key: "In Negotiation", label: "In Negotiation", count: CONTRACTS.filter((c) => c.status === "In Negotiation").length },
+    { key: "Drafting", label: "Drafting", count: CONTRACTS.filter((c) => c.status === "Drafting").length },
+  ];
+  let rows = CONTRACTS.filter((c) => (!q || (c.title + c.counterparty).toLowerCase().includes(q.toLowerCase())) && matchCategories(c, cats));
+  if (tab !== "all") rows = rows.filter((c) => c.status === tab);
+  const totalVal = CONTRACTS.reduce((s, c) => s + (c.currency === "USD" ? c.value : c.value * 0.27), 0);
+
+  return html`<div class="page page--wide fade-in">
+    <${PageHead} title="Contracts" sub="The full contract lifecycle — from request to renewal — in one governed repository."
+      actions=${html`<${Btn} variant="ghost" icon="upload">Import</${Btn}><${Btn} variant="primary" icon="plus" onClick=${() => setModal(true)}>New contract</${Btn}>`} />
+    ${modal && html`<${NewContractModal} onClose=${() => setModal(false)} onCreate=${(c) => addItem("contracts", c)} />`}
+    <${StatStrip} stats=${[
+      { value: fmt.num(1272 + CONTRACTS.length), label: "Active contracts" },
+      { value: fmt.money(totalVal), label: "Total contract value", trend: "+14%", trendDir: "up" },
+      { value: 23, label: "Expiring < 30 days", trend: "▲", trendDir: "up" },
+      { value: 43, label: "Critical risk", trendDir: "flat" },
+      { value: "94%", label: "On standard paper" },
+    ]} />
+    <div style="margin-bottom:14px"><${Tabs} tabs=${tabs} active=${tab} onChange=${setTab} /></div>
+    <div style="width:280px;margin-bottom:14px"><${Toolbar} search=${q} onSearch=${setQ} /></div>
+    <div class="row wrap" style="gap:8px;margin-bottom:16px"><${CategoryChips} selected=${cats} onToggle=${toggleCat} /></div>
+    <${DataTable} onRow=${(c) => navigate("/contracts/" + c.id)} columns=${[
+      { key: "id", label: "ID", mono: true, width: "86px" },
+      { key: "title", label: "Contract", render: (c) => html`<div class="cell-strong">${c.title}</div><div class="tiny muted">${c.counterparty} · ${c.type}</div>` },
+      { key: "category", label: "Category", render: (c) => html`<${CategoryPill} item=${c} />` },
+      { key: "value", label: "Value", align: "right", render: (c) => html`<span class="strong">${fmt.money(c.value, c.currency)}</span>` },
+      { key: "spend", label: "Burn", width: "120px", render: (c) => { const b = commitBurnPct(c); const t = b > 100 ? "red" : b > 80 ? "amber" : ""; return html`<div class="row" style="gap:8px"><div style="flex:1"><${Progress} value=${Math.min(100, b)} tone=${t} /></div><span class="tiny muted" style="width:34px">${b}%</span></div>`; } },
+      { key: "risk", label: "Risk", render: (c) => html`<${Risk} level=${c.risk} />` },
+      { key: "status", label: "Status", render: (c) => html`<${Status} value=${c.status} />` },
+      { key: "owner", label: "Owner", render: (c) => html`<${Avatar} name=${nameOf(c.owner)} size="sm" />` },
+      { key: "expiry", label: "Expiry", render: (c) => { const days = Math.round((new Date(c.expiry) - Date.now()) / 86400000); return html`<span class=${cx("tiny", days > 0 && days < 30 && "risk--high")} style="font-weight:600">${days < 0 ? "Expired" : fmt.date(c.expiry)}</span>`; } },
+    ]} rows=${rows} />
+  </div>`;
+}
+
+function ContractWorkspace({ id }) {
+  const c = useCollection("contracts").find((x) => x.id === id);
+  const [tab, setTab] = useState("document");
+  const [active, setActive] = useState("6");
+  const [tagEdit, setTagEdit] = useState(false);
+  if (!c) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate("/contracts")}>Back</${Btn}><div class="empty">Contract not found.</div></div>`;
+  const stageIdx = CLM_STAGES.indexOf(c.stage === "Signature" ? "Signature" : c.stage) >= 0 ? CLM_STAGES.indexOf(c.stage) : 8;
+
+  return html`<div class="page page--wide fade-in">
+    <div class="row" style="margin-bottom:14px"><${Btn} variant="ghost" size="sm" icon="arrowLeft" onClick=${() => navigate("/contracts")}>Contracts</${Btn}></div>
+    <div class="pagehead" style="margin-bottom:16px">
+      <div class="pagehead__main">
+        <div class="row wrap" style="gap:8px;margin-bottom:8px"><span class="mono muted">${c.id}</span><${Status} value=${c.status} /><${Risk} level=${c.risk} /><${Pill} tone="gray">${c.type}</${Pill}><${CategoryPill} item=${c} /></div>
+        <div class="pagehead__title">${c.title}</div>
+        <div class="pagehead__sub">${c.counterparty} · ${c.jurisdiction} · ${fmt.moneyFull(c.value, c.currency)}</div>
+      </div>
+      <div class="pagehead__actions">
+        <${Btn} variant="ghost" icon="gitbranch">Compare</${Btn}>
+        <${Btn} variant="ghost" icon="download">Export</${Btn}>
+        <${Dropdown} trigger=${html`<${Btn} variant="ghost" icon="more" />`}>
+          <${MenuItem} icon="edit">Edit metadata</${MenuItem}>
+          <${MenuItem} icon="copy">Duplicate</${MenuItem}>
+          <${MenuItem} icon="refresh">Start renewal</${MenuItem}>
+        </${Dropdown}>
+        <${Btn} variant="primary" icon="checksquare">Send for approval</${Btn}>
+      </div>
+    </div>
+
+    <div class="card card--pad" style="margin-bottom:16px">
+      <${Stepper} steps=${CLM_STAGES} current=${stageIdx} />
+    </div>
+
+    <div class="grid" style="grid-template-columns:240px 1fr 330px;align-items:start;gap:16px">
+      <div class="card" style="position:sticky;top:16px">
+        <div class="card__head" style="padding:13px 15px"><div class="card__title" style="font-size:13px">Clause Navigator</div></div>
+        <div style="padding:8px">
+          ${CLAUSES_NAV.map((cl) => html`<div key=${cl.n} class=${cx("menu__item")} style=${`padding:8px 10px;${active === cl.n ? "background:var(--brand-soft)" : ""}`} onClick=${() => setActive(cl.n)}>
+            <span class="mono tiny muted" style="width:16px">${cl.n}</span>
+            <span style=${`font-size:12.5px;flex:1;${active === cl.n ? "color:var(--brand-600);font-weight:600" : ""}`}>${cl.t}</span>
+            ${cl.risk && html`<span class="tag-dot" style=${`background:${cl.risk === "high" ? "var(--danger)" : "var(--warning)"}`}></span>`}
+          </div>`)}
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="padding:6px 18px 0"><${Tabs} active=${tab} onChange=${setTab} tabs=${[{ key: "document", label: "Document", icon: "file" }, { key: "versions", label: "Versions", icon: "layers", count: 3 }, { key: "spend", label: "Spend", icon: "dollar" }, { key: "approvals", label: "Approvals", icon: "checksquare" }, { key: "comments", label: "Comments", icon: "message", count: 4 }]} /></div>
+        <div class="card__body">
+          ${tab === "document" && html`<div class="doc">
+            <div style="text-align:center;margin-bottom:24px"><div style="font-size:16px;font-weight:700;letter-spacing:.02em">${c.type.toUpperCase()} AGREEMENT</div><div class="tiny muted" style="margin-top:4px">Between ${c.counterparty} and Northwind Global Holdings</div></div>
+            <h3>4. Term &amp; Renewal</h3>
+            <p>This Agreement shall commence on the Effective Date and continue for an initial term of <span class="clause-hl">${c.autoRenew ? "twelve (12) months, automatically renewing for successive 12-month periods unless either party provides sixty (60) days' written notice" : "the period set out in the Order Form"}</span>.</p>
+            <h3>6. Limitation of Liability</h3>
+            <p>Except for the Excluded Claims, each party's aggregate liability arising out of this Agreement shall not exceed <span class="clause-risk">an amount equal to 0.5× the fees paid in the twelve (12) months preceding the claim</span>. In no event shall either party be liable for indirect or consequential losses.</p>
+            <h3>7. Data Protection</h3>
+            <p>Each party shall comply with applicable Data Protection Laws. Where the Supplier processes Personal Data, it shall do so only on documented instructions, <span class="clause-risk">including with respect to cross-border transfers, subject to appropriate safeguards</span>.</p>
+            <h3>9. Termination</h3>
+            <p>Either party may terminate this Agreement <span class="clause-hl">for convenience upon ninety (90) days' written notice</span>, or immediately upon a material breach not remedied within thirty (30) days.</p>
+          </div>`}
+          ${tab === "versions" && html`<div class="col" style="gap:2px">
+            ${[{ v: "v3.0", who: "u3", when: "Today", label: "Current · counterparty redlines", tone: "amber" }, { v: "v2.1", who: "u5", when: "2 days ago", label: "Internal review", tone: "" }, { v: "v1.0", who: "u5", when: "8 days ago", label: "Initial draft from template", tone: "" }].map((v) => html`<div key=${v.v} class="feed__item" style="align-items:center">
+              <div class="notif__ico" style=${`width:34px;height:34px;background:${v.tone === "amber" ? "var(--warning-bg)" : "var(--surface-3)"};color:${v.tone === "amber" ? "var(--warning)" : "var(--text-2)"}`}><${Icon} name="layers" size=15 /></div>
+              <div style="flex:1"><div class="strong" style="font-size:13px">${v.v} · ${v.label}</div><div class="tiny muted">${nameOf(v.who)} · ${v.when}</div></div>
+              <${Btn} variant="ghost" size="sm">View</${Btn}>
+            </div>`)}
+          </div>`}
+          ${tab === "approvals" && html`<div class="col" style="gap:10px">
+            ${[{ r: "Legal Review — Sarah Chen", s: "approved" }, { r: "Risk Review — Priya Nair", s: "approved" }, { r: "Finance — Klaus Werner", s: "pending" }, { r: "General Counsel — Layla Al-Rashid", s: "pending" }].map((a, i) => html`<div key=${i} class=${cx("approval", `approval--${a.s}`)}>
+              <div class="notif__ico" style=${`width:32px;height:32px;background:${a.s === "approved" ? "var(--success-bg)" : "var(--warning-bg)"};color:${a.s === "approved" ? "var(--success)" : "var(--warning)"}`}><${Icon} name=${a.s === "approved" ? "check" : "clock"} size=15 /></div>
+              <div style="flex:1"><div class="strong" style="font-size:13px">${a.r}</div><div class="tiny muted">${a.s === "approved" ? "Approved" : "Awaiting decision"}</div></div>
+              <${Status} value=${a.s === "approved" ? "Approved" : "Pending Approval"} />
+            </div>`)}
+          </div>`}
+          ${tab === "spend" && html`<${SpendTab} c=${c} />`}
+          ${tab === "comments" && html`<div class="empty"><${Icon} name="message" size=36 /><div>4 comment threads on clauses 6, 7 and 9.</div></div>`}
+        </div>
+      </div>
+
+      <div class="col" style="gap:16px;position:sticky;top:16px">
+        <${AICard} title=${html`AI Contract Review`}>
+          I extracted <b>18 key terms</b> and flagged <b>2 high-risk clauses</b>. The liability cap (0.5× fees) is below your playbook standard and cross-border data transfer safeguards are underspecified.
+        </${AICard}>
+        <div class="card card--pad col" style="gap:10px">
+          <div class="row"><span class="strong">Company tags</span><div class="spacer"></div><button class="iconbtn" style="width:28px;height:28px" onClick=${() => setTagEdit(true)}><${Icon} name="edit" size=15 /></button></div>
+          ${(c.companyTags || []).length ? html`<${TagChips} ids=${c.companyTags} />` : html`<span class="tiny muted">No company tags. Click edit to add.</span>`}
+        </div>
+        ${tagEdit && html`<${TagEditor} ids=${c.companyTags || []} onClose=${() => setTagEdit(false)} onSave=${(sel) => updateItem("contracts", c.id, { companyTags: sel })} />`}
+        <div class="card card--pad col" style="gap:12px">
+          <span class="strong">Extracted terms</span>
+          ${[["Counterparty", c.counterparty], ["Contract value", fmt.money(c.value, c.currency)], ["Effective date", fmt.date(c.start)], ["Expiry", fmt.date(c.expiry)], ["Auto-renewal", c.autoRenew ? "Yes — 60d opt-out" : "No"], ["Governing law", c.jurisdiction], ["Liability cap", "0.5× fees"], ["Payment terms", "Net 45"]].map(([l, v]) => html`<div key=${l} class="row" style="font-size:12.5px"><span class="muted">${l}</span><span class="spacer"></span><span class="strong" style="text-align:right">${v}</span></div>`)}
+        </div>
+        <div class="card card--pad col" style="gap:10px">
+          <div class="row"><span class="strong">Risk analysis</span><div class="spacer"></div><${Risk} level=${c.risk} /></div>
+          ${[["Liability cap below standard", "high"], ["Cross-border data transfer", "high"], ["Auto-renewal exposure", "medium"], ["Termination rights balanced", "low"]].map(([t, r]) => html`<div key=${t} class="row" style="gap:8px"><span class="risk__bar" style=${`background:${r === "high" ? "var(--danger)" : r === "medium" ? "var(--warning)" : "var(--success)"};height:14px`}></span><span class="tiny" style="flex:1">${t}</span><${Risk} level=${r} /></div>`)}
+        </div>
+        <div class="card card--pad col" style="gap:8px">
+          <span class="strong">Missing clauses</span>
+          ${["Force Majeure (extended)", "Anti-Bribery (FCPA/UKBA)", "Insurance requirements"].map((mc) => html`<div key=${mc} class="row" style="gap:8px"><${Icon} name="alertCircle" size=15 style=${{ color: "var(--warning)" }} /><span class="tiny" style="flex:1">${mc}</span><button class="tiny" style="color:var(--brand);font-weight:600">Insert</button></div>`)}
+        </div>
+        <${NegHistoryMini} c=${c} />
+      </div>
+    </div>
+  </div>`;
+}
+
+export default function Contracts({ id }) {
+  return id ? html`<${ContractWorkspace} id=${id} />` : html`<${ContractList} />`;
+}

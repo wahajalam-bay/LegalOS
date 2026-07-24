@@ -1,0 +1,3 @@
+# Local-dev only — not needed for the static Vercel deploy
+server.js
+Start LegalOS.bat
