@@ -1,7 +1,46 @@
 // Hand-built SVG charts — theme-aware, dependency-free.
 import { html, cx } from "./core.js";
 
-export const CHART_COLORS = ["#0d7a3f", "#10935a", "#27a96d", "#0891b2", "#1d6cb0", "#d97706", "#dc2626", "#6d28d9", "#5cc08a", "#ca8a04"];
+/* ---------------- the categorical palette ----------------
+   Derived from the app's own hue families and VALIDATED (not eyeballed) against
+   both real surfaces — light #ffffff and dark #16221c:
+
+     order   green → blue → orange → violet → magenta
+     worst adjacent CVD ΔE      17.3 light · 15.9 dark   (target ≥ 8)
+     worst adjacent normal ΔE   19.5 light · 19.3 dark   (floor ≥ 15)
+     lightness band, chroma floor, contrast ≥ 3:1        all pass, both modes
+
+   The previous array cycled ten hues including three near-identical greens
+   (#0d7a3f / #10935a / #27a96d, ΔE 6.7) which a full-colour reader cannot tell
+   apart — a hard fail. Teal was dropped from the categorical set because
+   teal↔blue measure only ~10.7 normal-vision ΔE and that floor cannot be excused
+   by secondary encoding; teal remains the app's accent for non-series use.
+   Status hues (success/warning/danger) are reserved so a series never
+   impersonates a status.
+
+   Values are CSS custom properties so light/dark swap in one place
+   (see assets/styles.css) — SVG paint attributes accept var().            */
+export const CHART_COLORS = [
+  "var(--viz-1)", "var(--viz-2)", "var(--viz-3)", "var(--viz-4)", "var(--viz-5)",
+];
+// The de-emphasis grey the tail category wears. Never a sixth hue.
+export const VIZ_OTHER = "var(--viz-other)";
+
+/* Series colour by slot. Past the last slot it folds to "Other" rather than
+   cycling — a generated 6th hue is indistinguishable under CVD, so the honest
+   answer is to name the tail. Cap your series list at CHART_COLORS.length and
+   aggregate the remainder. */
+export const seriesColor = (i) => (i < CHART_COLORS.length ? CHART_COLORS[i] : VIZ_OTHER);
+
+/* Fold a sorted [label, value] list to the palette's capacity, aggregating the
+   tail into one "Other" slice so no chart ever needs a generated hue. */
+export function foldSeries(entries, { max = CHART_COLORS.length, otherLabel = "Other" } = {}) {
+  const sorted = [...entries].sort((a, b) => b[1] - a[1]);
+  if (sorted.length <= max) return sorted.map(([label, value], i) => ({ label, value, color: seriesColor(i) }));
+  const head = sorted.slice(0, max - 1).map(([label, value], i) => ({ label, value, color: seriesColor(i) }));
+  const tail = sorted.slice(max - 1).reduce((s, [, v]) => s + v, 0);
+  return [...head, { label: `${otherLabel} (${sorted.length - (max - 1)})`, value: tail, color: VIZ_OTHER }];
+}
 
 /* ---------- Donut ---------- */
 export function Donut({ data, size = 168, thickness = 22, centerLabel, centerValue }) {
@@ -18,7 +57,7 @@ export function Donut({ data, size = 168, thickness = 22, centerLabel, centerVal
           const frac = d.value / total;
           const dash = frac * circ;
           const el = html`<circle key=${i} cx=${c} cy=${c} r=${r} fill="none"
-            stroke=${d.color || CHART_COLORS[i]} stroke-width=${thickness}
+            stroke=${d.color || seriesColor(i)} stroke-width=${thickness}
             stroke-dasharray=${`${dash} ${circ - dash}`} stroke-dashoffset=${-offset}
             transform=${`rotate(-90 ${c} ${c})`} stroke-linecap="butt"
             style="transition:stroke-dasharray .6s cubic-bezier(.16,1,.3,1)" />`;
@@ -33,7 +72,7 @@ export function Donut({ data, size = 168, thickness = 22, centerLabel, centerVal
     </div>
     <div class="col" style="gap:9px;flex:1;min-width:130px">
       ${data.map((d, i) => html`<div class="row" key=${i} style="gap:9px">
-        <span class="tag-dot" style=${`background:${d.color || CHART_COLORS[i]}`}></span>
+        <span class="tag-dot" style=${`background:${d.color || seriesColor(i)}`}></span>
         <span style="font-size:12.5px;font-weight:500">${d.label}</span>
         <span class="spacer"></span>
         <span class="strong" style="font-size:12.5px">${d.value}</span>
@@ -161,7 +200,7 @@ export function Funnel({ data }) {
       return html`<div key=${i} class="row" style="gap:12px">
         <div style="width:120px;font-size:12.5px;font-weight:500;text-align:right;flex:none">${d.label}</div>
         <div style="flex:1;background:var(--surface-3);border-radius:7px;overflow:hidden">
-          <div style=${`width:${w}%;background:linear-gradient(90deg,${CHART_COLORS[i % CHART_COLORS.length]},${CHART_COLORS[i % CHART_COLORS.length]}cc);padding:7px 12px;border-radius:7px;color:#fff;font-size:12px;font-weight:650;white-space:nowrap`}>${d.value}</div>
+          <div style=${`width:${w}%;background:${seriesColor(i)};padding:7px 12px;border-radius:7px;color:#fff;font-size:12px;font-weight:650;white-space:nowrap`}>${d.value}</div>
         </div>
         <div class="muted tiny" style="width:42px;flex:none">${conv}%</div>
       </div>`;

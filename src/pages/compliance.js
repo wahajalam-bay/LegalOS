@@ -5,22 +5,34 @@ import { Btn, Avatar, Pill, Status, Progress, Section } from "../ui.js";
 import { PageHead, StatStrip } from "../parts.js";
 import { Donut, Gauge } from "../charts.js";
 import { COMPLIANCE, nameOf } from "../data.js";
+import { FilterBar, useFilters, applyFilters, SubdivisionPill } from "../shared.js";
+import { navigate } from "../router.js";
 
 const STATUS_TONE = { Compliant: "green", "At Risk": "amber", "Non-Compliant": "red" };
 const scoreTone = (s) => (s >= 85 ? "green" : s >= 70 ? "amber" : "red");
 
 export default function Compliance() {
-  const overall = Math.round(COMPLIANCE.reduce((s, c) => s + c.score, 0) / COMPLIANCE.length);
+  const { filters, patch, toggle, clear } = useFilters("compliance");
+  const areas = applyFilters(COMPLIANCE, filters, { searchKeys: ["area", "region", "id"] });
+
+  const overall = areas.length ? Math.round(areas.reduce((s, c) => s + c.score, 0) / areas.length) : 0;
   const dist = [
-    { label: "Compliant", value: COMPLIANCE.filter((c) => c.status === "Compliant").length, color: "#22c55e" },
-    { label: "At Risk", value: COMPLIANCE.filter((c) => c.status === "At Risk").length, color: "#f59e0b" },
-    { label: "Non-Compliant", value: COMPLIANCE.filter((c) => c.status === "Non-Compliant").length, color: "#ef4444" },
+    { label: "Compliant", value: areas.filter((c) => c.status === "Compliant").length, color: "#22c55e" },
+    { label: "At Risk", value: areas.filter((c) => c.status === "At Risk").length, color: "#f59e0b" },
+    { label: "Non-Compliant", value: areas.filter((c) => c.status === "Non-Compliant").length, color: "#ef4444" },
   ];
-  const upcoming = [...COMPLIANCE].sort((a, b) => new Date(a.nextReview) - new Date(b.nextReview)).slice(0, 5);
+  const upcoming = [...areas].sort((a, b) => new Date(a.nextReview) - new Date(b.nextReview)).slice(0, 5);
 
   return html`<div class="page page--wide fade-in">
     <${PageHead} title="Compliance & Governance" sub="Regulatory posture across every region and framework — scored, owned and continuously monitored."
-      actions=${html`<${Btn} variant="ghost" icon="download">Audit report</${Btn}><${Btn} variant="primary" icon="plus">New assessment</${Btn}>`} />
+      actions=${html`<${Btn} variant="ghost" icon="layers" onClick=${() => navigate("/workspace")}>Compliance lens</${Btn}>
+        <${Btn} variant="ghost" icon="download">Audit report</${Btn}><${Btn} variant="primary" icon="plus">New assessment</${Btn}>`} />
+
+    <${FilterBar} module="compliance" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
+      dims=${["subdivisions", "owners", "statuses"]} rows=${COMPLIANCE}
+      dateFields=${[{ key: "nextReview", label: "Next review" }, { key: "lastReview", label: "Last review" }]}
+      placeholder="Search compliance areas…"
+      right=${html`<span class="tiny muted">${areas.length} of ${COMPLIANCE.length} areas</span>`} />
 
     <div class="grid" style="grid-template-columns:280px 1fr;align-items:stretch;margin-bottom:16px">
       <div class="card card--pad col center" style="gap:6px">
@@ -32,19 +44,20 @@ export default function Compliance() {
         <div class="card card--pad"><div class="metric__value" style="color:var(--warning)">${dist[1].value}</div><div class="metric__label" style="margin-top:6px">At risk</div></div>
         <div class="card card--pad"><div class="metric__value" style="color:var(--danger)">${dist[2].value}</div><div class="metric__label" style="margin-top:6px">Non-compliant</div></div>
         <div style="grid-column:span 3">
-          <${Section} title="Status distribution" icon="pie"><${Donut} data=${dist} size=${140} centerValue=${COMPLIANCE.length} centerLabel="Areas" /></${Section}>
+          <${Section} title="Status distribution" icon="pie"><${Donut} data=${dist} size=${140} centerValue=${areas.length} centerLabel="Areas" /></${Section}>
         </div>
       </div>
     </div>
 
     <div class="card__title" style="margin-bottom:12px">Compliance areas</div>
     <div class="grid grid--3">
-      ${COMPLIANCE.map((c) => html`<div key=${c.id} class="card card--hover card--pad">
+      ${areas.map((c) => html`<div key=${c.id} class="card card--hover card--pad">
         <div class="row" style="margin-bottom:12px">
           <div class="strong" style="font-size:14px">${c.area}</div>
           <div class="spacer"></div>
           <${Status} value=${c.status} />
         </div>
+        <div class="row wrap" style="gap:6px;margin-bottom:10px"><${SubdivisionPill} item=${c} /></div>
         <div class="row" style="gap:10px;margin-bottom:6px"><div style="flex:1"><${Progress} value=${c.score} tone=${scoreTone(c.score)} /></div><span class="strong">${c.score}</span></div>
         <div class="row" style="gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
           <${Avatar} name=${nameOf(c.owner)} size="sm" />

@@ -6,7 +6,11 @@ import { PageHead, Toolbar, DataTable, StatStrip } from "../parts.js";
 import { navigate } from "../router.js";
 import { CONTRACTS, BUSINESS_UNITS, WORK_CATEGORIES, inferCategory, nameOf, byId, USERS } from "../data.js";
 import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow } from "../store.js";
-import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories } from "../shared.js";
+import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories, TatCell, SubdivisionPill } from "../shared.js";
+import { WorkflowSpine } from "../spine.js";
+import { rowTat } from "../flow.js";
+import { unreadCount } from "../messages.js";
+import { RequesterPanel } from "./workspace.js";
 
 const MATTER_TYPES = ["Contract", "Corporate", "Litigation", "Compliance", "Employment", "IP", "Policy", "Regulatory"];
 
@@ -108,14 +112,23 @@ function MatterList() {
 
 function MatterDetail({ id }) {
   const m = useCollection("matters").find((x) => x.id === id);
-  const [tab, setTab] = useState("overview");
+  // "Flow" is the DEFAULT tab — the GC sees the process before the outputs.
+  const [tab, setTab] = useState("flow");
   const [comment, setComment] = useState("");
   const [tagEdit, setTagEdit] = useState(false);
   if (!m) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate("/matters")}>Back to matters</${Btn}><div class="empty">Matter not found.</div></div>`;
   const related = CONTRACTS.filter((c) => c.bu === m.bu).slice(0, 3);
   const participants = [m.owner, "u1", "u11", "u3"];
+  // Sprint 4 — the requester thread lives on the request face of this record.
+  const linkedRequest = useCollection("requests").find((r) => r.id === m.requestId || r.matterId === m.id) || null;
+  const messages = useCollection("messages");
+  const reqUnread = linkedRequest ? unreadCount(linkedRequest.id, "u1", messages) : 0;
+  const reqAsks = linkedRequest ? (linkedRequest.requiredDocs || []).filter((d) => d.status === "requested").length : 0;
+
   const tabsCfg = [
+    { key: "flow", label: "Flow", icon: "workflow" },
     { key: "overview", label: "Overview", icon: "layers" },
+    ...(linkedRequest ? [{ key: "requester", label: "Requester", icon: "user", count: (reqUnread + reqAsks) || undefined }] : []),
     { key: "timeline", label: "Timeline", icon: "activity" },
     { key: "documents", label: "Documents", icon: "file", count: DOCS.length },
     { key: "tasks", label: "Tasks", icon: "checksquare", count: TASKS.filter((t) => !t.done).length },
@@ -146,6 +159,14 @@ function MatterDetail({ id }) {
       </div>
     </div>
 
+    <!-- Flow is the default tab: input → stages → outputs → relationships -->
+    ${tab === "flow" ? html`<div class="col" style="gap:16px">
+      <div class="card"><div style="padding:6px 18px 0"><${Tabs} tabs=${tabsCfg} active=${tab} onChange=${setTab} /></div></div>
+      <${WorkflowSpine} id=${m.id} showHeader=${false} />
+    </div>` : tab === "requester" && linkedRequest ? html`<div class="col" style="gap:16px">
+      <div class="card"><div style="padding:6px 18px 0"><${Tabs} tabs=${tabsCfg} active=${tab} onChange=${setTab} /></div></div>
+      <${RequesterPanel} requestId=${linkedRequest.id} viewer="u1" />
+    </div>` : html`
     <div class="grid" style="grid-template-columns:1fr 340px;align-items:start">
       <div class="col" style="gap:16px">
         <div class="card"><div style="padding:6px 18px 0"><${Tabs} tabs=${tabsCfg} active=${tab} onChange=${setTab} /></div>
@@ -216,7 +237,7 @@ function MatterDetail({ id }) {
           </div>`)}
         </div>
       </div>
-    </div>
+    </div>`}
   </div>`;
 }
 

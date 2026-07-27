@@ -34,10 +34,17 @@ const server = http.createServer((req, res) => {
     }
 
     fs.stat(filePath, (err, stat) => {
+      // Directory → its index.html (this is how /portal/ resolves).
+      if (!err && stat.isDirectory()) {
+        return sendFile(res, path.join(filePath, "index.html"));
+      }
       if (err || !stat.isFile()) {
-        // SPA fallback: serve index.html for unknown non-asset routes
+        // SPA fallback for unknown non-asset routes. The requester portal is a
+        // SEPARATE app, so a deep link under /portal must fall back to the
+        // portal's own shell, not LegalOS's.
         if (!path.extname(urlPath)) {
-          return sendFile(res, path.join(ROOT, "index.html"));
+          const shell = urlPath.startsWith("/portal") ? path.join("portal", "index.html") : "index.html";
+          return sendFile(res, path.join(ROOT, shell));
         }
         res.writeHead(404, { "Content-Type": "text/plain" });
         return res.end("Not found: " + urlPath);

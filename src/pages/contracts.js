@@ -4,9 +4,14 @@ import { Icon } from "../icons.js";
 import { Btn, Avatar, Risk, Pill, Status, Tabs, Stepper, AICard, Dropdown, MenuItem, Progress, Modal, Field, Input } from "../ui.js";
 import { PageHead, Toolbar, DataTable, StatStrip } from "../parts.js";
 import { navigate } from "../router.js";
-import { BUSINESS_UNITS, COUNTRIES, WORK_CATEGORIES, inferCategory, nameOf } from "../data.js";
+import {
+  BUSINESS_UNITS, COUNTRIES, WORK_CATEGORIES, inferCategory, nameOf, byId, USERS,
+  CONTRACT_TYPE_CODES, GROUP_ENTITIES, entityName, riskGatesFor, ACCESS_LEVELS, ACCESS_LABEL, toUsd,
+} from "../data.js";
 import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow } from "../store.js";
-import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories } from "../shared.js";
+import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories, FilterBar, useFilters, applyFilters, TatCell, SubdivisionPill } from "../shared.js";
+import { WorkflowSpine } from "../spine.js";
+import { rowTat } from "../flow.js";
 
 // Burn helpers (Feature 2)
 const burnPct = (c) => ((c.value || 0) ? Math.round(((c.spendToDate || 0) / c.value) * 100) : 0);
@@ -117,6 +122,63 @@ function SpendTab({ c }) {
   </div>`;
 }
 
+/* ---- Workstream H: draft / review / access ----
+   Role- and stage-gated document access with a Google-Drive-style permission
+   model (view · comment/annotate · edit) per user. The drafter and the approver
+   are deliberately different people, and the risk tier decides the chain. */
+function AccessTab({ c }) {
+  const gates = riskGatesFor(c.risk);
+  const access = c.access || [];
+  const setLevel = (i, level) => updateItem("contracts", c.id, { access: access.map((a, j) => (j === i ? { ...a, level } : a)) });
+  const revoke = (i) => updateItem("contracts", c.id, { access: access.filter((_, j) => j !== i) });
+  const grant = (userId) => { if (userId) updateItem("contracts", c.id, { access: [...access, { userId, level: "view" }] }); };
+  const drafter = access.find((a) => a.level === "edit");
+  const approver = gates.approvers[gates.approvers.length - 1];
+  const conflict = drafter && drafter.userId === approver;
+
+  return html`<div class="col" style="gap:16px">
+    <div class="banner banner--info" style="align-items:flex-start">
+      <${Icon} name="lock" size=17 />
+      <div>
+        <div class="strong tiny">Risk tier drives the gate — ${(c.risk || "medium")} risk</div>
+        <div class="tiny" style="margin-top:3px;opacity:.85">${gates.depth}</div>
+        <div class="tiny" style="margin-top:3px;opacity:.85">Approval chain: ${gates.approvers.map(nameOf).join(" → ")}</div>
+      </div>
+    </div>
+
+    ${conflict
+      ? html`<div class="banner banner--warn"><${Icon} name="alertTriangle" size=16 /><span>The drafter and the final approver are the same person — separate them before sign-off.</span></div>`
+      : html`<div class="row" style="gap:8px"><${Icon} name="checkcircle" size=15 style=${{ color: "var(--success)" }} /><span class="tiny" style="color:var(--success);font-weight:600">Drafter and approver are separate people.</span></div>`}
+
+    <div class="col" style="gap:8px">
+      <div class="row"><span class="strong">Document access</span><div class="spacer"></div><span class="tiny muted">view · comment/annotate · edit</span></div>
+      ${access.length === 0 && html`<span class="tiny muted">Nobody has been granted access yet.</span>`}
+      ${access.map((a, i) => html`<div key=${a.userId} class="docrow">
+        <${Avatar} name=${nameOf(a.userId)} size="md" />
+        <div style="flex:1;min-width:0">
+          <div class="strong tiny">${nameOf(a.userId)}</div>
+          <div class="tiny muted">${byId(a.userId).role}${a.userId === approver ? " · final approver" : ""}${a.level === "edit" ? " · drafter" : ""}</div>
+        </div>
+        <select class="select" style="width:136px;height:32px" value=${a.level} onChange=${(e) => setLevel(i, e.target.value)}>
+          ${ACCESS_LEVELS.map((l) => html`<option key=${l} value=${l}>${ACCESS_LABEL[l]}</option>`)}
+        </select>
+        <button class="iconbtn" title="Revoke" onClick=${() => revoke(i)}><${Icon} name="x" size=16 /></button>
+      </div>`)}
+      <${Field} label="Grant access">
+        <select class="select" value="" onChange=${(e) => grant(e.target.value)}>
+          <option value="">— pick a user —</option>
+          ${USERS.filter((u) => !access.some((a) => a.userId === u.id)).map((u) => html`<option key=${u.id} value=${u.id}>${u.name} · ${u.role}</option>`)}
+        </select>
+      </${Field}>
+    </div>
+
+    <div class="tiny muted">
+      Real Google Drive ACLs plug in where this list is written — the shape already matches
+      Drive's reader / commenter / writer roles. <span class="mono">// google drive access seam</span>
+    </div>
+  </div>`;
+}
+
 /* ---- Feature 4: condensed read-only negotiation history mirror ---- */
 function NegHistoryMini({ c }) {
   const rounds = [...(c.rounds || [])].sort((a, b) => b.round - a.round);
@@ -133,11 +195,15 @@ function NegHistoryMini({ c }) {
 
 function ContractList() {
   const CONTRACTS = useCollection("contracts");
-  const [q, setQ] = useState("");
+  const repository = useCollection("repository");
+  const requests = useCollection("requests");
+  const matters = useCollection("matters");
   const [tab, setTab] = useState("all");
   const [modal, setModal] = useState(false);
-  const [cats, setCats] = useState([]);
-  const toggleCat = (c) => setCats((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
+  const { filters, patch, toggle, clear } = useFilters("contracts");
+
+  const ctx = { requests, matters, contracts: CONTRACTS, repository };
+  const withTat = CONTRACTS.map((c) => ({ ...c, __tat: rowTat(c, ctx) }));
   const tabs = [
     { key: "all", label: "All", count: CONTRACTS.length },
     { key: "Active", label: "Active", count: CONTRACTS.filter((c) => c.status === "Active").length },
@@ -145,32 +211,42 @@ function ContractList() {
     { key: "In Negotiation", label: "In Negotiation", count: CONTRACTS.filter((c) => c.status === "In Negotiation").length },
     { key: "Drafting", label: "Drafting", count: CONTRACTS.filter((c) => c.status === "Drafting").length },
   ];
-  let rows = CONTRACTS.filter((c) => (!q || (c.title + c.counterparty).toLowerCase().includes(q.toLowerCase())) && matchCategories(c, cats));
+  let rows = applyFilters(withTat, filters, { searchKeys: ["title", "counterparty", "id", "contractType", "landRef", "physicalRecordRef"] });
   if (tab !== "all") rows = rows.filter((c) => c.status === tab);
-  const totalVal = CONTRACTS.reduce((s, c) => s + (c.currency === "USD" ? c.value : c.value * 0.27), 0);
+  const totalVal = CONTRACTS.reduce((s, c) => s + toUsd(c.value, c.currency), 0);
+  const expiring30 = CONTRACTS.filter((c) => { const d = (new Date(c.expiry) - Date.now()) / 86400000; return d >= 0 && d <= 30; }).length;
+  const critical = CONTRACTS.filter((c) => c.risk === "critical").length;
 
   return html`<div class="page page--wide fade-in">
     <${PageHead} title="Contracts" sub="The full contract lifecycle — from request to renewal — in one governed repository."
-      actions=${html`<${Btn} variant="ghost" icon="upload">Import</${Btn}><${Btn} variant="primary" icon="plus" onClick=${() => setModal(true)}>New contract</${Btn}>`} />
+      actions=${html`<${Btn} variant="ghost" icon="grid" onClick=${() => navigate("/tracker")}>Tracker</${Btn}>
+        <${Btn} variant="ghost" icon="upload" onClick=${() => navigate("/repository")}>Import</${Btn}>
+        <${Btn} variant="primary" icon="plus" onClick=${() => setModal(true)}>New contract</${Btn}>`} />
     ${modal && html`<${NewContractModal} onClose=${() => setModal(false)} onCreate=${(c) => addItem("contracts", c)} />`}
     <${StatStrip} stats=${[
-      { value: fmt.num(1272 + CONTRACTS.length), label: "Active contracts" },
+      { value: CONTRACTS.length, label: "Contracts on the book" },
       { value: fmt.money(totalVal), label: "Total contract value", trend: "+14%", trendDir: "up" },
-      { value: 23, label: "Expiring < 30 days", trend: "▲", trendDir: "up" },
-      { value: 43, label: "Critical risk", trendDir: "flat" },
-      { value: "94%", label: "On standard paper" },
+      { value: expiring30, label: "Expiring < 30 days", trend: "▲", trendDir: "up" },
+      { value: critical, label: "Critical risk", trendDir: "flat" },
+      { value: withTat.filter((c) => c.__tat.status === "Delayed").length, label: "Past TAT" },
     ]} />
     <div style="margin-bottom:14px"><${Tabs} tabs=${tabs} active=${tab} onChange=${setTab} /></div>
-    <div style="width:280px;margin-bottom:14px"><${Toolbar} search=${q} onSearch=${setQ} /></div>
-    <div class="row wrap" style="gap:8px;margin-bottom:16px"><${CategoryChips} selected=${cats} onToggle=${toggleCat} /></div>
+    <${FilterBar} module="contracts" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
+      rows=${withTat}
+      dateFields=${[{ key: "expiry", label: "Expiry" }, { key: "start", label: "Execution / start" }]}
+      placeholder="Search contracts, counterparties, deed refs…"
+      right=${html`<span class="tiny muted">${rows.length} of ${CONTRACTS.length}</span>`} />
     <${DataTable} onRow=${(c) => navigate("/contracts/" + c.id)} columns=${[
+      { key: "srNo", label: "Sr No", mono: true, width: "62px" },
       { key: "id", label: "ID", mono: true, width: "86px" },
-      { key: "title", label: "Contract", render: (c) => html`<div class="cell-strong">${c.title}</div><div class="tiny muted">${c.counterparty} · ${c.type}</div>` },
-      { key: "category", label: "Category", render: (c) => html`<${CategoryPill} item=${c} />` },
+      { key: "title", label: "Contract", render: (c) => html`<div class="cell-strong">${c.title}</div><div class="tiny muted">${c.counterparty} · ${c.contractType}</div>` },
+      { key: "entityId", label: "Entity", width: "116px", render: (c) => html`<span class="tiny strong">${entityName(c.entityId)}</span>` },
+      { key: "subdivision", label: "Sub-division", render: (c) => html`<${SubdivisionPill} item=${c} />` },
       { key: "value", label: "Value", align: "right", render: (c) => html`<span class="strong">${fmt.money(c.value, c.currency)}</span>` },
       { key: "spend", label: "Burn", width: "120px", render: (c) => { const b = commitBurnPct(c); const t = b > 100 ? "red" : b > 80 ? "amber" : ""; return html`<div class="row" style="gap:8px"><div style="flex:1"><${Progress} value=${Math.min(100, b)} tone=${t} /></div><span class="tiny muted" style="width:34px">${b}%</span></div>`; } },
       { key: "risk", label: "Risk", render: (c) => html`<${Risk} level=${c.risk} />` },
       { key: "status", label: "Status", render: (c) => html`<${Status} value=${c.status} />` },
+      { key: "tat", label: "TAT Status", width: "160px", render: (c) => html`<${TatCell} tat=${c.__tat} />` },
       { key: "owner", label: "Owner", render: (c) => html`<${Avatar} name=${nameOf(c.owner)} size="sm" />` },
       { key: "expiry", label: "Expiry", render: (c) => { const days = Math.round((new Date(c.expiry) - Date.now()) / 86400000); return html`<span class=${cx("tiny", days > 0 && days < 30 && "risk--high")} style="font-weight:600">${days < 0 ? "Expired" : fmt.date(c.expiry)}</span>`; } },
     ]} rows=${rows} />
@@ -179,7 +255,8 @@ function ContractList() {
 
 function ContractWorkspace({ id }) {
   const c = useCollection("contracts").find((x) => x.id === id);
-  const [tab, setTab] = useState("document");
+  // "Flow" is the DEFAULT tab — the process, not just the document.
+  const [tab, setTab] = useState("flow");
   const [active, setActive] = useState("6");
   const [tagEdit, setTagEdit] = useState(false);
   if (!c) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate("/contracts")}>Back</${Btn}><div class="empty">Contract not found.</div></div>`;
@@ -209,6 +286,20 @@ function ContractWorkspace({ id }) {
       <${Stepper} steps=${CLM_STAGES} current=${stageIdx} />
     </div>
 
+    <!-- Flow is the default view: input → stages → outputs → relationships -->
+    <div class="card" style="margin-bottom:16px"><div style="padding:6px 18px 0">
+      <${Tabs} active=${tab} onChange=${setTab} tabs=${[
+        { key: "flow", label: "Flow", icon: "workflow" },
+        { key: "document", label: "Document", icon: "file" },
+        { key: "versions", label: "Versions", icon: "layers", count: 3 },
+        { key: "spend", label: "Spend", icon: "dollar" },
+        { key: "access", label: "Access", icon: "lock", count: (c.access || []).length },
+        { key: "approvals", label: "Approvals", icon: "checksquare" },
+        { key: "comments", label: "Comments", icon: "message", count: 4 },
+      ]} />
+    </div></div>
+
+    ${tab === "flow" ? html`<${WorkflowSpine} id=${c.id} showHeader=${false} />` : html`
     <div class="grid" style="grid-template-columns:240px 1fr 330px;align-items:start;gap:16px">
       <div class="card" style="position:sticky;top:16px">
         <div class="card__head" style="padding:13px 15px"><div class="card__title" style="font-size:13px">Clause Navigator</div></div>
@@ -222,7 +313,6 @@ function ContractWorkspace({ id }) {
       </div>
 
       <div class="card">
-        <div style="padding:6px 18px 0"><${Tabs} active=${tab} onChange=${setTab} tabs=${[{ key: "document", label: "Document", icon: "file" }, { key: "versions", label: "Versions", icon: "layers", count: 3 }, { key: "spend", label: "Spend", icon: "dollar" }, { key: "approvals", label: "Approvals", icon: "checksquare" }, { key: "comments", label: "Comments", icon: "message", count: 4 }]} /></div>
         <div class="card__body">
           ${tab === "document" && html`<div class="doc">
             <div style="text-align:center;margin-bottom:24px"><div style="font-size:16px;font-weight:700;letter-spacing:.02em">${c.type.toUpperCase()} AGREEMENT</div><div class="tiny muted" style="margin-top:4px">Between ${c.counterparty} and Northwind Global Holdings</div></div>
@@ -250,6 +340,7 @@ function ContractWorkspace({ id }) {
             </div>`)}
           </div>`}
           ${tab === "spend" && html`<${SpendTab} c=${c} />`}
+          ${tab === "access" && html`<${AccessTab} c=${c} />`}
           ${tab === "comments" && html`<div class="empty"><${Icon} name="message" size=36 /><div>4 comment threads on clauses 6, 7 and 9.</div></div>`}
         </div>
       </div>
@@ -277,7 +368,7 @@ function ContractWorkspace({ id }) {
         </div>
         <${NegHistoryMini} c=${c} />
       </div>
-    </div>
+    </div>`}
   </div>`;
 }
 

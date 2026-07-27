@@ -71,7 +71,10 @@ export const fmt = {
     else if (abs >= 1e6) { val = n / 1e6; suffix = "M"; }
     else if (abs >= 1e3) { val = n / 1e3; suffix = "K"; }
     else val = n;
-    const sym = { USD: "$", EUR: "€", GBP: "£", SAR: "﷼", AED: "د.إ", PKR: "₨" }[currency] || "$";
+    // ISO codes for the regional currencies: the ﷼ and د.إ glyphs are RTL and
+    // get visually reordered mid-string ("118.0﷼M"), which misreads badly in
+    // dense value columns. Matches moneyFull below.
+    const sym = { USD: "$", EUR: "€", GBP: "£", SAR: "SAR ", AED: "AED ", PKR: "PKR " }[currency] || "$";
     const num = suffix ? val.toFixed(val < 10 && suffix ? 1 : 1) : val.toLocaleString();
     return `${sym}${num}${suffix}`;
   },

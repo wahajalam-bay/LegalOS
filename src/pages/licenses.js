@@ -3,9 +3,9 @@ import { html, cx, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Avatar, Pill, Tabs, Chip, Drawer, Modal, Field, Input, Progress, Timeline, AICard } from "../ui.js";
 import { PageHead, Toolbar, DataTable, StatStrip } from "../parts.js";
-import { TagChips } from "../shared.js";
+import { TagChips, FilterBar, useFilters, applyFilters } from "../shared.js";
 import { navigate } from "../router.js";
-import { licenseStatus, nameOf } from "../data.js";
+import { licenseStatus, nameOf, entityName } from "../data.js";
 import { useCollection, updateItem, nowIso } from "../store.js";
 
 const JURIS = ["KSA", "UAE", "PK"];
@@ -46,9 +46,8 @@ function MarkRenewedModal({ lic, onClose }) {
 export default function Licenses() {
   const licenses = useCollection("licenses");
   const [tab, setTab] = useState("all");
-  const [juris, setJuris] = useState("all");
-  const [q, setQ] = useState("");
   const [openId, setOpenId] = useState(null);
+  const { filters, patch, toggle, clear } = useFilters("licenses", { sortBy: "expiry", sortDir: "asc" });
   const [renew, setRenew] = useState(false);
   const open = licenses.find((l) => l.id === openId);
 
@@ -60,11 +59,9 @@ export default function Licenses() {
     if (tab === "Expired") return k === "Expired";
     return true;
   };
-  const rows = licenses.filter((l) =>
-    inTab(l) &&
-    (juris === "all" || l.jurisdiction === juris) &&
-    (!q || (l.name + " " + l.authority + " " + l.entity + " " + l.licenseNumber).toLowerCase().includes(q.toLowerCase()))
-  );
+  const rows = applyFilters(licenses.filter(inTab), filters, {
+    searchKeys: ["name", "authority", "entity", "licenseNumber", "type", "id", "notes"],
+  });
   const countKey = (k) => licenses.filter((l) => licenseStatus(l).key === k).length;
 
   const tabs = [
@@ -84,12 +81,11 @@ export default function Licenses() {
       { value: countKey("Expired"), label: "Expired", trend: countKey("Expired") ? "▲" : undefined, trendDir: "up" },
     ]} />
     <div style="margin-bottom:14px"><${Tabs} tabs=${tabs} active=${tab} onChange=${setTab} /></div>
-    <div class="row wrap" style="gap:8px;margin-bottom:14px">
-      <div style="width:260px"><${Toolbar} search=${q} onSearch=${setQ} /></div>
-      <div class="spacer"></div>
-      <${Chip} active=${juris === "all"} onClick=${() => setJuris("all")}>All regions</${Chip}>
-      ${JURIS.map((j) => html`<${Chip} key=${j} active=${juris === j} onClick=${() => setJuris(j)}>${j}</${Chip}>`)}
-    </div>
+    <${FilterBar} module="licenses" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
+      dims=${["entities", "subdivisions", "owners"]} rows=${licenses}
+      dateFields=${[{ key: "expiryDate", label: "Expiry" }, { key: "issueDate", label: "Issue date" }]}
+      placeholder="Search licenses, authorities, numbers…"
+      right=${html`<span class="tiny muted">${rows.length} of ${licenses.length}</span>`} />
 
     <${DataTable} onRow=${(l) => setOpenId(l.id)} columns=${[
       { key: "id", label: "ID", mono: true, width: "84px" },

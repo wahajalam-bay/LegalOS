@@ -1,6 +1,6 @@
 // LegalOS entry point.
 import { html, createRoot } from "./core.js";
-import { useRoute, parsePath } from "./router.js";
+import { useRoute, parsePath, currentPath } from "./router.js";
 import { Shell } from "./layout.js";
 import { Empty } from "./ui.js";
 
@@ -23,9 +23,27 @@ import Organization from "./pages/organization.js";
 import Settings from "./pages/settings.js";
 import Licenses from "./pages/licenses.js";
 import Companies from "./pages/companies.js";
+// Sprint 3 modules
+import Workspace from "./pages/workspace.js";
+import Tracker from "./pages/tracker.js";
+import RepositoryPage from "./pages/repository.js";
+import Analyzer from "./pages/analyzer.js";
+import Pipelines from "./pages/pipelines.js";
+import Portal from "./pages/portal.js";
+// Sprint 5 — the executive story
+import Exec from "./pages/exec.js";
+import FlowMap from "./pages/flowmap.js";
 
 const ROUTES = {
+  "/exec": Exec,
+  "/flow-map": FlowMap,
   "/dashboard": Dashboard,
+  "/workspace": Workspace,
+  "/tracker": Tracker,
+  "/repository": RepositoryPage,
+  "/analyzer": Analyzer,
+  "/pipelines": Pipelines,
+  "/portal": Portal,
   "/requests": Requests,
   "/matters": Matters,
   "/contracts": Contracts,
@@ -55,6 +73,13 @@ function App() {
   const { base, id } = parsePath(path);
   const Page = ROUTES[base] || NotFound;
   return html`<${Shell} path=${path}><${Page} id=${id} path=${path} key=${base} /></${Shell}>`;
+}
+
+// A bare URL renders the landing route, so put that route in the address bar too:
+// the URL should always say where you are, which matters when a link or a
+// screenshot gets passed around. replaceState so this adds no history entry.
+if (!window.location.hash) {
+  try { window.history.replaceState(null, "", "#" + currentPath()); } catch (e) {}
 }
 
 clearTimeout(window.__legalos_boot);

@@ -4,11 +4,13 @@ import { Icon } from "../icons.js";
 import { Metric, Section, Btn, Avatar, Pill, Risk, Status, Progress, AICard } from "../ui.js";
 import { Donut, AreaTrend, StackBar, HBars, Funnel } from "../charts.js";
 import { navigate } from "../router.js";
-import { DASH, AI_INSIGHTS, ACTIVITY, APPROVALS, CONTRACTS, REQUESTS, WORK_CATEGORIES, CATEGORY_TONE, categoryOf, licenseStatus, byId, nameOf } from "../data.js";
+import { DASH, AI_INSIGHTS, ACTIVITY, APPROVALS, CONTRACTS, REQUESTS, WORK_CATEGORIES, CATEGORY_TONE, categoryOf, licenseStatus, byId, nameOf, toUsd } from "../data.js";
 import { useCollection } from "../store.js";
+import { unifiedRows, rowTat } from "../flow.js";
+import { allReminders } from "../reminders.js";
 
 const CAT_HEX = { red: "#dc2626", blue: "#1d6cb0", indigo: "#4338ca", amber: "#d97706", purple: "#7c3aed", green: "#16a34a", gray: "#64748b", orange: "#ea580c" };
-const usdOf = (v, c) => (c === "USD" ? v : v * 0.27);
+const usdOf = (v, c) => toUsd(v, c);
 
 function greeting() {
   const h = new Date().getHours();
@@ -52,6 +54,16 @@ export default function Dashboard() {
   const nearExpiry = CONTRACTS.filter((c) => { const days = (new Date(c.expiry) - Date.now()) / 86400000; return days > 0 && days < 60; }).sort((a, b) => new Date(a.expiry) - new Date(b.expiry)).slice(0, 5);
   const pendingApprovals = APPROVALS.filter((a) => a.status === "pending").slice(0, 4);
 
+  // Sprint 3: what is delayed (with the blocking stage) and which lifecycle
+  // milestones are about to fire — both read live off the same engines.
+  const repository = useCollection("repository");
+  const ctx = { requests: requestsLive, matters: mattersLive, contracts: contractsLive, repository, licenses };
+  const delayed = unifiedRows(requestsLive, mattersLive)
+    .map((u) => ({ ...u.record, id: u.id, title: u.title, __tat: rowTat(u.record, ctx) }))
+    .filter((r) => r.__tat.status === "Delayed")
+    .sort((a, b) => b.__tat.overdueBy - a.__tat.overdueBy);
+  const reminders = allReminders(contractsLive);
+
   return html`<div class="page fade-in">
     <div class="pagehead">
       <div class="pagehead__main">
@@ -72,6 +84,41 @@ export default function Dashboard() {
       <${Metric} label="Compliance Score" value=${html`${k.complianceScore}<span style="font-size:15px;font-weight:600;color:var(--text-3)">/100</span>`} icon="shield" tone="green" trend="+2" trendDir="up" foot="1 area non-compliant" onClick=${() => navigate("/compliance")} />
       <${Metric} label="Portfolio Value" value=${fmt.money(k.contractValue)} icon="dollar" tone="blue" trend="+14%" trendDir="up" foot="Total contracted value" />
       <${Metric} label="Licenses expiring ≤90d" value=${expiring90} icon="fileCheck" tone="amber" foot=${licExpired ? html`<span style="color:var(--danger)">${licExpired} expired</span>` : "All valid beyond 90 days"} onClick=${() => navigate("/licenses")} />
+    </div>
+
+    <!-- Sprint 3: what is actually delayed, and which lifecycles are about to fire -->
+    <div class="grid" style="grid-template-columns:1fr 1fr;margin-bottom:16px">
+      <${Section} title="Delayed work" icon="alertTriangle"
+        sub="past the auto-fixed TAT — with the stage that is holding it up"
+        right=${html`<${Pill} tone=${delayed.length ? "red" : "green"}>${delayed.length} delayed</${Pill}>`} bodyClass="col">
+        ${delayed.length === 0
+          ? html`<div class="empty" style="padding:20px"><div>Nothing is past its turnaround allowance.</div></div>`
+          : delayed.slice(0, 5).map((r) => html`<div key=${r.id} class="feed__item" style="cursor:pointer;align-items:center" onClick=${() => navigate("/workspace/" + r.id)}>
+              <div class="notif__ico" style="width:30px;height:30px;background:var(--danger-bg);color:var(--danger)"><${Icon} name="alertTriangle" size=15 /></div>
+              <div style="flex:1;min-width:0">
+                <div class="strong tiny" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.title}</div>
+                <div class="tiny muted">${r.id} · blocked at ${r.__tat.blockingStage} · ${r.__tat.blockingOwner ? nameOf(r.__tat.blockingOwner) : "unassigned"}</div>
+              </div>
+              <${Pill} tone="red">+${r.__tat.overdueBy}d</${Pill}>
+            </div>`)}
+        ${delayed.length > 5 && html`<button class="tiny" style="color:var(--brand);font-weight:600;text-align:left;padding:6px 2px" onClick=${() => navigate("/workspace")}>See all ${delayed.length} in the Legal Workspace →</button>`}
+      </${Section}>
+
+      <${Section} title="Lifecycle Reminders" icon="bell"
+        sub="renewals, notice windows and extracted obligations"
+        right=${html`<${Pill} tone=${reminders.some((r) => r.dueDays < 0) ? "red" : "amber"}>${reminders.length} live</${Pill}>`} bodyClass="col">
+        ${reminders.length === 0
+          ? html`<div class="empty" style="padding:20px"><div>No renewals or notice windows in the next 90 days.</div></div>`
+          : reminders.slice(0, 5).map((r) => html`<div key=${r.id} class="feed__item" style="cursor:pointer;align-items:center" onClick=${() => navigate(r.path)}>
+              <div class="notif__ico" style=${`width:30px;height:30px;background:${r.tone === "red" ? "var(--danger-bg)" : r.tone === "amber" ? "var(--warning-bg)" : "var(--brand-soft)"};color:${r.tone === "red" ? "var(--danger)" : r.tone === "amber" ? "var(--warning)" : "var(--brand)"}`}><${Icon} name=${r.icon} size=15 /></div>
+              <div style="flex:1;min-width:0">
+                <div class="strong tiny" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.title}</div>
+                <div class="tiny muted" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.detail}</div>
+              </div>
+              <span class=${cx("tiny strong", r.dueDays < 0 && "risk--critical")} style="width:66px;text-align:right">${r.dueDays < 0 ? Math.abs(r.dueDays) + "d past" : "in " + r.dueDays + "d"}</span>
+            </div>`)}
+        ${reminders.length > 5 && html`<button class="tiny" style="color:var(--brand);font-weight:600;text-align:left;padding:6px 2px" onClick=${() => navigate("/pipelines")}>See all ${reminders.length} reminders →</button>`}
+      </${Section}>
     </div>
 
     <div class="grid" style="grid-template-columns:1.15fr 1.35fr 1fr;margin-bottom:16px">

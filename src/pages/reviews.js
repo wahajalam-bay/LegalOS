@@ -5,7 +5,7 @@ import { Btn, Avatar, Risk, Pill, Status, Tabs, Drawer, AICard } from "../ui.js"
 import { PageHead, DataTable, StatStrip } from "../parts.js";
 import { REVIEWS, nameOf } from "../data.js";
 import { navigate } from "../router.js";
-import { CategoryChips, CategoryPill, TagChips, matchCategories, companyName } from "../shared.js";
+import { CategoryChips, CategoryPill, TagChips, matchCategories, companyName, FilterBar, useFilters, applyFilters, SubdivisionPill } from "../shared.js";
 import { computeOverlaps, reviewOverlapMap } from "../overlaps.js";
 
 const ISSUES = [
@@ -20,8 +20,7 @@ const KIND_ICON = { review: "checkcircle", matter: "folder", negotiation: "gitbr
 export default function Reviews() {
   const [tab, setTab] = useState("all");
   const [open, setOpen] = useState(null);
-  const [cats, setCats] = useState([]);
-  const toggleCat = (c) => setCats((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
+  const { filters, patch, toggle, clear } = useFilters("reviews", { sortBy: "due", sortDir: "asc" });
   const overdue = (r) => new Date(r.sla) < Date.now() && r.status === "In Review";
 
   const ovMap = reviewOverlapMap();
@@ -32,7 +31,9 @@ export default function Reviews() {
     { key: "In Review", label: "In Review", count: REVIEWS.filter((r) => r.status === "In Review").length },
     { key: "Completed", label: "Completed", count: REVIEWS.filter((r) => r.status === "Completed").length },
   ];
-  const rows = (tab === "all" ? REVIEWS : REVIEWS.filter((r) => r.status === tab)).filter((r) => matchCategories(r, cats));
+  const rows = applyFilters(tab === "all" ? REVIEWS : REVIEWS.filter((r) => r.status === tab), filters, {
+    searchKeys: ["title", "id", "contract"],
+  });
   const openOv = open ? (ovMap[open.id] || []) : [];
 
   return html`<div class="page page--wide fade-in">
@@ -51,7 +52,11 @@ export default function Reviews() {
     </${AICard}></div>` : ""}
 
     <div style="margin-bottom:14px"><${Tabs} tabs=${tabs} active=${tab} onChange=${setTab} /></div>
-    <div class="row wrap" style="gap:8px;margin-bottom:16px"><${CategoryChips} selected=${cats} onToggle=${toggleCat} /></div>
+    <${FilterBar} module="reviews" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
+      dims=${["entities", "subdivisions", "categories", "owners", "risks"]} rows=${REVIEWS}
+      dateFields=${[{ key: "sla", label: "SLA date" }, { key: "received", label: "Received" }]}
+      placeholder="Search the review queue…"
+      right=${html`<span class="tiny muted">${rows.length} of ${REVIEWS.length}</span>`} />
 
     <${DataTable} onRow=${setOpen} columns=${[
       { key: "id", label: "ID", mono: true, width: "84px" },

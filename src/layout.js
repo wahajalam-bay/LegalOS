@@ -4,8 +4,11 @@ import { Icon } from "./icons.js";
 import { Avatar, Btn, Dropdown, MenuItem, Pill } from "./ui.js";
 import { NAV, NAV_FLAT, labelFor } from "./nav.js";
 import { navigate, parsePath } from "./router.js";
-import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES, licenseStatus, byId } from "./data.js";
+import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES, licenseStatus, byId, CONTRACT_TYPE_CODES, LEGAL_SUBDIVISIONS } from "./data.js";
 import { getCollection } from "./store.js";
+import { allReminders } from "./reminders.js";
+import { TourOverlay, TourButton } from "./tour.js";
+import { senderName } from "./messages.js";
 
 const ME = USERS[0]; // Layla Al-Rashid, General Counsel
 
@@ -87,13 +90,84 @@ function licenseNotifs() {
       icon: s.key === "Expired" ? "alertTriangle" : "clock",
     }));
 }
+// Lifecycle reminders (Workstream G) — renewals, notice windows and extracted
+// obligations, deduped by record+milestone exactly like the license alerts.
+function lifecycleNotifs() {
+  const contracts = getCollection("contracts") || CONTRACTS;
+  return allReminders(contracts).slice(0, 12).map((r) => ({
+    id: r.id,
+    type: "lifecycle",
+    title: r.title,
+    time: new Date().toISOString(),
+    unread: r.dueDays <= 7,
+    tone: r.tone,
+    icon: r.icon,
+    path: r.path,
+  }));
+}
+// Sprint 4 — portal traffic: new submissions, requester replies and documents
+// that came back. Deduped by event id like the other feeds.
+function portalNotifs() {
+  const requests = getCollection("requests") || [];
+  const messages = getCollection("messages") || [];
+  const out = [];
+
+  requests.filter((r) => r.channel === "portal").slice(0, 6).forEach((r) => {
+    out.push({
+      id: "portal-new-" + r.id,
+      type: "portal",
+      title: `${r.id} raised in the portal — ${r.title}`,
+      time: r.requestDate || r.created,
+      unread: r.status === "Triage" || r.status === "New",
+      tone: "purple",
+      icon: "inbox",
+      path: "/workspace/" + r.id,
+    });
+  });
+
+  // Requester messages the legal side has not read.
+  messages
+    .filter((m) => m.role === "requester" && !(m.readBy || []).includes("u1"))
+    .slice(0, 8)
+    .forEach((m) => {
+      const r = requests.find((x) => x.id === m.requestId);
+      out.push({
+        id: "portal-msg-" + m.id,
+        type: "portal",
+        title: `${senderName(m.from)} replied on ${m.requestId}${r ? " — " + r.title : ""}`,
+        time: m.at,
+        unread: true,
+        tone: "blue",
+        icon: "message",
+        path: "/workspace/" + m.requestId,
+      });
+    });
+
+  // Documents legal asked for that have now arrived.
+  requests.forEach((r) => {
+    (r.requiredDocs || []).filter((d) => d.status === "received" && d.receivedAt).slice(0, 2).forEach((d) => {
+      out.push({
+        id: "portal-doc-" + d.id,
+        type: "portal",
+        title: `${d.name} received on ${r.id}`,
+        time: d.receivedAt,
+        unread: false,
+        tone: "green",
+        icon: "checkcircle",
+        path: "/workspace/" + r.id,
+      });
+    });
+  });
+
+  return out.sort((a, b) => new Date(b.time) - new Date(a.time));
+}
 function dedupeById(arr) {
   const seen = new Set();
   return arr.filter((n) => (seen.has(n.id) ? false : (seen.add(n.id), true)));
 }
 
 function NotifButton() {
-  const [items, setItems] = useState(() => dedupeById([...licenseNotifs(), ...NOTIFICATIONS]));
+  const [items, setItems] = useState(() => dedupeById([...portalNotifs(), ...lifecycleNotifs(), ...licenseNotifs(), ...NOTIFICATIONS]));
   const unread = items.filter((n) => n.unread).length;
   const toneBg = { amber: "var(--warning-bg)", red: "var(--danger-bg)", blue: "var(--brand-soft)", purple: "var(--accent-soft)", green: "var(--success-bg)" };
   const toneFg = { amber: "var(--warning)", red: "var(--danger)", blue: "var(--brand)", purple: "var(--accent-500)", green: "var(--success)" };
@@ -104,7 +178,8 @@ function NotifButton() {
       <button class="tiny" style="color:var(--brand);font-weight:600" onClick=${(e) => { e.stopPropagation(); setItems(items.map((n) => ({ ...n, unread: false }))); }}>Mark all read</button>
     </div>
     <div style="max-height:400px;overflow-y:auto;margin:0 -6px">
-      ${items.map((n) => html`<div key=${n.id} class=${cx("notif", n.unread && "notif--unread")}>
+      ${items.map((n) => html`<div key=${n.id} class=${cx("notif", n.unread && "notif--unread", n.path && "clickable")}
+        onClick=${n.path ? () => navigate(n.path) : null}>
         <div class="notif__ico" style=${`background:${toneBg[n.tone]};color:${toneFg[n.tone]}`}><${Icon} name=${n.icon} size=16 /></div>
         <div style="flex:1"><div class="notif__text">${n.title}</div><div class="notif__time">${fmt.rel(n.time)}</div></div>
       </div>`)}
@@ -122,17 +197,35 @@ function CommandPalette({ onClose }) {
   const ql = q.toLowerCase();
   const navResults = NAV_FLAT.filter((i) => i.label.toLowerCase().includes(ql)).map((i) => ({ group: "Navigate", label: i.label, icon: i.icon, path: i.path }));
   const actions = [
-    { group: "Actions", label: "New Legal Request", icon: "plus", path: "/requests" },
+    { group: "Actions", label: "New Legal Request", icon: "plus", path: "/workspace" },
+    { group: "Actions", label: "Add or scan a document", icon: "scan", path: "/repository" },
+    { group: "Actions", label: "Open the Contract Tracker", icon: "grid", path: "/tracker" },
+    { group: "Actions", label: "Show delayed work", icon: "alertTriangle", path: "/workspace" },
+    { group: "Actions", label: "Active PPAs and land values", icon: "building", path: "/analyzer" },
+    { group: "Actions", label: "My pipeline / team load", icon: "columns", path: "/pipelines" },
+    { group: "Actions", label: "Lifecycle reminders", icon: "bell", path: "/pipelines" },
+    { group: "Actions", label: "Requester portal preview", icon: "user", path: "/portal" },
     { group: "Actions", label: "Upload contract for AI review", icon: "scan", path: "/reviews" },
     { group: "Actions", label: "Generate NDA from template", icon: "sparkles", path: "/templates" },
     { group: "Actions", label: "Ask AI Copilot", icon: "robot", path: "/copilot" },
   ].filter((a) => a.label.toLowerCase().includes(ql));
+  // Search live store collections so records created in-session are findable.
   const companies = getCollection("companies") || COMPANIES;
+  const liveContracts = getCollection("contracts") || CONTRACTS;
+  const liveMatters = getCollection("matters") || MATTERS;
+  const liveRequests = getCollection("requests") || [];
+  const liveDocs = getCollection("repository") || [];
   const entities = [
-    ...CONTRACTS.slice(0, 6).map((c) => ({ group: "Contracts", label: `${c.id} · ${c.title}`, icon: "file", path: "/contracts/" + c.id })),
-    ...MATTERS.slice(0, 6).map((m) => ({ group: "Matters", label: `${m.id} · ${m.title}`, icon: "folder", path: "/matters/" + m.id })),
-    ...companies.map((c) => ({ group: "Companies", label: c.name, icon: "building", path: "/companies/" + c.id })),
-  ].filter((e) => e.label.toLowerCase().includes(ql));
+    // Every record routes to its Flow view — the spine is the destination.
+    ...liveRequests.map((r) => ({ group: "Requests & matters", label: `${r.id} · ${r.title}`, icon: "inbox", path: "/workspace/" + r.id })),
+    ...liveMatters.map((m) => ({ group: "Requests & matters", label: `${m.id} · ${m.title}`, icon: "folder", path: "/matters/" + m.id })),
+    ...liveContracts.map((c) => ({ group: "Contracts", label: `${c.id} · ${c.title}`, icon: "file", path: "/contracts/" + c.id })),
+    ...liveContracts.filter((c) => c.srNo).map((c) => ({ group: "Contracts", label: `Sr No ${c.srNo} · ${c.physicalRecordRef} · ${c.officeLocation}`, icon: "database", path: "/contracts/" + c.id })),
+    ...liveDocs.map((d) => ({ group: "Documents", label: `${d.id} · ${d.name}`, icon: "scan", path: "/repository/" + d.id })),
+    ...CONTRACT_TYPE_CODES.map((t) => ({ group: "Contract types", label: t, icon: "file", path: "/workspace" })),
+    ...LEGAL_SUBDIVISIONS.map((s) => ({ group: "Legal sub-divisions", label: s, icon: "scale", path: "/workspace" })),
+    ...companies.map((c) => ({ group: "Companies & entities", label: `${c.name} · ${c.jur || c.jurisdiction}`, icon: "building", path: "/companies/" + c.id })),
+  ].filter((e) => e.label.toLowerCase().includes(ql)).slice(0, 40);
 
   const results = [...actions, ...navResults, ...(ql ? entities : [])];
   const groups = [...new Set(results.map((r) => r.group))];
@@ -193,6 +286,7 @@ function Topbar({ path, onSearch, onToggleTheme, theme }) {
       <span>Search matters, contracts, clauses…</span>
       <kbd>⌘K</kbd>
     </button>
+    <${TourButton} />
     <button class="iconbtn" title="Toggle theme" onClick=${onToggleTheme}><${Icon} name=${theme === "dark" ? "sun" : "moon"} size=18 /></button>
     <${NotifButton} />
     <div style="width:1px;height:24px;background:var(--border);margin:0 2px"></div>
@@ -288,5 +382,6 @@ export function Shell({ path, children }) {
     </div>
     ${palette && html`<${CommandPalette} onClose=${() => setPalette(false)} />`}
     <${CopilotDock} open=${copilot} onClose=${(v) => setCopilot(v === true)} />
+    <${TourOverlay} />
   </div>`;
 }

@@ -3,10 +3,12 @@ import { html, cx, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Avatar, Risk, Priority, Pill, Status, Segmented, Modal, Field, Input, Drawer, AICard } from "../ui.js";
 import { PageHead, Toolbar, DataTable } from "../parts.js";
-import { REQUEST_TYPES, BUSINESS_UNITS, WORK_CATEGORIES, inferCategory, nameOf } from "../data.js";
+import { REQUEST_TYPES, BUSINESS_UNITS, WORK_CATEGORIES, inferCategory, nameOf, entityName } from "../data.js";
 import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow } from "../store.js";
 import { navigate } from "../router.js";
-import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories } from "../shared.js";
+import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories, TatCell, SubdivisionPill } from "../shared.js";
+import { rowTat } from "../flow.js";
+import { tatAnalysis } from "../tat.js";
 
 const COLUMNS = [
   { key: "New", color: "#1d6cb0" },
@@ -31,7 +33,9 @@ const URGENCY_RISK = { Standard: "low", High: "medium", Urgent: "high" };
 const URGENCY_PRIO = { Standard: "Medium", High: "High", Urgent: "Urgent" };
 
 function RequestCard({ r, onOpen, onDragStart }) {
+  const t = r.__tat;
   return html`<div class="kcard" draggable=${true}
+    style=${t && t.status === "Delayed" ? "border-color:color-mix(in srgb, var(--danger) 40%, transparent)" : ""}
     onDragStart=${(e) => onDragStart(e, r.id)} onClick=${() => onOpen(r)}>
     <div class="kcard__top">
       <span class="kcard__id">${r.id}</span>
@@ -44,6 +48,11 @@ function RequestCard({ r, onOpen, onDragStart }) {
       <${Risk} level=${r.risk} />
       <${CategoryPill} item=${r} />
     </div>
+    <!-- the fixed TAT verdict travels with the card, not just the list -->
+    ${t && html`<div class="row" style="gap:6px;margin-top:9px">
+      <${TatCell} tat=${t} compact=${true} />
+      ${t.status === "Delayed" && t.blockingStage && html`<span class="tiny" style="color:var(--danger);font-weight:600">${t.blockingStage}</span>`}
+    </div>`}
     ${r.aiSummary && html`<div class="row" style="gap:6px;margin-top:10px;padding:8px 9px;background:var(--accent-soft);border-radius:8px">
       <${Icon} name="sparkles" size=13 style=${{ color: "var(--accent-500)", flex: "none", marginTop: "2px" }} />
       <span class="tiny" style="color:var(--text-2);line-height:1.4">${r.aiSummary.length > 90 ? r.aiSummary.slice(0, 90) + "…" : r.aiSummary}</span>
@@ -122,6 +131,9 @@ function IntakeModal({ onClose, onCreate }) {
 
 export default function Requests() {
   const items = useCollection("requests");
+  const matters = useCollection("matters");
+  const contracts = useCollection("contracts");
+  const repository = useCollection("repository");
   const [view, setView] = useState("board");
   const [q, setQ] = useState("");
   const [bu, setBu] = useState("all");
@@ -133,7 +145,12 @@ export default function Requests() {
   const toggleCat = (c) => setCats((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
 
   const filtered = items.filter((r) => (!q || (r.title + r.counterparty + r.type).toLowerCase().includes(q.toLowerCase())) && (bu === "all" || r.bu === bu) && matchCategories(r, cats));
+  // TAT is computed once per row and reused by the board cards and the list.
+  const ctx = { requests: items, matters, contracts, repository };
+  const withTat = filtered.map((r) => ({ ...r, __tat: rowTat(r, ctx) }));
   const onDrop = (status) => { if (drag) { updateItem("requests", drag, { status }); setDrag(null); } };
+  // Conversion keeps ONE identity: the matter carries the request id back, and
+  // the request records which matter it was filed as (Workstream A).
   const convert = (r) => {
     const id = nextId("matters", "MAT-");
     addItem("matters", {
@@ -141,10 +158,14 @@ export default function Requests() {
       priority: (r.priority || "medium").toLowerCase(), risk: r.risk, bu: r.bu,
       category: r.category, companyTags: [...(r.companyTags || [])],
       owner: r.owner, opened: nowIso(), due: daysFromNow(10), tasks: 0, docs: 0, comments: 0, progress: 5,
+      // carry the unified-record fields across
+      requestId: r.id, requestType: r.requestType, contractType: r.contractType,
+      entityId: r.entityId, subdivision: r.subdivision, unit: r.unit || r.bu,
+      department: r.department || r.dept, stage: r.stage,
     });
-    updateItem("requests", r.id, { status: "Triage" });
+    updateItem("requests", r.id, { status: "Triage", matterId: id });
     setOpen(null);
-    navigate("/matters/" + id);
+    navigate("/workspace/" + r.id);
   };
   const chips = [{ label: "All units", value: "all" }, ...BUSINESS_UNITS.map((b) => ({ label: b, value: b }))];
 
@@ -158,7 +179,7 @@ export default function Requests() {
 
     ${view === "board" ? html`<div class="kanban">
       ${COLUMNS.map((col) => {
-        const cards = filtered.filter((r) => r.status === col.key);
+        const cards = withTat.filter((r) => r.status === col.key);
         return html`<div key=${col.key} class="kcol"
           onDragOver=${(e) => e.preventDefault()} onDrop=${() => onDrop(col.key)}>
           <div class="kcol__head">
@@ -174,22 +195,29 @@ export default function Requests() {
           </div>
         </div>`;
       })}
-    </div>` : html`<${DataTable} onRow=${setOpen} columns=${[
-      { key: "id", label: "ID", mono: true, width: "90px" },
-      { key: "title", label: "Request", render: (r) => html`<div><div class="cell-strong">${r.title}</div><div class="tiny muted">${r.counterparty}</div></div>` },
-      { key: "type", label: "Type", render: (r) => html`<${Pill} tone="gray">${r.type}</${Pill}>` },
-      { key: "category", label: "Category", render: (r) => html`<${CategoryPill} item=${r} />` },
-      { key: "bu", label: "Business Unit" },
-      { key: "priority", label: "Priority", render: (r) => html`<${Priority} level=${r.priority} />` },
-      { key: "risk", label: "Risk", render: (r) => html`<${Risk} level=${r.risk} />` },
-      { key: "status", label: "Status", render: (r) => html`<${Status} value=${r.status} />` },
-      { key: "owner", label: "Owner", render: (r) => html`<${Avatar} name=${nameOf(r.owner)} size="sm" />` },
-      { key: "due", label: "Due", render: (r) => html`<span class=${cx("tiny", new Date(r.due) < Date.now() && "risk--critical")} style="font-weight:600">${fmt.until(r.due)}</span>` },
-    ]} rows=${filtered} />`}
+    </div>` : html`<div class="dense"><${DataTable} onRow=${(r) => navigate("/workspace/" + r.id)} columns=${[
+      // The GC's exact row: Request Date · Filed Matter · Requestee · Category ·
+      // Company/Entity · Due Date · TAT Analysis · TAT Status.
+      { key: "requestDate", label: "Request Date", width: "102px", render: (r) => html`<span class="tiny strong">${fmt.dateShort(r.requestDate || r.created)}</span>` },
+      { key: "id", label: "ID", mono: true, width: "92px" },
+      { key: "matterId", label: "Filed Matter", width: "96px", render: (r) => r.matterId
+        ? html`<button class="facechip" onClick=${(e) => { e.stopPropagation(); navigate("/matters/" + r.matterId); }}>${r.matterId}</button>`
+        : html`<span class="tiny muted">not filed</span>` },
+      { key: "title", label: "Request", render: (r) => html`<div class="wrapcell"><div class="cell-strong">${r.title}</div><div class="tiny muted">${r.requestType}${r.contractType ? " · " + r.contractType : ""} · ${r.counterparty}</div></div>` },
+      { key: "requester", label: "Requestee", width: "124px", render: (r) => { const q = r.requesterId || r.requester; return html`<div class="row" style="gap:7px"><${Avatar} name=${nameOf(q)} size="sm" /><div style="min-width:0"><div class="tiny strong">${nameOf(q).split(" ")[0]}</div><div class="tiny muted">${r.department || r.dept}</div></div></div>`; } },
+      { key: "category", label: "Category", render: (r) => html`<div class="col" style="gap:4px;align-items:flex-start"><${CategoryPill} item=${r} /><${SubdivisionPill} item=${r} /></div>` },
+      { key: "entityId", label: "Company / Entity", width: "142px", render: (r) => html`<button class="tagchip" onClick=${(e) => { e.stopPropagation(); navigate("/companies/" + r.entityId); }}><${Icon} name="building" size=11 />${entityName(r.entityId)}</button>` },
+      { key: "due", label: "Due Date", width: "94px", render: (r) => { const d = r.dueDate || r.due; const late = new Date(d) < Date.now(); return html`<div><div class=${cx("tiny strong", late && "risk--critical")}>${fmt.dateShort(d)}</div><div class="tiny muted">${fmt.until(d)}</div></div>`; } },
+      { key: "tatAnalysis", label: "TAT Analysis", width: "140px", render: (r) => html`<div><div class="tiny strong">${r.__tat.days}d allowed</div><div class="tiny muted">${tatAnalysis(r.__tat)}</div></div>` },
+      { key: "tatStatus", label: "TAT Status", width: "168px", render: (r) => html`<${TatCell} tat=${r.__tat} />` },
+    ]} rows=${withTat} /></div>`}
 
     ${modal && html`<${IntakeModal} onClose=${() => setModal(false)} onCreate=${(item) => addItem("requests", item)} />`}
     ${open && html`<${Drawer} title=${open.id} onClose=${() => setOpen(null)}
-      footer=${html`<${Btn} variant="ghost">Reassign</${Btn}><${Btn} variant="primary" icon="arrowRight" onClick=${() => convert(open)}>Convert to matter</${Btn}>`}>
+      footer=${html`<${Btn} variant="ghost" icon="workflow" onClick=${() => navigate("/workspace/" + open.id)}>Open flow</${Btn}>
+        ${open.matterId
+          ? html`<${Btn} variant="primary" icon="folder" onClick=${() => navigate("/matters/" + open.matterId)}>Open matter ${open.matterId}</${Btn}>`
+          : html`<${Btn} variant="primary" icon="arrowRight" onClick=${() => convert(open)}>Convert to matter</${Btn}>`}`}>
       <div class="col" style="gap:18px;padding:20px">
         <div>
           <div class="row wrap" style="gap:8px;margin-bottom:8px"><${Pill} tone="blue">${open.type}</${Pill}><${Status} value=${open.status} /><${Risk} level=${open.risk} /><${CategoryPill} item=${open} /></div>
