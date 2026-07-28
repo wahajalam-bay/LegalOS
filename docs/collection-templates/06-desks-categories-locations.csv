@@ -1,0 +1,50 @@
+﻿List,Current value,KEEP / RENAME / DELETE,Corrected value,Notes
+Legal desk / sub-division,Commercial,,,
+Legal desk / sub-division,Litigation & Disputes,,,
+Legal desk / sub-division,Compliance & Regulatory,,,
+Legal desk / sub-division,IP,,,
+Legal desk / sub-division,Labour/Employment,,,
+Legal desk / sub-division,Corporate & Governance,,,
+Legal desk / sub-division,Real Estate & Conveyancing,,,
+Legal desk / sub-division,Data Privacy,,,
+Work category (reporting taxonomy),Litigation & Dispute,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Commercial Contracts,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Admin Contracts,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Compliance,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Intellectual Property,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Labour Matters,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Corporate & Governance,,,"do you need this AND the desks, or can we collapse to one?"
+Work category (reporting taxonomy),Real Estate & Leasing,,,"do you need this AND the desks, or can we collapse to one?"
+Physical record location,Riyadh HQ — Legal Vault L3,,,the actual cabinet / vault / almirah
+Physical record location,Riyadh HQ — Cabinet A2,,,the actual cabinet / vault / almirah
+Physical record location,Jeddah Branch — Records Room,,,the actual cabinet / vault / almirah
+Physical record location,Dammam Office — Cabinet B1,,,the actual cabinet / vault / almirah
+Physical record location,Dubai Office — Legal Cabinet A,,,the actual cabinet / vault / almirah
+Physical record location,Lahore HQ — Legal Almirah 2,,,the actual cabinet / vault / almirah
+Physical record location,Karachi Office — Records Room,,,the actual cabinet / vault / almirah
+Physical record location,Islamabad Office — Cabinet C,,,the actual cabinet / vault / almirah
+Physical record location,Group Holding — Riyadh Safe,,,the actual cabinet / vault / almirah
+Site the business raises from,Zameen.com — Lahore HQ,,,
+Site the business raises from,Zameen.com — Karachi,,,
+Site the business raises from,Zameen.com — Islamabad,,,
+Site the business raises from,OLX — Karachi,,,
+Site the business raises from,Zameen Media — Lahore,,,
+Site the business raises from,Bayut — Riyadh HQ,,,
+Site the business raises from,Bayut — Jeddah,,,
+Site the business raises from,Dubizzle — Dubai,,,
+Site the business raises from,Z Property Developments — Riyadh,,,
+Site the business raises from,Group Holding — Riyadh,,,
+Business unit,Real Estate,,,
+Business unit,Technology,,,
+Business unit,Retail,,,
+Business unit,Logistics,,,
+Business unit,Energy,,,
+Business unit,Financial Services,,,
+Requesting department,Procurement,,,
+Requesting department,Human Resources,,,
+Requesting department,Sales,,,
+Requesting department,Marketing,,,
+Requesting department,Finance,,,
+Requesting department,IT,,,
+Requesting department,Operations,,,
+Requesting department,Legal,,,

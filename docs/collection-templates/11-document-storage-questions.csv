@@ -1,0 +1,11 @@
+﻿#,Question,Answer,Who answers
+1,Where do signed contracts live today? (Google Drive / SharePoint / file server / physical only / mix),,Legal ops + IT
+2,Is there a folder naming convention? Give an example path.,,Legal ops
+3,"Who has access to that store, and at what level?",,IT
+4,Are hard copies scanned? At what quality / DPI?,,Legal ops
+5,"Do physical files already have a numbering system? If yes, describe it.",,Legal ops
+6,Can we have 10 to 20 sample documents across types to test extraction? (redacted is fine),,Legal ops
+7,Which document types matter most to index first?,,GC
+8,Is there a retention or destruction policy we must respect?,,GC / Compliance
+9,Any jurisdiction restriction on where the data may be hosted?,,GC / Compliance
+10,Who should own access control once this is real?,,GC
