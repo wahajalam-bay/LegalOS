@@ -2,3 +2,6 @@
 LegalOS_Requirements_Final Doc..docx
 server.log
 *.bat
+
+# Stale nested duplicate — do not publish
+legalos/
