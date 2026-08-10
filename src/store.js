@@ -4,9 +4,14 @@ import { useState, useEffect } from "./core.js";
 import {
   REQUESTS, MATTERS, CONTRACTS, LICENSES, COMPANIES, TEMPLATES, REPOSITORY,
   REQUESTERS, MESSAGES, FORM_CONFIG, USERS,
-  lifecyclePathFor, inferCategory, inferSubdivision, entityById, byId,
+  lifecyclePathFor, inferCategory, inferSubdivision, entityById, byId, licenseStatus,
 } from "./data.js";
 import { fixTat, addWorkingDays } from "./tat.js";
+// Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
+import { MASTER_DATA_SEED, teamPrefix } from "./org.js";
+import { MODULES, moduleByKey, workflowOf, riskGateMissing } from "./modules.js";
+import { tatV2 } from "./tat2.js";
+import { MOD_REQUESTS, NOTICE_TEMPLATES, COST_BUDGETS } from "./seeds-org.js";
 
 const addWorkingDaysIso = (from, n) => addWorkingDays(from, n).toISOString();
 
@@ -32,6 +37,14 @@ function seed() {
     messages: [...MESSAGES],
     // Object-shaped slice: the admin-editable form configuration.
     formConfig: JSON.parse(JSON.stringify(FORM_CONFIG)),
+    // Sprint 6 slices — the org architecture
+    modRequests: [...MOD_REQUESTS],
+    noticeTemplates: [...NOTICE_TEMPLATES],
+    costBudgets: [...COST_BUDGETS],
+    notifs: [],
+    // Object-shaped slices: administrable master data + the View As session.
+    masterData: JSON.parse(JSON.stringify(MASTER_DATA_SEED)),
+    session: { viewAsId: "u1" },
   };
 }
 
@@ -598,6 +611,369 @@ export function resetDemo() {
   emit();
   return { ok: true };
 }
+
+/* ============================================================
+   SPRINT 6 — the org architecture API (FRD Sections 2, 3, 9, 12, 13, 14).
+
+   Everything below operates on the `modRequests` slice: one envelope shape
+   for all eleven modules, with team-prefixed ids, timestamped stage logs,
+   structured intra-dept holds, activity trails and cost lines.
+   ============================================================ */
+
+/* ---------------- session (View As) ---------------- */
+export function getSession() { return state.session || { viewAsId: "u1" }; }
+export function setSession(patch) {
+  state = { ...state, session: { ...(state.session || {}), ...patch } };
+  emit();
+}
+export function useSession() {
+  const [, force] = useState(0);
+  useEffect(() => {
+    const l = () => force((n) => n + 1);
+    listeners.add(l);
+    return () => listeners.delete(l);
+  }, []);
+  return state.session || { viewAsId: "u1" };
+}
+
+/* ---------------- master data (Section 2 — administrable) ---------------- */
+export function getMasterData() { return state.masterData || {}; }
+export function useMasterData() {
+  const [, force] = useState(0);
+  useEffect(() => {
+    const l = () => force((n) => n + 1);
+    listeners.add(l);
+    return () => listeners.delete(l);
+  }, []);
+  return state.masterData || {};
+}
+export function updateMasterList(key, items) {
+  state = { ...state, masterData: { ...(state.masterData || {}), [key]: items } };
+  emit();
+}
+export function resetMasterData() {
+  state = { ...state, masterData: JSON.parse(JSON.stringify(MASTER_DATA_SEED)) };
+  emit();
+}
+
+/* ---------------- notifications (Section 12) ---------------- */
+// Deduped by id so sweeps can run every boot without stacking duplicates.
+export function pushNotif(n) {
+  if ((state.notifs || []).some((x) => x.id === n.id)) return false;
+  state = { ...state, notifs: [{ time: nowIso(), unread: true, ...n }, ...(state.notifs || [])].slice(0, 80) };
+  emit();
+  return true;
+}
+export function markNotifsRead() {
+  state = { ...state, notifs: (state.notifs || []).map((n) => ({ ...n, unread: false })) };
+  emit();
+}
+// The bell shows what is addressed to the active identity: direct, their
+// department, or broadcast; the Department Head sees everything.
+export function notifsFor(user) {
+  return (state.notifs || []).filter((n) =>
+    (user && user.rbac === "head") ||
+    (!n.forUserId && !n.forDept) ||
+    (n.forUserId && user && n.forUserId === user.id) ||
+    (n.forDept && user && n.forDept === user.dept));
+}
+
+/* ---------------- id + assignment ---------------- */
+export function nextModId(teamKey) {
+  const prefix = teamPrefix(teamKey) + "-";
+  const nums = (state.modRequests || [])
+    .map((r) => String(r.id))
+    .filter((s) => s.startsWith(prefix))
+    .map((s) => parseInt(s.slice(prefix.length), 10))
+    .filter((n) => !isNaN(n));
+  return prefix + String((nums.length ? Math.max(...nums) : 0) + 1).padStart(4, "0");
+}
+
+// Auto-assignment per team rules (Section 14.2 step 4): the least-loaded
+// member of the receiving team. Deterministic, ties broken by user id.
+export function autoAssign(teamKey) {
+  const members = USERS.filter((u) => u.legalTeam === teamKey && u.rbac === "member");
+  const pool = members.length ? members : USERS.filter((u) => u.legalTeam === teamKey);
+  const load = (uid) => (state.modRequests || []).filter((r) => r.owner === uid && r.status !== "Closed").length;
+  return pool.sort((a, b) => load(a.id) - load(b.id) || (a.id < b.id ? -1 : 1))[0] || null;
+}
+
+/* ---------------- raise (Section 14.2 — the single window) ---------------- */
+export function raiseModuleRequest(payload = {}) {
+  const def = moduleByKey(payload.moduleKey);
+  const errors = [];
+  if (!def) errors.push("moduleKey is required");
+  if (!String(payload.title || "").trim()) errors.push("a short subject is required");
+  if (def) {
+    for (const f of def.fields) {
+      if (f.request && f.required && !((payload.fields || {})[f.key])) errors.push(`${f.label} is required`);
+    }
+  }
+  if (errors.length) return { ok: false, errors };
+
+  const id = nextModId(def.team);
+  const now = nowIso();
+  const by = payload.requestedById || null;
+  const owner = payload.owner || (autoAssign(def.team) || {}).id || null;
+  const path = workflowOf(def, { flow: payload.flow || "main" });
+
+  const record = {
+    id,
+    moduleKey: def.key,
+    flow: payload.flow || "main",
+    title: String(payload.title).trim(),
+    legalTeam: def.team,
+    subType: payload.subType || null,
+    requestingDept: payload.requestingDept || "Operations",
+    requestedBy: payload.requestedBy || null,
+    requestedById: by,
+    entityId: payload.entityId || null,
+    dateRaised: now,
+    owner,
+    stage: path[1] || path[0],           // Raised → auto-assigned on entry
+    priority: payload.priority || "Normal",
+    status: "Open",
+    closedAt: null,
+    driveLink: payload.driveLink || null,
+    attachments: payload.attachments || [],
+    versions: [],
+    stageLog: [
+      { stage: path[0], at: now, by },
+      { stage: path[1] || path[0], at: now, by: null },
+    ],
+    holds: [],
+    activity: [
+      { at: now, by, action: `Request raised${payload.requestedBy ? " by " + payload.requestedBy.name : ""} (${payload.requestingDept || "—"})` },
+      { at: now, by: null, action: `Auto-assigned to ${(byId(owner) || {}).name || "queue"} per ${def.label} team rules` },
+    ],
+    costs: [],
+    hearings: def.hearings ? [] : undefined,
+    fields: payload.fields || {},
+  };
+  addItem("modRequests", record);
+
+  // Section 12 — new request → assigned owner.
+  pushNotif({
+    id: "assign-" + id, forUserId: owner, tone: "blue", icon: "inbox",
+    title: `${id} assigned to you — ${record.title}`, path: "/m/" + def.key + "/" + id,
+  });
+  return { ok: true, id, record };
+}
+
+/* ---------------- stage moves + risk gate ---------------- */
+function stampActivity(rec, entry) {
+  return { ...rec, activity: [...(rec.activity || []), entry] };
+}
+
+export function advanceStage(id, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const def = moduleByKey(rec.moduleKey);
+  const path = workflowOf(def, rec);
+  const idx = path.indexOf(rec.stage);
+  if (idx < 0 || idx >= path.length - 1) return { ok: false, error: "already at the final stage" };
+  if ((rec.holds || []).some((h) => !h.end)) return { ok: false, error: "on intra-dept hold — receive the file back before moving stage" };
+  const next = path[idx + 1];
+  // Section 4.2 — risk assessment must be signed off before submission.
+  const missing = riskGateMissing(def, rec, next);
+  if (missing.length) {
+    const labels = missing.map((k) => (def.fields.find((f) => f.key === k) || { label: k }).label);
+    return { ok: false, error: "Risk Assessment incomplete: " + labels.join(", ") + " required before " + next };
+  }
+  const now = nowIso();
+  const closing = idx + 1 === path.length - 1;
+  let updated = {
+    ...rec,
+    stage: next,
+    stageLog: [...(rec.stageLog || []), { stage: next, at: now, by }],
+    status: closing ? "Closed" : rec.status,
+    closedAt: closing ? now : rec.closedAt,
+  };
+  updated = stampActivity(updated, { at: now, by, action: `Stage moved to ${next}` });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  // Section 12 — stage change / closure → requesting department.
+  pushNotif({
+    id: `stage-${id}-${idx + 1}`, forDept: rec.requestingDept,
+    tone: closing ? "green" : "blue", icon: closing ? "checkcircle" : "workflow",
+    title: `${id} ${closing ? "closed" : "moved to " + next} — ${rec.title}`,
+    path: "/m/" + rec.moduleKey + "/" + id,
+  });
+  return { ok: true, stage: next, closed: closing };
+}
+
+/* ---------------- intra-dept holds (Section 9) ---------------- */
+export function startHold(id, { dept, reason }, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  if ((rec.holds || []).some((h) => !h.end)) return { ok: false, error: "already on hold" };
+  if (!dept || !reason) return { ok: false, error: "department and hold reason are required" };
+  const now = nowIso();
+  const hold = { id: id + "-H" + ((rec.holds || []).length + 1), dept, sender: by, reason, start: now, end: null };
+  let updated = { ...rec, holds: [...(rec.holds || []), hold] };
+  updated = stampActivity(updated, { at: now, by, action: `TAT paused — shared with ${dept} (${reason})` });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true, hold };
+}
+
+export function endHold(id, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const open = (rec.holds || []).find((h) => !h.end);
+  if (!open) return { ok: false, error: "no open hold" };
+  const now = nowIso();
+  let updated = { ...rec, holds: rec.holds.map((h) => (h === open ? { ...h, end: now } : h)) };
+  updated = stampActivity(updated, { at: now, by, action: `TAT resumed — received back from ${open.dept}` });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true };
+}
+
+/* ---------------- field edits, hearings, costs ---------------- */
+export function updateModFields(id, patch, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const def = moduleByKey(rec.moduleKey);
+  const labels = Object.keys(patch).map((k) => ((def.fields || []).find((f) => f.key === k) || { label: k }).label);
+  let updated = { ...rec, fields: { ...(rec.fields || {}), ...patch } };
+  updated = stampActivity(updated, { at: nowIso(), by, action: `Updated ${labels.join(", ")}` });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true };
+}
+
+export function addHearing(id, hearing, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const h = { id: "H" + ((rec.hearings || []).length + 1), ...hearing };
+  let updated = { ...rec, hearings: [...(rec.hearings || []), h] };
+  updated = stampActivity(updated, { at: nowIso(), by, action: `Hearing logged — ${h.type || "hearing"}${h.nextDate ? ", next on " + String(h.nextDate).slice(0, 10) : ""}` });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true, hearing: h };
+}
+
+export function addModCost(id, cost, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const c = { id: id + "-C" + ((rec.costs || []).length + 1), ...cost };
+  let updated = { ...rec, costs: [...(rec.costs || []), c] };
+  updated = stampActivity(updated, { at: nowIso(), by, action: `Cost recorded — ${c.type} ${c.actual != null ? "actual" : "estimated"} ${c.currency} ${(c.actual != null ? c.actual : c.estimated) || 0}`, internal: true });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true, cost: c };
+}
+
+/* ---------------- auto-response for standard notices (Section 8.5.2) ---------------- */
+export function generateAutoResponse(id, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const f = rec.fields || {};
+  const tpl = (state.noticeTemplates || []).find((t) => t.category === f.category);
+  if (!tpl) return { ok: false, error: `no standard template for "${f.category || "this category"}" — draft manually` };
+  const text = tpl.template
+    .replace(/\{\{sender\}\}/g, f.senderName || "Sir/Madam")
+    .replace(/\{\{serialNo\}\}/g, f.serialNo || rec.id)
+    .replace(/\{\{noticeDate\}\}/g, String(f.noticeDate || rec.dateRaised).slice(0, 10))
+    .replace(/\{\{recipient\}\}/g, f.recipient || "the Company");
+  let updated = { ...rec, fields: { ...f, autoResponseDraft: text } };
+  updated = stampActivity(updated, { at: nowIso(), by, action: `Auto-response generated from the ${f.category} template — awaiting review`, internal: true });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true, text };
+}
+
+/* ---------------- sweeps (Sections 5.2, 7.2, 9, 12) ----------------
+   Run once on app boot. Every output is deduped — renewal triggers by a
+   `renewalOf` marker, notifications by deterministic id — so booting twice
+   never doubles anything. */
+export function runOrgSweeps() {
+  const DAYMS = 86400000;
+  const now = Date.now();
+  const daysUntil = (iso) => Math.ceil((new Date(iso) - now) / DAYMS);
+  const created = [];
+
+  // 1. License renewal triggers from the license REGISTER — system-generated
+  //    30 days out, no manual tracking.
+  const openRenewalFor = (licId) => (state.modRequests || []).some(
+    (r) => r.moduleKey === "licenses" && r.status !== "Closed" &&
+      ((r.fields || {}).linkedLicenseId === licId));
+  for (const lic of state.licenses || []) {
+    const s = licenseStatus(lic);
+    if (s.days < 0 || s.days > 30) continue;
+    if (openRenewalFor(lic.id)) continue;
+    const res = raiseModuleRequest({
+      moduleKey: "licenses",
+      title: `${lic.name} renewal — ${lic.entity}`,
+      subType: lic.type,
+      requestingDept: "Operations",
+      requestedBy: { name: "System", designation: "Renewal Trigger", contact: "legalos" },
+      entityId: lic.entityId || null,
+      fields: {
+        licenseName: lic.name, authority: lic.authority,
+        issueDate: lic.issueDate, renewalDue: lic.expiryDate,
+        renewalStatus: "Trigger Raised", linkedLicenseId: lic.id,
+      },
+    });
+    if (res.ok) {
+      created.push(res.id);
+      // Stamp the trigger provenance in the activity log.
+      state = { ...state, modRequests: state.modRequests.map((r) => (r.id === res.id
+        ? stampActivity(r, { at: nowIso(), by: null, action: "Renewal trigger generated automatically 30 days before Renewal Due Date" }) : r)) };
+    }
+  }
+
+  // 2. Renewal reminders at 30 / 15 / 7 days (agreements, licenses, IP).
+  for (const rec of state.modRequests || []) {
+    const def = moduleByKey(rec.moduleKey);
+    if (!def || !def.renewal) continue;
+    const due = (rec.fields || {})[def.renewal.dueField];
+    if (!due || rec.status === "Closed") continue;
+    const days = daysUntil(due);
+    for (const bucket of def.renewal.reminders || []) {
+      if (days <= bucket && days > (bucket === 7 ? -1 : bucket === 15 ? 7 : 15)) {
+        pushNotif({
+          id: `rem-${rec.id}-${bucket}`, forUserId: rec.owner, tone: days <= 7 ? "red" : "amber", icon: "clock",
+          title: `${rec.id} renewal due ${days >= 0 ? "in " + days + "d" : Math.abs(days) + "d ago"} — ${rec.title}`,
+          path: "/m/" + rec.moduleKey + "/" + rec.id,
+        });
+        break;
+      }
+    }
+  }
+
+  // 3. SLA breach → team lead (Section 12).
+  const leads = Object.fromEntries(USERS.filter((u) => u.rbac === "lead" && u.legalTeam).map((u) => [u.legalTeam, u.id]));
+  for (const rec of state.modRequests || []) {
+    if (rec.status === "Closed") continue;
+    const t = tatV2(moduleByKey(rec.moduleKey), rec);
+    if (t.status === "Overdue") {
+      pushNotif({
+        id: `sla-${rec.id}`, forUserId: leads[rec.legalTeam] || null, tone: "red", icon: "alertTriangle",
+        title: `SLA breach on ${rec.id} — ${rec.title} (${t.reported}d net of holds)`,
+        path: "/m/" + rec.moduleKey + "/" + rec.id,
+      });
+    }
+  }
+
+  // 4. Resolutions past sign-off but not yet on the tracker (Section 12).
+  for (const rec of state.modRequests || []) {
+    if (rec.moduleKey !== "resolutions" || rec.status === "Closed") continue;
+    if (!/Finalize|Upload/.test(rec.stage) || (rec.fields || {}).uploadedToTracker) continue;
+    pushNotif({
+      id: `res-upload-${rec.id}`, forUserId: rec.owner, tone: "amber", icon: "upload",
+      title: `${rec.id} finalized — confirm the Resolutions Tracker upload`,
+      path: "/m/resolutions/" + rec.id,
+    });
+  }
+
+  return { ok: true, renewalsCreated: created };
+}
+
+/* ---------------- reads ---------------- */
+export const modRequestById = (id) => (state.modRequests || []).find((r) => r.id === id) || null;
+export const modRequestsFor = (moduleKey) => (state.modRequests || []).filter((r) => r.moduleKey === moduleKey);
 
 // Last-used filter set per module, persisted alongside the saved views.
 const LAST_KEY = "legalos-filters-v1";

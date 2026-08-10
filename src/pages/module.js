@@ -1,0 +1,683 @@
+// The generic module surface — one page renders any of the twelve org-architecture
+// modules from the registry spec (src/modules.js): register + detail, workflow
+// rail with stage SLAs, intra-dept holds, hearing logs, auto-responses, the
+// risk gate, cost lines and the activity trail. Row-level visibility (Section 14)
+// is enforced at the top of both views.
+import { html, cx, fmt, useState, useMemo, Fragment } from "../core.js";
+import { Icon } from "../icons.js";
+import { Btn, Pill, Field, Input, Textarea, Modal, Empty, Avatar, Toggle } from "../ui.js";
+import { navigate } from "../router.js";
+import { USERS, byId, entityName, COMPANIES } from "../data.js";
+import { teamShort, teamTone, masterList } from "../org.js";
+import { moduleByKey, subTypesOf, fieldOptions, workflowOf, slaFor, riskGateMissing } from "../modules.js";
+import { tatV2, tatV2Label, urgencyOf } from "../tat2.js";
+import {
+  useCollection, useMasterData, modRequestById, personName,
+  advanceStage, startHold, endHold, updateModFields, addHearing, addModCost,
+  generateAutoResponse,
+} from "../store.js";
+import { useActiveUser, visibilityOf, canBrowseModule, stripInternal } from "../rbac.js";
+import { RankBars } from "../execviz.js";
+
+const TAT_TONES = { Running: "green", Paused: "blue", Overdue: "red", Closed: "gray" };
+
+export function TatChip({ t }) {
+  if (!t) return null;
+  return html`<span class=${cx("tatchip", "tatchip--" + t.status.toLowerCase())}>
+    <span class="tatchip__dot"></span>${tatV2Label(t)}
+  </span>`;
+}
+
+/* ---------------- field rendering ---------------- */
+function fieldValue(f, rec) {
+  const v = (rec.fields || {})[f.key];
+  if (v == null || v === "") return "—";
+  if (f.type === "entity") return entityName(v) || v;
+  if (f.type === "user") return personName(v);
+  if (f.type === "date") return fmt.date(v);
+  if (f.type === "toggle") return v ? "Yes" : "No";
+  if (f.type === "money") return fmt.moneyFull(v, (rec.fields || {}).currency === "USD" ? "USD" : (rec.fields || {}).currency === "SAR" ? "SAR" : "PKR");
+  return String(v);
+}
+
+function FieldInput({ f, value, onChange, md, rec }) {
+  if (f.type === "select") {
+    const opts = fieldOptions(f, md, rec);
+    return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
+      <option value="">—</option>
+      ${opts.map((o) => html`<option key=${o} value=${o}>${o}</option>`)}
+    </select>`;
+  }
+  if (f.type === "entity") {
+    return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
+      <option value="">—</option>
+      ${COMPANIES.map((c) => html`<option key=${c.id} value=${c.id}>${c.name} (${c.type})</option>`)}
+    </select>`;
+  }
+  if (f.type === "user") {
+    return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
+      <option value="">—</option>
+      ${USERS.filter((u) => u.dept === "Legal").map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
+    </select>`;
+  }
+  if (f.type === "toggle") return html`<${Toggle} on=${!!value} onChange=${(v) => onChange(v)} />`;
+  if (f.type === "textarea") return html`<${Textarea} rows=3 value=${value || ""} onInput=${(e) => onChange(e.target.value)} />`;
+  if (f.type === "date") return html`<${Input} type="date" value=${value ? String(value).slice(0, 10) : ""} onInput=${(e) => onChange(e.target.value)} />`;
+  if (f.type === "number" || f.type === "money") return html`<${Input} type="number" value=${value == null ? "" : value} onInput=${(e) => onChange(e.target.value === "" ? null : Number(e.target.value))} />`;
+  return html`<${Input} value=${value || ""} onInput=${(e) => onChange(e.target.value)} />`;
+}
+
+/* ---------------- column cells ---------------- */
+function cellFor(col, rec, def) {
+  const f = rec.fields || {};
+  if (col === "subType") return rec.subType || "—";
+  if (col === "entityId") return rec.entityId ? entityName(rec.entityId) : "—";
+  if (col === "counterpartyId") return f.counterpartyId ? entityName(f.counterpartyId) : "—";
+  if (col === "templateType") return f.templateType ? f.templateType.replace(" Template", "") : "—";
+  if (col === "requestingDept") return rec.requestingDept || "—";
+  if (col === "owner") return html`<span class="row" style="gap:7px"><${Avatar} name=${personName(rec.owner)} size="xs" />${personName(rec.owner)}</span>`;
+  if (col === "stage") return html`<${Pill} tone=${rec.status === "Closed" ? "gray" : "blue"}>${rec.stage}</${Pill}>`;
+  if (col === "tat") return html`<${TatChip} t=${tatV2(def, rec)} />`;
+  if (col === "title") return rec.title;
+  if (col === "urgencyCol") return f.urgency ? html`<${Pill} tone=${f.urgency === "Urgent" ? "red" : "gray"}>${f.urgency}</${Pill}>` : "—";
+  if (col === "authorityCol") return f.authority || "—";
+  if (col === "renewalDueCol") return f.renewalDue ? fmt.until(f.renewalDue) : "—";
+  if (col === "nextHearingCol") {
+    const next = nextHearing(rec);
+    return next ? fmt.until(next) : "—";
+  }
+  if (col === "recoveredCol") return f.totalRecovered != null ? fmt.moneyFull(f.totalRecovered, "PKR") : "—";
+  if (col === "costYoYCol") {
+    if (f.costCurrentYear == null) return "—";
+    const arrow = f.costReduced ? "↓" : (f.costForthcomingYear > f.costCurrentYear ? "↑" : "→");
+    return `${fmt.money(f.costCurrentYear, "PKR")} ${arrow} ${fmt.money(f.costForthcomingYear || f.costCurrentYear, "PKR")}`;
+  }
+  if (col.startsWith("fields.")) {
+    const key = col.slice(7);
+    const fd = (def.fields || []).find((x) => x.key === key);
+    return fd ? fieldValue(fd, rec) : (f[key] == null ? "—" : String(f[key]));
+  }
+  return "—";
+}
+function headFor(col, def) {
+  const map = {
+    subType: def.subTypeLabel || "Type", entityId: "Entity", counterpartyId: "Counterparty",
+    templateType: "Template", requestingDept: "Requesting Dept", owner: "Owner", stage: "Stage",
+    tat: "TAT", title: "Matter", urgencyCol: "Urgency", authorityCol: "Authority",
+    renewalDueCol: "Renewal Due", nextHearingCol: "Next Hearing", recoveredCol: "Recovered",
+    costYoYCol: "Cost YoY",
+  };
+  if (map[col]) return map[col];
+  if (col.startsWith("fields.")) {
+    const fd = (def.fields || []).find((x) => x.key === col.slice(7));
+    return fd ? fd.label.replace(/ \(PKR\)/, "") : col.slice(7);
+  }
+  return col;
+}
+function nextHearing(rec) {
+  const dates = (rec.hearings || []).map((h) => h.nextDate).filter(Boolean).sort();
+  const future = dates.filter((x) => new Date(x) >= new Date(Date.now() - 86400000));
+  return future[0] || dates[dates.length - 1] || null;
+}
+
+/* ---------------- access panel ---------------- */
+function AccessDenied({ def, viewer }) {
+  return html`<div class="page">
+    <div class="access-card">
+      <div class="access-card__ico"><${Icon} name="lock" size=22 /></div>
+      <h3>${def ? def.label : "This module"} is ${def ? teamShort(def.team) : "another team"}'s queue</h3>
+      <p>You are viewing as <b>${viewer.name}</b> (${viewer.role}). Row-level security keeps each Legal
+      team's queue private: you can always <b>raise</b> a request to this team, and you can track your
+      own requests under My Requests — but browsing another team's data needs that team's membership.</p>
+      <div class="row" style="gap:8px;justify-content:center">
+        <${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise" + (def ? "/" + def.key : ""))}>Raise a request to this team</${Btn}>
+        <${Btn} icon="user" onClick=${() => navigate("/raise")}>My requests</${Btn}>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   REGISTER
+   ============================================================ */
+function ResolutionsReport({ rows }) {
+  // Section 6.4 — resolutions by requesting department, filterable by urgency.
+  const [urgency, setUrgency] = useState("All");
+  const [days, setDays] = useState(90);
+  const cutoff = Date.now() - days * 86400000;
+  const inWindow = rows.filter((r) => new Date(r.dateRaised) >= cutoff)
+    .filter((r) => urgency === "All" || (r.fields || {}).urgency === urgency);
+  const byDept = {};
+  inWindow.forEach((r) => { byDept[r.requestingDept] = (byDept[r.requestingDept] || 0) + 1; });
+  const entries = Object.entries(byDept).sort((a, b) => b[1] - a[1]).map(([label, value]) => ({ label, value }));
+  return html`<div class="card modreport">
+    <div class="row" style="gap:10px;flex-wrap:wrap">
+      <div>
+        <div class="strong" style="font-size:13.5px">Resolutions by requesting department</div>
+        <div class="tiny muted">Who generates the volume — last ${days} days${urgency !== "All" ? ", " + urgency.toLowerCase() + " only" : ""}.</div>
+      </div>
+      <span class="spacer"></span>
+      <select class="input input--sm" value=${urgency} onChange=${(e) => setUrgency(e.target.value)}>
+        ${["All", "Urgent", "Normal"].map((o) => html`<option key=${o}>${o}</option>`)}
+      </select>
+      <select class="input input--sm" value=${days} onChange=${(e) => setDays(Number(e.target.value))}>
+        <option value=30>30 days</option><option value=90>90 days</option><option value=365>12 months</option>
+      </select>
+    </div>
+    ${entries.length
+      ? html`<${RankBars} data=${entries} format=${(v) => v + (v === 1 ? " request" : " requests")} />`
+      : html`<div class="tiny muted" style="padding:14px 0">No resolutions in this window.</div>`}
+  </div>`;
+}
+
+function Register({ def, rows, md, viewer }) {
+  const [q, setQ] = useState("");
+  const [sub, setSub] = useState("");
+  const [stage, setStage] = useState("");
+  const [tstat, setTstat] = useState("");
+  const [dept, setDept] = useState("");
+
+  const enriched = useMemo(() => rows.map((r) => ({ r, t: tatV2(def, r) })), [rows]);
+  const stages = [...new Set([...def.workflow, ...(def.renewalWorkflow || [])])];
+
+  const filtered = enriched.filter(({ r, t }) => {
+    if (q && !(r.title + " " + r.id + " " + JSON.stringify(r.fields || {})).toLowerCase().includes(q.toLowerCase())) return false;
+    if (sub && r.subType !== sub) return false;
+    if (stage && r.stage !== stage) return false;
+    if (tstat && t.status !== tstat) return false;
+    if (dept && r.requestingDept !== dept) return false;
+    return true;
+  }).sort((a, b) => urgencyOf(b.t) - urgencyOf(a.t));
+
+  const open = enriched.filter((x) => x.t.status !== "Closed");
+  const kpis = [
+    { label: "Open", n: open.length, tone: "blue" },
+    { label: "Overdue", n: open.filter((x) => x.t.status === "Overdue").length, tone: "red" },
+    { label: "Paused with a dept", n: open.filter((x) => x.t.status === "Paused").length, tone: "amber" },
+    { label: "Closed", n: enriched.length - open.length, tone: "gray" },
+  ];
+
+  return html`<div class="page">
+    <div class="page__head">
+      <div>
+        <div class="row" style="gap:8px">
+          <h2 class="page__title">${def.label}</h2>
+          <${Pill} tone=${teamTone(def.team)}>${teamShort(def.team)}</${Pill}>
+        </div>
+        <div class="page__sub">${def.tatNote || def.cadenceNote || `${def.workflow.length}-stage workflow · TAT net of intra-dept holds`}</div>
+      </div>
+      <${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise/" + def.key)}>New ${def.noun}</${Btn}>
+    </div>
+
+    <div class="modkpis">
+      ${kpis.map((k) => html`<div key=${k.label} class=${"modkpi modkpi--" + k.tone}>
+        <div class="modkpi__n">${k.n}</div><div class="modkpi__l">${k.label}</div>
+      </div>`)}
+    </div>
+
+    ${def.report === "byDepartment" && html`<${ResolutionsReport} rows=${rows} />`}
+
+    <div class="card" style="padding:0">
+      <div class="modtoolbar">
+        <div class="modtoolbar__search">
+          <${Icon} name="search" size=15 />
+          <input placeholder="Search ${def.label.toLowerCase()}…" value=${q} onInput=${(e) => setQ(e.target.value)} />
+        </div>
+        <select class="input input--sm" value=${sub} onChange=${(e) => setSub(e.target.value)}>
+          <option value="">${def.subTypeLabel}: all</option>
+          ${subTypesOf(def, md).map((s) => html`<option key=${s}>${s}</option>`)}
+        </select>
+        <select class="input input--sm" value=${stage} onChange=${(e) => setStage(e.target.value)}>
+          <option value="">Stage: all</option>
+          ${stages.map((s) => html`<option key=${s}>${s}</option>`)}
+        </select>
+        <select class="input input--sm" value=${tstat} onChange=${(e) => setTstat(e.target.value)}>
+          <option value="">TAT: all</option>
+          ${["Running", "Paused", "Overdue", "Closed"].map((s) => html`<option key=${s}>${s}</option>`)}
+        </select>
+        <select class="input input--sm" value=${dept} onChange=${(e) => setDept(e.target.value)}>
+          <option value="">Dept: all</option>
+          ${masterList(md, "requestingDepartments").map((s) => html`<option key=${s}>${s}</option>`)}
+        </select>
+      </div>
+      <div class="tablewrap">
+        <table class="table">
+          <thead><tr>
+            <th>Ref</th>
+            ${def.columns.map((c) => html`<th key=${c}>${headFor(c, def)}</th>`)}
+          </tr></thead>
+          <tbody>
+            ${filtered.map(({ r }) => html`<tr key=${r.id} class="clickable" onClick=${() => navigate("/m/" + def.key + "/" + r.id)}>
+              <td class="mono tiny">${r.id}</td>
+              ${def.columns.map((c) => html`<td key=${c}>${cellFor(c, r, def)}</td>`)}
+            </tr>`)}
+          </tbody>
+        </table>
+        ${filtered.length === 0 && html`<${Empty} icon="inbox" title="Nothing matches" text="Adjust the filters, or raise the first one." />`}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   DETAIL
+   ============================================================ */
+function WorkflowRail({ def, rec, viewer, statusOnly }) {
+  const path = workflowOf(def, rec);
+  const idx = path.indexOf(rec.stage);
+  const t = tatV2(def, rec);
+  const onHold = !!t.hold;
+  const next = idx >= 0 && idx < path.length - 1 ? path[idx + 1] : null;
+  const gateMissing = next ? riskGateMissing(def, rec, next) : [];
+  const stampFor = (s) => {
+    const hit = (rec.stageLog || []).filter((x) => x.stage === s).pop();
+    return hit ? hit.at : null;
+  };
+  const [err, setErr] = useState("");
+
+  return html`<div class="card">
+    <div class="row" style="gap:8px;margin-bottom:12px">
+      <span class="strong" style="font-size:13.5px">Workflow${rec.flow === "renewal" ? " — renewal path" : ""}</span>
+      <span class="spacer"></span>
+      ${!statusOnly && rec.status !== "Closed" && html`<${Btn} size="sm" variant="primary" icon="arrowRight"
+        onClick=${() => { const r = advanceStage(rec.id, viewer.id); setErr(r.ok ? "" : r.error); }}>
+        ${next ? "Move to " + next : "Close"}
+      </${Btn}>`}
+    </div>
+    ${err && html`<div class="modwarn"><${Icon} name="alertTriangle" size=14 /> ${err}</div>`}
+    ${!err && !statusOnly && gateMissing.length > 0 && html`<div class="modwarn modwarn--soft">
+      <${Icon} name="shield" size=14 /> Risk Assessment gate: ${gateMissing.length} field${gateMissing.length > 1 ? "s" : ""} required before ${next}.
+    </div>`}
+    ${onHold && html`<div class="modhold-banner">
+      <${Icon} name="clock" size=14 />
+      TAT paused — with <b>${t.hold.dept}</b> (${t.hold.reason}) since ${fmt.dateShort(t.hold.start)}. The clock resumes when the file is received back.
+      ${!statusOnly && html`<${Btn} size="sm" onClick=${() => endHold(rec.id, viewer.id)}>Receive back</${Btn}>`}
+    </div>`}
+    <div class="modrail">
+      ${path.map((s, i) => {
+        const at = stampFor(s);
+        const sla = slaFor(def, rec, s);
+        return html`<div key=${s} class=${cx("modrail__step", i < idx && "done", i === idx && (rec.status === "Closed" ? "done" : "current"))}>
+          <div class="modrail__dot">${i < idx || rec.status === "Closed" ? html`<${Icon} name="check" size=11 />` : i + 1}</div>
+          <div class="modrail__label">${s}</div>
+          <div class="modrail__meta">${at ? fmt.dateShort(at) : sla != null ? `SLA ${sla}d` : ""}</div>
+        </div>`;
+      })}
+    </div>
+  </div>`;
+}
+
+function TatBreakdown({ def, rec }) {
+  const t = tatV2(def, rec);
+  return html`<div class="card">
+    <div class="strong" style="font-size:13.5px;margin-bottom:10px">Turnaround — actual legal working time</div>
+    <div class="tatgrid">
+      <div><div class="tatgrid__n">${t.gross}d</div><div class="tatgrid__l">Gross since assignment</div></div>
+      <div><div class="tatgrid__n" style="color:var(--brand)">− ${t.held}d</div><div class="tatgrid__l">Paused with other depts</div></div>
+      <div><div class="tatgrid__n">${t.reported}d</div><div class="tatgrid__l">Reported TAT</div></div>
+      <div><div class="tatgrid__n">${t.sla != null ? t.sla + "d" : "—"}</div><div class="tatgrid__l">SLA budget</div></div>
+    </div>
+    <div class="row" style="gap:8px;margin-top:10px">
+      <${TatChip} t=${t} />
+      ${t.stageSla != null && html`<span class="tiny muted">Current stage: ${t.stageAge}d of ${t.stageSla}d${t.stageBreached ? " — breached" : ""}</span>`}
+      ${t.nearBreach && html`<${Pill} tone="amber">Near breach</${Pill}>`}
+    </div>
+  </div>`;
+}
+
+function HoldsPanel({ rec, md, viewer, statusOnly }) {
+  const [open, setOpen] = useState(false);
+  const [dept, setDept] = useState("");
+  const [reason, setReason] = useState("");
+  const [err, setErr] = useState("");
+  const holds = rec.holds || [];
+  const active = holds.find((h) => !h.end);
+  return html`<div class="card">
+    <div class="row" style="margin-bottom:8px">
+      <span class="strong" style="font-size:13.5px">Intra-dept holds</span>
+      <span class="spacer"></span>
+      ${!statusOnly && !active && rec.status !== "Closed" && html`<${Btn} size="sm" icon="share" onClick=${() => setOpen(true)}>Share with a department</${Btn}>`}
+    </div>
+    ${holds.length === 0 && html`<div class="tiny muted">Never left legal — the clock has run uninterrupted.</div>`}
+    ${holds.map((h) => html`<div key=${h.id} class=${cx("modholdrow", !h.end && "modholdrow--open")}>
+      <${Icon} name=${h.end ? "checkcircle" : "clock"} size=15 />
+      <div style="flex:1">
+        <div style="font-size:13px"><b>${h.dept}</b> — ${h.reason}</div>
+        <div class="tiny muted">Sent by ${personName(h.sender)} · ${fmt.dateShort(h.start)} ${h.end ? "→ " + fmt.dateShort(h.end) : "→ still out"}</div>
+      </div>
+      ${!h.end && html`<${Pill} tone="blue">Clock paused</${Pill}>`}
+    </div>`)}
+    ${open && html`<${Modal} title="Share with another department" icon="share" onClose=${() => setOpen(false)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setOpen(false)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          const r = startHold(rec.id, { dept, reason }, viewer.id);
+          if (r.ok) { setOpen(false); setDept(""); setReason(""); setErr(""); } else setErr(r.error);
+        }}>Pause TAT & send</${Btn}>
+      </${Fragment}>`}>
+      <p class="tiny muted" style="margin-top:0">The TAT clock pauses while the file sits with them, and the hold is recorded
+      against a structured reason — so a department that consistently causes one kind of delay shows up in the data.</p>
+      <${Field} label="Department">
+        <select class="input" value=${dept} onChange=${(e) => setDept(e.target.value)}>
+          <option value="">Select…</option>
+          ${masterList(md, "requestingDepartments").map((o) => html`<option key=${o}>${o}</option>`)}
+        </select>
+      </${Field}>
+      <${Field} label="Hold reason (standard list)">
+        <select class="input" value=${reason} onChange=${(e) => setReason(e.target.value)}>
+          <option value="">Select…</option>
+          ${masterList(md, "holdReasons").map((o) => html`<option key=${o}>${o}</option>`)}
+        </select>
+      </${Field}>
+      ${err && html`<div class="modwarn">${err}</div>`}
+    </${Modal}>`}
+  </div>`;
+}
+
+function FieldGroups({ def, rec, md, viewer, statusOnly }) {
+  const [editGroup, setEditGroup] = useState(null);
+  const [draft, setDraft] = useState({});
+  const groups = [];
+  const seen = new Set();
+  for (const f of def.fields) {
+    const g = f.group || "Details";
+    if (!seen.has(g)) { seen.add(g); groups.push(g); }
+  }
+  const visible = (f) => {
+    if (statusOnly && f.internal) return false;
+    if (f.showIf && !f.showIf(rec.fields || {}, rec)) return false;
+    return true;
+  };
+  const srcTone = { HR: "purple", Admin: "amber", Legal: "green" };
+
+  return html`<${Fragment}>
+    ${groups.map((g) => {
+      const fs = def.fields.filter((f) => (f.group || "Details") === g).filter(visible);
+      if (!fs.length) return null;
+      return html`<div key=${g} class="card">
+        <div class="row" style="margin-bottom:10px">
+          <span class="strong" style="font-size:13.5px">${g}</span>
+          ${def.fields.some((f) => (f.group || "Details") === g && f.source) &&
+            html`<span class="tiny muted">— source-tagged (Section 8.2)</span>`}
+          <span class="spacer"></span>
+          ${!statusOnly && html`<${Btn} size="sm" icon="edit" onClick=${() => { setEditGroup(g); setDraft({ ...(rec.fields || {}) }); }}>Edit</${Btn}>`}
+        </div>
+        <div class="modfields">
+          ${fs.map((f) => html`<div key=${f.key} class=${cx("modfield", f.type === "textarea" && "modfield--long")}>
+            <div class="modfield__label">
+              ${f.label}
+              ${f.source && html`<${Pill} tone=${srcTone[f.source] || "gray"} className="modfield__src">${f.source}</${Pill}>`}
+              ${f.internal && html`<${Icon} name="lock" size=11 style=${{ opacity: 0.5 }} />`}
+            </div>
+            <div class=${cx("modfield__value", f.type === "textarea" && "modfield__value--long")}>${fieldValue(f, rec)}</div>
+          </div>`)}
+        </div>
+      </div>`;
+    })}
+    ${editGroup && html`<${Modal} title=${"Edit — " + editGroup} icon="edit" width=${640} onClose=${() => setEditGroup(null)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setEditGroup(null)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          const keys = def.fields.filter((f) => (f.group || "Details") === editGroup).map((f) => f.key);
+          const patch = {};
+          keys.forEach((k) => { if (draft[k] !== (rec.fields || {})[k]) patch[k] = draft[k]; });
+          if (Object.keys(patch).length) updateModFields(rec.id, patch, viewer.id);
+          setEditGroup(null);
+        }}>Save</${Btn}>
+      </${Fragment}>`}>
+      <div class="modeditgrid">
+        ${def.fields.filter((f) => (f.group || "Details") === editGroup)
+          .filter((f) => !f.showIf || f.showIf(draft, rec))
+          .map((f) => html`<${Field} key=${f.key} label=${f.label} hint=${f.hint}>
+            <${FieldInput} f=${f} md=${md} rec=${rec} value=${draft[f.key]} onChange=${(v) => setDraft((d) => ({ ...d, [f.key]: v }))} />
+          </${Field}>`)}
+      </div>
+    </${Modal}>`}
+  </${Fragment}>`;
+}
+
+function HearingsPanel({ def, rec, md, viewer, statusOnly }) {
+  const [open, setOpen] = useState(false);
+  const [h, setH] = useState({ date: "", type: "", attendedBy: "", outcome: "", nextDate: "" });
+  const hearings = [...(rec.hearings || [])].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const next = nextHearing(rec);
+  return html`<div class="card">
+    <div class="row" style="margin-bottom:8px">
+      <span class="strong" style="font-size:13.5px">Hearing log</span>
+      ${next && html`<${Pill} tone=${new Date(next) - Date.now() < 5 * 86400000 ? "amber" : "gray"}>Next action ${fmt.until(next)}</${Pill}>`}
+      <span class="spacer"></span>
+      ${!statusOnly && html`<${Btn} size="sm" icon="plus" onClick=${() => setOpen(true)}>Log hearing</${Btn}>`}
+    </div>
+    ${hearings.length === 0 && html`<div class="tiny muted">No hearings logged yet.</div>`}
+    ${hearings.length > 0 && html`<div class="tablewrap"><table class="table table--tight">
+      <thead><tr><th>Date</th><th>Type</th><th>Attended by</th><th>Outcome / order</th><th>Next hearing</th></tr></thead>
+      <tbody>${hearings.map((x) => html`<tr key=${x.id}>
+        <td>${fmt.date(x.date)}</td><td>${x.type}</td><td>${x.attendedBy}</td>
+        <td style="max-width:340px">${x.outcome}</td>
+        <td>${x.nextDate ? fmt.date(x.nextDate) : "—"}</td>
+      </tr>`)}</tbody>
+    </table></div>`}
+    ${open && html`<${Modal} title="Log a hearing" icon="calendar" onClose=${() => setOpen(false)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setOpen(false)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          if (!h.date || !h.type) return;
+          addHearing(rec.id, h, viewer.id);
+          setOpen(false); setH({ date: "", type: "", attendedBy: "", outcome: "", nextDate: "" });
+        }}>Save hearing</${Btn}>
+      </${Fragment}>`}>
+      <div class="modeditgrid">
+        <${Field} label="Hearing date"><${Input} type="date" value=${h.date} onInput=${(e) => setH({ ...h, date: e.target.value })} /></${Field}>
+        <${Field} label="Hearing type">
+          <select class="input" value=${h.type} onChange=${(e) => setH({ ...h, type: e.target.value })}>
+            <option value="">Select…</option>
+            ${masterList(md, "hearingTypes").map((o) => html`<option key=${o}>${o}</option>`)}
+          </select>
+        </${Field}>
+        <${Field} label="Attended by"><${Input} placeholder="Internal / external counsel" value=${h.attendedBy} onInput=${(e) => setH({ ...h, attendedBy: e.target.value })} /></${Field}>
+        <${Field} label="Next hearing date"><${Input} type="date" value=${h.nextDate} onInput=${(e) => setH({ ...h, nextDate: e.target.value })} /></${Field}>
+      </div>
+      <${Field} label="Outcome / order"><${Textarea} rows=2 value=${h.outcome} onInput=${(e) => setH({ ...h, outcome: e.target.value })} /></${Field}>
+    </${Modal}>`}
+  </div>`;
+}
+
+function AutoResponsePanel({ rec, viewer, statusOnly }) {
+  const [msg, setMsg] = useState("");
+  const draft = (rec.fields || {}).autoResponseDraft;
+  if (statusOnly) return null;
+  return html`<div class="card">
+    <div class="row" style="margin-bottom:8px">
+      <span class="strong" style="font-size:13.5px">Standard response</span>
+      <span class="tiny muted">— detects the notice type and drafts the matching reply for review</span>
+      <span class="spacer"></span>
+      <${Btn} size="sm" icon="sparkles" onClick=${() => { const r = generateAutoResponse(rec.id, viewer.id); setMsg(r.ok ? "" : r.error); }}>
+        ${draft ? "Regenerate" : "Generate auto-response"}
+      </${Btn}>
+    </div>
+    ${msg && html`<div class="modwarn">${msg}</div>`}
+    ${draft
+      ? html`<pre class="modresponse">${draft}</pre>`
+      : html`<div class="tiny muted">No draft yet. Citizen-portal, cease-and-desist, defamation and standard legal notices have stored templates.</div>`}
+  </div>`;
+}
+
+function CostsPanel({ rec, md, viewer, statusOnly }) {
+  const [open, setOpen] = useState(false);
+  const [c, setC] = useState({ type: "", estimated: null, actual: null, currency: "PKR", vendorId: "", invoiceNo: "", approvedBy: "", attribution: "Legal operating budget" });
+  if (statusOnly) return null;
+  const costs = rec.costs || [];
+  const sum = (k, cur) => costs.filter((x) => x.currency === cur).reduce((a, x) => a + (x[k] || 0), 0);
+  return html`<div class="card">
+    <div class="row" style="margin-bottom:8px">
+      <span class="strong" style="font-size:13.5px">Cost lines</span>
+      <span class="tiny muted">— Section 13: estimated at raise, actuals at closure or per invoice</span>
+      <span class="spacer"></span>
+      <${Btn} size="sm" icon="plus" onClick=${() => setOpen(true)}>Add cost</${Btn}>
+    </div>
+    ${costs.length === 0 && html`<div class="tiny muted">No costs recorded on this ${"record"}.</div>`}
+    ${costs.length > 0 && html`<div class="tablewrap"><table class="table table--tight">
+      <thead><tr><th>Type</th><th>Estimated</th><th>Actual</th><th>Vendor / payee</th><th>Invoice</th><th>Approved by</th><th>Attribution</th></tr></thead>
+      <tbody>${costs.map((x) => html`<tr key=${x.id}>
+        <td>${x.type}</td>
+        <td>${x.estimated != null ? fmt.moneyFull(x.estimated, x.currency) : "—"}</td>
+        <td>${x.actual != null ? fmt.moneyFull(x.actual, x.currency) : html`<span class="muted tiny">pending</span>`}</td>
+        <td>${x.vendorId ? entityName(x.vendorId) : "—"}</td>
+        <td class="mono tiny">${x.invoiceNo || "—"}</td>
+        <td>${x.approvedBy ? personName(x.approvedBy) : "—"}</td>
+        <td class="tiny">${x.attribution === "Recharged to requesting department" ? "Recharged → " + rec.requestingDept : "Legal budget"}</td>
+      </tr>`)}</tbody>
+    </table></div>
+    <div class="tiny muted" style="margin-top:8px">
+      Totals — PKR est ${fmt.moneyFull(sum("estimated", "PKR"), "PKR")}, actual ${fmt.moneyFull(sum("actual", "PKR"), "PKR")};
+      USD est ${fmt.moneyFull(sum("estimated", "USD"), "USD")}, actual ${fmt.moneyFull(sum("actual", "USD"), "USD")}.
+    </div>`}
+    ${open && html`<${Modal} title="Record a cost" icon="dollar" width=${620} onClose=${() => setOpen(false)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setOpen(false)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          if (!c.type) return;
+          addModCost(rec.id, c, viewer.id);
+          setOpen(false);
+        }}>Save cost</${Btn}>
+      </${Fragment}>`}>
+      <div class="modeditgrid">
+        <${Field} label="Cost type">
+          <select class="input" value=${c.type} onChange=${(e) => setC({ ...c, type: e.target.value })}>
+            <option value="">Select…</option>
+            ${masterList(md, "costTypes").map((o) => html`<option key=${o}>${o}</option>`)}
+          </select>
+        </${Field}>
+        <${Field} label="Currency">
+          <select class="input" value=${c.currency} onChange=${(e) => setC({ ...c, currency: e.target.value })}>
+            <option>PKR</option><option>USD</option>
+          </select>
+        </${Field}>
+        <${Field} label="Estimated cost"><${Input} type="number" value=${c.estimated == null ? "" : c.estimated} onInput=${(e) => setC({ ...c, estimated: e.target.value === "" ? null : Number(e.target.value) })} /></${Field}>
+        <${Field} label="Actual cost"><${Input} type="number" value=${c.actual == null ? "" : c.actual} onInput=${(e) => setC({ ...c, actual: e.target.value === "" ? null : Number(e.target.value) })} /></${Field}>
+        <${Field} label="Vendor / payee (registry)">
+          <select class="input" value=${c.vendorId} onChange=${(e) => setC({ ...c, vendorId: e.target.value })}>
+            <option value="">—</option>
+            ${COMPANIES.filter((x) => x.type === "Vendor").map((x) => html`<option key=${x.id} value=${x.id}>${x.name}</option>`)}
+          </select>
+        </${Field}>
+        <${Field} label="Invoice / reference no"><${Input} value=${c.invoiceNo} onInput=${(e) => setC({ ...c, invoiceNo: e.target.value })} /></${Field}>
+        <${Field} label="Cost approved by">
+          <select class="input" value=${c.approvedBy} onChange=${(e) => setC({ ...c, approvedBy: e.target.value })}>
+            <option value="">—</option>
+            ${USERS.filter((u) => u.rbac === "head" || u.rbac === "lead").map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
+          </select>
+        </${Field}>
+        <${Field} label="Cost attribution">
+          <select class="input" value=${c.attribution} onChange=${(e) => setC({ ...c, attribution: e.target.value })}>
+            <option>Legal operating budget</option>
+            <option>Recharged to requesting department</option>
+          </select>
+        </${Field}>
+      </div>
+    </${Modal}>`}
+  </div>`;
+}
+
+function ActivityPanel({ rec }) {
+  const items = [...(rec.activity || [])].sort((a, b) => new Date(b.at) - new Date(a.at));
+  return html`<div class="card">
+    <div class="strong" style="font-size:13.5px;margin-bottom:10px">Activity log — who did what, and when</div>
+    <div class="modactivity">
+      ${items.map((a, i) => html`<div key=${i} class="modactivity__row">
+        <div class="modactivity__dot"></div>
+        <div style="flex:1">
+          <div style="font-size:13px">${a.action}${a.internal ? html` <${Pill} tone="gray" className="modfield__src">internal</${Pill}>` : null}</div>
+          <div class="tiny muted">${a.by ? personName(a.by) + " · " : ""}${fmt.date(a.at)} ${new Date(a.at).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}</div>
+        </div>
+      </div>`)}
+    </div>
+  </div>`;
+}
+
+function Detail({ def, id, md, viewer }) {
+  const rec0 = modRequestById(id);
+  if (!rec0) return html`<div class="page"><${Empty} icon="search" title="Not found" text="This record does not exist." /></div>`;
+  const vis = visibilityOf(viewer, rec0);
+  if (!vis) return html`<${AccessDenied} def=${def} viewer=${viewer} />`;
+  const statusOnly = vis === "status";
+  const rec = statusOnly ? stripInternal(def, rec0) : rec0;
+  const t = tatV2(def, rec0);
+
+  return html`<div class="page">
+    <div class="page__head" style="align-items:flex-start">
+      <div style="min-width:0">
+        <div class="row" style="gap:8px;flex-wrap:wrap">
+          <span class="mono tiny muted clickable hoverline" onClick=${() => navigate("/m/" + def.key)}>${def.label}</span>
+          <span class="mono tiny muted">/ ${rec.id}</span>
+        </div>
+        <h2 class="page__title" style="margin-top:2px">${rec.title}</h2>
+        <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:6px">
+          <${Pill} tone=${teamTone(def.team)}>${teamShort(def.team)}</${Pill}>
+          ${rec.subType && html`<${Pill} tone="gray">${rec.subType}</${Pill}>`}
+          ${rec.priority !== "Normal" && html`<${Pill} tone="red">${rec.priority}</${Pill}>`}
+          <${TatChip} t=${t} />
+          ${statusOnly && html`<${Pill} tone="amber">Requester view — status only</${Pill}>`}
+        </div>
+      </div>
+      ${rec.driveLink && html`<a class="btn btn--ghost" href=${rec.driveLink} target="_blank" rel="noopener">
+        <${Icon} name="externalLink" size=15 /> Drive folder
+      </a>`}
+    </div>
+
+    <div class="modmeta card">
+      ${[
+        ["Requesting dept", rec.requestingDept],
+        ["Requested by", rec.requestedBy ? `${rec.requestedBy.name} — ${rec.requestedBy.designation}` : personName(rec.requestedById)],
+        ["Contact", rec.requestedBy ? rec.requestedBy.contact : "—"],
+        ["Linked entity", rec.entityId ? entityName(rec.entityId) : "—"],
+        ["Date raised", fmt.date(rec.dateRaised)],
+        ["Current owner", personName(rec.owner)],
+      ].map(([l, v]) => html`<div key=${l}><div class="modfield__label">${l}</div><div class="modfield__value">${v || "—"}</div></div>`)}
+    </div>
+
+    ${statusOnly && html`<div class="modnote">
+      <${Icon} name="lock" size=14 />
+      You raised this request, so you see its status, stage, owner and turnaround. The team's internal
+      notes, risk assessment and cost lines are not part of this view.
+    </div>`}
+
+    <${WorkflowRail} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
+    <div class="modcols">
+      <${TatBreakdown} def=${def} rec=${rec0} />
+      <${HoldsPanel} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+    </div>
+    ${def.hearings && html`<${HearingsPanel} def=${def} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />`}
+    ${def.autoResponse && html`<${AutoResponsePanel} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />`}
+    <${FieldGroups} def=${def} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+    ${(rec.versions || []).length > 0 && html`<div class="card">
+      <div class="strong" style="font-size:13.5px;margin-bottom:8px">Draft version log</div>
+      ${rec.versions.map((v) => html`<div key=${v.v} class="row" style="gap:10px;padding:5px 0;font-size:13px">
+        <${Pill} tone="gray">v${v.v}</${Pill}> <span>${v.note}</span>
+        <span class="spacer"></span><span class="tiny muted">${personName(v.by)} · ${fmt.dateShort(v.at)}</span>
+      </div>`)}
+    </div>`}
+    <${CostsPanel} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+    ${!statusOnly && html`<${ActivityPanel} rec=${rec} />`}
+  </div>`;
+}
+
+/* ============================================================
+   ENTRY — /m/<moduleKey>[/<recordId>]
+   ============================================================ */
+export default function ModulePage({ id, path }) {
+  const all = useCollection("modRequests");
+  const md = useMasterData();
+  const viewer = useActiveUser();
+  const parts = (path || "").split("/").filter(Boolean); // ["m", key, recId?]
+  const key = parts[1];
+  const recId = parts[2] || null;
+  const def = moduleByKey(key);
+  if (!def) return html`<div class="page"><${Empty} icon="search" title="Unknown module" text="This module is not in the registry." /></div>`;
+
+  if (recId) return html`<${Detail} def=${def} id=${recId} md=${md} viewer=${viewer} key=${recId} />`;
+
+  if (!canBrowseModule(viewer, def)) return html`<${AccessDenied} def=${def} viewer=${viewer} />`;
+  const rows = all.filter((r) => r.moduleKey === def.key);
+  return html`<${Register} def=${def} rows=${rows} md=${md} viewer=${viewer} />`;
+}

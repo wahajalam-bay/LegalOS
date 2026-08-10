@@ -1,10 +1,11 @@
 # LegalOS documentation
 
-Two documents and a folder of templates. Read them in order.
+Three documents and a folder of templates. Read them in order.
 
 | File | What it is | Who reads it |
 |---|---|---|
-| **[01-SYSTEM-FUNCTIONALITY.md](01-SYSTEM-FUNCTIONALITY.md)** | Complete inventory of what the system does today: all 27 routes, the requester portal, the five engines (turnaround, spine, reminders, extraction, filters), every field in every data slice, all reference registers, and an honest list of what is real versus what is a placeholder seam. | You, to understand what exists. Also the reference for anyone joining the project. |
+| **[03-ORG-ARCHITECTURE-BUILD.md](03-ORG-ARCHITECTURE-BUILD.md)** | **Newest.** The department's Functional Requirements Document, section by section, mapped to what is now built — the three teams, twelve modules, TAT v2 with intra-dept holds, cost tracking, RBAC — with the demo click-path for the review meeting. | You, going back to the department after their review. |
+| **[01-SYSTEM-FUNCTIONALITY.md](01-SYSTEM-FUNCTIONALITY.md)** | Inventory of the pre-FRD system (sprints 1–5): the requester portal, the five engines (turnaround, spine, reminders, extraction, filters), every field in every data slice, and what is real versus seam. Still accurate for those layers. | Anyone joining the project. |
 | **[02-DATA-COLLECTION-PACK.md](02-DATA-COLLECTION-PACK.md)** | The twelve things to ask the legal department for, in three phases, with formats, priorities, owners, ready-to-send emails, a 45-minute meeting agenda, the confidentiality answers you will need, and an honest list of gaps to disclose. | You, going into the conversation with legal. |
 | **[collection-templates/](collection-templates/)** | Twelve CSVs, pre-filled with the current draft registers so the department **corrects** rather than starts from blank. Attach the relevant ones to each email. | The legal department. |
 

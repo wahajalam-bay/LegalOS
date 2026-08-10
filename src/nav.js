@@ -1,4 +1,7 @@
 // Navigation config — shared by sidebar, command palette, router.
+// Sprint 6: the sidebar is organised around the three Legal teams (FRD Section 1).
+// Modules of the OTHER teams stay visible — clicking one explains the row-level
+// access rule — because knowing a queue exists is not the same as reading it.
 import { LICENSES, licenseStatus, REQUESTS } from "./data.js";
 
 // License badge = count needing attention (Expiring Soon / Critical / Expired).
@@ -12,39 +15,46 @@ export const NAV = [
     { path: "/flow-map", label: "How It Works", icon: "git" },
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
   ]},
-  { section: "Legal Work", items: [
-    // The unified command surface sits at the top of Legal Work (Workstream A).
-    { path: "/workspace", label: "Legal Workspace", icon: "layers", badge: REQUESTS.length },
-    { path: "/tracker", label: "Contract Tracker", icon: "grid" },
-    { path: "/repository", label: "Intake & Repository", icon: "database" },
-    { path: "/requests", label: "Legal Requests", icon: "inbox", badge: 14 },
-    { path: "/matters", label: "Matters", icon: "folder", badge: 12 },
-    { path: "/contracts", label: "Contracts", icon: "file" },
-    { path: "/reviews", label: "Reviews", icon: "checkcircle", badge: 4 },
-    { path: "/approvals", label: "Approvals", icon: "checksquare", badge: 5, alert: true },
-    { path: "/negotiations", label: "Negotiations", icon: "gitbranch" },
-    { path: "/companies", label: "Companies & Entities", icon: "building" },
+  { section: "My Work", items: [
+    { path: "/my-tasks", label: "My Tasks", icon: "checksquare", badge: "myTasks" },
+    { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},
-  { section: "Content", items: [
+  { section: "Litigation & Disputes", items: [
+    { path: "/m/cases", label: "Case Handling", icon: "gavel" },
+    { path: "/m/assetRecovery", label: "Asset Recovery", icon: "refresh" },
+    { path: "/m/ip", label: "IP Portfolio", icon: "tag" },
+    { path: "/m/developerDisputes", label: "Developer Disputes", icon: "building" },
+    { path: "/m/police", label: "Police Complaints", icon: "alertTriangle" },
+    { path: "/m/notices", label: "Notices", icon: "mail" },
+    { path: "/m/inspections", label: "Govt Inspections", icon: "shield" },
+  ]},
+  { section: "Commercial & Risk", items: [
+    { path: "/m/contracts", label: "Contracts", icon: "file" },
+    { path: "/m/vetting", label: "Risk Vetting", icon: "checkcircle" },
+    { path: "/tracker", label: "Contract Tracker", icon: "grid" },
+  ]},
+  { section: "Compliance", items: [
+    { path: "/m/agreements", label: "Lease, Loan & Service", icon: "clipboard" },
+    { path: "/m/resolutions", label: "Resolutions", icon: "checksquare" },
+    { path: "/m/licenses", label: "License Renewals", icon: "fileCheck" },
+    { path: "/licenses", label: "License Register", icon: "database", badge: LICENSE_BADGE || undefined, alert: LICENSE_ALERT },
+  ]},
+  { section: "Shared", items: [
+    { path: "/workspace", label: "Legal Workspace", icon: "layers", badge: REQUESTS.length },
+    { path: "/repository", label: "Intake & Repository", icon: "scan" },
+    { path: "/companies", label: "Entity Registry", icon: "building" },
     { path: "/templates", label: "Templates", icon: "template" },
     { path: "/clauses", label: "Clause Library", icon: "library" },
-    { path: "/knowledge", label: "Knowledge Base", icon: "book" },
   ]},
-  { section: "Risk & Governance", items: [
-    { path: "/licenses", label: "Licenses", icon: "fileCheck", badge: LICENSE_BADGE || undefined, alert: LICENSE_ALERT },
-    { path: "/litigation", label: "Litigation", icon: "scale" },
-    { path: "/compliance", label: "Compliance", icon: "shield" },
-    { path: "/reports", label: "Reports", icon: "barchart" },
-  ]},
-  { section: "Intelligence & Automation", items: [
+  { section: "Insight & Governance", items: [
+    { path: "/costs", label: "Cost Analysis", icon: "dollar" },
     { path: "/analyzer", label: "Data Analyzer", icon: "cpu" },
     { path: "/pipelines", label: "Team Pipelines", icon: "columns" },
-    { path: "/copilot", label: "AI Copilot", icon: "sparkles" },
-    { path: "/automation", label: "Workflow Builder", icon: "workflow" },
+    { path: "/reports", label: "Reports", icon: "barchart" },
   ]},
   { section: "Administration", items: [
     { path: "/portal", label: "Requester Portal", icon: "user" },
-    { path: "/organization", label: "Organization", icon: "building" },
+    { path: "/organization", label: "Organization", icon: "users" },
     { path: "/settings", label: "Settings", icon: "settings" },
   ]},
 ];

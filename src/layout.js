@@ -5,12 +5,14 @@ import { Avatar, Btn, Dropdown, MenuItem, Pill } from "./ui.js";
 import { NAV, NAV_FLAT, labelFor } from "./nav.js";
 import { navigate, parsePath } from "./router.js";
 import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES, licenseStatus, byId, CONTRACT_TYPE_CODES, LEGAL_SUBDIVISIONS } from "./data.js";
-import { getCollection } from "./store.js";
+import { getCollection, notifsFor, markNotifsRead, useCollection } from "./store.js";
 import { allReminders } from "./reminders.js";
 import { TourOverlay, TourButton } from "./tour.js";
 import { senderName } from "./messages.js";
-
-const ME = USERS[0]; // Layla Al-Rashid, General Counsel
+// Sprint 6 — the org architecture: View As, RBAC-filtered search, team modules.
+import { useActiveUser, setViewAs, landingFor, filterVisible } from "./rbac.js";
+import { teamShort, RBAC_ROLES } from "./org.js";
+import { moduleByKey } from "./modules.js";
 
 /* ---------------- Theme ---------------- */
 export function getTheme() { return localStorage.getItem("legalos-theme") || "light"; }
@@ -19,9 +21,44 @@ export function setTheme(t) {
   document.documentElement.dataset.theme = t;
 }
 
+/* ---------------- View As (FRD Section 14 demo affordance) ----------------
+   The prototype has no real login; this switcher swaps the active identity and
+   the whole app — landing, queues, badges, search, notifications — obeys that
+   identity's row-level visibility. */
+const PERSONAS = ["u1", "u3", "u5", "u6", "u17", "u18", "u19", "u20", "u21", "u16", "u14"];
+function ViewAs() {
+  const me = useActiveUser();
+  const roleLabel = (u) => (RBAC_ROLES[u.rbac] || {}).label || u.role;
+  return html`<${Dropdown} align="left" width=${268} trigger=${html`<div class="sidebar__user">
+    <${Avatar} name=${me.name} size="md" />
+    <div class="sidebar__user-meta"><div class="sidebar__user-name">${me.name}</div><div class="sidebar__user-role">${me.role}</div></div>
+    <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
+  </div>`}>
+    <div class="menu__label">View as — access follows the identity</div>
+    ${PERSONAS.map((id) => {
+      const u = byId(id);
+      return html`<${MenuItem} key=${id} icon=${me.id === id ? "check" : "user"}
+        onClick=${() => { setViewAs(id); navigate(landingFor(u)); }}>
+        <div style="min-width:0">
+          <div style=${`font-weight:${me.id === id ? 700 : 500}`}>${u.name}</div>
+          <div class="tiny muted">${roleLabel(u)}${u.legalTeam ? " · " + teamShort(u.legalTeam) : u.dept && u.dept !== "Legal" ? " · " + u.dept : ""}</div>
+        </div>
+      </${MenuItem}>`;
+    })}
+    <div class="menu__sep"></div>
+    <${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>
+  </${Dropdown}>`;
+}
+
 /* ---------------- Sidebar ---------------- */
 function Sidebar({ path, collapsed }) {
   const { base } = parsePath(path);
+  const me = useActiveUser();
+  const mods = useCollection("modRequests");
+  // Live badge: open items assigned to the active identity.
+  const myOpen = mods.filter((r) => r.owner === me.id && r.status !== "Closed").length;
+  const badgeFor = (it) => (it.badge === "myTasks" ? (myOpen || undefined) : it.badge);
+  const isActive = (it) => (it.path.startsWith("/m/") ? path.startsWith(it.path) : base === it.path);
   return html`<aside class="sidebar">
     <div class="sidebar__brand">
       <svg class="sidebar__brand-logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0d7a3f"/><path d="M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z" fill="white"/></svg>
@@ -46,27 +83,17 @@ function Sidebar({ path, collapsed }) {
       ${NAV.map((sec) => html`<div class="nav__section" key=${sec.section}>
         <div class="nav__label">${sec.section}</div>
         ${sec.items.map((it) => html`<div key=${it.path}
-          class=${cx("nav__item", base === it.path && "active")}
+          class=${cx("nav__item", isActive(it) && "active")}
           onClick=${() => navigate(it.path)}>
           <${Icon} name=${it.icon} size=17 />
           <span>${it.label}</span>
-          ${it.badge && html`<span class=${cx("nav__badge", it.alert && "nav__badge--alert")}>${it.badge}</span>`}
+          ${badgeFor(it) && html`<span class=${cx("nav__badge", it.alert && "nav__badge--alert")}>${badgeFor(it)}</span>`}
         </div>`)}
       </div>`)}
     </nav>
 
     <div class="sidebar__foot">
-      <${Dropdown} align="left" width=${220} trigger=${html`<div class="sidebar__user">
-        <${Avatar} name=${ME.name} size="md" />
-        <div class="sidebar__user-meta"><div class="sidebar__user-name">${ME.name}</div><div class="sidebar__user-role">${ME.role}</div></div>
-        <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
-      </div>`}>
-        <${MenuItem} icon="user">Profile</${MenuItem}>
-        <${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>
-        <${MenuItem} icon="help">Help & support</${MenuItem}>
-        <div class="menu__sep"></div>
-        <${MenuItem} icon="logout" danger=${true}>Sign out</${MenuItem}>
-      </${Dropdown}>
+      <${ViewAs} />
     </div>
   </aside>`;
 }
@@ -167,7 +194,15 @@ function dedupeById(arr) {
 }
 
 function NotifButton() {
-  const [items, setItems] = useState(() => dedupeById([...portalNotifs(), ...lifecycleNotifs(), ...licenseNotifs(), ...NOTIFICATIONS]));
+  const me = useActiveUser();
+  const live = useCollection("notifs"); // subscribes — sweeps and actions land here
+  const [readLocal, setReadLocal] = useState(false);
+  // Section 12 feeds addressed to the active identity, then the legacy feeds.
+  const items = dedupeById([
+    ...notifsFor(me).map((n) => ({ ...n, unread: readLocal ? false : n.unread })),
+    ...(me.rbac === "head" || me.legalTeam ? [...portalNotifs(), ...lifecycleNotifs(), ...licenseNotifs(), ...NOTIFICATIONS].map((n) => ({ ...n, unread: readLocal ? false : n.unread })) : []),
+  ]);
+  const setItems = (updated) => { setReadLocal(true); markNotifsRead(); };
   const unread = items.filter((n) => n.unread).length;
   const toneBg = { amber: "var(--warning-bg)", red: "var(--danger-bg)", blue: "var(--brand-soft)", purple: "var(--accent-soft)", green: "var(--success-bg)" };
   const toneFg = { amber: "var(--warning)", red: "var(--danger)", blue: "var(--brand)", purple: "var(--accent-500)", green: "var(--success)" };
@@ -215,7 +250,15 @@ function CommandPalette({ onClose }) {
   const liveMatters = getCollection("matters") || MATTERS;
   const liveRequests = getCollection("requests") || [];
   const liveDocs = getCollection("repository") || [];
+  // Cross-team search obeys the Section 14 row-level filter — it is the same
+  // gate as the queues, never a bypass.
+  const me = useActiveUser();
+  const liveMods = filterVisible(me, getCollection("modRequests") || []);
   const entities = [
+    ...liveMods.map((r) => {
+      const d = moduleByKey(r.moduleKey);
+      return { group: "Team modules", label: `${r.id} · ${r.title}`, icon: d ? d.icon : "folder", path: "/m/" + r.moduleKey + "/" + r.id };
+    }),
     // Every record routes to its Flow view — the spine is the destination.
     ...liveRequests.map((r) => ({ group: "Requests & matters", label: `${r.id} · ${r.title}`, icon: "inbox", path: "/workspace/" + r.id })),
     ...liveMatters.map((m) => ({ group: "Requests & matters", label: `${m.id} · ${m.title}`, icon: "folder", path: "/matters/" + m.id })),
@@ -271,14 +314,21 @@ function CommandPalette({ onClose }) {
 
 /* ---------------- Topbar ---------------- */
 function Topbar({ path, onSearch, onToggleTheme, theme }) {
-  const { base, id } = parsePath(path);
+  const { base, id, sub } = parsePath(path);
+  const me = useActiveUser();
+  // /m/<moduleKey>/<recordId> — crumbs show the module label, then the record.
+  const isModule = base === "/m";
+  const modDef = isModule ? moduleByKey(id) : null;
+  const crumbLabel = isModule ? (modDef ? modDef.label : "Modules") : labelFor(base);
+  const crumbBase = isModule ? "/m/" + id : base;
+  const leafId = isModule ? sub : id;
   return html`<header class="topbar">
     <div class="topbar__crumbs">
       <span class="clickable hoverline" onClick=${() => navigate("/dashboard")}>${COMPANY.short}</span>
       <${Icon} name="chevronRight" size=14 />
-      ${id ? html`<span class="clickable hoverline" onClick=${() => navigate(base)}>${labelFor(base)}</span>
-        <${Icon} name="chevronRight" size=14 /><b>${id}</b>`
-        : html`<b>${labelFor(base)}</b>`}
+      ${leafId ? html`<span class="clickable hoverline" onClick=${() => navigate(crumbBase)}>${crumbLabel}</span>
+        <${Icon} name="chevronRight" size=14 /><b>${leafId}</b>`
+        : html`<b>${crumbLabel}</b>`}
     </div>
     <div class="topbar__spacer"></div>
     <button class="searchbtn" onClick=${onSearch}>
@@ -290,7 +340,7 @@ function Topbar({ path, onSearch, onToggleTheme, theme }) {
     <button class="iconbtn" title="Toggle theme" onClick=${onToggleTheme}><${Icon} name=${theme === "dark" ? "sun" : "moon"} size=18 /></button>
     <${NotifButton} />
     <div style="width:1px;height:24px;background:var(--border);margin:0 2px"></div>
-    <${Avatar} name=${ME.name} size="md" />
+    <${Avatar} name=${me.name} size="md" />
   </header>`;
 }
 
@@ -313,7 +363,7 @@ function mdBold(t) {
 
 function CopilotDock({ open, onClose }) {
   const [msgs, setMsgs] = useState([
-    { role: "ai", text: "Hi Layla — I'm your Legal Copilot. I have full context on your matters, contracts and clause library. What can I do?" },
+    { role: "ai", text: "Hi — I'm your Legal Copilot. I have full context on your matters, contracts and clause library. What can I do?" },
   ]);
   const [input, setInput] = useState("");
   const scRef = useRef(null);

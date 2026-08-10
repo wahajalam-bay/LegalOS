@@ -11,9 +11,16 @@ import {
   CONTRACT_TYPE_CODES, CONTRACT_REQUEST_TYPES, LEGAL_SUBDIVISIONS,
   GROUP_ENTITIES, USERS, contractTypeMeta,
 } from "../data.js";
+// Sprint 6 — administrable master data + the published permission matrix.
+import { useMasterData, updateMasterList, resetMasterData } from "../store.js";
+import { MASTER_TABLES, PERMISSION_MATRIX, LEGAL_TEAMS } from "../org.js";
+import { useActiveUser } from "../rbac.js";
 
 const NAV = [
   { key: "general", label: "General", icon: "settings" },
+  // Sprint 6 — the FRD Section 2 master tables, administrable end to end.
+  { key: "masterdata", label: "Master Data", icon: "database" },
+  { key: "access", label: "Access & Visibility", icon: "shield" },
   // Sprint 4 — legal controls the requester portal's form from here, end to end.
   { key: "requestform", label: "Request Form", icon: "inbox" },
   { key: "demo", label: "Presentation mode", icon: "play" },
@@ -397,6 +404,92 @@ function DemoReset() {
   </${Section}>`;
 }
 
+/* ---------------- Sprint 6: Master Data admin (FRD Section 2) ----------------
+   Configured once, reused across all modules — add / rename / deactivate, never
+   hard-coded. Deactivating keeps history intact: old records still display the
+   value; new forms stop offering it. */
+function MasterDataAdmin() {
+  const md = useMasterData();
+  const [table, setTable] = useState(MASTER_TABLES[0].key);
+  const [draft, setDraft] = useState("");
+  const items = md[table] || [];
+  const set = (items2) => updateMasterList(table, items2);
+
+  return html`<${Section} title="Master data" icon="database"
+    sub="The Section 2 registry: every dropdown across all twelve modules reads these lists live — an edit here changes the forms immediately."
+    actions=${html`<${Btn} size="sm" icon="refresh" onClick=${() => { if (confirm("Reset ALL master tables to the seeded defaults?")) resetMasterData(); }}>Reset defaults</${Btn}>`}>
+    <div class="grid" style="grid-template-columns:250px 1fr;gap:16px;align-items:start">
+      <div class="card" style="padding:6px">
+        ${MASTER_TABLES.map((t) => html`<div key=${t.key} class="menu__item" style=${table === t.key ? "background:var(--brand-soft);color:var(--brand-600);font-weight:600" : ""}
+          onClick=${() => setTable(t.key)}>
+          <span style="flex:1">${t.label}</span>
+          <span class="tiny muted">${(md[t.key] || []).filter((x) => x.active !== false).length}</span>
+        </div>`)}
+      </div>
+      <div class="card card--pad">
+        <div class="strong" style="margin-bottom:10px">${(MASTER_TABLES.find((t) => t.key === table) || {}).label}</div>
+        ${items.map((it, i) => html`<div key=${i} class="row mdrow">
+          <${Input} value=${it.value} onInput=${(e) => set(items.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)))} />
+          <${Pill} tone=${it.active !== false ? "green" : "gray"}>${it.active !== false ? "Active" : "Deactivated"}</${Pill}>
+          <${Btn} size="sm" onClick=${() => set(items.map((x, j) => (j === i ? { ...x, active: x.active === false } : x)))}>
+            ${it.active !== false ? "Deactivate" : "Reactivate"}
+          </${Btn}>
+        </div>`)}
+        <div class="row" style="gap:8px;margin-top:12px">
+          <${Input} placeholder="Add a value…" value=${draft} onInput=${(e) => setDraft(e.target.value)}
+            onKeyDown=${(e) => { if (e.key === "Enter" && draft.trim()) { set([...items, { value: draft.trim(), active: true }]); setDraft(""); } }} />
+          <${Btn} variant="primary" icon="plus" onClick=${() => { if (draft.trim()) { set([...items, { value: draft.trim(), active: true }]); setDraft(""); } }}>Add</${Btn}>
+        </div>
+        <div class="tiny muted" style="margin-top:10px">
+          Deactivate rather than delete — records that already carry the value keep displaying it; new requests stop offering it.
+        </div>
+      </div>
+    </div>
+  </${Section}>`;
+}
+
+/* ---------------- Sprint 6: Access & visibility (FRD Section 14) ---------------- */
+function AccessAdmin() {
+  const me = useActiveUser();
+  return html`<${Fragment}>
+    <${Section} title="The principle" icon="shield"
+      sub="Raising a request to a team and viewing that team's data are different permissions. Anyone can raise to any team; viewing is narrow and row-level.">
+      <div class="banner banner--info" style="margin-bottom:12px">
+        <${Icon} name="lock" size=17 />
+        Row-level security keys on two fields every record already carries: <b>Legal Team</b> (owning team) and
+        <b> Requesting Department</b> (originating department). Cross-team search runs through the same filter — it is never a bypass.
+      </div>
+      <div class="tablewrap"><table class="table">
+        <thead><tr><th>Role</th><th>Raise to any team</th><th>View own raised requests</th><th>View own team's full queue</th><th>View other Legal teams</th></tr></thead>
+        <tbody>${PERMISSION_MATRIX.map((r) => html`<tr key=${r.role}>
+          <td class="cell-strong">${r.role}</td>
+          <td><${Pill} tone="green">${r.raise}</${Pill}></td>
+          <td>${r.own}</td>
+          <td>${/^No/.test(r.queue) ? html`<${Pill} tone="gray">No</${Pill}>` : r.queue}</td>
+          <td>${/^No/.test(r.other) ? html`<${Pill} tone="gray">No</${Pill}>` : html`<${Pill} tone="amber">${r.other}</${Pill}>`}</td>
+        </tr>`)}</tbody>
+      </table></div>
+    </${Section}>
+    <${Section} title="Team membership" icon="users" sub="Each session carries the user's Legal team (if any) and business department — the two claims the filter reads.">
+      <div class="grid grid--3" style="gap:12px">
+        ${LEGAL_TEAMS.map((t) => html`<div key=${t.key} class="card card--pad">
+          <div class="strong" style="margin-bottom:8px">${t.name}</div>
+          ${USERS.filter((u) => u.legalTeam === t.key).map((u) => html`<div key=${u.id} class="row" style="gap:8px;padding:4px 0">
+            <${Avatar} name=${u.name} size="sm" />
+            <div style="flex:1;min-width:0"><div style="font-size:13px">${u.name}</div><div class="tiny muted">${u.role}</div></div>
+            ${u.rbac === "lead" && html`<${Pill} tone="purple">Lead</${Pill}>`}
+          </div>`)}
+        </div>`)}
+      </div>
+      <div class="tiny muted" style="margin-top:12px">
+        You are currently viewing as <b>${me.name}</b>. Switch identities from the sidebar footer to watch the queues,
+        search results and landing screen change with the role. Internal fields (risk notes, internal review comments)
+        are flagged team-internal in the module registry and are excluded even from a requester's own-request view.
+      </div>
+    </${Section}>
+  </${Fragment}>`;
+}
+
 export default function Settings() {
   const [sec, setSec] = useState("security");
   return html`<div class="page page--wide fade-in">
@@ -409,6 +502,8 @@ export default function Settings() {
       </div>
 
       <div class="col" style="gap:16px">
+        ${sec === "masterdata" && html`<${MasterDataAdmin} />`}
+        ${sec === "access" && html`<${AccessAdmin} />`}
         ${sec === "requestform" && html`<${RequestFormAdmin} />`}
         ${sec === "demo" && html`<${DemoReset} />`}
 

@@ -20,24 +20,34 @@ export const BUSINESS_UNITS = ["Real Estate", "Technology", "Retail", "Logistics
 export const DEPARTMENTS = ["Procurement", "Human Resources", "Sales", "Marketing", "Finance", "IT", "Operations", "Legal"];
 export const COUNTRIES = ["Saudi Arabia", "UAE", "United Kingdom", "United States", "Singapore", "Pakistan"];
 
+// Each user now carries their org-architecture placement (FRD Section 14):
+// legalTeam = litigation | commercial | compliance | null, rbac = the role key,
+// dept = business department for non-legal users.
 export const USERS = [
-  { id: "u1", name: "Layla Al-Rashid", role: "General Counsel", team: "Executive", email: "layla.alrashid@northwind.com", country: "Saudi Arabia" },
-  { id: "u2", name: "Marcus Feld", role: "Deputy General Counsel", team: "Executive", email: "marcus.feld@northwind.com", country: "United Kingdom" },
-  { id: "u3", name: "Priya Nair", role: "Legal Director — Commercial", team: "Commercial", email: "priya.nair@northwind.com", country: "Singapore" },
-  { id: "u4", name: "Omar Haddad", role: "Legal Director — Corporate", team: "Corporate", email: "omar.haddad@northwind.com", country: "UAE" },
-  { id: "u5", name: "Sarah Chen", role: "Senior Counsel", team: "Commercial", email: "sarah.chen@northwind.com", country: "Singapore" },
-  { id: "u6", name: "David Okonkwo", role: "Senior Counsel", team: "Litigation", email: "david.okonkwo@northwind.com", country: "United States" },
-  { id: "u7", name: "Aisha Bukhari", role: "Counsel", team: "Commercial", email: "aisha.bukhari@northwind.com", country: "Pakistan" },
-  { id: "u8", name: "Tom Bennett", role: "Counsel", team: "Corporate", email: "tom.bennett@northwind.com", country: "United Kingdom" },
-  { id: "u9", name: "Elena Popova", role: "Junior Counsel", team: "Commercial", email: "elena.popova@northwind.com", country: "United Kingdom" },
-  { id: "u10", name: "Yousef Nasser", role: "Paralegal", team: "Commercial", email: "yousef.nasser@northwind.com", country: "Saudi Arabia" },
-  { id: "u11", name: "Grace Liu", role: "Contract Manager", team: "Operations", email: "grace.liu@northwind.com", country: "Singapore" },
-  { id: "u12", name: "Rania Fadel", role: "Compliance Officer", team: "Compliance", email: "rania.fadel@northwind.com", country: "UAE" },
+  { id: "u1", name: "Layla Al-Rashid", role: "General Counsel", team: "Executive", email: "layla.alrashid@northwind.com", country: "Saudi Arabia", rbac: "head", legalTeam: null, dept: "Legal" },
+  { id: "u2", name: "Marcus Feld", role: "Deputy General Counsel", team: "Executive", email: "marcus.feld@northwind.com", country: "United Kingdom", rbac: "head", legalTeam: null, dept: "Legal" },
+  { id: "u3", name: "Priya Nair", role: "Team Lead — Commercial & Risk", team: "Commercial", email: "priya.nair@northwind.com", country: "Singapore", rbac: "lead", legalTeam: "commercial", dept: "Legal" },
+  { id: "u4", name: "Omar Haddad", role: "Legal Director — Corporate", team: "Corporate", email: "omar.haddad@northwind.com", country: "UAE", rbac: "lead", legalTeam: "compliance", dept: "Legal" },
+  { id: "u5", name: "Sarah Chen", role: "Senior Counsel", team: "Commercial", email: "sarah.chen@northwind.com", country: "Singapore", rbac: "member", legalTeam: "commercial", dept: "Legal" },
+  { id: "u6", name: "David Okonkwo", role: "Team Lead — Litigation & Disputes", team: "Litigation", email: "david.okonkwo@northwind.com", country: "United States", rbac: "lead", legalTeam: "litigation", dept: "Legal" },
+  { id: "u7", name: "Aisha Bukhari", role: "Counsel", team: "Commercial", email: "aisha.bukhari@northwind.com", country: "Pakistan", rbac: "member", legalTeam: "commercial", dept: "Legal" },
+  { id: "u8", name: "Tom Bennett", role: "Counsel", team: "Corporate", email: "tom.bennett@northwind.com", country: "United Kingdom", rbac: "member", legalTeam: "compliance", dept: "Legal" },
+  { id: "u9", name: "Elena Popova", role: "Junior Counsel", team: "Commercial", email: "elena.popova@northwind.com", country: "United Kingdom", rbac: "member", legalTeam: "commercial", dept: "Legal" },
+  { id: "u10", name: "Yousef Nasser", role: "Paralegal", team: "Commercial", email: "yousef.nasser@northwind.com", country: "Saudi Arabia", rbac: "member", legalTeam: "commercial", dept: "Legal" },
+  { id: "u11", name: "Grace Liu", role: "Contract Manager", team: "Operations", email: "grace.liu@northwind.com", country: "Singapore", rbac: "member", legalTeam: "commercial", dept: "Legal" },
+  { id: "u12", name: "Rania Fadel", role: "Compliance Officer", team: "Compliance", email: "rania.fadel@northwind.com", country: "UAE", rbac: "member", legalTeam: "compliance", dept: "Legal" },
   // Business requesters
-  { id: "u13", name: "James Whitfield", role: "VP Procurement", team: "Procurement", email: "james.whitfield@northwind.com", country: "United States" },
-  { id: "u14", name: "Fatima Al-Sayed", role: "Head of HR", team: "Human Resources", email: "fatima.alsayed@northwind.com", country: "Saudi Arabia" },
-  { id: "u15", name: "Ravi Menon", role: "Sales Director", team: "Sales", email: "ravi.menon@northwind.com", country: "Singapore" },
-  { id: "u16", name: "Klaus Werner", role: "CFO", team: "Finance", email: "klaus.werner@northwind.com", country: "United Kingdom" },
+  { id: "u13", name: "James Whitfield", role: "VP Procurement", team: "Procurement", email: "james.whitfield@northwind.com", country: "United States", rbac: "bizHead", legalTeam: null, dept: "Procurement" },
+  { id: "u14", name: "Fatima Al-Sayed", role: "Head of HR", team: "Human Resources", email: "fatima.alsayed@northwind.com", country: "Saudi Arabia", rbac: "bizHead", legalTeam: null, dept: "HR" },
+  { id: "u15", name: "Ravi Menon", role: "Sales Director", team: "Sales", email: "ravi.menon@northwind.com", country: "Singapore", rbac: "bizHead", legalTeam: null, dept: "Sales & Marketing" },
+  { id: "u16", name: "Klaus Werner", role: "CFO", team: "Finance", email: "klaus.werner@northwind.com", country: "United Kingdom", rbac: "bizHead", legalTeam: null, dept: "Finance" },
+  // Pakistan-side legal staff for the three-team architecture (Sprint 6)
+  { id: "u17", name: "Ahmed Raza", role: "Senior Counsel — Litigation", team: "Litigation", email: "ahmed.raza@northwind.com", country: "Pakistan", rbac: "member", legalTeam: "litigation", dept: "Legal" },
+  { id: "u18", name: "Mariam Khan", role: "Recovery Officer", team: "Litigation", email: "mariam.khan@northwind.com", country: "Pakistan", rbac: "member", legalTeam: "litigation", dept: "Legal" },
+  { id: "u19", name: "Bilal Sheikh", role: "IP Counsel", team: "Litigation", email: "bilal.sheikh@northwind.com", country: "Pakistan", rbac: "member", legalTeam: "litigation", dept: "Legal" },
+  { id: "u20", name: "Noor Fatima", role: "Team Lead — Compliance", team: "Compliance", email: "noor.fatima@northwind.com", country: "Pakistan", rbac: "lead", legalTeam: "compliance", dept: "Legal" },
+  { id: "u21", name: "Hassan Ali", role: "Compliance Officer", team: "Compliance", email: "hassan.ali@northwind.com", country: "Pakistan", rbac: "member", legalTeam: "compliance", dept: "Legal" },
+  { id: "u22", name: "Zainab Qureshi", role: "Counsel — Commercial & Risk", team: "Commercial", email: "zainab.qureshi@northwind.com", country: "Saudi Arabia", rbac: "member", legalTeam: "commercial", dept: "Legal" },
 ];
 export const byId = (id) => USERS.find((u) => u.id === id) || { name: "Unassigned" };
 export const nameOf = (id) => byId(id).name;
@@ -663,6 +673,23 @@ COMPANIES.push(
   // Sprint 4 — the two remaining entities the requester portal offers.
   { id: "CO-36", name: "Zameen Media", aliases: ["Zameen Media (Pvt) Ltd", "ZM"], jurisdiction: "Pakistan", type: "Group Entity", jur: "PK", parentId: "CO-19", subdivisionOwner: "Commercial", note: "Media, advertising and creator arm for the PK portals." },
   { id: "CO-37", name: "Z Property Developments", aliases: ["Z Property", "ZPD"], jurisdiction: "Saudi Arabia", type: "Group Entity", jur: "KSA", parentId: "CO-19", subdivisionOwner: "Real Estate & Conveyancing", note: "Development vehicle — PPAs, land, Musataha, construction and JV paper across KSA and PK." },
+  // Sprint 6 — Counterparty / Entity Registry entries the org-architecture
+  // modules reference (FRD Section 2): each carries its registry roles so
+  // lessor / lender / service provider / vendor-payee are selected, never re-typed.
+  { id: "CO-38", name: "Systems Ltd", aliases: ["Systems Limited"], jurisdiction: "Pakistan", type: "Vendor", jur: "PK", roles: ["Service Provider", "Vendor/Payee"] },
+  { id: "CO-39", name: "Descon Engineering", aliases: ["Descon"], jurisdiction: "Pakistan", type: "Vendor", jur: "PK", roles: ["Contractor", "Vendor/Payee"] },
+  { id: "CO-40", name: "RIAA Barker Gillette", aliases: ["RIAA"], jurisdiction: "Pakistan", type: "Vendor", jur: "PK", roles: ["External Counsel", "Vendor/Payee"] },
+  { id: "CO-41", name: "Cornelius, Lane & Mufti", aliases: ["CLM"], jurisdiction: "Pakistan", type: "Vendor", jur: "PK", roles: ["External Counsel", "Vendor/Payee"] },
+  { id: "CO-42", name: "Habib Bank Limited", aliases: ["HBL"], jurisdiction: "Pakistan", type: "Counterparty", jur: "PK", roles: ["Lender"] },
+  { id: "CO-43", name: "Meezan Bank", aliases: ["Meezan"], jurisdiction: "Pakistan", type: "Counterparty", jur: "PK", roles: ["Lender"] },
+  { id: "CO-44", name: "Askari Guards (Pvt) Ltd", aliases: ["Askari Guards"], jurisdiction: "Pakistan", type: "Vendor", jur: "PK", roles: ["Service Provider", "Vendor/Payee"] },
+  { id: "CO-45", name: "Crescent Facilities Management", aliases: ["Crescent FM"], jurisdiction: "Saudi Arabia", type: "Vendor", jur: "KSA", roles: ["Service Provider", "Vendor/Payee"] },
+  { id: "CO-46", name: "Dar Al Diyar Development", aliases: ["Dar Al Diyar"], jurisdiction: "Saudi Arabia", type: "Counterparty", jur: "KSA", roles: ["Developer"] },
+  { id: "CO-47", name: "Skyline Builders", aliases: ["Skyline"], jurisdiction: "Pakistan", type: "Counterparty", jur: "PK", roles: ["Developer"] },
+  { id: "CO-48", name: "Mega Tower Holdings", aliases: ["MTH"], jurisdiction: "Pakistan", type: "Counterparty", jur: "PK", roles: ["Lessor"] },
+  { id: "CO-49", name: "Al Mansour Holding", aliases: ["Al Mansour"], jurisdiction: "Saudi Arabia", type: "Counterparty", jur: "KSA", roles: ["JV Partner"] },
+  { id: "CO-50", name: "Galaxy Broadcasting Network", aliases: ["GBN"], jurisdiction: "Pakistan", type: "Counterparty", jur: "PK", roles: ["Media Partner"] },
+  { id: "CO-51", name: "CityClean Services (Pvt) Ltd", aliases: ["CityClean"], jurisdiction: "Pakistan", type: "Vendor", jur: "PK", roles: ["Service Provider", "Vendor/Payee"] },
 );
 // Backfill the jurisdiction short-code + hierarchy fields on the earlier seeds.
 const JUR_CODE = { "Saudi Arabia": "KSA", "Pakistan": "PK", "UAE": "UAE", "United Kingdom": "UK", "United States": "US", "Singapore": "SG" };

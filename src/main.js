@@ -1,6 +1,6 @@
 // LegalOS entry point.
 import { html, createRoot } from "./core.js";
-import { useRoute, parsePath, currentPath } from "./router.js";
+import { useRoute, parsePath } from "./router.js";
 import { Shell } from "./layout.js";
 import { Empty } from "./ui.js";
 
@@ -33,10 +33,21 @@ import Portal from "./pages/portal.js";
 // Sprint 5 — the executive story
 import Exec from "./pages/exec.js";
 import FlowMap from "./pages/flowmap.js";
+// Sprint 6 — the org architecture
+import ModulePage from "./pages/module.js";
+import MyTasks from "./pages/mytasks.js";
+import Raise from "./pages/raise.js";
+import Costs from "./pages/costs.js";
+import { runOrgSweeps } from "./store.js";
+import { activeUser, landingFor } from "./rbac.js";
 
 const ROUTES = {
   "/exec": Exec,
   "/flow-map": FlowMap,
+  "/m": ModulePage,
+  "/my-tasks": MyTasks,
+  "/raise": Raise,
+  "/costs": Costs,
   "/dashboard": Dashboard,
   "/workspace": Workspace,
   "/tracker": Tracker,
@@ -75,11 +86,17 @@ function App() {
   return html`<${Shell} path=${path}><${Page} id=${id} path=${path} key=${base} /></${Shell}>`;
 }
 
+// Section 5.2 / 7.2 / 9 / 12 — renewal triggers, reminder buckets and SLA-breach
+// notifications are system-generated. One idempotent sweep per boot.
+try { runOrgSweeps(); } catch (e) {}
+
 // A bare URL renders the landing route, so put that route in the address bar too:
 // the URL should always say where you are, which matters when a link or a
 // screenshot gets passed around. replaceState so this adds no history entry.
+// Section 11 — the landing route is role-aware: legal staff land on My Tasks,
+// management on the executive overview, business users on Raise Request.
 if (!window.location.hash) {
-  try { window.history.replaceState(null, "", "#" + currentPath()); } catch (e) {}
+  try { window.history.replaceState(null, "", "#" + landingFor(activeUser())); } catch (e) {}
 }
 
 clearTimeout(window.__legalos_boot);
