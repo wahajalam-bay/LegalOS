@@ -59,6 +59,8 @@ export default function MyTasks() {
     paused: rows.filter((x) => x.t.status === "Paused").length,
   };
   const stages = [...new Set(rows.map((x) => x.r.stage))];
+  // The one-line answer to "where do I start?" — the most urgent open item.
+  const first = rows.find((x) => x.t.status === "Overdue") || rows.find((x) => x.t.nearBreach);
 
   // For a business user this page is not the landing screen, but keep it honest.
   const isLegal = !!viewer.legalTeam || viewer.rbac === "head";
@@ -82,6 +84,14 @@ export default function MyTasks() {
       <div class="modkpi modkpi--amber"><div class="modkpi__n">${counts.near}</div><div class="modkpi__l">Near breach</div></div>
       <div class="modkpi modkpi--gray"><div class="modkpi__n">${counts.paused}</div><div class="modkpi__l">Paused with a dept</div></div>
     </div>
+
+    ${first && !showClosed && html`<div class="focusline clickable" onClick=${() => navigate("/m/" + first.r.moduleKey + "/" + first.r.id)}>
+      <${Icon} name="bolt" size=15 />
+      <span><b>Start here:</b> ${first.r.id} — ${first.r.title}</span>
+      <span class="spacer"></span>
+      <${TatChip} t=${first.t} />
+      <${Icon} name="arrowRight" size=14 />
+    </div>`}
 
     <div class="card" style="padding:0">
       <div class="modtoolbar">
@@ -116,7 +126,7 @@ export default function MyTasks() {
             <th>Stage</th><th>TAT</th>
           </tr></thead>
           <tbody>
-            ${rows.map(({ r, def, t }) => html`<tr key=${r.id} class="clickable" onClick=${() => navigate("/m/" + r.moduleKey + "/" + r.id)}>
+            ${rows.map(({ r, def, t }) => html`<tr key=${r.id} class=${cx("clickable", "urgrow", "urgrow--" + t.status.toLowerCase())} onClick=${() => navigate("/m/" + r.moduleKey + "/" + r.id)}>
               <td class="mono tiny">${r.id}</td>
               <td style="max-width:320px"><div class="ellipsis" title=${r.title}>${r.title}</div>
                 ${r.entityId && html`<div class="tiny muted">${entityName(r.entityId)}</div>`}</td>

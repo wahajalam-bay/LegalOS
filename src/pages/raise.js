@@ -12,9 +12,10 @@ import { COMPANIES, entityName } from "../data.js";
 import { LEGAL_TEAMS, teamShort, teamTone, masterList } from "../org.js";
 import { MODULES, moduleByKey, modulesForTeam, subTypesOf, fieldOptions, slaFor, totalSla } from "../modules.js";
 import { tatV2 } from "../tat2.js";
-import { useCollection, useMasterData, raiseModuleRequest, addModCost, personName } from "../store.js";
+import { useCollection, useMasterData, raiseModuleRequest, addModCost, personName, getCollection } from "../store.js";
 import { useActiveUser } from "../rbac.js";
-import { TatChip } from "./module.js";
+import { TatChip, EntityQuickAdd } from "./module.js";
+import { toast } from "../toast.js";
 
 function StepDots({ step }) {
   return html`<div class="raisedots">
@@ -99,6 +100,7 @@ export default function Raise({ id }) {
     setErrors([]);
     setResult(r);
     setStep(3);
+    toast(r.id + " submitted — assigned to " + personName(r.record.owner));
   };
 
   const setF = (k, v) => setFields((f) => ({ ...f, [k]: v }));
@@ -189,10 +191,13 @@ export default function Raise({ id }) {
               <option value="">Select…</option>
               ${fieldOptions(f, md, { subType, fields }).map((o) => html`<option key=${o}>${o}</option>`)}
             </select>`
-          : f.type === "entity" ? html`<select class="input" value=${fields[f.key] || ""} onChange=${(e) => setF(f.key, e.target.value)}>
-              <option value="">Select from the registry…</option>
-              ${COMPANIES.map((c) => html`<option key=${c.id} value=${c.id}>${c.name} (${c.type}${(c.roles || []).length ? " — " + c.roles.join(", ") : ""})</option>`)}
-            </select>`
+          : f.type === "entity" ? html`<div class="row" style="gap:6px">
+              <select class="input" style="flex:1" value=${fields[f.key] || ""} onChange=${(e) => setF(f.key, e.target.value)}>
+                <option value="">Select from the registry…</option>
+                ${(getCollection("companies") || COMPANIES).map((c) => html`<option key=${c.id} value=${c.id}>${c.name} (${c.type}${(c.roles || []).length ? " — " + c.roles.join(", ") : ""})</option>`)}
+              </select>
+              <${EntityQuickAdd} viewer=${viewer} onCreated=${(id) => setF(f.key, id)} />
+            </div>`
           : f.type === "textarea" ? html`<${Textarea} rows=3 value=${fields[f.key] || ""} onInput=${(e) => setF(f.key, e.target.value)} />`
           : f.type === "date" ? html`<${Input} type="date" value=${fields[f.key] || ""} onInput=${(e) => setF(f.key, e.target.value)} />`
           : f.type === "toggle" ? html`<select class="input" value=${fields[f.key] ? "Yes" : "No"} onChange=${(e) => setF(f.key, e.target.value === "Yes")}>

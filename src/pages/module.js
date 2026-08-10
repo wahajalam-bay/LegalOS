@@ -1,8 +1,9 @@
 // The generic module surface — one page renders any of the twelve org-architecture
-// modules from the registry spec (src/modules.js): register + detail, workflow
-// rail with stage SLAs, intra-dept holds, hearing logs, auto-responses, the
-// risk gate, cost lines and the activity trail. Row-level visibility (Section 14)
-// is enforced at the top of both views.
+// modules from the registry spec (src/modules.js). Sprint 7 makes it fully
+// operational: two-column detail (work + rail), two-way comments, document
+// attachments, owner reassignment, source-group inputs for the owning
+// department (§8.2), direct full-field logging for legal staff, stage pipeline
+// strips, and module quick actions. Row-level visibility (§14) gates everything.
 import { html, cx, fmt, useState, useMemo, Fragment } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Pill, Field, Input, Textarea, Modal, Empty, Avatar, Toggle } from "../ui.js";
@@ -12,14 +13,15 @@ import { teamShort, teamTone, masterList } from "../org.js";
 import { moduleByKey, subTypesOf, fieldOptions, workflowOf, slaFor, riskGateMissing } from "../modules.js";
 import { tatV2, tatV2Label, urgencyOf } from "../tat2.js";
 import {
-  useCollection, useMasterData, modRequestById, personName,
+  useCollection, useMasterData, modRequestById, personName, getCollection,
   advanceStage, startHold, endHold, updateModFields, addHearing, addModCost,
-  generateAutoResponse,
+  generateAutoResponse, raiseModuleRequest, postModComment, addModAttachment,
+  removeModAttachment, reassignOwner, setModPriority, setModDriveLink, logModVersion,
+  markResolutionUploaded, scheduleNextInspection, addCompanyEntity,
 } from "../store.js";
-import { useActiveUser, visibilityOf, canBrowseModule, stripInternal } from "../rbac.js";
+import { useActiveUser, visibilityOf, canBrowseModule, stripInternal, canEditGroup, teamMembers } from "../rbac.js";
 import { RankBars } from "../execviz.js";
-
-const TAT_TONES = { Running: "green", Paused: "blue", Overdue: "red", Closed: "gray" };
+import { toast } from "../toast.js";
 
 export function TatChip({ t }) {
   if (!t) return null;
@@ -27,6 +29,8 @@ export function TatChip({ t }) {
     <span class="tatchip__dot"></span>${tatV2Label(t)}
   </span>`;
 }
+
+const fmtSize = (b) => (b >= 1e6 ? (b / 1e6).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1000)) + " KB");
 
 /* ---------------- field rendering ---------------- */
 function fieldValue(f, rec) {
@@ -40,7 +44,53 @@ function fieldValue(f, rec) {
   return String(v);
 }
 
-function FieldInput({ f, value, onChange, md, rec }) {
+/* Registry quick-add — the Section 2 registry grows from inside the flow. */
+export function EntityQuickAdd({ onCreated, viewer }) {
+  const [open, setOpen] = useState(false);
+  const [f, setF] = useState({ name: "", type: "Counterparty", jurisdiction: "Pakistan", roles: [] });
+  const ROLES = ["Lessor", "Lender", "Service Provider", "Developer", "Vendor/Payee", "External Counsel", "JV Partner", "Media Partner"];
+  return html`<${Fragment}>
+    <button type="button" class="entityadd" title="Add to the Counterparty / Entity Registry" onClick=${() => setOpen(true)}>
+      <${Icon} name="plus" size=13 />
+    </button>
+    ${open && html`<${Modal} title="Add to the Entity Registry" icon="building" width=${520} onClose=${() => setOpen(false)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setOpen(false)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          const r = addCompanyEntity(f, viewer && viewer.id);
+          if (r.ok) {
+            toast(r.existed ? f.name + " already in the registry — selected" : f.name + " added to the registry");
+            setOpen(false);
+            onCreated && onCreated(r.id);
+            setF({ name: "", type: "Counterparty", jurisdiction: "Pakistan", roles: [] });
+          } else toast(r.error, "error");
+        }}>Add & select</${Btn}>
+      </${Fragment}>`}>
+      <p class="tiny muted" style="margin-top:0">Registered once, selected everywhere — never re-typed (FRD Section 2).</p>
+      <${Field} label="Name *"><${Input} value=${f.name} onInput=${(e) => setF({ ...f, name: e.target.value })} /></${Field}>
+      <div class="modeditgrid">
+        <${Field} label="Type">
+          <select class="input" value=${f.type} onChange=${(e) => setF({ ...f, type: e.target.value })}>
+            <option>Counterparty</option><option>Vendor</option>
+          </select>
+        </${Field}>
+        <${Field} label="Jurisdiction">
+          <select class="input" value=${f.jurisdiction} onChange=${(e) => setF({ ...f, jurisdiction: e.target.value })}>
+            ${["Pakistan", "Saudi Arabia", "UAE", "United Kingdom", "United States", "Singapore"].map((j) => html`<option key=${j}>${j}</option>`)}
+          </select>
+        </${Field}>
+      </div>
+      <${Field} label="Registry roles">
+        <div class="rolechips">
+          ${ROLES.map((r) => html`<button type="button" key=${r} class=${cx("rolechip", f.roles.includes(r) && "active")}
+            onClick=${() => setF({ ...f, roles: f.roles.includes(r) ? f.roles.filter((x) => x !== r) : [...f.roles, r] })}>${r}</button>`)}
+        </div>
+      </${Field}>
+    </${Modal}>`}
+  </${Fragment}>`;
+}
+
+function FieldInput({ f, value, onChange, md, rec, viewer }) {
   if (f.type === "select") {
     const opts = fieldOptions(f, md, rec);
     return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
@@ -49,10 +99,14 @@ function FieldInput({ f, value, onChange, md, rec }) {
     </select>`;
   }
   if (f.type === "entity") {
-    return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
-      <option value="">—</option>
-      ${COMPANIES.map((c) => html`<option key=${c.id} value=${c.id}>${c.name} (${c.type})</option>`)}
-    </select>`;
+    const companies = getCollection("companies") || COMPANIES;
+    return html`<div class="row" style="gap:6px">
+      <select class="input" style="flex:1" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
+        <option value="">—</option>
+        ${companies.map((c) => html`<option key=${c.id} value=${c.id}>${c.name} (${c.type})</option>`)}
+      </select>
+      <${EntityQuickAdd} viewer=${viewer} onCreated=${(id) => onChange(id)} />
+    </div>`;
   }
   if (f.type === "user") {
     return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
@@ -170,12 +224,126 @@ function ResolutionsReport({ rows }) {
   </div>`;
 }
 
+/* The stage pipeline strip — where the work sits right now; click to filter. */
+function StageStrip({ def, enriched, active, onPick }) {
+  const path = [...new Set([...def.workflow, ...(def.renewalWorkflow || [])])];
+  const open = enriched.filter((x) => x.t.status !== "Closed");
+  const byStage = Object.fromEntries(path.map((s) => [s, open.filter((x) => x.r.stage === s)]));
+  return html`<div class="stagestrip">
+    ${def.workflow.map((s) => {
+      const items = byStage[s] || [];
+      const overdue = items.some((x) => x.t.status === "Overdue");
+      return html`<button key=${s} class=${cx("stagestrip__cell", active === s && "active", !items.length && "empty")}
+        onClick=${() => onPick(active === s ? "" : s)} title=${s}>
+        <span class=${cx("stagestrip__n", overdue && "overdue")}>${items.length}</span>
+        <span class="stagestrip__label">${s}</span>
+      </button>`;
+    })}
+  </div>`;
+}
+
+/* Direct create — legal staff log a record with the FULL field set (a notice
+   received, an inspection, a case), not just the requester-facing subset. */
+function DirectCreate({ def, md, viewer, onClose }) {
+  const [title, setTitle] = useState("");
+  const [subType, setSubType] = useState("");
+  const [dept, setDept] = useState("");
+  const [entityId, setEntityId] = useState("");
+  const [owner, setOwner] = useState("");
+  const [priority, setPriority] = useState("Normal");
+  const [driveLink, setDriveLink] = useState("");
+  const [fields, setFields] = useState({});
+  const [err, setErr] = useState("");
+  const setF = (k, v) => setFields((d) => ({ ...d, [k]: v }));
+
+  const groups = [];
+  const seen = new Set();
+  for (const f of def.fields) {
+    const g = f.group || "Details";
+    if (!seen.has(g)) { seen.add(g); groups.push(g); }
+  }
+
+  const create = () => {
+    if (!title.trim()) { setErr("a short subject is required"); return; }
+    const res = raiseModuleRequest({
+      moduleKey: def.key, title, subType: subType || null,
+      requestingDept: dept || "Legal",
+      requestedBy: { name: viewer.name, designation: viewer.role, contact: viewer.email },
+      requestedById: viewer.id,
+      entityId: entityId || null, priority, driveLink: driveLink || null,
+      owner: owner || undefined,
+      fields,
+    });
+    if (!res.ok) { setErr((res.errors || []).join(" · ")); return; }
+    toast(`${res.id} logged — assigned to ${personName(res.record.owner)}`);
+    onClose();
+    navigate("/m/" + def.key + "/" + res.id);
+  };
+
+  return html`<${Modal} title=${"Log a " + def.noun + " — full record"} icon=${def.icon} width=${780} onClose=${onClose}
+    footer=${html`<${Fragment}>
+      <${Btn} onClick=${onClose}>Cancel</${Btn}>
+      <${Btn} variant="primary" icon="check" onClick=${create}>Create ${def.noun}</${Btn}>
+    </${Fragment}>`}>
+    <div class="modeditgrid">
+      <${Field} label="Short subject *"><${Input} value=${title} onInput=${(e) => setTitle(e.target.value)} /></${Field}>
+      <${Field} label=${def.subTypeLabel}>
+        <select class="input" value=${subType} onChange=${(e) => setSubType(e.target.value)}>
+          <option value="">Select…</option>
+          ${subTypesOf(def, md).map((s) => html`<option key=${s}>${s}</option>`)}
+        </select>
+      </${Field}>
+      <${Field} label="Requesting department">
+        <select class="input" value=${dept} onChange=${(e) => setDept(e.target.value)}>
+          <option value="">Legal (logged internally)</option>
+          ${masterList(md, "requestingDepartments").map((s) => html`<option key=${s}>${s}</option>`)}
+        </select>
+      </${Field}>
+      <${Field} label="Linked entity">
+        <div class="row" style="gap:6px">
+          <select class="input" style="flex:1" value=${entityId} onChange=${(e) => setEntityId(e.target.value)}>
+            <option value="">—</option>
+            ${(getCollection("companies") || COMPANIES).filter((c) => c.type === "Group Entity").map((c) => html`<option key=${c.id} value=${c.id}>${c.name}</option>`)}
+          </select>
+        </div>
+      </${Field}>
+      <${Field} label="Owner">
+        <select class="input" value=${owner} onChange=${(e) => setOwner(e.target.value)}>
+          <option value="">Auto-assign (least loaded)</option>
+          ${teamMembers(def.team).map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
+        </select>
+      </${Field}>
+      <${Field} label="Priority">
+        <select class="input" value=${priority} onChange=${(e) => setPriority(e.target.value)}>
+          <option>Normal</option><option>High</option>
+        </select>
+      </${Field}>
+      <${Field} label="Google Drive reference"><${Input} placeholder="https://drive.google.com/…" value=${driveLink} onInput=${(e) => setDriveLink(e.target.value)} /></${Field}>
+    </div>
+    ${groups.map((g) => {
+      const fs = def.fields.filter((f) => (f.group || "Details") === g)
+        .filter((f) => !f.showIf || f.showIf(fields, { subType, fields }));
+      if (!fs.length) return null;
+      return html`<div key=${g}>
+        <div class="raisesep">${g}</div>
+        <div class="modeditgrid">
+          ${fs.map((f) => html`<${Field} key=${f.key} label=${f.label} hint=${f.hint}>
+            <${FieldInput} f=${f} md=${md} rec=${{ subType, fields }} viewer=${viewer} value=${fields[f.key]} onChange=${(v) => setF(f.key, v)} />
+          </${Field}>`)}
+        </div>
+      </div>`;
+    })}
+    ${err && html`<div class="modwarn"><${Icon} name="alertTriangle" size=14 /> ${err}</div>`}
+  </${Modal}>`;
+}
+
 function Register({ def, rows, md, viewer }) {
   const [q, setQ] = useState("");
   const [sub, setSub] = useState("");
   const [stage, setStage] = useState("");
   const [tstat, setTstat] = useState("");
   const [dept, setDept] = useState("");
+  const [creating, setCreating] = useState(false);
 
   const enriched = useMemo(() => rows.map((r) => ({ r, t: tatV2(def, r) })), [rows]);
   const stages = [...new Set([...def.workflow, ...(def.renewalWorkflow || [])])];
@@ -206,7 +374,7 @@ function Register({ def, rows, md, viewer }) {
         </div>
         <div class="page__sub">${def.tatNote || def.cadenceNote || `${def.workflow.length}-stage workflow · TAT net of intra-dept holds`}</div>
       </div>
-      <${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise/" + def.key)}>New ${def.noun}</${Btn}>
+      <${Btn} variant="primary" icon="plus" onClick=${() => setCreating(true)}>New ${def.noun}</${Btn}>
     </div>
 
     <div class="modkpis">
@@ -218,6 +386,7 @@ function Register({ def, rows, md, viewer }) {
     ${def.report === "byDepartment" && html`<${ResolutionsReport} rows=${rows} />`}
 
     <div class="card" style="padding:0">
+      <${StageStrip} def=${def} enriched=${enriched} active=${stage} onPick=${setStage} />
       <div class="modtoolbar">
         <div class="modtoolbar__search">
           <${Icon} name="search" size=15 />
@@ -253,9 +422,10 @@ function Register({ def, rows, md, viewer }) {
             </tr>`)}
           </tbody>
         </table>
-        ${filtered.length === 0 && html`<${Empty} icon="inbox" title="Nothing matches" text="Adjust the filters, or raise the first one." />`}
+        ${filtered.length === 0 && html`<${Empty} icon="inbox" title="Nothing matches" text="Adjust the filters, or log the first one." />`}
       </div>
     </div>
+    ${creating && html`<${DirectCreate} def=${def} md=${md} viewer=${viewer} onClose=${() => setCreating(false)} />`}
   </div>`;
 }
 
@@ -280,7 +450,11 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
       <span class="strong" style="font-size:13.5px">Workflow${rec.flow === "renewal" ? " — renewal path" : ""}</span>
       <span class="spacer"></span>
       ${!statusOnly && rec.status !== "Closed" && html`<${Btn} size="sm" variant="primary" icon="arrowRight"
-        onClick=${() => { const r = advanceStage(rec.id, viewer.id); setErr(r.ok ? "" : r.error); }}>
+        onClick=${() => {
+          const r = advanceStage(rec.id, viewer.id);
+          setErr(r.ok ? "" : r.error);
+          if (r.ok) toast(r.closed ? rec.id + " closed" : "Moved to " + r.stage);
+        }}>
         ${next ? "Move to " + next : "Close"}
       </${Btn}>`}
     </div>
@@ -291,7 +465,7 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
     ${onHold && html`<div class="modhold-banner">
       <${Icon} name="clock" size=14 />
       TAT paused — with <b>${t.hold.dept}</b> (${t.hold.reason}) since ${fmt.dateShort(t.hold.start)}. The clock resumes when the file is received back.
-      ${!statusOnly && html`<${Btn} size="sm" onClick=${() => endHold(rec.id, viewer.id)}>Receive back</${Btn}>`}
+      ${!statusOnly && html`<${Btn} size="sm" onClick=${() => { endHold(rec.id, viewer.id); toast("Received back from " + t.hold.dept + " — clock running"); }}>Receive back</${Btn}>`}
     </div>`}
     <div class="modrail">
       ${path.map((s, i) => {
@@ -311,15 +485,15 @@ function TatBreakdown({ def, rec }) {
   const t = tatV2(def, rec);
   return html`<div class="card">
     <div class="strong" style="font-size:13.5px;margin-bottom:10px">Turnaround — actual legal working time</div>
-    <div class="tatgrid">
+    <div class="tatgrid tatgrid--rail">
       <div><div class="tatgrid__n">${t.gross}d</div><div class="tatgrid__l">Gross since assignment</div></div>
       <div><div class="tatgrid__n" style="color:var(--brand)">− ${t.held}d</div><div class="tatgrid__l">Paused with other depts</div></div>
       <div><div class="tatgrid__n">${t.reported}d</div><div class="tatgrid__l">Reported TAT</div></div>
       <div><div class="tatgrid__n">${t.sla != null ? t.sla + "d" : "—"}</div><div class="tatgrid__l">SLA budget</div></div>
     </div>
-    <div class="row" style="gap:8px;margin-top:10px">
+    <div class="row" style="gap:8px;margin-top:10px;flex-wrap:wrap">
       <${TatChip} t=${t} />
-      ${t.stageSla != null && html`<span class="tiny muted">Current stage: ${t.stageAge}d of ${t.stageSla}d${t.stageBreached ? " — breached" : ""}</span>`}
+      ${t.stageSla != null && html`<span class="tiny muted">Stage: ${t.stageAge}d of ${t.stageSla}d${t.stageBreached ? " — breached" : ""}</span>`}
       ${t.nearBreach && html`<${Pill} tone="amber">Near breach</${Pill}>`}
     </div>
   </div>`;
@@ -352,7 +526,7 @@ function HoldsPanel({ rec, md, viewer, statusOnly }) {
         <${Btn} onClick=${() => setOpen(false)}>Cancel</${Btn}>
         <${Btn} variant="primary" onClick=${() => {
           const r = startHold(rec.id, { dept, reason }, viewer.id);
-          if (r.ok) { setOpen(false); setDept(""); setReason(""); setErr(""); } else setErr(r.error);
+          if (r.ok) { setOpen(false); setDept(""); setReason(""); setErr(""); toast("TAT paused — with " + dept, "info", "clock"); } else setErr(r.error);
         }}>Pause TAT & send</${Btn}>
       </${Fragment}>`}>
       <p class="tiny muted" style="margin-top:0">The TAT clock pauses while the file sits with them, and the hold is recorded
@@ -374,6 +548,196 @@ function HoldsPanel({ rec, md, viewer, statusOnly }) {
   </div>`;
 }
 
+/* People & ownership — the rail card that makes the record actionable. */
+function PeoplePanel({ def, rec, viewer, statusOnly }) {
+  const canManage = !statusOnly && (viewer.rbac === "lead" || viewer.rbac === "head");
+  const [editDrive, setEditDrive] = useState(false);
+  const [drive, setDrive] = useState(rec.driveLink || "");
+  return html`<div class="card modpeople">
+    <div class="strong" style="font-size:13.5px;margin-bottom:10px">People & routing</div>
+    <div class="modpeople__row">
+      <${Avatar} name=${personName(rec.owner)} size="sm" />
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:600">${personName(rec.owner)}</div>
+        <div class="tiny muted">Current owner</div>
+      </div>
+      ${canManage && html`<select class="input input--sm" value=${rec.owner || ""} title="Reassign"
+        onChange=${(e) => {
+          const r = reassignOwner(rec.id, e.target.value, viewer.id);
+          if (r.ok) toast("Reassigned to " + personName(e.target.value));
+        }}>
+        ${teamMembers(def.team).map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
+      </select>`}
+    </div>
+    <div class="modpeople__row">
+      <${Avatar} name=${rec.requestedBy ? rec.requestedBy.name : personName(rec.requestedById)} size="sm" />
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:600">${rec.requestedBy ? rec.requestedBy.name : personName(rec.requestedById)}</div>
+        <div class="tiny muted">${rec.requestedBy ? rec.requestedBy.designation : "Requester"} · ${rec.requestingDept}</div>
+      </div>
+    </div>
+    <div class="modpeople__meta">
+      <div><span class="modfield__label">Priority</span>
+        ${statusOnly
+          ? html`<div class="modfield__value">${rec.priority}</div>`
+          : html`<select class="input input--sm" value=${rec.priority} onChange=${(e) => { setModPriority(rec.id, e.target.value, viewer.id); toast("Priority: " + e.target.value, "info", "flag"); }}>
+              <option>Normal</option><option>High</option>
+            </select>`}
+      </div>
+      <div><span class="modfield__label">Linked entity</span><div class="modfield__value">${rec.entityId ? entityName(rec.entityId) : "—"}</div></div>
+      <div><span class="modfield__label">Date raised</span><div class="modfield__value">${fmt.date(rec.dateRaised)}</div></div>
+      <div><span class="modfield__label">Contact</span><div class="modfield__value ellipsis" title=${rec.requestedBy ? rec.requestedBy.contact : ""}>${rec.requestedBy ? rec.requestedBy.contact : "—"}</div></div>
+    </div>
+    <div class="modpeople__drive">
+      ${rec.driveLink
+        ? html`<a href=${rec.driveLink} target="_blank" rel="noopener" class="row" style="gap:6px;color:var(--brand-600);font-size:12.5px;font-weight:600">
+            <${Icon} name="externalLink" size=14 /> Google Drive folder</a>`
+        : html`<span class="tiny muted">No Drive reference</span>`}
+      ${!statusOnly && html`<button class="iconbtn" title="Edit Drive link" onClick=${() => setEditDrive(true)}><${Icon} name="edit" size=13 /></button>`}
+    </div>
+    ${editDrive && html`<${Modal} title="Google Drive reference" icon="link" onClose=${() => setEditDrive(false)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setEditDrive(false)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          const r = setModDriveLink(rec.id, drive, viewer.id);
+          if (r.ok) toast(drive.trim() ? "Drive reference saved" : "Drive reference removed", "info", "link");
+          setEditDrive(false);
+        }}>Save</${Btn}>
+      </${Fragment}>`}>
+      <${Field} label="Folder or file link" hint="Phase 1 integration — a reference, no data sync.">
+        <${Input} value=${drive} onInput=${(e) => setDrive(e.target.value)} />
+      </${Field}>
+    </${Modal}>`}
+  </div>`;
+}
+
+/* Attachments — both sides manage documents on the record. */
+function AttachmentsPanel({ rec, viewer, statusOnly }) {
+  const atts = rec.attachments || [];
+  const pick = () => {
+    const inp = document.createElement("input");
+    inp.type = "file";
+    inp.multiple = true;
+    inp.onchange = () => {
+      [...(inp.files || [])].forEach((f) => {
+        const r = addModAttachment(rec.id, { name: f.name, size: f.size, type: f.type }, viewer.id);
+        if (r.ok) toast(f.name + " attached");
+      });
+    };
+    inp.click();
+  };
+  return html`<div class="card modatts">
+    <div class="row" style="margin-bottom:8px">
+      <span class="strong" style="font-size:13.5px">Documents</span>
+      <span class="spacer"></span>
+      <${Btn} size="sm" icon="upload" onClick=${pick}>Attach</${Btn}>
+    </div>
+    ${atts.length === 0 && html`<div class="tiny muted">Nothing attached yet. Both the team and the requester can attach here.</div>`}
+    ${atts.map((a) => html`<div key=${a.id} class="modatt">
+      <div class="modatt__ico"><${Icon} name="file" size=14 /></div>
+      <div style="flex:1;min-width:0">
+        <div class="ellipsis" style="font-size:12.5px;font-weight:600" title=${a.name}>${a.name}</div>
+        <div class="tiny muted">${a.size ? fmtSize(a.size) + " · " : ""}${personName(a.by)} · ${fmt.dateShort(a.at)}</div>
+      </div>
+      ${(!statusOnly || a.by === viewer.id) && html`<button class="iconbtn" title="Remove"
+        onClick=${() => { removeModAttachment(rec.id, a.id, viewer.id); toast(a.name + " removed", "info", "trash"); }}>
+        <${Icon} name="x" size=13 /></button>`}
+    </div>`)}
+  </div>`;
+}
+
+/* Comments — the two-way conversation on the record; internal notes stay team-side. */
+function CommentsPanel({ rec, viewer, statusOnly }) {
+  const [text, setText] = useState("");
+  const [internal, setInternal] = useState(false);
+  const comments = [...(rec.comments || [])].sort((a, b) => new Date(a.at) - new Date(b.at));
+  const send = () => {
+    const r = postModComment(rec.id, { text, internal: statusOnly ? false : internal }, viewer.id);
+    if (r.ok) { setText(""); toast(internal && !statusOnly ? "Internal note added" : "Comment posted"); }
+  };
+  return html`<div class="card modcomments">
+    <div class="row" style="margin-bottom:10px">
+      <span class="strong" style="font-size:13.5px">Conversation</span>
+      <span class="tiny muted">— ${statusOnly ? "replies go straight to the owning lawyer" : "the requester sees everything not marked internal"}</span>
+    </div>
+    ${comments.length === 0 && html`<div class="tiny muted" style="margin-bottom:10px">No messages yet.</div>`}
+    ${comments.map((c) => {
+      const u = byId(c.by) || {};
+      const mine = c.by === viewer.id;
+      return html`<div key=${c.id} class=${cx("modcomment", mine && "modcomment--mine", c.internal && "modcomment--internal")}>
+        <${Avatar} name=${personName(c.by)} size="sm" />
+        <div class="modcomment__body">
+          <div class="row" style="gap:6px">
+            <span class="modcomment__who">${personName(c.by)}</span>
+            ${c.internal && html`<${Pill} tone="gray" className="modfield__src">internal</${Pill}>`}
+            <span class="tiny muted">${fmt.rel(c.at)}</span>
+          </div>
+          <div class="modcomment__text">${c.text}</div>
+        </div>
+      </div>`;
+    })}
+    ${rec.status !== "Closed" && html`<div class="modcomments__input">
+      <${Textarea} rows=2 placeholder=${statusOnly ? "Reply to the legal team…" : "Message the requester, or add an internal note…"}
+        value=${text} onInput=${(e) => setText(e.target.value)}
+        onKeyDown=${(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }} />
+      <div class="row" style="gap:10px">
+        ${!statusOnly && html`<label class="row tiny muted" style="gap:5px;cursor:pointer">
+          <input type="checkbox" checked=${internal} onChange=${(e) => setInternal(e.target.checked)} /> internal note
+        </label>`}
+        <span class="spacer"></span>
+        <${Btn} size="sm" variant="primary" icon="send" onClick=${send}>Post</${Btn}>
+      </div>
+    </div>`}
+  </div>`;
+}
+
+/* Module-specific quick actions in the rail. */
+function QuickActions({ def, rec, viewer, statusOnly }) {
+  if (statusOnly) return null;
+  const f = rec.fields || {};
+  const actions = [];
+  if (def.key === "resolutions" && !f.uploadedToTracker && /Finalize|Upload|Closed/.test(rec.stage)) {
+    actions.push({
+      icon: "upload", label: "Confirm tracker upload",
+      hint: "Stamps date + link on the record",
+      run: () => {
+        const link = prompt("Resolutions Tracker link (optional):", f.trackerLink || "https://drive.google.com/resolutions-tracker");
+        markResolutionUploaded(rec.id, link, viewer.id);
+        toast("Marked uploaded to the Resolutions Tracker");
+      },
+    });
+  }
+  if (def.key === "inspections" && rec.status === "Closed") {
+    actions.push({
+      icon: "refresh", label: rec.subType === "Labour Department" ? "Schedule next (bi-annual)" : "Schedule next (annual)",
+      hint: "Creates the next cycle, costs rolled forward",
+      run: () => {
+        const r = scheduleNextInspection(rec.id, viewer.id);
+        if (r.ok) { toast(r.id + " scheduled"); navigate("/m/inspections/" + r.id); }
+      },
+    });
+  }
+  if (def.versionLog && rec.status !== "Closed") {
+    actions.push({
+      icon: "copy", label: "Log a draft version",
+      hint: "Appends to the version log",
+      run: () => {
+        const note = prompt("What changed in this draft?", "Counterparty markups folded in");
+        if (note != null) { const r = logModVersion(rec.id, note, viewer.id); if (r.ok) toast("Draft v" + r.v + " logged"); }
+      },
+    });
+  }
+  if (!actions.length) return null;
+  return html`<div class="card">
+    <div class="strong" style="font-size:13.5px;margin-bottom:8px">Quick actions</div>
+    ${actions.map((a) => html`<button key=${a.label} class="quickaction" onClick=${a.run}>
+      <${Icon} name=${a.icon} size=15 />
+      <span style="flex:1;text-align:left"><div>${a.label}</div><div class="tiny muted">${a.hint}</div></span>
+      <${Icon} name="chevronRight" size=14 />
+    </button>`)}
+  </div>`;
+}
+
 function FieldGroups({ def, rec, md, viewer, statusOnly }) {
   const [editGroup, setEditGroup] = useState(null);
   const [draft, setDraft] = useState({});
@@ -392,15 +756,19 @@ function FieldGroups({ def, rec, md, viewer, statusOnly }) {
 
   return html`<${Fragment}>
     ${groups.map((g) => {
-      const fs = def.fields.filter((f) => (f.group || "Details") === g).filter(visible);
+      const groupFields = def.fields.filter((f) => (f.group || "Details") === g);
+      const fs = groupFields.filter(visible);
       if (!fs.length) return null;
+      // §8.2 — the department that owns a source group maintains it, even
+      // from a status-only view.
+      const editable = canEditGroup(viewer, def, groupFields) && rec.status !== "Closed";
       return html`<div key=${g} class="card">
         <div class="row" style="margin-bottom:10px">
           <span class="strong" style="font-size:13.5px">${g}</span>
-          ${def.fields.some((f) => (f.group || "Details") === g && f.source) &&
-            html`<span class="tiny muted">— source-tagged (Section 8.2)</span>`}
+          ${groupFields.some((f) => f.source) &&
+            html`<span class="tiny muted">— maintained by ${groupFields.find((f) => f.source).source}</span>`}
           <span class="spacer"></span>
-          ${!statusOnly && html`<${Btn} size="sm" icon="edit" onClick=${() => { setEditGroup(g); setDraft({ ...(rec.fields || {}) }); }}>Edit</${Btn}>`}
+          ${editable && html`<${Btn} size="sm" icon="edit" onClick=${() => { setEditGroup(g); setDraft({ ...(rec.fields || {}) }); }}>Edit</${Btn}>`}
         </div>
         <div class="modfields">
           ${fs.map((f) => html`<div key=${f.key} class=${cx("modfield", f.type === "textarea" && "modfield--long")}>
@@ -418,18 +786,21 @@ function FieldGroups({ def, rec, md, viewer, statusOnly }) {
       footer=${html`<${Fragment}>
         <${Btn} onClick=${() => setEditGroup(null)}>Cancel</${Btn}>
         <${Btn} variant="primary" onClick=${() => {
-          const keys = def.fields.filter((f) => (f.group || "Details") === editGroup).map((f) => f.key);
+          const keys = def.fields.filter((f) => (f.group || "Details") === editGroup)
+            .filter((f) => !(statusOnly && f.internal))
+            .map((f) => f.key);
           const patch = {};
           keys.forEach((k) => { if (draft[k] !== (rec.fields || {})[k]) patch[k] = draft[k]; });
-          if (Object.keys(patch).length) updateModFields(rec.id, patch, viewer.id);
+          if (Object.keys(patch).length) { updateModFields(rec.id, patch, viewer.id); toast(editGroup + " updated"); }
           setEditGroup(null);
         }}>Save</${Btn}>
       </${Fragment}>`}>
       <div class="modeditgrid">
         ${def.fields.filter((f) => (f.group || "Details") === editGroup)
+          .filter((f) => !(statusOnly && f.internal))
           .filter((f) => !f.showIf || f.showIf(draft, rec))
           .map((f) => html`<${Field} key=${f.key} label=${f.label} hint=${f.hint}>
-            <${FieldInput} f=${f} md=${md} rec=${rec} value=${draft[f.key]} onChange=${(v) => setDraft((d) => ({ ...d, [f.key]: v }))} />
+            <${FieldInput} f=${f} md=${md} rec=${rec} viewer=${viewer} value=${draft[f.key]} onChange=${(v) => setDraft((d) => ({ ...d, [f.key]: v }))} />
           </${Field}>`)}
       </div>
     </${Modal}>`}
@@ -463,6 +834,7 @@ function HearingsPanel({ def, rec, md, viewer, statusOnly }) {
         <${Btn} variant="primary" onClick=${() => {
           if (!h.date || !h.type) return;
           addHearing(rec.id, h, viewer.id);
+          toast("Hearing logged" + (h.nextDate ? " — next " + fmt.dateShort(h.nextDate) : ""));
           setOpen(false); setH({ date: "", type: "", attendedBy: "", outcome: "", nextDate: "" });
         }}>Save hearing</${Btn}>
       </${Fragment}>`}>
@@ -491,7 +863,11 @@ function AutoResponsePanel({ rec, viewer, statusOnly }) {
       <span class="strong" style="font-size:13.5px">Standard response</span>
       <span class="tiny muted">— detects the notice type and drafts the matching reply for review</span>
       <span class="spacer"></span>
-      <${Btn} size="sm" icon="sparkles" onClick=${() => { const r = generateAutoResponse(rec.id, viewer.id); setMsg(r.ok ? "" : r.error); }}>
+      <${Btn} size="sm" icon="sparkles" onClick=${() => {
+        const r = generateAutoResponse(rec.id, viewer.id);
+        setMsg(r.ok ? "" : r.error);
+        if (r.ok) toast("Standard response drafted — review before sending");
+      }}>
         ${draft ? "Regenerate" : "Generate auto-response"}
       </${Btn}>
     </div>
@@ -515,7 +891,7 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
       <span class="spacer"></span>
       <${Btn} size="sm" icon="plus" onClick=${() => setOpen(true)}>Add cost</${Btn}>
     </div>
-    ${costs.length === 0 && html`<div class="tiny muted">No costs recorded on this ${"record"}.</div>`}
+    ${costs.length === 0 && html`<div class="tiny muted">No costs recorded on this record.</div>`}
     ${costs.length > 0 && html`<div class="tablewrap"><table class="table table--tight">
       <thead><tr><th>Type</th><th>Estimated</th><th>Actual</th><th>Vendor / payee</th><th>Invoice</th><th>Approved by</th><th>Attribution</th></tr></thead>
       <tbody>${costs.map((x) => html`<tr key=${x.id}>
@@ -538,6 +914,7 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
         <${Btn} variant="primary" onClick=${() => {
           if (!c.type) return;
           addModCost(rec.id, c, viewer.id);
+          toast("Cost line recorded");
           setOpen(false);
         }}>Save cost</${Btn}>
       </${Fragment}>`}>
@@ -556,10 +933,13 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
         <${Field} label="Estimated cost"><${Input} type="number" value=${c.estimated == null ? "" : c.estimated} onInput=${(e) => setC({ ...c, estimated: e.target.value === "" ? null : Number(e.target.value) })} /></${Field}>
         <${Field} label="Actual cost"><${Input} type="number" value=${c.actual == null ? "" : c.actual} onInput=${(e) => setC({ ...c, actual: e.target.value === "" ? null : Number(e.target.value) })} /></${Field}>
         <${Field} label="Vendor / payee (registry)">
-          <select class="input" value=${c.vendorId} onChange=${(e) => setC({ ...c, vendorId: e.target.value })}>
-            <option value="">—</option>
-            ${COMPANIES.filter((x) => x.type === "Vendor").map((x) => html`<option key=${x.id} value=${x.id}>${x.name}</option>`)}
-          </select>
+          <div class="row" style="gap:6px">
+            <select class="input" style="flex:1" value=${c.vendorId} onChange=${(e) => setC({ ...c, vendorId: e.target.value })}>
+              <option value="">—</option>
+              ${(getCollection("companies") || COMPANIES).filter((x) => x.type === "Vendor").map((x) => html`<option key=${x.id} value=${x.id}>${x.name}</option>`)}
+            </select>
+            <${EntityQuickAdd} viewer=${viewer} onCreated=${(id) => setC({ ...c, vendorId: id })} />
+          </div>
         </${Field}>
         <${Field} label="Invoice / reference no"><${Input} value=${c.invoiceNo} onInput=${(e) => setC({ ...c, invoiceNo: e.target.value })} /></${Field}>
         <${Field} label="Cost approved by">
@@ -604,7 +984,7 @@ function Detail({ def, id, md, viewer }) {
   const rec = statusOnly ? stripInternal(def, rec0) : rec0;
   const t = tatV2(def, rec0);
 
-  return html`<div class="page">
+  return html`<div class="page page--wide">
     <div class="page__head" style="align-items:flex-start">
       <div style="min-width:0">
         <div class="row" style="gap:8px;flex-wrap:wrap">
@@ -620,45 +1000,40 @@ function Detail({ def, id, md, viewer }) {
           ${statusOnly && html`<${Pill} tone="amber">Requester view — status only</${Pill}>`}
         </div>
       </div>
-      ${rec.driveLink && html`<a class="btn btn--ghost" href=${rec.driveLink} target="_blank" rel="noopener">
-        <${Icon} name="externalLink" size=15 /> Drive folder
-      </a>`}
-    </div>
-
-    <div class="modmeta card">
-      ${[
-        ["Requesting dept", rec.requestingDept],
-        ["Requested by", rec.requestedBy ? `${rec.requestedBy.name} — ${rec.requestedBy.designation}` : personName(rec.requestedById)],
-        ["Contact", rec.requestedBy ? rec.requestedBy.contact : "—"],
-        ["Linked entity", rec.entityId ? entityName(rec.entityId) : "—"],
-        ["Date raised", fmt.date(rec.dateRaised)],
-        ["Current owner", personName(rec.owner)],
-      ].map(([l, v]) => html`<div key=${l}><div class="modfield__label">${l}</div><div class="modfield__value">${v || "—"}</div></div>`)}
     </div>
 
     ${statusOnly && html`<div class="modnote">
       <${Icon} name="lock" size=14 />
-      You raised this request, so you see its status, stage, owner and turnaround. The team's internal
-      notes, risk assessment and cost lines are not part of this view.
+      You raised this request, so you see its status, stage, owner and turnaround — and you can reply,
+      attach documents, and keep your department's own fields current. The team's internal notes,
+      risk assessment and cost lines are not part of this view.
     </div>`}
 
-    <${WorkflowRail} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
-    <div class="modcols">
-      <${TatBreakdown} def=${def} rec=${rec0} />
-      <${HoldsPanel} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+    <div class="moddetail">
+      <div class="moddetail__main">
+        <${WorkflowRail} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
+        ${def.hearings && html`<${HearingsPanel} def=${def} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />`}
+        ${def.autoResponse && html`<${AutoResponsePanel} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />`}
+        <${FieldGroups} def=${def} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+        ${(rec.versions || []).length > 0 && html`<div class="card">
+          <div class="strong" style="font-size:13.5px;margin-bottom:8px">Draft version log</div>
+          ${rec.versions.map((v) => html`<div key=${v.v} class="row" style="gap:10px;padding:5px 0;font-size:13px">
+            <${Pill} tone="gray">v${v.v}</${Pill}> <span>${v.note}</span>
+            <span class="spacer"></span><span class="tiny muted">${personName(v.by)} · ${fmt.dateShort(v.at)}</span>
+          </div>`)}
+        </div>`}
+        <${CostsPanel} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+        <${CommentsPanel} rec=${rec} viewer=${viewer} statusOnly=${statusOnly} />
+        ${!statusOnly && html`<${ActivityPanel} rec=${rec} />`}
+      </div>
+      <aside class="moddetail__rail">
+        <${TatBreakdown} def=${def} rec=${rec0} />
+        <${PeoplePanel} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
+        <${QuickActions} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
+        <${HoldsPanel} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+        <${AttachmentsPanel} rec=${rec} viewer=${viewer} statusOnly=${statusOnly} />
+      </aside>
     </div>
-    ${def.hearings && html`<${HearingsPanel} def=${def} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />`}
-    ${def.autoResponse && html`<${AutoResponsePanel} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />`}
-    <${FieldGroups} def=${def} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
-    ${(rec.versions || []).length > 0 && html`<div class="card">
-      <div class="strong" style="font-size:13.5px;margin-bottom:8px">Draft version log</div>
-      ${rec.versions.map((v) => html`<div key=${v.v} class="row" style="gap:10px;padding:5px 0;font-size:13px">
-        <${Pill} tone="gray">v${v.v}</${Pill}> <span>${v.note}</span>
-        <span class="spacer"></span><span class="tiny muted">${personName(v.by)} · ${fmt.dateShort(v.at)}</span>
-      </div>`)}
-    </div>`}
-    <${CostsPanel} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
-    ${!statusOnly && html`<${ActivityPanel} rec=${rec} />`}
   </div>`;
 }
 
@@ -679,5 +1054,7 @@ export default function ModulePage({ id, path }) {
 
   if (!canBrowseModule(viewer, def)) return html`<${AccessDenied} def=${def} viewer=${viewer} />`;
   const rows = all.filter((r) => r.moduleKey === def.key);
-  return html`<${Register} def=${def} rows=${rows} md=${md} viewer=${viewer} />`;
+  // Keyed by module — otherwise React reuses the Register instance across
+  // /m/* routes and one module's filters leak into the next.
+  return html`<${Register} key=${def.key} def=${def} rows=${rows} md=${md} viewer=${viewer} />`;
 }

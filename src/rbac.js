@@ -74,6 +74,7 @@ export function stripInternal(def, rec) {
     activity: (rec.activity || []).filter((a) => !a.internal),
     holds: rec.holds || [], // hold state is part of "why is my request paused"
     costs: [],              // cost lines are internal to Legal & Finance
+    comments: (rec.comments || []).filter((c) => !c.internal),
   };
 }
 
@@ -98,3 +99,18 @@ export function landingFor(user) {
 
 // People pickers: legal staff of a given team (for owner assignment).
 export const teamMembers = (teamKey) => USERS.filter((u) => u.legalTeam === teamKey);
+
+/* ---------------- Section 8.2 — source-group input rights ----------------
+   Asset Recovery pulls data from three sources; each field is tagged with the
+   department that OWNS it. That ownership is a WRITE right: HR maintains the
+   HR Input group and Admin theirs, even from a status-only view — the OS
+   manages the inputs, not just the outputs. Legal's own group stays legal-only. */
+const SOURCE_DEPT = { HR: "HR", Admin: "Admin" };
+export function canEditGroup(viewer, def, groupFields = []) {
+  if (!viewer || !def) return false;
+  // The owning team (and the head) edit everything.
+  if (viewer.rbac === "head" || (viewer.legalTeam && viewer.legalTeam === def.team)) return true;
+  // A source-tagged group is editable by the department that owns the source.
+  const src = (groupFields.find((f) => f.source) || {}).source;
+  return !!src && SOURCE_DEPT[src] === viewer.dept;
+}

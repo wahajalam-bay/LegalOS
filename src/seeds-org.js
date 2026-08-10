@@ -70,6 +70,7 @@ function mk(moduleKey, o) {
     stageLog,
     holds,
     activity,
+    comments: (o.comments || []).map((c, i) => ({ id: id + "-M" + (i + 1), ...c })),
     costs: (o.costs || []).map((c, i) => ({ id: id + "-C" + (i + 1), ...c })),
     hearings: o.hearings || undefined,
     fields: o.fields || {},
@@ -154,6 +155,10 @@ const CMP = [
     subType: "Loan Agreement", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
     entityId: "CO-36", owner: "u8", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 11, pace: 2, priority: "High",
     holds: [{ dept: "Finance", reason: "Awaiting Documents", startDaysAgo: 6, endDaysAgo: 2 }],
+    comments: [
+      { at: d(-6), by: "u8", text: "The bank wants the board resolution and last two audited statements before term sheet sign-off.", internal: false },
+      { at: d(-2), by: "u16", text: "Both sent to the bank directly; copies attached here for the record.", internal: false },
+    ],
     fields: { counterpartyId: "CO-42", value: 500000000, currency: "PKR", expiry: d(365), renewalTerm: "1 year", renewalDue: d(335), renewalStatus: "Not Due" },
     costs: [{ type: "External Counsel Fee", estimated: 350000, actual: null, currency: "PKR", vendorId: "CO-40", attribution: "Legal operating budget" }],
   }),
@@ -295,6 +300,15 @@ const LIT = [
     subType: "Labour Case", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@northwind.com"), requestedById: "u14",
     entityId: "CO-36", owner: "u17", assignedBy: "u6", stage: "Internal Review", raisedDaysAgo: 5, pace: 1, priority: "High",
     holds: [{ dept: "HR", reason: "Awaiting Documents", startDaysAgo: 2 }],
+    comments: [
+      { at: d(-2), by: "u17", text: "We need the attendance register and the two warning letters referenced in the termination memo — reply here or attach directly.", internal: false },
+      { at: d(-1), by: "u14", text: "Attendance register attached; warning letters are with the regional office, expect them tomorrow.", internal: false },
+      { at: d(-1), by: "u17", text: "Their counsel is weak on limitation — reply can take the s.25-A point first.", internal: true },
+    ],
+    attachments: [
+      { id: "ATT-1", name: "termination-memo-ZM-8817.pdf", size: 182000, at: d(-5), by: "u14" },
+      { id: "ATT-2", name: "attendance-register-2026H1.xlsx", size: 96000, at: d(-1), by: "u14" },
+    ],
     fields: { caseNumber: "LAB-3321/2026", court: "Punjab Labour Court No. 4", position: "Respondent", caseStatus: "In Progress", filingDate: d(-45), counselType: "Internal", counselName: "Ahmed Raza", recoverablePkr: 0, exposurePkr: 3800000, riskRating: "Medium", proceedings: "Reply drafted; awaiting attendance records from HR." },
     hearings: [
       { id: "H1", date: d(-15), type: "First hearing", attendedBy: "Internal — Ahmed Raza", outcome: "Reply ordered within 14 days", nextDate: d(3) },

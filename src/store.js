@@ -742,6 +742,7 @@ export function raiseModuleRequest(payload = {}) {
       { stage: path[1] || path[0], at: now, by: null },
     ],
     holds: [],
+    comments: [],
     activity: [
       { at: now, by, action: `Request raised${payload.requestedBy ? " by " + payload.requestedBy.name : ""} (${payload.requestingDept || "—"})` },
       { at: now, by: null, action: `Auto-assigned to ${(byId(owner) || {}).name || "queue"} per ${def.label} team rules` },
@@ -969,6 +970,190 @@ export function runOrgSweeps() {
   }
 
   return { ok: true, renewalsCreated: created };
+}
+
+/* ---------------- Sprint 7: operational inputs ----------------
+   The OS manages the inputs, not just the outputs: comments between the
+   requester and the team, document attachments, owner reassignment, source-
+   group edits, and the module-specific quick actions. */
+
+function patchMod(id, fn) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return null;
+  const updated = fn(rec);
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return updated;
+}
+
+// Two-way comments on a record. `internal: true` keeps a note team-side —
+// excluded from the requester's view (Section 14.4).
+export function postModComment(id, { text, internal = false }, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const clean = String(text || "").trim();
+  if (!clean) return { ok: false, error: "empty comment" };
+  const c = { id: id + "-M" + ((rec.comments || []).length + 1), at: nowIso(), by, text: clean, internal: !!internal };
+  patchMod(id, (r) => ({ ...r, comments: [...(r.comments || []), c] }));
+  // Route the ping to the other side of the conversation.
+  const byUser = byId(by) || {};
+  const fromLegal = byUser.dept === "Legal";
+  if (!internal) {
+    if (fromLegal) {
+      pushNotif({
+        id: "cmt-" + c.id, forDept: rec.requestingDept, tone: "blue", icon: "message",
+        title: `${byUser.name || "Legal"} commented on ${id} — ${rec.title}`,
+        path: "/m/" + rec.moduleKey + "/" + id,
+      });
+    } else {
+      pushNotif({
+        id: "cmt-" + c.id, forUserId: rec.owner, tone: "blue", icon: "message",
+        title: `${byUser.name || "Requester"} replied on ${id} — ${rec.title}`,
+        path: "/m/" + rec.moduleKey + "/" + id,
+      });
+    }
+  }
+  return { ok: true, comment: c };
+}
+
+// Attachments — metadata references (name/size/type), the storage seam stays
+// marked. Requesters attach from their own-request view; legal from anywhere.
+export function addModAttachment(id, file, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const att = {
+    id: id + "-A" + ((rec.attachments || []).length + 1),
+    name: file.name, size: file.size || 0, mime: file.type || "",
+    at: nowIso(), by,
+  };
+  patchMod(id, (r) => stampActivity(
+    { ...r, attachments: [...(r.attachments || []), att] },
+    { at: att.at, by, action: `Document attached — ${att.name}` }
+  ));
+  const byUser = byId(by) || {};
+  if (byUser.dept !== "Legal") {
+    pushNotif({
+      id: "att-" + att.id, forUserId: rec.owner, tone: "green", icon: "paperclip",
+      title: `${byUser.name || "Requester"} attached ${att.name} on ${id}`,
+      path: "/m/" + rec.moduleKey + "/" + id,
+    });
+  }
+  return { ok: true, attachment: att };
+}
+
+export function removeModAttachment(id, attId, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const att = (rec.attachments || []).find((a) => a.id === attId);
+  if (!att) return { ok: false, error: "attachment not found" };
+  patchMod(id, (r) => stampActivity(
+    { ...r, attachments: r.attachments.filter((a) => a.id !== attId) },
+    { at: nowIso(), by, action: `Attachment removed — ${att.name}` }
+  ));
+  return { ok: true };
+}
+
+// Owner reassignment — leads and the head rebalance the queue.
+export function reassignOwner(id, newOwner, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  if (rec.owner === newOwner) return { ok: false, error: "already the owner" };
+  const from = personName(rec.owner);
+  patchMod(id, (r) => stampActivity(
+    { ...r, owner: newOwner },
+    { at: nowIso(), by, action: `Reassigned from ${from} to ${personName(newOwner)}` }
+  ));
+  pushNotif({
+    id: `assign-${id}-${newOwner}`, forUserId: newOwner, tone: "blue", icon: "inbox",
+    title: `${id} reassigned to you — ${rec.title}`,
+    path: "/m/" + rec.moduleKey + "/" + id,
+  });
+  return { ok: true };
+}
+
+export function setModPriority(id, priority, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec || rec.priority === priority) return { ok: false };
+  patchMod(id, (r) => stampActivity({ ...r, priority }, { at: nowIso(), by, action: `Priority set to ${priority}` }));
+  return { ok: true };
+}
+
+// Google Drive reference (Section 10, Phase 1) — a link, no data sync.
+export function setModDriveLink(id, link, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const clean = String(link || "").trim() || null;
+  if (clean === rec.driveLink) return { ok: true };
+  patchMod(id, (r) => stampActivity({ ...r, driveLink: clean }, { at: nowIso(), by, action: clean ? "Drive reference linked" : "Drive reference removed" }));
+  return { ok: true };
+}
+
+// Contracts — the draft version log (Section 4.1).
+export function logModVersion(id, note, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const last = (rec.versions || []).slice(-1)[0];
+  const v = last ? (parseFloat(last.v) + 0.1).toFixed(1) : "0.1";
+  patchMod(id, (r) => stampActivity(
+    { ...r, versions: [...(r.versions || []), { v, at: nowIso(), by, note: String(note || "").trim() || "Draft updated" }] },
+    { at: nowIso(), by, action: `Draft v${v} logged` }
+  ));
+  return { ok: true, v };
+}
+
+// Resolutions — confirm the tracker upload (Sections 6.2 / 12).
+export function markResolutionUploaded(id, link, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  patchMod(id, (r) => stampActivity(
+    { ...r, fields: { ...(r.fields || {}), uploadedToTracker: true, trackerUploadDate: nowIso(), trackerLink: link || (r.fields || {}).trackerLink || "" } },
+    { at: nowIso(), by, action: "Confirmed upload to the Resolutions Tracker" }
+  ));
+  return { ok: true };
+}
+
+// Inspections — schedule the next cycle from the closed one (Section 8.6:
+// labour is bi-annual, civil defence annual). Costs roll forward.
+export function scheduleNextInspection(id, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec || rec.moduleKey !== "inspections") return { ok: false, error: "not an inspection" };
+  const months = rec.subType === "Labour Department" ? 6 : 12;
+  const f = rec.fields || {};
+  const nextDate = new Date((f.inspectionDate ? new Date(f.inspectionDate) : new Date()).getTime());
+  nextDate.setMonth(nextDate.getMonth() + months);
+  const res = raiseModuleRequest({
+    moduleKey: "inspections",
+    title: `${rec.subType === "Labour Department" ? "Labour inspection" : "Civil Defence annual"} — ${f.office}`,
+    subType: rec.subType,
+    requestingDept: rec.requestingDept,
+    requestedBy: { name: "System", designation: "Inspection cadence", contact: "legalos" },
+    entityId: rec.entityId,
+    owner: rec.owner,
+    fields: {
+      office: f.office,
+      inspectionDate: nextDate.toISOString(),
+      costCurrentYear: f.costForthcomingYear != null ? f.costForthcomingYear : f.costCurrentYear,
+      costForthcomingYear: f.costForthcomingYear != null ? f.costForthcomingYear : f.costCurrentYear,
+      costReduced: false,
+    },
+  });
+  if (res.ok) {
+    patchMod(res.id, (r) => stampActivity(r, { at: nowIso(), by, action: `Scheduled from ${id} on the ${months === 6 ? "bi-annual" : "annual"} cadence` }));
+  }
+  return res;
+}
+
+// The Counterparty / Entity Registry grows from inside the flow — selected on
+// every module, never re-typed (Section 2).
+export function addCompanyEntity({ name, type = "Counterparty", jurisdiction = "Pakistan", roles = [] }, by) {
+  const clean = String(name || "").trim();
+  if (!clean) return { ok: false, error: "name is required" };
+  const dup = (state.companies || []).find((c) => c.name.toLowerCase() === clean.toLowerCase());
+  if (dup) return { ok: true, id: dup.id, existed: true };
+  const id = nextId("companies", "CO-");
+  const jur = { "Saudi Arabia": "KSA", "Pakistan": "PK", "UAE": "UAE", "United Kingdom": "UK", "United States": "US", "Singapore": "SG" }[jurisdiction] || "PK";
+  addItem("companies", { id, name: clean, aliases: [], jurisdiction, jur, type, roles, addedBy: by, createdAt: nowIso() });
+  return { ok: true, id };
 }
 
 /* ---------------- reads ---------------- */

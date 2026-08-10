@@ -31,6 +31,24 @@ and civil-defence inspections).
 | **14. Access control** | Raising ≠ viewing; the five-role permission matrix; row-level security keyed on Legal Team + Requesting Department; requester sees status/stage/owner/TAT only, never internal notes; internal fields flaggable team-internal; search respects the filter | `rbac.js` enforces exactly the FRD filter logic; internal fields are declared in the module registry and stripped from the requester's own-request view; the matrix is published in Settings; a **View As** switcher demos every role live | Settings → **Access & Visibility**; sidebar footer → View As |
 | **14.2 Raise flow** | Step 1 team → Step 2 module + sub-type → Step 3 common fields + attachments → auto-assigned per team rules → Request ID → track under My Requests | The single window, with auto-assignment to the least-loaded member of the receiving team and a My Requests list underneath | **Raise Request** |
 
+## The operational layer (Sprint 7 — inputs, not just outputs)
+
+The departments do all of it inside the OS:
+
+| Who | Can now do | Where |
+|---|---|---|
+| Any requester | Reply to the team in a two-way conversation on their own request; attach documents through a real file picker; both notify the owning lawyer | Any record → *Conversation* / *Documents* |
+| HR / Admin | **Maintain their own source-tagged field groups** on Asset Recovery — §8.2's field ownership is a write right, enforced per group, even from a status-only view | Asset Recovery record → *HR Input* / *Admin Input* → Edit |
+| Legal staff | Log any record **directly with the full field set** (a notice received, an inspection, a case) — not just the requester-facing subset; pick the owner or let auto-assign route it | Any register → *New …* |
+| Legal staff | Post internal notes the requester never sees; drive the conversation from the same thread | Record → *Conversation* → *internal note* |
+| Team leads / head | **Reassign the owner** from the People & routing rail; set priority | Record → rail |
+| Legal staff | Grow the **Counterparty / Entity Registry inline** from any picker (name, type, jurisdiction, registry roles) — registered once, selected everywhere | Any entity/vendor picker → **+** |
+| Compliance | One-click **Confirm tracker upload** on a finalized resolution | Record → *Quick actions* |
+| Litigation | **Schedule the next inspection** on the bi-annual/annual cadence, costs rolled forward | Closed inspection → *Quick actions* |
+| Commercial | **Log draft versions** on a contract | Contract record → *Quick actions* |
+
+Plus the UX layer: two-column record pages (work on the left, clock/people/holds/documents on the right), stage pipeline strips on every register (click a stage to filter), a "start here" focus line on My Tasks with urgency rails, a global **+ New** in the topbar, and toast feedback on every action.
+
 ## What is real vs seam (honest list)
 
 - **Real**: the twelve modules, TAT v2 arithmetic, holds, hearing logs, auto-responses,

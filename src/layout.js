@@ -13,6 +13,7 @@ import { senderName } from "./messages.js";
 import { useActiveUser, setViewAs, landingFor, filterVisible } from "./rbac.js";
 import { teamShort, RBAC_ROLES } from "./org.js";
 import { moduleByKey } from "./modules.js";
+import { ToastHost } from "./toast.js";
 
 /* ---------------- Theme ---------------- */
 export function getTheme() { return localStorage.getItem("legalos-theme") || "light"; }
@@ -232,6 +233,10 @@ function CommandPalette({ onClose }) {
   const ql = q.toLowerCase();
   const navResults = NAV_FLAT.filter((i) => i.label.toLowerCase().includes(ql)).map((i) => ({ group: "Navigate", label: i.label, icon: i.icon, path: i.path }));
   const actions = [
+    { group: "Actions", label: "Raise a request to any Legal team", icon: "plus", path: "/raise" },
+    { group: "Actions", label: "My Tasks — most urgent first", icon: "checksquare", path: "/my-tasks" },
+    { group: "Actions", label: "Cost analysis & budget burn", icon: "dollar", path: "/costs" },
+    { group: "Actions", label: "Master data admin", icon: "database", path: "/settings" },
     { group: "Actions", label: "New Legal Request", icon: "plus", path: "/workspace" },
     { group: "Actions", label: "Add or scan a document", icon: "scan", path: "/repository" },
     { group: "Actions", label: "Open the Contract Tracker", icon: "grid", path: "/tracker" },
@@ -336,6 +341,9 @@ function Topbar({ path, onSearch, onToggleTheme, theme }) {
       <span>Search matters, contracts, clauses…</span>
       <kbd>⌘K</kbd>
     </button>
+    <button class="newbtn" title="Raise a legal request" onClick=${() => navigate("/raise")}>
+      <${Icon} name="plus" size=15 /><span>New</span>
+    </button>
     <${TourButton} />
     <button class="iconbtn" title="Toggle theme" onClick=${onToggleTheme}><${Icon} name=${theme === "dark" ? "sun" : "moon"} size=18 /></button>
     <${NotifButton} />
@@ -433,5 +441,6 @@ export function Shell({ path, children }) {
     ${palette && html`<${CommandPalette} onClose=${() => setPalette(false)} />`}
     <${CopilotDock} open=${copilot} onClose=${(v) => setCopilot(v === true)} />
     <${TourOverlay} />
+    <${ToastHost} />
   </div>`;
 }
