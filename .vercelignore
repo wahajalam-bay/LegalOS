@@ -1,3 +1,4 @@
-# Local-dev only — not needed for the static Vercel deploy
-server.js
-Start LegalOS.bat
+# Files that must not be published on a public deployment
+LegalOS_Requirements_Final Doc..docx
+server.log
+*.bat
