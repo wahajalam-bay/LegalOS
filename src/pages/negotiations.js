@@ -119,7 +119,7 @@ export default function Negotiations() {
       <div class="col" style="gap:10px">
         ${deals.map((d) => html`<div key=${d.id} class=${cx("card card--pad card--hover clickable")} style=${`border-color:${sel === d.id ? "var(--brand)" : ""}`} onClick=${() => setSel(d.id)}>
           <div class="row" style="margin-bottom:8px"><span class="mono tiny muted">${d.id}</span><div class="spacer"></div><${Pill} tone="amber">Round ${roundCount(d)}</${Pill}></div>
-          <div class="strong" style="font-size:13.5px;line-height:1.35;margin-bottom:8px">${d.title}</div>
+          <div class="panel__title" style="line-height:1.35;margin-bottom:8px">${d.title}</div>
           <div class="row"><span class="tiny muted">${d.counterparty}</span><div class="spacer"></div><span class="tiny strong">${fmt.money(d.value, d.currency)}</span></div>
           <div class="row" style="gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)"><${Avatar} name=${nameOf(d.owner)} size="sm" /><span class="tiny muted">${nameOf(d.owner).split(" ")[0]}</span><div class="spacer"></div><${Risk} level=${d.risk} /></div>
         </div>`)}

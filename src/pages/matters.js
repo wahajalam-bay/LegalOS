@@ -182,7 +182,7 @@ function MatterDetail({ id }) {
               </div>
               <div><div class="tiny muted" style="margin-bottom:6px;font-weight:600">Progress</div><div class="row" style="gap:10px"><div style="flex:1"><${Progress} value=${m.progress} /></div><span class="strong">${m.progress}%</span></div></div>
               <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
-                ${[["Type", m.type], ["Business Unit", m.bu], ["Opened", fmt.date(m.opened)], ["Due", fmt.date(m.due)], ["Documents", m.docs], ["Comments", m.comments]].map(([l, v]) => html`<div key=${l}><div class="tiny muted">${l}</div><div class="strong" style="font-size:13.5px;margin-top:2px">${v}</div></div>`)}
+                ${[["Type", m.type], ["Business Unit", m.bu], ["Opened", fmt.date(m.opened)], ["Due", fmt.date(m.due)], ["Documents", m.docs], ["Comments", m.comments]].map(([l, v]) => html`<div key=${l}><div class="tiny muted">${l}</div><div class="panel__title" style="margin-top:2px">${v}</div></div>`)}
               </div>
             </div>`}
             ${tab === "timeline" && html`<${Timeline} items=${tlEvents(m)} />`}

@@ -122,7 +122,7 @@ export default function Costs() {
     </div>
 
     ${scopeAll && html`<div class="card">
-      <div class="strong" style="font-size:13.5px;margin-bottom:4px">Budget vs actual — by Legal team</div>
+      <div class="panel__title" style="margin-bottom:4px">Budget vs actual — by Legal team</div>
       <div class="tiny muted" style="margin-bottom:12px">Quarterly budgets scaled to the selected window. The meter fills as the budget burns.</div>
       <div class="costmeters">
         ${LEGAL_TEAMS.map((t) => {
@@ -141,23 +141,23 @@ export default function Costs() {
 
     <div class="costcols">
       <div class="card">
-        <div class="strong" style="font-size:13.5px;margin-bottom:10px">Cost by requesting department</div>
+        <div class="panel__title" style="margin-bottom:10px">Cost by requesting department</div>
         ${byDept.length ? html`<${RankBars} data=${byDept} format=${money} />` : html`<${Empty} icon="dollar" title="No cost lines" text="Nothing in this window." />`}
       </div>
       <div class="card">
-        <div class="strong" style="font-size:13.5px;margin-bottom:10px">Cost by module</div>
+        <div class="panel__title" style="margin-bottom:10px">Cost by module</div>
         ${byModule.length ? html`<${RankBars} data=${byModule} format=${money} />` : html`<${Empty} icon="dollar" title="No cost lines" text="Nothing in this window." />`}
       </div>
     </div>
 
     <div class="costcols">
       <div class="card">
-        <div class="strong" style="font-size:13.5px;margin-bottom:10px">Cost by type</div>
+        <div class="panel__title" style="margin-bottom:10px">Cost by type</div>
         ${byType.length ? html`<${RankBars} data=${byType} format=${money} />` : html`<div class="tiny muted">Nothing in this window.</div>`}
         <${TableTwin} rows=${byType.map((x) => [x.label, money(x.value)])} cols=${["Cost type", "USD"]} />
       </div>
       <div class="card">
-        <div class="strong" style="font-size:13.5px;margin-bottom:4px">Compliance inspections — cost per office</div>
+        <div class="panel__title" style="margin-bottom:4px">Compliance inspections — cost per office</div>
         <div class="tiny muted" style="margin-bottom:10px">Current year vs forthcoming year (Section 8.6). Green means the cost came down.</div>
         <div class="tablewrap"><table class="table table--tight">
           <thead><tr><th>Office</th><th>Type</th><th>Current yr</th><th>Next yr</th><th>Reduced</th></tr></thead>
@@ -176,7 +176,7 @@ export default function Costs() {
 
     ${scopeAll && html`<div class="card" style="padding:0">
       <div class="row" style="padding:14px 16px 4px">
-        <span class="strong" style="font-size:13.5px">Cost lines — ${basis}</span>
+        <span class="panel__title">Cost lines — ${basis}</span>
         <span class="tiny muted">— every entry carries vendor, invoice, sign-off and attribution</span>
       </div>
       <div class="tablewrap"><table class="table">

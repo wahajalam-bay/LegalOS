@@ -71,7 +71,7 @@ function IndividualPipeline({ userId, rows, onOpen }) {
     return html`<div class="card card--pad">
       <div class="row" style="gap:11px">
         <${Avatar} name=${u.name} size="md" />
-        <div style="flex:1;min-width:0"><div class="strong" style="font-size:13.5px">${u.name}</div><div class="tiny muted">${u.role}</div></div>
+        <div style="flex:1;min-width:0"><div class="panel__title">${u.name}</div><div class="tiny muted">${u.role}</div></div>
         <${Pill} tone="gray">no open work</${Pill}>
       </div>
     </div>`;

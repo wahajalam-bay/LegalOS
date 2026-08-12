@@ -237,7 +237,7 @@ function ProcessZone({ spine }) {
       </div>
       ${tat.status === "Delayed" && html`<div class="tatstrip__blame">
         <div class="tiny" style="text-transform:uppercase;letter-spacing:.05em;font-weight:700;opacity:.75">What is delayed</div>
-        <div class="strong" style="font-size:13.5px;margin-top:3px">${tat.blockingStage}</div>
+        <div class="panel__title" style="margin-top:3px">${tat.blockingStage}</div>
         <div class="tiny" style="margin-top:2px">${tat.overdueBy} working days over · ${tat.daysInStage}d in stage</div>
         ${tat.blockingOwner && html`<div class="row" style="gap:6px;margin-top:7px"><${Avatar} name=${nameOf(tat.blockingOwner)} size="sm" /><span class="tiny strong">${nameOf(tat.blockingOwner)} holds it</span></div>`}
       </div>`}

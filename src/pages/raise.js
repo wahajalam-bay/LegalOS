@@ -33,7 +33,7 @@ function MyRequests({ viewer }) {
   if (!mine.length) return null;
   return html`<div class="card" style="padding:0">
     <div class="row" style="padding:14px 16px 4px">
-      <span class="strong" style="font-size:13.5px">My requests</span>
+      <span class="panel__title">My requests</span>
       <span class="tiny muted">— status, stage, owner and turnaround of what you raised; internal notes stay with the team</span>
     </div>
     <div class="tablewrap"><table class="table">

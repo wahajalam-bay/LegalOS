@@ -295,7 +295,7 @@ function BrowseLens({ contracts }) {
           <${Icon} name=${isOpen ? "chevronDown" : "chevronRight"} size=15 />
           <div class="notif__ico" style="width:30px;height:30px;background:var(--brand-soft);color:var(--brand);flex:none"><${Icon} name="building" size=15 /></div>
           <div style="flex:1;min-width:0">
-            <div class="strong" style="font-size:13.5px">${e.entity ? e.entity.name : e.id}</div>
+            <div class="panel__title">${e.entity ? e.entity.name : e.id}</div>
             <div class="tiny muted">${e.entity ? `${e.entity.type} · ${e.entity.jurisdiction}` : "—"} · ${typeList.length} contract type${typeList.length === 1 ? "" : "s"}</div>
           </div>
           <span class="tiny muted">${fmt.money(e.value)}</span>

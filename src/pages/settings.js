@@ -53,7 +53,7 @@ const INTEGRATIONS = [
 function Toggler({ label, hint, on: initial }) {
   const [on, setOn] = useState(initial);
   return html`<div class="row" style="padding:12px 0;border-bottom:1px solid var(--border)">
-    <div style="flex:1"><div class="strong" style="font-size:13.5px">${label}</div>${hint && html`<div class="tiny muted">${hint}</div>`}</div>
+    <div style="flex:1"><div class="panel__title">${label}</div>${hint && html`<div class="tiny muted">${hint}</div>`}</div>
     <${Toggle} on=${on} onChange=${setOn} />
   </div>`;
 }

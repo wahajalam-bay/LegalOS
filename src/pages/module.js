@@ -227,7 +227,7 @@ function ResolutionsReport({ rows }) {
   return html`<div class="card modreport">
     <div class="row" style="gap:10px;flex-wrap:wrap">
       <div>
-        <div class="strong" style="font-size:13.5px">Resolutions by requesting department</div>
+        <div class="panel__title">Resolutions by requesting department</div>
         <div class="tiny muted">Who generates the volume — last ${days} days${urgency !== "All" ? ", " + urgency.toLowerCase() + " only" : ""}.</div>
       </div>
       <span class="spacer"></span>
@@ -278,7 +278,7 @@ function FilingsByEntity({ rows, active, onPick, viewer, def }) {
   return html`<div class="card filingsboard">
     <div class="row" style="margin-bottom:4px;flex-wrap:wrap">
       <div>
-        <div class="strong" style="font-size:13.5px">Filings by entity</div>
+        <div class="panel__title">Filings by entity</div>
         <div class="tiny muted">All forms due, overdue or filed per entity — nothing missed across the group (8.3). Click an entity to filter.</div>
       </div>
       <span class="spacer"></span>
@@ -567,7 +567,7 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
 
   return html`<div class="card">
     <div class="row" style="gap:8px;margin-bottom:12px">
-      <span class="strong" style="font-size:13.5px">Workflow${rec.flow === "renewal" ? " — renewal path" : ""}</span>
+      <span class="panel__title">Workflow${rec.flow === "renewal" ? " — renewal path" : ""}</span>
       <span class="spacer"></span>
       ${!statusOnly && rec.status !== "Closed" && html`<${Btn} size="sm" variant="primary" icon="arrowRight"
         onClick=${() => {
@@ -604,7 +604,7 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
 function TatBreakdown({ def, rec }) {
   const t = tatV2(def, rec);
   return html`<div class="card">
-    <div class="strong" style="font-size:13.5px;margin-bottom:10px">Turnaround — actual legal working time</div>
+    <div class="panel__title" style="margin-bottom:10px">Turnaround — actual legal working time</div>
     <div class="tatgrid tatgrid--rail">
       <div><div class="tatgrid__n">${t.gross}d</div><div class="tatgrid__l">Gross since assignment</div></div>
       <div><div class="tatgrid__n" style="color:var(--brand)">− ${t.held}d</div><div class="tatgrid__l">Paused with other depts</div></div>
@@ -628,7 +628,7 @@ function HoldsPanel({ rec, md, viewer, statusOnly }) {
   const active = holds.find((h) => !h.end);
   return html`<div class="card">
     <div class="row" style="margin-bottom:8px">
-      <span class="strong" style="font-size:13.5px">Intra-dept holds</span>
+      <span class="panel__title">Intra-dept holds</span>
       <span class="spacer"></span>
       ${!statusOnly && !active && rec.status !== "Closed" && html`<${Btn} size="sm" icon="share" onClick=${() => setOpen(true)}>Share with a department</${Btn}>`}
     </div>
@@ -674,7 +674,7 @@ function PeoplePanel({ def, rec, viewer, statusOnly }) {
   const [editDrive, setEditDrive] = useState(false);
   const [drive, setDrive] = useState(rec.driveLink || "");
   return html`<div class="card modpeople">
-    <div class="strong" style="font-size:13.5px;margin-bottom:10px">People & routing</div>
+    <div class="panel__title" style="margin-bottom:10px">People & routing</div>
     <div class="modpeople__row">
       <${Avatar} name=${personName(rec.owner)} size="sm" />
       <div style="flex:1;min-width:0">
@@ -748,7 +748,7 @@ function AttachmentsPanel({ rec, viewer, statusOnly }) {
   };
   return html`<div class="card modatts">
     <div class="row" style="margin-bottom:8px">
-      <span class="strong" style="font-size:13.5px">Documents</span>
+      <span class="panel__title">Documents</span>
       <span class="spacer"></span>
       <${Btn} size="sm" icon="upload" onClick=${pick}>Attach</${Btn}>
     </div>
@@ -777,7 +777,7 @@ function CommentsPanel({ rec, viewer, statusOnly }) {
   };
   return html`<div class="card modcomments">
     <div class="row" style="margin-bottom:10px">
-      <span class="strong" style="font-size:13.5px">Conversation</span>
+      <span class="panel__title">Conversation</span>
       <span class="tiny muted">— ${statusOnly ? "replies go straight to the owning lawyer" : "the requester sees everything not marked internal"}</span>
     </div>
     ${comments.length === 0 && html`<div class="tiny muted" style="margin-bottom:10px">No messages yet.</div>`}
@@ -868,7 +868,7 @@ function QuickActions({ def, rec, viewer, statusOnly }) {
   }
   if (!actions.length) return null;
   return html`<div class="card">
-    <div class="strong" style="font-size:13.5px;margin-bottom:8px">Quick actions</div>
+    <div class="panel__title" style="margin-bottom:8px">Quick actions</div>
     ${actions.map((a) => html`<button key=${a.label} class="quickaction" onClick=${a.run}>
       <${Icon} name=${a.icon} size=15 />
       <span style="flex:1;text-align:left"><div>${a.label}</div><div class="tiny muted">${a.hint}</div></span>
@@ -903,7 +903,7 @@ function FieldGroups({ def, rec, md, viewer, statusOnly }) {
       const editable = canEditGroup(viewer, def, groupFields) && rec.status !== "Closed";
       return html`<div key=${g} class="card">
         <div class="row" style="margin-bottom:10px">
-          <span class="strong" style="font-size:13.5px">${g}</span>
+          <span class="panel__title">${g}</span>
           ${groupFields.some((f) => f.source) &&
             html`<span class="tiny muted">— maintained by ${groupFields.find((f) => f.source).source}</span>`}
           <span class="spacer"></span>
@@ -953,7 +953,7 @@ function HearingsPanel({ def, rec, md, viewer, statusOnly }) {
   const next = nextHearing(rec);
   return html`<div class="card">
     <div class="row" style="margin-bottom:8px">
-      <span class="strong" style="font-size:13.5px">Hearing log</span>
+      <span class="panel__title">Hearing log</span>
       ${next && html`<${Pill} tone=${new Date(next) - Date.now() < 5 * 86400000 ? "amber" : "gray"}>Next action ${fmt.until(next)}</${Pill}>`}
       <span class="spacer"></span>
       ${!statusOnly && html`<${Btn} size="sm" icon="plus" onClick=${() => setOpen(true)}>Log hearing</${Btn}>`}
@@ -999,7 +999,7 @@ function AutoResponsePanel({ rec, viewer, statusOnly }) {
   if (statusOnly) return null;
   return html`<div class="card">
     <div class="row" style="margin-bottom:8px">
-      <span class="strong" style="font-size:13.5px">Standard response</span>
+      <span class="panel__title">Standard response</span>
       <span class="tiny muted">— detects the notice type and drafts the matching reply for review</span>
       <span class="spacer"></span>
       <${Btn} size="sm" icon="sparkles" onClick=${() => {
@@ -1025,7 +1025,7 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
   const sum = (k, cur) => costs.filter((x) => x.currency === cur).reduce((a, x) => a + (x[k] || 0), 0);
   return html`<div class="card">
     <div class="row" style="margin-bottom:8px">
-      <span class="strong" style="font-size:13.5px">Cost lines</span>
+      <span class="panel__title">Cost lines</span>
       <span class="tiny muted">— Section 13: estimated at raise, actuals at closure or per invoice</span>
       <span class="spacer"></span>
       <${Btn} size="sm" icon="plus" onClick=${() => setOpen(true)}>Add cost</${Btn}>
@@ -1101,7 +1101,7 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
 function ActivityPanel({ rec }) {
   const items = [...(rec.activity || [])].sort((a, b) => new Date(b.at) - new Date(a.at));
   return html`<div class="card">
-    <div class="strong" style="font-size:13.5px;margin-bottom:10px">Activity log — who did what, and when</div>
+    <div class="panel__title" style="margin-bottom:10px">Activity log — who did what, and when</div>
     <div class="modactivity">
       ${items.map((a, i) => html`<div key=${i} class="modactivity__row">
         <div class="modactivity__dot"></div>
@@ -1161,7 +1161,7 @@ function Detail({ def, id, md, viewer }) {
           const linked = (getCollection("modRequests") || []).filter((r) => r.moduleKey === "filings" && (r.fields || {}).linkedResolutionId === rec.id);
           if (!linked.length) return null;
           return html`<div class="card">
-            <div class="strong" style="font-size:13.5px;margin-bottom:8px">SECP filings triggered by this resolution</div>
+            <div class="panel__title" style="margin-bottom:8px">SECP filings triggered by this resolution</div>
             ${linked.map((r) => {
               const s = filingStatusOf(r);
               return html`<div key=${r.id} class="row clickable hoverline" style="gap:10px;padding:6px 0;font-size:13px" onClick=${() => navigate("/m/filings/" + r.id)}>
@@ -1172,7 +1172,7 @@ function Detail({ def, id, md, viewer }) {
           </div>`;
         })()}
         ${(rec.versions || []).length > 0 && html`<div class="card">
-          <div class="strong" style="font-size:13.5px;margin-bottom:8px">Draft version log</div>
+          <div class="panel__title" style="margin-bottom:8px">Draft version log</div>
           ${rec.versions.map((v) => html`<div key=${v.v} class="row" style="gap:10px;padding:5px 0;font-size:13px">
             <${Pill} tone="gray">v${v.v}</${Pill}> <span>${v.note}</span>
             <span class="spacer"></span><span class="tiny muted">${personName(v.by)} · ${fmt.dateShort(v.at)}</span>

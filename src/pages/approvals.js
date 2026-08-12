@@ -26,7 +26,7 @@ export default function Approvals() {
         ${pending.map((a) => html`<div key=${a.id} class="approval approval--pending" style="margin-bottom:12px">
           <div class="notif__ico" style="width:38px;height:38px;background:var(--warning-bg);color:var(--warning)"><${Icon} name="checksquare" size=17 /></div>
           <div style="flex:1;min-width:0">
-            <div class="strong" style="font-size:13.5px">${a.matter}</div>
+            <div class="panel__title">${a.matter}</div>
             <div class="tiny muted">${a.type} · ${a.role}${a.amount ? " · " + fmt.money(a.amount, a.currency) : ""} · requested ${fmt.rel(a.requested)}</div>
           </div>
           <div class="row" style="gap:8px">
