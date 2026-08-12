@@ -7,6 +7,10 @@ import { CategoryPill } from "../shared.js";
 import { navigate } from "../router.js";
 import { useCollection } from "../store.js";
 import { REVIEWS, LITIGATION, nameOf, contractTypeMeta, toUsd, entityById } from "../data.js";
+import { moduleByKey } from "../modules.js";
+import { teamShort, teamTone } from "../org.js";
+import { tatV2 } from "../tat2.js";
+import { TatChip } from "./module.js";
 
 const usd = (v, c) => toUsd(v, c);
 const TYPE_TONE = { Counterparty: "blue", Vendor: "purple", "Group Entity": "green", Client: "indigo" };
@@ -112,7 +116,14 @@ function CompanyDetail({ id }) {
   const matters = useCollection("matters");
   const requests = useCollection("requests");
   const licenses = useCollection("licenses");
-  const [tab, setTab] = useState("browse");
+  // The org-architecture modules — a record belongs to this entity whether it
+  // is the group entity, the counterparty, or a paid vendor on a cost line.
+  const modRequests = useCollection("modRequests");
+  const work = modRequests.filter((r) =>
+    r.entityId === id ||
+    (r.fields || {}).counterpartyId === id ||
+    (r.costs || []).some((x) => x.vendorId === id));
+  const [tab, setTab] = useState(work.length ? "work" : "browse");
   const c = companies.find((x) => x.id === id);
   if (!c) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate("/companies")}>Companies</${Btn}><div class="empty">Company not found.</div></div>`;
 
@@ -123,6 +134,8 @@ function CompanyDetail({ id }) {
   const openMatters = g.matters.filter((m) => m.progress < 100).length;
 
   const tabs = [
+    // The live org-module work is the first thing to see on an entity.
+    { key: "work", label: "Legal work", icon: "briefcase", count: work.length },
     // Workstream C: the drill-down hierarchy is the default way in.
     { key: "browse", label: "By contract type", icon: "layers", count: new Set(g.contracts.map((c) => c.contractType)).size },
     { key: "contracts", label: "Contracts", icon: "file", count: g.contracts.length },
@@ -144,11 +157,11 @@ function CompanyDetail({ id }) {
     </div>
 
     <${StatStrip} stats=${[
+      { value: work.length, label: "Module work" },
       { value: g.contracts.length, label: "Contracts" },
       { value: fmt.money(totalVal), label: "Total value" },
       { value: fmt.money(totalSpend), label: "Spend to date" },
       { value: openMatters, label: "Open matters" },
-      { value: g.reviews.length, label: "Reviews" },
       { value: g.litigation.length, label: "Litigation" },
       { value: lic.length, label: "Licenses" },
     ]} />
@@ -158,6 +171,19 @@ function CompanyDetail({ id }) {
     <div class="card">
       <div style="padding:6px 18px 0"><${Tabs} tabs=${tabs} active=${tab} onChange=${setTab} /></div>
       <div class="card__body">
+        ${tab === "work" && html`<${RecordList} items=${work} empty="No org-module work touches this entity yet." onRow=${(r) => navigate("/m/" + r.moduleKey + "/" + r.id)}
+          render=${(r) => {
+            const def = moduleByKey(r.moduleKey);
+            const role = r.entityId === id ? null : (r.fields || {}).counterpartyId === id ? "Counterparty" : "Vendor / payee";
+            return html`<div class="notif__ico" style="width:32px;height:32px;background:var(--brand-soft);color:var(--brand-600)"><${Icon} name=${def ? def.icon : "file"} size=15 /></div>
+              <div style="flex:1;min-width:0">
+                <div class="strong tiny" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.title}</div>
+                <div class="tiny muted">${r.id} · ${def ? def.label : r.moduleKey}${r.subType ? " · " + r.subType : ""}${role ? " · as " + role : ""}</div>
+              </div>
+              <${Pill} tone=${teamTone(r.legalTeam)}>${teamShort(r.legalTeam)}</${Pill}>
+              <${Pill} tone=${r.status === "Closed" ? "gray" : "blue"}>${r.stage}</${Pill}>
+              <${TatChip} t=${tatV2(def, r)} />`;
+          }} />`}
         ${tab === "browse" && html`<${TypeDrill} contracts=${g.contracts} />`}
         ${tab === "contracts" && html`<${RecordList} items=${g.contracts} empty="No contracts tagged to this company." onRow=${(r) => navigate("/contracts/" + r.id)}
           render=${(r) => html`<div class="notif__ico" style="width:32px;height:32px;background:var(--surface-3);color:var(--text-2)"><${Icon} name="file" size=15 /></div><div style="flex:1;min-width:0"><div class="strong tiny">${r.title}</div><div class="tiny muted">${r.id} · ${r.type} · ${fmt.money(r.value, r.currency)}</div></div><${Risk} level=${r.risk} /><${Status} value=${r.status} />`} />`}

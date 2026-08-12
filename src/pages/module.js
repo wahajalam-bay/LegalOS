@@ -33,12 +33,28 @@ export function TatChip({ t }) {
 
 const fmtSize = (b) => (b >= 1e6 ? (b / 1e6).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1000)) + " KB");
 
+/* Every reference is a doorway — an entity anywhere opens its 360° view,
+   an owner opens their pipeline. stopPropagation keeps row clicks intact. */
+export function EntityRef({ id, children }) {
+  if (!id) return "—";
+  return html`<a class="xref" title="Open the entity's 360° view"
+    onClick=${(e) => { e.stopPropagation(); navigate("/companies/" + id); }}>${children || entityName(id) || id}</a>`;
+}
+export function PersonRef({ id, children }) {
+  if (!id) return "Unassigned";
+  return html`<a class="xref" title="Open their pipeline"
+    onClick=${(e) => { e.stopPropagation(); navigate("/pipelines/" + id); }}>${children || personName(id)}</a>`;
+}
+
 /* ---------------- field rendering ---------------- */
 function fieldValue(f, rec) {
   const v = (rec.fields || {})[f.key];
   if (v == null || v === "") return "—";
-  if (f.type === "entity") return entityName(v) || v;
-  if (f.type === "user") return personName(v);
+  if (f.type === "entity") return html`<${EntityRef} id=${v} />`;
+  if (f.type === "user") return html`<${PersonRef} id=${v} />`;
+  if (f.key === "linkedLicenseId") {
+    return html`<a class="xref" title="Open the license register" onClick=${(e) => { e.stopPropagation(); navigate("/licenses"); }}>${v}</a>`;
+  }
   if (f.type === "date") return fmt.date(v);
   if (f.type === "toggle") return v ? "Yes" : "No";
   if (f.type === "money") return fmt.moneyFull(v, (rec.fields || {}).currency === "USD" ? "USD" : (rec.fields || {}).currency === "SAR" ? "SAR" : "PKR");
@@ -140,11 +156,11 @@ function FieldInput({ f, value, onChange, md, rec, viewer }) {
 function cellFor(col, rec, def) {
   const f = rec.fields || {};
   if (col === "subType") return rec.subType || "—";
-  if (col === "entityId") return rec.entityId ? entityName(rec.entityId) : "—";
-  if (col === "counterpartyId") return f.counterpartyId ? entityName(f.counterpartyId) : "—";
+  if (col === "entityId") return rec.entityId ? html`<${EntityRef} id=${rec.entityId} />` : "—";
+  if (col === "counterpartyId") return f.counterpartyId ? html`<${EntityRef} id=${f.counterpartyId} />` : "—";
   if (col === "templateType") return f.templateType ? f.templateType.replace(" Template", "") : "—";
   if (col === "requestingDept") return rec.requestingDept || "—";
-  if (col === "owner") return html`<span class="row" style="gap:7px"><${Avatar} name=${personName(rec.owner)} size="xs" />${personName(rec.owner)}</span>`;
+  if (col === "owner") return html`<span class="row" style="gap:7px"><${Avatar} name=${personName(rec.owner)} size="xs" /><${PersonRef} id=${rec.owner} /></span>`;
   if (col === "stage") return html`<${Pill} tone=${rec.status === "Closed" ? "gray" : "blue"}>${rec.stage}</${Pill}>`;
   if (col === "tat") return html`<${TatChip} t=${tatV2(def, rec)} />`;
   if (col === "title") return rec.title;
@@ -297,9 +313,14 @@ function FilingsByEntity({ rows, active, onPick, viewer, def }) {
           title=${r.title + " — " + s.detail} onClick=${() => navigate("/m/filings/" + r.id)}>
           <span class="fbechip__dot"></span>${(r.subType || "").split(" — ")[0]} · ${s.key === "Filed" ? "Filed" : s.detail}
         </button>`)}
-        ${upcoming.map((s) => html`<span key=${s.formType + s.nextDue} class="fbechip fbechip--ghost" title=${"On the calendar — the record generates 30 days before " + fmt.date(s.nextDue)}>
+        ${upcoming.map((s) => html`<button key=${s.formType + s.nextDue} class="fbechip fbechip--ghost"
+          title=${"On the calendar — the record generates 30 days before " + fmt.date(s.nextDue) + ". Click to adjust the calendar entry."}
+          onClick=${() => {
+            setRow({ entityId: s.entityId, formType: s.formType, nextDue: String(s.nextDue).slice(0, 10), authorizedPerson: s.authorizedPerson || "" });
+            setAdding(true);
+          }}>
           ${s.formType.split(" — ")[0]} · due ${fmt.until(s.nextDue)}
-        </span>`)}
+        </button>`)}
       </div>
     </div>`)}
     ${adding && html`<${Modal} title="Filing calendar entry" icon="calendar" width=${560} onClose=${() => setAdding(false)}
@@ -453,6 +474,7 @@ function Register({ def, rows, md, viewer }) {
   const [tstat, setTstat] = useState("");
   const [dept, setDept] = useState("");
   const [ent, setEnt] = useState("");
+  const [fstat, setFstat] = useState(""); // filings: filter by statutory status
   const [creating, setCreating] = useState(false);
 
   const enriched = useMemo(() => rows.map((r) => ({ r, t: tatV2(def, r) })), [rows]);
@@ -465,23 +487,25 @@ function Register({ def, rows, md, viewer }) {
     if (tstat && t.status !== tstat) return false;
     if (dept && r.requestingDept !== dept) return false;
     if (ent && r.entityId !== ent) return false;
+    if (fstat && filingStatusOf(r).key !== fstat) return false;
     return true;
   }).sort((a, b) => urgencyOf(b.t) - urgencyOf(a.t));
 
   const open = enriched.filter((x) => x.t.status !== "Closed");
-  // Filings are measured against the statutory calendar, not just the TAT clock.
+  // KPI cards double as filters — every number on them is clickable and shows
+  // exactly the rows it counts. Filings count against the statutory calendar.
   const kpis = def.report === "byEntity"
     ? [
-        { label: "Open filings", n: open.length, tone: "blue" },
-        { label: "Overdue vs statute", n: rows.filter((r) => filingStatusOf(r).key === "Overdue").length, tone: "red" },
-        { label: "Due in 30 days", n: rows.filter((r) => filingStatusOf(r).key === "Due Soon").length, tone: "amber" },
-        { label: "Filed", n: rows.filter((r) => filingStatusOf(r).key === "Filed").length, tone: "gray" },
+        { label: "Open filings", n: open.length, tone: "blue", active: !fstat, pick: () => setFstat("") },
+        { label: "Overdue vs statute", n: rows.filter((r) => filingStatusOf(r).key === "Overdue").length, tone: "red", active: fstat === "Overdue", pick: () => setFstat(fstat === "Overdue" ? "" : "Overdue") },
+        { label: "Due in 30 days", n: rows.filter((r) => filingStatusOf(r).key === "Due Soon").length, tone: "amber", active: fstat === "Due Soon", pick: () => setFstat(fstat === "Due Soon" ? "" : "Due Soon") },
+        { label: "Filed", n: rows.filter((r) => filingStatusOf(r).key === "Filed").length, tone: "gray", active: fstat === "Filed", pick: () => setFstat(fstat === "Filed" ? "" : "Filed") },
       ]
     : [
-        { label: "Open", n: open.length, tone: "blue" },
-        { label: "Overdue", n: open.filter((x) => x.t.status === "Overdue").length, tone: "red" },
-        { label: "Paused with a dept", n: open.filter((x) => x.t.status === "Paused").length, tone: "amber" },
-        { label: "Closed", n: enriched.length - open.length, tone: "gray" },
+        { label: "Open", n: open.length, tone: "blue", active: !tstat, pick: () => setTstat("") },
+        { label: "Overdue", n: open.filter((x) => x.t.status === "Overdue").length, tone: "red", active: tstat === "Overdue", pick: () => setTstat(tstat === "Overdue" ? "" : "Overdue") },
+        { label: "Paused with a dept", n: open.filter((x) => x.t.status === "Paused").length, tone: "amber", active: tstat === "Paused", pick: () => setTstat(tstat === "Paused" ? "" : "Paused") },
+        { label: "Closed", n: enriched.length - open.length, tone: "gray", active: tstat === "Closed", pick: () => setTstat(tstat === "Closed" ? "" : "Closed") },
       ];
 
   return html`<div class="page">
@@ -497,7 +521,8 @@ function Register({ def, rows, md, viewer }) {
     </div>
 
     <div class="modkpis">
-      ${kpis.map((k) => html`<div key=${k.label} class=${"modkpi modkpi--" + k.tone}>
+      ${kpis.map((k) => html`<div key=${k.label} class=${cx("modkpi", "modkpi--" + k.tone, k.active && (k.label.startsWith("Open") ? false : "modkpi--active"))}
+        onClick=${k.pick} title="Click to filter the register">
         <div class="modkpi__n">${k.n}</div><div class="modkpi__l">${k.label}</div>
       </div>`)}
     </div>
@@ -693,7 +718,7 @@ function PeoplePanel({ def, rec, viewer, statusOnly }) {
     <div class="modpeople__row">
       <${Avatar} name=${personName(rec.owner)} size="sm" />
       <div style="flex:1;min-width:0">
-        <div style="font-size:13px;font-weight:600">${personName(rec.owner)}</div>
+        <div style="font-size:13px;font-weight:600"><${PersonRef} id=${rec.owner} /></div>
         <div class="tiny muted">Current owner</div>
       </div>
       ${canManage && html`<select class="input input--sm" value=${rec.owner || ""} title="Reassign"
@@ -719,9 +744,13 @@ function PeoplePanel({ def, rec, viewer, statusOnly }) {
               <option>Normal</option><option>High</option>
             </select>`}
       </div>
-      <div><span class="modfield__label">Linked entity</span><div class="modfield__value">${rec.entityId ? entityName(rec.entityId) : "—"}</div></div>
+      <div><span class="modfield__label">Linked entity</span><div class="modfield__value">${rec.entityId ? html`<${EntityRef} id=${rec.entityId} />` : "—"}</div></div>
       <div><span class="modfield__label">Date raised</span><div class="modfield__value">${fmt.date(rec.dateRaised)}</div></div>
-      <div><span class="modfield__label">Contact</span><div class="modfield__value ellipsis" title=${rec.requestedBy ? rec.requestedBy.contact : ""}>${rec.requestedBy ? rec.requestedBy.contact : "—"}</div></div>
+      <div><span class="modfield__label">Contact</span><div class="modfield__value ellipsis" title=${rec.requestedBy ? rec.requestedBy.contact : ""}>
+        ${rec.requestedBy && /@/.test(rec.requestedBy.contact || "")
+          ? html`<a class="xref" href=${"mailto:" + rec.requestedBy.contact} onClick=${(e) => e.stopPropagation()}>${rec.requestedBy.contact}</a>`
+          : (rec.requestedBy ? rec.requestedBy.contact : "—")}
+      </div></div>
     </div>
     <div class="modpeople__drive">
       ${rec.driveLink
@@ -1052,9 +1081,9 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
         <td>${x.type}</td>
         <td>${x.estimated != null ? fmt.moneyFull(x.estimated, x.currency) : "—"}</td>
         <td>${x.actual != null ? fmt.moneyFull(x.actual, x.currency) : html`<span class="muted tiny">pending</span>`}</td>
-        <td>${x.vendorId ? entityName(x.vendorId) : "—"}</td>
+        <td>${x.vendorId ? html`<${EntityRef} id=${x.vendorId} />` : "—"}</td>
         <td class="mono tiny">${x.invoiceNo || "—"}</td>
-        <td>${x.approvedBy ? personName(x.approvedBy) : "—"}</td>
+        <td>${x.approvedBy ? html`<${PersonRef} id=${x.approvedBy} />` : "—"}</td>
         <td class="tiny">${x.attribution === "Recharged to requesting department" ? "Recharged → " + rec.requestingDept : "Legal budget"}</td>
       </tr>`)}</tbody>
     </table></div>

@@ -268,14 +268,17 @@ function RemindersView({ contracts }) {
 /* ============================================================
    The page
    ============================================================ */
-export default function Pipelines() {
+export default function Pipelines({ id }) {
   const requests = useCollection("requests");
   const matters = useCollection("matters");
   const contracts = useCollection("contracts");
   const repository = useCollection("repository");
   const licenses = useCollection("licenses");
-  const [tab, setTab] = useState("team");
-  const [who, setWho] = useState("u10");
+  // Deep link: /pipelines/<userId> opens that person's pipeline directly —
+  // owner names across the OS link here.
+  const deepWho = id && /^u\d+$/.test(id) ? id : null;
+  const [tab, setTab] = useState(deepWho ? "individual" : "team");
+  const [who, setWho] = useState(deepWho || "u10");
   const { filters, patch, toggle, clear } = useFilters("pipelines");
 
   const ctx = { requests, matters, contracts, repository, licenses };

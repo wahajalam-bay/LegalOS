@@ -52,6 +52,7 @@ export default function MyTasks() {
       .sort((a, b) => urgencyOf(b.t) - urgencyOf(a.t));
   }, [visible, scope, team, dept, tstat, stageQ, showClosed, viewer]);
 
+  const [kpi, setKpi] = useState("");
   const counts = {
     total: rows.length,
     overdue: rows.filter((x) => x.t.status === "Overdue").length,
@@ -61,6 +62,11 @@ export default function MyTasks() {
   const stages = [...new Set(rows.map((x) => x.r.stage))];
   // The one-line answer to "where do I start?" — the most urgent open item.
   const first = rows.find((x) => x.t.status === "Overdue") || rows.find((x) => x.t.nearBreach);
+  // KPI cards double as filters — click a number to see exactly those items.
+  const shown = kpi === "overdue" ? rows.filter((x) => x.t.status === "Overdue")
+    : kpi === "near" ? rows.filter((x) => x.t.nearBreach)
+    : kpi === "paused" ? rows.filter((x) => x.t.status === "Paused")
+    : rows;
 
   // For a business user this page is not the landing screen, but keep it honest.
   const isLegal = !!viewer.legalTeam || viewer.rbac === "head";
@@ -79,10 +85,10 @@ export default function MyTasks() {
     </div>
 
     <div class="modkpis">
-      <div class="modkpi modkpi--blue"><div class="modkpi__n">${counts.total}</div><div class="modkpi__l">Open items</div></div>
-      <div class="modkpi modkpi--red"><div class="modkpi__n">${counts.overdue}</div><div class="modkpi__l">Overdue</div></div>
-      <div class="modkpi modkpi--amber"><div class="modkpi__n">${counts.near}</div><div class="modkpi__l">Near breach</div></div>
-      <div class="modkpi modkpi--gray"><div class="modkpi__n">${counts.paused}</div><div class="modkpi__l">Paused with a dept</div></div>
+      <div class=${cx("modkpi modkpi--blue", kpi === "" && "modkpi--active")} onClick=${() => setKpi("")}><div class="modkpi__n">${counts.total}</div><div class="modkpi__l">Open items</div></div>
+      <div class=${cx("modkpi modkpi--red", kpi === "overdue" && "modkpi--active")} onClick=${() => setKpi(kpi === "overdue" ? "" : "overdue")}><div class="modkpi__n">${counts.overdue}</div><div class="modkpi__l">Overdue</div></div>
+      <div class=${cx("modkpi modkpi--amber", kpi === "near" && "modkpi--active")} onClick=${() => setKpi(kpi === "near" ? "" : "near")}><div class="modkpi__n">${counts.near}</div><div class="modkpi__l">Near breach</div></div>
+      <div class=${cx("modkpi modkpi--gray", kpi === "paused" && "modkpi--active")} onClick=${() => setKpi(kpi === "paused" ? "" : "paused")}><div class="modkpi__n">${counts.paused}</div><div class="modkpi__l">Paused with a dept</div></div>
     </div>
 
     ${first && !showClosed && html`<div class="focusline clickable" onClick=${() => navigate("/m/" + first.r.moduleKey + "/" + first.r.id)}>
@@ -126,7 +132,7 @@ export default function MyTasks() {
             <th>Stage</th><th>TAT</th>
           </tr></thead>
           <tbody>
-            ${rows.map(({ r, def, t }) => html`<tr key=${r.id} class=${cx("clickable", "urgrow", "urgrow--" + t.status.toLowerCase())} onClick=${() => navigate("/m/" + r.moduleKey + "/" + r.id)}>
+            ${shown.map(({ r, def, t }) => html`<tr key=${r.id} class=${cx("clickable", "urgrow", "urgrow--" + t.status.toLowerCase())} onClick=${() => navigate("/m/" + r.moduleKey + "/" + r.id)}>
               <td class="mono tiny">${r.id}</td>
               <td style="max-width:320px"><div class="ellipsis" title=${r.title}>${r.title}</div>
                 ${r.entityId && html`<div class="tiny muted">${entityName(r.entityId)}</div>`}</td>
