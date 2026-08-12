@@ -1952,3 +1952,45 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
   color: var(--text-3); margin: 18px 0 12px;
 }
 .raisesep::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+/* ============================================================
+   THE INSTRUMENT RAIL — the TAT card takes the color of its
+   verdict; people rows get structure; empty states get form.
+   ============================================================ */
+.modtat { border: none; color: #edf7f1; }
+.modtat--running { background: linear-gradient(150deg, #0b5132, #063d24 55%, #052e1c); }
+.modtat--paused { background: linear-gradient(150deg, #14425c, #0d3049 55%, #0a2537); }
+.modtat--overdue { background: linear-gradient(150deg, #8a2020, #641616 55%, #4c1010); }
+.modtat--closed { background: linear-gradient(150deg, #37473f, #273730 60%, #1d2b24); }
+.modtat .panel__title { color: rgba(255, 255, 255, 0.92); }
+.modtat .panel__title::before { background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5)); }
+.modtat__hero { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.modtat__big { font-size: 46px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; font-variant-numeric: tabular-nums; }
+.modtat__big i { font-style: normal; font-size: 24px; font-weight: 700; opacity: 0.75; margin-left: 1px; }
+.modtat__of { font-size: 12.5px; color: rgba(255, 255, 255, 0.68); }
+.modtat__of b { color: #fff; font-weight: 750; }
+.modtat__bar { height: 6px; border-radius: 99px; background: rgba(255, 255, 255, 0.16); margin: 12px 0 14px; overflow: hidden; }
+.modtat__bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7)); }
+.modtat--overdue .modtat__bar i { background: linear-gradient(90deg, #ffc4bd, #ff8a7d); }
+.modtat .tatgrid { margin-top: 2px; }
+.modtat .tatgrid__n { color: #fff; }
+.modtat .tatgrid__l { color: rgba(255, 255, 255, 0.62); }
+.modtat .modtat__saved { color: #8df0bb; }
+.modtat--overdue .modtat__saved { color: #ffd9d4; }
+.modtat__stage { font-size: 11.5px; color: rgba(255, 255, 255, 0.66); margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+/* the status chip sits on a dark card — give it a glass treatment there */
+.modtat .tatchip { background: rgba(255, 255, 255, 0.14); color: #fff; border: 1px solid rgba(255, 255, 255, 0.18); }
+
+/* people & routing — structured rows */
+.modpeople__row { padding: 8px 0; }
+.modpeople__row + .modpeople__row { border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent); }
+.modpeople__row .avatar { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px color-mix(in srgb, var(--brand) 30%, transparent); }
+
+/* empty states with form — a place, not an apology */
+.emptyhint {
+  display: flex; align-items: center; gap: 9px;
+  border: 1.5px dashed var(--border-strong); border-radius: var(--r-md);
+  padding: 12px 14px; font-size: 12.5px; color: var(--text-3);
+  background: color-mix(in srgb, var(--surface-2) 45%, transparent);
+}
+.emptyhint svg { flex: none; opacity: 0.7; }

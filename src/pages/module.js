@@ -601,21 +601,35 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
   </div>`;
 }
 
+/* The clock is the rail's centerpiece — an instrument, not four gray numbers.
+   The card takes the color of its verdict: brand green while running, blue on
+   hold, deep red once the SLA is blown, neutral when closed. */
 function TatBreakdown({ def, rec }) {
   const t = tatV2(def, rec);
-  return html`<div class="card">
-    <div class="panel__title" style="margin-bottom:10px">Turnaround — actual legal working time</div>
+  const pct = t.sla ? Math.min(100, Math.round((t.reported / t.sla) * 100)) : null;
+  const factor = t.sla && t.reported > t.sla ? (t.reported / t.sla).toFixed(1) : null;
+  return html`<div class=${"card modtat modtat--" + t.status.toLowerCase()}>
+    <div class="row" style="margin-bottom:12px">
+      <div class="panel__title">Turnaround — actual legal working time</div>
+      <span class="spacer"></span>
+      <${TatChip} t=${t} />
+    </div>
+    <div class="modtat__hero">
+      <span class="modtat__big">${t.reported}<i>d</i></span>
+      <span class="modtat__of">
+        ${t.sla != null ? html`of the ${t.sla}-day SLA budget` : "no SLA set for this path"}
+        ${factor && html`<b> — ${factor}× over</b>`}
+        ${t.nearBreach && html`<b> — near breach</b>`}
+      </span>
+    </div>
+    ${pct != null && html`<div class="modtat__bar"><i style=${"width:" + pct + "%"}></i></div>`}
     <div class="tatgrid tatgrid--rail">
       <div><div class="tatgrid__n">${t.gross}d</div><div class="tatgrid__l">Gross since assignment</div></div>
-      <div><div class="tatgrid__n" style="color:var(--brand)">− ${t.held}d</div><div class="tatgrid__l">Paused with other depts</div></div>
+      <div><div class="tatgrid__n modtat__saved">− ${t.held}d</div><div class="tatgrid__l">Paused with other depts</div></div>
       <div><div class="tatgrid__n">${t.reported}d</div><div class="tatgrid__l">Reported TAT</div></div>
       <div><div class="tatgrid__n">${t.sla != null ? t.sla + "d" : "—"}</div><div class="tatgrid__l">SLA budget</div></div>
     </div>
-    <div class="row" style="gap:8px;margin-top:10px;flex-wrap:wrap">
-      <${TatChip} t=${t} />
-      ${t.stageSla != null && html`<span class="tiny muted">Stage: ${t.stageAge}d of ${t.stageSla}d${t.stageBreached ? " — breached" : ""}</span>`}
-      ${t.nearBreach && html`<${Pill} tone="amber">Near breach</${Pill}>`}
-    </div>
+    ${t.stageSla != null && html`<div class="modtat__stage">Current stage: ${t.stageAge}d of ${t.stageSla}d${t.stageBreached ? " — breached" : ""}</div>`}
   </div>`;
 }
 
@@ -632,7 +646,7 @@ function HoldsPanel({ rec, md, viewer, statusOnly }) {
       <span class="spacer"></span>
       ${!statusOnly && !active && rec.status !== "Closed" && html`<${Btn} size="sm" icon="share" onClick=${() => setOpen(true)}>Share with a department</${Btn}>`}
     </div>
-    ${holds.length === 0 && html`<div class="tiny muted">Never left legal — the clock has run uninterrupted.</div>`}
+    ${holds.length === 0 && html`<div class="emptyhint"><${Icon} name="checkcircle" size=14 /> Never left legal — the clock has run uninterrupted.</div>`}
     ${holds.map((h) => html`<div key=${h.id} class=${cx("modholdrow", !h.end && "modholdrow--open")}>
       <${Icon} name=${h.end ? "checkcircle" : "clock"} size=15 />
       <div style="flex:1">
@@ -752,7 +766,7 @@ function AttachmentsPanel({ rec, viewer, statusOnly }) {
       <span class="spacer"></span>
       <${Btn} size="sm" icon="upload" onClick=${pick}>Attach</${Btn}>
     </div>
-    ${atts.length === 0 && html`<div class="tiny muted">Nothing attached yet. Both the team and the requester can attach here.</div>`}
+    ${atts.length === 0 && html`<div class="emptyhint"><${Icon} name="paperclip" size=14 /> Nothing attached yet. Both the team and the requester can attach here.</div>`}
     ${atts.map((a) => html`<div key=${a.id} class="modatt">
       <div class="modatt__ico"><${Icon} name="file" size=14 /></div>
       <div style="flex:1;min-width:0">
@@ -780,7 +794,7 @@ function CommentsPanel({ rec, viewer, statusOnly }) {
       <span class="panel__title">Conversation</span>
       <span class="tiny muted">— ${statusOnly ? "replies go straight to the owning lawyer" : "the requester sees everything not marked internal"}</span>
     </div>
-    ${comments.length === 0 && html`<div class="tiny muted" style="margin-bottom:10px">No messages yet.</div>`}
+    ${comments.length === 0 && html`<div class="emptyhint" style="margin-bottom:10px"><${Icon} name="message" size=14 /> No messages yet — this thread reaches the requester directly.</div>`}
     ${comments.map((c) => {
       const u = byId(c.by) || {};
       const mine = c.by === viewer.id;
