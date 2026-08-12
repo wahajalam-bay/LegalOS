@@ -68,6 +68,9 @@ export const MASTER_DATA_SEED = {
   resolutionTypes: L(["Board Resolution", "Partners Resolution"]),
   authorities: L(["SECP", "LESCO", "EPA", "Bank", "Customs", "Labour Department", "Civil Defence", "LDA / Municipality", "REGA", "ZATCA", "Ministry of Commerce", "IPO Pakistan", "Saudi Authority for IP"]),
   licenseTypes: L(["Trade License", "Commercial Registration", "Municipality License", "Broadcasting License", "Data License", "Real Estate Brokerage (FAL)"]),
+  // Section 8.1 — SECP form types are master-data driven so a new form can be
+  // added without a dev cycle.
+  secpFormTypes: L(["Form A", "Form 9", "Form 19", "Form 3", "Form 7", "Form 29", "Other"]),
   holdReasons: L(["Awaiting Documents", "Awaiting Approval", "Awaiting Clarification", "Awaiting Signature", "Other"]),
   noticeCategories: L(["Citizen Portal Notice", "Legal Notice", "Developer PPA", "Hearing Notice / Court Summons", "Defamation Notice", "IP Infringement", "Government Notice", "Private Notice"]),
   hearingTypes: L(["First hearing", "Arguments", "Evidence", "Cross-examination", "Final arguments"]),
@@ -93,6 +96,7 @@ export const MASTER_TABLES = [
   { key: "resolutionTypes", label: "Resolution Types" },
   { key: "authorities", label: "Issuing / Regulatory Authorities" },
   { key: "licenseTypes", label: "License Types" },
+  { key: "secpFormTypes", label: "SECP Form Types" },
   { key: "holdReasons", label: "Intra-Dept Hold Reasons" },
   { key: "noticeCategories", label: "Notice Categories" },
   { key: "hearingTypes", label: "Hearing Types" },

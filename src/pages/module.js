@@ -446,17 +446,8 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
   const [err, setErr] = useState("");
 
   return html`<div class="card">
-    <div class="row" style="gap:8px;margin-bottom:16px;flex-wrap:wrap;row-gap:10px">
+    <div class="row" style="margin-bottom:14px">
       <span class="strong" style="font-size:13.5px">Workflow${rec.flow === "renewal" ? " — renewal path" : ""}</span>
-      <span class="spacer"></span>
-      ${!statusOnly && rec.status !== "Closed" && html`<${Btn} size="sm" variant="primary" icon="arrowRight"
-        onClick=${() => {
-          const r = advanceStage(rec.id, viewer.id);
-          setErr(r.ok ? "" : r.error);
-          if (r.ok) toast(r.closed ? rec.id + " closed" : "Moved to " + r.stage);
-        }}>
-        ${next ? "Move to " + next : "Close"}
-      </${Btn}>`}
     </div>
     ${err && html`<div class="modwarn"><${Icon} name="alertTriangle" size=14 /> ${err}</div>`}
     ${!err && !statusOnly && gateMissing.length > 0 && html`<div class="modwarn modwarn--soft">
@@ -984,15 +975,25 @@ function Detail({ def, id, md, viewer }) {
   const rec = statusOnly ? stripInternal(def, rec0) : rec0;
   const t = tatV2(def, rec0);
 
+  const wfPath = workflowOf(def, rec0);
+  const wfIdx = wfPath.indexOf(rec0.stage);
+  const wfNext = wfIdx >= 0 && wfIdx < wfPath.length - 1 ? wfPath[wfIdx + 1] : null;
+  const canAdvance = !statusOnly && rec0.status !== "Closed";
+  const doAdvance = () => {
+    const r = advanceStage(rec0.id, viewer.id);
+    if (r.ok) toast(r.closed ? rec0.id + " closed" : "Moved to " + r.stage);
+    else toast(r.error, "error");
+  };
+
   return html`<div class="page page--wide">
-    <div class="page__head" style="align-items:flex-start">
-      <div style="min-width:0">
+    <div class="page__head" style="align-items:flex-start;gap:16px">
+      <div style="min-width:0;flex:1">
         <div class="row" style="gap:8px;flex-wrap:wrap">
           <span class="mono tiny muted clickable hoverline" onClick=${() => navigate("/m/" + def.key)}>${def.label}</span>
           <span class="mono tiny muted">/ ${rec.id}</span>
         </div>
-        <h2 class="page__title" style="margin-top:2px">${rec.title}</h2>
-        <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:6px">
+        <div class="row" style="gap:12px;flex-wrap:wrap;align-items:center;margin-top:6px">
+          <h2 class="page__title" style="margin:0">${rec.title}</h2>
           <${Pill} tone=${teamTone(def.team)}>${teamShort(def.team)}</${Pill}>
           ${rec.subType && html`<${Pill} tone="gray">${rec.subType}</${Pill}>`}
           ${rec.priority !== "Normal" && html`<${Pill} tone="red">${rec.priority}</${Pill}>`}
@@ -1000,6 +1001,9 @@ function Detail({ def, id, md, viewer }) {
           ${statusOnly && html`<${Pill} tone="amber">Requester view — status only</${Pill}>`}
         </div>
       </div>
+      ${canAdvance && html`<div class="row" style="gap:8px;flex:none">
+        <${Btn} variant="primary" icon="arrowRight" onClick=${doAdvance}>${wfNext ? "Move to " + wfNext : "Close"}</${Btn}>
+      </div>`}
     </div>
 
     ${statusOnly && html`<div class="modnote">

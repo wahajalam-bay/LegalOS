@@ -269,6 +269,56 @@ const CMP = [
     fields: { licenseName: "KMC trade license", authority: "LDA / Municipality", issueDate: d(-400), renewalTerm: "1 year", renewalDue: d(-12), renewalStatus: "Renewed" },
     costs: [{ type: "Filing & Government Fee", estimated: 40000, actual: 42500, currency: "PKR", invoiceNo: "KMC-2026-5521", attribution: "Legal operating budget" }],
   }),
+
+  // SECP statutory filings (Section 8) — periodic (auto-triggered 30 days before
+  // due) and event-based, spread across the group's Pakistani entities so the
+  // per-entity filing view has something to show.
+  mk("secpFilings", {
+    title: "Form A — Annual Return (Zameen.com)",
+    flow: "renewal", subType: "Form A", requestingDept: "Finance", requestedBy: req("System", "Filing Trigger", "legalos"),
+    entityId: "CO-20", owner: "u21", assignedBy: "u20", stage: "Preparation", raisedDaysAgo: 20, pace: 4, priority: "High",
+    fields: { filingEntityId: "CO-20", filingCategory: "Periodic (Annual)", filingDueDate: d(-3), filingStatus: "Overdue", authorizedPerson: "Bilal Sheikh (Company Secretary)", ctcApplied: false },
+    activity: [{ at: d(-20), by: null, action: "Filing Trigger generated automatically 30 days before Filing Due Date" }],
+  }),
+  mk("secpFilings", {
+    title: "Form A — Annual Return (OLX Pakistan)",
+    flow: "renewal", subType: "Form A", requestingDept: "Finance", requestedBy: req("System", "Filing Trigger", "legalos"),
+    entityId: "CO-21", owner: "u21", assignedBy: "u20", stage: "Assigned", raisedDaysAgo: 5, pace: 2,
+    fields: { filingEntityId: "CO-21", filingCategory: "Periodic (Annual)", filingDueDate: d(24), filingStatus: "Due Soon", authorizedPerson: "Bilal Sheikh (Company Secretary)", ctcApplied: false },
+    activity: [{ at: d(-5), by: null, action: "Filing Trigger generated automatically 30 days before Filing Due Date" }],
+  }),
+  mk("secpFilings", {
+    title: "Form A — Annual Return (Zameen Media)",
+    flow: "renewal", subType: "Form A", requestingDept: "Finance", requestedBy: req("System", "Filing Trigger", "legalos"),
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Filing Trigger", raisedDaysAgo: 2, pace: 1,
+    fields: { filingEntityId: "CO-36", filingCategory: "Periodic (Annual)", filingDueDate: d(28), filingStatus: "Due Soon", authorizedPerson: "Ayesha Khan (Company Secretary)", ctcApplied: false },
+    activity: [{ at: d(-2), by: null, action: "Filing Trigger generated automatically 30 days before Filing Due Date" }],
+  }),
+  mk("secpFilings", {
+    title: "Form 29 — Change of directors (Zameen Media)",
+    subType: "Form 29", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@northwind.com"), requestedById: "u14",
+    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 30, pace: 3, closed: true,
+    fields: { filingEntityId: "CO-36", filingCategory: "Event-Based", filingDueDate: d(-18), filingDate: d(-16), filingStatus: "Filed", linkedResolution: "CMP-0007", authorizedPerson: "Bilal Sheikh (Company Secretary)", ctcApplied: true },
+    costs: [{ type: "Filing & Government Fee", estimated: 2500, actual: 2500, currency: "PKR", invoiceNo: "SECP-29-88213", attribution: "Legal operating budget" }],
+  }),
+  mk("secpFilings", {
+    title: "Form 3 — Return of allotment of shares (Z Property Developments)",
+    subType: "Form 3", requestingDept: "Finance", requestedBy: req("Salman Tariq", "Acquisition Manager", "salman.tariq@zameen.com"),
+    entityId: "CO-37", owner: "u8", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 8, pace: 2, priority: "High",
+    fields: { filingEntityId: "CO-37", filingCategory: "Event-Based", filingDueDate: d(6), filingStatus: "Due Soon", linkedResolution: "CMP-0010", authorizedPerson: "Bilal Sheikh (Company Secretary)", ctcApplied: false },
+  }),
+  mk("secpFilings", {
+    title: "Form 9 — Return of allotment (Propsults)",
+    subType: "Form 9", requestingDept: "Finance", requestedBy: req("Amna Javed", "Treasury Manager", "amna.javed@zameen.com"),
+    entityId: "CO-24", owner: "u12", assignedBy: "u20", stage: "Preparation", raisedDaysAgo: 4, pace: 1,
+    fields: { filingEntityId: "CO-24", filingCategory: "Event-Based", filingDueDate: d(20), filingStatus: "Not Due", authorizedPerson: "Ayesha Khan (Company Secretary)", ctcApplied: false },
+  }),
+  mk("secpFilings", {
+    title: "Form 19 — Registered office change (Propenta)",
+    subType: "Form 19", requestingDept: "Admin", requestedBy: req("Ahmed Raza", "Senior Counsel", "ahmed.raza@northwind.com"), requestedById: "u17",
+    entityId: "CO-25", owner: "u21", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 45, pace: 5, closed: true,
+    fields: { filingEntityId: "CO-25", filingCategory: "Event-Based", filingDueDate: d(-30), filingDate: d(-28), filingStatus: "Filed", authorizedPerson: "Bilal Sheikh (Company Secretary)", ctcApplied: true },
+  }),
 ];
 
 /* =================== LITIGATION & DISPUTE MANAGEMENT =================== */

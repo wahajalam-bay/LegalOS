@@ -140,6 +140,33 @@ export const MODULES = [
     ],
     columns: ["fields.licenseName", "subType", "fields.authority", "renewalDueCol", "owner", "stage", "tat"],
   },
+  {
+    key: "secpFilings",
+    team: "compliance",
+    label: "SECP Filings",
+    icon: "briefcase",
+    noun: "SECP filing",
+    subTypeLabel: "SECP Form Type",
+    subTypesFrom: "secpFormTypes",
+    // Section 8.2 — event-based filings are raised on a corporate event (often a
+    // board resolution); periodic (annual) filings are system-triggered 30 days
+    // before they fall due and then follow the same preparation path.
+    workflow: ["Request Raised", "Assigned", "Preparation", "Internal Review", "Filed with SECP", "Closed"],
+    renewalWorkflow: ["Filing Trigger", "Assigned", "Preparation", "Internal Review", "Filed with SECP", "Closed"],
+    slas: { Preparation: 3, "Internal Review": 2 },
+    renewal: { dueField: "filingDueDate", leadDays: 30, reminders: [30, 15, 7] },
+    fields: [
+      { key: "filingEntityId", label: "Filing Entity", type: "entity", request: true, required: true, hint: "The group entity the statutory filing is made for — from the Entities registry (Section 2)." },
+      { key: "filingCategory", label: "Filing Category", type: "select", options: ["Periodic (Annual)", "Event-Based"], request: true, required: true, hint: "Periodic filings are auto-triggered 30 days before due; event-based ones are raised on a corporate event." },
+      { key: "filingDueDate", label: "Filing Due Date", type: "date", request: true, hint: "Statutory deadline — periodic filings trigger 30 days before this date." },
+      { key: "filingDate", label: "Filing Date", type: "date", hint: "Actual date the form was filed with SECP." },
+      { key: "filingStatus", label: "Filing Status", type: "select", options: ["Not Due", "Due Soon", "Filed", "Overdue"] },
+      { key: "linkedResolution", label: "Linked Resolution", type: "text", hint: "Optional — the Resolutions record that triggered this filing (e.g. CMP-0007)." },
+      { key: "authorizedPerson", label: "Authorized Person to do Filing", type: "text", request: true },
+      { key: "ctcApplied", label: "CTC Applied", type: "toggle", hint: "Certified True Copy applied for after filing." },
+    ],
+    columns: ["fields.filingEntityId", "subType", "fields.filingCategory", "fields.filingStatus", "fields.filingDueDate", "owner", "tat"],
+  },
 
   /* ============ LITIGATION & DISPUTE MANAGEMENT ============ */
   {
