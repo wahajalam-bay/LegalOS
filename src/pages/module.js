@@ -446,7 +446,7 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
   const [err, setErr] = useState("");
 
   return html`<div class="card">
-    <div class="row" style="gap:8px;margin-bottom:12px">
+    <div class="row" style="gap:8px;margin-bottom:16px;flex-wrap:wrap;row-gap:10px">
       <span class="strong" style="font-size:13.5px">Workflow${rec.flow === "renewal" ? " — renewal path" : ""}</span>
       <span class="spacer"></span>
       ${!statusOnly && rec.status !== "Closed" && html`<${Btn} size="sm" variant="primary" icon="arrowRight"

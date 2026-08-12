@@ -1483,8 +1483,8 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .access-card p { color: var(--text-2); font-size: 13.5px; line-height: 1.55; margin: 0 0 18px; }
 
 /* workflow rail */
-.modrail { display: flex; gap: 0; overflow-x: auto; padding: 4px 0 2px; }
-.modrail__step { flex: 1; min-width: 96px; text-align: center; position: relative; padding: 0 6px; }
+.modrail { display: flex; gap: 0; overflow-x: auto; padding: 6px 0 2px; }
+.modrail__step { flex: 1; min-width: 104px; text-align: center; position: relative; padding: 0 9px; }
 .modrail__step::before { content: ""; position: absolute; top: 11px; left: -50%; width: 100%; height: 2px; background: var(--border); }
 .modrail__step:first-child::before { display: none; }
 .modrail__dot { width: 22px; height: 22px; border-radius: 50%; background: var(--surface-2); border: 1.5px solid var(--border-2); color: var(--text-3); font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; position: relative; z-index: 1; }
@@ -1492,7 +1492,7 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .modrail__step.done::before { background: var(--brand); }
 .modrail__step.current .modrail__dot { background: var(--surface); border-color: var(--brand); color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
 .modrail__step.current::before { background: var(--brand); }
-.modrail__label { font-size: 11.5px; font-weight: 600; color: var(--text-2); line-height: 1.25; }
+.modrail__label { font-size: 11.5px; font-weight: 600; color: var(--text-2); line-height: 1.25; overflow-wrap: anywhere; hyphens: auto; }
 .modrail__step.current .modrail__label { color: var(--text); }
 .modrail__meta { font-size: 10.5px; color: var(--text-3); margin-top: 2px; }
 
@@ -1615,11 +1615,19 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .moddetail__rail { position: sticky; top: 12px; min-width: 0; }
 .moddetail__rail > .card { margin-bottom: 14px; }
 .tatgrid--rail { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+/* Long action buttons in the narrow rail cards must never spill out of the box —
+   let the header row wrap and drop the button onto its own right-aligned line. */
+.moddetail__rail .card > .row { flex-wrap: wrap; row-gap: 8px; justify-content: flex-end; }
+.moddetail__rail .card > .row > .spacer { min-width: 0; }
+.moddetail__rail .card .btn { max-width: 100%; }
+.moddetail__rail .card .btn span { overflow: hidden; text-overflow: ellipsis; }
 
 /* people & routing */
 .modpeople__row { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
 .modpeople__row .input--sm { max-width: 138px; }
 .modpeople__meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; padding-top: 10px; margin-top: 6px; border-top: 1px solid var(--border); }
+.modpeople__meta > div { min-width: 0; }
+.modpeople__meta .modfield__value.ellipsis { max-width: 100%; }
 .modpeople__drive { display: flex; align-items: center; gap: 8px; padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--border); }
 
 /* attachments */
@@ -1668,7 +1676,7 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .urgrow--running td:first-child::before { background: var(--success); opacity: 0.4; }
 
 /* responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
   .moddetail { grid-template-columns: 1fr; }
   .moddetail__rail { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .moddetail__rail > .card { margin: 0; }
