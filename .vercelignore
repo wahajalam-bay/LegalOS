@@ -2,3 +2,11 @@
 *.docx
 server.log
 *.bat
+
+# Local tooling + stale nested copy — never publish
+node_modules/
+package.json
+package-lock.json
+legalos/
+.vercel
+server.err.log

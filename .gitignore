@@ -3,3 +3,8 @@
 # Local dev-server output
 server.log
 server.err.log
+
+node_modules/
+package.json
+package-lock.json
+legalos/
