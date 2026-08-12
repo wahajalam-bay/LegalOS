@@ -1,4 +1,4 @@
 # Files that must not be published on a public deployment
-LegalOS_Requirements_Final Doc..docx
+*.docx
 server.log
 *.bat
