@@ -5,3 +5,8 @@ server.log
 
 # Stale nested duplicate — do not publish
 legalos/
+
+# Local tooling (screenshots) — never deploy
+node_modules/
+package.json
+package-lock.json
