@@ -609,11 +609,12 @@ function TatBreakdown({ def, rec }) {
   const pct = t.sla ? Math.min(100, Math.round((t.reported / t.sla) * 100)) : null;
   const factor = t.sla && t.reported > t.sla ? (t.reported / t.sla).toFixed(1) : null;
   return html`<div class=${"card modtat modtat--" + t.status.toLowerCase()}>
-    <div class="row" style="margin-bottom:12px">
-      <div class="panel__title">Turnaround — actual legal working time</div>
+    <div class="row" style="margin-bottom:2px">
+      <div class="panel__title">Turnaround</div>
       <span class="spacer"></span>
-      <${TatChip} t=${t} />
+      <span class="modtat__status">${t.status}</span>
     </div>
+    <div class="modtat__subtitle">Actual legal working time — holds with other departments do not count.</div>
     <div class="modtat__hero">
       <span class="modtat__big">${t.reported}<i>d</i></span>
       <span class="modtat__of">
@@ -1044,7 +1045,7 @@ function CostsPanel({ rec, md, viewer, statusOnly }) {
       <span class="spacer"></span>
       <${Btn} size="sm" icon="plus" onClick=${() => setOpen(true)}>Add cost</${Btn}>
     </div>
-    ${costs.length === 0 && html`<div class="tiny muted">No costs recorded on this record.</div>`}
+    ${costs.length === 0 && html`<div class="emptyhint"><${Icon} name="dollar" size=14 /> No costs recorded yet — estimates at raise, actuals at closure or per invoice.</div>`}
     ${costs.length > 0 && html`<div class="tablewrap"><table class="table table--tight">
       <thead><tr><th>Type</th><th>Estimated</th><th>Actual</th><th>Vendor / payee</th><th>Invoice</th><th>Approved by</th><th>Attribution</th></tr></thead>
       <tbody>${costs.map((x) => html`<tr key=${x.id}>
