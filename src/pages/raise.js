@@ -198,6 +198,10 @@ export default function Raise({ id }) {
               </select>
               <${EntityQuickAdd} viewer=${viewer} onCreated=${(id) => setF(f.key, id)} />
             </div>`
+          : f.type === "record" ? html`<select class="input" value=${fields[f.key] || ""} onChange=${(e) => setF(f.key, e.target.value)}>
+              <option value="">— none —</option>
+              ${(getCollection("modRequests") || []).filter((r) => r.moduleKey === f.recordModule).map((r) => html`<option key=${r.id} value=${r.id}>${r.id} — ${r.title}</option>`)}
+            </select>`
           : f.type === "textarea" ? html`<${Textarea} rows=3 value=${fields[f.key] || ""} onInput=${(e) => setF(f.key, e.target.value)} />`
           : f.type === "date" ? html`<${Input} type="date" value=${fields[f.key] || ""} onInput=${(e) => setF(f.key, e.target.value)} />`
           : f.type === "toggle" ? html`<select class="input" value=${fields[f.key] ? "Yes" : "No"} onChange=${(e) => setF(f.key, e.target.value === "Yes")}>

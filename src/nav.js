@@ -37,6 +37,7 @@ export const NAV = [
     { path: "/m/agreements", label: "Lease, Loan & Service", icon: "clipboard" },
     { path: "/m/resolutions", label: "Resolutions", icon: "checksquare" },
     { path: "/m/licenses", label: "License Renewals", icon: "fileCheck" },
+    { path: "/m/filings", label: "SECP Filings", icon: "book" },
     { path: "/licenses", label: "License Register", icon: "database", badge: LICENSE_BADGE || undefined, alert: LICENSE_ALERT },
   ]},
   { section: "Shared", items: [

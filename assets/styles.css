@@ -1678,3 +1678,28 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
   .newbtn span { display: none; }
   .stagestrip__cell { min-width: 76px; }
 }
+
+/* ============================================================
+   SPRINT 8 — SECP Filings: per-entity board, status chips, links.
+   ============================================================ */
+.filingsboard { padding-bottom: 8px; }
+.fbe { display: flex; gap: 14px; align-items: flex-start; padding: 9px 0; border-top: 1px solid var(--border); }
+.fbe:first-of-type { border-top: 0; }
+.fbe--active { background: var(--brand-soft); margin: 0 -18px; padding: 9px 18px; border-radius: var(--r-sm); }
+.fbe__entity { display: flex; align-items: center; gap: 8px; min-width: 220px; flex: none; font-size: 13px; font-weight: 650; color: var(--text); cursor: pointer; padding: 3px 0; text-align: left; }
+.fbe__entity:hover span:first-of-type { text-decoration: underline; text-underline-offset: 3px; }
+.fbe__entity svg { color: var(--text-3); }
+.fbe__chips { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.fbechip { display: inline-flex; align-items: center; gap: 6px; border-radius: 99px; padding: 4px 11px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); cursor: pointer; transition: border-color 0.12s, transform 0.12s; }
+.fbechip:hover { transform: translateY(-1px); }
+.fbechip__dot { width: 7px; height: 7px; border-radius: 99px; flex: none; }
+.fbechip--red { border-color: color-mix(in srgb, var(--danger) 45%, var(--border)); }
+.fbechip--red .fbechip__dot { background: var(--danger); }
+.fbechip--amber { border-color: color-mix(in srgb, var(--warning) 50%, var(--border)); }
+.fbechip--amber .fbechip__dot { background: var(--warning); }
+.fbechip--green .fbechip__dot { background: var(--success); }
+.fbechip--gray .fbechip__dot { background: var(--text-3); }
+.fbechip--ghost { border-style: dashed; color: var(--text-3); cursor: default; }
+.reclink { display: inline-flex; align-items: center; gap: 5px; color: var(--brand-600); font-weight: 600; cursor: pointer; }
+.reclink:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .fbe { flex-direction: column; gap: 6px; } .fbe__entity { min-width: 0; } }

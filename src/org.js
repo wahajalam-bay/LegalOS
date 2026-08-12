@@ -29,7 +29,7 @@ export const LEGAL_TEAMS = [
     prefix: "CMP",
     tone: "amber",
     icon: "shield",
-    functions: ["Lease / Loan / Service Agreements", "Resolutions & Authorization Letters", "Licenses"],
+    functions: ["Lease / Loan / Service Agreements", "Resolutions & Authorization Letters", "Licenses", "SECP Filings"],
   },
 ];
 export const teamByKey = (key) => LEGAL_TEAMS.find((t) => t.key === key) || null;
@@ -76,7 +76,23 @@ export const MASTER_DATA_SEED = {
   ipRequestTypes: L(["New Filing", "Renewal", "Infringement Action"]),
   // Section 8.6 — offices tracked for government inspections.
   inspectionOffices: L(["Zameen Media — Head Office", "Zameen Media — Square One Building", "Zameen Media — B64", "Zameen Media — New Auriga", "OLX", "Zameen Developments — Mega Tower", "Dubizzle — Mega Tower"]),
+  // Filing Module (Compliance) 8.1 — configurable so new SECP forms can be
+  // added in Settings without a dev cycle.
+  secpFormTypes: L([
+    "Form A — Annual Return",
+    "Form 3 — Allotment of Shares",
+    "Form 7 — Increase in Capital",
+    "Form 9 — Registered Office Change",
+    "Form 19 — Mortgage / Charge",
+    "Form 29 — Directors & Officers Change",
+    "Other",
+  ]),
 };
+
+// Filing Module 8.1 — category drives the workflow: periodic filings are
+// system-generated 30 days ahead; event-based ones arrive as requests.
+export const FILING_CATEGORIES = ["Periodic (Annual)", "Event-Based"];
+export const FILING_TRIGGER_LEAD_DAYS = 30;
 
 // Read the active values of a master list (falls back to the seed so pure
 // modules can be used without the store).
@@ -100,6 +116,7 @@ export const MASTER_TABLES = [
   { key: "complaintTypes", label: "Police Complaint Types" },
   { key: "ipRequestTypes", label: "IP Request Types" },
   { key: "inspectionOffices", label: "Inspection Offices / Sites" },
+  { key: "secpFormTypes", label: "SECP Form Types" },
 ];
 
 /* ---------------- Section 2 — canonical workflow + TAT status ---------------- */

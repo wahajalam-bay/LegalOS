@@ -140,6 +140,38 @@ export const MODULES = [
     ],
     columns: ["fields.licenseName", "subType", "fields.authority", "renewalDueCol", "owner", "stage", "tat"],
   },
+  {
+    // Filing Module (Compliance) — Section 8 of the review addendum.
+    key: "filings",
+    team: "compliance",
+    label: "SECP Filings",
+    icon: "book",
+    noun: "filing",
+    subTypeLabel: "SECP Form Type",
+    subTypesFrom: "secpFormTypes", // 8.1 — configurable in Settings, no dev cycle
+    // 8.2 — event-based filings arrive as requests (often off the back of a
+    // corporate event / resolution)…
+    workflow: ["Request Raised", "Assigned", "Preparation", "Internal Review", "Filed with SECP", "Closed"],
+    // …periodic filings are system-generated 30 days before the statutory due
+    // date and enter at Filing Trigger.
+    flows: {
+      periodic: ["Filing Trigger", "Assigned", "Preparation", "Internal Review", "Filed with SECP", "Closed"],
+    },
+    slas: { Preparation: 3, "Internal Review": 2 },
+    tatNote: "Periodic filings (e.g. Form A) are system-generated 30 days before the due date; event-based filings (e.g. Form 9, Form 29) arrive as requests, often linked to a resolution.",
+    fields: [
+      { key: "filingCategory", label: "Filing Category", type: "select", options: ["Periodic (Annual)", "Event-Based"], request: true, required: true },
+      { key: "periodEnd", label: "Period / Year End", type: "date", showIf: (f) => f.filingCategory !== "Event-Based", hint: "The financial or reporting period this filing covers." },
+      { key: "dueDate", label: "Statutory Due Date", type: "date", request: true, required: true, hint: "Drives the filing status and the 30-day system trigger." },
+      { key: "filingDate", label: "Filing Date (actual)", type: "date" },
+      { key: "linkedResolutionId", label: "Linked Resolution", type: "record", recordModule: "resolutions", request: true, showIf: (f) => f.filingCategory !== "Periodic (Annual)", hint: "Optional — where the filing was triggered by a board resolution." },
+      { key: "authorizedPerson", label: "Authorized Person to File", type: "text", request: true, hint: "Company secretary, director or consultant authorized on SECP eServices." },
+      { key: "ctcApplied", label: "CTC Applied", type: "toggle", hint: "Certified true copy requested from SECP." },
+      { key: "srn", label: "SECP SRN / Challan No", type: "text", showIf: (f) => !!f.filingDate },
+    ],
+    columns: ["title", "entityId", "subType", "filingDueCol", "filingStatusCol", "owner", "stage"],
+    report: "byEntity", // 8.3 — per-entity filing status view
+  },
 
   /* ============ LITIGATION & DISPUTE MANAGEMENT ============ */
   {
@@ -376,11 +408,28 @@ export function slaFor(def, rec, stage) {
   return (rule.map && rule.map[v]) != null ? rule.map[v] : rule.default;
 }
 
-// A record's workflow path — renewal-triggered records follow the renewal path.
+// A record's workflow path — renewal-triggered records follow the renewal path;
+// modules can declare further named flows (e.g. the filings "periodic" path).
 export function workflowOf(def, rec) {
   if (!def) return [];
   if (rec && rec.flow === "renewal" && def.renewalWorkflow) return def.renewalWorkflow;
+  if (rec && rec.flow && rec.flow !== "main" && def.flows && def.flows[rec.flow]) return def.flows[rec.flow];
   return def.workflow || [];
+}
+
+/* ---------------- Filing Module 8.1 — Filing Status ----------------
+   Derived, never hand-typed: Filed / Overdue / Due Soon / Not Due. "Due Soon"
+   matches the 30-day system-trigger window. */
+export function filingStatusOf(rec = {}, now = new Date()) {
+  const f = rec.fields || {};
+  if (f.filingDate || /Filed|Closed/.test(rec.stage || "") && rec.status === "Closed") {
+    return { key: "Filed", tone: "green", detail: f.filingDate ? "filed " + String(f.filingDate).slice(0, 10) : "filed" };
+  }
+  if (!f.dueDate) return { key: "Not Due", tone: "gray", detail: "no due date set" };
+  const days = Math.floor((new Date(f.dueDate) - now) / 86400000);
+  if (days < 0) return { key: "Overdue", tone: "red", detail: `${-days}d past due`, days };
+  if (days <= 30) return { key: "Due Soon", tone: "amber", detail: `due in ${days}d`, days };
+  return { key: "Not Due", tone: "gray", detail: `due in ${days}d`, days };
 }
 
 // Total SLA budget for a record = sum of its staged SLAs (used for the

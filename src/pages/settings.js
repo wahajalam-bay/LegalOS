@@ -416,7 +416,7 @@ function MasterDataAdmin() {
   const set = (items2) => updateMasterList(table, items2);
 
   return html`<${Section} title="Master data" icon="database"
-    sub="The Section 2 registry: every dropdown across all twelve modules reads these lists live — an edit here changes the forms immediately."
+    sub="The Section 2 registry: every dropdown across all thirteen modules reads these lists live — an edit here changes the forms immediately."
     actions=${html`<${Btn} size="sm" icon="refresh" onClick=${() => { if (confirm("Reset ALL master tables to the seeded defaults?")) resetMasterData(); }}>Reset defaults</${Btn}>`}>
     <div class="grid" style="grid-template-columns:250px 1fr;gap:16px;align-items:start">
       <div class="card" style="padding:6px">

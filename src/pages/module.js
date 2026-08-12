@@ -1,4 +1,4 @@
-// The generic module surface — one page renders any of the twelve org-architecture
+// The generic module surface — one page renders any of the thirteen org-architecture
 // modules from the registry spec (src/modules.js). Sprint 7 makes it fully
 // operational: two-column detail (work + rail), two-way comments, document
 // attachments, owner reassignment, source-group inputs for the owning
@@ -10,7 +10,7 @@ import { Btn, Pill, Field, Input, Textarea, Modal, Empty, Avatar, Toggle } from 
 import { navigate } from "../router.js";
 import { USERS, byId, entityName, COMPANIES } from "../data.js";
 import { teamShort, teamTone, masterList } from "../org.js";
-import { moduleByKey, subTypesOf, fieldOptions, workflowOf, slaFor, riskGateMissing } from "../modules.js";
+import { moduleByKey, subTypesOf, fieldOptions, workflowOf, slaFor, riskGateMissing, filingStatusOf } from "../modules.js";
 import { tatV2, tatV2Label, urgencyOf } from "../tat2.js";
 import {
   useCollection, useMasterData, modRequestById, personName, getCollection,
@@ -18,6 +18,7 @@ import {
   generateAutoResponse, raiseModuleRequest, postModComment, addModAttachment,
   removeModAttachment, reassignOwner, setModPriority, setModDriveLink, logModVersion,
   markResolutionUploaded, scheduleNextInspection, addCompanyEntity,
+  markFiled, useFilingSchedule, upsertFilingScheduleRow,
 } from "../store.js";
 import { useActiveUser, visibilityOf, canBrowseModule, stripInternal, canEditGroup, teamMembers } from "../rbac.js";
 import { RankBars } from "../execviz.js";
@@ -41,6 +42,13 @@ function fieldValue(f, rec) {
   if (f.type === "date") return fmt.date(v);
   if (f.type === "toggle") return v ? "Yes" : "No";
   if (f.type === "money") return fmt.moneyFull(v, (rec.fields || {}).currency === "USD" ? "USD" : (rec.fields || {}).currency === "SAR" ? "SAR" : "PKR");
+  if (f.type === "record") {
+    // Cross-module link (e.g. a filing's underlying resolution) — clickable.
+    const linked = (getCollection("modRequests") || []).find((r) => r.id === v);
+    return html`<a class="reclink" onClick=${(e) => { e.stopPropagation(); navigate("/m/" + (linked ? linked.moduleKey : f.recordModule) + "/" + v); }}>
+      <${Icon} name="link" size=12 /> ${v}${linked ? " — " + linked.title : ""}
+    </a>`;
+  }
   return String(v);
 }
 
@@ -114,6 +122,13 @@ function FieldInput({ f, value, onChange, md, rec, viewer }) {
       ${USERS.filter((u) => u.dept === "Legal").map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
     </select>`;
   }
+  if (f.type === "record") {
+    const recs = (getCollection("modRequests") || []).filter((r) => r.moduleKey === f.recordModule);
+    return html`<select class="input" value=${value || ""} onChange=${(e) => onChange(e.target.value)}>
+      <option value="">— none —</option>
+      ${recs.map((r) => html`<option key=${r.id} value=${r.id}>${r.id} — ${r.title}</option>`)}
+    </select>`;
+  }
   if (f.type === "toggle") return html`<${Toggle} on=${!!value} onChange=${(v) => onChange(v)} />`;
   if (f.type === "textarea") return html`<${Textarea} rows=3 value=${value || ""} onInput=${(e) => onChange(e.target.value)} />`;
   if (f.type === "date") return html`<${Input} type="date" value=${value ? String(value).slice(0, 10) : ""} onInput=${(e) => onChange(e.target.value)} />`;
@@ -146,6 +161,11 @@ function cellFor(col, rec, def) {
     const arrow = f.costReduced ? "↓" : (f.costForthcomingYear > f.costCurrentYear ? "↑" : "→");
     return `${fmt.money(f.costCurrentYear, "PKR")} ${arrow} ${fmt.money(f.costForthcomingYear || f.costCurrentYear, "PKR")}`;
   }
+  if (col === "filingDueCol") return f.dueDate ? html`<span>${fmt.dateShort(f.dueDate)} <span class="tiny muted">${fmt.until(f.dueDate)}</span></span>` : "—";
+  if (col === "filingStatusCol") {
+    const s = filingStatusOf(rec);
+    return html`<${Pill} tone=${s.tone}>${s.key}</${Pill}>`;
+  }
   if (col.startsWith("fields.")) {
     const key = col.slice(7);
     const fd = (def.fields || []).find((x) => x.key === key);
@@ -159,7 +179,7 @@ function headFor(col, def) {
     templateType: "Template", requestingDept: "Requesting Dept", owner: "Owner", stage: "Stage",
     tat: "TAT", title: "Matter", urgencyCol: "Urgency", authorityCol: "Authority",
     renewalDueCol: "Renewal Due", nextHearingCol: "Next Hearing", recoveredCol: "Recovered",
-    costYoYCol: "Cost YoY",
+    costYoYCol: "Cost YoY", filingDueCol: "Statutory Due", filingStatusCol: "Filing Status",
   };
   if (map[col]) return map[col];
   if (col.startsWith("fields.")) {
@@ -221,6 +241,95 @@ function ResolutionsReport({ rows }) {
     ${entries.length
       ? html`<${RankBars} data=${entries} format=${(v) => v + (v === 1 ? " request" : " requests")} />`
       : html`<div class="tiny muted" style="padding:14px 0">No resolutions in this window.</div>`}
+  </div>`;
+}
+
+/* ---------------- Filing Module 8.3 — Filings by Entity ----------------
+   Every group entity has its own set of statutory filings; this board shows
+   all forms due / overdue / filed for each entity in one place, so nothing is
+   missed across the group. Calendar entries that have not generated a record
+   yet appear as ghost chips. Click an entity to filter the register. */
+function FilingsByEntity({ rows, active, onPick, viewer, def }) {
+  const schedule = useFilingSchedule();
+  const [adding, setAdding] = useState(false);
+  const [row, setRow] = useState({ entityId: "", formType: "Form A — Annual Return", nextDue: "", authorizedPerson: "" });
+  const md = useMasterData();
+
+  const entities = [...new Set([
+    ...rows.map((r) => r.entityId).filter(Boolean),
+    ...schedule.filter((s) => s.active !== false).map((s) => s.entityId),
+  ])];
+  const weight = { Overdue: 0, "Due Soon": 1, "Not Due": 2, Filed: 3 };
+
+  const perEntity = entities.map((eid) => {
+    const recs = rows.filter((r) => r.entityId === eid)
+      .map((r) => ({ r, s: filingStatusOf(r) }))
+      .sort((a, b) => weight[a.s.key] - weight[b.s.key]);
+    // Calendar rows with no live record yet (outside the 30-day window).
+    const upcoming = schedule.filter((s) => s.active !== false && s.entityId === eid &&
+      !rows.some((r) => r.subType === s.formType && String((r.fields || {}).dueDate || "").slice(0, 10) === String(s.nextDue).slice(0, 10)));
+    const overdue = recs.filter((x) => x.s.key === "Overdue").length;
+    const dueSoon = recs.filter((x) => x.s.key === "Due Soon").length;
+    return { eid, recs, upcoming, overdue, dueSoon };
+  }).sort((a, b) => (b.overdue - a.overdue) || (b.dueSoon - a.dueSoon));
+
+  const isCompliance = viewer.rbac === "head" || viewer.legalTeam === def.team;
+
+  return html`<div class="card filingsboard">
+    <div class="row" style="margin-bottom:4px;flex-wrap:wrap">
+      <div>
+        <div class="strong" style="font-size:13.5px">Filings by entity</div>
+        <div class="tiny muted">All forms due, overdue or filed per entity — nothing missed across the group (8.3). Click an entity to filter.</div>
+      </div>
+      <span class="spacer"></span>
+      ${isCompliance && html`<${Btn} size="sm" icon="calendar" onClick=${() => setAdding(true)}>Calendar entry</${Btn}>`}
+    </div>
+    ${perEntity.map(({ eid, recs, upcoming, overdue, dueSoon }) => html`<div key=${eid} class=${cx("fbe", active === eid && "fbe--active")}>
+      <button class="fbe__entity" onClick=${() => onPick(eid)}>
+        <${Icon} name="building" size=13 />
+        <span>${entityName(eid)}</span>
+        ${overdue > 0 && html`<${Pill} tone="red">${overdue} overdue</${Pill}>`}
+        ${!overdue && dueSoon > 0 && html`<${Pill} tone="amber">${dueSoon} due soon</${Pill}>`}
+        ${!overdue && !dueSoon && html`<${Pill} tone="green">on track</${Pill}>`}
+      </button>
+      <div class="fbe__chips">
+        ${recs.map(({ r, s }) => html`<button key=${r.id} class=${"fbechip fbechip--" + s.tone}
+          title=${r.title + " — " + s.detail} onClick=${() => navigate("/m/filings/" + r.id)}>
+          <span class="fbechip__dot"></span>${(r.subType || "").split(" — ")[0]} · ${s.key === "Filed" ? "Filed" : s.detail}
+        </button>`)}
+        ${upcoming.map((s) => html`<span key=${s.formType + s.nextDue} class="fbechip fbechip--ghost" title=${"On the calendar — the record generates 30 days before " + fmt.date(s.nextDue)}>
+          ${s.formType.split(" — ")[0]} · due ${fmt.until(s.nextDue)}
+        </span>`)}
+      </div>
+    </div>`)}
+    ${adding && html`<${Modal} title="Filing calendar entry" icon="calendar" width=${560} onClose=${() => setAdding(false)}
+      footer=${html`<${Fragment}>
+        <${Btn} onClick=${() => setAdding(false)}>Cancel</${Btn}>
+        <${Btn} variant="primary" onClick=${() => {
+          if (!row.entityId || !row.nextDue) { toast("Entity and due date are required", "error"); return; }
+          upsertFilingScheduleRow({ ...row, frequency: "Annual", nextDue: new Date(row.nextDue).toISOString() }, viewer.id);
+          toast("Calendar updated — the record will generate 30 days before the due date");
+          setAdding(false);
+        }}>Save entry</${Btn}>
+      </${Fragment}>`}>
+      <p class="tiny muted" style="margin-top:0">Maintained by Compliance. The system generates the filing record automatically
+      once the due date comes within 30 days (Filing Module 8.2) — a date already inside the window generates immediately.</p>
+      <div class="modeditgrid">
+        <${Field} label="Entity *">
+          <select class="input" value=${row.entityId} onChange=${(e) => setRow({ ...row, entityId: e.target.value })}>
+            <option value="">Select…</option>
+            ${(getCollection("companies") || COMPANIES).filter((c) => c.type === "Group Entity" && c.jur === "PK").map((c) => html`<option key=${c.id} value=${c.id}>${c.name}</option>`)}
+          </select>
+        </${Field}>
+        <${Field} label="SECP form">
+          <select class="input" value=${row.formType} onChange=${(e) => setRow({ ...row, formType: e.target.value })}>
+            ${masterList(md, "secpFormTypes").map((s) => html`<option key=${s}>${s}</option>`)}
+          </select>
+        </${Field}>
+        <${Field} label="Next statutory due date *"><${Input} type="date" value=${row.nextDue} onInput=${(e) => setRow({ ...row, nextDue: e.target.value })} /></${Field}>
+        <${Field} label="Authorized person to file"><${Input} value=${row.authorizedPerson} onInput=${(e) => setRow({ ...row, authorizedPerson: e.target.value })} /></${Field}>
+      </div>
+    </${Modal}>`}
   </div>`;
 }
 
@@ -343,10 +452,11 @@ function Register({ def, rows, md, viewer }) {
   const [stage, setStage] = useState("");
   const [tstat, setTstat] = useState("");
   const [dept, setDept] = useState("");
+  const [ent, setEnt] = useState("");
   const [creating, setCreating] = useState(false);
 
   const enriched = useMemo(() => rows.map((r) => ({ r, t: tatV2(def, r) })), [rows]);
-  const stages = [...new Set([...def.workflow, ...(def.renewalWorkflow || [])])];
+  const stages = [...new Set([...def.workflow, ...(def.renewalWorkflow || []), ...Object.values(def.flows || {}).flat()])];
 
   const filtered = enriched.filter(({ r, t }) => {
     if (q && !(r.title + " " + r.id + " " + JSON.stringify(r.fields || {})).toLowerCase().includes(q.toLowerCase())) return false;
@@ -354,16 +464,25 @@ function Register({ def, rows, md, viewer }) {
     if (stage && r.stage !== stage) return false;
     if (tstat && t.status !== tstat) return false;
     if (dept && r.requestingDept !== dept) return false;
+    if (ent && r.entityId !== ent) return false;
     return true;
   }).sort((a, b) => urgencyOf(b.t) - urgencyOf(a.t));
 
   const open = enriched.filter((x) => x.t.status !== "Closed");
-  const kpis = [
-    { label: "Open", n: open.length, tone: "blue" },
-    { label: "Overdue", n: open.filter((x) => x.t.status === "Overdue").length, tone: "red" },
-    { label: "Paused with a dept", n: open.filter((x) => x.t.status === "Paused").length, tone: "amber" },
-    { label: "Closed", n: enriched.length - open.length, tone: "gray" },
-  ];
+  // Filings are measured against the statutory calendar, not just the TAT clock.
+  const kpis = def.report === "byEntity"
+    ? [
+        { label: "Open filings", n: open.length, tone: "blue" },
+        { label: "Overdue vs statute", n: rows.filter((r) => filingStatusOf(r).key === "Overdue").length, tone: "red" },
+        { label: "Due in 30 days", n: rows.filter((r) => filingStatusOf(r).key === "Due Soon").length, tone: "amber" },
+        { label: "Filed", n: rows.filter((r) => filingStatusOf(r).key === "Filed").length, tone: "gray" },
+      ]
+    : [
+        { label: "Open", n: open.length, tone: "blue" },
+        { label: "Overdue", n: open.filter((x) => x.t.status === "Overdue").length, tone: "red" },
+        { label: "Paused with a dept", n: open.filter((x) => x.t.status === "Paused").length, tone: "amber" },
+        { label: "Closed", n: enriched.length - open.length, tone: "gray" },
+      ];
 
   return html`<div class="page">
     <div class="page__head">
@@ -384,6 +503,7 @@ function Register({ def, rows, md, viewer }) {
     </div>
 
     ${def.report === "byDepartment" && html`<${ResolutionsReport} rows=${rows} />`}
+    ${def.report === "byEntity" && html`<${FilingsByEntity} rows=${rows} active=${ent} onPick=${(id) => setEnt(ent === id ? "" : id)} viewer=${viewer} def=${def} />`}
 
     <div class="card" style="padding:0">
       <${StageStrip} def=${def} enriched=${enriched} active=${stage} onPick=${setStage} />
@@ -727,6 +847,25 @@ function QuickActions({ def, rec, viewer, statusOnly }) {
       },
     });
   }
+  if (def.key === "filings" && !f.filingDate && rec.status !== "Closed") {
+    actions.push({
+      icon: "check", label: "Mark filed with SECP",
+      hint: "Stamps today's date + SRN, moves the stage",
+      run: () => {
+        const srn = prompt("SECP SRN / challan number (optional):", "");
+        if (srn === null) return;
+        const r = markFiled(rec.id, { srn: srn.trim() }, viewer.id);
+        if (r.ok) toast("Filed with SECP — status is now Filed");
+      },
+    });
+  }
+  if (def.key === "filings" && f.filingDate && !f.ctcApplied) {
+    actions.push({
+      icon: "fileCheck", label: "Mark CTC applied",
+      hint: "Certified true copy requested from SECP",
+      run: () => { updateModFields(rec.id, { ctcApplied: true }, viewer.id); toast("CTC marked as applied"); },
+    });
+  }
   if (!actions.length) return null;
   return html`<div class="card">
     <div class="strong" style="font-size:13.5px;margin-bottom:8px">Quick actions</div>
@@ -997,6 +1136,7 @@ function Detail({ def, id, md, viewer }) {
           ${rec.subType && html`<${Pill} tone="gray">${rec.subType}</${Pill}>`}
           ${rec.priority !== "Normal" && html`<${Pill} tone="red">${rec.priority}</${Pill}>`}
           <${TatChip} t=${t} />
+          ${def.key === "filings" && (() => { const s = filingStatusOf(rec); return html`<${Pill} tone=${s.tone}>${s.key} — ${s.detail}</${Pill}>`; })()}
           ${statusOnly && html`<${Pill} tone="amber">Requester view — status only</${Pill}>`}
         </div>
       </div>
@@ -1015,6 +1155,22 @@ function Detail({ def, id, md, viewer }) {
         ${def.hearings && html`<${HearingsPanel} def=${def} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />`}
         ${def.autoResponse && html`<${AutoResponsePanel} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />`}
         <${FieldGroups} def=${def} rec=${rec} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
+        ${def.key === "resolutions" && (() => {
+          // Filing Module 8.1 — filings cite the resolution that triggered them;
+          // show the reverse link so the paper trail reads both ways.
+          const linked = (getCollection("modRequests") || []).filter((r) => r.moduleKey === "filings" && (r.fields || {}).linkedResolutionId === rec.id);
+          if (!linked.length) return null;
+          return html`<div class="card">
+            <div class="strong" style="font-size:13.5px;margin-bottom:8px">SECP filings triggered by this resolution</div>
+            ${linked.map((r) => {
+              const s = filingStatusOf(r);
+              return html`<div key=${r.id} class="row clickable hoverline" style="gap:10px;padding:6px 0;font-size:13px" onClick=${() => navigate("/m/filings/" + r.id)}>
+                <span class="mono tiny muted">${r.id}</span><span>${r.title}</span>
+                <span class="spacer"></span><${Pill} tone=${s.tone}>${s.key}</${Pill}>
+              </div>`;
+            })}
+          </div>`;
+        })()}
         ${(rec.versions || []).length > 0 && html`<div class="card">
           <div class="strong" style="font-size:13.5px;margin-bottom:8px">Draft version log</div>
           ${rec.versions.map((v) => html`<div key=${v.v} class="row" style="gap:10px;padding:5px 0;font-size:13px">

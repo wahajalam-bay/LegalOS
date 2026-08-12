@@ -4,14 +4,14 @@ import { useState, useEffect } from "./core.js";
 import {
   REQUESTS, MATTERS, CONTRACTS, LICENSES, COMPANIES, TEMPLATES, REPOSITORY,
   REQUESTERS, MESSAGES, FORM_CONFIG, USERS,
-  lifecyclePathFor, inferCategory, inferSubdivision, entityById, byId, licenseStatus,
+  lifecyclePathFor, inferCategory, inferSubdivision, entityById, entityName, byId, licenseStatus,
 } from "./data.js";
 import { fixTat, addWorkingDays } from "./tat.js";
 // Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
 import { MASTER_DATA_SEED, teamPrefix } from "./org.js";
 import { MODULES, moduleByKey, workflowOf, riskGateMissing } from "./modules.js";
 import { tatV2 } from "./tat2.js";
-import { MOD_REQUESTS, NOTICE_TEMPLATES, COST_BUDGETS } from "./seeds-org.js";
+import { MOD_REQUESTS, NOTICE_TEMPLATES, COST_BUDGETS, FILING_SCHEDULE } from "./seeds-org.js";
 
 const addWorkingDaysIso = (from, n) => addWorkingDays(from, n).toISOString();
 
@@ -41,6 +41,9 @@ function seed() {
     modRequests: [...MOD_REQUESTS],
     noticeTemplates: [...NOTICE_TEMPLATES],
     costBudgets: [...COST_BUDGETS],
+    // Filing Module 8.2 — the statutory filing calendar per entity, maintained
+    // by Compliance; the system generates the filing record 30 days ahead.
+    filingSchedule: FILING_SCHEDULE.map((x) => ({ ...x })),
     notifs: [],
     // Object-shaped slices: administrable master data + the View As session.
     masterData: JSON.parse(JSON.stringify(MASTER_DATA_SEED)),
@@ -609,6 +612,7 @@ export function resetDemo() {
     localStorage.removeItem("legalos-tour-seen");
   } catch (e) {}
   emit();
+  ensurePeriodicFilings();
   return { ok: true };
 }
 
@@ -1156,6 +1160,130 @@ export function addCompanyEntity({ name, type = "Counterparty", jurisdiction = "
   return { ok: true, id };
 }
 
+/* ---------------- Filing Module (Compliance) — Section 8 ----------------
+   Periodic statutory filings are SYSTEM-GENERATED: the filing calendar per
+   entity lives in the `filingSchedule` slice, and 30 days before the statutory
+   due date the record is created automatically at "Filing Trigger" — nobody
+   has to remember to raise it. Idempotent: safe to run on every boot. */
+const FILING_LEAD_MS = 30 * 86400000;
+
+export function ensurePeriodicFilings() {
+  const sched = state.filingSchedule || [];
+  if (!sched.length) return { created: [] };
+  const now = Date.now();
+  const created = [];
+  let schedChanged = false;
+  const nextSched = sched.map((row) => {
+    if (row.active === false) return row;
+    let due = new Date(row.nextDue).getTime();
+    // Roll the calendar forward: once the filing for a due date is filed or
+    // closed, the next cycle is due a year on.
+    const filedFor = (d) => (state.modRequests || []).some((r) =>
+      r.moduleKey === "filings" && r.entityId === row.entityId && r.subType === row.formType &&
+      String((r.fields || {}).dueDate || "").slice(0, 10) === new Date(d).toISOString().slice(0, 10) &&
+      ((r.fields || {}).filingDate || r.status === "Closed"));
+    let rolled = row;
+    while (filedFor(due)) {
+      const d = new Date(due);
+      d.setFullYear(d.getFullYear() + 1);
+      due = d.getTime();
+      rolled = { ...rolled, nextDue: new Date(due).toISOString() };
+      schedChanged = true;
+    }
+    // Inside the 30-day window and no record exists yet → generate it.
+    const exists = (state.modRequests || []).some((r) =>
+      r.moduleKey === "filings" && r.entityId === rolled.entityId && r.subType === rolled.formType &&
+      String((r.fields || {}).dueDate || "").slice(0, 10) === new Date(due).toISOString().slice(0, 10));
+    if (!exists && due - now <= FILING_LEAD_MS && due - now > -365 * 86400000) {
+      const daysLeft = Math.floor((due - now) / 86400000);
+      const year = new Date(due).getFullYear();
+      const res = raiseModuleRequest({
+        moduleKey: "filings",
+        flow: "periodic",
+        title: `${rolled.formType.split(" — ")[0]} — ${entityName(rolled.entityId)} ${year}`,
+        subType: rolled.formType,
+        requestingDept: "Legal",
+        requestedBy: { name: "System", designation: "Filing trigger — 30 days before due", contact: "legalos" },
+        entityId: rolled.entityId,
+        fields: {
+          filingCategory: "Periodic (Annual)",
+          dueDate: new Date(due).toISOString(),
+          periodEnd: rolled.periodEnd || null,
+          authorizedPerson: rolled.authorizedPerson || "",
+        },
+      });
+      if (res.ok) {
+        created.push(res.id);
+        state = {
+          ...state,
+          modRequests: state.modRequests.map((r) => (r.id === res.id
+            ? {
+                ...r,
+                activity: [...r.activity, { at: nowIso(), by: null, action: `System-generated ${daysLeft} days before the statutory due date (Filing Module 8.2)` }],
+              }
+            : r)),
+        };
+        pushNotif({
+          id: "filing-trigger-" + res.id,
+          forUserId: res.record.owner, tone: "amber", icon: "book",
+          title: `${rolled.formType.split(" — ")[0]} for ${entityName(rolled.entityId)} generated — due in ${daysLeft} days`,
+          path: "/m/filings/" + res.id,
+        });
+      }
+    }
+    return rolled;
+  });
+  if (schedChanged) state = { ...state, filingSchedule: nextSched };
+  if (created.length || schedChanged) emit();
+  return { created };
+}
+
+// Mark a filing as actually filed with SECP — stamps the date (and SRN), and
+// moves the workflow to "Filed with SECP" in one step.
+export function markFiled(id, { date, srn } = {}, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec || rec.moduleKey !== "filings") return { ok: false, error: "not a filing" };
+  const def = moduleByKey("filings");
+  const path = workflowOf(def, rec);
+  const target = "Filed with SECP";
+  const at = nowIso();
+  const filingDate = date || at;
+  const idx = path.indexOf(target);
+  const curIdx = path.indexOf(rec.stage);
+  const moveStage = idx >= 0 && curIdx >= 0 && curIdx < idx;
+  const updated = stampActivity(
+    {
+      ...rec,
+      stage: moveStage ? target : rec.stage,
+      stageLog: moveStage ? [...rec.stageLog, { stage: target, at, by }] : rec.stageLog,
+      fields: { ...(rec.fields || {}), filingDate, ...(srn ? { srn } : {}) },
+    },
+    { at, by, action: `Filed with SECP on ${String(filingDate).slice(0, 10)}${srn ? " — SRN " + srn : ""}` }
+  );
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  return { ok: true };
+}
+
+// The filing calendar is maintainable from the register (Compliance only).
+export function upsertFilingScheduleRow(row, by) {
+  const list = state.filingSchedule || [];
+  const key = (x) => x.entityId + "|" + x.formType;
+  const exists = list.some((x) => key(x) === key(row));
+  state = {
+    ...state,
+    filingSchedule: exists
+      ? list.map((x) => (key(x) === key(row) ? { ...x, ...row } : x))
+      : [...list, { ...row, active: row.active !== false }],
+  };
+  emit();
+  // A calendar change may put a filing inside the 30-day window right away.
+  ensurePeriodicFilings();
+  return { ok: true };
+}
+
+export const useFilingSchedule = () => useCollection("filingSchedule");
+
 /* ---------------- reads ---------------- */
 export const modRequestById = (id) => (state.modRequests || []).find((r) => r.id === id) || null;
 export const modRequestsFor = (moduleKey) => (state.modRequests || []).filter((r) => r.moduleKey === moduleKey);
@@ -1175,3 +1303,7 @@ export function saveLastFilters(module, filters) {
     localStorage.setItem(LAST_KEY, JSON.stringify(all));
   } catch (e) {}
 }
+
+// Boot-time pass: generate any periodic filings whose 30-day window has opened.
+// Runs after every hydrate so the calendar is always acted on, never just read.
+ensurePeriodicFilings();

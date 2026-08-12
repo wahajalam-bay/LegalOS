@@ -269,6 +269,74 @@ const CMP = [
     fields: { licenseName: "KMC trade license", authority: "LDA / Municipality", issueDate: d(-400), renewalTerm: "1 year", renewalDue: d(-12), renewalStatus: "Renewed" },
     costs: [{ type: "Filing & Government Fee", estimated: 40000, actual: 42500, currency: "PKR", invoiceNo: "KMC-2026-5521", attribution: "Legal operating budget" }],
   }),
+
+  /* ---- Filing Module (Compliance) — Section 8. SECP applies to the PK
+     entities. A spread of statuses so the per-entity board (8.3) reads real:
+     filed, due-soon in progress, overdue, event-based linked to resolutions. ---- */
+  mk("filings", {
+    title: "Form A — Zameen Media 2025",
+    subType: "Form A — Annual Return", flow: "periodic", requestingDept: "Legal",
+    requestedBy: req("System", "Filing trigger — 30 days before due", "legalos"),
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 310, pace: 4, closed: true,
+    fields: { filingCategory: "Periodic (Annual)", periodEnd: d(-350), dueDate: d(-280), filingDate: d(-283), authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: true, srn: "SRN-25-118332" },
+    activity: [{ at: d(-310), by: null, action: "System-generated 30 days before the statutory due date (Filing Module 8.2)" }],
+    costs: [{ type: "Filing & Government Fee", estimated: 10000, actual: 9500, currency: "PKR", invoiceNo: "SECP-CH-25-4471", attribution: "Legal operating budget" }],
+  }),
+  mk("filings", {
+    title: "Form A — Zameen.com 2026",
+    subType: "Form A — Annual Return", flow: "periodic", requestingDept: "Legal",
+    requestedBy: req("System", "Filing trigger — 30 days before due", "legalos"),
+    entityId: "CO-20", owner: "u12", assignedBy: "u20", stage: "Preparation", raisedDaysAgo: 22, pace: 8, priority: "High",
+    fields: { filingCategory: "Periodic (Annual)", periodEnd: d(-224), dueDate: d(8), authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: false },
+    activity: [{ at: d(-22), by: null, action: "System-generated 30 days before the statutory due date (Filing Module 8.2)" }],
+  }),
+  mk("filings", {
+    title: "Form 29 — Zameen Media change of directors",
+    subType: "Form 29 — Directors & Officers Change", requestingDept: "Finance",
+    requestedBy: req("Imran Qureshi", "Finance Director", "imran.q@zameen.com"), requestedById: "u16",
+    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 9, pace: 2,
+    fields: { filingCategory: "Event-Based", dueDate: d(6), linkedResolutionId: "CMP-0014", authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: false },
+    comments: [
+      { at: d(-4), by: "u21", text: "Need the signed resolution and Form 28 consents of both incoming directors before I can file.", internal: false },
+      { at: d(-2), by: "u16", text: "Consents signed and scanned — attached on the resolution record.", internal: false },
+    ],
+  }),
+  mk("filings", {
+    title: "Form 9 — Propsults registered office change",
+    subType: "Form 9 — Registered Office Change", requestingDept: "Admin",
+    requestedBy: req("Shahid Mehmood", "Admin Manager", "shahid.m@zameen.com"),
+    entityId: "CO-24", owner: "u12", assignedBy: "u20", stage: "Preparation", raisedDaysAgo: 25, pace: 6, priority: "High",
+    holds: [{ dept: "Admin", reason: "Awaiting Documents", startDaysAgo: 12, endDaysAgo: 4 }],
+    fields: { filingCategory: "Event-Based", dueDate: d(-12), authorizedPerson: "External consultant — Corplink Associates", ctcApplied: false },
+  }),
+  mk("filings", {
+    title: "Form 3 — OLX Pakistan allotment of shares",
+    subType: "Form 3 — Allotment of Shares", requestingDept: "Finance",
+    requestedBy: req("Imran Qureshi", "Finance Director", "imran.q@zameen.com"), requestedById: "u16",
+    entityId: "CO-21", owner: "u21", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 45, pace: 5, closed: true,
+    fields: { filingCategory: "Event-Based", dueDate: d(-15), filingDate: d(-30), authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: true, srn: "SRN-26-009114" },
+    costs: [{ type: "Filing & Government Fee", estimated: 7500, actual: 7500, currency: "PKR", invoiceNo: "SECP-CH-26-1108", attribution: "Recharged to requesting department" }],
+  }),
+  mk("filings", {
+    title: "Form 19 — Zameen.com charge in favour of HBL",
+    subType: "Form 19 — Mortgage / Charge", requestingDept: "Finance",
+    requestedBy: req("Imran Qureshi", "Finance Director", "imran.q@zameen.com"), requestedById: "u16",
+    entityId: "CO-20", owner: "u12", assignedBy: "u20", stage: "Filed with SECP", raisedDaysAgo: 14, pace: 3,
+    fields: { filingCategory: "Event-Based", dueDate: d(4), filingDate: d(-3), linkedResolutionId: "CMP-0013", authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: false, srn: "SRN-26-014772" },
+  }),
+];
+
+/* ---------------- Filing Module 8.2 — the statutory filing calendar ----------------
+   Per PK entity: the periodic obligations Compliance maintains. The store's
+   ensurePeriodicFilings() generates the filing record automatically once
+   `nextDue` comes within 30 days — OLX below is inside that window on a fresh
+   seed, so the trigger demonstrably fires on first boot. */
+export const FILING_SCHEDULE = [
+  { entityId: "CO-36", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(85), periodEnd: d(15), authorizedPerson: "Hassan Ali (Company Secretary)", active: true },
+  { entityId: "CO-20", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(8), periodEnd: d(-224), authorizedPerson: "Hassan Ali (Company Secretary)", active: true },
+  { entityId: "CO-21", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(22), periodEnd: d(-190), authorizedPerson: "Hassan Ali (Company Secretary)", active: true },
+  { entityId: "CO-24", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(150), periodEnd: d(60), authorizedPerson: "External consultant — Corplink Associates", active: true },
+  { entityId: "CO-25", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(60), periodEnd: d(-30), authorizedPerson: "External consultant — Corplink Associates", active: true },
 ];
 
 /* =================== LITIGATION & DISPUTE MANAGEMENT =================== */
