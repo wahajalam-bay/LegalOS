@@ -46,6 +46,19 @@ export function recTeam(rec = {}) {
 /* ---------------- Section 14.4 — the row-level filter ---------------- */
 export function visibilityOf(viewer, rec) {
   if (!viewer || !rec) return null;
+  // §7.2 privilege tiers — enforced here at the access layer, not as a label.
+  // A Privileged matter never surfaces (view, search, or AI retrieval) for a
+  // viewer who is not named on it; Restricted excludes cross-team and, by
+  // default, paralegals. The Director (head) retains full access.
+  const priv = rec.privilege || "Open";
+  if (priv !== "Open" && viewer.rbac !== "head") {
+    const named = rec.owner === viewer.id || (rec.namedAccess || []).includes(viewer.id);
+    if (priv === "Privileged" && !named) return null;
+    if (priv === "Restricted") {
+      const sameTeam = viewer.legalTeam && viewer.legalTeam === recTeam(rec);
+      if (!named && !(sameTeam && viewer.rbac !== "paralegal")) return null;
+    }
+  }
   // Legal Department Head — aggregated cross-team view, full drill-down.
   if (viewer.rbac === "head") return "full";
   // Same Legal team → the full record.

@@ -278,6 +278,8 @@ export function submitLegalRequest(payload = {}) {
     layer2: payload.layer2 || null,
     proposedCategory: payload.category || category,
     categoryConfirmed: false,
+    needByJustification: payload.needByJustification || null,
+    needByTight: !!payload.needByTight,
     requesterEmail: payload.requesterEmail || (byId(payload.requesterId) || {}).email || null,
     routedManually,
     // The missing-document checklist, pre-loaded from the admin template for
@@ -905,6 +907,8 @@ export function advanceStage(id, by) {
   }
   const now = nowIso();
   const closing = idx + 1 === path.length - 1;
+  // PRD §4.7 — a matter cannot be closed without structured outcome capture.
+  if (closing && !rec.outcome) return { ok: false, needsOutcome: true, next };
   let updated = {
     ...rec,
     stage: next,
@@ -923,6 +927,62 @@ export function advanceStage(id, by) {
     path: "/m/" + rec.moduleKey + "/" + id,
   });
   return { ok: true, stage: next, closed: closing };
+}
+
+/* ============================================================
+   R1.0 MODULE 2 — matter spine: privilege, risk rating, outcome capture
+   ============================================================ */
+export const PRIVILEGE_TIERS = ["Open", "Restricted", "Privileged"];
+export const RISK_LIKELIHOODS = ["Rare", "Unlikely", "Possible", "Likely", "Almost Certain"];
+export const RISK_IMPACTS = ["Minor", "Moderate", "Major", "Severe"];
+// PRD §4.6 likelihood × impact → band (matter level).
+const RISK_MATRIX = {
+  Minor:    { Rare: "Low", Unlikely: "Low", Possible: "Low", Likely: "Low", "Almost Certain": "Medium" },
+  Moderate: { Rare: "Low", Unlikely: "Low", Possible: "Medium", Likely: "Medium", "Almost Certain": "Medium" },
+  Major:    { Rare: "Low", Unlikely: "Medium", Possible: "High", Likely: "Critical", "Almost Certain": "Critical" },
+  Severe:   { Rare: "Medium", Unlikely: "High", Possible: "High", Likely: "Critical", "Almost Certain": "Critical" },
+};
+export function riskBand(impact, likelihood) { return ((RISK_MATRIX[impact] || {})[likelihood]) || null; }
+
+const _modPatch = (id, patch, by, action) => {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  const activity = action ? [...(rec.activity || []), { at: nowIso(), by: by || null, action }] : rec.activity;
+  updateItem("modRequests", id, { ...patch, activity });
+  return { ok: true };
+};
+
+// §7.2 privilege classification — a permissions-bearing field, not a label.
+export function setModPrivilege(id, tier, namedAccess, by) {
+  return _modPatch(id, { privilege: tier, namedAccess: namedAccess || [] }, by,
+    `Privilege set to ${tier}${(namedAccess || []).length ? " (named: " + namedAccess.length + ")" : ""}`);
+}
+// §4.6 matter-level risk rating.
+export function setModRisk(id, likelihood, impact, by) {
+  const band = riskBand(impact, likelihood);
+  return _modPatch(id, { riskLikelihood: likelihood, riskImpact: impact, riskBand: band }, by,
+    `Risk rated ${band} (${likelihood} × ${impact})`);
+}
+// §4.7 close a matter with structured outcome (mandatory).
+export function closeWithOutcome(id, outcome, by) {
+  const rec = (state.modRequests || []).find((r) => r.id === id);
+  if (!rec) return { ok: false, error: "record not found" };
+  if (!outcome || !outcome.category) return { ok: false, error: "an outcome category is required to close" };
+  const def = moduleByKey(rec.moduleKey);
+  const path = workflowOf(def, rec);
+  const now = nowIso();
+  const finalStage = path[path.length - 1];
+  let updated = {
+    ...rec, outcome: { ...outcome, closedBy: by || null, closedAt: now },
+    stage: finalStage, status: "Closed", closedAt: now,
+    stageLog: [...(rec.stageLog || []), { stage: finalStage, at: now, by }],
+  };
+  updated = stampActivity(updated, { at: now, by, action: `Closed — outcome: ${outcome.category}${outcome.positionAchieved ? " · position " + outcome.positionAchieved : ""}` });
+  state = { ...state, modRequests: state.modRequests.map((r) => (r.id === id ? updated : r)) };
+  emit();
+  pushNotif({ id: `close-${id}`, forDept: rec.requestingDept, tone: "green", icon: "checkcircle",
+    title: `${id} closed — ${rec.title}`, path: "/m/" + rec.moduleKey + "/" + id });
+  return { ok: true, closed: true };
 }
 
 /* ---------------- intra-dept holds (Section 9) ---------------- */

@@ -16,8 +16,16 @@ import { html, cx, fmt, useState, useMemo } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Pill, Field, Input, Textarea, Stepper, AICard, Empty } from "../ui.js";
 import { navigate } from "../router.js";
-import { submitLegalRequest, duplicateCheck, useCollection } from "../store.js";
+import { submitLegalRequest, duplicateCheck, useCollection, triageSlaDays } from "../store.js";
 import { entityById } from "../data.js";
+
+// Business days (Fri/Sat weekend, per KSA/PK) from today to a date.
+const bizDaysUntil = (iso) => {
+  if (!iso) return Infinity;
+  const t = new Date(iso + "T00:00:00"); const d = new Date(); d.setHours(0, 0, 0, 0);
+  let n = 0; while (d < t) { d.setDate(d.getDate() + 1); const w = d.getDay(); if (w !== 5 && w !== 6) n++; }
+  return n;
+};
 
 const STEP_LABELS = ["What you need", "About it", "Review"];
 
@@ -133,6 +141,7 @@ export function RequestWizard({ cfg, me, stampId }) {
     layer2: {},
     urgency: "Important",
     dueDate: "",
+    justification: "",
     entityKey: myCompany ? myCompany.key : (companies[0] ? companies[0].key : ""),
     files: [],
   });
@@ -143,6 +152,10 @@ export function RequestWizard({ cfg, me, stampId }) {
   const entityCfg = companies.find((c) => c.key === f.entityKey) || null;
   const entity = entityCfg ? entityById(entityCfg.entityId) : null;
   const urgencyCfg = URGENCY.find((u) => u.key === f.urgency) || URGENCY[1];
+  // PRD §3.1 — a needed-by date tighter than the standard turnaround needs a
+  // business justification (which routes for approval on the legal side).
+  const slaDays = opt ? triageSlaDays(opt.category, f.urgency) : null;
+  const tight = !!(f.dueDate && slaDays != null && bizDaysUntil(f.dueDate) < slaDays);
 
   const dupes = useMemo(
     () => duplicateCheck({ counterparty: (f.layer2 || {}).counterparty, entityId: entityCfg ? entityCfg.entityId : null, linkedContractId: null }),
@@ -156,7 +169,7 @@ export function RequestWizard({ cfg, me, stampId }) {
 
   const canContinue = () => {
     if (step === 0) return !!f.title.trim() && !!f.context.trim();
-    if (step === 1) return !!f.option && !!entityCfg;
+    if (step === 1) return !!f.option && !!entityCfg && (!tight || !!f.justification.trim());
     return true;
   };
 
@@ -176,6 +189,8 @@ export function RequestWizard({ cfg, me, stampId }) {
       urgencyBand: f.urgency,
       priority: urgencyCfg.priority,
       riskPreliminary: urgencyCfg.risk,
+      needByTight: tight,
+      needByJustification: tight ? f.justification : null,
       counterparty: (f.layer2 || {}).counterparty || "",
       entityId: entityCfg ? entityCfg.entityId : null,
       companyTags: entityCfg ? [entityCfg.entityId] : [],
@@ -318,6 +333,19 @@ export function RequestWizard({ cfg, me, stampId }) {
                 </select>
               </${Field}>`}
             </div>
+            ${tight && html`<div class="col" style="gap:8px">
+              <div class="banner banner--warn" style="align-items:flex-start">
+                <${Icon} name="alertTriangle" size=17 />
+                <div>
+                  <div class="strong tiny">That date is tighter than the standard turnaround (${slaDays} working days)</div>
+                  <div class="tiny" style="margin-top:3px;opacity:.9">A short justification is required — Legal reviews expedite requests for approval.</div>
+                </div>
+              </div>
+              <${Field} label="Business justification *" hint="Why is this needed faster than normal?">
+                <${Textarea} rows=2 placeholder="e.g. Counterparty's board approval lapses on the 15th…" value=${f.justification} onInput=${(e) => set("justification", e.target.value)} />
+              </${Field}>
+            </div>`}
+
             <${Field} label="Attach documents" hint="Drafts, quotes, correspondence — anything legal will need.">
               <div class="col" style="gap:7px">
                 ${f.files.map((a, i) => html`<div key=${i} class="docrow">

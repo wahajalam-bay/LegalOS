@@ -19,6 +19,8 @@ import {
   removeModAttachment, reassignOwner, setModPriority, setModDriveLink, logModVersion,
   markResolutionUploaded, scheduleNextInspection, addCompanyEntity,
   markFiled, useFilingSchedule, upsertFilingScheduleRow,
+  closeWithOutcome, setModPrivilege, setModRisk, riskBand,
+  PRIVILEGE_TIERS, RISK_LIKELIHOODS, RISK_IMPACTS,
 } from "../store.js";
 import { useActiveUser, visibilityOf, canBrowseModule, stripInternal, canEditGroup, teamMembers } from "../rbac.js";
 import { RankBars } from "../execviz.js";
@@ -589,6 +591,7 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
     return hit ? hit.at : null;
   };
   const [err, setErr] = useState("");
+  const [outcomeOpen, setOutcomeOpen] = useState(false);
 
   return html`<div class="card">
     <div class="row" style="gap:8px;margin-bottom:12px">
@@ -597,12 +600,14 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
       ${!statusOnly && rec.status !== "Closed" && html`<${Btn} size="sm" variant="primary" icon="arrowRight"
         onClick=${() => {
           const r = advanceStage(rec.id, viewer.id);
+          if (r.needsOutcome) { setOutcomeOpen(true); return; }   // §4.7 — capture outcome to close
           setErr(r.ok ? "" : r.error);
           if (r.ok) toast(r.closed ? rec.id + " closed" : "Moved to " + r.stage);
         }}>
         ${next ? "Move to " + next : "Close"}
       </${Btn}>`}
     </div>
+    ${outcomeOpen && html`<${OutcomeModal} rec=${rec} viewer=${viewer} onClose=${() => setOutcomeOpen(false)} />`}
     ${err && html`<div class="modwarn"><${Icon} name="alertTriangle" size=14 /> ${err}</div>`}
     ${!err && !statusOnly && gateMissing.length > 0 && html`<div class="modwarn modwarn--soft">
       <${Icon} name="shield" size=14 /> Risk Assessment gate: ${gateMissing.length} field${gateMissing.length > 1 ? "s" : ""} required before ${next}.
@@ -629,6 +634,75 @@ function WorkflowRail({ def, rec, viewer, statusOnly }) {
 /* The clock is the rail's centerpiece — an instrument, not four gray numbers.
    The card takes the color of its verdict: brand green while running, blue on
    hold, deep red once the SLA is blown, neutral when closed. */
+/* §4.7 — structured outcome capture, mandatory on closure. */
+const OUTCOME_CATEGORIES = ["Completed as requested", "Completed with modifications", "Withdrawn by business", "Settled", "Determined"];
+const POSITION_LEVELS = ["Full", "Substantial", "Partial", "Minimal", "None"];
+function OutcomeModal({ rec, viewer, onClose }) {
+  const [o, setO] = useState({ category: "", positionAchieved: "", externalCounsel: false, lessons: "" });
+  return html`<${Modal} title="Close matter — capture the outcome" icon="checkcircle" width=${560} onClose=${onClose}
+    footer=${html`<${Fragment}>
+      <${Btn} onClick=${onClose}>Cancel</${Btn}>
+      <${Btn} variant="primary" icon="check" onClick=${() => {
+        const r = closeWithOutcome(rec.id, o, viewer.id);
+        if (r.ok) { toast(rec.id + " closed — outcome recorded"); onClose(); } else toast(r.error, "error");
+      }}>Record & close</${Btn}>
+    </${Fragment}>`}>
+    <p class="tiny muted" style="margin-top:0">A matter cannot close without this — it is the data that later answers "when we took this position with this counterparty, what happened?" (PRD §4.7).</p>
+    <div class="modeditgrid">
+      <${Field} label="Outcome category *">
+        <select class="input" value=${o.category} onChange=${(e) => setO({ ...o, category: e.target.value })}>
+          <option value="">Select…</option>${OUTCOME_CATEGORIES.map((c) => html`<option key=${c}>${c}</option>`)}
+        </select>
+      </${Field}>
+      <${Field} label="Position achieved vs sought">
+        <select class="input" value=${o.positionAchieved} onChange=${(e) => setO({ ...o, positionAchieved: e.target.value })}>
+          <option value="">—</option>${POSITION_LEVELS.map((p) => html`<option key=${p}>${p}</option>`)}
+        </select>
+      </${Field}>
+    </div>
+    <${Field} label="External counsel used"><${Toggle} on=${o.externalCounsel} onChange=${(v) => setO({ ...o, externalCounsel: v })} /></${Field}>
+    <${Field} label="Lessons / precedent value" hint="Flagged for the knowledge base — the catalyst for advisory (R3)."><${Textarea} rows=3 value=${o.lessons} onInput=${(e) => setO({ ...o, lessons: e.target.value })} /></${Field}>
+  </${Modal}>`;
+}
+
+/* §7.2 privilege classification + §4.6 matter-level risk (likelihood × impact). */
+function ClassificationPanel({ rec, viewer, statusOnly }) {
+  const canEdit = !statusOnly && (viewer.legalTeam || viewer.rbac === "head");
+  const band = rec.riskBand || (rec.riskImpact && rec.riskLikelihood ? riskBand(rec.riskImpact, rec.riskLikelihood) : null);
+  const bandTone = { Low: "gray", Medium: "blue", High: "amber", Critical: "red" }[band] || "gray";
+  const privTone = { Open: "gray", Restricted: "amber", Privileged: "red" }[rec.privilege || "Open"];
+  return html`<div class="card">
+    <div class="panel__title" style="margin-bottom:10px">Classification & risk</div>
+    <div class="modpeople__meta" style="border-top:none;padding-top:0;margin-top:0">
+      <div><span class="modfield__label">Privilege</span>
+        ${canEdit
+          ? html`<select class="input input--sm" value=${rec.privilege || "Open"} onChange=${(e) => { setModPrivilege(rec.id, e.target.value, rec.namedAccess || [], viewer.id); toast("Privilege: " + e.target.value, "info", "lock"); }}>
+              ${PRIVILEGE_TIERS.map((t) => html`<option key=${t}>${t}</option>`)}
+            </select>`
+          : html`<div class="modfield__value"><${Pill} tone=${privTone}>${rec.privilege || "Open"}</${Pill}></div>`}
+      </div>
+      <div><span class="modfield__label">Risk band</span>
+        <div class="modfield__value">${band ? html`<${Pill} tone=${bandTone}>${band}</${Pill}>` : html`<span class="muted tiny">not rated</span>`}</div>
+      </div>
+    </div>
+    ${canEdit && html`<div class="modpeople__meta">
+      <div><span class="modfield__label">Likelihood</span>
+        <select class="input input--sm" value=${rec.riskLikelihood || ""} onChange=${(e) => setModRisk(rec.id, e.target.value, rec.riskImpact || "Moderate", viewer.id)}>
+          <option value="">—</option>${RISK_LIKELIHOODS.map((l) => html`<option key=${l}>${l}</option>`)}
+        </select>
+      </div>
+      <div><span class="modfield__label">Impact</span>
+        <select class="input input--sm" value=${rec.riskImpact || ""} onChange=${(e) => setModRisk(rec.id, rec.riskLikelihood || "Possible", e.target.value, viewer.id)}>
+          <option value="">—</option>${RISK_IMPACTS.map((i) => html`<option key=${i}>${i}</option>`)}
+        </select>
+      </div>
+    </div>`}
+    ${(rec.privilege === "Privileged" || rec.privilege === "Restricted") && html`<div class="tiny muted" style="margin-top:8px">
+      <${Icon} name="lock" size=11 /> ${rec.privilege} — excluded from other users' search and AI retrieval unless named.
+    </div>`}
+  </div>`;
+}
+
 function TatBreakdown({ def, rec }) {
   const t = tatV2(def, rec);
   const pct = t.sla ? Math.min(100, Math.round((t.reported / t.sla) * 100)) : null;
@@ -1180,6 +1254,8 @@ function Detail({ def, id, md, viewer }) {
           ${rec.subType && html`<${Pill} tone="gray">${rec.subType}</${Pill}>`}
           ${rec.priority !== "Normal" && html`<${Pill} tone="red">${rec.priority}</${Pill}>`}
           <${TatChip} t=${t} />
+          ${rec0.riskBand && html`<${Pill} tone=${({ Low: "gray", Medium: "blue", High: "amber", Critical: "red" })[rec0.riskBand]}>Risk: ${rec0.riskBand}</${Pill}>`}
+          ${rec0.privilege && rec0.privilege !== "Open" && html`<${Pill} tone=${rec0.privilege === "Privileged" ? "red" : "amber"}><${Icon} name="lock" size=10 /> ${rec0.privilege}</${Pill}>`}
           ${def.key === "filings" && (() => { const s = filingStatusOf(rec); return html`<${Pill} tone=${s.tone}>${s.key} — ${s.detail}</${Pill}>`; })()}
           ${statusOnly && html`<${Pill} tone="amber">Requester view — status only</${Pill}>`}
         </div>
@@ -1229,6 +1305,7 @@ function Detail({ def, id, md, viewer }) {
       <aside class="moddetail__rail">
         <${TatBreakdown} def=${def} rec=${rec0} />
         <${PeoplePanel} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
+        <${ClassificationPanel} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
         <${QuickActions} def=${def} rec=${rec0} viewer=${viewer} statusOnly=${statusOnly} />
         <${HoldsPanel} rec=${rec0} md=${md} viewer=${viewer} statusOnly=${statusOnly} />
         <${AttachmentsPanel} rec=${rec} viewer=${viewer} statusOnly=${statusOnly} />
