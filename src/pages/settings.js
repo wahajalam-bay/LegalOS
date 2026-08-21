@@ -31,14 +31,13 @@ const NAV = [
   { key: "billing", label: "Billing", icon: "card" },
 ];
 
+// PRD §2 personas — the five roles the OS is built around.
 const ROLES = [
-  { role: "General Counsel", users: 1, scope: "All entities · full access", perms: "Full" },
-  { role: "Legal Director", users: 2, scope: "Assigned business units", perms: "Manage" },
-  { role: "Senior Counsel", users: 2, scope: "Own matters + team", perms: "Edit" },
-  { role: "Counsel", users: 3, scope: "Own matters", perms: "Edit" },
-  { role: "Paralegal", users: 1, scope: "Assigned matters", perms: "Contribute" },
-  { role: "Compliance Officer", users: 1, scope: "Compliance module", perms: "Manage" },
-  { role: "Business Requester", users: 4, scope: "Own requests only", perms: "Request" },
+  { role: "Director Legal", users: 2, scope: "All entities · full access + config + approvals", perms: "Full" },
+  { role: "AD / Senior Manager", users: 4, scope: "Own portfolio + reportees · approve within threshold", perms: "Manage" },
+  { role: "AM / Associate", users: 10, scope: "Own + collaborating matters · drafting & precedent", perms: "Edit" },
+  { role: "Paralegal / Legal Executive", users: 2, scope: "Assigned tasks + contract register · no privileged", perms: "Contribute" },
+  { role: "Requester", users: 8, scope: "Own requests only · non-privileged", perms: "Request" },
 ];
 
 const INTEGRATIONS = [

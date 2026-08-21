@@ -217,7 +217,7 @@ export function Drawer({ title, children, onClose, width = 440, footer }) {
 }
 
 /* ---------- Dropdown menu ---------- */
-export function Dropdown({ trigger, children, align = "right", width = 210 }) {
+export function Dropdown({ trigger, children, align = "right", width = 210, drop = "down" }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
@@ -225,9 +225,12 @@ export function Dropdown({ trigger, children, align = "right", width = 210 }) {
     document.addEventListener("mousedown", h);
     return () => document.removeEventListener("mousedown", h);
   }, []);
+  // A trigger anchored at the bottom of the viewport (e.g. the sidebar user
+  // switcher) must open UPWARD, or the menu falls off the bottom edge.
+  const vpos = drop === "up" ? "bottom:calc(100% + 6px)" : "top:calc(100% + 6px)";
   return html`<div ref=${ref} style="position:relative">
     <div onClick=${() => setOpen((o) => !o)}>${trigger}</div>
-    ${open && html`<div class="menu" style=${`position:absolute;top:calc(100% + 6px);${align}:0;width:${width}px;z-index:60`} onClick=${() => setOpen(false)}>${children}</div>`}
+    ${open && html`<div class="menu" style=${`position:absolute;${vpos};${align}:0;width:${width}px;max-height:70vh;overflow-y:auto;z-index:60`} onClick=${() => setOpen(false)}>${children}</div>`}
   </div>`;
 }
 export function MenuItem({ icon, danger, children, onClick }) {

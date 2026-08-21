@@ -10,7 +10,17 @@ import { allReminders } from "./reminders.js";
 import { TourOverlay, TourButton } from "./tour.js";
 import { senderName } from "./messages.js";
 // Sprint 6 — the org architecture: View As, RBAC-filtered search, team modules.
-import { useActiveUser, setViewAs, landingFor, filterVisible } from "./rbac.js";
+import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser } from "./rbac.js";
+
+// The View-As persona switcher is a demo/testing affordance only. It appears
+// when running locally (or with ?personas=1); a production build uses the real
+// SSO identity and never shows the switcher.
+const DEMO_PERSONAS = (() => {
+  try {
+    const h = location.hostname;
+    return h === "localhost" || h === "127.0.0.1" || /[?&]personas=1/.test(location.search);
+  } catch (e) { return false; }
+})();
 import { teamShort, RBAC_ROLES } from "./org.js";
 import { moduleByKey } from "./modules.js";
 import { ToastHost } from "./toast.js";
@@ -26,11 +36,13 @@ export function setTheme(t) {
    The prototype has no real login; this switcher swaps the active identity and
    the whole app — landing, queues, badges, search, notifications — obeys that
    identity's row-level visibility. */
-const PERSONAS = ["u1", "u3", "u5", "u6", "u17", "u18", "u19", "u20", "u21", "u16", "u14"];
+// One of each PRD persona up top (Director · AD/Sr Mgr · AM/Associate ·
+// Paralegal · Requester), then the rest of the bench.
+const PERSONAS = ["u1", "u3", "u5", "u10", "u16", "u6", "u17", "u20", "u14"];
 function ViewAs() {
   const me = useActiveUser();
   const roleLabel = (u) => (RBAC_ROLES[u.rbac] || {}).label || u.role;
-  return html`<${Dropdown} align="left" width=${268} trigger=${html`<div class="sidebar__user">
+  return html`<${Dropdown} align="left" width=${268} drop="up" trigger=${html`<div class="sidebar__user">
     <${Avatar} name=${me.name} size="md" />
     <div class="sidebar__user-meta"><div class="sidebar__user-name">${me.name}</div><div class="sidebar__user-role">${me.role}</div></div>
     <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
@@ -81,7 +93,7 @@ function Sidebar({ path, collapsed }) {
     </${Dropdown}>
 
     <nav class="nav">
-      ${NAV.map((sec) => html`<div class="nav__section" key=${sec.section}>
+      ${navForUser(me).map((sec) => html`<div class="nav__section" key=${sec.section}>
         <div class="nav__label">${sec.section}</div>
         ${sec.items.map((it) => html`<div key=${it.path}
           class=${cx("nav__item", isActive(it) && "active")}
@@ -94,9 +106,18 @@ function Sidebar({ path, collapsed }) {
     </nav>
 
     <div class="sidebar__foot">
-      <${ViewAs} />
+      ${DEMO_PERSONAS ? html`<${ViewAs} />` : html`<${UserChip} />`}
     </div>
   </aside>`;
+}
+
+// Production identity chip — no persona switching (that is demo-only).
+function UserChip() {
+  const me = useActiveUser();
+  return html`<div class="sidebar__user" style="cursor:default">
+    <${Avatar} name=${me.name} size="md" />
+    <div class="sidebar__user-meta"><div class="sidebar__user-name">${me.name}</div><div class="sidebar__user-role">${me.role}</div></div>
+  </div>`;
 }
 
 /* ---------------- Notifications panel ---------------- */

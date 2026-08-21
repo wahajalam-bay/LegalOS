@@ -12,6 +12,8 @@
 import { USERS, byId } from "./data.js";
 import { RBAC_ROLES, teamOfSubdivision } from "./org.js";
 import { getSession, setSession, useSession } from "./store.js";
+import { NAV } from "./nav.js";
+import { moduleByKey } from "./modules.js";
 
 /* ---------------- The active identity (View As) ----------------
    The prototype has no real login, so the shell carries a View As switcher:
@@ -92,9 +94,47 @@ export function canBrowseModule(viewer, def) {
 // business users land on their own requests.
 export function landingFor(user) {
   if (!user) return "/exec";
-  if (user.rbac === "head") return "/exec";
+  const role = RBAC_ROLES[user.rbac];
+  if (role && role.landing) return role.landing;
   if (user.legalTeam) return "/my-tasks";
   return "/raise";
+}
+
+// Capability gates (PRD §2 / §7.3). Views read these to show/hide actions.
+export const approvalScope = (user) => (roleOf(user).canApprove || false);   // "all" | "threshold" | false
+export const canApprove = (user) => approvalScope(user) !== false;
+export const canConfigure = (user) => roleOf(user).config === true;          // Director publishes config
+export const canProposeConfig = (user) => !!roleOf(user).config;             // AD proposes, Director publishes
+export const canTriage = (user) => !!roleOf(user).triage;                    // Director + AD
+export const canReassign = (user) => !!roleOf(user).reassign;
+export const hasPrivilegeAccess = (user) => roleOf(user).privilegeAccess === true;
+export const canExport = (user) => !!roleOf(user).exportData;
+
+// Role-based navigation (PRD §2 / §7.3): the sidebar shows only what a role may
+// act on. Modules off the user's team, leadership-only analytics/admin, and the
+// triage queue are hidden by designation. A business requester sees only the
+// front door.
+export function navForUser(user) {
+  const rbac = (user && user.rbac) || "requester";
+  const isLegal = ["head", "lead", "member", "paralegal"].includes(rbac);
+  const isMgmt = rbac === "head" || rbac === "lead";
+
+  const itemOk = (item) => {
+    const p = item.path || "";
+    if (!isLegal) return p === "/raise" || p === "/flow-map";        // requester: front door only
+    if (p === "/triage") return isMgmt;                              // triage = Director / AD
+    if (p === "/exec") return isMgmt;                                // executive overview = leadership
+    if (p === "/organization" || p === "/portal") return rbac === "head";
+    if (p === "/settings") return isMgmt;                            // AD proposes, Director publishes
+    if (p.startsWith("/m/")) { const def = moduleByKey(p.slice(3)); return def ? canBrowseModule(user, def) : true; }
+    return true;
+  };
+  const sectionOk = (name) => (name === "Insight & Governance" || name === "Administration") ? isMgmt : true;
+
+  return NAV
+    .filter((s) => sectionOk(s.section))
+    .map((s) => ({ ...s, items: s.items.filter(itemOk) }))
+    .filter((s) => s.items.length > 0);
 }
 
 // People pickers: legal staff of a given team (for owner assignment).

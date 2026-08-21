@@ -33,8 +33,8 @@ export const USERS = [
   { id: "u7", name: "Aisha Bukhari", role: "Counsel", team: "Commercial", email: "aisha.bukhari@northwind.com", country: "Pakistan", rbac: "member", legalTeam: "commercial", dept: "Legal" },
   { id: "u8", name: "Tom Bennett", role: "Counsel", team: "Corporate", email: "tom.bennett@northwind.com", country: "United Kingdom", rbac: "member", legalTeam: "compliance", dept: "Legal" },
   { id: "u9", name: "Elena Popova", role: "Junior Counsel", team: "Commercial", email: "elena.popova@northwind.com", country: "United Kingdom", rbac: "member", legalTeam: "commercial", dept: "Legal" },
-  { id: "u10", name: "Yousef Nasser", role: "Paralegal", team: "Commercial", email: "yousef.nasser@northwind.com", country: "Saudi Arabia", rbac: "member", legalTeam: "commercial", dept: "Legal" },
-  { id: "u11", name: "Grace Liu", role: "Contract Manager", team: "Operations", email: "grace.liu@northwind.com", country: "Singapore", rbac: "member", legalTeam: "commercial", dept: "Legal" },
+  { id: "u10", name: "Yousef Nasser", role: "Paralegal", team: "Commercial", email: "yousef.nasser@northwind.com", country: "Saudi Arabia", rbac: "paralegal", legalTeam: "commercial", dept: "Legal" },
+  { id: "u11", name: "Grace Liu", role: "Contract Manager", team: "Operations", email: "grace.liu@northwind.com", country: "Singapore", rbac: "paralegal", legalTeam: "commercial", dept: "Legal" },
   { id: "u12", name: "Rania Fadel", role: "Compliance Officer", team: "Compliance", email: "rania.fadel@northwind.com", country: "UAE", rbac: "member", legalTeam: "compliance", dept: "Legal" },
   // Business requesters
   { id: "u13", name: "James Whitfield", role: "VP Procurement", team: "Procurement", email: "james.whitfield@northwind.com", country: "United States", rbac: "bizHead", legalTeam: null, dept: "Procurement" },

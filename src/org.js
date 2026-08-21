@@ -134,34 +134,48 @@ export const COST_CURRENCIES = ["PKR", "USD"];
 /* ---------------- Section 14 — roles & the permission matrix ----------------
    Raising and viewing are deliberately separate capabilities. Anyone can raise
    to any team; viewing is narrow and row-level. */
+// The five personas (PRD §2). Each carries its capabilities and its landing
+// view, so the whole app — landing, queues, approvals, config — obeys the role.
 export const RBAC_ROLES = {
   requester: {
-    key: "requester", label: "Requester (business user)",
+    key: "requester", label: "Requester", tone: "gray", landing: "/raise",
     raiseAny: true, viewOwn: "status", viewOwnTeam: false, viewOtherTeams: false,
-  },
-  member: {
-    key: "member", label: "Legal Team Member",
-    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false,
-  },
-  lead: {
-    key: "lead", label: "Legal Team Lead",
-    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false, slaReporting: true,
-  },
-  head: {
-    key: "head", label: "Legal Department Head",
-    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: "aggregated", slaReporting: true,
+    canApprove: false, config: false, privilegeAccess: false,
   },
   bizHead: {
-    key: "bizHead", label: "Business Department Head",
+    key: "bizHead", label: "Business Department Head", tone: "gray", landing: "/raise",
     raiseAny: true, viewOwn: "status", viewOwnDept: "status", viewOwnTeam: false, viewOtherTeams: false,
+    canApprove: false, config: false, privilegeAccess: false,
+  },
+  paralegal: {
+    key: "paralegal", label: "Paralegal / Legal Executive", tone: "blue", landing: "/my-tasks",
+    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false,
+    canApprove: false, config: false, privilegeAccess: false, register: true, drafting: true,
+  },
+  member: {
+    key: "member", label: "AM / Associate", tone: "green", landing: "/my-tasks",
+    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false,
+    canApprove: false, config: false, privilegeAccess: "named", drafting: true, precedent: true, escalate: true,
+  },
+  lead: {
+    key: "lead", label: "AD / Senior Manager", tone: "amber", landing: "/workspace",
+    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false, slaReporting: true,
+    canApprove: "threshold", config: "propose", privilegeAccess: "named", reassign: true, triage: true,
+    drafting: true, precedent: true,
+  },
+  head: {
+    key: "head", label: "Director Legal", tone: "purple", landing: "/exec",
+    raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: "aggregated", slaReporting: true,
+    canApprove: "all", config: true, privilegeAccess: true, reassign: true, triage: true, exportData: true,
+    drafting: true, precedent: true,
   },
 };
 
-// The published permission matrix (Section 14.3) — rendered in Settings.
+// The published permission matrix (PRD §7.3) — rendered in Settings.
 export const PERMISSION_MATRIX = [
-  { role: "Requester (business user)", raise: "Yes", own: "Yes (status only)", queue: "No", other: "No" },
-  { role: "Legal Team Member", raise: "Yes", own: "Yes", queue: "Yes (own team)", other: "No" },
-  { role: "Legal Team Lead", raise: "Yes", own: "Yes", queue: "Yes (own team) + SLA/TAT", other: "No" },
-  { role: "Legal Department Head", raise: "Yes", own: "Yes", queue: "Yes (all teams)", other: "Yes (aggregated)" },
-  { role: "Business Department Head", raise: "Yes", own: "Yes (own dept only)", queue: "No", other: "No" },
+  { role: "Director Legal", raise: "Yes", own: "Full", queue: "All teams + SLA · approvals · config", other: "Aggregated + export" },
+  { role: "AD / Senior Manager", raise: "Yes", own: "Full", queue: "Own portfolio + reassign + approve (threshold)", other: "No" },
+  { role: "AM / Associate", raise: "Yes", own: "Full", queue: "Own + collaborating", other: "No" },
+  { role: "Paralegal / Legal Executive", raise: "Yes", own: "Tasks + contract register", queue: "Assigned only · no privileged · no approval", other: "No" },
+  { role: "Requester", raise: "Yes", own: "Status only (non-privileged)", queue: "No", other: "No" },
 ];

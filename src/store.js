@@ -356,6 +356,115 @@ export function submitLegalRequest(payload = {}) {
   return { ok: true, id, record, tat, duplicates, owner };
 }
 
+/* ============================================================
+   R1.0 MODULE 1 — ASSISTED TRIAGE (PRD §3.4)
+   The system PROPOSES category / priority / SLA / assignee; a lawyer accepts in
+   one click or overrides with a reason. Every override is recorded. After
+   enough logged overrides, defined categories can be auto-triaged.
+   ============================================================ */
+const _nm = (uid) => (byId(uid) || {}).name || uid || "Unassigned";
+
+// PRD §3.6 TAT matrix — proposed legal category × urgency band (business days).
+const TRIAGE_SLA = {
+  "Contract Drafting / Review":        { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
+  "Amendment / Renewal / Termination": { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Legal Opinion / Advisory":          { Emergency: 2, "Time-critical": 3, Important: 5, Routine: 7 },
+  "Dispute / Litigation":              { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 },
+  "Regulatory / Compliance":           { Emergency: 1, "Time-critical": 2, Important: 4, Routine: 5 },
+  "IP":                                { Emergency: 1, "Time-critical": 3, Important: 5, Routine: 10 },
+  "Triage required":                   { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+};
+const URGENCY_PRIORITY = { Emergency: "Urgent", "Time-critical": "High", Important: "Medium", Routine: "Low" };
+export const TRIAGE_CATEGORIES = Object.keys(TRIAGE_SLA);
+
+export function triageSlaDays(category, urgencyBand) {
+  const row = TRIAGE_SLA[category] || TRIAGE_SLA["Triage required"];
+  const d = row[urgencyBand];
+  return d == null ? 3 : d;
+}
+
+// The system's proposal for a request awaiting triage.
+export function triageProposal(req) {
+  if (!req) return null;
+  const category = req.proposedCategory || req.category || "Triage required";
+  const urgencyBand = req.urgencyBand || "Important";
+  const priority = URGENCY_PRIORITY[urgencyBand] || "Medium";
+  const slaDays = triageSlaDays(category, urgencyBand);
+  const base = req.requestDate || req.created || nowIso();
+  const slaDueAt = addWorkingDaysIso(base, slaDays);
+  // requested date earlier than the SLA allows → needs approval / justification.
+  const needBy = req.dueDate ? new Date(req.dueDate) : null;
+  const escalate = !!(needBy && needBy < new Date(slaDueAt));
+  return { category, urgencyBand, priority, slaDays, slaDueAt, owner: req.owner || null, subdivision: req.subdivision || null, escalate, needByDate: req.dueDate || null };
+}
+
+// Similar past matters + conflict/sensitivity flags for the triage screen.
+export function triageContext(req) {
+  if (!req) return { similar: [], flags: [] };
+  const cat = req.proposedCategory || req.category;
+  const cp = (req.counterparty || "").toLowerCase();
+  const pool = [
+    ...(state.requests || []).map((r) => ({ ...r, __kind: "request" })),
+    ...(state.matters || []).map((m) => ({ ...m, __kind: "matter" })),
+  ];
+  const similar = pool.filter((x) => x.id !== req.id && (
+    (cat && (x.category === cat || x.proposedCategory === cat)) ||
+    (cp && cp !== "—" && (x.counterparty || "").toLowerCase() === cp)
+  )).slice(0, 4).map((x) => ({ id: x.id, title: x.title, status: x.status, kind: x.__kind }));
+  const flags = [];
+  if (/Dispute/i.test(cat || "") || req.natureOfMatter === "Dispute")
+    flags.push({ tone: "red", text: "Sensitive — dispute/litigation. Consider privilege classification before assigning." });
+  const openCp = pool.find((x) => x.id !== req.id && cp && cp !== "—" && (x.counterparty || "").toLowerCase() === cp && x.status !== "Closed");
+  if (openCp) flags.push({ tone: "amber", text: `Counterparty already has open work — ${openCp.id} · ${openCp.title}.` });
+  return { similar, flags };
+}
+
+// The triage decision. `decision` = { category, priority, subdivision, owner,
+// reason }. Accepting = leaving the proposal unchanged; any change is an
+// override and REQUIRES a reason (PRD §3.4 — every override is logged).
+export function triageDecision(id, decision = {}, byUserId) {
+  const req = (state.requests || []).find((r) => r.id === id);
+  if (!req) return { ok: false, error: "request not found" };
+  const proposal = triageProposal(req);
+  const final = {
+    category: decision.category || proposal.category,
+    priority: decision.priority || proposal.priority,
+    subdivision: decision.subdivision || proposal.subdivision,
+    owner: decision.owner || proposal.owner,
+  };
+  const overrides = [];
+  if (final.category !== proposal.category) overrides.push({ field: "category", from: proposal.category, to: final.category });
+  if (final.priority !== proposal.priority) overrides.push({ field: "priority", from: proposal.priority, to: final.priority });
+  if (final.owner !== proposal.owner) overrides.push({ field: "assignee", from: _nm(proposal.owner), to: _nm(final.owner) });
+  const accepted = overrides.length === 0;
+  if (!accepted && !String(decision.reason || "").trim()) return { ok: false, error: "an override reason is required" };
+
+  const slaDays = triageSlaDays(final.category, proposal.urgencyBand);
+  const base = req.requestDate || req.created || nowIso();
+  const tat = { days: slaDays, fixedAt: base, dueAt: addWorkingDaysIso(base, slaDays), basis: `${final.category} × ${proposal.urgencyBand}` };
+  const decidedAt = nowIso();
+
+  const triageRecord = {
+    proposal: { category: proposal.category, priority: proposal.priority, owner: proposal.owner, slaDays: proposal.slaDays },
+    final, accepted, overrides, reason: decision.reason || null, escalate: proposal.escalate,
+    decidedBy: byUserId || null, decidedAt,
+  };
+  const activity = [...(req.activity || []), {
+    at: decidedAt, by: byUserId || null,
+    action: accepted
+      ? `Triage accepted — ${final.category} · ${final.priority} · assigned to ${_nm(final.owner)} (SLA ${slaDays}d)`
+      : `Triage OVERRIDE — ${overrides.map((o) => `${o.field}: ${o.from} → ${o.to}`).join("; ")}. Reason: ${decision.reason}`,
+  }];
+
+  updateItem("requests", id, {
+    category: final.category, proposedCategory: proposal.category, categoryConfirmed: true,
+    priority: final.priority, subdivision: final.subdivision, owner: final.owner,
+    tat, escalated: proposal.escalate, triage: triageRecord, activity,
+    status: "Assigned", stage: "Assigned",
+  });
+  return { ok: true, accepted, overrides, escalated: proposal.escalate, tat };
+}
+
 // Status a requester is allowed to see (Workstream J: requester-scoped view).
 export function requesterView(requesterId) {
   return (state.requests || [])

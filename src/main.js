@@ -37,6 +37,7 @@ import FlowMap from "./pages/flowmap.js";
 import ModulePage from "./pages/module.js";
 import MyTasks from "./pages/mytasks.js";
 import Raise from "./pages/raise.js";
+import Triage from "./pages/triage.js";
 import Costs from "./pages/costs.js";
 import { runOrgSweeps } from "./store.js";
 import { activeUser, landingFor } from "./rbac.js";
@@ -46,6 +47,7 @@ const ROUTES = {
   "/flow-map": FlowMap,
   "/m": ModulePage,
   "/my-tasks": MyTasks,
+  "/triage": Triage,
   "/raise": Raise,
   "/costs": Costs,
   "/dashboard": Dashboard,
