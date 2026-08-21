@@ -269,6 +269,15 @@ export function submitLegalRequest(payload = {}) {
     source: payload.source && payload.source !== "portal" ? payload.source : (payload.channel === "portal" ? "Requester portal" : "internal"),
     natureOfMatter: nature,
     company: payload.company || null,
+    // R1.0 Module 1 (PRD §3.1) — the requester describes in plain language and
+    // the system carries a PROPOSED legal category into triage; the requester
+    // never picks a legal category / team / module.
+    businessContext: payload.businessContext || null,
+    urgencyBand: payload.urgencyBand || null,
+    requesterOption: payload.requesterOption || null,
+    layer2: payload.layer2 || null,
+    proposedCategory: payload.category || category,
+    categoryConfirmed: false,
     requesterEmail: payload.requesterEmail || (byId(payload.requesterId) || {}).email || null,
     routedManually,
     // The missing-document checklist, pre-loaded from the admin template for
