@@ -63,22 +63,28 @@ export function ConfirmDialog({ title, message, confirmLabel = "Confirm", danger
   );
 }
 
-export function Dropdown({ trigger, children, align = "left", width = 220 }: {
+export function Dropdown({ trigger, children, align = "left", width = 220, up = true }: {
   trigger: ReactNode; children: ReactNode; align?: "left" | "right"; width?: number;
+  /** Open upward (default, for footer menus) or downward (topbar menus). */
+  up?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  useEscape(() => setOpen(false));
   useEffect(() => {
     const h = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false); };
     document.addEventListener("mousedown", h);
     return () => document.removeEventListener("mousedown", h);
   }, []);
+  const pos: CSSProperties = up
+    ? { bottom: "calc(100% + 6px)" }
+    : { top: "calc(100% + 6px)" };
   return (
     <div ref={ref} style={{ position: "relative" }}>
       <div onClick={() => setOpen((o) => !o)}>{trigger}</div>
       {open && (
         <div className="menu" onClick={() => setOpen(false)}
-          style={{ position: "absolute", bottom: "calc(100% + 6px)", [align]: 0, width, maxHeight: "70vh", overflowY: "auto", zIndex: 80 } as CSSProperties}>
+          style={{ position: "absolute", ...pos, [align]: 0, width, maxHeight: "70vh", overflowY: "auto", zIndex: 80 } as CSSProperties}>
           {children}
         </div>
       )}

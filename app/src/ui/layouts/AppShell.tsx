@@ -6,6 +6,7 @@ import { Icon } from "@/ui/icons";
 import { Avatar } from "@/ui/components";
 import { Dropdown, MenuItem } from "@/ui/overlays";
 import { CommandPalette } from "@/ui/CommandPalette";
+import { NotificationsBell } from "@/ui/notifications";
 
 const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
 
@@ -105,11 +106,13 @@ export function AppShell() {
 
       <div className="main">
         <header className="topbar">
-          <div className="topbar__crumbs">
-            <span>LegalOS</span>
+          <nav className="topbar__crumbs" aria-label="Breadcrumb">
+            <button className="crumb-btn" onClick={() => navigate("/")}>LegalOS</button>
             <Icon name="chevronRight" size={14} />
-            <b>{AREA_TITLE[area] ?? "Home"}</b>
-          </div>
+            <button className="crumb-btn crumb-btn--current" onClick={() => navigate(area ? `/${area}` : "/")}>
+              {AREA_TITLE[area] ?? "Home"}
+            </button>
+          </nav>
           <div className="topbar__spacer" />
           <button className="searchbtn" onClick={() => setPalette(true)} aria-label="Search (Command or Control K)">
             <Icon name="search" size={15} />
@@ -119,9 +122,20 @@ export function AppShell() {
           <button className="newbtn" onClick={() => navigate("/requests/new")}>
             <Icon name="plus" size={15} /><span>New</span>
           </button>
-          <button className="iconbtn" aria-label="Notifications"><Icon name="bell" size={18} /></button>
+          <NotificationsBell />
           <div style={{ width: 1, height: 24, background: "var(--border)", margin: "0 2px" }} />
-          <Avatar name={currentUser.name} size="md" />
+          <Dropdown align="right" width={230} up={false} trigger={
+            <button className="avatar-trigger" aria-label="Account menu" style={{ border: 0, background: "transparent", cursor: "pointer", padding: 0 }}>
+              <Avatar name={currentUser.name} size="md" />
+            </button>
+          }>
+            <div className="menu__label">{currentUser.name}</div>
+            <div className="menu__label" style={{ marginTop: -6, fontWeight: 500, textTransform: "none" }}>{ROLE_LABELS[currentUser.role]}</div>
+            <div className="menu__sep" />
+            <MenuItem icon="inbox" onClick={() => navigate("/requests")}>My requests</MenuItem>
+            <MenuItem icon="plus" onClick={() => navigate("/requests/new")}>New request</MenuItem>
+            <MenuItem icon="settings" onClick={() => navigate("/settings")}>Settings</MenuItem>
+          </Dropdown>
         </header>
         <div className="content"><Outlet /></div>
       </div>

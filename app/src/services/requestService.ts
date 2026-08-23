@@ -2,9 +2,11 @@ import type {
   Request, RequestComment, RequestStatusHistory, PausePeriod,
 } from "@/domain/models/request";
 import type { LegalCategory, Priority, RequestStatus, BusinessUrgency } from "@/domain/models/enums";
-import type { MatterId, RequestId, UserId, CommentId } from "@/domain/models/ids";
+import type { MatterId, RequestId, UserId, CommentId, AttachmentId } from "@/domain/models/ids";
 import { brandId, childId, nextRequestId } from "@/domain/models/ids";
 import { legalCategoryFor } from "@/domain/categories";
+import { conditionalFieldsFor } from "@/domain/intake";
+import type { RequestAttachment } from "@/domain/models/request";
 import { canTransition } from "@/domain/lifecycle";
 import { calendarFor } from "@/lib/businessCalendar";
 import { computeDueDate } from "./slaEngine";
@@ -80,6 +82,19 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       const id = nextRequestId(repos.requests.allIds(), now.getUTCFullYear());
       const history: RequestStatusHistory = { id: childId(id, "SH", 1), from: null, to: "Submitted", at, by: requesterId };
 
+      // Keep only the answers relevant to the chosen type (drop stale values left
+      // behind if the requester switched request type mid-form).
+      const relevant = new Set(conditionalFieldsFor(input.requesterCategory).map((f) => f.key));
+      const intakeDetails: Record<string, string> = {};
+      for (const [k, v] of Object.entries(input.intakeDetails ?? {})) {
+        if (relevant.has(k) && v.trim() !== "") intakeDetails[k] = v.trim();
+      }
+      const attachments: RequestAttachment[] = (input.attachments ?? []).map((a, i) => ({
+        id: childId(id, "ATT", i + 1) as AttachmentId,
+        name: a.name, sizeBytes: a.sizeBytes, contentType: a.contentType,
+        uploadedBy: requesterId, uploadedAt: at,
+      }));
+
       let req: Request = {
         id,
         requesterId, requesterEmail: requester.email, requesterEmployeeId: requester.employeeId,
@@ -88,7 +103,8 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
         description: input.description.trim(), businessContext: input.businessContext.trim(),
         businessUrgency: input.businessUrgency, neededByDate: input.neededByDate,
         neededByJustification: tight ? (input.neededByJustification?.trim() ?? null) : null,
-        attachments: [],
+        intakeDetails,
+        attachments,
         legalCategory: category, priority, slaConfigId: null, slaDueDate: null, assignment: null,
         status: "Submitted", pausePeriods: [], matterId: null,
         statusHistory: [history], submittedAt: at, createdAt: at, updatedAt: at,

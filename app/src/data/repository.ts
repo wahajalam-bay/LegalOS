@@ -38,6 +38,8 @@ export interface SlaRepository {
 export interface NotificationRepository {
   list(): Notification[];
   add(n: Notification): void;
+  markRead(id: string): void;
+  markAllRead(recipientUserId: string): void;
 }
 
 export interface Repositories {

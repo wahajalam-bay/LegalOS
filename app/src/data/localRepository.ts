@@ -93,6 +93,14 @@ export function createLocalRepositories(options: { persist?: boolean; seed?: See
     notifications: {
       list: () => [...state.notifications],
       add: (n: Notification) => { state.notifications = [...state.notifications, n]; save(); },
+      markRead: (id: string) => {
+        state.notifications = state.notifications.map((n) => (n.id === id ? { ...n, read: true } : n));
+        save();
+      },
+      markAllRead: (recipientUserId: string) => {
+        state.notifications = state.notifications.map((n) => (n.recipientUserId === recipientUserId ? { ...n, read: true } : n));
+        save();
+      },
     },
   } satisfies Repositories;
 }

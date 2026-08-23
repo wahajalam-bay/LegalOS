@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "./icons";
 import { colorFor, initials } from "./util";
 import type { RequestStatus, Priority, BusinessUrgency } from "@/domain/models/enums";
@@ -163,8 +164,10 @@ export function Skeleton({ width = "100%", height = 14, radius }: { width?: numb
 }
 
 /* ---------- Data card / stat ---------- */
-export function DataCard({ label, value, hint }: { label: string; value: ReactNode; hint?: string }) {
-  return <Card className="card--pad"><div className="datacard"><div className="datacard__label">{label}</div><div className="datacard__value">{value}</div>{hint && <div className="datacard__hint">{hint}</div>}</div></Card>;
+export function DataCard({ label, value, hint, to }: { label: string; value: ReactNode; hint?: string; to?: string }) {
+  const inner = <div className="datacard"><div className="datacard__label">{label}</div><div className="datacard__value">{value}</div>{hint && <div className="datacard__hint">{hint}</div>}</div>;
+  if (to) return <Link to={to} className="datacard-link"><Card className="card--pad">{inner}</Card></Link>;
+  return <Card className="card--pad">{inner}</Card>;
 }
 
 /* ---------- Table ---------- */
@@ -194,9 +197,10 @@ export function Stepper({ steps, current }: { steps: string[]; current: number }
   return (
     <div className="stepper">
       {steps.map((s, i) => (
-        <div key={s} className={cx("stepper__step", i < current && "is-done", i === current && "is-current")}>
-          <div className="stepper__dot">{i < current ? <Icon name="check" size={12} /> : i + 1}</div>
-          <div className="stepper__label">{s}</div>
+        <div key={s} className={cx("step", i < current && "step--done", i === current && "step--active")}>
+          {i > 0 && <div className="step__line" />}
+          <div className="step__dot">{i < current ? <Icon name="check" size={12} /> : i + 1}</div>
+          <div className="step__label">{s}</div>
         </div>
       ))}
     </div>

@@ -71,6 +71,8 @@ export interface Request {
   readonly businessUrgency: BusinessUrgency;
   readonly neededByDate: IsoTimestamp | null;
   readonly neededByJustification: string | null;
+  /** Answers to the type-specific conditional questions, keyed by intake field key. */
+  readonly intakeDetails: Readonly<Record<string, string>>;
   readonly attachments: readonly RequestAttachment[];
 
   // Legal-assigned (triage)

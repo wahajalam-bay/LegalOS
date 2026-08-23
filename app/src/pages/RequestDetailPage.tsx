@@ -5,8 +5,11 @@ import { brandId, type RequestId } from "@/domain/models/ids";
 import { canViewInternal, canViewRequest, can } from "@/permissions/permissions";
 import { nextStatuses } from "@/domain/lifecycle";
 import { requesterCategoryLabel } from "@/domain/categories";
+import { conditionalFieldsFor } from "@/domain/intake";
 import type { RequestStatus } from "@/domain/models/enums";
 import { Badge, Button, Card, ErrorState, Field, PageHeader, TextArea } from "@/ui/components";
+import { Icon } from "@/ui/icons";
+import { formatBytes } from "@/ui/util";
 import { useToast } from "@/ui/toast";
 
 const fmt = (iso: string | null) => (iso ? new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) : "—");
@@ -50,18 +53,49 @@ export function RequestDetailPage() {
             <h2 className="card__title">{req.description}</h2>
             <p className="muted">{req.businessContext}</p>
             <div className="kv">
-              <div><span>Legal category</span><b>{req.legalCategory}</b></div>
-              <div><span>Priority</span><b>{req.priority}</b></div>
+              <div><span>Type</span><b>{requesterCategoryLabel(req.requesterCategory)}</b></div>
               <div><span>Status</span><b>{req.status}</b></div>
-              <div><span>Jurisdiction</span><b>{req.jurisdiction}</b></div>
               <div><span>Urgency</span><b>{req.businessUrgency}</b></div>
               <div><span>Needed by</span><b>{req.neededByDate ? new Date(req.neededByDate).toLocaleDateString() : "—"}</b></div>
-              <div><span>SLA due</span><b>{fmt(req.slaDueDate)}</b></div>
-              <div><span>Owner</span><b>{owner ? owner.name : "Unassigned"}</b></div>
+              <div><span>Jurisdiction</span><b>{req.jurisdiction}</b></div>
+              {/* Internal-only fields — never shown to the requester (PRD §3.2 privacy) */}
+              {internalVisible && <div><span>Legal category</span><b>{req.legalCategory}</b></div>}
+              {internalVisible && <div><span>Priority</span><b>{req.priority}</b></div>}
+              {internalVisible && <div><span>SLA due</span><b>{fmt(req.slaDueDate)}</b></div>}
+              {internalVisible && <div><span>Owner</span><b>{owner ? owner.name : "Unassigned"}</b></div>}
             </div>
             {req.neededByJustification && <p className="callout">Expedite justification: {req.neededByJustification}</p>}
+            {!internalVisible && req.status === "Submitted" && (
+              <p className="callout">Your request has been received and is awaiting triage. Legal will confirm the turnaround shortly.</p>
+            )}
             {req.matterId && <p className="callout callout--ok">Converted to matter <span className="mono">{req.matterId}</span></p>}
           </Card>
+
+          {conditionalFieldsFor(req.requesterCategory).some((f) => req.intakeDetails[f.key]?.trim()) && (
+            <Card>
+              <h3 className="card__title">Details provided</h3>
+              <div className="kv">
+                {conditionalFieldsFor(req.requesterCategory)
+                  .filter((f) => req.intakeDetails[f.key]?.trim())
+                  .map((f) => <div key={f.key}><span>{f.label}</span><b>{req.intakeDetails[f.key]}</b></div>)}
+              </div>
+            </Card>
+          )}
+
+          {req.attachments.length > 0 && (
+            <Card>
+              <h3 className="card__title">Attachments</h3>
+              <ul className="filelist">
+                {req.attachments.map((a) => (
+                  <li key={a.id} className="filerow">
+                    <Icon name="file" size={15} />
+                    <span style={{ flex: 1 }}>{a.name}</span>
+                    <span className="muted small">{formatBytes(a.sizeBytes)}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          )}
 
           <Card>
             <h3 className="card__title">Timeline</h3>

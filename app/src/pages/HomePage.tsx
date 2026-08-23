@@ -11,6 +11,7 @@ export function HomePage() {
   const awaiting = all.filter((r) => r.status === "Awaiting Requester");
   const untriaged = all.filter((r) => r.status === "Submitted");
   const recent = [...all].sort((a, b) => b.submittedAt.localeCompare(a.submittedAt)).slice(0, 5);
+  const listHref = can(currentUser, "request.viewAll") ? "/requests/all" : "/requests";
 
   return (
     <div className="page">
@@ -21,10 +22,10 @@ export function HomePage() {
       />
 
       <div className="cardgrid" style={{ marginBottom: 16 }}>
-        <DataCard label="Open requests" value={open.length} hint="Not yet closed" />
-        <DataCard label="Awaiting requester" value={awaiting.length} hint="Clock paused" />
-        {can(currentUser, "request.triage") && <DataCard label="Needs triage" value={untriaged.length} hint="In the triage queue" />}
-        <DataCard label="Total visible" value={all.length} hint="Across your access" />
+        <DataCard label="Open requests" value={open.length} hint="Not yet closed" to={listHref} />
+        <DataCard label="Awaiting requester" value={awaiting.length} hint="Clock paused" to={listHref} />
+        {can(currentUser, "request.triage") && <DataCard label="Needs triage" value={untriaged.length} hint="In the triage queue" to="/requests/triage" />}
+        <DataCard label="Total visible" value={all.length} hint="Across your access" to={listHref} />
       </div>
 
       <Card>
