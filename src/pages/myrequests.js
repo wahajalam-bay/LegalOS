@@ -110,6 +110,18 @@ const STAGE_SUB = {
 };
 const stageLabel = (s) => STAGE_LABEL[s] || s;
 
+// Friendly labels for the requester's own Layer-2 answers (their own inputs —
+// safe to show back to them).
+const L2_LABEL = {
+  counterparty: "Counterparty", counterpartyType: "Counterparty type", paper: "Whose paper",
+  term: "Contract term", existing: "Existing agreement?", linkedContract: "Existing contract",
+  changeNature: "Nature of change", effectiveDate: "Effective date", question: "Question asked",
+  decisionDeadline: "Decision deadline", decisionMaker: "Decision-maker", claimNature: "Nature of claim",
+  deadlines: "Deadlines", correspondence: "Correspondence received?", jurisdiction: "Jurisdiction",
+  regulator: "Regulator", activity: "Product / activity", assetNature: "Asset", jurisdictions: "Jurisdictions",
+  filingUrgency: "Filing urgency", detail: "Details",
+};
+
 // The full pipeline, requester-safe: every stage of this request's lifecycle,
 // with the current one highlighted — "where does it stand".
 function RequesterPipeline({ r }) {
@@ -176,43 +188,82 @@ export default function MyRequests() {
           </div>`}
         </div>`}
 
-    ${open && html`<${Drawer} title=${open.id} onClose=${() => setOpen(null)}
-      footer=${html`<${Btn} variant="ghost" onClick=${() => setOpen(null)}>Close</${Btn}>`}>
-      <div class="col" style="gap:18px">
-        <div>
-          <div class="row wrap" style="gap:8px;margin-bottom:8px"><${Status} value=${open.status} />
-            ${open.tat && open.tat.dueAt && html`<${Pill} tone="blue">Expected ${fmt.date(open.tat.dueAt)}</${Pill}>`}
-            ${open.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25">${open.title}</div>
-          ${open.requesterOption && html`<div class="mreq__what" style="margin-top:8px"><${Icon} name="message" size=12 />${open.requesterOption}</div>`}
-        </div>
+    ${open && html`<${RequestSheet} r=${open} onClose=${() => setOpen(null)} />`}
+  </div>`;
+}
 
-        <!-- where it stands: overall progress -->
-        <div class="rphead">
-          <div class="row" style="align-items:baseline;margin-bottom:7px">
-            <span class="fpop__lbl">${DONE.has(open.status) || open.progress === 100 ? "Complete" : "In progress — " + friendlyStage(open)}</span>
-            <div class="spacer"></div>
-            <span class="rpipe__at" style="font-weight:700">${pctOf(open)}%</span>
+// Full-screen detail — covers the screen and shows the whole request, fully
+// structured in the app's design language: hero + progress, the details the
+// requester gave, and the complete pipeline with where it stands.
+function RequestSheet({ r, onClose }) {
+  const done = DONE.has(r.status) || r.progress === 100;
+  const l2 = r.layer2 || {};
+  const l2rows = Object.keys(l2).filter((k) => l2[k]);
+  const facts = [
+    ["Reference", r.id],
+    ["Submitted", submittedAt(r) ? fmt.date(submittedAt(r)) : "—"],
+    ["Expected turnaround", r.tat && r.tat.dueAt ? fmt.date(r.tat.dueAt) : "Set at triage"],
+    ["Needed by", r.dueDate ? fmt.date(r.dueDate) : "No date given"],
+    ["Requesting department", r.department || "—"],
+  ];
+  return html`<div class="sheet" onClick=${onClose}>
+    <div class="sheet__panel" onClick=${(e) => e.stopPropagation()}>
+      <div class="sheet__bar">
+        <span class="mono muted">${r.id}</span>
+        <${Status} value=${r.status} />
+        ${r.tat && r.tat.dueAt && !done && html`<${Pill} tone="blue">Expected ${fmt.date(r.tat.dueAt)}</${Pill}>`}
+        ${r.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}
+        <div class="spacer"></div>
+        <button class="iconbtn" onClick=${onClose} title="Close"><${Icon} name="x" size=18 /></button>
+      </div>
+
+      <div class="sheet__body">
+        <div class="sheet__hero">
+          <div class="sheet__title">${r.title}</div>
+          ${r.requesterOption && html`<div class="mreq__what" style="margin-top:10px"><${Icon} name="message" size=12 />${r.requesterOption}</div>`}
+          <div class="rphead" style="margin-top:16px">
+            <div class="row" style="align-items:baseline;margin-bottom:7px">
+              <span class="fpop__lbl">${done ? "Complete" : "In progress — " + friendlyStage(r)}</span>
+              <div class="spacer"></div>
+              <span class="rpipe__at" style="font-weight:700">${pctOf(r)}%</span>
+            </div>
+            <${Progress} value=${pctOf(r)} tone=${done ? "green" : "blue"} />
           </div>
-          <${Progress} value=${pctOf(open)} tone=${DONE.has(open.status) || open.progress === 100 ? "green" : "blue"} />
         </div>
 
-        ${open.businessContext && html`<div>
-          <div class="fpop__lbl">What you told us</div>
-          <div class="spine__desc" style="margin-top:6px">${open.businessContext}</div>
-        </div>`}
+        <div class="sheet__grid">
+          <div class="col" style="gap:20px;min-width:0">
+            ${r.businessContext && html`<div>
+              <div class="fpop__lbl">What you told us</div>
+              <div class="spine__desc" style="margin-top:8px">${r.businessContext}</div>
+            </div>`}
 
-        <!-- the FULL pipeline, requester-safe -->
-        <div>
-          <div class="fpop__lbl" style="margin-bottom:10px">Pipeline — every step, and where it stands</div>
-          <${RequesterPipeline} r=${open} />
-        </div>
+            <div>
+              <div class="fpop__lbl" style="margin-bottom:10px">Request details</div>
+              <div class="sheet__facts">
+                ${facts.map(([l, v]) => html`<div key=${l} class="sheet__fact"><div class="sheet__fl">${l}</div><div class="sheet__fv">${v}</div></div>`)}
+              </div>
+              ${l2rows.length > 0 && html`<div class="sheet__facts" style="margin-top:10px">
+                ${l2rows.map((k) => html`<div key=${k} class="sheet__fact"><div class="sheet__fl">${L2_LABEL[k] || k}</div><div class="sheet__fv">${l2[k]}</div></div>`)}
+              </div>`}
+              ${r.needByJustification && html`<div class="banner banner--warn" style="margin-top:12px;align-items:flex-start">
+                <${Icon} name="alertTriangle" size=15 />
+                <div><div class="strong tiny">Tighter than the standard turnaround</div><div class="tiny" style="margin-top:2px">${r.needByJustification}</div></div>
+              </div>`}
+            </div>
 
-        <div class="banner banner--info" style="align-items:flex-start">
-          <${Icon} name="workflow" size=16 />
-          <span class="tiny">Legal triages your request, confirms the owner and turnaround, and keeps you posted here. You'll be asked if they need anything from you.</span>
+            <div class="banner banner--info" style="align-items:flex-start">
+              <${Icon} name="workflow" size=16 />
+              <span class="tiny">Legal triages your request, confirms the owner and turnaround, and keeps you posted here. You'll be notified at every step and asked if they need anything from you.</span>
+            </div>
+          </div>
+
+          <div style="min-width:0">
+            <div class="fpop__lbl" style="margin-bottom:12px">Pipeline — every step, and where it stands</div>
+            <${RequesterPipeline} r=${r} />
+          </div>
         </div>
       </div>
-    </${Drawer}>`}
+    </div>
   </div>`;
 }

@@ -101,13 +101,16 @@ const OPTIONS = [
     layer2: [
       { key: "assetNature", label: "What are we protecting?", type: "select", options: ["Trademark / Brand", "Copyright / Content", "Domain", "Invention / Patent", "Other"] },
       { key: "jurisdictions", label: "Jurisdictions", type: "text", placeholder: "e.g. Pakistan, KSA" },
+      { key: "filingUrgency", label: "How time-sensitive is this filing?", type: "select", options: ["No fixed deadline", "There's a filing / priority date", "Public disclosure imminent", "Someone else may be filing"] },
     ],
   },
   {
     key: "other", icon: "more",
     label: "Something else",
     category: "Triage required", requestType: "New", nature: "Other",
-    layer2: [],
+    layer2: [
+      { key: "detail", label: "Tell us what you need", type: "textarea", placeholder: "Describe it in your own words — Legal will route it to the right desk." },
+    ],
   },
 ];
 
@@ -171,6 +174,16 @@ export function RequestWizard({ cfg, me, stampId, captureSource }) {
   const addFile = (name) => {
     const n = f.files.length + 1;
     set("files", [...f.files, { name: name || `Supporting-document-${n}.pdf`, sizeKb: 260 + n * 140, kind: "Attachment" }]);
+  };
+  // Real multi-file picker (common formats). We keep name/size/type in the
+  // prototype store; the bytes are not uploaded, but this is a genuine file input.
+  const onFiles = (fileList) => {
+    const picked = [...(fileList || [])].map((file) => ({
+      name: file.name,
+      sizeKb: Math.max(1, Math.round((file.size || 0) / 1024)) || null,
+      kind: (file.type || "").split("/").pop() || "Attachment",
+    }));
+    if (picked.length) set("files", [...f.files, ...picked]);
   };
 
   const canContinue = () => {
@@ -390,7 +403,12 @@ export function RequestWizard({ cfg, me, stampId, captureSource }) {
                   <div style="flex:1;min-width:0"><div class="strong tiny">${a.name}</div><div class="tiny muted">${a.kind} · ${a.sizeKb} KB</div></div>
                   <button class="iconbtn" style="width:24px;height:24px" onClick=${() => set("files", f.files.filter((_, j) => j !== i))}><${Icon} name="x" size=14 /></button>
                 </div>`)}
-                <${Btn} variant="soft" size="sm" icon="upload" onClick=${() => addFile()}>Attach a file</${Btn}>
+                <label class="btn btn--soft btn--sm" style="cursor:pointer;align-self:flex-start">
+                  <${Icon} name="upload" size=14 />Attach files
+                  <input type="file" multiple
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.png,.jpg,.jpeg,.zip"
+                    style="display:none" onChange=${(e) => { onFiles(e.target.files); e.target.value = ""; }} />
+                </label>
               </div>
             </${Field}>
             ${dupes.length > 0 && html`<div class="banner banner--warn" style="align-items:flex-start">

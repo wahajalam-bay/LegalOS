@@ -7,14 +7,14 @@ import {
   lifecyclePathFor, inferCategory, inferSubdivision, entityById, entityName, byId, licenseStatus,
   stageMeta,
 } from "./data.js";
-import { fixTat, addWorkingDays } from "./tat.js";
+import { fixTat, addWorkingDays, weekendFor } from "./tat.js";
 // Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
 import { MASTER_DATA_SEED, teamPrefix } from "./org.js";
 import { MODULES, moduleByKey, workflowOf, riskGateMissing } from "./modules.js";
 import { tatV2 } from "./tat2.js";
 import { MOD_REQUESTS, NOTICE_TEMPLATES, COST_BUDGETS, FILING_SCHEDULE } from "./seeds-org.js";
 
-const addWorkingDaysIso = (from, n) => addWorkingDays(from, n).toISOString();
+const addWorkingDaysIso = (from, n, jurisdiction) => addWorkingDays(from, n, weekendFor(jurisdiction)).toISOString();
 
 const LS_KEY = "legalos-store-v1";
 const PORTAL_SESSION_KEY = "legalos-portal-session";
@@ -297,18 +297,25 @@ export function submitLegalRequest(payload = {}) {
   /* ---- duplicate / counterparty check ---- */
   const duplicates = duplicateCheck(draft);
 
-  /* ---- route + auto-fix the TAT (never manually negotiated) ---- */
-  // Routing precedence: explicit owner → the admin's per-nature routing →
-  // the sub-division desk.
-  const owner = payload.owner || routing.owner || SUBDIV_OWNER[draft.subdivision] || "u5";
+  /* ---- jurisdiction drives the working-week calendar (PRD §3.6) ---- */
+  const jurisdiction = (entityById(payload.entityId) || {}).jur || payload.jurisdiction || payload.country || null;
+
+  /* ---- auto-fix the TAT: CATEGORY × PRIORITY, in business days (PRD §3.6) ----
+     Same engine as triage, so intake and triage never disagree on the clock. */
+  const urgencyBand = draft.urgencyBand || "Important";
+  const sla = resolveSlaDays(draft, urgencyBand);
+  // Routing precedence for the owner: explicit → admin per-nature routing →
+  // least-loaded member of the right team (workload + past-matter aware).
+  const owner = payload.owner || routing.owner || suggestOwner(draft) || SUBDIV_OWNER[draft.subdivision] || "u5";
   const tat = routing.tatDays
-    ? { days: routing.tatDays, fixedAt: requestDate, dueAt: addWorkingDaysIso(requestDate, routing.tatDays), basis: `${nature} routing default` }
-    : fixTat({ contractType: draft.contractType, type: draft.type, risk: draft.risk, requestType: draft.requestType }, requestDate);
+    ? { days: routing.tatDays, fixedAt: requestDate, dueAt: addWorkingDaysIso(requestDate, routing.tatDays, jurisdiction), basis: `${nature} routing default` }
+    : { days: sla.days, fixedAt: requestDate, dueAt: addWorkingDaysIso(requestDate, sla.days, jurisdiction), basis: `${sla.fine} × ${urgencyBand}` };
 
   /* ---- drop into Triage on the department side ---- */
   const path = lifecyclePathFor(draft.requestType);
   const record = {
     ...draft,
+    jurisdiction,
     owner,
     tat,
     status: "Triage",
@@ -321,6 +328,13 @@ export function submitLegalRequest(payload = {}) {
   };
 
   addItem("requests", record);
+
+  // PRD §3.7 — automated acknowledgement to the requester.
+  notifyRequester(record, {
+    kind: "ack", tone: "blue", icon: "inbox",
+    title: `Request received — ${id}`,
+    body: `We've logged "${record.title}". Target turnaround ${tat.days} working day${tat.days === 1 ? "" : "s"} (by ${new Date(tat.dueAt).toLocaleDateString()}).`,
+  });
 
   // Attachments carried in from the portal also become repository documents, so
   // they appear in the internal WorkflowSpine's Input zone (not just on the form).
@@ -367,23 +381,120 @@ export function submitLegalRequest(payload = {}) {
    ============================================================ */
 const _nm = (uid) => (byId(uid) || {}).name || uid || "Unassigned";
 
-// PRD §3.6 TAT matrix — proposed legal category × urgency band (business days).
-const TRIAGE_SLA = {
-  "Contract Drafting / Review":        { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
-  "Amendment / Renewal / Termination": { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
-  "Legal Opinion / Advisory":          { Emergency: 2, "Time-critical": 3, Important: 5, Routine: 7 },
-  "Dispute / Litigation":              { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 },
-  "Regulatory / Compliance":           { Emergency: 1, "Time-critical": 2, Important: 4, Routine: 5 },
-  "IP":                                { Emergency: 1, "Time-critical": 3, Important: 5, Routine: 10 },
-  "Triage required":                   { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+// PRD §3.6 TAT matrix — the FULL matrix, business days, keyed by
+// (fine SLA category × urgency band). Emergency 0 = "same day".
+const SLA_MATRIX = {
+  "NDA (our template)":                   { Emergency: 0, "Time-critical": 1, Important: 1, Routine: 2 },
+  "NDA (counterparty paper)":             { Emergency: 1, "Time-critical": 1, Important: 2, Routine: 3 },
+  "Contract review — standard":           { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
+  "Contract review — complex/high value": { Emergency: 2, "Time-critical": 3, Important: 4, Routine: 6 },
+  "Contract drafting — from template":    { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
+  "Contract drafting — complex/high value": { Emergency: 2, "Time-critical": 3, Important: 4, Routine: 6 },
+  "Amendment":                            { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Renewal":                              { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Termination":                          { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Legal opinion — simple/narrow":        { Emergency: 2, "Time-critical": 3, Important: 5, Routine: 7 },
+  "Legal opinion — complex":              { Emergency: 2, "Time-critical": 5, Important: 7, Routine: 10 },
+  "Regulatory / compliance query":        { Emergency: 1, "Time-critical": 2, Important: 4, Routine: 5 },
+  "Dispute — initial assessment":         { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 },
+  "IP filing":                            { Emergency: 1, "Time-critical": 3, Important: 5, Routine: 10 },
+  "Triage required":                      { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+};
+// Coarse requester category → a sensible default fine row (used when we cannot
+// resolve a finer row from the request's signals).
+const COARSE_TO_FINE = {
+  "Contract Drafting / Review": "Contract review — standard",
+  "Amendment / Renewal / Termination": "Amendment",
+  "Legal Opinion / Advisory": "Legal opinion — simple/narrow",
+  "Dispute / Litigation": "Dispute — initial assessment",
+  "Regulatory / Compliance": "Regulatory / compliance query",
+  "IP": "IP filing",
+  "Triage required": "Triage required",
 };
 const URGENCY_PRIORITY = { Emergency: "Urgent", "Time-critical": "High", Important: "Medium", Routine: "Low" };
-export const TRIAGE_CATEGORIES = Object.keys(TRIAGE_SLA);
+// The requester-facing coarse categories the triage UI offers.
+export const TRIAGE_CATEGORIES = Object.keys(COARSE_TO_FINE);
 
+// Is this a complex / high-value request? Drives the harder SLA tiers.
+function isComplex(req = {}) {
+  const v = Number(req.value || req.contractValue || 0);
+  const r = String(req.risk || req.riskPreliminary || "").toLowerCase();
+  return v >= 1000000 || r === "high" || r === "critical" || req.complex === true || /complex|high.?value/i.test(req.complexity || "");
+}
+// Resolve the FINE SLA category from a request's category + captured signals
+// (whose paper, NDA-ness, change nature, complexity/value).
+export function slaCategoryOf(req = {}) {
+  const cat = req.proposedCategory || req.category || "Triage required";
+  const l2 = req.layer2 || {};
+  const paper = String(l2.paper || req.paper || "").toLowerCase();
+  const ct = String(req.contractType || req.natureOfMatter || req.title || "").toLowerCase();
+  const isNda = /nda|non.?disclosure|mou|confidential/.test(ct) || /nda|confidential/.test(String(req.requesterOption || "").toLowerCase());
+  if (cat === "Contract Drafting / Review") {
+    if (isNda) return paper.includes("their") ? "NDA (counterparty paper)" : "NDA (our template)";
+    const theirs = paper.includes("their");
+    if (theirs) return isComplex(req) ? "Contract review — complex/high value" : "Contract review — standard";
+    return isComplex(req) ? "Contract drafting — complex/high value" : "Contract drafting — from template";
+  }
+  if (cat === "Amendment / Renewal / Termination") {
+    const n = String(l2.changeNature || req.changeNature || "").toLowerCase();
+    if (n.includes("renew")) return "Renewal";
+    if (n.includes("terminat")) return "Termination";
+    return "Amendment";
+  }
+  if (cat === "Legal Opinion / Advisory") return isComplex(req) ? "Legal opinion — complex" : "Legal opinion — simple/narrow";
+  return COARSE_TO_FINE[cat] || "Triage required";
+}
+
+// SLA days for a coarse category (used by the intake wizard's tight-date check).
 export function triageSlaDays(category, urgencyBand) {
-  const row = TRIAGE_SLA[category] || TRIAGE_SLA["Triage required"];
+  const fine = COARSE_TO_FINE[category] || category;
+  const row = SLA_MATRIX[fine] || SLA_MATRIX["Triage required"];
   const d = row[urgencyBand];
   return d == null ? 3 : d;
+}
+// SLA days resolved from the full request (uses fine-category signals). This is
+// the authoritative computation used at intake and at triage.
+export function resolveSlaDays(req, urgencyBand) {
+  const fine = slaCategoryOf(req);
+  const row = SLA_MATRIX[fine] || SLA_MATRIX["Triage required"];
+  const d = row[urgencyBand];
+  return { days: d == null ? 3 : d, fine };
+}
+
+// Which team owns a category — used to route the owner suggestion.
+const CATEGORY_TEAM = {
+  "Contract Drafting / Review": "commercial",
+  "Amendment / Renewal / Termination": "commercial",
+  "Legal Opinion / Advisory": "commercial",
+  "Dispute / Litigation": "litigation",
+  "Regulatory / Compliance": "compliance",
+  "IP": "litigation",
+  "Triage required": "commercial",
+};
+// Current open workload of a user, across BOTH request domains.
+function ownerLoad(uid) {
+  const live = (s) => !["Closed", "Delivered", "Completed", "Executed"].includes(s);
+  const a = (state.requests || []).filter((r) => r.owner === uid && live(r.status)).length;
+  const b = (state.modRequests || []).filter((r) => r.owner === uid && r.status !== "Closed").length;
+  return a + b;
+}
+// How many matters of this category this user has handled — experience signal.
+function pastMattersOfType(uid, category) {
+  return (state.requests || []).filter((r) => r.owner === uid && (r.category === category || r.proposedCategory === category)).length;
+}
+// PRD §3.4 — the suggested assignee: the LEAST-LOADED member of the owning team,
+// ties broken by MORE past matters of this type (experience), then id.
+export function suggestOwner(req) {
+  const cat = (req && (req.proposedCategory || req.category)) || "Triage required";
+  const team = CATEGORY_TEAM[cat] || "commercial";
+  const members = USERS.filter((u) => u.legalTeam === team && (u.rbac === "member" || u.rbac === "paralegal"));
+  const pool = members.length ? members : USERS.filter((u) => u.legalTeam === team);
+  if (!pool.length) return null;
+  return pool.slice().sort((a, b) =>
+    ownerLoad(a.id) - ownerLoad(b.id) ||
+    pastMattersOfType(b.id, cat) - pastMattersOfType(a.id, cat) ||
+    (a.id < b.id ? -1 : 1)
+  )[0].id;
 }
 
 // The system's proposal for a request awaiting triage.
@@ -392,13 +503,14 @@ export function triageProposal(req) {
   const category = req.proposedCategory || req.category || "Triage required";
   const urgencyBand = req.urgencyBand || "Important";
   const priority = URGENCY_PRIORITY[urgencyBand] || "Medium";
-  const slaDays = triageSlaDays(category, urgencyBand);
+  const sla = resolveSlaDays(req, urgencyBand);
+  const slaDays = sla.days;
   const base = req.requestDate || req.created || nowIso();
-  const slaDueAt = addWorkingDaysIso(base, slaDays);
+  const slaDueAt = addWorkingDaysIso(base, slaDays, req.jurisdiction || req.country);
   // requested date earlier than the SLA allows → needs approval / justification.
   const needBy = req.dueDate ? new Date(req.dueDate) : null;
   const escalate = !!(needBy && needBy < new Date(slaDueAt));
-  return { category, urgencyBand, priority, slaDays, slaDueAt, owner: req.owner || null, subdivision: req.subdivision || null, escalate, needByDate: req.dueDate || null };
+  return { category, slaCategory: sla.fine, urgencyBand, priority, slaDays, slaDueAt, owner: req.owner || suggestOwner(req), subdivision: req.subdivision || null, escalate, needByDate: req.dueDate || null };
 }
 
 // Similar past matters + conflict/sensitivity flags for the triage screen.
@@ -446,9 +558,10 @@ export function triageDecision(id, decision = {}, byUserId) {
   const substantive = overrides.some((o) => o.field === "category" || o.field === "priority");
   if (substantive && !String(decision.reason || "").trim()) return { ok: false, error: "an override reason is required" };
 
-  const slaDays = triageSlaDays(final.category, proposal.urgencyBand);
+  const sla = resolveSlaDays({ ...req, category: final.category, proposedCategory: final.category }, proposal.urgencyBand);
+  const slaDays = sla.days;
   const base = req.requestDate || req.created || nowIso();
-  const tat = { days: slaDays, fixedAt: base, dueAt: addWorkingDaysIso(base, slaDays), basis: `${final.category} × ${proposal.urgencyBand}` };
+  const tat = { days: slaDays, fixedAt: base, dueAt: addWorkingDaysIso(base, slaDays, req.jurisdiction || req.country), basis: `${sla.fine} × ${proposal.urgencyBand}` };
   const decidedAt = nowIso();
 
   const triageRecord = {
@@ -473,6 +586,12 @@ export function triageDecision(id, decision = {}, byUserId) {
     // Assignment is the clean start of the working lifecycle — clear any stale
     // progress / hold so the spine opens at the stage after Triage.
     progress: 0, blockedOn: null, hold: null,
+  });
+  // PRD §3.7 — status-change notification: categorised & assigned.
+  notifyRequester(req, {
+    kind: "assigned", tone: "blue", icon: "filter",
+    title: `${id} — categorised & assigned`,
+    body: `Your request has been reviewed and assigned to the ${final.category} desk. Target ${new Date(tat.dueAt).toLocaleDateString()}.`,
   });
   return { ok: true, accepted, overrides, escalated: proposal.escalate, tat };
 }
@@ -548,13 +667,18 @@ export function advanceRequestStage(id, byUserId) {
   const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, exitedAt: now }));
   log.push({ stage: next, enteredAt: now, exitedAt: null, owner: work.owner || null, ballWith });
   const isFinal = idx + 1 === path.length - 1;
-  const status = REQUEST_STAGE_STATUS[next] || next;
+  // PRD §3.5 — reaching the final stage is DELIVERY to the requester.
+  const status = isFinal ? "Delivered" : (REQUEST_STAGE_STATUS[next] || next);
   const progress = Math.round(((idx + 1) / (path.length - 1)) * 100);
-  updateItem(workSlice, work.id, {
-    stage: next, status, progress, ballWith, blockedOn: null, hold: null, stageLog: log,
-    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Moved to ${next}` }],
-  });
-  mirrorToRequest(request, matter, { stage: next, status, progress });
+  const patch = { stage: next, status, progress, ballWith, blockedOn: null, hold: null, stageLog: log,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: isFinal ? `Delivered (${next})` : `Moved to ${next}` }] };
+  if (isFinal) patch.deliveredAt = now;
+  updateItem(workSlice, work.id, patch);
+  mirrorToRequest(request, matter, { stage: next, status, progress, ...(isFinal ? { deliveredAt: now } : {}) });
+  // PRD §3.7 — status-change / delivery notification to the requester.
+  notifyRequester(request || work, isFinal
+    ? { kind: "delivered", tone: "green", icon: "checkcircle", title: `${(request || work).id} — delivered`, body: "Your request is complete. Legal has delivered the outcome." }
+    : { kind: "stage-" + next, tone: "blue", icon: "workflow", title: `${(request || work).id} — update`, body: REQUESTER_STAGE_NOTE[next] || `Your request moved to ${next}.` });
   return { ok: true, stage: next, final: isFinal };
 }
 
@@ -572,6 +696,11 @@ export function closeRequest(id, byUserId, note) {
     activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Closed${note ? ": " + note : ""}` }],
   });
   mirrorToRequest(request, matter, { status: "Closed", progress: 100 });
+  notifyRequester(request || work, {
+    kind: "closed", tone: "green", icon: "checkcircle",
+    title: `${(request || work).id} — closed`,
+    body: `Your request has been closed.${note ? " " + note : ""}`,
+  });
   return { ok: true };
 }
 
@@ -615,6 +744,12 @@ export function holdRequest(id, party, byUserId, reason) {
     activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `On hold — waiting on ${party}${reason ? " (" + reason + ")" : ""}` }],
   });
   mirrorToRequest(request, matter, { blockedOn: party, hold: { party, reason: reason || null, start: now } });
+  // PRD §3.5/§3.7 — "Awaiting Requester": tell the requester we need them.
+  if (party === "business") notifyRequester(request || work, {
+    kind: "awaiting", tone: "amber", icon: "clock",
+    title: `${(request || work).id} — we need something from you`,
+    body: reason ? `Legal is waiting on you: ${reason}. The clock is paused until you respond.` : "Legal is waiting on input from you. The clock is paused until you respond.",
+  });
   return { ok: true };
 }
 export function resumeRequest(id, byUserId) {
@@ -629,6 +764,11 @@ export function resumeRequest(id, byUserId) {
     activity: [...(work.activity || []), { at: now, by: byUserId || null, action: "Resumed — ball back with Legal" }],
   });
   mirrorToRequest(request, matter, { blockedOn: null, hold: null });
+  if (work.hold && work.hold.party === "business") notifyRequester(request || work, {
+    kind: "resumed", tone: "blue", icon: "play",
+    title: `${(request || work).id} — back with Legal`,
+    body: "Thanks — Legal has resumed work on your request and the clock is running again.",
+  });
   return { ok: true };
 }
 
@@ -973,6 +1113,37 @@ export function markNotifsRead() {
   state = { ...state, notifs: (state.notifs || []).map((n) => ({ ...n, unread: false })) };
   emit();
 }
+
+// PRD §3.7 — the requester's notification trio (acknowledgement, status-change,
+// delivery). Targets the requester directly and links to their tracking view.
+// `rec` should be the request-bearing record (it carries requesterId).
+function notifyRequester(rec, note) {
+  const rid = rec && (rec.requesterId || rec.requester);
+  if (!rid || String(rid).startsWith("RQ-")) return; // in-app requester only
+  pushNotif({
+    id: `req-${rec.id}-${note.kind}-${nowIso()}`,
+    forUserId: rid,
+    tone: note.tone || "blue",
+    icon: note.icon || "inbox",
+    title: note.title,
+    body: note.body || "",
+    to: "/my-requests",
+  });
+}
+// Plain-language status-change lines for the requester (no internal jargon).
+const REQUESTER_STAGE_NOTE = {
+  "Legal Review": "Your request is now under legal review.",
+  "Drafting": "Legal has started drafting your document.",
+  "Redlining": "Legal is marking up the document.",
+  "Notice Drafting": "Legal is preparing the notice.",
+  "Negotiation": "Your matter has moved to negotiation.",
+  "Approval": "Your matter is awaiting internal approval.",
+  "Signature": "Your matter is ready for signature.",
+  "Notice Served": "The notice has been served.",
+  "Executed": "Your matter has been executed.",
+  "Repository": "Your matter has been filed and completed.",
+  "Closed": "Your request has been closed.",
+};
 // The bell shows what is addressed to the active identity: direct, their
 // department, or broadcast; the Department Head sees everything.
 export function notifsFor(user) {

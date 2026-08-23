@@ -2154,3 +2154,33 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .rpipe__step--upcoming .rpipe__dot { background: var(--surface); border-color: var(--border-strong); }
 .rpipe__step--upcoming .rpipe__name { color: var(--text-3); font-weight: 500; }
 .rpipe__step--upcoming .rpipe__sub { color: var(--text-3); opacity: .7; }
+
+/* My Requests — full-screen detail sheet */
+.sheet {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 3vh 3vw;
+  background: color-mix(in srgb, var(--brand-600) 42%, transparent);
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  animation: sheetIn .16s ease;
+}
+@keyframes sheetIn { from { opacity: 0; } to { opacity: 1; } }
+.sheet__panel {
+  width: min(1140px, 96vw); max-height: 94vh; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-pop); overflow: hidden; animation: sheetPop .18s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes sheetPop { from { transform: translateY(10px) scale(.99); opacity: 0; } to { transform: none; opacity: 1; } }
+.sheet__bar {
+  display: flex; align-items: center; gap: 10px; flex: none;
+  padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--surface-2);
+}
+.sheet__body { overflow-y: auto; padding: 22px 24px 26px; }
+.sheet__hero { padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 22px; }
+.sheet__title { font-size: 24px; font-weight: 750; letter-spacing: -.02em; line-height: 1.2; color: var(--text); }
+.sheet__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; }
+@media (max-width: 860px) { .sheet__grid { grid-template-columns: 1fr; gap: 24px; } }
+.sheet__facts { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+.sheet__fact { display: flex; align-items: baseline; gap: 14px; padding: 10px 13px; background: var(--surface); }
+.sheet__fl { font-size: 12px; color: var(--text-3); flex: none; width: 150px; }
+.sheet__fv { font-size: 13px; font-weight: 600; color: var(--text); min-width: 0; overflow-wrap: anywhere; }

@@ -64,7 +64,7 @@ const STATUS_MAP = {
   "In Review": "amber", "Under Review": "amber", "Legal Review": "amber", "Business Review": "amber",
   "Drafting": "purple", "Negotiation": "amber", "In Negotiation": "amber",
   "Pending Approval": "amber", "Approval": "amber", "Awaiting Signature": "indigo",
-  "Approved": "green", "Executed": "green", "Active": "green", "Completed": "green", "Signed": "green",
+  "Approved": "green", "Executed": "green", "Active": "green", "Completed": "green", "Signed": "green", "Delivered": "green", "Categorised": "purple",
   "Rejected": "red", "On Hold": "gray", "Blocked": "red", "Overdue": "red",
   "Renewal": "indigo", "Expiring": "amber", "Expired": "red", "Terminated": "gray", "Archived": "gray",
   "Open": "blue", "Closed": "green", "Escalated": "red", "Draft": "gray",
