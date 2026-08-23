@@ -16,6 +16,38 @@ import { MOD_REQUESTS, NOTICE_TEMPLATES, COST_BUDGETS, FILING_SCHEDULE } from ".
 
 const addWorkingDaysIso = (from, n, jurisdiction) => addWorkingDays(from, n, weekendFor(jurisdiction)).toISOString();
 
+// PRD §3.6 TAT matrix — the FULL matrix, business days, keyed by
+// (fine SLA category × urgency band). Emergency 0 = "same day". Seeded here so
+// the Director can edit it in Settings (the live copy is the `slaMatrix` slice).
+const SLA_MATRIX_SEED = {
+  "NDA (our template)":                     { Emergency: 0, "Time-critical": 1, Important: 1, Routine: 2 },
+  "NDA (counterparty paper)":               { Emergency: 1, "Time-critical": 1, Important: 2, Routine: 3 },
+  "Contract review — standard":             { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
+  "Contract review — complex/high value":   { Emergency: 2, "Time-critical": 3, Important: 4, Routine: 6 },
+  "Contract drafting — from template":      { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
+  "Contract drafting — complex/high value": { Emergency: 2, "Time-critical": 3, Important: 4, Routine: 6 },
+  "Amendment":                              { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Renewal":                                { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Termination":                            { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+  "Legal opinion — simple/narrow":          { Emergency: 2, "Time-critical": 3, Important: 5, Routine: 7 },
+  "Legal opinion — complex":                { Emergency: 2, "Time-critical": 5, Important: 7, Routine: 10 },
+  "Regulatory / compliance query":          { Emergency: 1, "Time-critical": 2, Important: 4, Routine: 5 },
+  "Dispute — initial assessment":           { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 },
+  "IP filing":                              { Emergency: 1, "Time-critical": 3, Important: 5, Routine: 10 },
+  "Triage required":                        { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
+};
+export const SLA_BANDS = ["Emergency", "Time-critical", "Important", "Routine"];
+
+// Playbooks (PRD §2 — the Director configures playbooks). Seeded, then editable.
+const PLAYBOOK_SEED = [
+  { id: "PB-01", title: "Commercial Contracting Playbook", area: "Commercial · fallback positions", icon: "briefcase", updatedAt: null },
+  { id: "PB-02", title: "Data Privacy Playbook", area: "GDPR · PDPL · PDPA", icon: "shield", updatedAt: null },
+  { id: "PB-03", title: "Employment Playbook — GCC", area: "KSA · UAE labor law", icon: "users", updatedAt: null },
+  { id: "PB-04", title: "M&A Diligence Playbook", area: "Corporate · transactions", icon: "gavel", updatedAt: null },
+  { id: "PB-05", title: "Litigation & Disputes Playbook", area: "Pre-action · settlement", icon: "scale", updatedAt: null },
+  { id: "PB-06", title: "Procurement & Vendor Playbook", area: "Sourcing · SLAs · risk", icon: "clipboard", updatedAt: null },
+];
+
 const LS_KEY = "legalos-store-v1";
 const PORTAL_SESSION_KEY = "legalos-portal-session";
 
@@ -48,6 +80,11 @@ function seed() {
     notifs: [],
     // Object-shaped slices: administrable master data + the View As session.
     masterData: JSON.parse(JSON.stringify(MASTER_DATA_SEED)),
+    // PRD §2/§3.6 — the Director-editable SLA matrix + playbooks, and the queue
+    // of config changes an AD has proposed for the Director to publish.
+    slaMatrix: JSON.parse(JSON.stringify(SLA_MATRIX_SEED)),
+    playbooks: [...PLAYBOOK_SEED],
+    configProposals: [],
     session: { viewAsId: "u1" },
   };
 }
@@ -381,25 +418,8 @@ export function submitLegalRequest(payload = {}) {
    ============================================================ */
 const _nm = (uid) => (byId(uid) || {}).name || uid || "Unassigned";
 
-// PRD §3.6 TAT matrix — the FULL matrix, business days, keyed by
-// (fine SLA category × urgency band). Emergency 0 = "same day".
-const SLA_MATRIX = {
-  "NDA (our template)":                   { Emergency: 0, "Time-critical": 1, Important: 1, Routine: 2 },
-  "NDA (counterparty paper)":             { Emergency: 1, "Time-critical": 1, Important: 2, Routine: 3 },
-  "Contract review — standard":           { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
-  "Contract review — complex/high value": { Emergency: 2, "Time-critical": 3, Important: 4, Routine: 6 },
-  "Contract drafting — from template":    { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 4 },
-  "Contract drafting — complex/high value": { Emergency: 2, "Time-critical": 3, Important: 4, Routine: 6 },
-  "Amendment":                            { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
-  "Renewal":                              { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
-  "Termination":                          { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
-  "Legal opinion — simple/narrow":        { Emergency: 2, "Time-critical": 3, Important: 5, Routine: 7 },
-  "Legal opinion — complex":              { Emergency: 2, "Time-critical": 5, Important: 7, Routine: 10 },
-  "Regulatory / compliance query":        { Emergency: 1, "Time-critical": 2, Important: 4, Routine: 5 },
-  "Dispute — initial assessment":         { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 },
-  "IP filing":                            { Emergency: 1, "Time-critical": 3, Important: 5, Routine: 10 },
-  "Triage required":                      { Emergency: 1, "Time-critical": 2, Important: 3, Routine: 5 },
-};
+// The live SLA matrix — the admin-editable slice, falling back to the seed.
+const slaMatrix = () => (state && state.slaMatrix) || SLA_MATRIX_SEED;
 // Coarse requester category → a sensible default fine row (used when we cannot
 // resolve a finer row from the request's signals).
 const COARSE_TO_FINE = {
@@ -447,18 +467,64 @@ export function slaCategoryOf(req = {}) {
 
 // SLA days for a coarse category (used by the intake wizard's tight-date check).
 export function triageSlaDays(category, urgencyBand) {
+  const M = slaMatrix();
   const fine = COARSE_TO_FINE[category] || category;
-  const row = SLA_MATRIX[fine] || SLA_MATRIX["Triage required"];
+  const row = M[fine] || M["Triage required"] || {};
   const d = row[urgencyBand];
   return d == null ? 3 : d;
 }
 // SLA days resolved from the full request (uses fine-category signals). This is
 // the authoritative computation used at intake and at triage.
 export function resolveSlaDays(req, urgencyBand) {
+  const M = slaMatrix();
   const fine = slaCategoryOf(req);
-  const row = SLA_MATRIX[fine] || SLA_MATRIX["Triage required"];
+  const row = M[fine] || M["Triage required"] || {};
   const d = row[urgencyBand];
   return { days: d == null ? 3 : d, fine };
+}
+
+/* ---------------- config surfaces (PRD §2) ---------------- */
+// The SLA matrix, playbooks, and the propose→publish workflow. The Director
+// (canConfigure) publishes directly; an AD (canProposeConfig) submits a proposal
+// the Director then reviews.
+export function useSlaMatrix() { return useCollection("slaMatrix"); }
+export function getSlaMatrix() { return slaMatrix(); }
+export function updateSlaCell(fineCategory, band, days) {
+  const M = JSON.parse(JSON.stringify(slaMatrix()));
+  M[fineCategory] = { ...(M[fineCategory] || {}), [band]: Math.max(0, Math.round(Number(days) || 0)) };
+  state = { ...state, slaMatrix: M }; emit();
+  return { ok: true };
+}
+export function resetSlaMatrix() { state = { ...state, slaMatrix: JSON.parse(JSON.stringify(SLA_MATRIX_SEED)) }; emit(); }
+
+// A change proposed by an AD for the Director to publish (PRD §2).
+export function proposeConfigChange(kind, summary, detail, byUserId) {
+  const id = "CP-" + ((state.configProposals || []).length + 1).toString().padStart(3, "0");
+  const prop = { id, kind, summary, detail: detail || null, by: byUserId || null, at: nowIso(), status: "proposed" };
+  state = { ...state, configProposals: [prop, ...(state.configProposals || [])] }; emit();
+  // Notify every Director so it lands on their desk.
+  (USERS || []).filter((u) => u.rbac === "head").forEach((u) => notifyUser(u.id, {
+    kind: "config-proposal", ref: id, tone: "purple", icon: "sparkles",
+    title: `Config change proposed — ${summary}`, body: `${_nm(byUserId)} proposed a change to ${kind}. Review it in Settings.`, to: "/settings",
+  }));
+  return { ok: true, id };
+}
+export function resolveConfigProposal(id, decision, byUserId) {
+  state = { ...state, configProposals: (state.configProposals || []).map((p) => p.id === id ? { ...p, status: decision, decidedBy: byUserId || null, decidedAt: nowIso() } : p) };
+  emit();
+  return { ok: true };
+}
+// Director publishes a proposed change — applies it, then marks it published.
+export function publishConfigProposal(id, byUserId) {
+  const p = (state.configProposals || []).find((x) => x.id === id);
+  if (!p) return { ok: false, error: "proposal not found" };
+  const d = p.detail || {};
+  if (p.kind === "SLA matrix" && d.cat && d.band != null) updateSlaCell(d.cat, d.band, d.days);
+  else if (p.kind === "playbooks") {
+    if (d.id) updateItem("playbooks", d.id, { title: d.title, area: d.area, updatedAt: nowIso() });
+    else addItem("playbooks", { id: nextId("playbooks", "PB-"), title: d.title, area: d.area, icon: "book", updatedAt: nowIso() });
+  }
+  return resolveConfigProposal(id, "published", byUserId);
 }
 
 // Which team owns a category — used to route the owner suggestion.

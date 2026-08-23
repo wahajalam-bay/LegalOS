@@ -1,18 +1,37 @@
 // Knowledge Base — playbooks, precedents, opinions, SOPs.
 import { html, cx, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Avatar, Pill, Chip, Section, AICard } from "../ui.js";
+import { Btn, Avatar, Pill, Chip, Section, AICard, Modal, Field, Input } from "../ui.js";
 import { PageHead } from "../parts.js";
 import { nameOf } from "../data.js";
+import { useCollection, addItem, updateItem, nextId, nowIso, proposeConfigChange } from "../store.js";
+import { useActiveUser, canConfigure, canProposeConfig } from "../rbac.js";
+import { toast } from "../toast.js";
 
-const PLAYBOOKS = [
-  { title: "Commercial Contracting Playbook", area: "Commercial · fallback positions", updated: "Updated 6d ago", icon: "briefcase" },
-  { title: "Data Privacy Playbook", area: "GDPR · PDPL · PDPA", updated: "Updated 3d ago", icon: "shield" },
-  { title: "Employment Playbook — GCC", area: "KSA · UAE labor law", updated: "Updated 12d ago", icon: "users" },
-  { title: "M&A Diligence Playbook", area: "Corporate · transactions", updated: "Updated 20d ago", icon: "gavel" },
-  { title: "Litigation & Disputes Playbook", area: "Pre-action · settlement", updated: "Updated 15d ago", icon: "scale" },
-  { title: "Procurement & Vendor Playbook", area: "Sourcing · SLAs · risk", updated: "Updated 9d ago", icon: "clipboard" },
-];
+// Editor for a playbook — the Director publishes directly; an AD proposes the
+// change for the Director to publish (PRD §2).
+function PlaybookEditor({ pb, viewer, onClose }) {
+  const [title, setTitle] = useState(pb ? pb.title : "");
+  const [area, setArea] = useState(pb ? pb.area : "");
+  const publish = canConfigure(viewer);
+  const save = () => {
+    if (!title.trim()) { toast("A title is required", "error"); return; }
+    if (publish) {
+      if (pb) { updateItem("playbooks", pb.id, { title: title.trim(), area: area.trim(), updatedAt: nowIso() }); toast("Playbook published"); }
+      else { addItem("playbooks", { id: nextId("playbooks", "PB-"), title: title.trim(), area: area.trim(), icon: "book", updatedAt: nowIso() }); toast("Playbook added"); }
+    } else {
+      proposeConfigChange("playbooks", (pb ? "Edit" : "New") + " playbook — " + title.trim(), { id: pb && pb.id, title: title.trim(), area: area.trim() }, viewer.id);
+      toast("Proposed to the Director for publishing", "info");
+    }
+    onClose();
+  };
+  return html`<${Modal} title=${pb ? "Edit playbook" : "New playbook"} icon="book" width=${520} onClose=${onClose}
+    footer=${html`<${Btn} onClick=${onClose}>Cancel</${Btn}><${Btn} variant="primary" icon=${publish ? "check" : "send"} onClick=${save}>${publish ? "Publish" : "Propose to Director"}</${Btn}>`}>
+    ${!publish && html`<div class="banner banner--info" style="margin-bottom:12px"><${Icon} name="alertCircle" size=15 /><span class="tiny">You can propose changes; the Director publishes them.</span></div>`}
+    <${Field} label="Title *"><${Input} value=${title} onInput=${(e) => setTitle(e.target.value)} placeholder="e.g. Commercial Contracting Playbook" /></${Field}>
+    <${Field} label="Area / scope"><${Input} value=${area} onInput=${(e) => setArea(e.target.value)} placeholder="e.g. Commercial · fallback positions" /></${Field}>
+  </${Modal}>`;
+}
 const OPINIONS = [
   { title: "Enforceability of 18-month non-compete under UAE law", who: "u8", date: "2 weeks ago" },
   { title: "Cross-border data transfer under Saudi PDPL", who: "u4", date: "1 month ago" },
@@ -30,8 +49,15 @@ const SOPS = [
 
 export default function Knowledge() {
   const [q, setQ] = useState("");
+  const viewer = useActiveUser();
+  const playbooks = useCollection("playbooks");
+  const [editing, setEditing] = useState(null); // { pb } | { pb: null } for new
+  const canManage = canProposeConfig(viewer); // AD proposes, Director publishes
+  const relTime = (iso) => (iso ? "Updated " + fmt.rel(iso) : "Standard");
   return html`<div class="page page--wide fade-in">
-    <${PageHead} title="Knowledge Base" sub="Every playbook, precedent, opinion and SOP — searchable in natural language." />
+    <${PageHead} title="Knowledge Base" sub="Every playbook, precedent, opinion and SOP — searchable in natural language."
+      actions=${canManage ? html`<${Btn} variant="primary" icon="plus" onClick=${() => setEditing({ pb: null })}>${canConfigure(viewer) ? "Add playbook" : "Propose playbook"}</${Btn}>` : null} />
+    ${editing && html`<${PlaybookEditor} pb=${editing.pb} viewer=${viewer} onClose=${() => setEditing(null)} />`}
 
     <div class="card card--pad" style="text-align:center;padding:32px 24px;margin-bottom:8px;background:linear-gradient(135deg,var(--brand-soft),var(--accent-soft))">
       <div class="metric__icon center" style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#0d7a3f,#0891b2);color:#fff;margin:0 auto 14px"><${Icon} name="sparkles" size=24 /></div>
@@ -47,11 +73,16 @@ export default function Knowledge() {
 
     <${Section} title="Playbooks" icon="book" sub="Positions, fallbacks and standards by domain">
       <div class="grid grid--3">
-        ${PLAYBOOKS.map((p) => html`<div key=${p.title} class="card card--hover card--pad clickable">
-          <div class="metric__icon" style="background:var(--brand-soft);color:var(--brand);margin-bottom:12px"><${Icon} name=${p.icon} size=18 /></div>
+        ${playbooks.map((p) => html`<div key=${p.id || p.title} class=${cx("card card--hover card--pad", canManage && "clickable")}
+          onClick=${canManage ? () => setEditing({ pb: p }) : null}>
+          <div class="row" style="margin-bottom:12px">
+            <div class="metric__icon" style="background:var(--brand-soft);color:var(--brand)"><${Icon} name=${p.icon || "book"} size=18 /></div>
+            <div class="spacer"></div>
+            ${canManage && html`<${Icon} name="edit" size=14 style=${{ color: "var(--text-3)" }} />`}
+          </div>
           <div class="strong" style="font-size:14px;margin-bottom:3px">${p.title}</div>
           <div class="tiny muted">${p.area}</div>
-          <div class="tiny muted" style="margin-top:12px">${p.updated}</div>
+          <div class="tiny muted" style="margin-top:12px">${relTime(p.updatedAt)}</div>
         </div>`)}
       </div>
     </${Section}>

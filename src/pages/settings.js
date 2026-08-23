@@ -1,10 +1,16 @@
 // Settings — org config, security/RBAC, integrations, AI, and (Sprint 4) the
 // end-to-end control panel for the requester portal's request form.
-import { html, cx, useState, Fragment } from "../core.js";
+import { html, cx, fmt, useState, Fragment } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Avatar, Pill, Toggle, Field, Input, Section, Tabs } from "../ui.js";
+import { Btn, Avatar, Pill, Toggle, Field, Input, Section, Tabs, Modal } from "../ui.js";
 import { PageHead, DataTable } from "../parts.js";
 import { useFormConfig, updateFormConfig, resetFormConfig, resetDemo } from "../store.js";
+import {
+  useSlaMatrix, updateSlaCell, resetSlaMatrix, SLA_BANDS,
+  useCollection, proposeConfigChange, publishConfigProposal, resolveConfigProposal,
+} from "../store.js";
+import { canConfigure, canProposeConfig } from "../rbac.js";
+import { toast } from "../toast.js";
 import { navigate } from "../router.js";
 import { startTour } from "../tour.js";
 import {
@@ -18,6 +24,8 @@ import { useActiveUser } from "../rbac.js";
 
 const NAV = [
   { key: "general", label: "General", icon: "settings" },
+  // PRD §3.6 — the SLA / TAT matrix, Director-editable, AD-proposable.
+  { key: "sla", label: "SLA & TAT", icon: "clock" },
   // Sprint 6 — the FRD Section 2 master tables, administrable end to end.
   { key: "masterdata", label: "Master Data", icon: "database" },
   { key: "access", label: "Access & Visibility", icon: "shield" },
@@ -489,6 +497,61 @@ function AccessAdmin() {
   </${Fragment}>`;
 }
 
+// PRD §3.6 SLA matrix editor + §2 propose→publish. Director edits inline and
+// publishes; an AD proposes changes the Director then reviews here.
+function SlaAdmin() {
+  const viewer = useActiveUser();
+  const matrix = useSlaMatrix();
+  const proposals = useCollection("configProposals");
+  const publish = canConfigure(viewer);       // Director
+  const propose = canProposeConfig(viewer) && !publish; // AD
+  const [draft, setDraft] = useState(null);    // AD propose modal: {cat, band, days}
+  const cats = Object.keys(matrix || {});
+  const pending = (proposals || []).filter((p) => p.status === "proposed" && p.kind === "SLA matrix");
+
+  return html`<${Fragment}>
+    <${Section} title="SLA & TAT matrix" icon="clock"
+      sub="Business days by legal category × business urgency. The clock runs on working days per jurisdiction and pauses while the ball is with the requester.">
+      ${!publish && html`<div class="banner banner--info" style="margin-bottom:12px"><${Icon} name="alertCircle" size=15 /><span class="tiny">${propose ? "You can propose changes; the Director publishes them." : "Read-only — SLA configuration is a leadership control."}</span></div>`}
+      <div class="tablewrap"><table class="table">
+        <thead><tr><th>Category</th>${SLA_BANDS.map((b) => html`<th key=${b} style="text-align:center">${b}</th>`)}</tr></thead>
+        <tbody>
+          ${cats.map((cat) => html`<tr key=${cat}>
+            <td class="tiny strong" style="max-width:280px">${cat}</td>
+            ${SLA_BANDS.map((band) => {
+              const v = (matrix[cat] || {})[band];
+              return html`<td key=${band} style="text-align:center">
+                ${publish
+                  ? html`<input class="input input--sm" type="number" min="0" style="width:58px;text-align:center"
+                      value=${v == null ? "" : v} onChange=${(e) => updateSlaCell(cat, band, e.target.value)} />`
+                  : html`<button class=${cx("tagchip", propose && "clickable")} onClick=${propose ? () => setDraft({ cat, band, days: v == null ? 1 : v }) : null}>${v === 0 ? "Same day" : v == null ? "—" : v + "d"}</button>`}
+              </td>`;
+            })}
+          </tr>`)}
+        </tbody>
+      </table></div>
+      ${publish && html`<div class="row" style="margin-top:14px"><div class="spacer"></div><${Btn} variant="ghost" icon="refresh" onClick=${() => { resetSlaMatrix(); toast("SLA matrix reset to the standard"); }}>Reset to standard</${Btn}></div>`}
+    </${Section}>
+
+    ${publish && pending.length > 0 && html`<${Section} title=${"Proposed changes · " + pending.length} icon="sparkles" sub="Changes an AD has submitted for your sign-off.">
+      <div class="col" style="gap:8px">
+        ${pending.map((p) => html`<div key=${p.id} class="row" style="gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+          <${Icon} name="clock" size=15 style=${{ color: "var(--text-3)" }} />
+          <div style="flex:1;min-width:0"><div class="tiny strong">${p.summary}</div><div class="tiny muted">Proposed ${fmt.rel(p.at)}</div></div>
+          <${Btn} size="sm" variant="ghost" onClick=${() => { resolveConfigProposal(p.id, "dismissed", viewer.id); toast("Dismissed"); }}>Dismiss</${Btn}>
+          <${Btn} size="sm" variant="primary" icon="check" onClick=${() => { publishConfigProposal(p.id, viewer.id); toast("Published"); }}>Publish</${Btn}>
+        </div>`)}
+      </div>
+    </${Section}>`}
+
+    ${draft && html`<${Modal} title="Propose an SLA change" icon="clock" width=${420} onClose=${() => setDraft(null)}
+      footer=${html`<${Btn} onClick=${() => setDraft(null)}>Cancel</${Btn}><${Btn} variant="primary" icon="send" onClick=${() => { proposeConfigChange("SLA matrix", `${draft.cat} · ${draft.band} → ${draft.days}d`, draft, viewer.id); toast("Proposed to the Director", "info"); setDraft(null); }}>Propose</${Btn}>`}>
+      <div class="tiny muted" style="margin-bottom:10px">${draft.cat} · ${draft.band}</div>
+      <${Field} label="Proposed working days"><${Input} type="number" value=${draft.days} onInput=${(e) => setDraft({ ...draft, days: Math.max(0, Math.round(Number(e.target.value) || 0)) })} /></${Field}>
+    </${Modal}>`}
+  </${Fragment}>`;
+}
+
 export default function Settings() {
   const [sec, setSec] = useState("security");
   return html`<div class="page page--wide fade-in">
@@ -501,6 +564,7 @@ export default function Settings() {
       </div>
 
       <div class="col" style="gap:16px">
+        ${sec === "sla" && html`<${SlaAdmin} />`}
         ${sec === "masterdata" && html`<${MasterDataAdmin} />`}
         ${sec === "access" && html`<${AccessAdmin} />`}
         ${sec === "requestform" && html`<${RequestFormAdmin} />`}
