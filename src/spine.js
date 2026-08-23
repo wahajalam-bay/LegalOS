@@ -24,7 +24,7 @@ import {
   riskGatesFor, entityName, toUsd, USERS,
 } from "./data.js";
 import { LEGAL_TEAMS, PIPELINE_BENCH } from "./org.js";
-import { useActiveUser, isLegal, canReassign, canApprove } from "./rbac.js";
+import { useActiveUser, isLegal, canReassign, canApprove, canApproveValue, approvalLimitFor } from "./rbac.js";
 import { buildSpine } from "./flow.js";
 import { tatAnalysis, tatLabel } from "./tat.js";
 import { SubdivisionPill, CategoryPill, TatCell } from "./shared.js";
@@ -262,7 +262,11 @@ function StageActions({ spine }) {
   // (Lead within threshold / Director for all). Juniors can reach Approval but
   // must escalate for the sign-off.
   const needsApproval = activeStage === "Approval";
-  const mayAdvance = !needsApproval || canApprove(viewer);
+  const recValue = Number(rec.value || rec.contractValue || 0);
+  // Approval authority is value-gated: a Lead signs off within their threshold;
+  // above it only the Director can (PRD §2).
+  const mayAdvance = !needsApproval || canApproveValue(viewer, recValue);
+  const overLimit = needsApproval && canApprove(viewer) && !mayAdvance; // has authority, but value too high
 
   const done = (r, msg) => { if (r && r.ok === false) { toast(r.error, "error"); return; } toast(msg); setPanel(null); setReason(""); };
   const advance = () => { const r = advanceRequestStage(rid, viewer.id); done(r, r.ok ? (r.final ? "Moved to " + r.stage + " — final stage" : "Moved to " + r.stage) : ""); };
@@ -282,7 +286,7 @@ function StageActions({ spine }) {
                 ? (needsApproval
                     ? (mayAdvance
                         ? html`<${Btn} size="sm" variant="primary" icon="checksquare" onClick=${() => done(advanceRequestStage(rid, viewer.id), "Approved — moved to " + next)}>Approve & move to ${next}</${Btn}>`
-                        : html`<${Btn} size="sm" variant="soft" icon="lock" disabled=${true} title="Only a Lead (within threshold) or the Director can approve — escalate for sign-off">Awaiting approval — escalate for sign-off</${Btn}>`)
+                        : html`<${Btn} size="sm" variant="soft" icon="lock" disabled=${true} title=${overLimit ? "Above your approval threshold — only the Director can sign off. Escalate." : "Only a Lead (within threshold) or the Director can approve — escalate for sign-off"}>${overLimit ? "Above your threshold — Director sign-off" : "Awaiting approval — escalate for sign-off"}</${Btn}>`)
                     : html`<${Btn} size="sm" variant="primary" icon="arrowRight" onClick=${advance}>Advance to ${next}</${Btn}>`)
                 : html`<${Btn} size="sm" variant="primary" icon="check" onClick=${() => setPanel(panel === "close" ? null : "close")}>Close request</${Btn}>`}
             ${!onHold && html`<${Btn} size="sm" variant="soft" icon="clock" onClick=${() => setPanel(panel === "hold" ? null : "hold")}>Put on hold</${Btn}>`}
@@ -303,8 +307,10 @@ function StageActions({ spine }) {
     ${!closed && needsApproval && html`<div class=${cx("banner", mayAdvance ? "banner--info" : "banner--warn")} style="align-items:flex-start">
       <${Icon} name=${mayAdvance ? "checksquare" : "lock"} size=15 />
       <span class="tiny">${mayAdvance
-        ? `This request is at Approval — your sign-off (${(rec.risk || "medium").toLowerCase()}-risk chain) moves it to ${next}.`
-        : "This request is at Approval and needs a Lead (within threshold) or the Director to sign off. Use Escalate to ask a superior for approval."}</span>
+        ? `This request is at Approval — your sign-off moves it to ${next}.${recValue ? " Value " + fmt.money(recValue, rec.currency) + " is within your approval threshold." : ""}`
+        : overLimit
+          ? `Value ${fmt.money(recValue, rec.currency)} exceeds your approval threshold of ${fmt.money(approvalLimitFor(viewer), rec.currency)} — only the Director can sign off. Use Escalate.`
+          : "This request is at Approval and needs a Lead (within threshold) or the Director to sign off. Use Escalate to ask a superior for approval."}</span>
     </div>`}
 
     ${panel === "escalate" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">

@@ -22,8 +22,11 @@ export default function MyTasks() {
   const md = useMasterData();
   const viewer = useActiveUser();
 
-  // Which scopes can this identity switch between?
+  // Which scopes can this identity switch between? (PRD §2)
+  //   • Associate / Paralegal — own tasks + a read-only view of the team matters
+  //     they collaborate on.  • Lead — own + team queue.  • Director — all teams.
   const scopes = [{ key: "mine", label: "My tasks" }];
+  if (viewer.legalTeam && (viewer.rbac === "member" || viewer.rbac === "paralegal")) scopes.push({ key: "team", label: "Team matters" });
   if (viewer.rbac === "lead" || viewer.rbac === "head") scopes.push({ key: "team", label: viewer.rbac === "head" ? "All teams" : "Team queue" });
   if (viewer.rbac === "head") scopes.push({ key: "byTeam", label: "By team" });
   const [scope, setScope] = useState("mine");

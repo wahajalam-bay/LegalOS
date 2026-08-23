@@ -10,6 +10,7 @@ import { PageHead } from "../parts.js";
 import { useCollection, requestStages } from "../store.js";
 import { useActiveUser } from "../rbac.js";
 import { navigate } from "../router.js";
+import { ChatThread, unreadCount } from "../messages.js";
 
 const submittedAt = (r) => r.requestDate || r.created || r.dateRaised || null;
 const DONE = new Set(["Approved", "Delivered", "Closed", "Executed", "Completed"]);
@@ -252,15 +253,24 @@ function RequestSheet({ r, onClose }) {
               </div>`}
             </div>
 
-            <div class="banner banner--info" style="align-items:flex-start">
-              <${Icon} name="workflow" size=16 />
-              <span class="tiny">Legal triages your request, confirms the owner and turnaround, and keeps you posted here. You'll be notified at every step and asked if they need anything from you.</span>
+            <div>
+              <div class="row" style="align-items:baseline;margin-bottom:10px">
+                <div class="fpop__lbl">Messages with Legal</div>
+                <div class="spacer"></div>
+                <span class="tiny muted">respond to any questions here</span>
+              </div>
+              <${ChatThread} requestId=${r.id} viewer=${r.requesterId || r.requester} role="requester"
+                counterpartLabel="the legal team" compact=${true} height=${300} />
             </div>
           </div>
 
           <div style="min-width:0">
             <div class="fpop__lbl" style="margin-bottom:12px">Pipeline — every step, and where it stands</div>
             <${RequesterPipeline} r=${r} />
+            <div class="banner banner--info" style="align-items:flex-start;margin-top:16px">
+              <${Icon} name="workflow" size=16 />
+              <span class="tiny">Legal triages your request, confirms the owner and turnaround, and keeps you posted. You'll be notified at every step and asked if they need anything from you.</span>
+            </div>
           </div>
         </div>
       </div>

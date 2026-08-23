@@ -48,6 +48,7 @@ export const NAV = [
     { path: "/companies", label: "Entity Registry", icon: "building" },
     { path: "/templates", label: "Templates", icon: "template" },
     { path: "/clauses", label: "Clause Library", icon: "library" },
+    { path: "/knowledge", label: "Precedents & Playbooks", icon: "book" },
   ]},
   { section: "Insight & Governance", items: [
     { path: "/costs", label: "Cost Analysis", icon: "dollar" },

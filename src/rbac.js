@@ -116,6 +116,17 @@ export function landingFor(user) {
 // Capability gates (PRD §2 / §7.3). Views read these to show/hide actions.
 export const approvalScope = (user) => (roleOf(user).canApprove || false);   // "all" | "threshold" | false
 export const canApprove = (user) => approvalScope(user) !== false;
+// PRD §2 — "approval within a defined threshold". A Lead (threshold) can sign off
+// up to this value; above it, only the Director (all) can. Value is in the
+// record's own currency (prototype does not FX-convert).
+export const APPROVAL_THRESHOLD = 1000000;
+export const approvalLimitFor = (user) => {
+  const scope = approvalScope(user);
+  if (scope === "all") return Infinity;
+  if (scope === "threshold") return APPROVAL_THRESHOLD;
+  return 0;
+};
+export const canApproveValue = (user, value) => approvalScope(user) !== false && Number(value || 0) <= approvalLimitFor(user);
 export const canConfigure = (user) => roleOf(user).config === true;          // Director publishes config
 export const canProposeConfig = (user) => !!roleOf(user).config;             // AD proposes, Director publishes
 export const canTriage = (user) => !!roleOf(user).triage;                    // Director + AD
