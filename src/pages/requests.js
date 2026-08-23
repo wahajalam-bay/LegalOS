@@ -13,6 +13,10 @@ import { tatAnalysis } from "../tat.js";
 const COLUMNS = [
   { key: "New", color: "#1d6cb0" },
   { key: "Triage", color: "#6d28d9" },
+  // Triage assigns an owner and sets status "Assigned"; the board needs this
+  // column so a just-triaged request stays visible in the pipeline (it was
+  // previously dropping off between Triage and In Review).
+  { key: "Assigned", color: "#0d7a3f" },
   { key: "In Review", color: "#d97706" },
   { key: "Drafting", color: "#0891b2" },
   { key: "Negotiation", color: "#ea580c" },
