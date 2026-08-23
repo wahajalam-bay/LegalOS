@@ -135,6 +135,7 @@ export function navForUser(user) {
   const itemOk = (item) => {
     const p = item.path || "";
     if (!isLegal) return p === "/raise" || p === "/flow-map";        // requester: front door only
+    if (p === "/raise") return false;                               // only business requesters raise (PRD §3.1)
     if (p === "/triage") return isMgmt;                              // triage = Director / AD
     if (p === "/exec") return isMgmt;                                // executive overview = leadership
     if (p === "/organization" || p === "/portal") return rbac === "head";

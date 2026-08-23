@@ -4,7 +4,7 @@
 //   common fields plus that module's request fields → submit → the request
 //   enters the team's queue, is auto-assigned, and lands in My Requests.
 // The requester's view of what they raised is status / stage / owner / TAT only.
-import { html, cx, fmt, useState, useMemo } from "../core.js";
+import { html, cx, fmt, useState, useMemo, useEffect } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Pill, Field, Input, Textarea, Empty } from "../ui.js";
 import { navigate } from "../router.js";
@@ -13,7 +13,7 @@ import { LEGAL_TEAMS, teamShort, teamTone, masterList } from "../org.js";
 import { MODULES, moduleByKey, modulesForTeam, subTypesOf, fieldOptions, slaFor, totalSla } from "../modules.js";
 import { tatV2 } from "../tat2.js";
 import { useCollection, useMasterData, raiseModuleRequest, addModCost, personName, getCollection, getFormConfig, personEmail } from "../store.js";
-import { useActiveUser, isLegal } from "../rbac.js";
+import { useActiveUser, isLegal, landingFor } from "../rbac.js";
 import { TatChip, EntityQuickAdd } from "./module.js";
 import { toast } from "../toast.js";
 import { RequestWizard } from "../portal/wizard.js";
@@ -61,19 +61,28 @@ function MyRequests({ viewer }) {
 // → `requests`). Legal staff keep the team-first module wizard (→ modRequests).
 export default function Raise({ id }) {
   const viewer = useActiveUser();
-  if (!isLegal(viewer)) {
+  const requester = !isLegal(viewer);
+  // Only business requesters raise a legal request (PRD §3.1). Legal personnel
+  // view and work on requests per hierarchy — a bare /raise sends them back to
+  // their landing (a module deep-link still opens that module's form, which is
+  // legal work, not the request front door).
+  useEffect(() => { if (!requester && !id) navigate(landingFor(viewer)); }, [requester, id]);
+
+  if (requester) {
     const cfg = getFormConfig();
     const me = {
       name: viewer.name,
       email: viewer.email || personEmail(viewer.id),
       company: viewer.company || null,
       department: viewer.dept || null,
-      unit: viewer.unit || viewer.dept || null,
-      source: viewer.source || viewer.dept || "Business",
+      unit: viewer.unit || null,
+      source: viewer.source || null,
     };
-    return html`<${RequestWizard} cfg=${cfg} me=${me} stampId=${viewer.id} />`;
+    return html`<${RequestWizard} cfg=${cfg} me=${me} stampId=${viewer.id} captureSource=${true} />`;
   }
-  return html`<${RaiseModule} id=${id} />`;
+  if (id) return html`<${RaiseModule} id=${id} />`;
+  return html`<div class="page"><${Empty} icon="lock" title="Raising is for business teams"
+    text="You view and work on requests here — legal requests are raised by the business, then triaged and assigned to Legal." /></div>`;
 }
 
 function RaiseModule({ id }) {

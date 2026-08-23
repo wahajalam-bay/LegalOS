@@ -17,7 +17,7 @@ import { Icon } from "../icons.js";
 import { Btn, Pill, Field, Input, Textarea, Stepper, AICard, Empty } from "../ui.js";
 import { navigate } from "../router.js";
 import { submitLegalRequest, duplicateCheck, useCollection, triageSlaDays } from "../store.js";
-import { entityById } from "../data.js";
+import { entityById, PORTAL_SOURCES, DEPARTMENTS, BUSINESS_UNITS } from "../data.js";
 
 // Business days (Fri/Sat weekend, per KSA/PK) from today to a date.
 const bizDaysUntil = (iso) => {
@@ -126,7 +126,10 @@ function OptionCard({ active, icon, title, sub, badge, onClick }) {
 
 function Fragment0({ children }) { return children; }
 
-export function RequestWizard({ cfg, me, stampId }) {
+// captureSource: when true (in-app "Raise Request"), the wizard also captures the
+// "Where are you raising this from?" context (company/entity · site · department ·
+// business unit) — the same details the standalone portal collects at sign-in.
+export function RequestWizard({ cfg, me, stampId, captureSource }) {
   const requests = useCollection("requests");
   const [step, setStep] = useState(0);
   const [result, setResult] = useState(null);
@@ -143,6 +146,9 @@ export function RequestWizard({ cfg, me, stampId }) {
     dueDate: "",
     justification: "",
     entityKey: myCompany ? myCompany.key : (companies[0] ? companies[0].key : ""),
+    source: me.source || PORTAL_SOURCES[0],
+    department: me.department || DEPARTMENTS[0],
+    unit: me.unit || BUSINESS_UNITS[0],
     files: [],
   });
   const set = (k, v) => setF((s) => ({ ...s, [k]: v }));
@@ -195,14 +201,14 @@ export function RequestWizard({ cfg, me, stampId }) {
       entityId: entityCfg ? entityCfg.entityId : null,
       companyTags: entityCfg ? [entityCfg.entityId] : [],
       company: entityCfg ? entityCfg.key : (me.company || null),
-      department: me.department,
-      unit: me.unit,
+      department: f.department || me.department,
+      unit: f.unit || me.unit,
       dueDate: f.dueDate ? new Date(f.dueDate + "T00:00:00").toISOString() : undefined,
       requesterId: stampId,
       requesterEmail: me.email,
       attachments: f.files,
-      channel: "portal",
-      source: me.source,
+      channel: captureSource ? "internal" : "portal",
+      source: f.source || me.source,
     });
     if (!res.ok) { setErrors(res.errors); return; }
     setResult(res);
@@ -312,6 +318,34 @@ export function RequestWizard({ cfg, me, stampId }) {
             </div>
           </div>`}
 
+          ${opt && captureSource && html`<div class="col" style="gap:14px">
+            <div class="raisesep">Where are you raising this from?</div>
+            <div class="tiny muted" style="margin-top:-6px">Captured with every request so legal knows the entity and site it came from.</div>
+            <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+              <${Field} label="Company / entity">
+                <select class="select" value=${f.entityKey} onChange=${(e) => set("entityKey", e.target.value)}>
+                  <option value="">Select…</option>
+                  ${companies.map((c) => html`<option key=${c.key} value=${c.key}>${c.label}</option>`)}
+                </select>
+              </${Field}>
+              <${Field} label="Site / office">
+                <select class="select" value=${f.source} onChange=${(e) => set("source", e.target.value)}>
+                  ${PORTAL_SOURCES.map((s) => html`<option key=${s}>${s}</option>`)}
+                </select>
+              </${Field}>
+              <${Field} label="Your department">
+                <select class="select" value=${f.department} onChange=${(e) => set("department", e.target.value)}>
+                  ${DEPARTMENTS.map((d) => html`<option key=${d}>${d}</option>`)}
+                </select>
+              </${Field}>
+              <${Field} label="Business unit">
+                <select class="select" value=${f.unit} onChange=${(e) => set("unit", e.target.value)}>
+                  ${BUSINESS_UNITS.map((bu) => html`<option key=${bu}>${bu}</option>`)}
+                </select>
+              </${Field}>
+            </div>
+          </div>`}
+
           ${opt && html`<div class="col" style="gap:14px">
             <div class="raisesep">How urgent, and who's it for</div>
             <${Field} label="How urgent is this?">
@@ -326,7 +360,7 @@ export function RequestWizard({ cfg, me, stampId }) {
               <${Field} label="Needed by" hint="Legal confirms the committed date on triage.">
                 <${Input} type="date" value=${f.dueDate} onInput=${(e) => set("dueDate", e.target.value)} />
               </${Field}>
-              ${companies.length > 0 && html`<${Field} label="Who is this for?" hint="Your business entity — auto-filled where we know it.">
+              ${!captureSource && companies.length > 0 && html`<${Field} label="Who is this for?" hint="Your business entity — auto-filled where we know it.">
                 <select class="select" value=${f.entityKey} onChange=${(e) => set("entityKey", e.target.value)}>
                   <option value="">Select…</option>
                   ${companies.map((c) => html`<option key=${c.key} value=${c.key}>${c.label}</option>`)}
