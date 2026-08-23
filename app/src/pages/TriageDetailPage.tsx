@@ -13,7 +13,7 @@ import type { LegalCategory, Priority } from "@/domain/models/enums";
 import type { Request } from "@/domain/models/request";
 import { Badge, Button, Card, ErrorState, Field, PageHeader, Select, TextArea } from "@/ui/components";
 import { Icon } from "@/ui/icons";
-import { ConfirmDialog } from "@/ui/overlays";
+import { ConfirmDialog, Modal } from "@/ui/overlays";
 import { formatBytes } from "@/ui/util";
 import { useToast } from "@/ui/toast";
 
@@ -259,23 +259,15 @@ function TriageWorkspace({ req }: { req: Request }) {
       )}
 
       {rmiOpen && (
-        <div className="overlay" role="dialog" aria-modal="true" aria-label="Request more information"
-          onMouseDown={(e) => { if (e.target === e.currentTarget) setRmiOpen(false); }}
-          style={{ alignItems: "flex-start", justifyContent: "center", paddingTop: "9vh" }}>
-          <div className="modal" style={{ width: 480 }}>
-            <div className="modal__head"><div className="modal__title">Request more information</div>
-              <Button variant="ghost" size="sm" icon="x" aria-label="Close" onClick={() => setRmiOpen(false)} /></div>
-            <div className="modal__body">
-              <Field label="Message to the requester" hint="Sent to the requester; pauses the SLA clock until they respond.">
-                <TextArea rows={3} value={rmiMsg} onChange={(e) => setRmiMsg(e.target.value)} placeholder="What do you need from them to proceed?" />
-              </Field>
-            </div>
-            <div className="modal__foot">
-              <Button variant="ghost" onClick={() => setRmiOpen(false)}>Cancel</Button>
-              <Button variant="primary" onClick={doRmi} disabled={!rmiMsg.trim()}>Send</Button>
-            </div>
-          </div>
-        </div>
+        <Modal title="Request more information" width={480} onClose={() => setRmiOpen(false)}
+          footer={<>
+            <Button variant="ghost" onClick={() => setRmiOpen(false)}>Cancel</Button>
+            <Button variant="primary" onClick={doRmi} disabled={!rmiMsg.trim()}>Send</Button>
+          </>}>
+          <Field label="Message to the requester" hint="Sent to the requester; pauses the SLA clock until they respond.">
+            <TextArea rows={3} value={rmiMsg} onChange={(e) => setRmiMsg(e.target.value)} placeholder="What do you need from them to proceed?" />
+          </Field>
+        </Modal>
       )}
     </div>
   );
