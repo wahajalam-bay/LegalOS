@@ -12,10 +12,11 @@ import { COMPANIES, entityName } from "../data.js";
 import { LEGAL_TEAMS, teamShort, teamTone, masterList } from "../org.js";
 import { MODULES, moduleByKey, modulesForTeam, subTypesOf, fieldOptions, slaFor, totalSla } from "../modules.js";
 import { tatV2 } from "../tat2.js";
-import { useCollection, useMasterData, raiseModuleRequest, addModCost, personName, getCollection } from "../store.js";
-import { useActiveUser } from "../rbac.js";
+import { useCollection, useMasterData, raiseModuleRequest, addModCost, personName, getCollection, getFormConfig, personEmail } from "../store.js";
+import { useActiveUser, isLegal } from "../rbac.js";
 import { TatChip, EntityQuickAdd } from "./module.js";
 import { toast } from "../toast.js";
+import { RequestWizard } from "../portal/wizard.js";
 
 function StepDots({ step }) {
   return html`<div class="raisedots">
@@ -53,7 +54,29 @@ function MyRequests({ viewer }) {
   </div>`;
 }
 
+// Raise Request is role-aware (PRD §3.1). A BUSINESS requester never chooses a
+// legal team/module — they get the plain-language front door that maps their
+// words to a proposed category and drops the request into Legal's TRIAGE queue
+// (the same RequestWizard the requester portal uses, feeding submitLegalRequest
+// → `requests`). Legal staff keep the team-first module wizard (→ modRequests).
 export default function Raise({ id }) {
+  const viewer = useActiveUser();
+  if (!isLegal(viewer)) {
+    const cfg = getFormConfig();
+    const me = {
+      name: viewer.name,
+      email: viewer.email || personEmail(viewer.id),
+      company: viewer.company || null,
+      department: viewer.dept || null,
+      unit: viewer.unit || viewer.dept || null,
+      source: viewer.source || viewer.dept || "Business",
+    };
+    return html`<${RequestWizard} cfg=${cfg} me=${me} stampId=${viewer.id} />`;
+  }
+  return html`<${RaiseModule} id=${id} />`;
+}
+
+function RaiseModule({ id }) {
   const md = useMasterData();
   const viewer = useActiveUser();
   // Deep link: /raise/<moduleKey> preselects team + module.
