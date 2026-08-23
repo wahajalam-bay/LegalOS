@@ -5,7 +5,7 @@
 // content (category label, owner, priority, triage notes, risk).
 import { html, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Status, Pill, Empty, Drawer, Timeline } from "../ui.js";
+import { Btn, Status, Pill, Empty, Drawer, Timeline, Progress } from "../ui.js";
 import { PageHead } from "../parts.js";
 import { useCollection } from "../store.js";
 import { useActiveUser } from "../rbac.js";
@@ -15,22 +15,73 @@ const submittedAt = (r) => r.requestDate || r.created || r.dateRaised || null;
 const DONE = new Set(["Approved", "Delivered", "Closed", "Executed", "Completed"]);
 const II = { display: "inline", verticalAlign: "-2px", marginRight: "4px" };
 
+// Status → the same tone the rest of the app uses → the accent colour token.
+const STATUS_TONE = {
+  "New": "blue", "Intake": "blue", "Triage": "purple", "Assigned": "blue",
+  "In Review": "amber", "Legal Review": "amber", "Business Review": "amber",
+  "Drafting": "purple", "Negotiation": "amber", "Pending Approval": "amber", "Approval": "amber",
+  "Awaiting Signature": "indigo", "Approved": "green", "Executed": "green", "Completed": "green",
+  "Signed": "green", "Active": "green", "Closed": "green", "Delivered": "green",
+};
+const TONE_COLOR = {
+  green: "var(--success)", amber: "var(--warning)", red: "var(--danger)",
+  blue: "var(--brand)", purple: "var(--accent-500)", indigo: "var(--accent-500)", gray: "var(--text-3)",
+};
+const accentOf = (r) => TONE_COLOR[STATUS_TONE[r.status] || STATUS_TONE[r.stage] || "gray"] || "var(--text-3)";
+
+// Requester-safe lifecycle progress — how far along, no internal detail.
+const STATUS_PCT = {
+  "New": 6, "Intake": 6, "Triage": 16, "Assigned": 26, "In Review": 42, "Legal Review": 42,
+  "Business Review": 42, "Drafting": 56, "Negotiation": 70, "Pending Approval": 82, "Approval": 82,
+  "Awaiting Signature": 92, "Signature": 92, "Approved": 100, "Executed": 100, "Completed": 100,
+  "Repository": 100, "Signed": 100, "Active": 100, "Closed": 100, "Delivered": 100,
+};
+const pctOf = (r) => (typeof r.progress === "number" && r.progress > 0 ? r.progress : (STATUS_PCT[r.stage] ?? STATUS_PCT[r.status] ?? 10));
+
+// A friendly, plain-language read on where it is (no internal stage jargon).
+const FRIENDLY = {
+  "Triage": "Received — with Legal", "Assigned": "With Legal — getting started",
+  "Legal Review": "Under legal review", "In Review": "Under legal review", "Business Review": "Under review",
+  "Drafting": "Drafting in progress", "Negotiation": "In negotiation",
+  "Approval": "Awaiting approval", "Pending Approval": "Awaiting approval",
+  "Signature": "Awaiting signature", "Awaiting Signature": "Awaiting signature",
+  "Executed": "Completed", "Repository": "Completed", "Completed": "Completed",
+  "Approved": "Completed", "Closed": "Completed",
+};
+const friendlyStage = (r) => FRIENDLY[r.stage] || FRIENDLY[r.status] || "Submitted — awaiting triage";
+
 function RequestCard({ r, onOpen }) {
   const expected = r.tat && r.tat.dueAt ? r.tat.dueAt : null;
-  return html`<div class="kcard" style="cursor:pointer" onClick=${() => onOpen(r)}>
-    <div class="kcard__top">
-      <span class="kcard__id">${r.id}</span>
+  const done = DONE.has(r.status);
+  const overdue = expected && !done && new Date(expected) < Date.now();
+  const pct = pctOf(r);
+  const accent = accentOf(r);
+  return html`<div class="mreq" style=${`--mreq-accent:${accent}`} onClick=${() => onOpen(r)}>
+    <div class="mreq__top">
+      <span class="mreq__id">${r.id}</span>
       <div class="spacer"></div>
       <${Status} value=${r.status} />
     </div>
-    <div class="kcard__title">${r.title}</div>
-    ${r.requesterOption && html`<div class="kcard__meta"><${Pill} tone="gray">${r.requesterOption}</${Pill}></div>`}
-    <div class="kcard__foot" style="margin-top:12px">
-      <span class="tiny muted"><${Icon} name="calendar" size=12 style=${II} />${submittedAt(r) ? fmt.date(submittedAt(r)) : "—"}</span>
+    <div class="mreq__title">${r.title}</div>
+    ${r.requesterOption && html`<div class="mreq__what"><${Icon} name="message" size=12 />${r.requesterOption}</div>`}
+
+    <div class="mreq__prog">
+      <div class="mreq__proghead">
+        <span class="mreq__stage">${done ? html`<${Icon} name="checkcircle" size=12 style=${{ ...II, color: "var(--success)" }} />` : ""}${friendlyStage(r)}</span>
+        <div class="spacer"></div>
+        <span class="mreq__pct">${pct}%</span>
+      </div>
+      <${Progress} value=${pct} tone=${done ? "green" : overdue ? "red" : "blue"} />
+    </div>
+
+    <div class="mreq__foot">
+      <span class="tiny muted"><${Icon} name="calendar" size=12 style=${II} />Submitted ${submittedAt(r) ? fmt.date(submittedAt(r)) : "—"}</span>
       <div class="spacer"></div>
-      ${expected
-        ? html`<span class="tiny" style="color:var(--text-3)"><${Icon} name="clock" size=12 style=${II} />Expected ${fmt.date(expected)}</span>`
-        : html`<span class="tiny muted">Awaiting triage</span>`}
+      ${done
+        ? html`<span class="tiny" style="color:var(--success);font-weight:600"><${Icon} name="check" size=12 style=${II} />Done</span>`
+        : expected
+          ? html`<span class="tiny" style=${`font-weight:600;color:${overdue ? "var(--danger)" : "var(--text-2)"}`}><${Icon} name="clock" size=12 style=${II} />${overdue ? "Overdue — due " : "Expected "}${fmt.date(expected)}</span>`
+          : html`<span class="tiny muted">Awaiting triage</span>`}
     </div>
   </div>`;
 }

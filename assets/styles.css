@@ -2072,5 +2072,52 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .fbechip--ghost { cursor: pointer; }
 .fbechip--ghost:hover { border-color: var(--brand); color: var(--brand-600); transform: translateY(-1px); }
 
-/* My Requests — requester card grid (matches .kcard board vocabulary) */
-.mreqgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+/* My Requests — requester tracking cards, built from the app's design tokens. */
+.mreqgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+.mreq {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 15px 16px 14px;
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow .16s ease, transform .16s ease, border-color .16s ease;
+}
+/* status-tinted accent rail down the left edge */
+.mreq::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--mreq-accent, var(--brand));
+  opacity: .9;
+}
+.mreq:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+.mreq__top { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.mreq__id { font-family: var(--mono); font-size: 11px; letter-spacing: .02em; color: var(--text-3); }
+.mreq__title {
+  font-weight: 650; font-size: 14.5px; line-height: 1.34; color: var(--text);
+  letter-spacing: -.01em; margin-bottom: 10px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.mreq__what {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: var(--text-2);
+  background: var(--surface-2); border: 1px solid var(--border);
+  padding: 4px 9px; border-radius: var(--r-full); margin-bottom: 14px;
+}
+.mreq__what svg { color: var(--text-3); flex: none; }
+.mreq__prog { margin-bottom: 13px; }
+.mreq__proghead { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.mreq__stage { font-size: 12px; font-weight: 600; color: var(--text-2); }
+.mreq__pct { font-size: 11px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.mreq__foot {
+  display: flex; align-items: center; gap: 8px;
+  padding-top: 12px; border-top: 1px solid var(--border);
+}
