@@ -439,7 +439,11 @@ export function triageDecision(id, decision = {}, byUserId) {
   if (final.priority !== proposal.priority) overrides.push({ field: "priority", from: proposal.priority, to: final.priority });
   if (final.owner !== proposal.owner) overrides.push({ field: "assignee", from: _nm(proposal.owner), to: _nm(final.owner) });
   const accepted = overrides.length === 0;
-  if (!accepted && !String(decision.reason || "").trim()) return { ok: false, error: "an override reason is required" };
+  // Correcting the system's category/priority is a logged OVERRIDE (needs a
+  // reason). Assigning/delegating to a different owner is the HoD's prerogative —
+  // it is logged but does not require a reason (PRD §2 hierarchy).
+  const substantive = overrides.some((o) => o.field === "category" || o.field === "priority");
+  if (substantive && !String(decision.reason || "").trim()) return { ok: false, error: "an override reason is required" };
 
   const slaDays = triageSlaDays(final.category, proposal.urgencyBand);
   const base = req.requestDate || req.created || nowIso();
@@ -455,7 +459,9 @@ export function triageDecision(id, decision = {}, byUserId) {
     at: decidedAt, by: byUserId || null,
     action: accepted
       ? `Triage accepted — ${final.category} · ${final.priority} · assigned to ${_nm(final.owner)} (SLA ${slaDays}d)`
-      : `Triage OVERRIDE — ${overrides.map((o) => `${o.field}: ${o.from} → ${o.to}`).join("; ")}. Reason: ${decision.reason}`,
+      : substantive
+        ? `Triage OVERRIDE — ${overrides.map((o) => `${o.field}: ${o.from} → ${o.to}`).join("; ")}.${decision.reason ? " Reason: " + decision.reason : ""}`
+        : `Triage — assigned to ${_nm(final.owner)}${decision.reason ? " (" + decision.reason + ")" : ""}`,
   }];
 
   updateItem("requests", id, {

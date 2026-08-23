@@ -11,6 +11,7 @@ import { Icon } from "../icons.js";
 import { Btn, Pill, Avatar, Field, Textarea, Empty } from "../ui.js";
 import { navigate } from "../router.js";
 import { USERS, byId, entityName } from "../data.js";
+import { LEGAL_TEAMS } from "../org.js";
 import { useActiveUser, canTriage } from "../rbac.js";
 import { useCollection, triageProposal, triageContext, triageDecision, TRIAGE_CATEGORIES } from "../store.js";
 import { toast } from "../toast.js";
@@ -20,6 +21,19 @@ const URG_TONE = { Emergency: "red", "Time-critical": "amber", Important: "blue"
 const PRIO_TONE = { Urgent: "red", High: "amber", Medium: "blue", Low: "gray" };
 const nameOf = (uid) => (byId(uid) || {}).name || "Unassigned";
 const LEGAL_USERS = USERS.filter((u) => u.dept === "Legal");
+
+// Assignee picker grouped by the team hierarchy (each team's Lead first, then its
+// members / paralegals) so the HoD can delegate a request down the chain.
+const roleTag = (u) => (u.rbac === "lead" ? " — Lead" : u.rbac === "paralegal" ? " — Paralegal" : "");
+const ASSIGNEE_GROUPS = LEGAL_TEAMS
+  .map((t) => {
+    const staff = LEGAL_USERS.filter((u) => u.legalTeam === t.key);
+    return { label: t.short || t.key, users: [...staff.filter((u) => u.rbac === "lead"), ...staff.filter((u) => u.rbac !== "lead")] };
+  })
+  .filter((g) => g.users.length);
+const AssigneeOptions = () => ASSIGNEE_GROUPS.map((g) => html`<optgroup key=${g.label} label=${g.label}>
+  ${g.users.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}${roleTag(u)}</option>`)}
+</optgroup>`);
 
 // Friendly labels for the requester's plain-language Layer-2 answers.
 const L2_LABEL = {
@@ -46,9 +60,12 @@ function TriagePanel({ req, viewer }) {
   const layer2 = req.layer2 || {};
   const changed = d.category !== proposal.category || d.priority !== proposal.priority || d.owner !== proposal.owner;
 
-  const accept = () => {
-    const r = triageDecision(req.id, {}, viewer.id);
-    if (r.ok) toast(`${req.id} triaged — ${proposal.category}, assigned to ${nameOf(proposal.owner)}`);
+  const assign = () => {
+    // Owner change alone is a delegation (no reason needed); the HoD chooses who
+    // gets it, down the team hierarchy.
+    const ownerChanged = d.owner && d.owner !== proposal.owner;
+    const r = triageDecision(req.id, ownerChanged ? { owner: d.owner } : {}, viewer.id);
+    if (r.ok) toast(`${req.id} triaged — ${proposal.category}, assigned to ${nameOf(d.owner || proposal.owner)}`);
     else toast(r.error, "error");
   };
   const saveOverride = () => {
@@ -100,7 +117,12 @@ function TriagePanel({ req, viewer }) {
             <div class="tprop__cell"><div class="tprop__k">Legal category</div><div class="tprop__v">${proposal.category}</div></div>
             <div class="tprop__cell"><div class="tprop__k">Priority</div><div class="tprop__v"><${Pill} tone=${PRIO_TONE[proposal.priority]}>${proposal.priority}</${Pill}></div></div>
             <div class="tprop__cell"><div class="tprop__k">SLA (business days)</div><div class="tprop__v">${proposal.slaDays}d · due ${fmt.dateShort(proposal.slaDueAt)}</div></div>
-            <div class="tprop__cell"><div class="tprop__k">Suggested assignee</div><div class="tprop__v row" style="gap:7px"><${Avatar} name=${nameOf(proposal.owner)} size="xs" />${nameOf(proposal.owner)}</div></div>
+            <div class="tprop__cell"><div class="tprop__k">Assign to</div>
+              <select class="input input--sm" value=${d.owner || ""} onChange=${(e) => setD({ ...d, owner: e.target.value })}>${AssigneeOptions()}</select>
+              <div class="tiny muted" style="margin-top:4px">
+                ${d.owner === proposal.owner ? html`<span class="row" style="gap:5px;display:inline-flex"><${Icon} name="sparkles" size=11 /> System suggestion</span>` : `Reassigned — system suggested ${nameOf(proposal.owner)}`}
+              </div>
+            </div>
           </div>`
         : html`<div class="tprop">
             <div class="tprop__cell"><div class="tprop__k">Legal category</div>
@@ -114,7 +136,7 @@ function TriagePanel({ req, viewer }) {
             <div class="tprop__cell"><div class="tprop__k">SLA (business days)</div><div class="tprop__v">${proposal.slaDays}d · auto</div></div>
             <div class="tprop__cell"><div class="tprop__k">Assignee</div>
               <select class="input input--sm" value=${d.owner || ""} onChange=${(e) => setD({ ...d, owner: e.target.value })}>
-                ${LEGAL_USERS.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
+                ${AssigneeOptions()}
               </select></div>
           </div>
           <${Field} label=${"Reason for override" + (changed ? " (required)" : "")} hint="Logged against the request — the override history is what later trains automated triage.">
@@ -140,9 +162,11 @@ function TriagePanel({ req, viewer }) {
     <div class="row" style="gap:8px;padding-top:12px;border-top:1px solid var(--border)">
       ${mode === "view"
         ? html`<${Fragment}>
-            <${Btn} variant="ghost" icon="edit" onClick=${() => setMode("override")}>Override…</${Btn}>
+            <${Btn} variant="ghost" icon="edit" onClick=${() => setMode("override")}>Override category / priority…</${Btn}>
             <span class="spacer"></span>
-            <${Btn} variant="primary" icon="check" onClick=${accept}>Accept proposal</${Btn}>
+            <${Btn} variant="primary" icon="check" onClick=${assign}>
+              ${d.owner !== proposal.owner ? "Assign to " + nameOf(d.owner).split(" ")[0] : "Accept & assign"}
+            </${Btn}>
           </${Fragment}>`
         : html`<${Fragment}>
             <${Btn} variant="ghost" onClick=${() => setMode("view")}>Cancel</${Btn}>
