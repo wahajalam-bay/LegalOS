@@ -4,7 +4,8 @@ import { HomePage } from "@/pages/HomePage";
 import { RequestsLayout } from "@/pages/RequestsLayout";
 import { RequestsListPage } from "@/pages/RequestsListPage";
 import { NewRequestPage } from "@/pages/NewRequestPage";
-import { TriagePage } from "@/pages/TriagePage";
+import { TriageQueuePage } from "@/pages/TriageQueuePage";
+import { TriageDetailPage } from "@/pages/TriageDetailPage";
 import { RequestDetailPage } from "@/pages/RequestDetailPage";
 import { ComingSoon } from "@/pages/ComingSoon";
 import { EmptyState } from "@/ui/components";
@@ -22,9 +23,10 @@ export default function App() {
           <Route index element={<RequestsListPage scope="mine" />} />
           <Route path="all" element={<RequestsListPage scope="all" />} />
           <Route path="assigned" element={<RequestsListPage scope="assigned" />} />
-          <Route path="triage" element={<TriagePage />} />
+          <Route path="triage" element={<TriageQueuePage />} />
         </Route>
         <Route path="requests/new" element={<NewRequestPage />} />
+        <Route path="requests/triage/:id" element={<TriageDetailPage />} />
         <Route path="requests/:id" element={<RequestDetailPage />} />
         <Route path="matters" element={<ComingSoon title="Matters" />} />
         <Route path="contracts" element={<ComingSoon title="Contracts" />} />

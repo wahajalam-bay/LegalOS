@@ -80,6 +80,8 @@ export interface Request {
   readonly priority: Priority;
   readonly slaConfigId: string | null;
   readonly slaDueDate: IsoTimestamp | null;
+  /** true when Legal manually overrode the calculated SLA due date during triage. */
+  readonly slaOverridden?: boolean;
   readonly assignment: RequestAssignment | null;
 
   // Lifecycle + clock

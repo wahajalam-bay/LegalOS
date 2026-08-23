@@ -35,7 +35,7 @@ describe("requestService.create", () => {
     expect(res.ok).toBe(true);
     if (!res.ok) return;
     expect(res.value.status).toBe("Submitted");
-    expect(res.value.legalCategory).toBe("Contract Drafting / Review");
+    expect(res.value.legalCategory).toBe("Contract Review — Standard");
     expect(res.value.id).toMatch(/^REQ-2026-\d{5}$/);
     const audit = repos.audit.list(res.value.id);
     expect(audit.some((e) => e.action === "request.created")).toBe(true);
@@ -52,13 +52,13 @@ describe("requestService.applyTriage", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const res = svc.applyTriage(created.value.id, {
-      legalCategory: "Legal Opinion / Advisory", priority: "High", assignedLawyerId: ASSOC, overrideReason: "Really an advisory question",
+      legalCategory: "Legal Opinion — Complex", priority: "High", assignedLawyerId: ASSOC, overrideReason: "Really an advisory question",
     }, AD);
     expect(res.ok).toBe(true);
     if (!res.ok) return;
     expect(res.value.status).toBe("Assigned");
     expect(res.value.assignment?.lawyerId).toBe(ASSOC);
-    expect(res.value.legalCategory).toBe("Legal Opinion / Advisory");
+    expect(res.value.legalCategory).toBe("Legal Opinion — Complex");
     const audit = repos.audit.list(created.value.id);
     expect(audit.some((e) => e.action === "request.category_changed" && e.reason === "Really an advisory question")).toBe(true);
     expect(audit.some((e) => e.action === "request.assignee_changed")).toBe(true);
@@ -70,7 +70,7 @@ describe("requestService.transition — clock pause/resume", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id: RequestId = created.value.id;
-    svc.applyTriage(id, { legalCategory: "Contract Drafting / Review", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
     svc.transition(id, "In Progress", ASSOC);
     const paused = svc.transition(id, "Awaiting Requester", ASSOC, "Need the counterparty draft");
     expect(paused.ok && paused.value.pausePeriods.length).toBe(1);
@@ -87,12 +87,73 @@ describe("requestService.transition — clock pause/resume", () => {
   });
 });
 
+describe("requestService.applyTriage — overrides & SLA", () => {
+  it("logs a reason for each overridden field and records an SLA override", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const id = created.value.id;
+    const res = svc.applyTriage(id, {
+      legalCategory: created.value.legalCategory, // unchanged
+      priority: "Urgent", assignedLawyerId: ASSOC,
+      priorityReason: "board deadline", assigneeReason: "domain expert",
+      slaDueDateOverride: "2026-01-20T00:00:00.000Z", slaReason: "client-imposed date",
+    }, AD);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.value.slaOverridden).toBe(true);
+    expect(res.value.slaDueDate).toBe("2026-01-20T00:00:00.000Z");
+    const audit = repos.audit.list(id);
+    expect(audit.some((e) => e.action === "request.priority_changed" && e.reason === "board deadline")).toBe(true);
+    expect(audit.some((e) => e.action === "request.assignee_changed" && e.reason === "domain expert")).toBe(true);
+    expect(audit.some((e) => e.action === "request.sla_changed" && e.reason === "client-imposed date")).toBe(true);
+    // category unchanged → no category_changed event
+    expect(audit.some((e) => e.action === "request.category_changed")).toBe(false);
+  });
+});
+
+describe("requestService.requestMoreInfo", () => {
+  it("sends the request back to the requester, pauses the clock, and audits it", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const id = created.value.id;
+    const res = svc.requestMoreInfo(id, "Please share the counterparty draft.", AD);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.value.status).toBe("Awaiting Requester");
+    expect(res.value.pausePeriods.length).toBe(1);
+    expect(res.value.pausePeriods[0].end).toBeNull();
+    expect(res.value.internal.comments.some((c) => !c.internal && c.body.includes("counterparty draft"))).toBe(true);
+    const audit = repos.audit.list(id);
+    expect(audit.some((e) => e.action === "request.status_changed" && e.newValue === "Awaiting Requester")).toBe(true);
+    expect(audit.some((e) => e.action === "request.requester_contacted")).toBe(true);
+  });
+});
+
+describe("requestService.previewSla", () => {
+  it("returns the business-day target and a due date for a valid combination", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const sla = svc.previewSla(created.value, "Contract Review — Standard", "Medium");
+    expect(sla.businessDays).toBeGreaterThan(0);
+    expect(sla.dueDate).toBeTruthy();
+  });
+});
+
 describe("requestService.convertToMatter", () => {
+  it("can convert straight from triage (Submitted) — a deliberate action", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const res = svc.convertToMatter(created.value.id, AD);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.value.status).toBe("Converted to Matter");
+  });
+
   it("links a matter and records the conversion (Module 2 not built)", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id = created.value.id;
-    svc.applyTriage(id, { legalCategory: "Contract Drafting / Review", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
     svc.transition(id, "In Progress", ASSOC);
     const res = svc.convertToMatter(id, ASSOC);
     expect(res.ok).toBe(true);

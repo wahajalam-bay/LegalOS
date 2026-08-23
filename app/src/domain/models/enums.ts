@@ -34,15 +34,22 @@ export type BusinessUrgency = (typeof BUSINESS_URGENCIES)[number];
 export const PRIORITIES = ["Low", "Medium", "High", "Urgent"] as const;
 export type Priority = (typeof PRIORITIES)[number];
 
-// The internal legal categorisation Legal assigns during triage.
+// The internal legal categorisation Legal assigns during triage (PRD §3.3).
 export const LEGAL_CATEGORIES = [
-  "Contract Drafting / Review",
-  "Amendment / Renewal / Termination",
-  "Legal Opinion / Advisory",
-  "Dispute / Litigation",
+  "NDA",
+  "Contract Review — Standard",
+  "Contract Review — Complex / High Value",
+  "Contract Drafting — From Template",
+  "Contract Drafting — Complex / High Value",
+  "Amendment",
+  "Renewal",
+  "Termination",
+  "Legal Opinion — Simple/Narrow",
+  "Legal Opinion — Complex",
   "Regulatory / Compliance",
-  "IP",
-  "Uncategorised",
+  "Dispute — Initial Assessment",
+  "IP Filing",
+  "Triage Required",
 ] as const;
 export type LegalCategory = (typeof LEGAL_CATEGORIES)[number];
 

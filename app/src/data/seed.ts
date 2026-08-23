@@ -38,13 +38,20 @@ export const SEED_USERS: User[] = [
 // Business-day SLA target by category × priority (same for both jurisdictions
 // here; the calendar differs per jurisdiction, not the target).
 const BASE_DAYS: Record<LegalCategory, number> = {
-  "Contract Drafting / Review": 4,
-  "Amendment / Renewal / Termination": 5,
-  "Legal Opinion / Advisory": 7,
-  "Dispute / Litigation": 3,
+  NDA: 2,
+  "Contract Review — Standard": 4,
+  "Contract Review — Complex / High Value": 7,
+  "Contract Drafting — From Template": 3,
+  "Contract Drafting — Complex / High Value": 8,
+  Amendment: 4,
+  Renewal: 3,
+  Termination: 4,
+  "Legal Opinion — Simple/Narrow": 4,
+  "Legal Opinion — Complex": 8,
   "Regulatory / Compliance": 5,
-  IP: 10,
-  Uncategorised: 5,
+  "Dispute — Initial Assessment": 3,
+  "IP Filing": 10,
+  "Triage Required": 5,
 };
 const PRIORITY_FACTOR: Record<Priority, number> = { Urgent: 0.25, High: 0.5, Medium: 0.75, Low: 1 };
 
@@ -78,8 +85,8 @@ export const SEED_REQUESTS: Request[] = [
     businessUrgency: "Important", neededByDate: "2026-09-10T00:00:00.000Z", neededByJustification: null,
     intakeDetails: { counterpartyName: "Acme Cloud Ltd", counterpartyType: "Supplier / Vendor", paper: "Counterparty paper", contractTerm: "12 months, auto-renewing" },
     attachments: [],
-    legalCategory: "Contract Drafting / Review", priority: "Medium",
-    slaConfigId: "SLA-Contract Drafting / Review-Medium-PK", slaDueDate: null,
+    legalCategory: "Contract Review — Standard", priority: "Medium",
+    slaConfigId: "SLA-Contract Review — Standard-Medium-PK", slaDueDate: null,
     assignment: { lawyerId: uid("USR-ASSOC"), assignedBy: uid("USR-AD"), assignedAt: "2026-08-20T09:00:00.000Z" },
     status: "In Progress", pausePeriods: [],
     matterId: null,
@@ -102,7 +109,7 @@ export const SEED_REQUESTS: Request[] = [
     businessUrgency: "Routine", neededByDate: null, neededByJustification: null,
     intakeDetails: { productActivity: "Regional prize-draw promotion", regulator: "" },
     attachments: [],
-    legalCategory: "Uncategorised", priority: "Low", slaConfigId: null, slaDueDate: null,
+    legalCategory: "Triage Required", priority: "Low", slaConfigId: null, slaDueDate: null,
     assignment: null, status: "Submitted", pausePeriods: [], matterId: null,
     statusHistory: [
       { id: shId("REQ-2026-00002", 1), from: null, to: "Submitted", at: "2026-08-22T13:00:00.000Z", by: uid("USR-REQ") },

@@ -160,7 +160,35 @@
 .confirm__title { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 6px; }
 .confirm .kv { max-width: 460px; margin: var(--sp-4) auto; }
 
-@media (max-width: 1024px) { .detailgrid, .grid2, .optiongrid, .kv { grid-template-columns: 1fr; } }
+/* ---- triage workspace (Step 4) ---- */
+.tablewrap { overflow-x: auto; }
+.tablewrap table { min-width: 1120px; }
+.cell-clamp { display: inline-block; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+
+.triagegrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); align-items: start; }
+.triagegrid__col { display: flex; flex-direction: column; gap: var(--sp-4); min-width: 0; }
+
+.flagbar { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--sp-4); }
+.flag { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--surface); font-size: 13px; }
+.flag--info { border-left: 3px solid #1d6cb0; }
+.flag--warning { border-left: 3px solid var(--warning); background: var(--warning-bg); }
+.flag--danger { border-left: 3px solid var(--danger); background: var(--danger-bg); }
+.flag__src { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+.proposal { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.proposal:last-of-type { border-bottom: 0; }
+.proposal__label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-3); font-weight: 700; margin-bottom: 4px; }
+.proposal__system { font-size: 13px; margin-bottom: 8px; }
+.proposal__foot { margin-top: 6px; display: flex; align-items: center; gap: 8px; }
+.sla-override { margin-top: 8px; }
+
+.precedents { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.precedent { border: 1px solid var(--border); border-radius: var(--r-sm); padding: 10px 12px; }
+.precedent__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.precedent__title { font-weight: 600; margin-top: 2px; }
+.precedent__src { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+
+@media (max-width: 1024px) { .detailgrid, .grid2, .optiongrid, .kv, .triagegrid { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .readonly-grid { grid-template-columns: 1fr; } .review-row { grid-template-columns: 1fr; gap: 2px; } }
 
 /* Tablet: collapse the sidebar to the approved 72px icon rail (usable, not off-canvas) */

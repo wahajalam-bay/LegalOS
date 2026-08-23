@@ -33,7 +33,14 @@ export interface TriageInput {
   readonly legalCategory: LegalCategory;
   readonly priority: Priority;
   readonly assignedLawyerId: UserId;
+  /** Kept for back-compat; used as the category-change reason when set. */
   readonly overrideReason?: string | null;
+  readonly categoryReason?: string | null;
+  readonly priorityReason?: string | null;
+  readonly assigneeReason?: string | null;
+  /** Manual SLA due-date override (ISO). When set, replaces the calculated date. */
+  readonly slaDueDateOverride?: string | null;
+  readonly slaReason?: string | null;
 }
 
 export function createRequestService({ repos, clock, notifier }: RequestServiceDeps) {
@@ -129,6 +136,7 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       const at = now.toISOString();
       const changes: string[] = [];
 
+      const overrode = input.slaDueDateOverride != null && input.slaDueDateOverride !== "";
       const updated = repos.requests.update(requestId, (r) => {
         const history = [...r.statusHistory];
         if (r.status === "Submitted") {
@@ -144,23 +152,57 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
           statusHistory: history, updatedAt: at,
         };
         next = { ...next, ...recomputeSla(next, now) };
+        if (overrode) next = { ...next, slaDueDate: input.slaDueDateOverride!, slaOverridden: true };
+        else next = { ...next, slaOverridden: false };
         return next;
       })!;
 
+      const categoryReason = input.categoryReason ?? input.overrideReason ?? null;
       if (current.legalCategory !== input.legalCategory) {
-        recordAudit(repos.audit, { actorId, action: "request.category_changed", entityId: requestId, previousValue: current.legalCategory, newValue: input.legalCategory, reason: input.overrideReason ?? null }, at);
+        recordAudit(repos.audit, { actorId, action: "request.category_changed", entityId: requestId, previousValue: current.legalCategory, newValue: input.legalCategory, reason: categoryReason }, at);
         changes.push("category");
       }
       if (current.priority !== input.priority) {
-        recordAudit(repos.audit, { actorId, action: "request.priority_changed", entityId: requestId, previousValue: current.priority, newValue: input.priority }, at);
+        recordAudit(repos.audit, { actorId, action: "request.priority_changed", entityId: requestId, previousValue: current.priority, newValue: input.priority, reason: input.priorityReason ?? null }, at);
       }
-      recordAudit(repos.audit, { actorId, action: "request.sla_changed", entityId: requestId, previousValue: current.slaDueDate, newValue: updated.slaDueDate }, at);
-      recordAudit(repos.audit, { actorId, action: "request.assignee_changed", entityId: requestId, previousValue: current.assignment?.lawyerId ?? null, newValue: input.assignedLawyerId }, at);
+      recordAudit(repos.audit, { actorId, action: "request.sla_changed", entityId: requestId, previousValue: current.slaDueDate, newValue: updated.slaDueDate, reason: overrode ? (input.slaReason ?? null) : null }, at);
+      if ((current.assignment?.lawyerId ?? null) !== input.assignedLawyerId) {
+        recordAudit(repos.audit, { actorId, action: "request.assignee_changed", entityId: requestId, previousValue: current.assignment?.lawyerId ?? null, newValue: input.assignedLawyerId, reason: input.assigneeReason ?? null }, at);
+      }
       if (current.status !== updated.status) {
         recordAudit(repos.audit, { actorId, action: "request.status_changed", entityId: requestId, previousValue: current.status, newValue: updated.status }, at);
       }
       notifier.notify({ kind: "request.assigned", recipientUserId: input.assignedLawyerId, entityId: requestId,
         title: `Assigned ${requestId}`, body: `You are the owner of ${requestId} (${input.legalCategory}).` }, at);
+      return ok(updated);
+    },
+
+    /** SLA target + due date for a hypothetical category/priority (triage preview). */
+    previewSla(req: Request, category: LegalCategory, priority: Priority): { businessDays: number | null; dueDate: string | null } {
+      const cfg = repos.sla.find(category, priority, req.jurisdiction);
+      if (!cfg) return { businessDays: null, dueDate: null };
+      const due = computeDueDate(calendarFor(req.jurisdiction), req.submittedAt, cfg.businessDays, req.pausePeriods, clock());
+      return { businessDays: cfg.businessDays, dueDate: due.toISOString() };
+    },
+
+    /** Triage action: send an untriaged request back to the requester for more info. */
+    requestMoreInfo(requestId: RequestId, message: string, actorId: UserId): Result<Request> {
+      const current = repos.requests.get(requestId);
+      if (!current) return err("request not found");
+      const now = clock();
+      const at = now.toISOString();
+      const from = current.status;
+      const updated = repos.requests.update(requestId, (r) => {
+        const pauses: PausePeriod[] = [...r.pausePeriods, { reason: "Awaiting requester information", start: at, end: null }];
+        const history: RequestStatusHistory[] = [...r.statusHistory, { id: childId<"StatusHistoryId">(r.id, "SH", r.statusHistory.length + 1), from, to: "Awaiting Requester", at, by: actorId, reason: "More information requested" }];
+        const comments = message.trim()
+          ? [...r.internal.comments, { id: childId(r.id, "CMT", r.internal.comments.length + 1) as CommentId, authorId: actorId, body: message.trim(), at, internal: false }]
+          : r.internal.comments;
+        return { ...r, status: "Awaiting Requester", pausePeriods: pauses, statusHistory: history, updatedAt: at, internal: { ...r.internal, comments } };
+      })!;
+      recordAudit(repos.audit, { actorId, action: "request.status_changed", entityId: requestId, previousValue: from, newValue: "Awaiting Requester", reason: "More information requested" }, at);
+      recordAudit(repos.audit, { actorId, action: "request.requester_contacted", entityId: requestId, newValue: "information requested" }, at);
+      notifier.notify({ kind: "request.awaiting_requester", recipientUserId: current.requesterId, entityId: requestId, title: `More information needed on ${requestId}`, body: message.trim() || "Legal needs more information to proceed." }, at);
       return ok(updated);
     },
 

@@ -20,7 +20,7 @@ interface AppValue {
 
 const AppCtx = createContext<AppValue | null>(null);
 
-export function AppProvider({ children }: { children: ReactNode }) {
+export function AppProvider({ children, initialUserId }: { children: ReactNode; initialUserId?: string }) {
   const reposRef = useRef<Repositories | null>(null);
   if (!reposRef.current) reposRef.current = createLocalRepositories({ persist: true });
   const repos = reposRef.current;
@@ -34,7 +34,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const users = useMemo(() => repos.users.list(), [repos]);
   const [currentUserId, setCurrentUserId] = useState<string>(
-    () => users.find((u) => u.role === "director")?.id ?? users[0].id,
+    () => (initialUserId && users.some((u) => u.id === initialUserId) ? initialUserId : users.find((u) => u.role === "director")?.id ?? users[0].id),
   );
   const [version, setVersion] = useState(0);
   const reload = useCallback(() => setVersion((v) => v + 1), []);
