@@ -22,7 +22,7 @@ import {
   closeWithOutcome, setModPrivilege, setModRisk, riskBand,
   PRIVILEGE_TIERS, RISK_LIKELIHOODS, RISK_IMPACTS,
 } from "../store.js";
-import { useActiveUser, visibilityOf, canBrowseModule, stripInternal, canEditGroup, teamMembers } from "../rbac.js";
+import { useActiveUser, visibilityOf, canBrowseModule, stripInternal, canEditGroup, teamMembers, filterVisible } from "../rbac.js";
 import { RankBars } from "../execviz.js";
 import { toast } from "../toast.js";
 
@@ -1374,7 +1374,9 @@ export default function ModulePage({ id, path }) {
   if (recId) return html`<${Detail} def=${def} id=${recId} md=${md} viewer=${viewer} key=${recId} />`;
 
   if (!canBrowseModule(viewer, def)) return html`<${AccessDenied} def=${def} viewer=${viewer} />`;
-  const rows = all.filter((r) => r.moduleKey === def.key);
+  // §14/§2 privilege: hide Privileged/Restricted rows from users who aren't named
+  // — the register list must not leak row metadata the detail view would deny.
+  const rows = filterVisible(viewer, all.filter((r) => r.moduleKey === def.key));
   // Keyed by module — otherwise React reuses the Register instance across
   // /m/* routes and one module's filters leak into the next.
   return html`<${Register} key=${def.key} def=${def} rows=${rows} md=${md} viewer=${viewer} />`;
