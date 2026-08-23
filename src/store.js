@@ -660,6 +660,7 @@ export function advanceRequestStage(id, byUserId) {
   if (work.status === "Closed") return { ok: false, error: "record is closed" };
   const { path, idx } = requestStages(work);
   if (idx >= path.length - 1) return { ok: false, error: "already at the final stage", final: true };
+  const current = path[idx];
   const next = path[idx + 1];
   const meta = stageMeta(next);
   const now = nowIso();
@@ -673,8 +674,20 @@ export function advanceRequestStage(id, byUserId) {
   const patch = { stage: next, status, progress, ballWith, blockedOn: null, hold: null, stageLog: log,
     activity: [...(work.activity || []), { at: now, by: byUserId || null, action: isFinal ? `Delivered (${next})` : `Moved to ${next}` }] };
   if (isFinal) patch.deliveredAt = now;
+  // Approval round-trip: entering Approval records WHO asked; approving OUT of it
+  // notifies that person their request was approved.
+  if (next === "Approval") patch.approvalRequestedBy = byUserId || work.owner || null;
+  const id0 = (request || work).id;
   updateItem(workSlice, work.id, patch);
   mirrorToRequest(request, matter, { stage: next, status, progress, ...(isFinal ? { deliveredAt: now } : {}) });
+  if (current === "Approval" && work.approvalRequestedBy && work.approvalRequestedBy !== byUserId) {
+    notifyUser(work.approvalRequestedBy, {
+      kind: "approved", ref: id0, tone: "green", icon: "checksquare",
+      title: `${id0} — approved`,
+      body: `${_nm(byUserId)} approved your request. It has moved to ${next}.`,
+      to: "/workspace/" + id0,
+    });
+  }
   // PRD §3.7 — status-change / delivery notification to the requester.
   notifyRequester(request || work, isFinal
     ? { kind: "delivered", tone: "green", icon: "checkcircle", title: `${(request || work).id} — delivered`, body: "Your request is complete. Legal has delivered the outcome." }
@@ -1128,6 +1141,15 @@ function notifyRequester(rec, note) {
     title: note.title,
     body: note.body || "",
     to: "/my-requests",
+  });
+}
+// Notify an internal user directly (approver callbacks, reassignment, etc.).
+function notifyUser(uid, note) {
+  if (!uid || String(uid).startsWith("RQ-")) return;
+  pushNotif({
+    id: `u-${uid}-${note.kind}-${note.ref || ""}-${nowIso()}`,
+    forUserId: uid, tone: note.tone || "blue", icon: note.icon || "bell",
+    title: note.title, body: note.body || "", to: note.to || null,
   });
 }
 // Plain-language status-change lines for the requester (no internal jargon).

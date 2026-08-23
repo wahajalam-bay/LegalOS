@@ -469,6 +469,19 @@ function DirectCreate({ def, md, viewer, onClose }) {
   </${Modal}>`;
 }
 
+// Once triage confirms a request's category, it belongs on the matching desk's
+// register too — not only in the Legal Workspace. This maps the confirmed legal
+// category to the module whose register should surface it.
+const CATEGORY_MODULE = {
+  "Contract Drafting / Review": "contracts",
+  "Amendment / Renewal / Termination": "contracts",
+  "Legal Opinion / Advisory": "vetting",
+  "Dispute / Litigation": "cases",
+  "IP": "ip",
+  "Regulatory / Compliance": "filings",
+};
+const INTAKE_DONE = ["Closed", "Delivered", "Completed", "Executed", "Approved"];
+
 function Register({ def, rows, md, viewer }) {
   const [q, setQ] = useState("");
   const [sub, setSub] = useState("");
@@ -478,6 +491,15 @@ function Register({ def, rows, md, viewer }) {
   const [ent, setEnt] = useState("");
   const [fstat, setFstat] = useState(""); // filings: filter by statutory status
   const [creating, setCreating] = useState(false);
+
+  // PRD §3.4 — triaged requests whose confirmed category maps to THIS desk show
+  // up on its register too (they live in the `requests` slice; their working home
+  // is the Legal Workspace, so a row click opens there).
+  const legalReqs = useCollection("requests");
+  const intakeItems = useMemo(() => (legalReqs || []).filter((r) => {
+    const cat = r.category || r.proposedCategory;
+    return CATEGORY_MODULE[cat] === def.key && (r.categoryConfirmed || !["New", "Triage"].includes(r.status)) && !INTAKE_DONE.includes(r.status);
+  }).sort((a, b) => new Date((a.tat && a.tat.dueAt) || 0) - new Date((b.tat && b.tat.dueAt) || 0)), [legalReqs, def]);
 
   const enriched = useMemo(() => rows.map((r) => ({ r, t: tatV2(def, r) })), [rows]);
   const stages = [...new Set([...def.workflow, ...(def.renewalWorkflow || []), ...Object.values(def.flows || {}).flat()])];
@@ -528,6 +550,28 @@ function Register({ def, rows, md, viewer }) {
         <div class="modkpi__n">${k.n}</div><div class="modkpi__l">${k.label}</div>
       </div>`)}
     </div>
+
+    ${intakeItems.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px;border-color:color-mix(in srgb, var(--brand) 28%, var(--border))">
+      <div class="row" style="padding:14px 16px 6px;align-items:baseline">
+        <span class="panel__title">From intake — assigned to this desk</span>
+        <span class="tiny muted" style="margin-left:8px">— requests triaged into ${def.label}</span>
+        <span class="spacer"></span><${Pill} tone="green">${intakeItems.length}</${Pill}>
+      </div>
+      <div class="tablewrap"><table class="table">
+        <thead><tr><th>Ref</th><th>Request</th><th>Requesting dept</th><th>Owner</th><th>Stage</th><th>Expected</th></tr></thead>
+        <tbody>
+          ${intakeItems.map((r) => html`<tr key=${r.id} class="clickable" onClick=${() => navigate("/workspace/" + r.id)}>
+            <td class="mono tiny">${r.id}</td>
+            <td style="max-width:320px"><div class="ellipsis" title=${r.title}>${r.title}</div>
+              <div class="tiny muted">${r.category || r.proposedCategory || "—"}</div></td>
+            <td class="tiny">${r.department || r.requestingDept || "—"}</td>
+            <td><span class="row" style="gap:7px"><${Avatar} name=${personName(r.owner)} size="xs" />${personName(r.owner).split(" ")[0]}</span></td>
+            <td><${Pill} tone=${r.status === "Closed" ? "gray" : "blue"}>${r.stage || r.status}</${Pill}></td>
+            <td class="tiny">${r.tat && r.tat.dueAt ? fmt.date(r.tat.dueAt) : "—"}</td>
+          </tr>`)}
+        </tbody>
+      </table></div>
+    </div>`}
 
     ${def.report === "byDepartment" && html`<${ResolutionsReport} rows=${rows} />`}
     ${def.report === "byEntity" && html`<${FilingsByEntity} rows=${rows} active=${ent} onPick=${(id) => setEnt(ent === id ? "" : id)} viewer=${viewer} def=${def} />`}
