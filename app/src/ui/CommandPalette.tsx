@@ -1,20 +1,21 @@
 import { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useApp } from "@/state/AppContext";
-import { canViewRequest } from "@/permissions/permissions";
+import { canViewRequest, can, isLegalRole } from "@/permissions/permissions";
 import { Icon } from "./icons";
-
-const NAV_TARGETS = [
-  { label: "Home", to: "/", icon: "home" },
-  { label: "Requests", to: "/requests", icon: "inbox" },
-  { label: "New request", to: "/requests/new", icon: "plus" },
-  { label: "Triage", to: "/requests/triage", icon: "filter" },
-];
 
 export function CommandPalette({ onClose }: { onClose: () => void }) {
   const { repos, currentUser } = useApp();
   const navigate = useNavigate();
   const [q, setQ] = useState("");
+
+  // Raising a request is a requester (non-legal) action; triage is for leads.
+  const navTargets = [
+    { label: "Home", to: "/", icon: "home" },
+    { label: "Requests", to: "/requests", icon: "inbox" },
+    ...(!isLegalRole(currentUser.role) ? [{ label: "New request", to: "/requests/new", icon: "plus" }] : []),
+    ...(can(currentUser, "request.triage") ? [{ label: "Triage", to: "/requests/triage", icon: "filter" }] : []),
+  ];
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -23,7 +24,7 @@ export function CommandPalette({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   const ql = q.trim().toLowerCase();
-  const navMatches = NAV_TARGETS.filter((n) => !ql || n.label.toLowerCase().includes(ql));
+  const navMatches = navTargets.filter((n) => !ql || n.label.toLowerCase().includes(ql));
   const requestMatches = useMemo(
     () => repos.requests.list()
       .filter((r) => canViewRequest(currentUser, r))

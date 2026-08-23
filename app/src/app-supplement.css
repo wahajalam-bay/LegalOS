@@ -190,6 +190,10 @@
 
 /* ---- lifecycle / SLA (Step 5) ---- */
 .sla--completed { color: #1d6cb0; }
+
+/* request-detail header meta strip — status/priority/SLA/owner at a glance */
+.detailmeta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin: -6px 0 var(--sp-4); }
+.detailmeta__item { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--text-2); }
 .callout--warn { background: var(--warning-bg); }
 
 /* reusable status timeline */

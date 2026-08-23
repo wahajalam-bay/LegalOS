@@ -43,8 +43,8 @@ export function StatusBadge({ status }: { status: RequestStatus }) {
   return <Pill tone={STATUS_TONE[status] ?? "gray"} dot>{status}</Pill>;
 }
 
-const PRIORITY_CLS: Record<Priority, string> = { Low: "low", Medium: "med", High: "high", Urgent: "urgent" };
-const PRIORITY_ICON: Record<Priority, string> = { Low: "arrowDown", Medium: "minus", High: "arrowUp", Urgent: "arrowUp" };
+const PRIORITY_CLS: Record<Priority, string> = { Routine: "low", Important: "med", "Time-critical": "high", Emergency: "urgent" };
+const PRIORITY_ICON: Record<Priority, string> = { Routine: "arrowDown", Important: "minus", "Time-critical": "arrowUp", Emergency: "arrowUp" };
 export function PriorityBadge({ priority }: { priority: Priority }) {
   return <span className={cx("prio", `prio--${PRIORITY_CLS[priority]}`)}><Icon name={PRIORITY_ICON[priority]} size={13} />{priority}</span>;
 }

@@ -11,8 +11,11 @@ import { legalCategoryFor } from "./categories";
  * rule name, and precedents carry a reference.
  */
 
+// Priority uses the same four-level scale as business urgency (PRD §3.6), so the
+// system's proposed priority defaults to the requester's stated urgency; a lead
+// can still override it during triage.
 export const URGENCY_TO_PRIORITY: Record<BusinessUrgency, Priority> = {
-  Emergency: "Urgent", "Time-critical": "High", Important: "Medium", Routine: "Low",
+  Emergency: "Emergency", "Time-critical": "Time-critical", Important: "Important", Routine: "Routine",
 };
 
 /** Roles that can own (be assigned) a request. */
@@ -65,7 +68,7 @@ export function proposeCategory(req: Request): { category: LegalCategory; ration
 
 export function proposePriority(req: Request): { priority: Priority; rationale: string } {
   const priority = URGENCY_TO_PRIORITY[req.businessUrgency];
-  return { priority, rationale: `Derived from the requester's "${req.businessUrgency}" business urgency.` };
+  return { priority, rationale: `Matches the requester's "${req.businessUrgency}" business urgency — confirm or adjust.` };
 }
 
 /** Deterministic workload-aware owner suggestion. */

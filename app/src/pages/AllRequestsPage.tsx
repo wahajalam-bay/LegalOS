@@ -11,7 +11,7 @@ import { Icon } from "@/ui/icons";
 import { EMPTY_FILTERS, activeFilterCount, filterRequests, type RequestFilters } from "./allRequestsFilters";
 
 const PAGE_SIZE = 10;
-const PRIORITY_ORDER: Record<string, number> = { Low: 0, Medium: 1, High: 2, Urgent: 3 };
+const PRIORITY_ORDER: Record<string, number> = { Routine: 0, Important: 1, "Time-critical": 2, Emergency: 3 };
 const SLA_OPTIONS = ["ontrack", "duesoon", "atrisk", "breached", "paused", "completed"] as const;
 const SLA_LABELS: Record<string, string> = { ontrack: "On track", duesoon: "Due soon", atrisk: "At risk", breached: "Breached", paused: "Paused", completed: "Completed" };
 type SortKey = "id" | "submitted" | "priority" | "sla" | "status";

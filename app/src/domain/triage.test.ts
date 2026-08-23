@@ -61,8 +61,8 @@ describe("proposeCategory", () => {
 
 describe("proposePriority", () => {
   it("derives priority from business urgency", () => {
-    expect(proposePriority(make({ businessUrgency: "Emergency" })).priority).toBe("Urgent");
-    expect(URGENCY_TO_PRIORITY.Routine).toBe("Low");
+    expect(proposePriority(make({ businessUrgency: "Emergency" })).priority).toBe("Emergency");
+    expect(URGENCY_TO_PRIORITY.Routine).toBe("Routine");
   });
 });
 
@@ -88,7 +88,7 @@ const baseReq = (over: Partial<Request> = {}): Request => ({
   requesterCategory: "agreement", description: "desc", businessContext: "x".repeat(60),
   businessUrgency: "Important", neededByDate: null, neededByJustification: null,
   intakeDetails: {}, attachments: [],
-  legalCategory: "Contract Review — Standard", priority: "Medium", slaConfigId: null, slaDueDate: null,
+  legalCategory: "Contract Review — Standard", priority: "Important", slaConfigId: null, slaDueDate: null,
   assignment: null, status: "Submitted", pausePeriods: [], matterId: null, statusHistory: [],
   submittedAt: "2026-06-01T00:00:00.000Z", createdAt: "2026-06-01T00:00:00.000Z", updatedAt: "2026-06-01T00:00:00.000Z",
   internal: { comments: [], triageNotes: null, riskNote: null },

@@ -21,8 +21,10 @@ import type { Notifier } from "./notificationService";
 import type { Result } from "@/lib/result";
 import { ok, err } from "@/lib/result";
 
+// Priority shares the business-urgency scale (PRD §3.6); the initial priority
+// mirrors the requester's urgency until a lead confirms it in triage.
 const URGENCY_PRIORITY: Record<BusinessUrgency, Priority> = {
-  Emergency: "Urgent", "Time-critical": "High", Important: "Medium", Routine: "Low",
+  Emergency: "Emergency", "Time-critical": "Time-critical", Important: "Important", Routine: "Routine",
 };
 
 export interface RequestServiceDeps {

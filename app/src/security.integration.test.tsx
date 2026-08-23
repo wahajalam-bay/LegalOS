@@ -52,6 +52,22 @@ describe("security — a requester hitting restricted routes directly", () => {
   });
 });
 
+describe("raising a request is a requester (non-legal) action only", () => {
+  it("hides every New Request entry point from legal users", () => {
+    renderApp("/", "USR-DIR");
+    expect(screen.queryByRole("button", { name: /^New$/ })).toBeNull();
+    expect(screen.queryByText(/New Request/i)).toBeNull();
+    cleanup();
+    renderApp("/", "USR-ASSOC");
+    expect(screen.queryByText(/New Request/i)).toBeNull();
+  });
+
+  it("offers New Request to a requester", () => {
+    renderApp("/", "USR-REQ");
+    expect(screen.getAllByText(/New Request/i).length).toBeGreaterThan(0);
+  });
+});
+
 describe("security — positive controls (a Director may access the same routes)", () => {
   it("sees the triage queue", () => {
     renderApp("/requests/triage", "USR-DIR");

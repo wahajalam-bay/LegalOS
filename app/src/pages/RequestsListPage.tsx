@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "@/state/AppContext";
-import { canViewRequest } from "@/permissions/permissions";
+import { canViewRequest, isLegalRole } from "@/permissions/permissions";
 import { requesterCategoryLabel } from "@/domain/categories";
 import type { Request } from "@/domain/models/request";
 import {
@@ -36,11 +36,13 @@ export function RequestsListPage({ scope }: { scope: "mine" | "all" | "assigned"
     { key: "due", header: "SLA due", render: (r) => fmtDate(r.slaDueDate) },
   ];
 
+  const canRaise = !isLegalRole(currentUser.role); // raising a request is a requester action
+
   return (
     <div>
       <div className="page__head">
         <div><h1 className="page__title">{heading}</h1></div>
-        <Link to="/requests/new"><Button variant="primary" icon="plus">New request</Button></Link>
+        {canRaise && <Link to="/requests/new"><Button variant="primary" icon="plus">New request</Button></Link>}
       </div>
 
       {loading ? (
@@ -48,8 +50,8 @@ export function RequestsListPage({ scope }: { scope: "mine" | "all" | "assigned"
       ) : rows.length === 0 ? (
         <Card>
           <EmptyState title="Nothing here yet" icon="inbox"
-            message={scope === "mine" ? "You haven't raised any requests." : "No requests match this view."}
-            action={<Link to="/requests/new"><Button variant="primary">New request</Button></Link>} />
+            message={scope === "mine" ? (canRaise ? "You haven't raised any requests." : "You haven't raised any requests. Legal requests are raised by business teams.") : "No requests match this view."}
+            action={canRaise ? <Link to="/requests/new"><Button variant="primary">New request</Button></Link> : undefined} />
         </Card>
       ) : (
         <Card className="card--flush">

@@ -52,7 +52,7 @@ describe("requestService.applyTriage", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const res = svc.applyTriage(created.value.id, {
-      legalCategory: "Legal Opinion — Complex", priority: "High", assignedLawyerId: ASSOC, overrideReason: "Really an advisory question",
+      legalCategory: "Legal Opinion — Complex", priority: "Time-critical", assignedLawyerId: ASSOC, overrideReason: "Really an advisory question",
     }, AD);
     expect(res.ok).toBe(true);
     if (!res.ok) return;
@@ -70,7 +70,7 @@ describe("requestService.transition — clock pause/resume", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id: RequestId = created.value.id;
-    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     svc.transition(id, "In Progress", ASSOC);
     const paused = svc.transition(id, "Awaiting Requester", ASSOC, "Need the counterparty draft");
     expect(paused.ok && paused.value.pausePeriods.length).toBe(1);
@@ -94,7 +94,7 @@ describe("requestService.applyTriage — overrides & SLA", () => {
     const id = created.value.id;
     const res = svc.applyTriage(id, {
       legalCategory: created.value.legalCategory, // unchanged
-      priority: "Urgent", assignedLawyerId: ASSOC,
+      priority: "Emergency", assignedLawyerId: ASSOC,
       priorityReason: "board deadline", assigneeReason: "domain expert",
       slaDueDateOverride: "2026-01-20T00:00:00.000Z", slaReason: "client-imposed date",
     }, AD);
@@ -134,7 +134,7 @@ describe("requestService.transition — role enforcement", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id = created.value.id;
-    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     expect(svc.transition(id, "In Progress", REQUESTER).ok).toBe(false); // requester lacks changeStatus
     expect(svc.transition(id, "In Progress", ASSOC).ok).toBe(true);      // senior associate may
   });
@@ -145,7 +145,7 @@ describe("requestService.addComment — requester response resumes the clock", (
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id = created.value.id;
-    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     svc.transition(id, "In Progress", ASSOC);
     svc.transition(id, "Awaiting Requester", ASSOC, "need info");
     const res = svc.addComment(id, "Here is the information you asked for.", false, REQUESTER);
@@ -164,7 +164,7 @@ describe("requestService — lifecycle notifications", () => {
     const created = s.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id = created.value.id;
-    s.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    s.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     s.transition(id, "In Progress", ASSOC);
     s.transition(id, "Delivered", ASSOC);
     s.transition(id, "Closed", ASSOC);
@@ -180,7 +180,7 @@ describe("requestService.runSlaChecks — escalation", () => {
     const early = createRequestService({ repos: r, clock: fixedClock("2026-01-05T09:00:00.000Z"), notifier: createRepoNotifier(r.notifications) });
     const created = early.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
-    early.applyTriage(created.value.id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    early.applyTriage(created.value.id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     // A much later clock — well past the due date.
     const late = createRequestService({ repos: r, clock: fixedClock("2026-03-01T09:00:00.000Z"), notifier: createRepoNotifier(r.notifications) });
     const first = late.runSlaChecks();
@@ -194,7 +194,7 @@ describe("requestService.previewSla", () => {
   it("returns the business-day target and a due date for a valid combination", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
-    const sla = svc.previewSla(created.value, "Contract Review — Standard", "Medium");
+    const sla = svc.previewSla(created.value, "Contract Review — Standard", "Important");
     expect(sla.businessDays).toBeGreaterThan(0);
     expect(sla.dueDate).toBeTruthy();
   });
@@ -202,7 +202,7 @@ describe("requestService.previewSla", () => {
   it("slaStatusFor reports business-day consumption once triaged", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
-    svc.applyTriage(created.value.id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(created.value.id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     const status = svc.slaStatusFor(repos.requests.get(created.value.id)!);
     expect(status).not.toBeNull();
     expect(status!.target).toBeGreaterThan(0);
@@ -223,7 +223,7 @@ describe("requestService.convertToMatter", () => {
     const created = svc.create(intake(), REQUESTER);
     if (!created.ok) throw new Error("setup failed");
     const id = created.value.id;
-    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Important", assignedLawyerId: ASSOC }, AD);
     svc.transition(id, "In Progress", ASSOC);
     const res = svc.convertToMatter(id, ASSOC);
     expect(res.ok).toBe(true);

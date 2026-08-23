@@ -188,7 +188,7 @@ export function NewRequestPage() {
         {/* STEP 0 — ABOUT */}
         {step === 0 && (
           <section aria-labelledby="step-h">
-            <h2 id="step-h" className="card__title" ref={headingRef} tabIndex={-1}>What do you need help with?</h2>
+            <h2 id="step-h" className="card__title" ref={headingRef} tabIndex={-1}>About your request</h2>
             <Field label="What do you need help with?" htmlFor="desc"
               hint="Tell us what you're trying to achieve. You don't need to use legal terminology." error={errorFor("description")}>
               <TextArea id="desc" rows={4} value={form.description} autoFocus

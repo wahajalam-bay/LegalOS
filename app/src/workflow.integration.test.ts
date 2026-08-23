@@ -81,7 +81,7 @@ describe("end-to-end request journey", () => {
   it("does not auto-convert requests to matters (conversion is deliberate)", () => {
     const created = svc.create(intake, REQ);
     if (!created.ok) return;
-    svc.applyTriage(created.value.id, { legalCategory: created.value.legalCategory, priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.applyTriage(created.value.id, { legalCategory: created.value.legalCategory, priority: "Important", assignedLawyerId: ASSOC }, AD);
     svc.transition(created.value.id, "In Progress", ASSOC);
     svc.transition(created.value.id, "Delivered", ASSOC);
     // Delivered is terminal-ish; the request was never silently converted.

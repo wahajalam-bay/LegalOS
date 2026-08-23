@@ -153,7 +153,7 @@ describe("Requester intake wizard", () => {
     setup();
     cont(); // step 0 with nothing filled
     expect(screen.getByText(/Tell us in a sentence/)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /What do you need help with/ })).toBeInTheDocument(); // still on step 0
+    expect(screen.getByRole("heading", { name: /About your request/ })).toBeInTheDocument(); // still on step 0
     // Fill about, advance, then try to skip the type selection
     fillAbout();
     cont(); // no type chosen
@@ -176,7 +176,7 @@ describe("Requester intake wizard", () => {
     // Edit the "What you need" section
     const section = screen.getByText("What you need").closest(".review-section") as HTMLElement;
     fireEvent.click(within(section).getByRole("button", { name: "Edit" }));
-    expect(screen.getByRole("heading", { name: /What do you need help with/ })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /About your request/ })).toBeInTheDocument();
   });
 });
 

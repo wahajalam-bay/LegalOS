@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useApp } from "@/state/AppContext";
+import { isLegalRole } from "@/permissions/permissions";
 import { ROLE_LABELS } from "@/domain/models/enums";
 import { Icon } from "@/ui/icons";
 import { Avatar } from "@/ui/components";
@@ -9,6 +10,10 @@ import { CommandPalette } from "@/ui/CommandPalette";
 import { NotificationsBell } from "@/ui/notifications";
 
 const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
+
+// Persona switching ("View As") is a demo/localhost testing tool only. In a
+// production build (import.meta.env.DEV === false) it is never rendered.
+const DEMO_MODE = import.meta.env.DEV;
 
 interface NavItem { to: string; label: string; icon: string; soon?: boolean }
 const WORKSPACE: NavItem[] = [
@@ -40,6 +45,7 @@ export function AppShell() {
     return () => window.removeEventListener("keydown", h);
   }, []);
 
+  const canRaise = !isLegalRole(currentUser.role); // raising a request is a requester action
   const area = location.pathname.split("/").filter(Boolean)[0] ?? "";
   const isActive = (to: string) => (to === "/" ? location.pathname === "/" : location.pathname.startsWith(to));
 
@@ -80,27 +86,38 @@ export function AppShell() {
         </nav>
 
         <div className="sidebar__foot">
-          <Dropdown width={230} trigger={
-            <button className="sidebar__user" style={{ width: "100%", border: 0, background: "transparent", cursor: "pointer", font: "inherit" }}>
+          {DEMO_MODE ? (
+            // Persona / "View As" switcher — DEMO & localhost only, never shipped to production.
+            <Dropdown width={230} trigger={
+              <button className="sidebar__user" style={{ width: "100%", border: 0, background: "transparent", cursor: "pointer", font: "inherit" }}>
+                <Avatar name={currentUser.name} size="md" />
+                <div className="sidebar__user-meta">
+                  <div className="sidebar__user-name">{currentUser.name}</div>
+                  <div className="sidebar__user-role">{ROLE_LABELS[currentUser.role]}</div>
+                </div>
+                <Icon name="chevronDown" size={15} />
+              </button>
+            }>
+              <div className="menu__label">Signed in as (demo)</div>
+              {users.map((u) => (
+                <MenuItem key={u.id} icon={u.id === currentUser.id ? "check" : "user"} active={u.id === currentUser.id}
+                  onClick={() => setCurrentUserId(u.id)}>
+                  <span style={{ minWidth: 0 }}>
+                    <div style={{ fontWeight: u.id === currentUser.id ? 700 : 500 }}>{u.name}</div>
+                    <div className="tiny muted" style={{ fontSize: 11 }}>{ROLE_LABELS[u.role]}</div>
+                  </span>
+                </MenuItem>
+              ))}
+            </Dropdown>
+          ) : (
+            <div className="sidebar__user" aria-label={`Signed in as ${currentUser.name}`}>
               <Avatar name={currentUser.name} size="md" />
               <div className="sidebar__user-meta">
                 <div className="sidebar__user-name">{currentUser.name}</div>
                 <div className="sidebar__user-role">{ROLE_LABELS[currentUser.role]}</div>
               </div>
-              <Icon name="chevronDown" size={15} />
-            </button>
-          }>
-            <div className="menu__label">Signed in as (demo)</div>
-            {users.map((u) => (
-              <MenuItem key={u.id} icon={u.id === currentUser.id ? "check" : "user"} active={u.id === currentUser.id}
-                onClick={() => setCurrentUserId(u.id)}>
-                <span style={{ minWidth: 0 }}>
-                  <div style={{ fontWeight: u.id === currentUser.id ? 700 : 500 }}>{u.name}</div>
-                  <div className="tiny muted" style={{ fontSize: 11 }}>{ROLE_LABELS[u.role]}</div>
-                </span>
-              </MenuItem>
-            ))}
-          </Dropdown>
+            </div>
+          )}
         </div>
       </aside>
 
@@ -119,9 +136,11 @@ export function AppShell() {
             <span>Search requests…</span>
             <kbd>⌘K</kbd>
           </button>
-          <button className="newbtn" onClick={() => navigate("/requests/new")}>
-            <Icon name="plus" size={15} /><span>New</span>
-          </button>
+          {canRaise && (
+            <button className="newbtn" onClick={() => navigate("/requests/new")}>
+              <Icon name="plus" size={15} /><span>New</span>
+            </button>
+          )}
           <NotificationsBell />
           <div style={{ width: 1, height: 24, background: "var(--border)", margin: "0 2px" }} />
           <Dropdown align="right" width={230} up={false} trigger={
@@ -132,8 +151,8 @@ export function AppShell() {
             <div className="menu__label">{currentUser.name}</div>
             <div className="menu__label" style={{ marginTop: -6, fontWeight: 500, textTransform: "none" }}>{ROLE_LABELS[currentUser.role]}</div>
             <div className="menu__sep" />
-            <MenuItem icon="inbox" onClick={() => navigate("/requests")}>My requests</MenuItem>
-            <MenuItem icon="plus" onClick={() => navigate("/requests/new")}>New request</MenuItem>
+            <MenuItem icon="inbox" onClick={() => navigate("/requests")}>{canRaise ? "My requests" : "Requests"}</MenuItem>
+            {canRaise && <MenuItem icon="plus" onClick={() => navigate("/requests/new")}>New request</MenuItem>}
             <MenuItem icon="settings" onClick={() => navigate("/settings")}>Settings</MenuItem>
           </Dropdown>
         </header>

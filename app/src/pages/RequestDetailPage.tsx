@@ -5,19 +5,17 @@ import { brandId, type RequestId } from "@/domain/models/ids";
 import { canViewInternal, canViewRequest, can, allowedTransitionsFor } from "@/permissions/permissions";
 import { requesterCategoryLabel } from "@/domain/categories";
 import { conditionalFieldsFor } from "@/domain/intake";
-import { escalationLevelFor } from "@/domain/escalation";
 import type { RequestStatus } from "@/domain/models/enums";
 import type { Request } from "@/domain/models/request";
 import type { Task, TaskStatus } from "@/domain/models/task";
 import type { UserId } from "@/domain/models/ids";
 import { ASSIGNABLE_ROLES } from "@/domain/triage";
-import { Badge, Button, Card, ErrorState, Field, PageHeader, Select, SlaIndicator, StatusTimeline, TextArea, TextInput, slaStateOf } from "@/ui/components";
+import { Badge, Button, Card, ErrorState, Field, PageHeader, PriorityBadge, Select, SlaIndicator, StatusBadge, StatusTimeline, TextArea, TextInput, slaStateOf } from "@/ui/components";
 import { Icon } from "@/ui/icons";
 import { formatBytes } from "@/ui/util";
 import { useToast } from "@/ui/toast";
 
 const fmt = (iso: string | null) => (iso ? new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) : "—");
-const RISK_LABEL = { none: "Low", warning: "At risk", breach: "Breached" } as const;
 
 export function RequestDetailPage() {
   const params = useParams();
@@ -57,6 +55,14 @@ export function RequestDetailPage() {
         actions={<Link to="/requests"><Button variant="ghost">Back to list</Button></Link>}
       />
 
+      <div className="detailmeta">
+        <StatusBadge status={req.status} />
+        {internalVisible && <PriorityBadge priority={req.priority} />}
+        {sla && <SlaIndicator state={slaStateOf(req)} />}
+        {internalVisible && <span className="detailmeta__item"><Icon name="user" size={14} />{owner ? owner.name : "Unassigned"}</span>}
+        {!internalVisible && req.slaDueDate && <span className="detailmeta__item"><Icon name="clock" size={14} />Expected {new Date(req.slaDueDate).toLocaleDateString()}</span>}
+      </div>
+
       <div className="detailgrid">
         <div className="detailgrid__main">
           <Card>
@@ -64,15 +70,11 @@ export function RequestDetailPage() {
             <p className="muted">{req.businessContext}</p>
             <div className="kv">
               <div><span>Type</span><b>{requesterCategoryLabel(req.requesterCategory)}</b></div>
-              <div><span>Status</span><b>{req.status}</b></div>
               <div><span>Submitted</span><b>{new Date(req.submittedAt).toLocaleDateString()}</b></div>
               <div><span>Urgency</span><b>{req.businessUrgency}</b></div>
               <div><span>Needed by</span><b>{req.neededByDate ? new Date(req.neededByDate).toLocaleDateString() : "—"}</b></div>
-              {req.slaDueDate && <div><span>Expected completion</span><b>{new Date(req.slaDueDate).toLocaleDateString()}</b></div>}
               {/* Internal-only fields — never shown to the requester (PRD §3.2 privacy) */}
               {internalVisible && <div><span>Legal category</span><b>{req.legalCategory}</b></div>}
-              {internalVisible && <div><span>Priority</span><b>{req.priority}</b></div>}
-              {internalVisible && <div><span>Owner</span><b>{owner ? owner.name : "Unassigned"}</b></div>}
             </div>
             {req.neededByJustification && <p className="callout">Expedite justification: {req.neededByJustification}</p>}
             {isOwnRequester && req.status === "Submitted" && (
@@ -134,7 +136,8 @@ export function RequestDetailPage() {
               </div>
             ))}
             <Field label={isOwnRequester && req.status === "Awaiting Requester" ? "Reply to Legal" : "Add a message"}>
-              <TextArea rows={2} value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Message the requester, or add an internal note…" />
+              <TextArea rows={2} value={comment} onChange={(e) => setComment(e.target.value)}
+                placeholder={internalVisible ? "Reply to the requester, or add an internal note…" : "Add a message for Legal…"} />
             </Field>
             <div className="actions actions--start">
               {internalVisible && (
@@ -158,7 +161,6 @@ export function RequestDetailPage() {
                   <div><span>Due date</span><b>{sla.dueDate.toLocaleDateString()}</b></div>
                   <div><span>Age</span><b>{ageDays} days</b></div>
                   <div><span>Paused</span><b>{sla.pausedBusinessDays} bd</b></div>
-                  <div><span>Breach risk</span><b>{RISK_LABEL[escalationLevelFor(sla)]}</b></div>
                   <div><span>Owner</span><b>{owner ? owner.name : "Unassigned"}</b></div>
                 </div>
               ) : <p className="muted">The SLA is set when the request is triaged.</p>}

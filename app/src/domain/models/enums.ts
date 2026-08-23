@@ -31,7 +31,10 @@ export const JURISDICTION_LABELS: Record<Jurisdiction, string> = {
 export const BUSINESS_URGENCIES = ["Routine", "Important", "Time-critical", "Emergency"] as const;
 export type BusinessUrgency = (typeof BUSINESS_URGENCIES)[number];
 
-export const PRIORITIES = ["Low", "Medium", "High", "Urgent"] as const;
+// Legal-assigned priority. Per PRD §3.6 the SLA/TAT matrix is category × priority
+// on the SAME four-level scale the requester uses for business urgency. Ordered
+// most-urgent first.
+export const PRIORITIES = ["Emergency", "Time-critical", "Important", "Routine"] as const;
 export type Priority = (typeof PRIORITIES)[number];
 
 // The internal legal categorisation Legal assigns during triage (PRD §3.3).
