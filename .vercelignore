@@ -10,3 +10,6 @@ package-lock.json
 legalos/
 .vercel
 server.err.log
+
+# New TypeScript foundation (Module 1) — built alongside; not part of the live static prototype yet
+app/
