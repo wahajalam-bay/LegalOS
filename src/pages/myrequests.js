@@ -7,7 +7,7 @@ import { html, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Status, Pill, Empty, Drawer, Timeline, Progress } from "../ui.js";
 import { PageHead } from "../parts.js";
-import { useCollection } from "../store.js";
+import { useCollection, requestStages } from "../store.js";
 import { useActiveUser } from "../rbac.js";
 import { navigate } from "../router.js";
 
@@ -90,6 +90,58 @@ const Grid = ({ items, onOpen }) => html`<div class="mreqgrid">
   ${items.map((r) => html`<${RequestCard} key=${r.id} r=${r} onOpen=${onOpen} />`)}
 </div>`;
 
+// Requester-facing labels for the FULL lifecycle path (no internal jargon), and a
+// one-line "what happens here" so the requester understands each step.
+const STAGE_LABEL = {
+  "Intake": "Submitted", "Triage": "Received & categorised", "Commercial Review": "Business review",
+  "Legal Review": "Legal review", "Drafting": "Drafting", "Redlining": "Drafting & redlining",
+  "Notice Drafting": "Drafting the notice", "Negotiation": "Negotiation", "Approval": "Internal approval",
+  "Signature": "Signature", "Notice Served": "Notice served", "Executed": "Completed",
+  "Repository": "Filed & closed", "Closed": "Closed",
+};
+const STAGE_SUB = {
+  "Intake": "Your request reached Legal", "Triage": "Legal set the category, owner and turnaround",
+  "Commercial Review": "Business terms confirmed", "Legal Review": "Legal is reviewing the detail",
+  "Drafting": "Preparing the document", "Redlining": "Marking up the paper",
+  "Notice Drafting": "Preparing the notice", "Negotiation": "Agreeing terms with the other side",
+  "Approval": "Sign-off from the approver", "Signature": "Getting it signed",
+  "Notice Served": "Notice delivered", "Executed": "Signed and done",
+  "Repository": "Stored on the record", "Closed": "Nothing further outstanding",
+};
+const stageLabel = (s) => STAGE_LABEL[s] || s;
+
+// The full pipeline, requester-safe: every stage of this request's lifecycle,
+// with the current one highlighted — "where does it stand".
+function RequesterPipeline({ r }) {
+  const { path, idx } = requestStages(r);
+  const doneAll = DONE.has(r.status) || r.progress === 100;
+  const stampFor = (s) => {
+    const hit = (r.stageLog || []).filter((x) => x.stage === s).pop();
+    return hit && (hit.enteredAt || hit.at) ? (hit.enteredAt || hit.at) : null;
+  };
+  return html`<div class="rpipe">
+    ${path.map((s, i) => {
+      const state = doneAll || i < idx ? "done" : i === idx ? "current" : "upcoming";
+      const at = stampFor(s);
+      return html`<div key=${s} class=${"rpipe__step rpipe__step--" + state}>
+        <div class="rpipe__rail">
+          <div class="rpipe__dot">${state === "done" ? html`<${Icon} name="check" size=12 />` : state === "current" ? "" : ""}</div>
+          ${i < path.length - 1 && html`<div class="rpipe__line"></div>`}
+        </div>
+        <div class="rpipe__body">
+          <div class="rpipe__row">
+            <span class="rpipe__name">${stageLabel(s)}</span>
+            ${state === "current" && !doneAll && html`<span class="rpipe__here">You are here</span>`}
+            <div class="spacer"></div>
+            ${at && html`<span class="rpipe__at">${fmt.date(at)}</span>`}
+          </div>
+          <div class="rpipe__sub">${STAGE_SUB[s] || ""}</div>
+        </div>
+      </div>`;
+    })}
+  </div>`;
+}
+
 export default function MyRequests() {
   const viewer = useActiveUser();
   const requests = useCollection("requests");
@@ -126,23 +178,36 @@ export default function MyRequests() {
 
     ${open && html`<${Drawer} title=${open.id} onClose=${() => setOpen(null)}
       footer=${html`<${Btn} variant="ghost" onClick=${() => setOpen(null)}>Close</${Btn}>`}>
-      <div class="col" style="gap:16px">
-        <div class="row wrap" style="gap:8px"><${Status} value=${open.status} />
-          ${open.tat && open.tat.dueAt && html`<${Pill} tone="blue">Expected ${fmt.date(open.tat.dueAt)}</${Pill}>`}</div>
+      <div class="col" style="gap:18px">
         <div>
-          <div style="font-size:17px;font-weight:700;letter-spacing:-.01em">${open.title}</div>
-          ${open.requesterOption && html`<div class="tiny muted" style="margin-top:3px">${open.requesterOption}</div>`}
+          <div class="row wrap" style="gap:8px;margin-bottom:8px"><${Status} value=${open.status} />
+            ${open.tat && open.tat.dueAt && html`<${Pill} tone="blue">Expected ${fmt.date(open.tat.dueAt)}</${Pill}>`}
+            ${open.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}</div>
+          <div style="font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25">${open.title}</div>
+          ${open.requesterOption && html`<div class="mreq__what" style="margin-top:8px"><${Icon} name="message" size=12 />${open.requesterOption}</div>`}
         </div>
+
+        <!-- where it stands: overall progress -->
+        <div class="rphead">
+          <div class="row" style="align-items:baseline;margin-bottom:7px">
+            <span class="fpop__lbl">${DONE.has(open.status) || open.progress === 100 ? "Complete" : "In progress — " + friendlyStage(open)}</span>
+            <div class="spacer"></div>
+            <span class="rpipe__at" style="font-weight:700">${pctOf(open)}%</span>
+          </div>
+          <${Progress} value=${pctOf(open)} tone=${DONE.has(open.status) || open.progress === 100 ? "green" : "blue"} />
+        </div>
+
         ${open.businessContext && html`<div>
           <div class="fpop__lbl">What you told us</div>
           <div class="spine__desc" style="margin-top:6px">${open.businessContext}</div>
         </div>`}
+
+        <!-- the FULL pipeline, requester-safe -->
         <div>
-          <div class="fpop__lbl" style="margin-bottom:8px">Progress</div>
-          ${(open.stageLog || []).length
-            ? html`<${Timeline} items=${stageItems(open)} />`
-            : html`<div class="tiny muted">Submitted — waiting for Legal to triage.</div>`}
+          <div class="fpop__lbl" style="margin-bottom:10px">Pipeline — every step, and where it stands</div>
+          <${RequesterPipeline} r=${open} />
         </div>
+
         <div class="banner banner--info" style="align-items:flex-start">
           <${Icon} name="workflow" size=16 />
           <span class="tiny">Legal triages your request, confirms the owner and turnaround, and keeps you posted here. You'll be asked if they need anything from you.</span>

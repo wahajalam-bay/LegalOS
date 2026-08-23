@@ -2121,3 +2121,36 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
   display: flex; align-items: center; gap: 8px;
   padding-top: 12px; border-top: 1px solid var(--border);
 }
+
+/* My Requests drawer — the full requester-safe pipeline */
+.rphead { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md); padding: 12px 14px; }
+.rpipe { display: flex; flex-direction: column; }
+.rpipe__step { display: flex; gap: 12px; }
+.rpipe__rail { display: flex; flex-direction: column; align-items: center; flex: none; width: 22px; }
+.rpipe__dot {
+  width: 20px; height: 20px; border-radius: var(--r-full); flex: none;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--border-strong); background: var(--surface); color: #fff;
+  transition: background .16s, border-color .16s;
+}
+.rpipe__line { flex: 1; width: 2px; min-height: 20px; background: var(--border); margin: 3px 0; }
+.rpipe__body { padding-bottom: 16px; min-width: 0; flex: 1; padding-top: 1px; }
+.rpipe__row { display: flex; align-items: center; gap: 8px; }
+.rpipe__name { font-size: 13.5px; font-weight: 600; color: var(--text); }
+.rpipe__sub { font-size: 11.5px; color: var(--text-3); margin-top: 2px; line-height: 1.35; }
+.rpipe__at { font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rpipe__here {
+  font-size: 10px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+  color: var(--brand); background: var(--brand-soft); border-radius: var(--r-full); padding: 2px 8px;
+}
+/* done: filled green with a check */
+.rpipe__step--done .rpipe__dot { background: var(--success); border-color: var(--success); }
+.rpipe__step--done .rpipe__line { background: var(--success); }
+.rpipe__step--done .rpipe__name { color: var(--text-2); }
+/* current: brand ring with a filled core */
+.rpipe__step--current .rpipe__dot { border-color: var(--brand); background: var(--brand); box-shadow: 0 0 0 4px var(--brand-soft); }
+.rpipe__step--current .rpipe__name { color: var(--text); font-weight: 700; }
+/* upcoming: hollow, muted */
+.rpipe__step--upcoming .rpipe__dot { background: var(--surface); border-color: var(--border-strong); }
+.rpipe__step--upcoming .rpipe__name { color: var(--text-3); font-weight: 500; }
+.rpipe__step--upcoming .rpipe__sub { color: var(--text-3); opacity: .7; }
