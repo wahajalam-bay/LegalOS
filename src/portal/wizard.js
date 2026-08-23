@@ -251,9 +251,12 @@ export function RequestWizard({ cfg, me, stampId, captureSource }) {
           </div>
         </div>`}
         <div class="row" style="gap:8px">
-          <${Btn} variant="ghost" onClick=${() => navigate("/requests")}>My requests</${Btn}>
+          <${Btn} variant="ghost" onClick=${() => navigate("/raise")}>Raise another</${Btn}>
           <div class="spacer"></div>
-          <${Btn} variant="primary" iconRight="arrowRight" onClick=${() => navigate("/requests/" + result.id)}>Open ${result.id}</${Btn}>
+          <${Btn} variant="primary" iconRight="arrowRight"
+            onClick=${() => navigate(captureSource ? "/my-requests" : "/requests/" + result.id)}>
+            ${captureSource ? "Track my requests" : "Open " + result.id}
+          </${Btn}>
         </div>
       </div>
     </div>`;

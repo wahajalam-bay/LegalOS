@@ -134,8 +134,9 @@ export function navForUser(user) {
 
   const itemOk = (item) => {
     const p = item.path || "";
-    if (!isLegal) return p === "/raise" || p === "/flow-map";        // requester: front door only
+    if (!isLegal) return p === "/raise" || p === "/my-requests" || p === "/flow-map"; // requester: raise + track
     if (p === "/raise") return false;                               // only business requesters raise (PRD §3.1)
+    if (p === "/my-requests") return false;                         // requester-only tracking view
     if (p === "/triage") return isMgmt;                              // triage = Director / AD
     if (p === "/exec") return isMgmt;                                // executive overview = leadership
     if (p === "/organization" || p === "/portal") return rbac === "head";

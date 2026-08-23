@@ -18,6 +18,7 @@ export const NAV = [
   { section: "My Work", items: [
     { path: "/my-tasks", label: "My Tasks", icon: "checksquare", badge: "myTasks" },
     { path: "/triage", label: "Triage", icon: "inbox" },
+    { path: "/my-requests", label: "My Requests", icon: "list" },
     { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},
   { section: "Litigation & Disputes", items: [
