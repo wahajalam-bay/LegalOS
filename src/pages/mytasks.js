@@ -12,7 +12,7 @@ import { LEGAL_TEAMS, teamShort, teamTone, masterList } from "../org.js";
 import { MODULES, moduleByKey } from "../modules.js";
 import { tatV2, tatV2Label, urgencyOf } from "../tat2.js";
 import { useCollection, useMasterData, personName } from "../store.js";
-import { useActiveUser, filterVisible, visibilityOf } from "../rbac.js";
+import { useActiveUser, filterVisible, visibilityOf, canApprove } from "../rbac.js";
 import { TatChip } from "./module.js";
 
 const TONE = { Running: "green", Paused: "blue", Overdue: "red", Closed: "gray" };
@@ -69,9 +69,21 @@ export default function MyTasks() {
     return base.sort((a, b) => new Date((a.tat && a.tat.dueAt) || 0) - new Date((b.tat && b.tat.dueAt) || 0));
   }, [legalRequests, scope, viewer, showClosed]);
 
+  // Approvals awaiting THIS user (PRD §2). The Director approves matters above
+  // threshold; a Lead approves within their team/threshold. A record at the
+  // Approval stage sits on the approver's plate even though they do not own it —
+  // that is exactly why the Director's My Tasks looked empty before.
+  const myApprovals = useMemo(() => {
+    if (!canApprove(viewer)) return [];
+    let base = (legalRequests || []).filter((r) => (r.stage === "Approval" || r.status === "Pending Approval") && !isReqDone(r));
+    // A Lead only signs off their own team's work; the Director sees them all.
+    if (viewer.rbac === "lead" && viewer.legalTeam) base = base.filter((r) => (byId(r.owner) || {}).legalTeam === viewer.legalTeam);
+    return base.sort((a, b) => (b.escalated ? 1 : 0) - (a.escalated ? 1 : 0) || new Date((a.tat && a.tat.dueAt) || 0) - new Date((b.tat && b.tat.dueAt) || 0));
+  }, [legalRequests, viewer]);
+
   const [kpi, setKpi] = useState("");
   const counts = {
-    total: rows.length + myReqs.length,
+    total: rows.length + myReqs.length + myApprovals.length,
     overdue: rows.filter((x) => x.t.status === "Overdue").length,
     near: rows.filter((x) => x.t.nearBreach).length,
     paused: rows.filter((x) => x.t.status === "Paused").length,
@@ -114,6 +126,28 @@ export default function MyTasks() {
       <span class="spacer"></span>
       <${TatChip} t=${first.t} />
       <${Icon} name="arrowRight" size=14 />
+    </div>`}
+
+    ${myApprovals.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px;border-color:color-mix(in srgb, var(--brand) 30%, var(--border))">
+      <div class="row" style="padding:14px 16px 6px;align-items:baseline">
+        <span class="panel__title">Awaiting my approval</span>
+        <span class="tiny muted" style="margin-left:8px">— ${viewer.rbac === "head" ? "matters at the Approval gate across the department" : "your team's matters at the Approval gate"}</span>
+        <span class="spacer"></span><${Pill} tone="amber">${myApprovals.length}</${Pill}>
+      </div>
+      <div class="tablewrap"><table class="table">
+        <thead><tr><th>Ref</th><th>Matter</th><th>Owner</th><th>Requesting dept</th><th>Flag</th><th>Expected</th></tr></thead>
+        <tbody>
+          ${myApprovals.map((r) => html`<tr key=${r.id} class="clickable" onClick=${() => navigate("/workspace/" + r.id)}>
+            <td class="mono tiny">${r.id}</td>
+            <td style="max-width:320px"><div class="ellipsis" title=${r.title}>${r.title}</div>
+              <div class="tiny muted">${r.contractType || r.requestType || "—"}</div></td>
+            <td><span class="row" style="gap:7px"><${Avatar} name=${personName(r.owner)} size="xs" />${personName(r.owner).split(" ")[0]}</span></td>
+            <td class="tiny">${r.department || r.requestingDept || "—"}</td>
+            <td>${r.escalated ? html`<${Pill} tone="red">Escalated</${Pill}>` : html`<${Pill} tone="blue">Approval</${Pill}>`}</td>
+            <td class="tiny">${r.tat && r.tat.dueAt ? fmt.date(r.tat.dueAt) : "—"}</td>
+          </tr>`)}
+        </tbody>
+      </table></div>
     </div>`}
 
     ${myReqs.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px">
@@ -183,8 +217,8 @@ export default function MyTasks() {
           </tbody>
         </table>
         ${rows.length === 0 && html`<${Empty} icon="checkcircle"
-          title=${myReqs.length ? "No module tasks" : "Nothing on your plate"}
-          text=${myReqs.length ? "Your assigned legal requests are shown above." : (scope === "mine" ? "No open items are assigned to you right now." : "This queue is clear.")} />`}
+          title=${(myReqs.length || myApprovals.length) ? "No module tasks" : "Nothing on your plate"}
+          text=${myApprovals.length ? "Your approvals and assigned requests are shown above." : myReqs.length ? "Your assigned legal requests are shown above." : (scope === "mine" ? "No open items are assigned to you right now." : "This queue is clear.")} />`}
       </div>
     </div>
   </div>`;
