@@ -7,7 +7,11 @@ import { requesterCategoryLabel } from "@/domain/categories";
 import { conditionalFieldsFor } from "@/domain/intake";
 import { escalationLevelFor } from "@/domain/escalation";
 import type { RequestStatus } from "@/domain/models/enums";
-import { Badge, Button, Card, ErrorState, Field, PageHeader, SlaIndicator, StatusTimeline, TextArea, slaStateOf } from "@/ui/components";
+import type { Request } from "@/domain/models/request";
+import type { Task, TaskStatus } from "@/domain/models/task";
+import type { UserId } from "@/domain/models/ids";
+import { ASSIGNABLE_ROLES } from "@/domain/triage";
+import { Badge, Button, Card, ErrorState, Field, PageHeader, Select, SlaIndicator, StatusTimeline, TextArea, TextInput, slaStateOf } from "@/ui/components";
 import { Icon } from "@/ui/icons";
 import { formatBytes } from "@/ui/util";
 import { useToast } from "@/ui/toast";
@@ -109,6 +113,8 @@ export function RequestDetailPage() {
             </Card>
           )}
 
+          {internalVisible && <TasksCard req={req} />}
+
           <Card>
             <h3 className="card__title">Status timeline</h3>
             <StatusTimeline steps={timelineSteps} />
@@ -192,5 +198,58 @@ export function RequestDetailPage() {
         </aside>
       </div>
     </div>
+  );
+}
+
+function TasksCard({ req }: { req: Request }) {
+  const { repos, services, currentUser, reload } = useApp();
+  const [title, setTitle] = useState("");
+  const [assignee, setAssignee] = useState<string>("");
+  const [due, setDue] = useState("");
+  const [kind, setKind] = useState<"task" | "document">("task");
+  const toast = useToast();
+
+  const tasks = repos.tasks.list(req.id);
+  const legalUsers = repos.users.list().filter((u) => u.active && (ASSIGNABLE_ROLES.includes(u.role) || u.role === "paralegal"));
+  const fmtDue = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString() : "—");
+
+  const setStatus = (t: Task, status: TaskStatus) => {
+    const r = services.tasks.setStatus(t.id, status, currentUser.id);
+    if (r.ok) reload(); else toast.push(r.error, "error");
+  };
+  const add = () => {
+    if (!title.trim()) return;
+    const r = services.tasks.create({
+      requestId: req.id, title, kind,
+      assigneeId: (assignee || null) as UserId | null,
+      dueDate: due ? new Date(`${due}T00:00:00.000Z`).toISOString() : null,
+    }, currentUser.id);
+    if (!r.ok) { toast.push(r.error, "error"); return; }
+    setTitle(""); setAssignee(""); setDue(""); setKind("task"); reload();
+    toast.push("Task added", "success");
+  };
+
+  return (
+    <Card>
+      <h3 className="card__title">Tasks</h3>
+      {tasks.length === 0 && <p className="muted">No tasks yet.</p>}
+      {tasks.map((t) => (
+        <div key={t.id} className="taskrow">
+          <span className="taskrow__title">{t.kind === "document" ? "📄 " : ""}{t.title}</span>
+          <span className="muted small">{t.assigneeId ? repos.users.get(t.assigneeId)?.name ?? "—" : "Unassigned"}</span>
+          <span className="muted small">Due {fmtDue(t.dueDate)}</span>
+          <Select value={t.status} onChange={(e) => setStatus(t, e.target.value as TaskStatus)} style={{ maxWidth: 140 }}>
+            <option>To Do</option><option>In Progress</option><option>Done</option>
+          </Select>
+        </div>
+      ))}
+      <div className="taskadd">
+        <TextInput placeholder="Add a task…" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <Select value={kind} onChange={(e) => setKind(e.target.value as "task" | "document")} aria-label="Task kind"><option value="task">Task</option><option value="document">Document</option></Select>
+        <Select value={assignee} onChange={(e) => setAssignee(e.target.value)} aria-label="Assignee"><option value="">Unassigned</option>{legalUsers.map((u) => <option key={u.id} value={u.id}>{u.name}</option>)}</Select>
+        <TextInput type="date" aria-label="Due date" value={due} onChange={(e) => setDue(e.target.value)} style={{ maxWidth: 150 }} />
+        <Button variant="soft" size="sm" icon="plus" onClick={add} disabled={!title.trim()}>Add</Button>
+      </div>
+    </Card>
   );
 }

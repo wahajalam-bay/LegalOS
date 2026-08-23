@@ -206,8 +206,41 @@
 .statustl__now { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand-600, var(--brand)); border: 1px solid var(--brand); border-radius: var(--r-full); padding: 1px 7px; }
 .statustl__time { font-size: 12px; color: var(--text-3); margin-top: 2px; }
 
+/* ---- role workspaces (Step 6) ---- */
+/* operational request rows (requester / team / director lists) */
+.oplist { display: flex; flex-direction: column; }
+.oprow { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 11px 6px; border: 0; border-bottom: 1px solid var(--border); background: transparent; font: inherit; cursor: pointer; color: var(--text); }
+.oprow:last-child { border-bottom: 0; }
+.oprow:hover { background: var(--surface-2); }
+.oprow:hover { text-decoration: none; }
+.oprow__id { flex: none; width: 132px; color: var(--text-2); }
+.oprow__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.oprow__meta { flex: none; font-size: 12px; color: var(--text-3); white-space: nowrap; }
+
+/* restrained bar list (director ops viz) */
+.barlist { display: flex; flex-direction: column; gap: 8px; }
+.barrow { display: flex; align-items: center; gap: 10px; }
+.barrow__label { flex: none; width: 150px; font-size: 12.5px; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barrow__track { flex: 1; height: 10px; background: var(--surface-3); border-radius: var(--r-full); overflow: hidden; }
+.barrow__fill { display: block; height: 100%; background: var(--brand); border-radius: var(--r-full); }
+.barrow__val { flex: none; width: 28px; text-align: right; font-weight: 700; font-size: 12.5px; }
+
+/* enterprise table: search field, sortable headers, saved views, pager */
+.searchfield { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 220px; padding: 0 10px; background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--r-sm); color: var(--text-3); }
+.searchfield__input { flex: 1; border: 0; background: transparent; outline: none; font: inherit; color: var(--text); padding: 8px 0; }
+.th-sort { border: 0; background: transparent; font: inherit; font-weight: 700; color: inherit; cursor: pointer; padding: 0; }
+.savedchip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px 2px 10px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-full); }
+.savedchip__x { border: 0; background: transparent; cursor: pointer; color: var(--text-3); font-size: 14px; line-height: 1; }
+.pager { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }
+
+/* tasks (request detail) */
+.taskrow { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.taskrow__title { flex: 1; min-width: 0; font-weight: 600; }
+.taskadd { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.taskadd .input, .taskadd .select { max-width: 200px; }
+
 @media (max-width: 1024px) { .detailgrid, .grid2, .optiongrid, .kv, .triagegrid { grid-template-columns: 1fr; } }
-@media (max-width: 640px) { .readonly-grid { grid-template-columns: 1fr; } .review-row { grid-template-columns: 1fr; gap: 2px; } }
+@media (max-width: 640px) { .readonly-grid { grid-template-columns: 1fr; } .review-row { grid-template-columns: 1fr; gap: 2px; } .oprow__meta { display: none; } }
 
 /* Tablet: collapse the sidebar to the approved 72px icon rail (usable, not off-canvas) */
 @media (min-width: 641px) and (max-width: 1024px) {

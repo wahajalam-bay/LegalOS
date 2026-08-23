@@ -7,3 +7,4 @@ export * from "./sla";
 export * from "./triage";
 export * from "./audit";
 export * from "./notification";
+export * from "./task";

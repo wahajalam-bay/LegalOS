@@ -4,6 +4,7 @@ import type { User } from "@/domain/models/user";
 import type { Repositories } from "@/data/repository";
 import { createLocalRepositories } from "@/data/localRepository";
 import { createRequestService, type RequestService } from "@/services/requestService";
+import { createTaskService, type TaskService } from "@/services/taskService";
 import { createRepoNotifier } from "@/services/notificationService";
 import { systemClock } from "@/lib/clock";
 
@@ -12,7 +13,7 @@ interface AppValue {
   readonly users: readonly User[];
   setCurrentUserId(id: string): void;
   readonly repos: Repositories;
-  readonly services: { readonly requests: RequestService };
+  readonly services: { readonly requests: RequestService; readonly tasks: TaskService };
   /** bumps when data mutates so consumers re-read from the repositories. */
   readonly version: number;
   reload(): void;
@@ -25,10 +26,11 @@ export function AppProvider({ children, initialUserId }: { children: ReactNode; 
   if (!reposRef.current) reposRef.current = createLocalRepositories({ persist: true });
   const repos = reposRef.current;
 
-  const servicesRef = useRef<{ requests: RequestService } | null>(null);
+  const servicesRef = useRef<{ requests: RequestService; tasks: TaskService } | null>(null);
   if (!servicesRef.current) {
     servicesRef.current = {
       requests: createRequestService({ repos, clock: systemClock, notifier: createRepoNotifier(repos.notifications) }),
+      tasks: createTaskService({ repos, clock: systemClock }),
     };
   }
 

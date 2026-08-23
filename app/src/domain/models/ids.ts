@@ -8,6 +8,7 @@ export type RequestId = Brand<string, "RequestId">;
 export type MatterId = Brand<string, "MatterId">;
 export type AttachmentId = Brand<string, "AttachmentId">;
 export type CommentId = Brand<string, "CommentId">;
+export type TaskId = Brand<string, "TaskId">;
 export type StatusHistoryId = Brand<string, "StatusHistoryId">;
 export type AuditEventId = Brand<string, "AuditEventId">;
 export type NotificationId = Brand<string, "NotificationId">;

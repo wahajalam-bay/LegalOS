@@ -1,5 +1,5 @@
 import type {
-  AuditEvent, Department, Notification, Request, RequestId, SLAConfiguration, User,
+  AuditEvent, Department, Notification, Request, RequestId, SLAConfiguration, Task, TaskId, User,
 } from "@/domain/models";
 import type { Jurisdiction, LegalCategory, Priority } from "@/domain/models/enums";
 import type { Repositories } from "./repository";
@@ -9,6 +9,7 @@ interface MutableState {
   requests: Request[];
   audit: AuditEvent[];
   notifications: Notification[];
+  tasks: Task[];
 }
 
 const STORAGE_KEY = "legalos.module1.v1";
@@ -47,7 +48,9 @@ export function createLocalRepositories(options: { persist?: boolean; seed?: See
     requests: seed.requests,
     audit: seed.audit,
     notifications: seed.notifications,
+    tasks: seed.tasks,
   };
+  if (!Array.isArray(state.tasks)) state.tasks = seed.tasks; // migrate older persisted state
   const users = seed.users;
   const departments = seed.departments;
   const slaConfigs = seed.slaConfigs;
@@ -89,6 +92,17 @@ export function createLocalRepositories(options: { persist?: boolean; seed?: See
       list: () => [...slaConfigs],
       find: (category: LegalCategory, priority: Priority, jurisdiction: Jurisdiction) =>
         slaConfigs.find((s) => s.category === category && s.priority === priority && s.jurisdiction === jurisdiction),
+    },
+    tasks: {
+      list: (requestId?: RequestId) => state.tasks.filter((t) => !requestId || t.requestId === requestId).slice(),
+      get: (id: TaskId) => state.tasks.find((t) => t.id === id),
+      add: (task: Task) => { state.tasks = [...state.tasks, task]; save(); },
+      update: (id: TaskId, updater: (t: Task) => Task) => {
+        let updated: Task | undefined;
+        state.tasks = state.tasks.map((t) => { if (t.id !== id) return t; updated = updater(t); return updated; });
+        save();
+        return updated;
+      },
     },
     notifications: {
       list: () => [...state.notifications],

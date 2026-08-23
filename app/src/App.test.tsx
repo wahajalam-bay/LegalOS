@@ -24,7 +24,7 @@ describe("Application shell", () => {
   it("renders the brand, primary nav and Home landing", () => {
     renderAt("/");
     expect(screen.getAllByText("LegalOS").length).toBeGreaterThan(0);
-    expect(screen.getByRole("heading", { name: /Welcome/ })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Legal Operations/ })).toBeInTheDocument();
     // Primary nav present (Requests is the functional area)
     expect(screen.getAllByText("Requests").length).toBeGreaterThan(0);
   });

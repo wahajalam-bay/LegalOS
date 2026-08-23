@@ -1,6 +1,6 @@
 import { brandId, childId } from "@/domain/models/ids";
 import type {
-  AuditEvent, Department, Notification, Request, SLAConfiguration, User,
+  AuditEvent, Department, Notification, Request, SLAConfiguration, Task, TaskId, User,
 } from "@/domain/models";
 import { JURISDICTIONS, LEGAL_CATEGORIES, PRIORITIES } from "@/domain/models/enums";
 import type {
@@ -122,6 +122,20 @@ export const SEED_REQUESTS: Request[] = [
 export const SEED_AUDIT: AuditEvent[] = [];
 export const SEED_NOTIFICATIONS: Notification[] = [];
 
+const taskId = (parent: string, n: number): TaskId => childId<"TaskId">(parent, "TASK", n);
+export const SEED_TASKS: Task[] = [
+  {
+    id: taskId("REQ-2026-00001", 1), requestId: rid(1), title: "Review vendor paper against the playbook",
+    kind: "task", assigneeId: uid("USR-ASSOC"), dueDate: "2026-08-24T00:00:00.000Z", status: "In Progress",
+    createdBy: uid("USR-AD"), createdAt: "2026-08-20T11:00:00.000Z", updatedAt: "2026-08-20T11:00:00.000Z",
+  },
+  {
+    id: taskId("REQ-2026-00001", 2), requestId: rid(1), title: "Prepare the signature pack",
+    kind: "document", assigneeId: uid("USR-PARA"), dueDate: "2026-08-26T00:00:00.000Z", status: "To Do",
+    createdBy: uid("USR-ASSOC"), createdAt: "2026-08-20T11:05:00.000Z", updatedAt: "2026-08-20T11:05:00.000Z",
+  },
+];
+
 export interface SeedData {
   users: User[];
   departments: Department[];
@@ -129,6 +143,7 @@ export interface SeedData {
   requests: Request[];
   audit: AuditEvent[];
   notifications: Notification[];
+  tasks: Task[];
 }
 
 export function seedData(): SeedData {
@@ -139,5 +154,6 @@ export function seedData(): SeedData {
     requests: structuredClone(SEED_REQUESTS),
     audit: [],
     notifications: [],
+    tasks: structuredClone(SEED_TASKS),
   };
 }

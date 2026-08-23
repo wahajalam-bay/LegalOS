@@ -1,5 +1,5 @@
 import type {
-  AuditEvent, Department, Notification, Request, RequestId, SLAConfiguration, User,
+  AuditEvent, Department, Notification, Request, RequestId, SLAConfiguration, Task, TaskId, User,
 } from "@/domain/models";
 import type { Jurisdiction, LegalCategory, Priority } from "@/domain/models/enums";
 
@@ -42,6 +42,13 @@ export interface NotificationRepository {
   markAllRead(recipientUserId: string): void;
 }
 
+export interface TaskRepository {
+  list(requestId?: RequestId): Task[];
+  get(id: TaskId): Task | undefined;
+  add(task: Task): void;
+  update(id: TaskId, updater: (t: Task) => Task): Task | undefined;
+}
+
 export interface Repositories {
   readonly requests: RequestRepository;
   readonly users: UserRepository;
@@ -49,4 +56,5 @@ export interface Repositories {
   readonly audit: AuditRepository;
   readonly sla: SlaRepository;
   readonly notifications: NotificationRepository;
+  readonly tasks: TaskRepository;
 }

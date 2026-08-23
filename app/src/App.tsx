@@ -3,6 +3,7 @@ import { AppShell } from "@/ui/layouts/AppShell";
 import { HomePage } from "@/pages/HomePage";
 import { RequestsLayout } from "@/pages/RequestsLayout";
 import { RequestsListPage } from "@/pages/RequestsListPage";
+import { AllRequestsPage } from "@/pages/AllRequestsPage";
 import { NewRequestPage } from "@/pages/NewRequestPage";
 import { TriageQueuePage } from "@/pages/TriageQueuePage";
 import { TriageDetailPage } from "@/pages/TriageDetailPage";
@@ -21,7 +22,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="requests" element={<RequestsLayout />}>
           <Route index element={<RequestsListPage scope="mine" />} />
-          <Route path="all" element={<RequestsListPage scope="all" />} />
+          <Route path="all" element={<AllRequestsPage />} />
           <Route path="assigned" element={<RequestsListPage scope="assigned" />} />
           <Route path="triage" element={<TriageQueuePage />} />
         </Route>

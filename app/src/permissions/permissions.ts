@@ -13,9 +13,11 @@ export const PERMISSIONS = [
   "request.editCategory",
   "request.changeStatus",
   "request.convertToMatter",
+  "request.approve",
   "request.viewInternal",
   "request.configureSLA",
   "request.export",
+  "task.manage",
 ] as const;
 export type Permission = (typeof PERMISSIONS)[number];
 
@@ -24,18 +26,19 @@ export const ROLE_PERMISSIONS: Record<Role, readonly Permission[]> = {
   director: [...PERMISSIONS],
   adSeniorManager: [
     "request.create", "request.viewTeam", "request.viewAll", "request.triage", "request.assign",
-    "request.editCategory", "request.changeStatus", "request.convertToMatter", "request.viewInternal",
+    "request.editCategory", "request.changeStatus", "request.convertToMatter", "request.approve",
+    "request.viewInternal", "task.manage",
   ],
   managerAM: [
     "request.create", "request.viewTeam", "request.assign", "request.editCategory",
-    "request.changeStatus", "request.convertToMatter", "request.viewInternal",
+    "request.changeStatus", "request.convertToMatter", "request.approve", "request.viewInternal", "task.manage",
   ],
   seniorAssociate: [
-    "request.create", "request.viewTeam", "request.changeStatus", "request.viewInternal",
+    "request.create", "request.viewTeam", "request.changeStatus", "request.viewInternal", "task.manage",
   ],
   // Paralegal: task execution + registers; no triage/assign/approval; restricted
   // from privileged/internal content by default.
-  paralegal: ["request.create", "request.viewTeam", "request.changeStatus"],
+  paralegal: ["request.create", "request.viewTeam", "request.changeStatus", "task.manage"],
   requester: ["request.create", "request.viewOwn"],
 };
 
@@ -67,12 +70,16 @@ export function permissionForTransition(to: RequestStatus): Permission {
 
 /** A transition is allowed only if the lifecycle permits it AND the role may perform it. */
 export function canPerformTransition(user: User, from: RequestStatus, to: RequestStatus): boolean {
-  return canTransition(from, to) && can(user, permissionForTransition(to));
+  if (!canTransition(from, to)) return false;
+  // Signing off an approval (Awaiting Approval → Delivered) needs approval authority;
+  // delivering directly from In Progress only needs changeStatus.
+  if (from === "Awaiting Approval" && to === "Delivered") return can(user, "request.approve");
+  return can(user, permissionForTransition(to));
 }
 
 /** The next statuses THIS user is allowed to move a request to. */
 export function allowedTransitionsFor(user: User, from: RequestStatus): RequestStatus[] {
-  return nextStatuses(from).filter((to) => can(user, permissionForTransition(to)));
+  return nextStatuses(from).filter((to) => canPerformTransition(user, from, to));
 }
 
 /** Row-level read access to a specific request. */

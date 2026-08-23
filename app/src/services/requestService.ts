@@ -8,7 +8,7 @@ import { legalCategoryFor } from "@/domain/categories";
 import { conditionalFieldsFor } from "@/domain/intake";
 import type { RequestAttachment } from "@/domain/models/request";
 import { canTransition } from "@/domain/lifecycle";
-import { can, permissionForTransition } from "@/permissions/permissions";
+import { canPerformTransition } from "@/permissions/permissions";
 import { calendarFor } from "@/lib/businessCalendar";
 import { computeDueDate, computeSlaStatus, type SlaStatus } from "./slaEngine";
 import { DEFAULT_ESCALATION, escalationLevelFor, isHigher, resolveEscalationRecipients, type EscalationConfig, type EscalationLevel } from "@/domain/escalation";
@@ -252,7 +252,7 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       const from = current.status;
       if (!canTransition(from, to)) return err(`cannot move from "${from}" to "${to}"`);
       const actor = repos.users.get(actorId);
-      if (!actor || !can(actor, permissionForTransition(to))) return err(`your role cannot move a request to "${to}"`);
+      if (!actor || !canPerformTransition(actor, from, to)) return err(`your role cannot move a request to "${to}"`);
       const now = clock();
       const at = now.toISOString();
 
