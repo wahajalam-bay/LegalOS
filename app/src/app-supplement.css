@@ -194,6 +194,41 @@
 /* request-detail header meta strip — status/priority/SLA/owner at a glance */
 .detailmeta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin: -6px 0 var(--sp-4); }
 .detailmeta__item { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+
+/* ============================================================================
+   OVERHAUL LAYER — HeroUI-informed polish on the LegalOS design system.
+   Keeps the approved DNA (light surfaces, green accent). Adds a consistent
+   accessible focus system, cohesive micro-interactions and clearer states.
+   ============================================================================ */
+
+/* Accessible focus ring — one consistent brand ring on every interactive control
+   (text inputs already carry their own brand focus ring in styles.css). */
+:where(a, button, [role="button"], [role="radio"], [role="tab"], [role="switch"], summary, [tabindex="0"]):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+.oprow:focus-visible, .queue__row:focus-visible, .fileupload:focus-visible, .cmdk__item:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+/* Clickable table rows read as clickable (Table sets .is-clickable). */
+.table tbody tr.is-clickable { cursor: pointer; }
+
+/* Cohesive interactive transitions + subtle hover lift on card-shaped targets. */
+.oprow, .queue__row, .notif-item, .subnav__link, .option, .filerow, .datacard-link .card, .precedent, .savedchip {
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease, transform .12s ease;
+}
+.datacard-link:hover .card { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.precedent:hover { border-color: var(--border-strong); background: var(--surface-2); }
+
+/* Clearer disabled affordances. */
+button:disabled, .btn:disabled, .btn[disabled] { opacity: .55; cursor: not-allowed; box-shadow: none; }
+
+/* Premium hover on primary actions (press handled in styles.css). */
+.btn--primary:not(:disabled):hover, .newbtn:hover { box-shadow: var(--shadow-sm); }
+
+/* Sortable table headers: keep the sticky header feel, make the control obvious. */
+.th-sort:hover { color: var(--text); }
+.th-sort:focus-visible { outline-offset: 3px; }
 .callout--warn { background: var(--warning-bg); }
 
 /* reusable status timeline */
