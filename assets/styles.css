@@ -2071,3 +2071,6 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 /* ghost calendar chips are editable calendar entries */
 .fbechip--ghost { cursor: pointer; }
 .fbechip--ghost:hover { border-color: var(--brand); color: var(--brand-600); transform: translateY(-1px); }
+
+/* My Requests — requester card grid (matches .kcard board vocabulary) */
+.mreqgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }

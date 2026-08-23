@@ -7,7 +7,7 @@ import { html, cx, fmt, useState, useMemo } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Pill, Avatar, Empty, Segmented } from "../ui.js";
 import { navigate } from "../router.js";
-import { USERS, entityName } from "../data.js";
+import { USERS, entityName, byId } from "../data.js";
 import { LEGAL_TEAMS, teamShort, teamTone, masterList } from "../org.js";
 import { MODULES, moduleByKey } from "../modules.js";
 import { tatV2, tatV2Label, urgencyOf } from "../tat2.js";
@@ -52,9 +52,22 @@ export default function MyTasks() {
       .sort((a, b) => urgencyOf(b.t) - urgencyOf(a.t));
   }, [visible, scope, team, dept, tstat, stageQ, showClosed, viewer]);
 
+  // Legal requests (the intake → triage pipeline, `requests` slice) assigned to
+  // this user also belong on their plate — My Tasks previously only listed
+  // modRequests, so a request assigned in triage never showed up here.
+  const legalRequests = useCollection("requests");
+  const REQ_DONE = ["Closed", "Approved", "Delivered", "Executed"];
+  const myReqs = useMemo(() => {
+    let base = (legalRequests || []).filter((r) => r.owner);
+    if (scope === "mine") base = base.filter((r) => r.owner === viewer.id);
+    else if (scope === "team" && viewer.legalTeam) base = base.filter((r) => (byId(r.owner) || {}).legalTeam === viewer.legalTeam);
+    if (!showClosed) base = base.filter((r) => !REQ_DONE.includes(r.status));
+    return base.sort((a, b) => new Date((a.tat && a.tat.dueAt) || 0) - new Date((b.tat && b.tat.dueAt) || 0));
+  }, [legalRequests, scope, viewer, showClosed]);
+
   const [kpi, setKpi] = useState("");
   const counts = {
-    total: rows.length,
+    total: rows.length + myReqs.length,
     overdue: rows.filter((x) => x.t.status === "Overdue").length,
     near: rows.filter((x) => x.t.nearBreach).length,
     paused: rows.filter((x) => x.t.status === "Paused").length,
@@ -97,6 +110,26 @@ export default function MyTasks() {
       <span class="spacer"></span>
       <${TatChip} t=${first.t} />
       <${Icon} name="arrowRight" size=14 />
+    </div>`}
+
+    ${myReqs.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px">
+      <div class="row" style="padding:14px 16px 6px;align-items:baseline">
+        <span class="panel__title">Legal requests assigned to me</span>
+        <span class="tiny muted" style="margin-left:8px">— from the request intake pipeline</span>
+        <span class="spacer"></span><${Pill} tone="green">${myReqs.length}</${Pill}>
+      </div>
+      <div class="tablewrap"><table class="table">
+        <thead><tr><th>Ref</th><th>Request</th><th>Requesting dept</th><th>Stage</th><th>Expected</th></tr></thead>
+        <tbody>
+          ${myReqs.map((r) => html`<tr key=${r.id} class="clickable" onClick=${() => navigate("/workspace/" + r.id)}>
+            <td class="mono tiny">${r.id}</td>
+            <td style="max-width:360px"><div class="ellipsis" title=${r.title}>${r.title}</div></td>
+            <td class="tiny">${r.department || "—"}</td>
+            <td><${Pill} tone=${r.status === "Closed" ? "gray" : "blue"}>${r.stage || r.status}</${Pill}></td>
+            <td class="tiny">${r.tat && r.tat.dueAt ? fmt.date(r.tat.dueAt) : "—"}</td>
+          </tr>`)}
+        </tbody>
+      </table></div>
     </div>`}
 
     <div class="card" style="padding:0">
@@ -145,8 +178,9 @@ export default function MyTasks() {
             </tr>`)}
           </tbody>
         </table>
-        ${rows.length === 0 && html`<${Empty} icon="checkcircle" title="Nothing on your plate"
-          text=${scope === "mine" ? "No open items are assigned to you right now." : "This queue is clear."} />`}
+        ${rows.length === 0 && html`<${Empty} icon="checkcircle"
+          title=${myReqs.length ? "No module tasks" : "Nothing on your plate"}
+          text=${myReqs.length ? "Your assigned legal requests are shown above." : (scope === "mine" ? "No open items are assigned to you right now." : "This queue is clear.")} />`}
       </div>
     </div>
   </div>`;
