@@ -582,11 +582,12 @@ export function escalateRequest(id, byUserId, reason) {
   const { request, matter, workSlice, work } = resolveWorking(id);
   if (!work) return { ok: false, error: "record not found" };
   const now = nowIso();
+  const escalation = { at: now, by: byUserId || null, reason: reason || null };
   updateItem(workSlice, work.id, {
-    escalated: true, escalation: { at: now, by: byUserId || null, reason: reason || null }, priority: "Urgent",
+    escalated: true, escalation, priority: "Urgent",
     activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Escalated${reason ? ": " + reason : ""}` }],
   });
-  mirrorToRequest(request, matter, { escalated: true, priority: "Urgent" });
+  mirrorToRequest(request, matter, { escalated: true, escalation, priority: "Urgent" });
   return { ok: true };
 }
 export function deescalateRequest(id, byUserId) {
@@ -597,7 +598,7 @@ export function deescalateRequest(id, byUserId) {
     escalated: false, escalation: null,
     activity: [...(work.activity || []), { at: now, by: byUserId || null, action: "Escalation cleared" }],
   });
-  mirrorToRequest(request, matter, { escalated: false });
+  mirrorToRequest(request, matter, { escalated: false, escalation: null });
   return { ok: true };
 }
 

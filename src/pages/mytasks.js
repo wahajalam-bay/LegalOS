@@ -56,12 +56,16 @@ export default function MyTasks() {
   // this user also belong on their plate — My Tasks previously only listed
   // modRequests, so a request assigned in triage never showed up here.
   const legalRequests = useCollection("requests");
-  const REQ_DONE = ["Closed", "Approved", "Delivered", "Executed"];
+  // A request is "done" (off the active plate) once it is closed OR has landed at
+  // a terminal state — Executed / Repository / Completed / Signed / Active — or is
+  // at 100% progress. Closed and completed work must drop off My Tasks.
+  const REQ_DONE = ["Closed", "Approved", "Delivered", "Executed", "Completed", "Repository", "Signed", "Active", "Archived", "Terminated"];
+  const isReqDone = (r) => REQ_DONE.includes(r.status) || REQ_DONE.includes(r.stage) || r.progress === 100;
   const myReqs = useMemo(() => {
     let base = (legalRequests || []).filter((r) => r.owner);
     if (scope === "mine") base = base.filter((r) => r.owner === viewer.id);
     else if (scope === "team" && viewer.legalTeam) base = base.filter((r) => (byId(r.owner) || {}).legalTeam === viewer.legalTeam);
-    if (!showClosed) base = base.filter((r) => !REQ_DONE.includes(r.status));
+    if (!showClosed) base = base.filter((r) => !isReqDone(r));
     return base.sort((a, b) => new Date((a.tat && a.tat.dueAt) || 0) - new Date((b.tat && b.tat.dueAt) || 0));
   }, [legalRequests, scope, viewer, showClosed]);
 

@@ -279,9 +279,11 @@ function StageActions({ spine }) {
             ${onHold
               ? html`<${Btn} size="sm" variant="primary" icon="play" onClick=${() => done(resumeRequest(rid, viewer.id), "Resumed — ball back with Legal")}>Resume — take the ball back</${Btn}>`
               : next
-                ? (mayAdvance
-                    ? html`<${Btn} size="sm" variant="primary" icon="arrowRight" onClick=${advance}>Advance to ${next}</${Btn}>`
-                    : html`<${Btn} size="sm" variant="soft" icon="lock" disabled=${true} title="Approval needs a Lead or Director — escalate for sign-off">Approval needed for ${next}</${Btn}>`)
+                ? (needsApproval
+                    ? (mayAdvance
+                        ? html`<${Btn} size="sm" variant="primary" icon="checksquare" onClick=${() => done(advanceRequestStage(rid, viewer.id), "Approved — moved to " + next)}>Approve & move to ${next}</${Btn}>`
+                        : html`<${Btn} size="sm" variant="soft" icon="lock" disabled=${true} title="Only a Lead (within threshold) or the Director can approve — escalate for sign-off">Awaiting approval — escalate for sign-off</${Btn}>`)
+                    : html`<${Btn} size="sm" variant="primary" icon="arrowRight" onClick=${advance}>Advance to ${next}</${Btn}>`)
                 : html`<${Btn} size="sm" variant="primary" icon="check" onClick=${() => setPanel(panel === "close" ? null : "close")}>Close request</${Btn}>`}
             ${!onHold && html`<${Btn} size="sm" variant="soft" icon="clock" onClick=${() => setPanel(panel === "hold" ? null : "hold")}>Put on hold</${Btn}>`}
             <${Btn} size="sm" variant=${rec.escalated ? "ghost" : "soft"} icon="alertTriangle"
@@ -292,6 +294,18 @@ function StageActions({ spine }) {
             ${next && html`<${Btn} size="sm" variant="ghost" icon="check" onClick=${() => setPanel(panel === "close" ? null : "close")}>Close</${Btn}>`}
           </${Fragment}>`}
     </div>
+
+    ${rec.escalated && rec.escalation && rec.escalation.at && html`<div class="row" style="gap:7px;color:var(--danger)">
+      <${Icon} name="alertTriangle" size=13 style=${{ flex: "none" }} />
+      <span class="tiny"><b>Escalated ${fmt.rel(rec.escalation.at)}</b> (${fmt.date(rec.escalation.at)})${rec.escalation.by ? " by " + nameOf(rec.escalation.by) : ""}${rec.escalation.reason ? " — " + rec.escalation.reason : ""}</span>
+    </div>`}
+
+    ${!closed && needsApproval && html`<div class=${cx("banner", mayAdvance ? "banner--info" : "banner--warn")} style="align-items:flex-start">
+      <${Icon} name=${mayAdvance ? "checksquare" : "lock"} size=15 />
+      <span class="tiny">${mayAdvance
+        ? `This request is at Approval — your sign-off (${(rec.risk || "medium").toLowerCase()}-risk chain) moves it to ${next}.`
+        : "This request is at Approval and needs a Lead (within threshold) or the Director to sign off. Use Escalate to ask a superior for approval."}</span>
+    </div>`}
 
     ${panel === "escalate" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">
       <${Field} label="Why are you escalating?" hint="Raises priority to Urgent and flags it for the department.">
