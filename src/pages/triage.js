@@ -11,7 +11,7 @@ import { Icon } from "../icons.js";
 import { Btn, Pill, Avatar, Field, Textarea, Empty } from "../ui.js";
 import { navigate } from "../router.js";
 import { USERS, byId, entityName } from "../data.js";
-import { LEGAL_TEAMS } from "../org.js";
+import { LEGAL_TEAMS, PIPELINE_BENCH } from "../org.js";
 import { useActiveUser, canTriage } from "../rbac.js";
 import { useCollection, triageProposal, triageContext, triageDecision, TRIAGE_CATEGORIES } from "../store.js";
 import { toast } from "../toast.js";
@@ -20,7 +20,8 @@ const PRIORITIES = ["Urgent", "High", "Medium", "Low"];
 const URG_TONE = { Emergency: "red", "Time-critical": "amber", Important: "blue", Routine: "gray" };
 const PRIO_TONE = { Urgent: "red", High: "amber", Medium: "blue", Low: "gray" };
 const nameOf = (uid) => (byId(uid) || {}).name || "Unassigned";
-const LEGAL_USERS = USERS.filter((u) => u.dept === "Legal");
+const BENCH = new Set(PIPELINE_BENCH);
+const LEGAL_USERS = USERS.filter((u) => u.dept === "Legal" && BENCH.has(u.id));
 
 // Assignee picker grouped by the team hierarchy (each team's Lead first, then its
 // members / paralegals) so the HoD can delegate a request down the chain.

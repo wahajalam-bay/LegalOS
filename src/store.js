@@ -5,6 +5,7 @@ import {
   REQUESTS, MATTERS, CONTRACTS, LICENSES, COMPANIES, TEMPLATES, REPOSITORY,
   REQUESTERS, MESSAGES, FORM_CONFIG, USERS,
   lifecyclePathFor, inferCategory, inferSubdivision, entityById, entityName, byId, licenseStatus,
+  stageMeta,
 } from "./data.js";
 import { fixTat, addWorkingDays } from "./tat.js";
 // Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
@@ -469,8 +470,181 @@ export function triageDecision(id, decision = {}, byUserId) {
     priority: final.priority, subdivision: final.subdivision, owner: final.owner,
     tat, escalated: proposal.escalate, triage: triageRecord, activity,
     status: "Assigned", stage: "Assigned",
+    // Assignment is the clean start of the working lifecycle — clear any stale
+    // progress / hold so the spine opens at the stage after Triage.
+    progress: 0, blockedOn: null, hold: null,
   });
   return { ok: true, accepted, overrides, escalated: proposal.escalate, tat };
+}
+
+/* ============================================================
+   MODULE 1 — request lifecycle engine (PRD §5).
+   A triaged request must actually MOVE through its lifecycle: Legal Review →
+   Drafting → Negotiation → Approval → Signature → Executed. Before this the
+   spine could only DISPLAY a derived stage; nothing advanced, escalated, held
+   or reassigned a `requests`-slice record. These functions are that engine.
+   ============================================================ */
+
+// Each lifecycle stage → the board/pill status it reports. Chosen so the status
+// maps back to the SAME stage in flow.js (never jumping the "you are here").
+const REQUEST_STAGE_STATUS = {
+  "Intake": "New", "Triage": "Triage", "Commercial Review": "Business Review",
+  "Legal Review": "In Review", "Drafting": "Drafting", "Redlining": "Drafting",
+  "Notice Drafting": "Drafting", "Negotiation": "Negotiation", "Approval": "Pending Approval",
+  "Signature": "Awaiting Signature", "Notice Served": "Notice Served",
+  "Executed": "Executed", "Repository": "Completed", "Closed": "Closed",
+};
+
+// Where the record sits on its path right now. A just-triaged record carries
+// status "Assigned" (stage "Assigned" — not a lifecycle stage), which means
+// Triage is done and it is ready to enter the stage after Triage.
+function requestStageIndex(rec, path) {
+  const explicit = path.indexOf(rec.stage);
+  if (explicit >= 0) return explicit;
+  if (rec.status === "Assigned") return path.indexOf("Triage"); // triaged, ready to advance
+  return Math.min(1, path.length - 1);
+}
+export function requestStages(rec) {
+  const path = lifecyclePathFor(rec.requestType);
+  return { path, idx: requestStageIndex(rec, path) };
+}
+
+// A request and its matter are ONE continuous object (Workstream A). The spine's
+// WORKING face is the matter when one exists, so the lifecycle engine must act on
+// whichever slice actually drives what the spine displays — otherwise a click
+// updates the request while the matter face keeps showing the old stage, and the
+// "you are here" never moves. This resolves the record from any id and returns
+// the working slice, mirroring key fields onto the request face for the
+// requester's tracking + the board.
+function resolveWorking(id) {
+  const requests = state.requests || [];
+  const matters = state.matters || [];
+  let request = requests.find((r) => r.id === id) || null;
+  let matter = matters.find((m) => m.id === id) || null;
+  if (request && !matter && request.matterId) matter = matters.find((m) => m.id === request.matterId) || null;
+  if (matter && !request) request = requests.find((r) => r.id === matter.requestId || r.matterId === matter.id) || null;
+  const workSlice = matter ? "matters" : "requests";
+  const work = matter || request;
+  return { request, matter, workSlice, work };
+}
+// Mirror a small, requester-safe patch onto the request face so My Requests, the
+// board and My Tasks stay in step when the matter face moves.
+function mirrorToRequest(request, matter, patch) {
+  if (matter && request) updateItem("requests", request.id, patch);
+}
+
+// Move the record one stage forward. Closes the open stageLog entry, opens the
+// next, and updates stage / status / progress / ball. Returns { ok, stage, final }.
+export function advanceRequestStage(id, byUserId) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  if (work.status === "Closed") return { ok: false, error: "record is closed" };
+  const { path, idx } = requestStages(work);
+  if (idx >= path.length - 1) return { ok: false, error: "already at the final stage", final: true };
+  const next = path[idx + 1];
+  const meta = stageMeta(next);
+  const now = nowIso();
+  const ballWith = meta.ball;
+  const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, exitedAt: now }));
+  log.push({ stage: next, enteredAt: now, exitedAt: null, owner: work.owner || null, ballWith });
+  const isFinal = idx + 1 === path.length - 1;
+  const status = REQUEST_STAGE_STATUS[next] || next;
+  const progress = Math.round(((idx + 1) / (path.length - 1)) * 100);
+  updateItem(workSlice, work.id, {
+    stage: next, status, progress, ballWith, blockedOn: null, hold: null, stageLog: log,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Moved to ${next}` }],
+  });
+  mirrorToRequest(request, matter, { stage: next, status, progress });
+  return { ok: true, stage: next, final: isFinal };
+}
+
+// Close the record from its current point (the heavyweight §4.7 outcome capture
+// lives on the matter side).
+export function closeRequest(id, byUserId, note) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  const { path } = requestStages(work);
+  const now = nowIso();
+  const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, exitedAt: now }));
+  updateItem(workSlice, work.id, {
+    status: "Closed", stage: path[path.length - 1], progress: 100, blockedOn: null, hold: null,
+    closedAt: now, stageLog: log,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Closed${note ? ": " + note : ""}` }],
+  });
+  mirrorToRequest(request, matter, { status: "Closed", progress: 100 });
+  return { ok: true };
+}
+
+// Escalate — raise priority to Urgent, flag it, and log why. The SLA/TAT layer
+// already surfaces breaches; this is the human escalation on top of it, and it is
+// the junior ranks' route to ask a superior for help on a case they can't move.
+export function escalateRequest(id, byUserId, reason) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  const now = nowIso();
+  updateItem(workSlice, work.id, {
+    escalated: true, escalation: { at: now, by: byUserId || null, reason: reason || null }, priority: "Urgent",
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Escalated${reason ? ": " + reason : ""}` }],
+  });
+  mirrorToRequest(request, matter, { escalated: true, priority: "Urgent" });
+  return { ok: true };
+}
+export function deescalateRequest(id, byUserId) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  const now = nowIso();
+  updateItem(workSlice, work.id, {
+    escalated: false, escalation: null,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: "Escalation cleared" }],
+  });
+  mirrorToRequest(request, matter, { escalated: false });
+  return { ok: true };
+}
+
+// Put the clock on hold — the ball leaves Legal (waiting on the business or the
+// counterparty). The TAT engine does not charge legal for held time.
+export function holdRequest(id, party, byUserId, reason) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  if (party !== "business" && party !== "counterparty") return { ok: false, error: "hold party must be business or counterparty" };
+  const now = nowIso();
+  const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, ballWith: party, holdReason: reason || null, heldAt: now }));
+  updateItem(workSlice, work.id, {
+    blockedOn: party, ballWith: party, hold: { party, reason: reason || null, start: now }, stageLog: log,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `On hold — waiting on ${party}${reason ? " (" + reason + ")" : ""}` }],
+  });
+  mirrorToRequest(request, matter, { blockedOn: party, hold: { party, reason: reason || null, start: now } });
+  return { ok: true };
+}
+export function resumeRequest(id, byUserId) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  const now = nowIso();
+  const held = work.hold ? { ...work.hold, end: now } : null;
+  const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, ballWith: "legal", holdReason: null }));
+  const paused = (work.tatPausedMs || 0) + (held && held.start ? Math.max(0, new Date(now) - new Date(held.start)) : 0);
+  updateItem(workSlice, work.id, {
+    blockedOn: null, ballWith: "legal", hold: null, tatPausedMs: paused, stageLog: log,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: "Resumed — ball back with Legal" }],
+  });
+  mirrorToRequest(request, matter, { blockedOn: null, hold: null });
+  return { ok: true };
+}
+
+// Delegate down the hierarchy — a Lead/Director hands the case to another owner.
+// (RBAC gates the UI: junior ranks cannot reassign.)
+export function reassignRequest(id, ownerId, byUserId, note) {
+  const { request, matter, workSlice, work } = resolveWorking(id);
+  if (!work) return { ok: false, error: "record not found" };
+  if (!ownerId) return { ok: false, error: "choose an owner" };
+  const now = nowIso();
+  const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, owner: ownerId }));
+  updateItem(workSlice, work.id, {
+    owner: ownerId, stageLog: log,
+    activity: [...(work.activity || []), { at: now, by: byUserId || null, action: `Reassigned to ${_nm(ownerId)}${note ? " — " + note : ""}` }],
+  });
+  mirrorToRequest(request, matter, { owner: ownerId });
+  return { ok: true };
 }
 
 // Status a requester is allowed to see (Workstream J: requester-scoped view).

@@ -32,6 +32,13 @@ export const LEGAL_TEAMS = [
     functions: ["Lease / Loan / Service Agreements", "Resolutions & Authorization Letters", "Licenses", "SECP Filings"],
   },
 ];
+// The curated pipeline bench (PRD §2 personas). Assignment / delegation pickers
+// use THIS small set — one Lead per team plus a couple of reportees — instead of
+// the whole department, so the pipeline stays legible (same bench as the View-As
+// persona switcher, legal side only). The Director (u1/u2) is deliberately not an
+// assignee: work is delegated DOWN the hierarchy, not up to the Director.
+export const PIPELINE_BENCH = ["u3", "u5", "u10", "u6", "u17", "u20"];
+
 export const teamByKey = (key) => LEGAL_TEAMS.find((t) => t.key === key) || null;
 export const teamName = (key) => (teamByKey(key) || {}).name || key || "—";
 export const teamShort = (key) => (teamByKey(key) || {}).short || key || "—";

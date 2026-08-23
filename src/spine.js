@@ -10,18 +10,40 @@
 //
 // Embedded as the default "Flow" tab on the matter workspace, the contract
 // workspace and the unified Legal Workspace.
-import { html, cx, fmt, useState, useEffect, useMemo, useRef } from "./core.js";
+import { html, cx, fmt, useState, useEffect, useMemo, useRef, Fragment } from "./core.js";
 import { Icon } from "./icons.js";
-import { Btn, Pill, Status, Risk, Avatar, Progress, AICard, Empty, Modal, Field, Input } from "./ui.js";
+import { Btn, Pill, Status, Risk, Avatar, Progress, AICard, Empty, Modal, Field, Input, Textarea } from "./ui.js";
 import { navigate } from "./router.js";
-import { useCollection, updateItem } from "./store.js";
+import {
+  useCollection, updateItem,
+  advanceRequestStage, closeRequest, escalateRequest, deescalateRequest,
+  holdRequest, resumeRequest, reassignRequest, requestStages,
+} from "./store.js";
 import {
   nameOf, byId, categoryOf, subdivisionOf, BALL_LABEL, ACCESS_LABEL,
-  riskGatesFor, entityName, toUsd,
+  riskGatesFor, entityName, toUsd, USERS,
 } from "./data.js";
+import { LEGAL_TEAMS, PIPELINE_BENCH } from "./org.js";
+import { useActiveUser, isLegal, canReassign, canApprove } from "./rbac.js";
 import { buildSpine } from "./flow.js";
 import { tatAnalysis, tatLabel } from "./tat.js";
 import { SubdivisionPill, CategoryPill, TatCell } from "./shared.js";
+import { toast } from "./toast.js";
+
+// Assignee picker grouped by the team hierarchy (Lead first) — the same shape
+// triage uses, so delegation from the workspace mirrors delegation at triage.
+const BENCH = new Set(PIPELINE_BENCH);
+const LEGAL_USERS = USERS.filter((u) => u.dept === "Legal" && BENCH.has(u.id));
+const roleTag = (u) => (u.rbac === "lead" ? " — Lead" : u.rbac === "paralegal" ? " — Paralegal" : "");
+const ASSIGNEE_GROUPS = LEGAL_TEAMS
+  .map((t) => {
+    const staff = LEGAL_USERS.filter((u) => u.legalTeam === t.key);
+    return { label: t.short || t.key, users: [...staff.filter((u) => u.rbac === "lead"), ...staff.filter((u) => u.rbac !== "lead")] };
+  })
+  .filter((g) => g.users.length);
+const AssigneeOptions = () => ASSIGNEE_GROUPS.map((g) => html`<optgroup key=${g.label} label=${g.label}>
+  ${g.users.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}${roleTag(u)}</option>`)}
+</optgroup>`);
 
 const ZONES = [
   { key: "input", n: 1, label: "Input", icon: "download", sub: "where it came from" },
@@ -206,6 +228,120 @@ function ExtractedModal({ doc, onClose }) {
   </${Modal}>`;
 }
 
+/* The pipeline controls — this is what turns the spine from a read-only picture
+   of the machine into the machine itself: advance the request to the next stage,
+   escalate it, put the clock on hold (ball to business / counterparty), delegate
+   the owner down the hierarchy, or close it. Legal-only; hidden for requesters. */
+function StageActions({ spine }) {
+  const viewer = useActiveUser();
+  const rec = spine.rec;
+  // The lifecycle engine resolves either face from any id, so drive it with the
+  // request id when there is one (keeps the requester's tracking in step), else
+  // the id we opened on (matter workspace).
+  const rid = spine.request ? spine.request.id : spine.id;
+  const workable = !!(spine.request || spine.matter) || spine.kind === "request" || spine.kind === "matter";
+  const [panel, setPanel] = useState(null); // "escalate" | "hold" | "reassign" | "close"
+  const [reason, setReason] = useState("");
+  const [party, setParty] = useState("business");
+  const [owner, setOwner] = useState(rec.owner || "");
+
+  // Only a legal user drives the pipeline; requesters never see these controls,
+  // and pure contract records have no lifecycle to drive here.
+  if (!workable || !isLegal(viewer)) return null;
+
+  const closed = rec.status === "Closed" || rec.progress === 100;
+  const activeIdx = spine.stages.findIndex((s) => s.state === "active" || s.state === "blocked");
+  const next = activeIdx >= 0 && activeIdx < spine.stages.length - 1 ? spine.stages[activeIdx + 1].name : null;
+  const onHold = !!(rec.hold || rec.blockedOn);
+  const activeStage = activeIdx >= 0 ? spine.stages[activeIdx].name : null;
+  // PRD §2 hierarchy: only a Lead/Director may delegate a case to another owner.
+  // Junior ranks (Associate / Paralegal) cannot reassign — their route to move a
+  // case they cannot progress is to escalate and ask a superior for help.
+  const mayReassign = canReassign(viewer);
+  // Signing OFF the Approval stage IS the approval — it needs approval authority
+  // (Lead within threshold / Director for all). Juniors can reach Approval but
+  // must escalate for the sign-off.
+  const needsApproval = activeStage === "Approval";
+  const mayAdvance = !needsApproval || canApprove(viewer);
+
+  const done = (r, msg) => { if (r && r.ok === false) { toast(r.error, "error"); return; } toast(msg); setPanel(null); setReason(""); };
+  const advance = () => { const r = advanceRequestStage(rid, viewer.id); done(r, r.ok ? (r.final ? "Moved to " + r.stage + " — final stage" : "Moved to " + r.stage) : ""); };
+
+  return html`<div class="card card--pad col" style="gap:10px;margin-bottom:14px;border-color:var(--brand-soft)">
+    <div class="row wrap" style="gap:8px">
+      <span class="strong" style="font-size:13px">Move this request</span>
+      ${rec.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}
+      ${onHold && html`<${Pill} tone="amber" dot=${true}>On hold — ${(rec.hold && rec.hold.party) || rec.blockedOn}</${Pill}>`}
+      <div class="spacer"></div>
+      ${closed
+        ? html`<${Pill} tone="green">Closed</${Pill}>`
+        : html`<${Fragment}>
+            ${onHold
+              ? html`<${Btn} size="sm" variant="primary" icon="play" onClick=${() => done(resumeRequest(rid, viewer.id), "Resumed — ball back with Legal")}>Resume — take the ball back</${Btn}>`
+              : next
+                ? (mayAdvance
+                    ? html`<${Btn} size="sm" variant="primary" icon="arrowRight" onClick=${advance}>Advance to ${next}</${Btn}>`
+                    : html`<${Btn} size="sm" variant="soft" icon="lock" disabled=${true} title="Approval needs a Lead or Director — escalate for sign-off">Approval needed for ${next}</${Btn}>`)
+                : html`<${Btn} size="sm" variant="primary" icon="check" onClick=${() => setPanel(panel === "close" ? null : "close")}>Close request</${Btn}>`}
+            ${!onHold && html`<${Btn} size="sm" variant="soft" icon="clock" onClick=${() => setPanel(panel === "hold" ? null : "hold")}>Put on hold</${Btn}>`}
+            <${Btn} size="sm" variant=${rec.escalated ? "ghost" : "soft"} icon="alertTriangle"
+              onClick=${() => { if (rec.escalated) { done(deescalateRequest(rid, viewer.id), "Escalation cleared"); } else setPanel(panel === "escalate" ? null : "escalate"); }}>
+              ${rec.escalated ? "Clear escalation" : "Escalate"}
+            </${Btn}>
+            ${mayReassign && html`<${Btn} size="sm" variant="ghost" icon="user" onClick=${() => setPanel(panel === "reassign" ? null : "reassign")}>Reassign</${Btn}>`}
+            ${next && html`<${Btn} size="sm" variant="ghost" icon="check" onClick=${() => setPanel(panel === "close" ? null : "close")}>Close</${Btn}>`}
+          </${Fragment}>`}
+    </div>
+
+    ${panel === "escalate" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">
+      <${Field} label="Why are you escalating?" hint="Raises priority to Urgent and flags it for the department.">
+        <${Input} value=${reason} onInput=${(e) => setReason(e.target.value)} placeholder="e.g. board deadline moved up; counterparty threatening to walk" />
+      </${Field}>
+      <div class="row" style="gap:8px"><div class="spacer"></div>
+        <${Btn} size="sm" variant="ghost" onClick=${() => setPanel(null)}>Cancel</${Btn}>
+        <${Btn} size="sm" variant="danger" icon="alertTriangle" onClick=${() => done(escalateRequest(rid, viewer.id, reason.trim()), "Escalated — priority raised to Urgent")}>Escalate</${Btn}>
+      </div>
+    </div>`}
+
+    ${panel === "hold" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">
+      <div class="tiny muted">While on hold the ball sits with the ${party}, and the SLA clock pauses — Legal is not charged for time it cannot spend.</div>
+      <div class="row wrap" style="gap:8px">
+        <select class="input input--sm" value=${party} onChange=${(e) => setParty(e.target.value)}>
+          <option value="business">Waiting on the business / requester</option>
+          <option value="counterparty">Waiting on the counterparty</option>
+        </select>
+        <${Input} value=${reason} onInput=${(e) => setReason(e.target.value)} placeholder="Reason (optional) — e.g. awaiting signed board resolution" />
+        <div class="spacer"></div>
+        <${Btn} size="sm" variant="ghost" onClick=${() => setPanel(null)}>Cancel</${Btn}>
+        <${Btn} size="sm" variant="primary" icon="clock" onClick=${() => done(holdRequest(rid, party, viewer.id, reason.trim()), "On hold — clock paused")}>Put on hold</${Btn}>
+      </div>
+    </div>`}
+
+    ${panel === "reassign" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">
+      <${Field} label="Delegate to" hint="Hand this request to another owner down the team hierarchy.">
+        <select class="input input--sm" value=${owner} onChange=${(e) => setOwner(e.target.value)}>
+          <option value="">Choose an owner…</option>${AssigneeOptions()}
+        </select>
+      </${Field}>
+      <div class="row" style="gap:8px"><div class="spacer"></div>
+        <${Btn} size="sm" variant="ghost" onClick=${() => setPanel(null)}>Cancel</${Btn}>
+        <${Btn} size="sm" variant="primary" icon="user" disabled=${!owner || owner === rec.owner}
+          onClick=${() => done(reassignRequest(rid, owner, viewer.id), "Reassigned to " + nameOf(owner))}>Reassign</${Btn}>
+      </div>
+    </div>`}
+
+    ${panel === "close" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">
+      <${Field} label="Closing note (optional)">
+        <${Input} value=${reason} onInput=${(e) => setReason(e.target.value)} placeholder="e.g. executed and filed; nothing further outstanding" />
+      </${Field}>
+      <div class="row" style="gap:8px"><div class="spacer"></div>
+        <${Btn} size="sm" variant="ghost" onClick=${() => setPanel(null)}>Cancel</${Btn}>
+        <${Btn} size="sm" variant="primary" icon="check" onClick=${() => done(closeRequest(rid, viewer.id, reason.trim()), rid + " closed")}>Close request</${Btn}>
+      </div>
+    </div>`}
+  </div>`;
+}
+
 /* ============================================================
    ZONE 2 — PROCESS  (the spine's spine)
    ============================================================ */
@@ -242,6 +378,9 @@ function ProcessZone({ spine }) {
         ${tat.blockingOwner && html`<div class="row" style="gap:6px;margin-top:7px"><${Avatar} name=${nameOf(tat.blockingOwner)} size="sm" /><span class="tiny strong">${nameOf(tat.blockingOwner)} holds it</span></div>`}
       </div>`}
     </div>
+
+    <!-- the pipeline controls: advance · escalate · hold · reassign · close -->
+    <${StageActions} spine=${spine} />
 
     <!-- the stage rail: "you are here" -->
     <div class="rail">
@@ -495,6 +634,8 @@ export function WorkflowSpine({ id, showHeader = true }) {
           <${Pill} tone="gray">${rec.requestType}</${Pill}>
           ${rec.contractType && html`<${Pill} tone="indigo">${rec.contractType}</${Pill}>`}
           <${SubdivisionPill} item=${rec} />
+          ${rec.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}
+          ${(rec.hold || rec.blockedOn) && html`<${Pill} tone="amber" dot=${true}>On hold</${Pill}>`}
         </div>
         <div class="spine__title">${rec.title}</div>
         <div class="tiny muted" style="margin-top:4px">
