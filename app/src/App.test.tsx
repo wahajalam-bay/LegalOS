@@ -3,22 +3,41 @@ import { render, screen, cleanup } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import App from "@/App";
 import { AppProvider } from "@/state/AppContext";
+import { ToastProvider } from "@/ui/toast";
 import { clearPersisted } from "@/data/localRepository";
 
 afterEach(() => { cleanup(); clearPersisted(); });
 
-describe("App shell", () => {
-  it("renders the request queue at the index route", () => {
-    render(
-      <MemoryRouter initialEntries={["/"]}>
-        <AppProvider>
+function renderAt(path: string) {
+  return render(
+    <MemoryRouter initialEntries={[path]}>
+      <AppProvider>
+        <ToastProvider>
           <App />
-        </AppProvider>
-      </MemoryRouter>,
-    );
-    // PageHeader renders immediately (outside the loading branch)
-    expect(screen.getByRole("heading", { name: "Requests" })).toBeInTheDocument();
-    // Primary nav is present (sidebar + header both link to New request)
-    expect(screen.getAllByRole("link", { name: "New request" }).length).toBeGreaterThan(0);
+        </ToastProvider>
+      </AppProvider>
+    </MemoryRouter>,
+  );
+}
+
+describe("Application shell", () => {
+  it("renders the brand, primary nav and Home landing", () => {
+    renderAt("/");
+    expect(screen.getAllByText("LegalOS").length).toBeGreaterThan(0);
+    expect(screen.getByRole("heading", { name: /Welcome/ })).toBeInTheDocument();
+    // Primary nav present (Requests is the functional area)
+    expect(screen.getAllByText("Requests").length).toBeGreaterThan(0);
+  });
+
+  it("marks unimplemented modules as coming soon", () => {
+    renderAt("/matters");
+    expect(screen.getByRole("heading", { name: "Matters" })).toBeInTheDocument();
+    expect(screen.getByText(/coming soon/i)).toBeInTheDocument();
+  });
+
+  it("shows the requests list under the Requests area", () => {
+    renderAt("/requests");
+    // My Requests subnav tab + the New request action
+    expect(screen.getByRole("heading", { name: "My Requests" })).toBeInTheDocument();
   });
 });

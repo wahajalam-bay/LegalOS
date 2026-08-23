@@ -100,7 +100,7 @@ export function NewRequestPage() {
         {submitError && <div className="field__error" role="alert">{submitError}</div>}
 
         <div className="actions">
-          <Button variant="ghost" onClick={() => navigate("/")}>Cancel</Button>
+          <Button variant="ghost" onClick={() => navigate("/requests")}>Cancel</Button>
           <Button variant="primary" onClick={submit}>Submit request</Button>
         </div>
       </Card>

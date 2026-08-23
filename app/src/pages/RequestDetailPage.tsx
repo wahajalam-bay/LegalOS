@@ -7,6 +7,7 @@ import { nextStatuses } from "@/domain/lifecycle";
 import { requesterCategoryLabel } from "@/domain/categories";
 import type { RequestStatus } from "@/domain/models/enums";
 import { Badge, Button, Card, ErrorState, Field, PageHeader, TextArea } from "@/ui/components";
+import { useToast } from "@/ui/toast";
 
 const fmt = (iso: string | null) => (iso ? new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) : "—");
 
@@ -16,6 +17,7 @@ export function RequestDetailPage() {
   const [comment, setComment] = useState("");
   const [internalNote, setInternalNote] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
+  const toast = useToast();
 
   const id = brandId<"RequestId">(params.id ?? "") as RequestId;
   const req = repos.requests.get(id);
@@ -28,7 +30,8 @@ export function RequestDetailPage() {
 
   const run = (fn: () => { ok: boolean; error?: string }) => {
     const r = fn();
-    if (!r.ok) setActionError(r.error ?? "Action failed"); else { setActionError(null); reload(); }
+    if (!r.ok) { setActionError(r.error ?? "Action failed"); toast.push(r.error ?? "Action failed", "error"); }
+    else { setActionError(null); reload(); toast.push("Request updated", "success"); }
   };
 
   const moves = nextStatuses(req.status);
@@ -38,7 +41,7 @@ export function RequestDetailPage() {
       <PageHeader
         title={req.id}
         subtitle={requesterCategoryLabel(req.requesterCategory)}
-        actions={<Link to="/"><Button variant="ghost">Back to list</Button></Link>}
+        actions={<Link to="/requests"><Button variant="ghost">Back to list</Button></Link>}
       />
 
       <div className="detailgrid">
@@ -99,7 +102,7 @@ export function RequestDetailPage() {
             <h3 className="card__title">Actions</h3>
             {actionError && <div className="field__error" role="alert">{actionError}</div>}
             {req.status === "Submitted" && can(currentUser, "request.triage") && (
-              <Link to="/triage"><Button variant="primary">Triage this request</Button></Link>
+              <Link to="/requests/triage"><Button variant="primary">Triage this request</Button></Link>
             )}
             {can(currentUser, "request.changeStatus") && moves.filter((m) => m !== "Converted to Matter").map((m: RequestStatus) => (
               <Button key={m} onClick={() => run(() => services.requests.transition(id, m, currentUser.id))}>Move to {m}</Button>

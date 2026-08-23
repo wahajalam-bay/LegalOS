@@ -1,65 +1,59 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "@/state/AppContext";
 import { canViewRequest } from "@/permissions/permissions";
 import { requesterCategoryLabel } from "@/domain/categories";
-import type { Priority, RequestStatus } from "@/domain/models/enums";
-import { Badge, Button, Card, EmptyState, PageHeader, Spinner } from "@/ui/components";
+import type { Request } from "@/domain/models/request";
+import {
+  Button, Card, EmptyState, PriorityBadge, SlaIndicator, Spinner, StatusBadge, Table, slaStateOf, type Column,
+} from "@/ui/components";
 
-const PRIORITY_TONE: Record<Priority, "gray" | "blue" | "amber" | "red"> = { Low: "gray", Medium: "blue", High: "amber", Urgent: "red" };
-const STATUS_TONE: Record<RequestStatus, "gray" | "blue" | "green" | "amber" | "purple"> = {
-  Submitted: "amber", Categorised: "blue", Assigned: "blue", "In Progress": "blue",
-  "Awaiting Requester": "amber", "Awaiting Approval": "purple", Delivered: "green", Closed: "gray", "Converted to Matter": "purple",
-};
+const fmtDate = (iso: string | null) =>
+  iso ? new Date(iso).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "—";
 
-const fmtDate = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "—");
-
-export function RequestsListPage() {
+export function RequestsListPage({ scope }: { scope: "mine" | "all" | "assigned" }) {
   const { repos, currentUser, version } = useApp();
-  // The repository is the async seam — model a loading state even though the
-  // local implementation resolves synchronously.
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   useEffect(() => { const t = setTimeout(() => setLoading(false), 0); return () => clearTimeout(t); }, []);
-
-  const rows = repos.requests.list().filter((r) => canViewRequest(currentUser, r));
   void version;
 
+  const visible = repos.requests.list().filter((r) => canViewRequest(currentUser, r));
+  const rows =
+    scope === "mine" ? visible.filter((r) => r.requesterId === currentUser.id)
+    : scope === "assigned" ? visible.filter((r) => r.assignment?.lawyerId === currentUser.id)
+    : visible;
+
+  const heading = scope === "mine" ? "My Requests" : scope === "assigned" ? "Assigned to Me" : "All Requests";
+
+  const columns: Column<Request>[] = [
+    { key: "id", header: "ID", render: (r) => <Link to={`/requests/${r.id}`} className="mono">{r.id}</Link> },
+    { key: "type", header: "Type", render: (r) => requesterCategoryLabel(r.requesterCategory) },
+    { key: "cat", header: "Legal category", render: (r) => r.legalCategory },
+    { key: "prio", header: "Priority", render: (r) => <PriorityBadge priority={r.priority} /> },
+    { key: "status", header: "Status", render: (r) => <StatusBadge status={r.status} /> },
+    { key: "sla", header: "SLA", render: (r) => <SlaIndicator state={slaStateOf(r)} /> },
+    { key: "due", header: "SLA due", render: (r) => fmtDate(r.slaDueDate) },
+  ];
+
   return (
-    <div className="page">
-      <PageHeader
-        title="Requests"
-        subtitle={currentUser.role === "requester" ? "Your requests" : "The request queue"}
-        actions={<Link to="/new"><Button variant="primary">New request</Button></Link>}
-      />
+    <div>
+      <div className="page__head">
+        <div><h1 className="page__title">{heading}</h1></div>
+        <Link to="/requests/new"><Button variant="primary" icon="plus">New request</Button></Link>
+      </div>
+
       {loading ? (
         <Card><Spinner /></Card>
       ) : rows.length === 0 ? (
         <Card>
-          <EmptyState
-            title="No requests yet"
-            message="Raise the first request to see it here."
-            action={<Link to="/new"><Button variant="primary">New request</Button></Link>}
-          />
+          <EmptyState title="Nothing here yet" icon="inbox"
+            message={scope === "mine" ? "You haven't raised any requests." : "No requests match this view."}
+            action={<Link to="/requests/new"><Button variant="primary">New request</Button></Link>} />
         </Card>
       ) : (
         <Card className="card--flush">
-          <table className="table">
-            <thead>
-              <tr><th>ID</th><th>Type</th><th>Legal category</th><th>Priority</th><th>Status</th><th>SLA due</th></tr>
-            </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.id}>
-                  <td className="mono"><Link to={`/requests/${r.id}`}>{r.id}</Link></td>
-                  <td>{requesterCategoryLabel(r.requesterCategory)}</td>
-                  <td>{r.legalCategory}</td>
-                  <td><Badge tone={PRIORITY_TONE[r.priority]}>{r.priority}</Badge></td>
-                  <td><Badge tone={STATUS_TONE[r.status]}>{r.status}</Badge></td>
-                  <td>{fmtDate(r.slaDueDate)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <Table columns={columns} rows={rows} rowKey={(r) => r.id} onRowClick={(r) => navigate(`/requests/${r.id}`)} />
         </Card>
       )}
     </div>
