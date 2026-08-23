@@ -6,7 +6,9 @@ export const NOTIFICATION_KINDS = [
   "request.assigned",
   "request.status_changed",
   "request.awaiting_requester",
+  "request.responded",
   "request.delivered",
+  "request.closed",
   "sla.near_breach",
   "sla.breached",
 ] as const;

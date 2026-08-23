@@ -1,6 +1,7 @@
-import type { Role } from "@/domain/models/enums";
+import type { Role, RequestStatus } from "@/domain/models/enums";
 import type { User } from "@/domain/models/user";
 import type { Request, RequesterVisibleRequest } from "@/domain/models/request";
+import { canTransition, nextStatuses } from "@/domain/lifecycle";
 
 export const PERMISSIONS = [
   "request.create",
@@ -42,6 +43,36 @@ export const isLegalRole = (role: Role): boolean => role !== "requester";
 
 export function can(user: User, permission: Permission): boolean {
   return ROLE_PERMISSIONS[user.role]?.includes(permission) ?? false;
+}
+
+/**
+ * Which permission a transition into a given status requires. Centralised so no
+ * role/transition rule is scattered across components or services (PRD §3.5).
+ */
+const TRANSITION_PERMISSION: Record<RequestStatus, Permission> = {
+  Submitted: "request.changeStatus",       // resume back to the triage queue
+  Categorised: "request.triage",
+  Assigned: "request.triage",
+  "In Progress": "request.changeStatus",
+  "Awaiting Requester": "request.changeStatus",
+  "Awaiting Approval": "request.changeStatus",
+  Delivered: "request.changeStatus",
+  Closed: "request.changeStatus",
+  "Converted to Matter": "request.convertToMatter",
+};
+
+export function permissionForTransition(to: RequestStatus): Permission {
+  return TRANSITION_PERMISSION[to] ?? "request.changeStatus";
+}
+
+/** A transition is allowed only if the lifecycle permits it AND the role may perform it. */
+export function canPerformTransition(user: User, from: RequestStatus, to: RequestStatus): boolean {
+  return canTransition(from, to) && can(user, permissionForTransition(to));
+}
+
+/** The next statuses THIS user is allowed to move a request to. */
+export function allowedTransitionsFor(user: User, from: RequestStatus): RequestStatus[] {
+  return nextStatuses(from).filter((to) => can(user, permissionForTransition(to)));
 }
 
 /** Row-level read access to a specific request. */

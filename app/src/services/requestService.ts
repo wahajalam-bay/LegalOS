@@ -8,8 +8,10 @@ import { legalCategoryFor } from "@/domain/categories";
 import { conditionalFieldsFor } from "@/domain/intake";
 import type { RequestAttachment } from "@/domain/models/request";
 import { canTransition } from "@/domain/lifecycle";
+import { can, permissionForTransition } from "@/permissions/permissions";
 import { calendarFor } from "@/lib/businessCalendar";
-import { computeDueDate } from "./slaEngine";
+import { computeDueDate, computeSlaStatus, type SlaStatus } from "./slaEngine";
+import { DEFAULT_ESCALATION, escalationLevelFor, isHigher, resolveEscalationRecipients, type EscalationConfig, type EscalationLevel } from "@/domain/escalation";
 import type { Clock } from "@/lib/clock";
 import type { Repositories } from "@/data/repository";
 import type { NewRequestInput } from "@/lib/validation";
@@ -185,6 +187,43 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       return { businessDays: cfg.businessDays, dueDate: due.toISOString() };
     },
 
+    /** Full SLA/TAT status for a request (business-day based). Null if not yet triaged. */
+    slaStatusFor(req: Request, now: Date = clock()): SlaStatus | null {
+      const cfg = repos.sla.find(req.legalCategory, req.priority, req.jurisdiction);
+      if (!cfg) return null;
+      return computeSlaStatus(calendarFor(req.jurisdiction), req.submittedAt, cfg.businessDays, req.pausePeriods, now);
+    },
+
+    /**
+     * Evaluate SLA thresholds across active requests and emit escalation
+     * notifications when a request crosses a new level. Idempotent per level
+     * (stores the highest level already notified). Returns the count emitted.
+     */
+    runSlaChecks(config: EscalationConfig = DEFAULT_ESCALATION): number {
+      const now = clock();
+      const at = now.toISOString();
+      const users = repos.users.list();
+      let emitted = 0;
+      for (const req of repos.requests.list()) {
+        if (req.status === "Delivered" || req.status === "Closed" || req.status === "Converted to Matter") continue;
+        if (req.pausePeriods.some((p) => p.end === null)) continue; // clock paused — not consuming
+        const cfg = repos.sla.find(req.legalCategory, req.priority, req.jurisdiction);
+        if (!cfg) continue;
+        const status = computeSlaStatus(calendarFor(req.jurisdiction), req.submittedAt, cfg.businessDays, req.pausePeriods, now);
+        const level: EscalationLevel = escalationLevelFor(status, config);
+        if (level === "none" || !isHigher(level, req.escalationLevel)) continue;
+        const recipients = resolveEscalationRecipients(req, users, level);
+        const kind = level === "breach" ? "sla.breached" : "sla.near_breach";
+        const title = level === "breach" ? `SLA breached — ${req.id}` : `SLA at risk — ${req.id}`;
+        const body = level === "breach"
+          ? `${req.id} has breached its SLA (due ${status.dueDate.toLocaleDateString()}).`
+          : `${req.id} has consumed ${Math.round((status.consumedBusinessDays / status.target) * 100)}% of its SLA.`;
+        for (const uid of recipients) { notifier.notify({ kind, recipientUserId: uid, entityId: req.id, title, body }, at); emitted++; }
+        repos.requests.update(req.id, (r) => ({ ...r, escalationLevel: level }));
+      }
+      return emitted;
+    },
+
     /** Triage action: send an untriaged request back to the requester for more info. */
     requestMoreInfo(requestId: RequestId, message: string, actorId: UserId): Result<Request> {
       const current = repos.requests.get(requestId);
@@ -212,6 +251,8 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       if (!current) return err("request not found");
       const from = current.status;
       if (!canTransition(from, to)) return err(`cannot move from "${from}" to "${to}"`);
+      const actor = repos.users.get(actorId);
+      if (!actor || !can(actor, permissionForTransition(to))) return err(`your role cannot move a request to "${to}"`);
       const now = clock();
       const at = now.toISOString();
 
@@ -232,6 +273,9 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       if (to === "Delivered") recordAudit(repos.audit, { actorId, action: "request.delivered", entityId: requestId }, at);
       if (to === "Closed") recordAudit(repos.audit, { actorId, action: "request.closed", entityId: requestId }, at);
       if (to === "Awaiting Requester") notifier.notify({ kind: "request.awaiting_requester", recipientUserId: current.requesterId, entityId: requestId, title: `Action needed on ${requestId}`, body: "Legal needs something from you to proceed." }, at);
+      else if (to === "Delivered") notifier.notify({ kind: "request.delivered", recipientUserId: current.requesterId, entityId: requestId, title: `${requestId} delivered`, body: "Legal has delivered your request. You can review the outcome now." }, at);
+      else if (to === "Closed") notifier.notify({ kind: "request.closed", recipientUserId: current.requesterId, entityId: requestId, title: `${requestId} closed`, body: "Your request has been closed." }, at);
+      else notifier.notify({ kind: "request.status_changed", recipientUserId: current.requesterId, entityId: requestId, title: `${requestId} — ${to}`, body: `Your request moved to "${to}".` }, at);
       return ok(updated);
     },
 
@@ -241,14 +285,28 @@ export function createRequestService({ repos, clock, notifier }: RequestServiceD
       if (!current) return err("request not found");
       if (!body.trim()) return err("comment cannot be empty");
       const at = nowIso();
+      const actor = repos.users.get(actorId);
+      // A requester replying while the clock is paused resumes it (TAT resumes on response).
+      const isRequesterResponse = actor?.role === "requester" && actorId === current.requesterId && current.status === "Awaiting Requester";
       const comment: RequestComment = {
         id: childId(current.id, "CMT", current.internal.comments.length + 1) as CommentId,
         authorId: actorId, body: body.trim(), at, internal,
       };
-      const updated = repos.requests.update(requestId, (r) => ({
-        ...r, updatedAt: at, internal: { ...r.internal, comments: [...r.internal.comments, comment] },
-      }))!;
+      const updated = repos.requests.update(requestId, (r) => {
+        const withComment: Request = { ...r, updatedAt: at, internal: { ...r.internal, comments: [...r.internal.comments, comment] } };
+        if (!isRequesterResponse) return withComment;
+        const pausePeriods = withComment.pausePeriods.map((p) => (p.end === null ? { ...p, end: at } : p));
+        const statusHistory = [...withComment.statusHistory, { id: childId<"StatusHistoryId">(r.id, "SH", withComment.statusHistory.length + 1), from: r.status, to: "In Progress" as RequestStatus, at, by: actorId, reason: "Requester responded" }];
+        let resumed: Request = { ...withComment, status: "In Progress", pausePeriods, statusHistory };
+        resumed = { ...resumed, ...recomputeSla(resumed, clock()) };
+        return resumed;
+      })!;
       recordAudit(repos.audit, { actorId, action: internal ? "request.edited" : "request.requester_contacted", entityId: requestId, newValue: internal ? "internal note" : "requester contacted" }, at);
+      if (isRequesterResponse) {
+        recordAudit(repos.audit, { actorId, action: "request.requester_responded", entityId: requestId }, at);
+        recordAudit(repos.audit, { actorId, action: "request.status_changed", entityId: requestId, previousValue: "Awaiting Requester", newValue: "In Progress", reason: "Requester responded" }, at);
+        if (current.assignment) notifier.notify({ kind: "request.responded", recipientUserId: current.assignment.lawyerId, entityId: requestId, title: `Response on ${requestId}`, body: `${actor?.name ?? "The requester"} replied — the request is back In Progress.` }, at);
+      }
       return ok(updated);
     },
 

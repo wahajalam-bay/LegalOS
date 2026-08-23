@@ -87,6 +87,8 @@ export interface Request {
   // Lifecycle + clock
   readonly status: RequestStatus;
   readonly pausePeriods: readonly PausePeriod[];
+  /** Highest escalation level already notified, so checks don't re-notify. */
+  readonly escalationLevel?: "none" | "warning" | "breach";
 
   // Relationships
   readonly matterId: MatterId | null; // set on "Converted to Matter"; Module 2 owns the matter itself

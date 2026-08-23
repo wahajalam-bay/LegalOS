@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { createLocalRepositories } from "@/data/localRepository";
 import type { Repositories } from "@/data/repository";
 import { createRequestService, type RequestService } from "./requestService";
-import { nullNotifier } from "./notificationService";
+import { nullNotifier, createRepoNotifier } from "./notificationService";
 import { fixedClock } from "@/lib/clock";
 import { brandId, type RequestId, type UserId } from "@/domain/models/ids";
 import type { NewRequestInput } from "@/lib/validation";
@@ -129,6 +129,67 @@ describe("requestService.requestMoreInfo", () => {
   });
 });
 
+describe("requestService.transition — role enforcement", () => {
+  it("blocks a requester from moving a request and allows the assigned lawyer", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const id = created.value.id;
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    expect(svc.transition(id, "In Progress", REQUESTER).ok).toBe(false); // requester lacks changeStatus
+    expect(svc.transition(id, "In Progress", ASSOC).ok).toBe(true);      // senior associate may
+  });
+});
+
+describe("requestService.addComment — requester response resumes the clock", () => {
+  it("moves Awaiting Requester back to In Progress and closes the pause", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const id = created.value.id;
+    svc.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    svc.transition(id, "In Progress", ASSOC);
+    svc.transition(id, "Awaiting Requester", ASSOC, "need info");
+    const res = svc.addComment(id, "Here is the information you asked for.", false, REQUESTER);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.value.status).toBe("In Progress");
+    expect(res.value.pausePeriods[0].end).not.toBeNull();
+    expect(repos.audit.list(id).some((e) => e.action === "request.requester_responded")).toBe(true);
+  });
+});
+
+describe("requestService — lifecycle notifications", () => {
+  it("notifies the requester on delivery and closure", () => {
+    const r = createLocalRepositories({ persist: false });
+    const s = createRequestService({ repos: r, clock: fixedClock("2026-01-05T09:00:00.000Z"), notifier: createRepoNotifier(r.notifications) });
+    const created = s.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    const id = created.value.id;
+    s.applyTriage(id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    s.transition(id, "In Progress", ASSOC);
+    s.transition(id, "Delivered", ASSOC);
+    s.transition(id, "Closed", ASSOC);
+    const kinds = r.notifications.list().map((n) => n.kind);
+    expect(kinds).toContain("request.delivered");
+    expect(kinds).toContain("request.closed");
+  });
+});
+
+describe("requestService.runSlaChecks — escalation", () => {
+  it("emits a breach escalation once, then is idempotent", () => {
+    const r = createLocalRepositories({ persist: false });
+    const early = createRequestService({ repos: r, clock: fixedClock("2026-01-05T09:00:00.000Z"), notifier: createRepoNotifier(r.notifications) });
+    const created = early.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    early.applyTriage(created.value.id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    // A much later clock — well past the due date.
+    const late = createRequestService({ repos: r, clock: fixedClock("2026-03-01T09:00:00.000Z"), notifier: createRepoNotifier(r.notifications) });
+    const first = late.runSlaChecks();
+    expect(first).toBeGreaterThan(0);
+    expect(r.notifications.list().some((n) => n.kind === "sla.breached")).toBe(true);
+    expect(late.runSlaChecks()).toBe(0); // already escalated at this level
+  });
+});
+
 describe("requestService.previewSla", () => {
   it("returns the business-day target and a due date for a valid combination", () => {
     const created = svc.create(intake(), REQUESTER);
@@ -136,6 +197,15 @@ describe("requestService.previewSla", () => {
     const sla = svc.previewSla(created.value, "Contract Review — Standard", "Medium");
     expect(sla.businessDays).toBeGreaterThan(0);
     expect(sla.dueDate).toBeTruthy();
+  });
+
+  it("slaStatusFor reports business-day consumption once triaged", () => {
+    const created = svc.create(intake(), REQUESTER);
+    if (!created.ok) throw new Error("setup failed");
+    svc.applyTriage(created.value.id, { legalCategory: "Contract Review — Standard", priority: "Medium", assignedLawyerId: ASSOC }, AD);
+    const status = svc.slaStatusFor(repos.requests.get(created.value.id)!);
+    expect(status).not.toBeNull();
+    expect(status!.target).toBeGreaterThan(0);
   });
 });
 

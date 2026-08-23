@@ -54,11 +54,13 @@ export function UrgencyBadge({ urgency }: { urgency: BusinessUrgency }) {
   return <Pill tone={URGENCY_TONE[urgency] ?? "gray"}>{urgency}</Pill>;
 }
 
-export type SlaState = "ontrack" | "duesoon" | "atrisk" | "breached" | "paused" | "none";
+export type SlaState = "ontrack" | "duesoon" | "atrisk" | "breached" | "paused" | "completed" | "none";
+const COMPLETED_STATUSES: readonly RequestStatus[] = ["Delivered", "Closed", "Converted to Matter"];
 export function slaStateOf(
   req: { status: RequestStatus; pausePeriods?: readonly { end: string | null }[]; slaDueDate: string | null },
   now: Date = new Date(),
 ): SlaState {
+  if (COMPLETED_STATUSES.includes(req.status)) return "completed";
   if (req.status === "Awaiting Requester" || (req.pausePeriods ?? []).some((p) => p.end === null)) return "paused";
   if (!req.slaDueDate) return "none";
   const ms = new Date(req.slaDueDate).getTime() - now.getTime();
@@ -68,7 +70,7 @@ export function slaStateOf(
   if (days <= 3) return "duesoon";
   return "ontrack";
 }
-const SLA_LABEL: Record<SlaState, string> = { ontrack: "On track", duesoon: "Due soon", atrisk: "At risk", breached: "Breached", paused: "Paused", none: "—" };
+const SLA_LABEL: Record<SlaState, string> = { ontrack: "On track", duesoon: "Due soon", atrisk: "At risk", breached: "Breached", paused: "Paused", completed: "Completed", none: "—" };
 export function SlaIndicator({ state }: { state: SlaState }) {
   if (state === "none") return <span className="muted">—</span>;
   return <span className={cx("sla", `sla--${state}`)}><span className="sla__dot" />{SLA_LABEL[state]}</span>;
@@ -190,6 +192,30 @@ export function Table<T>({ columns, rows, rowKey, onRowClick }: { columns: Colum
 /* ---------- Timeline ---------- */
 export function Timeline({ items }: { items: { key: string; title: ReactNode; meta?: ReactNode }[] }) {
   return <ul className="timeline">{items.map((i) => <li key={i.key}><b>{i.title}</b>{i.meta && <span className="muted"> — {i.meta}</span>}</li>)}</ul>;
+}
+
+/* ---------- Status timeline (reusable) ---------- */
+const TERMINAL: readonly RequestStatus[] = ["Delivered", "Closed", "Converted to Matter"];
+export interface StatusStep { status: RequestStatus; at: string; reason?: string }
+export function StatusTimeline({ steps }: { steps: StatusStep[] }) {
+  const last = steps.length - 1;
+  const fmt = (iso: string) => new Date(iso).toLocaleString(undefined, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  return (
+    <ol className="statustl">
+      {steps.map((s, i) => {
+        const isCurrent = i === last && !TERMINAL.includes(s.status);
+        return (
+          <li key={`${s.status}-${i}`} className={cx("statustl__item", isCurrent ? "is-current" : "is-done")}>
+            <span className="statustl__dot">{isCurrent ? <span className="statustl__pulse" /> : <Icon name="check" size={11} />}</span>
+            <div className="statustl__body">
+              <div className="statustl__title">{s.status}{isCurrent && <span className="statustl__now">Current</span>}</div>
+              <div className="statustl__time">{fmt(s.at)}{s.reason ? ` · ${s.reason}` : ""}</div>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  );
 }
 
 /* ---------- Stepper ---------- */

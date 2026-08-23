@@ -19,7 +19,9 @@ const KIND_ICON: Record<NotificationKind, string> = {
   "request.assigned": "user",
   "request.status_changed": "arrowRight",
   "request.awaiting_requester": "alert",
+  "request.responded": "arrowRight",
   "request.delivered": "check",
+  "request.closed": "check",
   "sla.near_breach": "clock",
   "sla.breached": "alertTriangle",
 };

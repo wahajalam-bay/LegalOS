@@ -5,23 +5,36 @@ import type { Jurisdiction } from "@/domain/models/enums";
  * (0=Sun … 6=Sat). Holidays are ISO date keys (YYYY-MM-DD). All arithmetic runs
  * in UTC so results are deterministic and timezone-independent.
  */
+/** Working hours in a jurisdiction's local time (24h). Kept configurable so the
+ * TAT abstraction can move to business-hours later without touching callers. */
+export interface WorkingHours {
+  readonly startHour: number;
+  readonly endHour: number;
+  /** IANA-ish label for display; the day-based engine does not depend on it. */
+  readonly timeZone: string;
+}
+
 export interface BusinessCalendar {
   readonly jurisdiction: Jurisdiction;
   readonly workingWeekdays: readonly number[];
   readonly holidays: ReadonlySet<string>;
+  readonly workingHours: WorkingHours;
 }
 
 // Pakistan: Mon–Fri (weekend Sat/Sun). Saudi Arabia: Sun–Thu (weekend Fri/Sat).
+// Calendars are fully independent — no shared/hardcoded assumptions across them.
 export const CALENDARS: Record<Jurisdiction, BusinessCalendar> = {
   PK: {
     jurisdiction: "PK",
     workingWeekdays: [1, 2, 3, 4, 5],
     holidays: new Set<string>(["2026-03-23", "2026-08-14", "2026-12-25"]),
+    workingHours: { startHour: 9, endHour: 18, timeZone: "Asia/Karachi" },
   },
   KSA: {
     jurisdiction: "KSA",
     workingWeekdays: [0, 1, 2, 3, 4],
     holidays: new Set<string>(["2026-09-23"]),
+    workingHours: { startHour: 8, endHour: 17, timeZone: "Asia/Riyadh" },
   },
 };
 

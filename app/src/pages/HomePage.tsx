@@ -1,11 +1,23 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useApp } from "@/state/AppContext";
 import { canViewRequest, can } from "@/permissions/permissions";
 import { Button, Card, DataCard, PageHeader, StatusBadge, EmptyState } from "@/ui/components";
 
 export function HomePage() {
-  const { repos, currentUser, version } = useApp();
+  const { repos, services, currentUser, reload, version } = useApp();
   void version;
+
+  // Legal users: evaluate SLA escalations on load (idempotent per level).
+  const ranRef = useRef(false);
+  useEffect(() => {
+    if (ranRef.current) return;
+    ranRef.current = true;
+    if (can(currentUser, "request.viewInternal")) {
+      const emitted = services.requests.runSlaChecks();
+      if (emitted > 0) reload();
+    }
+  }, [currentUser, services, reload]);
   const all = repos.requests.list().filter((r) => canViewRequest(currentUser, r));
   const open = all.filter((r) => r.status !== "Closed" && r.status !== "Converted to Matter");
   const awaiting = all.filter((r) => r.status === "Awaiting Requester");
