@@ -909,6 +909,16 @@ export function advanceRequestStage(id, byUserId) {
   if (idx >= path.length - 1) return { ok: false, error: "already at the final stage", final: true };
   const current = path[idx];
   const next = path[idx + 1];
+  // The Approval stage is a SIGN-OFF: leaving it requires approval authority —
+  // a Lead within the value threshold, the Director above it. Enforced in the
+  // engine so no UI path can bypass it (PRD §2).
+  if (current === "Approval") {
+    const rbac = (byId(byUserId) || {}).rbac;
+    const limit = rbac === "head" ? Infinity : rbac === "lead" ? 1000000 : 0;
+    if (Number(work.value || 0) > limit || limit === 0) {
+      return { ok: false, error: limit === 0 ? "approval requires a Lead (within threshold) or the Director" : "above your approval threshold — only the Director can sign off" };
+    }
+  }
   const meta = stageMeta(next);
   const now = nowIso();
   const ballWith = meta.ball;
