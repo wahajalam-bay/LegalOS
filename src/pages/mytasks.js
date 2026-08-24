@@ -12,10 +12,72 @@ import { LEGAL_TEAMS, teamShort, teamTone, masterList } from "../org.js";
 import { MODULES, moduleByKey } from "../modules.js";
 import { tatV2, tatV2Label, urgencyOf } from "../tat2.js";
 import { useCollection, useMasterData, personName } from "../store.js";
-import { useActiveUser, filterVisible, visibilityOf, canApprove } from "../rbac.js";
+import { useActiveUser, filterVisible, visibilityOf, canApprove, canTriage } from "../rbac.js";
+import { CategoryPill } from "../shared.js";
 import { TatChip } from "./module.js";
 
 const TONE = { Running: "green", Paused: "blue", Overdue: "red", Closed: "gray" };
+
+/* ---------------- the Board view (shared design language with /requests) ----
+   The same kanban the Legal Requests page uses, scoped to the viewer: an
+   associate sees their own pipeline, a lead their team's, the Director all —
+   and triagers get the Triage lane as the working entry point. */
+const BOARD_COLS = [
+  { key: "Triage", color: "#6d28d9", triageOnly: true, match: (r) => r.status === "Triage" || r.status === "New" },
+  { key: "Assigned", color: "#0d7a3f", match: (r) => r.status === "Assigned" },
+  { key: "In Review", color: "#d97706", match: (r) => r.status === "In Review" || r.status === "Business Review" },
+  { key: "Drafting", color: "#0891b2", match: (r) => r.status === "Drafting" },
+  { key: "Negotiation", color: "#ea580c", match: (r) => r.status === "Negotiation" },
+  { key: "Approval", color: "#27a96d", match: (r) => r.status === "Pending Approval" },
+  { key: "Signature", color: "#4f46e5", match: (r) => r.status === "Awaiting Signature" },
+];
+function TaskBoard({ viewer, scope, requests }) {
+  const triager = canTriage(viewer);
+  const mineOnly = scope === "mine";
+  const inScope = (r) => {
+    if (mineOnly) return r.owner === viewer.id;
+    if (scope === "team" && viewer.legalTeam) return (byId(r.owner) || {}).legalTeam === viewer.legalTeam;
+    return true; // head "all"
+  };
+  const cols = BOARD_COLS.filter((c) => !c.triageOnly || triager);
+  return html`<div class="kanban" style="margin-bottom:16px">
+    ${cols.map((col) => {
+      // The Triage lane is the department's untriaged queue (triagers only);
+      // every other lane is scope-filtered to the viewer's plate.
+      const cards = requests.filter((r) => col.match(r) && (col.triageOnly ? true : inScope(r)));
+      return html`<div key=${col.key} class="kcol">
+        <div class="kcol__head">
+          <span class="kcol__dot" style=${`background:${col.color}`}></span>
+          <span class="kcol__title">${col.key}</span>
+          <span class="kcol__count">${cards.length}</span>
+          <div class="spacer"></div>
+          ${col.triageOnly && html`<button class="iconbtn" style="width:26px;height:26px" title="Open the triage queue" onClick=${() => navigate("/triage")}><${Icon} name="arrowRight" size=14 /></button>`}
+        </div>
+        <div class="kcol__list">
+          ${cards.map((r) => html`<div key=${r.id} class="kcard" style="cursor:pointer"
+            onClick=${() => navigate(col.triageOnly ? "/triage" : "/workspace/" + r.id)}>
+            <div class="kcard__top">
+              <span class="kcard__id">${r.id}</span>
+              <div class="spacer"></div>
+              ${r.escalated ? html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>` : r.priority && html`<${Pill} tone=${/urgent/i.test(r.priority) ? "red" : /high/i.test(r.priority) ? "amber" : "gray"}>${r.priority}</${Pill}>`}
+            </div>
+            <div class="kcard__title">${r.title}</div>
+            <div class="kcard__meta">
+              <${CategoryPill} item=${r} />
+            </div>
+            <div class="kcard__foot">
+              <${Avatar} name=${personName(r.owner)} size="sm" />
+              <span class="tiny muted">${personName(r.owner).split(" ")[0]}</span>
+              <div class="spacer"></div>
+              ${r.tat && r.tat.dueAt && html`<span class="tiny" style=${`color:${new Date(r.tat.dueAt) < Date.now() ? "var(--danger)" : "var(--text-3)"}`}><${Icon} name="clock" size=12 style=${{ display: "inline", verticalAlign: "-2px", marginRight: "3px" }} />${fmt.until(r.tat.dueAt)}</span>`}
+            </div>
+          </div>`)}
+          ${cards.length === 0 && html`<div class="tiny muted center" style="padding:18px 0">Clear</div>`}
+        </div>
+      </div>`;
+    })}
+  </div>`;
+}
 
 export default function MyTasks() {
   const all = useCollection("modRequests");
@@ -35,6 +97,9 @@ export default function MyTasks() {
   const [tstat, setTstat] = useState("");
   const [stageQ, setStageQ] = useState("");
   const [showClosed, setShowClosed] = useState(false);
+  // Board is the default working view across every role — same design language
+  // as the Legal Requests pipeline; List keeps the dense table.
+  const [layout, setLayout] = useState("board");
 
   const visible = useMemo(() => filterVisible(viewer, all), [all, viewer]);
 
@@ -123,6 +188,17 @@ export default function MyTasks() {
       <div class=${cx("modkpi modkpi--gray", kpi === "paused" && "modkpi--active")} onClick=${() => setKpi(kpi === "paused" ? "" : "paused")}><div class="modkpi__n">${counts.paused}</div><div class="modkpi__l">Paused with a dept</div></div>
     </div>
 
+    <div class="row" style="gap:10px;margin-bottom:14px">
+      ${scopes.length > 1 && html`<${Segmented} options=${scopes.map((s) => ({ value: s.key, label: s.label }))} value=${scope} onChange=${setScope} />`}
+      <div class="spacer"></div>
+      <${Segmented} value=${layout} onChange=${setLayout} options=${[
+        { value: "board", label: "Board", icon: "columns" },
+        { value: "list", label: "List", icon: "list" },
+      ]} />
+    </div>
+
+    ${layout === "board" && isLegal && html`<${TaskBoard} viewer=${viewer} scope=${scope} requests=${filterVisible(viewer, legalRequests)} />`}
+
     ${first && !showClosed && html`<div class="focusline clickable" onClick=${() => navigate("/m/" + first.r.moduleKey + "/" + first.r.id)}>
       <${Icon} name="bolt" size=15 />
       <span><b>Start here:</b> ${first.r.id} — ${first.r.title}</span>
@@ -153,7 +229,7 @@ export default function MyTasks() {
       </table></div>
     </div>`}
 
-    ${myReqs.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px">
+    ${layout === "list" && myReqs.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px">
       <div class="row" style="padding:14px 16px 6px;align-items:baseline">
         <span class="panel__title">Legal requests assigned to me</span>
         <span class="tiny muted" style="margin-left:8px">— from the request intake pipeline</span>
@@ -175,7 +251,7 @@ export default function MyTasks() {
 
     <div class="card" style="padding:0">
       <div class="modtoolbar">
-        ${scopes.length > 1 && html`<${Segmented} options=${scopes.map((s) => ({ value: s.key, label: s.label }))} value=${scope} onChange=${setScope} />`}
+        <span class="panel__title" style="padding-left:4px">Module tasks</span>
         <span class="spacer"></span>
         ${viewer.rbac === "head" && html`<select class="input input--sm" value=${team} onChange=${(e) => setTeam(e.target.value)}>
           <option value="">Team: all</option>

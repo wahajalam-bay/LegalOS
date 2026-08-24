@@ -8,6 +8,7 @@ import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES,
 import { getCollection, notifsFor, markNotifsRead, useCollection } from "./store.js";
 import { allReminders } from "./reminders.js";
 import { TourOverlay, TourButton } from "./tour.js";
+import { signOut } from "./pages/login.js";
 import { senderName } from "./messages.js";
 // Sprint 6 — the org architecture: View As, RBAC-filtered search, team modules.
 import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser } from "./rbac.js";
@@ -60,6 +61,7 @@ function ViewAs() {
     })}
     <div class="menu__sep"></div>
     <${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>
+    <${MenuItem} icon="arrowLeft" onClick=${signOut}>Sign out — switch identity</${MenuItem}>
   </${Dropdown}>`;
 }
 
@@ -111,13 +113,18 @@ function Sidebar({ path, collapsed }) {
   </aside>`;
 }
 
-// Production identity chip — no persona switching (that is demo-only).
+// Production identity chip — no inline persona switching; identity changes go
+// through the credential screen (Sign out → pick another view).
 function UserChip() {
   const me = useActiveUser();
-  return html`<div class="sidebar__user" style="cursor:default">
+  return html`<${Dropdown} align="left" width=${240} drop="up" trigger=${html`<div class="sidebar__user">
     <${Avatar} name=${me.name} size="md" />
     <div class="sidebar__user-meta"><div class="sidebar__user-name">${me.name}</div><div class="sidebar__user-role">${me.role}</div></div>
-  </div>`;
+    <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
+  </div>`}>
+    <${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>
+    <${MenuItem} icon="arrowLeft" onClick=${signOut}>Sign out — switch identity</${MenuItem}>
+  </${Dropdown}>`;
 }
 
 /* ---------------- Notifications panel ---------------- */

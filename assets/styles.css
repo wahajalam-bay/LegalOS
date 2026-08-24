@@ -2249,3 +2249,44 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 }
 .draft3__nav:hover { background: var(--surface-2); }
 .draft3__nav.active { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 30%, transparent); }
+
+/* ---------------- Login / credential picker ---------------- */
+.login {
+  min-height: 100vh; display: flex; justify-content: center;
+  padding: 40px 20px; overflow-y: auto;
+  background:
+    radial-gradient(900px 500px at 15% -10%, var(--brand-soft-2), transparent 60%),
+    radial-gradient(700px 400px at 110% 10%, var(--accent-soft), transparent 55%),
+    var(--surface-2);
+}
+.login__panel { width: min(880px, 100%); }
+.login__brand { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.login__logo { width: 46px; height: 46px; border-radius: 12px; box-shadow: var(--shadow-md); }
+.login__name { font-size: 26px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
+.login__sub { font-size: 12.5px; color: var(--text-2); margin-top: 1px; }
+.login__lead { font-size: 13.5px; color: var(--text-2); margin: 14px 0 26px; max-width: 560px; line-height: 1.5; }
+.login__group { margin-bottom: 22px; }
+.login__label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--text-3); margin-bottom: 10px;
+}
+.login__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.login__card {
+  display: flex; align-items: center; gap: 12px; text-align: left;
+  padding: 12px 14px; border-radius: var(--r-md);
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs); cursor: pointer;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+}
+.login__card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: color-mix(in srgb, var(--brand) 40%, var(--border)); }
+.login__card.busy { border-color: var(--brand); background: var(--brand-soft); }
+.login__meta { flex: 1; min-width: 0; }
+.login__who { font-size: 13.5px; font-weight: 700; color: var(--text); }
+.login__view { font-size: 11.5px; font-weight: 600; color: var(--brand-600); margin-top: 1px; }
+.login__role { font-size: 11px; color: var(--text-3); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.login__go { color: var(--text-3); flex: none; }
+.login__card:hover .login__go { color: var(--brand); }
+.login__foot {
+  display: flex; align-items: center; gap: 7px; margin-top: 8px;
+  font-size: 11.5px; color: var(--text-3);
+}

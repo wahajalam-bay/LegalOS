@@ -42,6 +42,8 @@ import Triage from "./pages/triage.js";
 import Costs from "./pages/costs.js";
 // Module 3 — Contract Intelligence
 import Drafting from "./pages/drafting.js";
+// The credential picker (sign-in / switch-view screen)
+import Login, { isAuthed } from "./pages/login.js";
 import { runOrgSweeps, _bindRbac } from "./store.js";
 import { activeUser, landingFor, filterVisible } from "./rbac.js";
 // Retrieval security: the store's precedent retrieval denies everything until
@@ -73,6 +75,7 @@ const ROUTES = {
   "/templates": Templates,
   "/clauses": Clauses,
   "/drafting": Drafting,
+  "/login": Login,
   "/knowledge": Knowledge,
   "/litigation": Litigation,
   "/compliance": Compliance,
@@ -92,6 +95,8 @@ function NotFound() {
 function App() {
   const [path] = useRoute();
   const { base, id } = parsePath(path);
+  // The credential picker renders bare — no shell until someone signs in.
+  if (base === "/login" || !isAuthed()) return html`<${Login} />`;
   const Page = ROUTES[base] || NotFound;
   return html`<${Shell} path=${path}><${Page} id=${id} path=${path} key=${base} /></${Shell}>`;
 }
