@@ -16,8 +16,8 @@ export const NAV = [
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
   ]},
   { section: "My Work", items: [
-    { path: "/my-tasks", label: "My Tasks", icon: "checksquare", badge: "myTasks" },
-    { path: "/triage", label: "Triage", icon: "inbox" },
+    { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
+    { path: "/triage", label: "Triage", icon: "filter" },
     { path: "/my-requests", label: "My Requests", icon: "list" },
     { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},

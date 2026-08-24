@@ -4,16 +4,25 @@ import { Icon } from "../icons.js";
 import { Btn, Avatar, Risk, Priority, Pill, Status, Segmented, Modal, Field, Input, Drawer, AICard } from "../ui.js";
 import { PageHead, Toolbar, DataTable } from "../parts.js";
 import { REQUEST_TYPES, BUSINESS_UNITS, WORK_CATEGORIES, inferCategory, nameOf, entityName } from "../data.js";
-import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow, convertRequestToMatter } from "../store.js";
-import { activeUser } from "../rbac.js";
+import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow, convertRequestToMatter, personName } from "../store.js";
+import { activeUser, useActiveUser, filterVisible, canApprove, canTriage } from "../rbac.js";
+import { byId } from "../data.js";
+import { teamShort, teamTone } from "../org.js";
+import { moduleByKey } from "../modules.js";
+import { tatV2, urgencyOf } from "../tat2.js";
+import { TatChip } from "./module.js";
+import { ApprovalsInline } from "./approvals.js";
+import { Empty } from "../ui.js";
+import { StatStrip } from "../parts.js";
 import { navigate } from "../router.js";
 import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories, TatCell, SubdivisionPill } from "../shared.js";
 import { rowTat } from "../flow.js";
 import { tatAnalysis } from "../tat.js";
 
 const COLUMNS = [
-  { key: "New", color: "#1d6cb0" },
-  { key: "Triage", color: "#6d28d9" },
+  // One intake lane: New and Triage are the same working state ("needs triage"),
+  // so the lane always agrees with the Awaiting-triage KPI.
+  { key: "Triage", color: "#6d28d9", match: (r) => r.status === "New" || r.status === "Triage" },
   // Triage assigns an owner and sets status "Assigned"; the board needs this
   // column so a just-triaged request stays visible in the pipeline (it was
   // previously dropping off between Triage and In Review).
@@ -67,7 +76,7 @@ function RequestCard({ r, onOpen, onDragStart }) {
       <span class="tiny muted">${nameOf(r.owner).split(" ")[0]}</span>
       <div class="spacer"></div>
       ${r.value && html`<span class="tiny strong">${fmt.money(r.value, r.currency)}</span>`}
-      <span class="tiny" style=${`color:${new Date(r.due) < Date.now() ? "var(--danger)" : "var(--text-3)"}`}><${Icon} name="clock" size=12 style=${{ display: "inline", verticalAlign: "-2px", marginRight: "3px" }} />${fmt.until(r.due)}</span>
+      ${(r.due || (r.tat && r.tat.dueAt)) && html`<span class="tiny" style=${`color:${new Date(r.due || r.tat.dueAt) < Date.now() ? "var(--danger)" : "var(--text-3)"}`}><${Icon} name="clock" size=12 style=${{ display: "inline", verticalAlign: "-2px", marginRight: "3px" }} />${fmt.until(r.due || r.tat.dueAt)}</span>`}
     </div>
     ${(r.companyTags || []).length ? html`<div style="margin-top:8px"><${TagChips} ids=${r.companyTags} /></div>` : ""}
   </div>`;
@@ -134,11 +143,19 @@ function IntakeModal({ onClose, onCreate }) {
   </${Modal}>`;
 }
 
+// Statuses that mean the request is finished — off the working board.
+const REQ_DONE = new Set(["Closed", "Approved", "Delivered", "Executed", "Completed", "Signed"]);
+const UNTRIAGED = (r) => r.status === "New" || r.status === "Triage";
+
+// LEGAL REQUESTS — the merged single-window surface (Legal Requests + My Tasks):
+// scoped pipeline board, the approver's queue, and module tasks, all in one flow.
 export default function Requests() {
   const items = useCollection("requests");
   const matters = useCollection("matters");
   const contracts = useCollection("contracts");
   const repository = useCollection("repository");
+  const mods = useCollection("modRequests");
+  const viewer = useActiveUser();
   const [view, setView] = useState("board");
   const [q, setQ] = useState("");
   const [bu, setBu] = useState("all");
@@ -149,7 +166,41 @@ export default function Requests() {
   const [tagEdit, setTagEdit] = useState(false);
   const toggleCat = (c) => setCats((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
 
-  const filtered = items.filter((r) => (!q || (r.title + r.counterparty + r.type).toLowerCase().includes(q.toLowerCase())) && (bu === "all" || r.bu === bu) && matchCategories(r, cats));
+  // Scope — the My Tasks lens, folded in: my plate / my team / everything.
+  const scopes = [{ key: "mine", label: "My tasks" }];
+  if (viewer.legalTeam) scopes.push({ key: "team", label: viewer.rbac === "lead" ? "Team queue" : "Team" });
+  if (viewer.rbac === "head") scopes.push({ key: "all", label: "All teams" });
+  const [scope, setScope] = useState(viewer.rbac === "head" ? "all" : "mine");
+  const triager = canTriage(viewer);
+  const inScope = (r) => scope === "all" ? true
+    : scope === "team" ? (byId(r.owner) || {}).legalTeam === viewer.legalTeam
+    : r.owner === viewer.id;
+
+  // Privilege first, then scope. Triagers additionally see the WHOLE untriaged
+  // queue (the triage desk is department-wide — a new request must reach the
+  // expert lead even before it has a confirmed team).
+  const visible = filterVisible(viewer, items);
+  const untriagedPool = triager ? items.filter((r) => UNTRIAGED(r) && (r.privilege || "Open") === "Open") : [];
+  const baseIds = new Set();
+  const base = [...visible.filter(inScope), ...untriagedPool].filter((r) => (baseIds.has(r.id) ? false : (baseIds.add(r.id), true)));
+
+  // The approver's queue (PRD §2): matters at the Approval gate for MY sign-off.
+  const myApprovals = !canApprove(viewer) ? [] : visible
+    .filter((r) => (r.stage === "Approval" || r.status === "Pending Approval") && !REQ_DONE.has(r.status))
+    .filter((r) => viewer.rbac === "head" || (byId(r.owner) || {}).legalTeam === viewer.legalTeam)
+    .sort((a, b) => (b.escalated ? 1 : 0) - (a.escalated ? 1 : 0));
+
+  // Module tasks (the org-architecture queues), same scope.
+  const modRows = filterVisible(viewer, mods)
+    .filter((r) => r.status !== "Closed")
+    .filter((r) => scope === "all" ? true : scope === "team" ? r.legalTeam === viewer.legalTeam : r.owner === viewer.id)
+    .map((r) => ({ r, def: moduleByKey(r.moduleKey) }))
+    .filter((x) => x.def)
+    .map((x) => ({ ...x, t: tatV2(x.def, x.r) }))
+    .sort((a, b) => urgencyOf(b.t) - urgencyOf(a.t));
+
+  const openReqs = base.filter((r) => !REQ_DONE.has(r.status));
+  const filtered = base.filter((r) => (!q || (r.title + r.counterparty + r.type).toLowerCase().includes(q.toLowerCase())) && (bu === "all" || r.bu === bu) && matchCategories(r, cats));
   // TAT is computed once per row and reused by the board cards and the list.
   const ctx = { requests: items, matters, contracts, repository };
   const withTat = filtered.map((r) => ({ ...r, __tat: rowTat(r, ctx) }));
@@ -167,16 +218,31 @@ export default function Requests() {
   const chips = [{ label: "All units", value: "all" }, ...BUSINESS_UNITS.map((b) => ({ label: b, value: b }))];
 
   return html`<div class="page page--wide fade-in">
-    <${PageHead} title="Legal Requests" sub="Every legal need starts here — intake, triage and route in one flow."
+    <${PageHead} title="Legal Requests" sub=${"Everything on " + viewer.name.split(" ")[0] + "'s plate — intake, triage, pipeline, approvals and module tasks in one flow."}
       actions=${html`<${Segmented} value=${view} onChange=${setView} options=${[{ label: "Board", value: "board", icon: "columns" }, { label: "List", value: "list", icon: "list" }]} />
         <${Btn} variant="primary" icon="plus" onClick=${() => setModal(true)}>New request</${Btn}>`} />
+
+    <${StatStrip} stats=${[
+      { value: openReqs.length, label: "Open requests", tone: "blue" },
+      { value: base.filter(UNTRIAGED).length, label: "Awaiting triage", tone: "purple" },
+      // Non-approvers never see the "my approval" phrasing — nothing is theirs to sign.
+      ...(canApprove(viewer) ? [{ value: myApprovals.length, label: "Awaiting my approval", tone: "amber" }] : []),
+      { value: modRows.length, label: "Module tasks open", tone: "green" },
+      { value: openReqs.filter((r) => r.tat && r.tat.dueAt && new Date(r.tat.dueAt) < Date.now()).length, label: "Overdue vs TAT", tone: "red" },
+    ]} />
+
+    <div class="row wrap" style="gap:10px;margin-bottom:12px">
+      ${scopes.length > 1 && html`<${Segmented} value=${scope} onChange=${setScope} options=${scopes.map((s) => ({ value: s.key, label: s.label }))} />`}
+    </div>
+
+    <${ApprovalsInline} viewer=${viewer} requests=${items} />
 
     <${Toolbar} search=${q} onSearch=${setQ} chips=${chips} active=${bu} onChip=${setBu} />
     <div class="row wrap" style="gap:8px;margin-bottom:16px"><${CategoryChips} selected=${cats} onToggle=${toggleCat} /></div>
 
     ${view === "board" ? html`<div class="kanban">
-      ${COLUMNS.map((col) => {
-        const cards = withTat.filter((r) => r.status === col.key);
+      ${COLUMNS.filter((col) => triager || col.key !== "Triage").map((col) => {
+        const cards = withTat.filter((r) => (col.match ? col.match(r) : r.status === col.key));
         return html`<div key=${col.key} class="kcol"
           onDragOver=${(e) => e.preventDefault()} onDrop=${() => onDrop(col.key)}>
           <div class="kcol__head">
@@ -209,27 +275,95 @@ export default function Requests() {
       { key: "tatStatus", label: "TAT Status", width: "168px", render: (r) => html`<${TatCell} tat=${r.__tat} />` },
     ]} rows=${withTat} /></div>`}
 
+    <!-- Module tasks (org-architecture queues), merged in from My Tasks -->
+    <div class="card" style="padding:0;margin-top:16px">
+      <div class="row" style="padding:14px 16px 6px;align-items:baseline">
+        <span class="panel__title">Module tasks</span>
+        <span class="tiny muted" style="margin-left:8px">— ${scope === "mine" ? "assigned to you" : scope === "team" ? "your team's queue" : "all teams"} across the team modules</span>
+        <span class="spacer"></span><${Pill} tone=${modRows.length ? "blue" : "gray"}>${modRows.length}</${Pill}>
+      </div>
+      ${modRows.length === 0
+        ? html`<${Empty} icon="checkcircle" title="No module tasks" text="Your assigned legal requests are shown above." />`
+        : html`<div class="tablewrap"><table class="table">
+            <thead><tr><th>Ref</th><th>Matter</th><th>Module</th><th>Team</th>${scope !== "mine" && html`<th>Owner</th>`}<th>Stage</th><th>TAT</th></tr></thead>
+            <tbody>
+              ${modRows.slice(0, 12).map(({ r, def, t }) => html`<tr key=${r.id} class="clickable" onClick=${() => navigate("/m/" + r.moduleKey + "/" + r.id)}>
+                <td class="mono tiny">${r.id}</td>
+                <td style="max-width:300px"><div class="ellipsis" title=${r.title}>${r.title}</div></td>
+                <td class="tiny">${def.label}</td>
+                <td><${Pill} tone=${teamTone(r.legalTeam)}>${teamShort(r.legalTeam)}</${Pill}></td>
+                ${scope !== "mine" && html`<td><span class="row" style="gap:7px"><${Avatar} name=${personName(r.owner)} size="xs" />${personName(r.owner).split(" ")[0]}</span></td>`}
+                <td><${Pill} tone="blue">${r.stage}</${Pill}></td>
+                <td><${TatChip} t=${t} /></td>
+              </tr>`)}
+            </tbody>
+          </table></div>`}
+    </div>
+
     ${modal && html`<${IntakeModal} onClose=${() => setModal(false)} onCreate=${(item) => addItem("requests", item)} />`}
-    ${open && html`<${Drawer} title=${open.id} onClose=${() => setOpen(null)}
-      footer=${html`<${Btn} variant="ghost" icon="workflow" onClick=${() => navigate("/workspace/" + open.id)}>Open flow</${Btn}>
-        ${open.matterId
-          ? html`<${Btn} variant="primary" icon="folder" onClick=${() => navigate("/matters/" + open.matterId)}>Open matter ${open.matterId}</${Btn}>`
-          : html`<${Btn} variant="primary" icon="arrowRight" onClick=${() => convert(open)}>Convert to matter</${Btn}>`}`}>
-      <div class="col" style="gap:18px;padding:20px">
-        <div>
-          <div class="row wrap" style="gap:8px;margin-bottom:8px"><${Pill} tone="blue">${open.type}</${Pill}><${Status} value=${open.status} /><${Risk} level=${open.risk} /><${CategoryPill} item=${open} /></div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-.01em">${open.title}</div>
+    ${open && html`<div class="sheet" onClick=${() => setOpen(null)}>
+      <div class="sheet__panel" onClick=${(e) => e.stopPropagation()}>
+        <div class="sheet__bar">
+          <span class="mono muted">${open.id}</span>
+          <${Status} value=${open.status} />
+          ${open.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}
+          ${open.tat && open.tat.dueAt && html`<${Pill} tone=${new Date(open.tat.dueAt) < Date.now() ? "red" : "blue"}>TAT ${open.tat.days}d · due ${fmt.dateShort(open.tat.dueAt)}</${Pill}>`}
+          <div class="spacer"></div>
+          <${Btn} variant="ghost" size="sm" icon="workflow" onClick=${() => navigate("/workspace/" + open.id)}>Open flow</${Btn}>
+          ${UNTRIAGED(open) && canTriage(viewer) && html`<${Btn} variant="soft" size="sm" icon="filter" onClick=${() => navigate("/triage/" + open.id)}>Triage this</${Btn}>`}
+          ${open.matterId
+            ? html`<${Btn} variant="primary" size="sm" icon="folder" onClick=${() => navigate("/matters/" + open.matterId)}>Matter ${open.matterId}</${Btn}>`
+            : html`<${Btn} variant="primary" size="sm" icon="arrowRight" onClick=${() => convert(open)}>Convert to matter</${Btn}>`}
+          <button class="iconbtn" onClick=${() => setOpen(null)} title="Close"><${Icon} name="x" size=18 /></button>
         </div>
-        <${AICard} title="AI summary">${open.aiSummary}</${AICard}>
-        <div>
-          <div class="row" style="margin-bottom:8px"><span class="strong tiny" style="text-transform:uppercase;letter-spacing:.05em;color:var(--text-3)">Company tags</span><div class="spacer"></div><button class="tiny" style="color:var(--brand);font-weight:600" onClick=${() => setTagEdit(true)}>Edit tags</button></div>
-          ${(open.companyTags || []).length ? html`<${TagChips} ids=${open.companyTags} />` : html`<span class="tiny muted">No company tags yet.</span>`}
-        </div>
-        <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
-          ${[["Business Unit", open.bu], ["Department", open.dept], ["Country", open.country], ["Counterparty", open.counterparty], ["Value", open.value ? fmt.moneyFull(open.value, open.currency) : "—"], ["Priority", open.priority], ["Requester", nameOf(open.requester)], ["Legal Owner", nameOf(open.owner)], ["Due date", fmt.date(open.due)], ["Created", fmt.date(open.created)]].map(([l, v]) => html`<div key=${l}><div class="tiny muted" style="margin-bottom:2px">${l}</div><div class="strong" style="font-size:13px">${v}</div></div>`)}
+        <div class="sheet__body">
+          <div class="sheet__hero">
+            <div class="row wrap" style="gap:8px;margin-bottom:8px">
+              <${Pill} tone="blue">${open.type || open.requestType}</${Pill}><${Risk} level=${open.risk} /><${CategoryPill} item=${open} />
+              ${open.requesterOption && html`<${Pill} tone="gray">${open.requesterOption}</${Pill}>`}
+            </div>
+            <div class="sheet__title">${open.title}</div>
+          </div>
+          <div class="sheet__grid">
+            <div class="col" style="gap:18px;min-width:0">
+              ${(open.businessContext || open.aiSummary) && html`<div>
+                <div class="fpop__lbl" style="margin-bottom:6px">${open.businessContext ? "Business context — as submitted" : "AI summary"}</div>
+                <div class="spine__desc">${open.businessContext || open.aiSummary}</div>
+              </div>`}
+              <div>
+                <div class="fpop__lbl" style="margin-bottom:8px">Request record</div>
+                <div class="sheet__facts">
+                  ${[["Requester", nameOf(open.requesterId || open.requester)], ["Department", open.department || open.dept || "—"], ["Business unit", open.bu || open.unit || "—"], ["Counterparty", open.counterparty || "—"], ["Value", open.value ? fmt.moneyFull(open.value, open.currency) : "—"], ["Priority", open.priority || "—"], ["Legal owner", nameOf(open.owner)], ["Due date", open.dueDate || open.due ? fmt.date(open.dueDate || open.due) : "—"], ["Created", open.requestDate || open.created ? fmt.date(open.requestDate || open.created) : "—"], ["Filed matter", open.matterId || "not filed"]].map(([l, v]) => html`<div key=${l} class="sheet__fact"><div class="sheet__fl">${l}</div><div class="sheet__fv">${v}</div></div>`)}
+                </div>
+                ${open.layer2 && Object.keys(open.layer2).filter((k) => open.layer2[k]).length > 0 && html`<div class="sheet__facts" style="margin-top:10px">
+                  ${Object.keys(open.layer2).filter((k) => open.layer2[k]).map((k) => html`<div key=${k} class="sheet__fact"><div class="sheet__fl">${k}</div><div class="sheet__fv">${open.layer2[k]}</div></div>`)}
+                </div>`}
+              </div>
+              <div>
+                <div class="row" style="margin-bottom:8px"><span class="fpop__lbl">Company tags</span><div class="spacer"></div><button class="tiny" style="color:var(--brand);font-weight:600" onClick=${() => setTagEdit(true)}>Edit tags</button></div>
+                ${(open.companyTags || []).length ? html`<${TagChips} ids=${open.companyTags} />` : html`<span class="tiny muted">No company tags yet.</span>`}
+              </div>
+            </div>
+            <div class="col" style="gap:18px;min-width:0">
+              <div>
+                <div class="fpop__lbl" style="margin-bottom:8px">What's happening — full history</div>
+                ${(open.activity || []).length === 0 && (open.stageLog || []).length === 0 && html`<span class="tiny muted">Submitted — waiting for triage.</span>`}
+                <div class="col" style="gap:8px">
+                  ${(open.stageLog || []).map((s, i) => html`<div key=${"s" + i} class="row tiny" style="gap:8px;align-items:flex-start">
+                    <${Icon} name=${s.exitedAt ? "checkcircle" : "clock"} size=13 style=${{ color: s.exitedAt ? "var(--success)" : "var(--brand)", flex: "none", marginTop: "1px" }} />
+                    <div style="flex:1"><b>${s.stage}</b> <span class="muted">· ${s.enteredAt ? fmt.dateShort(s.enteredAt) : ""}${s.exitedAt ? " → " + fmt.dateShort(s.exitedAt) : " · in progress"}${s.ballWith ? " · ball with " + s.ballWith : ""}</span></div>
+                  </div>`)}
+                  ${[...(open.activity || [])].slice(-8).reverse().map((a, i) => html`<div key=${"a" + i} class="row tiny" style="gap:8px;align-items:flex-start">
+                    <${Icon} name="dot" size=13 style=${{ color: "var(--text-3)", flex: "none", marginTop: "1px" }} />
+                    <div style="flex:1">${a.action} <span class="muted">· ${a.by ? nameOf(a.by) : "System"} · ${a.at ? fmt.rel(a.at) : ""}</span></div>
+                  </div>`)}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </${Drawer}>`}
+    </div>`}
     ${tagEdit && open && html`<${TagEditor} ids=${open.companyTags || []} onClose=${() => setTagEdit(false)} onSave=${(sel) => { updateItem("requests", open.id, { companyTags: sel }); setOpen({ ...open, companyTags: sel }); }} />`}
   </div>`;
 }

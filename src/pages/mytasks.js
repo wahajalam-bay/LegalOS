@@ -39,12 +39,16 @@ function TaskBoard({ viewer, scope, requests }) {
     if (scope === "team" && viewer.legalTeam) return (byId(r.owner) || {}).legalTeam === viewer.legalTeam;
     return true; // head "all"
   };
-  const cols = BOARD_COLS.filter((c) => !c.triageOnly || triager);
+  // The Triage lane is the department's untriaged queue (triagers only);
+  // every other lane is scope-filtered to the viewer's plate. Empty lanes are
+  // dropped so the board only ever shows real work.
+  const lanes = BOARD_COLS
+    .filter((c) => !c.triageOnly || triager)
+    .map((col) => ({ col, cards: requests.filter((r) => col.match(r) && (col.triageOnly ? true : inScope(r))) }))
+    .filter((x) => x.cards.length > 0);
+  if (!lanes.length) return null; // nothing in the pipeline — no empty shell
   return html`<div class="kanban" style="margin-bottom:16px">
-    ${cols.map((col) => {
-      // The Triage lane is the department's untriaged queue (triagers only);
-      // every other lane is scope-filtered to the viewer's plate.
-      const cards = requests.filter((r) => col.match(r) && (col.triageOnly ? true : inScope(r)));
+    ${lanes.map(({ col, cards }) => {
       return html`<div key=${col.key} class="kcol">
         <div class="kcol__head">
           <span class="kcol__dot" style=${`background:${col.color}`}></span>
@@ -55,7 +59,7 @@ function TaskBoard({ viewer, scope, requests }) {
         </div>
         <div class="kcol__list">
           ${cards.map((r) => html`<div key=${r.id} class="kcard" style="cursor:pointer"
-            onClick=${() => navigate(col.triageOnly ? "/triage" : "/workspace/" + r.id)}>
+            onClick=${() => navigate(col.triageOnly ? "/triage/" + r.id : "/workspace/" + r.id)}>
             <div class="kcard__top">
               <span class="kcard__id">${r.id}</span>
               <div class="spacer"></div>
@@ -72,7 +76,6 @@ function TaskBoard({ viewer, scope, requests }) {
               ${r.tat && r.tat.dueAt && html`<span class="tiny" style=${`color:${new Date(r.tat.dueAt) < Date.now() ? "var(--danger)" : "var(--text-3)"}`}><${Icon} name="clock" size=12 style=${{ display: "inline", verticalAlign: "-2px", marginRight: "3px" }} />${fmt.until(r.tat.dueAt)}</span>`}
             </div>
           </div>`)}
-          ${cards.length === 0 && html`<div class="tiny muted center" style="padding:18px 0">Clear</div>`}
         </div>
       </div>`;
     })}

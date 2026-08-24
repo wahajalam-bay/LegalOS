@@ -35,7 +35,6 @@ import Exec from "./pages/exec.js";
 import FlowMap from "./pages/flowmap.js";
 // Sprint 6 — the org architecture
 import ModulePage from "./pages/module.js";
-import MyTasks from "./pages/mytasks.js";
 import Raise from "./pages/raise.js";
 import MyRequests from "./pages/myrequests.js";
 import Triage from "./pages/triage.js";
@@ -54,7 +53,7 @@ const ROUTES = {
   "/exec": Exec,
   "/flow-map": FlowMap,
   "/m": ModulePage,
-  "/my-tasks": MyTasks,
+  "/my-tasks": Requests, // merged into Legal Requests (alias keeps old links/landings working)
   "/triage": Triage,
   "/raise": Raise,
   "/my-requests": MyRequests,

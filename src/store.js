@@ -514,6 +514,21 @@ export function submitLegalRequest(payload = {}) {
     title: `Request received — ${id}`,
     body: `We've logged "${record.title}". Target turnaround ${tat.days} working day${tat.days === 1 ? "" : "s"} (by ${new Date(tat.dueAt).toLocaleDateString()}).`,
   });
+  // The request goes TO the desk immediately: the suggested expert counsel and
+  // their team lead both hear about it at submission, before formal triage.
+  notifyUser(owner, {
+    kind: "new-req", ref: id, tone: "purple", icon: "inbox",
+    title: `${id} — new request suggested to you`,
+    body: `${record.title} (${record.category || "Triage required"}). Awaiting triage confirmation.`,
+    to: "/triage/" + id,
+  });
+  const ownerLead = USERS.find((u) => u.rbac === "lead" && u.legalTeam === (byId(owner) || {}).legalTeam);
+  if (ownerLead && ownerLead.id !== owner) notifyUser(ownerLead.id, {
+    kind: "new-req-lead", ref: id, tone: "purple", icon: "filter",
+    title: `${id} — new request for your desk`,
+    body: `${record.title} — system-routed to ${_nm(owner)}. Triage to confirm or reassign.`,
+    to: "/triage/" + id,
+  });
 
   // Attachments carried in from the portal also become repository documents, so
   // they appear in the internal WorkflowSpine's Input zone (not just on the form).

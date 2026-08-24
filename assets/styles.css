@@ -483,7 +483,12 @@ svg { display: block; }
 .kcard:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--border-strong); }
 .kcard__top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .kcard__id { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
-.kcard__title { font-weight: 600; font-size: 13.5px; line-height: 1.35; margin-bottom: 10px; }
+.kcard { min-width: 0; }
+.kcard__title { font-weight: 600; font-size: 13.5px; line-height: 1.35; margin-bottom: 10px; overflow-wrap: anywhere; word-break: break-word; }
+/* long unbroken strings (ids, pasted text, AI summaries) must wrap inside the
+   card, never leak out of it */
+.kcard .row span.tiny, .kcard .kcard__meta { min-width: 0; overflow-wrap: anywhere; }
+.sheet__title, .cell-strong, .pagehead__title { overflow-wrap: anywhere; word-break: break-word; }
 .kcard__meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .kcard__foot { display: flex; align-items: center; gap: 8px; margin-top: 11px; padding-top: 11px; border-top: 1px solid var(--border); }
 .kcol__dot { width: 9px; height: 9px; border-radius: 50%; }
@@ -721,7 +726,7 @@ svg { display: block; }
 .spine__head { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
 .spine__title { font-size: 21px; font-weight: 700; letter-spacing: -.015em; line-height: 1.25; }
 .spine__grid { display: grid; grid-template-columns: 1fr 320px; gap: 14px; align-items: start; }
-.spine__desc {
+.spine__desc { overflow-wrap: anywhere; word-break: break-word;
   font-size: 12.5px; line-height: 1.6; color: var(--text-2);
   padding: 11px 13px; background: var(--surface-2);
   border-radius: var(--r-sm); border-left: 3px solid var(--brand);

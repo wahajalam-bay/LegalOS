@@ -155,12 +155,12 @@ export const RBAC_ROLES = {
     canApprove: false, config: false, privilegeAccess: false,
   },
   paralegal: {
-    key: "paralegal", label: "Paralegal / Legal Executive", tone: "blue", landing: "/my-tasks",
+    key: "paralegal", label: "Paralegal / Legal Executive", tone: "blue", landing: "/requests",
     raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false,
     canApprove: false, config: false, privilegeAccess: false, register: true, drafting: true,
   },
   member: {
-    key: "member", label: "AM / Associate", tone: "green", landing: "/my-tasks",
+    key: "member", label: "AM / Associate", tone: "green", landing: "/requests",
     raiseAny: true, viewOwn: "full", viewOwnTeam: true, viewOtherTeams: false,
     canApprove: false, config: false, privilegeAccess: "named", drafting: true, precedent: true, escalate: true,
   },

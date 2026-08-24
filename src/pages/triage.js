@@ -180,10 +180,12 @@ function TriagePanel({ req, viewer }) {
   </div>`;
 }
 
-export default function Triage() {
+export default function Triage({ id }) {
   const requests = useCollection("requests");
   const viewer = useActiveUser();
-  const [selId, setSelId] = useState(null);
+  // Deep-linkable: /triage/REQ-xxxx (e.g. from a My Tasks board card) opens
+  // the queue with that request selected.
+  const [selId, setSelId] = useState(id || null);
 
   const URG_RANK = { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 };
   const queue = useMemo(() => (requests || [])
