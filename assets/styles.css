@@ -1485,6 +1485,11 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .statkpi--red { border-left-color: var(--danger); }
 .statkpi--purple { border-left-color: var(--accent-500); }
 .statkpi--gray { border-left-color: var(--border-strong); }
+/* clickable KPI cards double as view filters */
+.statkpi--click { cursor: pointer; transition: box-shadow .14s, transform .14s, border-color .14s, background .14s; }
+.statkpi--click:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); border-color: var(--border-strong); }
+.statkpi--on { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 45%, transparent); }
+.statkpi--on .statkpi__l { color: var(--brand-600); font-weight: 600; }
 @media (max-width: 768px) { .statkpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .modkpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }

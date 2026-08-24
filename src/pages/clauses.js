@@ -5,8 +5,8 @@
 // Director — the library is never silently rewritten.
 import { html, cx, fmt, useState, Fragment } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Avatar, Pill, Empty, Drawer, Modal, Field, Input, Textarea, Tabs } from "../ui.js";
-import { PageHead, DataTable, StatStrip } from "../parts.js";
+import { Btn, Avatar, Pill, Empty, Drawer, Modal, Field, Input, Textarea, Tabs, Segmented } from "../ui.js";
+import { PageHead, DataTable } from "../parts.js";
 import { nameOf } from "../data.js";
 import { navigate } from "../router.js";
 import {
@@ -137,20 +137,39 @@ function ClauseDetail({ id, onClose, viewer }) {
   </${Drawer}>`;
 }
 
+// The primary views the library is worked in — buttons, not a buried dropdown.
+const PIPELINE = ["Proposed", "Manager Review", "HoD Approval"];
+const VIEWS = [
+  { key: "all", label: "All", match: () => true },
+  { key: "published", label: "Published", match: (c) => c.status === "Published" },
+  { key: "pipeline", label: "Approval pipeline", match: (c) => PIPELINE.includes(c.status) },
+  { key: "fallback", label: "Has Fallback", match: (c) => !!(clauseCurrentVersion(c).tiers || {}).Fallback },
+  { key: "archived", label: "Superseded / Retired", match: (c) => c.status === "Superseded" || c.status === "Retired" },
+];
+
 export default function Clauses() {
   const viewer = useActiveUser();
   const clauses = useCollection("clauses3");
   const [q, setQ] = useState("");
   const [type, setType] = useState("");
   const [jur, setJur] = useState("");
-  const [status, setStatus] = useState("");
+  const [view, setView] = useState("all");
   const [open, setOpen] = useState(null);
   const [proposing, setProposing] = useState(false);
   if (!isLegal(viewer)) return html`<div class="page"><${Empty} icon="lock" title="The clause library is internal" /></div>`;
 
+  const activeView = VIEWS.find((v) => v.key === view) || VIEWS[0];
   const rows = clauses.filter((c) =>
+    activeView.match(c) &&
     (!q || (c.id + " " + c.type + " " + c.agreementType).toLowerCase().includes(q.toLowerCase())) &&
-    (!type || c.type === type) && (!jur || c.jurisdiction === jur) && (!status || c.status === status));
+    (!type || c.type === type) && (!jur || c.jurisdiction === jur));
+
+  // KPI cards double as view switches — the number is the filter.
+  const kpi = (viewKey, value, label, tone) => html`<div
+    class=${cx("statkpi", "statkpi--" + tone, "statkpi--click", view === viewKey && "statkpi--on")}
+    onClick=${() => setView(view === viewKey ? "all" : viewKey)} title="Click to filter the library">
+    <div class="statkpi__n">${value}</div><div class="statkpi__l">${label}</div>
+  </div>`;
 
   return html`<div class="page page--wide fade-in">
     <${PageHead} title="Clause Library" sub="Approved, version-controlled positions — the source of truth for every draft and review."
@@ -158,19 +177,23 @@ export default function Clauses() {
     ${proposing && html`<${ProposeClauseModal} viewer=${viewer} onClose=${() => setProposing(false)} />`}
     ${open && html`<${ClauseDetail} id=${open} viewer=${viewer} onClose=${() => setOpen(null)} />`}
 
-    <${StatStrip} stats=${[
-      { value: clauses.filter((c) => c.status === "Published").length, label: "Published (authoritative)" },
-      { value: clauses.filter((c) => ["Proposed", "Manager Review", "HoD Approval"].includes(c.status)).length, label: "In the approval pipeline" },
-      { value: [...new Set(clauses.map((c) => c.type))].length, label: "Clause types covered" },
-      { value: clauses.filter((c) => (clauseCurrentVersion(c).tiers || {}).Fallback).length, label: "With a Fallback tier" },
-    ]} />
+    <div class="statkpis">
+      ${kpi("published", clauses.filter((c) => c.status === "Published").length, "Published (authoritative)", "green")}
+      ${kpi("pipeline", clauses.filter((c) => PIPELINE.includes(c.status)).length, "In the approval pipeline", "amber")}
+      ${kpi("all", [...new Set(clauses.map((c) => c.type))].length, "Clause types covered", "blue")}
+      ${kpi("fallback", clauses.filter((c) => (clauseCurrentVersion(c).tiers || {}).Fallback).length, "With a Fallback tier", "purple")}
+    </div>
+
+    <div class="row wrap" style="gap:10px;margin-bottom:14px">
+      <${Segmented} value=${view} onChange=${setView}
+        options=${VIEWS.map((v) => ({ value: v.key, label: v.key === "all" ? `All · ${clauses.length}` : v.label }))} />
+    </div>
 
     <div class="card" style="padding:0">
       <div class="modtoolbar">
         <div class="modtoolbar__search"><${Icon} name="search" size=15 /><input placeholder="Search clauses…" value=${q} onInput=${(e) => setQ(e.target.value)} /></div>
         <select class="input input--sm" value=${type} onChange=${(e) => setType(e.target.value)}><option value="">Type: all</option>${CLAUSE_TYPES3.map((t) => html`<option key=${t}>${t}</option>`)}</select>
         <select class="input input--sm" value=${jur} onChange=${(e) => setJur(e.target.value)}><option value="">Jurisdiction: all</option><option>Any</option>${M3_JURISDICTIONS.map((j) => html`<option key=${j}>${j}</option>`)}</select>
-        <select class="input input--sm" value=${status} onChange=${(e) => setStatus(e.target.value)}><option value="">Status: all</option>${Object.keys(CLAUSE_STATUS_TONE).map((s) => html`<option key=${s}>${s}</option>`)}</select>
       </div>
       <div class="dense"><${DataTable} onRow=${(c) => setOpen(c.id)} rows=${rows}
         empty=${html`<${Empty} icon="library" title="No clauses match" text="Adjust the filters, or propose the first clause." />`}
