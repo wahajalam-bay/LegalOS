@@ -271,7 +271,7 @@ function StageActions({ spine }) {
   const done = (r, msg) => { if (r && r.ok === false) { toast(r.error, "error"); return; } toast(msg); setPanel(null); setReason(""); };
   const advance = () => { const r = advanceRequestStage(rid, viewer.id); done(r, r.ok ? (r.final ? "Moved to " + r.stage + " — final stage" : "Moved to " + r.stage) : ""); };
 
-  return html`<div class="card card--pad col" style="gap:10px;margin-bottom:14px;border-color:var(--brand-soft)">
+  return html`<div class="card card--pad col m1actions" style="gap:10px;margin-bottom:14px;border-color:var(--brand-soft)">
     <div class="row wrap" style="gap:8px">
       <span class="strong" style="font-size:13px">Move this request</span>
       ${rec.escalated && html`<${Pill} tone="red" dot=${true}>Escalated</${Pill}>`}

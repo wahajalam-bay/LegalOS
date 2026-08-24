@@ -131,7 +131,7 @@ export default function MyTasks() {
       <${Icon} name="arrowRight" size=14 />
     </div>`}
 
-    ${myApprovals.length > 0 && html`<div class="card" style="padding:0;margin-bottom:16px;border-color:color-mix(in srgb, var(--brand) 30%, var(--border))">
+    ${myApprovals.length > 0 && html`<div class="card myapprovals" style="padding:0;margin-bottom:16px;border-color:color-mix(in srgb, var(--brand) 30%, var(--border))">
       <div class="row" style="padding:14px 16px 6px;align-items:baseline">
         <span class="panel__title">Awaiting my approval</span>
         <span class="tiny muted" style="margin-left:8px">— ${viewer.rbac === "head" ? "matters at the Approval gate across the department" : "your team's matters at the Approval gate"}</span>

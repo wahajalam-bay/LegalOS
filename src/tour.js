@@ -15,6 +15,20 @@ import { html, cx, useState, useEffect, useRef } from "./core.js";
 import { Icon } from "./icons.js";
 import { Btn } from "./ui.js";
 import { navigate, currentPath } from "./router.js";
+import { getCollection, createDraft } from "./store.js";
+import { activeUser } from "./rbac.js";
+
+// The draft-workspace stop needs a draft to stand on. Reuse one if it exists,
+// otherwise assemble a demo NDA from the approved library (which is itself a
+// demonstration of Module 3).
+let _tourDraftId = null;
+function ensureTourDraft() {
+  const existing = (getCollection("drafts3") || [])[0];
+  if (existing) return (_tourDraftId = existing.id);
+  if (_tourDraftId) return _tourDraftId;
+  const res = createDraft({ agreementType: "NDA", ourRole: "Customer", jurisdiction: "Saudi Arabia", features: [] }, activeUser().id);
+  return (_tourDraftId = res.ok ? res.id : null);
+}
 
 /* ---------------- a tiny observable so any screen can start the tour ---------------- */
 let _state = { open: false, step: 0 };
@@ -44,63 +58,92 @@ function useTourState() {
    Each step: where to go, what to highlight, and one sentence of narration.
    `prep` runs before navigating, for steps that need the destination narrowed. */
 const STEPS = [
-  {
-    route: "/exec",
-    target: ".exec__heroes",
-    title: "One page, the whole function",
-    caption: "This is the legal department in four numbers: what it looks after, how fast it moves, how much of the work now comes through one door, and how much of the waiting was never legal's.",
-  },
+  /* ---------------- MODULE 1 — Request Intake & Management ---------------- */
   {
     route: "/flow-map",
     target: ".journey",
-    title: "Every request travels this path",
-    caption: "Nine stages from a business request to a filed contract. The counts are live, so this is not a diagram of intent, it is where the work actually is right now.",
+    title: "Module 1 — every request travels this path",
+    caption: "The business raises a request in plain language — they never need to know if it is drafting, review or compliance. From there: triage, assignment, a fixed clock, and a tracked lifecycle all the way to Delivered. The counts are live.",
+    aside: "Requesters get their own simple front door (Raise Request + My Requests) with an in-app chat back to Legal — and they never see internal legal content.",
   },
   {
-    route: "/portal",
-    target: ".grid--kpi",
-    title: "The business has its own front door",
-    caption: "Requests come in through a separate application built for the business. They see their own requests and nothing else. No more email, no more chasing.",
-    aside: "The portal is a second app at /portal/. Open it in another tab to see the requester's side.",
+    route: "/triage",
+    target: ".triage__panel",
+    title: "Assisted triage, not automated",
+    caption: "The system proposes the legal category, priority, SLA (from the category × urgency matrix, in business days per jurisdiction) and an assignee based on workload and past matters of this type. A human accepts in one click — or overrides, and every override is logged with its reason.",
+  },
+  {
+    route: "/requests",
+    target: ".kanban",
+    title: "The pipeline is visible",
+    caption: "Every request sits in a lane — New, Triage, Assigned, Review, Drafting, Negotiation, Approval. Nothing is invisible until it is urgent any more, and a request that needs deep work converts to a Module 2 matter without losing its identity.",
   },
   {
     route: "/workspace/REQ-2050",
-    target: ".zonenav",
-    title: "One record, the whole story",
-    caption: "Input, process, output and relationships on a single record. You can see who is holding it right now, what it is waiting on, and everything it touches.",
-    fallback: { route: "/workspace", target: ".table" },
-  },
-  {
-    route: "/workspace/REQ-2050",
-    target: "#zone-process .tatstrip",
-    title: "Turnaround is fixed, and enforced",
-    caption: "The clock is set automatically from the type of work and its risk, and it pauses when the ball is not with legal. When something is late, the system names the stage and the person.",
+    target: ".m1actions",
+    title: "The lifecycle actually moves",
+    caption: "Advance stage by stage, put the clock on hold when the ball leaves Legal (the SLA pauses automatically), escalate with a logged reason, reassign down the hierarchy, and close. Approval is value-gated: a Lead signs off within threshold, above it only the Director can.",
     scrollTo: "#zone-process",
-    fallback: { route: "/workspace", target: ".table" },
+    fallback: { route: "/workspace/REQ-2050", target: ".zonenav" },
   },
   {
-    route: "/tracker",
-    target: ".grid--kpi",
-    title: "Every contract in one grid",
-    caption: "Value, expiry, the renewal notice window, the Drive link and the shelf the paper copy sits on. Editable in place, and every row opens its full history.",
+    route: "/my-tasks",
+    target: ".myapprovals",
+    title: "Approvals land on the approver's plate",
+    caption: "Matters at the Approval gate queue on the Director's My Tasks — escalated items first — and whoever sent the work up hears back the moment it is signed off. Requesters get acknowledgement, status-change and delivery notifications automatically.",
+    fallback: { route: "/my-tasks", target: ".modkpis" },
+  },
+
+  /* ---------------- MODULE 2 — Matter Management ---------------- */
+  {
+    route: "/matters",
+    target: ".statkpis",
+    title: "Module 2 — the Matter is the permanent record",
+    caption: "The whole portfolio: practice area, owner, status, risk, target and ageing, with My Matters and work queues (needs action, overdue, awaiting external). New matters auto-route to the practice-area expert; the Director is notified and can reassign.",
   },
   {
-    route: "/analyzer",
-    target: ".card",
-    title: "The numbers are read, not typed",
-    caption: "Property purchase values, land values and licence types are extracted from the documents themselves, so the portfolio view is a by-product of filing rather than a data-entry job.",
+    route: "/matters/DIS-2026-0012",
+    target: ".pagehead",
+    title: "One matter, everything attached",
+    caption: "Owner and collaborators, a real lifecycle state machine (invalid moves blocked, reasons captured), likelihood × impact risk that the system proposes and a human confirms, tasks with single owners, documents, related matters — and closure is impossible without a structured outcome. Every change lands in an immutable audit trail.",
+    aside: "This matter is PRIVILEGED: for anyone not named on it, it does not exist — not in the register, not in search, not in AI retrieval.",
+    fallback: { route: "/matters", target: ".table" },
+  },
+
+  /* ---------------- MODULE 3 — Contract Intelligence ---------------- */
+  {
+    route: "/clauses",
+    target: ".statkpis",
+    title: "Module 3 — the clause library is the source of truth",
+    caption: "Approved positions in three tiers — Preferred, Acceptable, Fallback — each with drafting notes and negotiation guidance. Changes travel Proposed → Manager Review → Director publish; old versions are superseded, never overwritten, so history holds.",
   },
   {
-    route: "/pipelines",
-    target: ".tabs",
-    title: "Nothing expires quietly",
-    caption: "Each lawyer has their own pipeline, the department has a load balance, and every renewal and notice window has a reminder against a named owner.",
+    route: "/drafting",
+    target: ".statkpis",
+    title: "Assembly before generation",
+    caption: "A draft is assembled from the approved template structure and published library clauses — generation is used only for connective text, and it is always marked AI-SUGGESTED. This is not an AI contract generator; it is the department's own positions, applied.",
   },
+  {
+    route: () => "/drafting/" + ensureTourDraft(),
+    target: ".draft3",
+    title: "Every clause knows where it came from",
+    caption: "Structure, document, and legal intelligence side by side. Click any clause: its library source, version, tier and negotiation guidance. Edit away from the library and the deviation is detected, risk-rated and routed for approval — nothing is deliverable until a named lawyer approves.",
+    aside: "The jurisdiction banner never leaves the screen, and below-Fallback deviations need the Director.",
+    fallback: { route: "/drafting", target: ".statkpis" },
+  },
+  {
+    route: "/reviews",
+    target: ".statkpis",
+    title: "Counterparty paper gets a deviation report, not a summary",
+    caption: "Upload their draft: clauses are identified with visible confidence, compared to the playbook, and returned as structured findings — their text, our position, the gap, the risk, a recommendation and a library-sourced redline. Where no approved position exists, the system says \"Source not found in LegalOS\" instead of inventing one.",
+  },
+
+  /* ---------------- the loop ---------------- */
   {
     route: "/exec",
-    target: ".exec__note",
-    title: "That is the whole loop",
-    caption: "A business request becomes a governed contract, filed and watched, with a record of who held it and for how long. The brief on this page is the one-pager to forward.",
+    target: ".exec__heroes",
+    title: "Request → Matter → Contract — one connected system",
+    caption: "A plain-language request becomes a governed matter, drafted from approved positions, reviewed against the playbook, approved by name, and closed with an outcome that feeds the precedent the next lawyer retrieves. That is the institutional memory the department was missing.",
   },
 ];
 
@@ -150,7 +193,10 @@ export function TourOverlay() {
 
     (async () => {
       if (step.prep) { try { step.prep(); } catch (e) {} }
-      if (step.route && currentPath() !== step.route) navigate(step.route);
+      // A route may be computed at run time (e.g. the seeded demo draft).
+      let route = null;
+      try { route = typeof step.route === "function" ? step.route() : step.route; } catch (e) {}
+      if (route && currentPath() !== route) navigate(route);
       // Let the route mount before measuring.
       await new Promise((r) => setTimeout(r, 240));
       if (cancelled) return;

@@ -4,7 +4,10 @@ import { Icon } from "../icons.js";
 import { Btn, Avatar, Pill, Status, Segmented, Modal, Drawer, Field, Input, AICard, Chip } from "../ui.js";
 import { PageHead, StatStrip } from "../parts.js";
 import { COUNTRIES, nameOf } from "../data.js";
-import { useCollection, updateItem, nowIso } from "../store.js";
+import { useCollection, updateItem, addItem, nextId, nowIso } from "../store.js";
+import { activeUser } from "../rbac.js";
+import { navigate } from "../router.js";
+import { toast } from "../toast.js";
 
 /* ---- Feature 5: version helpers + line diff ---- */
 const currentApproved = (t) => (t.versions || []).find((v) => v.status === "Approved") || (t.versions || [])[(t.versions || []).length - 1] || { version: "v" + t.version };
@@ -82,6 +85,33 @@ export default function Templates() {
   const [cat, setCat] = useState("All");
   const [q, setQ] = useState("");
   const [gen, setGen] = useState(null);
+  const [genCp, setGenCp] = useState("");
+  const [genCountry, setGenCountry] = useState(COUNTRIES[0]);
+  // STATIC generation, deliberately: the output IS the approved template body
+  // (with the party/country stamped in) — no AI drafting here. Real clause-level
+  // assembly lives in Module 3 (/drafting).
+  const generateStatic = (t) => {
+    const v = currentApproved(t);
+    const bodyText = `${t.title.toUpperCase()}\n\nBetween: Northwind Global Holdings\nAnd: ${genCp.trim() || "[Counterparty]"}\nCountry: ${genCountry}\nTemplate: ${t.id} ${v.version} (approved)\n\n${v.body || "1. Standard clauses per the approved template."}`;
+    const doc = {
+      id: nextId("repository", "DOC-"),
+      name: `${t.title} — ${genCp.trim() || "draft"} (${v.version}).docx`,
+      kind: "Draft", source: "Generated",
+      contractId: null, requestId: null, entityId: null,
+      jur: genCountry, uploadedBy: activeUser().id, uploadedAt: nowIso(),
+      pages: Math.max(2, Math.round((v.body || "").length / 900)), sizeKb: 96,
+      ocrStatus: "Not required", ocrConfidence: 1,
+      srNo: null, physicalRecordRef: null, officeLocation: null,
+      storagePath: `/legal/templates/${t.id}/${genCp.trim() || "draft"}.docx`,
+      driveLink: null, ocrText: bodyText, extractedFields: {},
+      templateId: t.id, templateVersion: v.version,
+    };
+    addItem("repository", doc);
+    updateItem("templates", t.id, { usage: (t.usage || 0) + 1 });
+    setGen(null); setGenCp("");
+    toast(doc.name + " created from the approved template");
+    navigate("/repository/" + doc.id);
+  };
   const [histId, setHistId] = useState(null);
   const hist = templates.find((t) => t.id === histId);
   const cats = ["All", ...new Set(templates.map((t) => t.category))];
@@ -123,12 +153,12 @@ export default function Templates() {
     </div>
 
     ${gen && html`<${Modal} title="Generate document" icon="sparkles" width=${600} onClose=${() => setGen(null)}
-      footer=${html`<${Btn} variant="ghost" onClick=${() => setGen(null)}>Cancel</${Btn}><${Btn} variant="gradient" icon="sparkles" onClick=${() => setGen(null)}>Generate document</${Btn}>`}>
+      footer=${html`<${Btn} variant="ghost" onClick=${() => setGen(null)}>Cancel</${Btn}><${Btn} variant="gradient" icon="sparkles" onClick=${() => generateStatic(gen)}>Generate document</${Btn}>`}>
       <div class="col" style="gap:18px">
         <div class="row" style="gap:10px"><div class="metric__icon" style="background:var(--brand-soft);color:var(--brand)"><${Icon} name=${CAT_ICON[gen.category] || "template"} size=18 /></div><div style="flex:1"><div class="strong">${gen.title}</div><div class="tiny muted">${gen.jurisdiction} · ${fmt.num(gen.usage)} uses</div></div><${Pill} tone="green" dot=${true}>Uses ${currentApproved(gen).version}</${Pill}></div>
         <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
-          <${Field} label="Counterparty"><${Input} placeholder="e.g. Acme Corp" /></${Field}>
-          <${Field} label="Country"><select class="select">${COUNTRIES.map((c) => html`<option key=${c}>${c}</option>`)}</select></${Field}>
+          <${Field} label="Counterparty"><${Input} placeholder="e.g. Acme Corp" value=${genCp} onInput=${(e) => setGenCp(e.target.value)} /></${Field}>
+          <${Field} label="Country"><select class="select" value=${genCountry} onChange=${(e) => setGenCountry(e.target.value)}>${COUNTRIES.map((c) => html`<option key=${c}>${c}</option>`)}</select></${Field}>
         </div>
         <div>
           <div class="row" style="margin-bottom:10px"><${Icon} name="gitbranch" size=16 style=${{ color: "var(--accent-500)" }} /><span class="strong tiny" style="margin-left:8px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3)">Smart template rules</span></div>
@@ -141,7 +171,7 @@ export default function Templates() {
             </div>`)}
           </div>
         </div>
-        <${AICard} title="AI assembly">Based on your answers, I'll assemble <b>~14 clauses</b> from the approved library, insert the right jurisdiction language, and route for approval automatically.</${AICard}>
+        <${AICard} title="Static generation">The document is produced <b>verbatim from the approved template</b> (${"body kept in the output"}) with the party and country stamped in — nothing is drafted by AI here. For clause-level assembly with deviation control, use <b>Contract Intelligence → Create draft</b>.</${AICard}>
       </div>
     </${Modal}>`}
     ${hist && html`<${VersionDrawer} t=${hist} onClose=${() => setHistId(null)} />`}
