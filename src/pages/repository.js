@@ -10,7 +10,7 @@
 //
 // The repository is the single source of truth linking
 //   digital file (drive link) ←→ operational row (tracker) ←→ physical record.
-import { html, cx, fmt, useState, useMemo } from "../core.js";
+import { html, cx, fmt, useState, useMemo, Fragment } from "../core.js";
 import { Icon } from "../icons.js";
 import {
   Btn, Pill, Status, Risk, Avatar, Modal, Field, Input, Textarea, Empty,
@@ -347,7 +347,10 @@ function DocDetail({ id }) {
   const repository = useCollection("repository");
   const contracts = useCollection("contracts");
   const doc = repository.find((d) => d.id === id);
-  const [tab, setTab] = useState("extraction");
+  // A GENERATED document opens on its text — that's what the user came to see;
+  // scans/uploads open on extraction as before.
+  const [tabState, setTab] = useState(null);
+  const tab = tabState || (doc && doc.source === "Generated" ? "ocr" : "extraction");
   const [draft, setDraft] = useState(null);
 
   if (!doc) {
@@ -488,13 +491,17 @@ function DocDetail({ id }) {
 
         ${tab === "ocr" && html`<div class="col" style="gap:12px">
           <div class="row">
-            <span class="strong">Raw OCR text</span>
+            <span class="strong">${doc.source === "Generated" ? "Document text" : "Raw OCR text"}</span>
             <div class="spacer"></div>
-            <${Pill} tone=${(doc.ocrConfidence || 1) >= 0.9 ? "green" : "amber"}>${doc.ocrStatus} · ${Math.round((doc.ocrConfidence || 1) * 100)}%</${Pill}>
-            <${Btn} variant="soft" size="sm" icon="refresh" onClick=${rerunOcr}>Re-run OCR</${Btn}>
+            ${doc.source === "Generated"
+              ? html`<${Pill} tone="purple">Generated from ${doc.templateId || "template"}${doc.templateVersion ? " " + doc.templateVersion : ""}</${Pill}>`
+              : html`<${Fragment}>
+                  <${Pill} tone=${(doc.ocrConfidence || 1) >= 0.9 ? "green" : "amber"}>${doc.ocrStatus} · ${Math.round((doc.ocrConfidence || 1) * 100)}%</${Pill}>
+                  <${Btn} variant="soft" size="sm" icon="refresh" onClick=${rerunOcr}>Re-run OCR</${Btn}>
+                </${Fragment}>`}
           </div>
-          <div class="ocrbox">${doc.ocrText || "No OCR text captured for this document."}</div>
-          <div class="tiny muted">A real OCR provider plugs in at <span class="mono">pages/repository.js#simulateOcr</span> — the extraction step already consumes plain text.</div>
+          <div class="ocrbox" style="white-space:pre-wrap">${doc.ocrText || "No text captured for this document."}</div>
+          ${doc.source !== "Generated" && html`<div class="tiny muted">A real OCR provider plugs in at <span class="mono">pages/repository.js#simulateOcr</span> — the extraction step already consumes plain text.</div>`}
         </div>`}
 
         ${tab === "operational" && html`<div class="col" style="gap:14px">

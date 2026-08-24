@@ -11,7 +11,7 @@ import { Icon } from "../icons.js";
 import { Btn, Pill, Avatar, Field, Textarea, Empty } from "../ui.js";
 import { navigate } from "../router.js";
 import { USERS, byId, entityName } from "../data.js";
-import { LEGAL_TEAMS, PIPELINE_BENCH } from "../org.js";
+import { LEGAL_TEAMS, ASSIGNABLE_BENCH } from "../org.js";
 import { useActiveUser, canTriage } from "../rbac.js";
 import { useCollection, triageProposal, triageContext, triageDecision, TRIAGE_CATEGORIES } from "../store.js";
 import { toast } from "../toast.js";
@@ -20,21 +20,25 @@ const PRIORITIES = ["Urgent", "High", "Medium", "Low"];
 const URG_TONE = { Emergency: "red", "Time-critical": "amber", Important: "blue", Routine: "gray" };
 const PRIO_TONE = { Urgent: "red", High: "amber", Medium: "blue", Low: "gray" };
 const nameOf = (uid) => (byId(uid) || {}).name || "Unassigned";
-const BENCH = new Set(PIPELINE_BENCH);
-const LEGAL_USERS = USERS.filter((u) => u.dept === "Legal" && BENCH.has(u.id));
+// The full legal roster, grouped by team below — a lead must be able to assign
+// to ANY of their own team members, not a curated subset.
+const BENCH = new Set(ASSIGNABLE_BENCH);
+const LEGAL_USERS = USERS.filter((u) => BENCH.has(u.id));
 
-// Assignee picker grouped by the team hierarchy (each team's Lead first, then its
-// members / paralegals) so the HoD can delegate a request down the chain.
+// Assignee picker, scoped to the ASSIGNER's authority (PRD §2):
+//   • Director — the full legal roster, grouped by team
+//   • Team Lead — ONLY their own reportees (their team), no one else
 const roleTag = (u) => (u.rbac === "lead" ? " — Lead" : u.rbac === "paralegal" ? " — Paralegal" : "");
-const ASSIGNEE_GROUPS = LEGAL_TEAMS
+const AssigneeOptions = (viewer) => LEGAL_TEAMS
+  .filter((t) => (viewer && viewer.rbac === "lead" ? t.key === viewer.legalTeam : true))
   .map((t) => {
     const staff = LEGAL_USERS.filter((u) => u.legalTeam === t.key);
     return { label: t.short || t.key, users: [...staff.filter((u) => u.rbac === "lead"), ...staff.filter((u) => u.rbac !== "lead")] };
   })
-  .filter((g) => g.users.length);
-const AssigneeOptions = () => ASSIGNEE_GROUPS.map((g) => html`<optgroup key=${g.label} label=${g.label}>
-  ${g.users.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}${roleTag(u)}</option>`)}
-</optgroup>`);
+  .filter((g) => g.users.length)
+  .map((g) => html`<optgroup key=${g.label} label=${g.label}>
+    ${g.users.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}${roleTag(u)}</option>`)}
+  </optgroup>`);
 
 // Friendly labels for the requester's plain-language Layer-2 answers.
 const L2_LABEL = {
@@ -119,7 +123,7 @@ function TriagePanel({ req, viewer }) {
             <div class="tprop__cell"><div class="tprop__k">Priority</div><div class="tprop__v"><${Pill} tone=${PRIO_TONE[proposal.priority]}>${proposal.priority}</${Pill}></div></div>
             <div class="tprop__cell"><div class="tprop__k">SLA (business days)</div><div class="tprop__v">${proposal.slaDays}d · due ${fmt.dateShort(proposal.slaDueAt)}</div></div>
             <div class="tprop__cell"><div class="tprop__k">Assign to</div>
-              <select class="input input--sm" value=${d.owner || ""} onChange=${(e) => setD({ ...d, owner: e.target.value })}>${AssigneeOptions()}</select>
+              <select class="input input--sm" value=${d.owner || ""} onChange=${(e) => setD({ ...d, owner: e.target.value })}>${AssigneeOptions(viewer)}</select>
               <div class="tiny muted" style="margin-top:4px">
                 ${d.owner === proposal.owner ? html`<span class="row" style="gap:5px;display:inline-flex"><${Icon} name="sparkles" size=11 /> System suggestion</span>` : `Reassigned — system suggested ${nameOf(proposal.owner)}`}
               </div>
@@ -137,7 +141,7 @@ function TriagePanel({ req, viewer }) {
             <div class="tprop__cell"><div class="tprop__k">SLA (business days)</div><div class="tprop__v">${proposal.slaDays}d · auto</div></div>
             <div class="tprop__cell"><div class="tprop__k">Assignee</div>
               <select class="input input--sm" value=${d.owner || ""} onChange=${(e) => setD({ ...d, owner: e.target.value })}>
-                ${AssigneeOptions()}
+                ${AssigneeOptions(viewer)}
               </select></div>
           </div>
           <${Field} label=${"Reason for override" + (changed ? " (required)" : "")} hint="Logged against the request — the override history is what later trains automated triage.">
@@ -189,7 +193,9 @@ export default function Triage({ id }) {
 
   const URG_RANK = { Emergency: 0, "Time-critical": 1, Important: 2, Routine: 3 };
   const queue = useMemo(() => (requests || [])
-    .filter((r) => r.status === "Triage")
+    // "New" and "Triage" are the same working state — both are untriaged (the
+    // board's Triage lane and the Awaiting-triage KPI count them together).
+    .filter((r) => r.status === "Triage" || r.status === "New")
     .sort((a, b) => (URG_RANK[a.urgencyBand] ?? 2) - (URG_RANK[b.urgencyBand] ?? 2)
       || new Date(a.requestDate || a.created) - new Date(b.requestDate || b.created)), [requests]);
 

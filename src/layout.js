@@ -8,7 +8,7 @@ import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES,
 import { getCollection, notifsFor, markNotifsRead, useCollection } from "./store.js";
 import { allReminders } from "./reminders.js";
 import { TourOverlay, TourButton } from "./tour.js";
-import { signOut } from "./pages/login.js";
+import { signOut, CREDENTIAL_GROUPS } from "./pages/login.js";
 import { senderName } from "./messages.js";
 // Sprint 6 — the org architecture: View As, RBAC-filtered search, team modules.
 import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser } from "./rbac.js";
@@ -37,25 +37,25 @@ export function setTheme(t) {
    The prototype has no real login; this switcher swaps the active identity and
    the whole app — landing, queues, badges, search, notifications — obeys that
    identity's row-level visibility. */
-// One of each PRD persona up top (Director · AD/Sr Mgr · AM/Associate ·
-// Paralegal · Requester), then the rest of the bench.
-const PERSONAS = ["u1", "u3", "u5", "u10", "u16", "u6", "u17", "u20", "u14"];
+// ONE roster: the switcher lists exactly the credential views from the login
+// screen — same people, same labels — so the sidebar can never drift from the
+// sign-in screen or from the assignment bench.
 function ViewAs() {
   const me = useActiveUser();
-  const roleLabel = (u) => (RBAC_ROLES[u.rbac] || {}).label || u.role;
-  return html`<${Dropdown} align="left" width=${268} drop="up" trigger=${html`<div class="sidebar__user">
+  return html`<${Dropdown} align="left" width=${280} drop="up" trigger=${html`<div class="sidebar__user">
     <${Avatar} name=${me.name} size="md" />
     <div class="sidebar__user-meta"><div class="sidebar__user-name">${me.name}</div><div class="sidebar__user-role">${me.role}</div></div>
     <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
   </div>`}>
     <div class="menu__label">View as — access follows the identity</div>
-    ${PERSONAS.map((id) => {
-      const u = byId(id);
-      return html`<${MenuItem} key=${id} icon=${me.id === id ? "check" : "user"}
-        onClick=${() => { setViewAs(id); navigate(landingFor(u)); }}>
+    ${CREDENTIAL_GROUPS.flatMap((g) => g.people).map((pp) => {
+      const u = byId(pp.id);
+      if (!u) return null;
+      return html`<${MenuItem} key=${pp.id} icon=${me.id === pp.id ? "check" : "user"}
+        onClick=${() => { setViewAs(pp.id); navigate(landingFor(u)); }}>
         <div style="min-width:0">
-          <div style=${`font-weight:${me.id === id ? 700 : 500}`}>${u.name}</div>
-          <div class="tiny muted">${roleLabel(u)}${u.legalTeam ? " · " + teamShort(u.legalTeam) : u.dept && u.dept !== "Legal" ? " · " + u.dept : ""}</div>
+          <div style=${`font-weight:${me.id === pp.id ? 700 : 500}`}>${u.name}</div>
+          <div class="tiny muted">${pp.view}</div>
         </div>
       </${MenuItem}>`;
     })}

@@ -20,7 +20,7 @@ import {
   generateRecitals, splitSections, classifyClauseText, sameText, textGap,
 } from "./contracts3.js";
 // Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
-import { MASTER_DATA_SEED, teamPrefix } from "./org.js";
+import { MASTER_DATA_SEED, teamPrefix, ASSIGNABLE_BENCH } from "./org.js";
 import { MODULES, moduleByKey, workflowOf, riskGateMissing } from "./modules.js";
 import { tatV2 } from "./tat2.js";
 import { MOD_REQUESTS, NOTICE_TEMPLATES, COST_BUDGETS, FILING_SCHEDULE } from "./seeds-org.js";
@@ -375,16 +375,32 @@ export function duplicateCheck(payload) {
 }
 
 // Triage routing: the sub-division's most available owner (deterministic).
+// Sub-division default DESK OWNERS — every owner is on the CREDENTIAL bench
+// (org.js ASSIGNABLE_BENCH) and on the team that owns the sub-division, so a
+// request can never route to someone who isn't a signable view in the system.
 const SUBDIV_OWNER = {
-  "Real Estate & Conveyancing": "u10",
-  "Commercial": "u5",
-  "Litigation & Disputes": "u6",
-  "Compliance & Regulatory": "u12",
-  "IP": "u8",
-  "Labour/Employment": "u8",
-  "Corporate & Governance": "u4",
-  "Data Privacy": "u12",
+  "Real Estate & Conveyancing": "u9",   // Elena Popova — Legal Associate · Commercial
+  "Commercial": "u5",                    // Sarah Chen — Senior Associate · Commercial
+  "Litigation & Disputes": "u6",         // David Okonkwo — Senior Manager · Litigation
+  "Compliance & Regulatory": "u21",      // Hassan Ali — Legal Associate · Compliance
+  "IP": "u17",                           // Ahmed Raza — Senior Associate · Litigation
+  "Labour/Employment": "u17",            // Ahmed Raza — Senior Associate · Litigation
+  "Corporate & Governance": "u20",       // Noor Fatima — Senior Manager · Compliance
+  "Data Privacy": "u21",                 // Hassan Ali — Legal Associate · Compliance
 };
+// One assignment guard for every path (triage, reassign, matters): the target
+// must be a credentialed bench member, and a Team Lead may only assign to
+// people who report to them (their own team). The Director assigns anywhere.
+export function assignmentGuard(byUserId, targetId) {
+  const assigner = byId(byUserId) || {};
+  const target = byId(targetId) || {};
+  if (!ASSIGNABLE_BENCH.includes(targetId)) return { ok: false, error: `${target.name || targetId} is not on the assignable credential bench` };
+  if (assigner.rbac === "lead" && target.legalTeam !== assigner.legalTeam) {
+    return { ok: false, error: "a Team Lead can only assign to their own reportees" };
+  }
+  return { ok: true };
+}
+const benchOnly = (users) => users.filter((u) => ASSIGNABLE_BENCH.includes(u.id));
 
 export function submitLegalRequest(payload = {}) {
   /* ---- validate ---- */
@@ -710,8 +726,11 @@ function pastMattersOfType(uid, category) {
 export function suggestOwner(req) {
   const cat = (req && (req.proposedCategory || req.category)) || "Triage required";
   const team = CATEGORY_TEAM[cat] || "commercial";
-  const members = USERS.filter((u) => u.legalTeam === team && (u.rbac === "member" || u.rbac === "paralegal"));
-  const pool = members.length ? members : USERS.filter((u) => u.legalTeam === team);
+  // Ownership is a counsel's job, drawn ONLY from the credential bench:
+  // paralegals execute tasks but are never the suggested owner (PRD §2) —
+  // fall back to the team lead, never cross-team, never off-bench.
+  const members = benchOnly(USERS.filter((u) => u.legalTeam === team && u.rbac === "member"));
+  const pool = members.length ? members : benchOnly(USERS.filter((u) => u.legalTeam === team && u.rbac === "lead"));
   if (!pool.length) return null;
   return pool.slice().sort((a, b) =>
     ownerLoad(a.id) - ownerLoad(b.id) ||
@@ -780,6 +799,11 @@ export function triageDecision(id, decision = {}, byUserId) {
   // it is logged but does not require a reason (PRD §2 hierarchy).
   const substantive = overrides.some((o) => o.field === "category" || o.field === "priority");
   if (substantive && !String(decision.reason || "").trim()) return { ok: false, error: "an override reason is required" };
+  // Assignment guard: bench-only target; a Team Lead only within their own team.
+  if (final.owner !== proposal.owner) {
+    const guard = assignmentGuard(byUserId, final.owner);
+    if (!guard.ok) return guard;
+  }
 
   const sla = resolveSlaDays({ ...req, category: final.category, proposedCategory: final.category }, proposal.urgencyBand);
   const slaDays = sla.days;
@@ -1014,6 +1038,8 @@ export function reassignRequest(id, ownerId, byUserId, note) {
   const { request, matter, workSlice, work } = resolveWorking(id);
   if (!work) return { ok: false, error: "record not found" };
   if (!ownerId) return { ok: false, error: "choose an owner" };
+  const guard = assignmentGuard(byUserId, ownerId);
+  if (!guard.ok) return guard;
   const now = nowIso();
   const log = (work.stageLog || []).map((s) => (s.exitedAt ? s : { ...s, owner: ownerId }));
   updateItem(workSlice, work.id, {
@@ -2177,7 +2203,7 @@ const PRACTICE_TEAM = {
 // and can reassign (setMatterOwner is Lead/Director-gated in the UI).
 export function suggestMatterOwner(practiceKey) {
   const team = PRACTICE_TEAM[practiceKey] || "commercial";
-  const pool = USERS.filter((u) => u.legalTeam === team && (u.rbac === "member" || u.rbac === "lead"));
+  const pool = benchOnly(USERS.filter((u) => u.legalTeam === team && (u.rbac === "member" || u.rbac === "lead")));
   if (!pool.length) return null;
   const expertise = (uid) => (state.matters || []).filter((m) => m.owner === uid && m.practiceArea === practiceKey).length;
   const load = (uid) => (state.matters || []).filter((m) => m.owner === uid && !isTerminal(m.status)).length;
@@ -2374,6 +2400,8 @@ export function setMatterOwner(id, ownerId, byUserId) {
   const m = matterById(id);
   if (!m) return { ok: false, error: "matter not found" };
   if (!ownerId) return { ok: false, error: "a matter must have exactly one responsible lawyer" };
+  const guard = assignmentGuard(byUserId, ownerId);
+  if (!guard.ok) return guard;
   const res = patchMatter(id, { owner: ownerId, collaborators: (m.collaborators || []).filter((u) => u !== ownerId) }, byUserId,
     { kind: "owner", from: _nm(m.owner), to: _nm(ownerId) });
   if (res.ok && ownerId !== byUserId) notifyUser(ownerId, { kind: "matter-owner", ref: id, tone: "blue", icon: "folder", title: `${id} — you are now the responsible lawyer`, body: m.name, to: "/matters/" + id });

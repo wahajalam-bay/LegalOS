@@ -37,7 +37,21 @@ export const LEGAL_TEAMS = [
 // the whole department, so the pipeline stays legible (same bench as the View-As
 // persona switcher, legal side only). The Director (u1/u2) is deliberately not an
 // assignee: work is delegated DOWN the hierarchy, not up to the Director.
-export const PIPELINE_BENCH = ["u3", "u5", "u10", "u6", "u17", "u20"];
+// THE CANONICAL ASSIGNABLE BENCH — exactly the legal credentials on the login
+// screen (minus the Directors: work delegates DOWN, never up). Every assignment
+// surface (triage, reassign, auto-routing, matter experts) draws from THIS list
+// and nothing else, so a case can never be sent to someone who isn't a
+// credentialed view in the system.
+//   u3  Priya Nair    — Senior Manager · Commercial & Risk
+//   u6  David Okonkwo — Senior Manager · Litigation & Disputes
+//   u20 Noor Fatima   — Senior Manager · Compliance
+//   u5  Sarah Chen    — Senior Associate · Commercial
+//   u17 Ahmed Raza    — Senior Associate · Litigation
+//   u9  Elena Popova  — Legal Associate · Commercial
+//   u21 Hassan Ali    — Legal Associate · Compliance
+//   u10 Yousef Nasser — Paralegal / Legal Executive
+export const ASSIGNABLE_BENCH = ["u3", "u6", "u20", "u5", "u17", "u9", "u21", "u10"];
+export const PIPELINE_BENCH = ASSIGNABLE_BENCH; // legacy alias
 
 export const teamByKey = (key) => LEGAL_TEAMS.find((t) => t.key === key) || null;
 export const teamName = (key) => (teamByKey(key) || {}).name || key || "—";

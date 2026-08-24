@@ -1125,10 +1125,13 @@ export const REQUIRED_DOC_TEMPLATES = {
 export const PORTAL_ROUTING = {
   "Contracts": { subdivision: null, owner: null, note: "Routed by contract type — sub-division and owner are derived." },
   "Advice": { subdivision: "Commercial", owner: "u5", tatDays: 3, note: "Commercial desk answers advice requests." },
-  "Compliance": { subdivision: "Compliance & Regulatory", owner: "u12", tatDays: 5, note: "Compliance officer triages." },
-  "Disputes & Litigation": { subdivision: "Litigation & Disputes", owner: "u6", tatDays: 2, note: "Straight to litigation counsel." },
-  "Labour Matters": { subdivision: "Labour/Employment", owner: "u8", tatDays: 3, note: "Employment counsel." },
-  "Intellectual Property": { subdivision: "IP", owner: "u8", tatDays: 5, note: "IP counsel." },
+  // Owners are CREDENTIAL-bench members on the team that owns the sub-division
+  // (labour + IP roll up to Litigation & Disputes) — never someone who isn't a
+  // signable view in the system.
+  "Compliance": { subdivision: "Compliance & Regulatory", owner: "u21", tatDays: 5, note: "Hassan Ali — Legal Associate · Compliance." },
+  "Disputes & Litigation": { subdivision: "Litigation & Disputes", owner: "u6", tatDays: 2, note: "David Okonkwo — Senior Manager · Litigation." },
+  "Labour Matters": { subdivision: "Labour/Employment", owner: "u17", tatDays: 3, note: "Ahmed Raza — Senior Associate · Litigation (labour matters)." },
+  "Intellectual Property": { subdivision: "IP", owner: "u17", tatDays: 5, note: "Ahmed Raza — Senior Associate · Litigation (IP desk)." },
 };
 
 // Fields the wizard marks mandatory, per nature.

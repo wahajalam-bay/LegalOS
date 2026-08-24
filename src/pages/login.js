@@ -25,7 +25,7 @@ export function signOut() {
 
 /* The credential roster — label is the VIEW the user asked for; sub is the
    person's actual title so the mapping stays honest to the org. */
-const GROUPS = [
+export const CREDENTIAL_GROUPS = [
   {
     section: "Legal — Leadership",
     people: [
@@ -86,7 +86,7 @@ export default function Login() {
         queues, approvals, privilege and what the requester is allowed to see.
       </div>
 
-      ${GROUPS.map((g) => html`<div key=${g.section} class="login__group">
+      ${CREDENTIAL_GROUPS.map((g) => html`<div key=${g.section} class="login__group">
         <div class="login__label">${g.section}</div>
         <div class="login__grid">
           ${g.people.map((pp) => {

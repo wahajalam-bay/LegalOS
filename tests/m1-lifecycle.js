@@ -29,9 +29,51 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
 
   // persona-sized picker check on the REAL triage screen
   await viewAs(p, "u1"); await go(p, "#/triage");
-  const optCount = await p.evaluate(() => [...document.querySelectorAll(".triage__panel select option")].filter((o) => o.value && o.value.startsWith("u")).length);
-  ok("assignee picker is a small persona bench (<=6), not the whole dept", optCount > 0 && optCount <= 6);
-  console.log("   assignee options:", optCount);
+  // The assignable people are EXACTLY the credential bench on the login screen
+  // (minus the Directors), grouped by team — never anyone else.
+  const picker = await p.evaluate(() => Promise.all([import("/src/org.js"), import("/src/pages/login.js")]).then(([O, L]) => {
+    const opts = [...document.querySelectorAll(".triage__panel select option")].map((o) => o.value).filter((v) => v && v.startsWith("u"));
+    const credLegal = L.CREDENTIAL_GROUPS.filter((g) => /Legal —/.test(g.section) && !/Leadership/.test(g.section)).flatMap((g) => g.people.map((x) => x.id));
+    return {
+      count: opts.length,
+      groups: [...document.querySelectorAll(".triage__panel select optgroup")].length,
+      matchesBench: opts.slice().sort().join() === [...O.ASSIGNABLE_BENCH].sort().join(),
+      benchIsCredentials: [...O.ASSIGNABLE_BENCH].sort().join() === credLegal.sort().join(),
+      hasDirector: opts.includes("u1"),
+      hasOffCredential: ["u18", "u19", "u7", "u11", "u22", "u4", "u8", "u12"].some((id) => opts.includes(id)),
+    };
+  }));
+  ok("assignee picker = EXACTLY the login credential bench", picker.matchesBench && picker.benchIsCredentials && picker.groups >= 3);
+  ok("no Director, no off-credential names in the picker", !picker.hasDirector && !picker.hasOffCredential);
+  console.log("   assignee options:", picker.count, "in", picker.groups, "team groups");
+
+  // LIVE triage: assign to a credentialed litigation member (u17), and prove it
+  // then LEAVES the triage queue.
+  const triageId = await p.evaluate(() => { const el = document.querySelector(".triage__panel"); const m = ((el && el.innerText) || "").match(/REQ-\d+/); return m ? m[0] : null; });
+  ok("triage queue shows untriaged work (incl. status New)", !!triageId);
+  await p.select(".triage__panel select", "u17"); await wait(300);
+  await clickByText(p, ".triage__panel button", "Assign to"); await wait(700);
+  const tr = await rec(p, triageId);
+  ok("assigned to a credentialed team member (u17)", tr && tr.owner === "u17" && tr.status === "Assigned");
+  await go(p, "#/triage");
+  ok("assigned request LEAVES the triage queue (no longer 'still in triage')", !(await body(p)).includes(triageId));
+
+  // TEAM-LEAD RULE: a lead's picker shows ONLY their own reportees, and the
+  // ENGINE blocks a cross-team assignment even if the UI is bypassed.
+  await viewAs(p, "u6"); await go(p, "#/triage");
+  const leadPicker = await p.evaluate(() => [...document.querySelectorAll(".triage__panel select option")].map((o) => o.value).filter((v) => v && v.startsWith("u")));
+  ok("Lead (litigation) sees ONLY their own reportees in the picker", leadPicker.length > 0 && leadPicker.every((id) => ["u6", "u17"].includes(id)));
+  const nextId2 = await p.evaluate(() => { const el = document.querySelector(".triage__panel"); const m = ((el && el.innerText) || "").match(/REQ-\d+/); return m ? m[0] : null; });
+  // force a CHANGE to a commercial member (whichever differs from the proposal)
+  const crossTeam = await p.evaluate((id) => import("/src/store.js").then((S) => {
+    const cur = (S.getCollection("requests") || []).find((r) => r.id === id) || {};
+    const target = cur.owner === "u5" ? "u9" : "u5";
+    return S.triageDecision(id, { owner: target }, "u6");
+  }), nextId2);
+  ok("ENGINE blocks a lead assigning outside their team", crossTeam.ok === false && /own reportees/i.test(crossTeam.error));
+  const offBench = await p.evaluate((id) => import("/src/store.js").then((S) => S.reassignRequest(id, "u18", "u1")), triageId);
+  ok("ENGINE blocks assignment to anyone off the credential bench (even by the Director)", offBench.ok === false && /credential bench/i.test(offBench.error));
+  await viewAs(p, "u1");
 
   // Inject genuinely matter-free, already-triaged requests (what a freshly raised
   // + assigned Module 1 request looks like) so each sub-test owns a clean record.

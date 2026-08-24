@@ -23,27 +23,29 @@ import {
   nameOf, byId, categoryOf, subdivisionOf, BALL_LABEL, ACCESS_LABEL,
   riskGatesFor, entityName, toUsd, USERS,
 } from "./data.js";
-import { LEGAL_TEAMS, PIPELINE_BENCH } from "./org.js";
+import { LEGAL_TEAMS, ASSIGNABLE_BENCH } from "./org.js";
 import { useActiveUser, isLegal, canReassign, canApprove, canApproveValue, approvalLimitFor, filterVisible } from "./rbac.js";
 import { buildSpine } from "./flow.js";
 import { tatAnalysis, tatLabel } from "./tat.js";
 import { SubdivisionPill, CategoryPill, TatCell } from "./shared.js";
 import { toast } from "./toast.js";
 
-// Assignee picker grouped by the team hierarchy (Lead first) — the same shape
-// triage uses, so delegation from the workspace mirrors delegation at triage.
-const BENCH = new Set(PIPELINE_BENCH);
-const LEGAL_USERS = USERS.filter((u) => u.dept === "Legal" && BENCH.has(u.id));
+// Assignee picker, scoped to the ASSIGNER's authority — same rule as triage:
+//   • Director — the full legal roster, grouped by team
+//   • Team Lead — ONLY their own reportees (their team), no one else
+const BENCH = new Set(ASSIGNABLE_BENCH);
+const LEGAL_USERS = USERS.filter((u) => BENCH.has(u.id));
 const roleTag = (u) => (u.rbac === "lead" ? " — Lead" : u.rbac === "paralegal" ? " — Paralegal" : "");
-const ASSIGNEE_GROUPS = LEGAL_TEAMS
+const AssigneeOptions = (viewer) => LEGAL_TEAMS
+  .filter((t) => (viewer && viewer.rbac === "lead" ? t.key === viewer.legalTeam : true))
   .map((t) => {
     const staff = LEGAL_USERS.filter((u) => u.legalTeam === t.key);
     return { label: t.short || t.key, users: [...staff.filter((u) => u.rbac === "lead"), ...staff.filter((u) => u.rbac !== "lead")] };
   })
-  .filter((g) => g.users.length);
-const AssigneeOptions = () => ASSIGNEE_GROUPS.map((g) => html`<optgroup key=${g.label} label=${g.label}>
-  ${g.users.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}${roleTag(u)}</option>`)}
-</optgroup>`);
+  .filter((g) => g.users.length)
+  .map((g) => html`<optgroup key=${g.label} label=${g.label}>
+    ${g.users.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}${roleTag(u)}</option>`)}
+  </optgroup>`);
 
 const ZONES = [
   { key: "input", n: 1, label: "Input", icon: "download", sub: "where it came from" },
@@ -340,7 +342,7 @@ function StageActions({ spine }) {
     ${panel === "reassign" && html`<div class="col" style="gap:8px;padding-top:8px;border-top:1px solid var(--border)">
       <${Field} label="Delegate to" hint="Hand this request to another owner down the team hierarchy.">
         <select class="input input--sm" value=${owner} onChange=${(e) => setOwner(e.target.value)}>
-          <option value="">Choose an owner…</option>${AssigneeOptions()}
+          <option value="">Choose an owner…</option>${AssigneeOptions(viewer)}
         </select>
       </${Field}>
       <div class="row" style="gap:8px"><div class="spacer"></div>
