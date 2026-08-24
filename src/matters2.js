@@ -84,11 +84,11 @@ export const isTerminal = (s) => s === "Closed" || s === "Archived";
    ============================================================ */
 export const LIKELIHOODS = ["Rare", "Unlikely", "Possible", "Likely", "Almost Certain"];
 export const IMPACTS = ["Minor", "Moderate", "Major", "Critical"];
-// impact → likelihood → severity (exactly the PRD matrix)
+// impact → likelihood → severity (exactly the Aug-2026 PRD §4.6 matrix)
 const RISK_MATRIX = {
-  Minor:    { Rare: "Low",    Unlikely: "Low",    Possible: "Low",    Likely: "Low",      "Almost Certain": "Low" },
+  Minor:    { Rare: "Low",    Unlikely: "Low",    Possible: "Low",    Likely: "Low",      "Almost Certain": "Medium" },
   Moderate: { Rare: "Low",    Unlikely: "Low",    Possible: "Medium", Likely: "Medium",   "Almost Certain": "Medium" },
-  Major:    { Rare: "Low",    Unlikely: "Medium", Possible: "High",   Likely: "High",     "Almost Certain": "Critical" },
+  Major:    { Rare: "Low",    Unlikely: "Medium", Possible: "High",   Likely: "Critical", "Almost Certain": "Critical" },
   Critical: { Rare: "Medium", Unlikely: "High",   Possible: "High",   Likely: "Critical", "Almost Certain": "Critical" },
 };
 export function riskSeverity(likelihood, impact) {
@@ -124,6 +124,14 @@ export function proposeRisk(m = {}) {
    ============================================================ */
 export const OUTCOME_CATEGORIES = ["Completed as requested", "Completed with modifications", "Withdrawn by business", "Settled", "Determined"];
 export const POSITION_LEVELS = ["Full", "Substantial", "Partial", "Minimal", "None"];
+// §4.7 — positions conceded/held are multi-selects from the playbook clause
+// list (§5.2 clause types), so outcomes aggregate by clause across matters.
+export const CLAUSE_TYPES = [
+  "Confidentiality", "Limitation of liability", "Indemnity", "Termination",
+  "Governing law", "IP ownership", "Data protection", "Force majeure",
+  "Assignment", "Dispute resolution", "Severability", "Non-solicit",
+  "Relationship between the parties", "Renewal", "Payment terms", "Exclusivity",
+];
 
 // Age in whole days: opened → now, or opened → closed once closed.
 export function matterAgeDays(m = {}, now = new Date()) {

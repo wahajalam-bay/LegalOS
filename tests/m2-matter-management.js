@@ -54,14 +54,14 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   ok("every transition is audited (with reason where given)", audits.filter((a) => a.startsWith("status")).length >= 3 && audits.some((a) => a.includes("waiting on regulator")));
 
   /* ---------- risk matrix + override ---------- */
-  const sev = await p.evaluate(() => import("/src/matters2.js").then((M) => [M.riskSeverity("Likely", "Major"), M.riskSeverity("Almost Certain", "Major"), M.riskSeverity("Likely", "Critical"), M.riskSeverity("Rare", "Critical")]));
-  ok("risk matrix computes PRD severities (High/Critical/Critical/Medium)", sev[0] === "High" && sev[1] === "Critical" && sev[2] === "Critical" && sev[3] === "Medium");
+  const sev = await p.evaluate(() => import("/src/matters2.js").then((M) => [M.riskSeverity("Likely", "Major"), M.riskSeverity("Almost Certain", "Minor"), M.riskSeverity("Likely", "Critical"), M.riskSeverity("Rare", "Critical"), M.riskSeverity("Possible", "Major")]));
+  ok("risk matrix matches Aug-2026 PRD §4.6 (Critical/Medium/Critical/Medium/High)", sev[0] === "Critical" && sev[1] === "Medium" && sev[2] === "Critical" && sev[3] === "Medium" && sev[4] === "High");
   const overrideNoReason = await S(p, `(S, id) => S.assessMatterRisk(id, "Likely", "Major", "u3")`, mid);
   ok("overriding the system proposal without a reason is blocked", overrideNoReason.ok === false && /override/i.test(overrideNoReason.error));
   const overridden = await S(p, `(S, id) => S.assessMatterRisk(id, "Likely", "Major", "u3", "counterparty litigious; exposure understated")`, mid);
   ok("override with reason confirms computed severity", overridden.ok);
   const risk = await S(p, `(S, id) => S.matterById(id).risk2`, mid);
-  ok("risk stored as confirmed, severity system-computed (High)", risk && risk.severity === "High" && risk.proposed === false && risk.override && /litigious/.test(risk.override.reason));
+  ok("risk stored as confirmed, severity system-computed (Critical)", risk && risk.severity === "Critical" && risk.proposed === false && risk.override && /litigious/.test(risk.override.reason));
 
   /* ---------- tasks ---------- */
   const noOwner = await S(p, `(S, id) => S.addMatterTask(id, { name: "orphan task" }, "u5")`, mid);
@@ -88,7 +88,7 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   const closed = await S(p, `(S, id) => S.closeMatter(id, { category: "Completed as requested", positionAchieved: "Substantial", externalCounsel: true, externalCost: 12000, externalCurrency: "USD", lessons: "Standard NDA acceptable." }, "u5")`, mid);
   ok("closure with a valid outcome succeeds", closed.ok);
   const closedM = await S(p, `(S, id) => S.matterById(id)`, mid);
-  ok("closed matter carries outcome + duration + closedAt + final risk", closedM.status === "Closed" && closedM.outcome && closedM.outcome.durationDays != null && !!closedM.closedAt && closedM.finalRisk === "High");
+  ok("closed matter carries outcome + duration + closedAt + final risk", closedM.status === "Closed" && closedM.outcome && closedM.outcome.durationDays != null && !!closedM.closedAt && closedM.finalRisk === "Critical");
   const again = await S(p, `(S, id) => S.closeMatter(id, { category: "Settled", positionAchieved: "Full" }, "u5")`, mid);
   ok("a closed matter cannot be closed again", again.ok === false);
   const arch = await S(p, `(S, id) => S.setMatterStatus(id, "Archived", "u5", "records retention")`, mid);

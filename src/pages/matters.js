@@ -27,7 +27,7 @@ import {
   PRACTICE_AREAS, practiceArea, practiceLabel, practiceTone, matterTypesOf,
   MATTER_STATUSES, MATTER_TRANSITIONS, TRANSITION_NEEDS_REASON, MATTER_STATUS_TONE, isTerminal,
   LIKELIHOODS, IMPACTS, riskSeverity, RISK_TONE, proposeRisk,
-  OUTCOME_CATEGORIES, POSITION_LEVELS,
+  OUTCOME_CATEGORIES, POSITION_LEVELS, CLAUSE_TYPES,
   matterAgeDays, ageBandOf, targetVerdict,
   TASK_STATUSES, TASK_TONE, taskOpen,
   CP_RELATIONSHIPS, CP_ENTITY_TYPES,
@@ -453,11 +453,20 @@ function StatusControl({ m, viewer }) {
    ============================================================ */
 function OutcomeModal({ m, viewer, onClose }) {
   const [o, setO] = useState({
-    category: "", positionAchieved: "", conceded: "", held: "",
+    category: "", positionAchieved: "", conceded: [], held: [],
     externalCounsel: false, externalRef: "", externalCost: "", externalCurrency: m.currency || "USD",
     lessons: "", differently: "",
   });
   const set = (k, v) => setO((s) => ({ ...s, [k]: v }));
+  const togglePos = (k, c) => setO((s) => ({ ...s, [k]: s[k].includes(c) ? s[k].filter((x) => x !== c) : [...s[k], c] }));
+  // §4.7 — conceded/held are multi-selects from the clause list (chips).
+  const ClausePick = ({ field }) => html`<div class="row wrap" style="gap:5px">
+    ${CLAUSE_TYPES.map((c) => {
+      const on = o[field].includes(c);
+      return html`<button key=${c} class="tagchip" style=${on ? "background:var(--brand-soft);border-color:var(--brand);color:var(--brand-600);font-weight:600" : ""}
+        onClick=${() => togglePos(field, c)}>${c}</button>`;
+    })}
+  </div>`;
   const missing = validateOutcome({ ...o, externalCost: o.externalCost === "" ? null : o.externalCost });
   const submit = () => {
     const res = closeMatter(m.id, { ...o, externalCost: o.externalCost === "" ? null : Number(o.externalCost) }, viewer.id);
@@ -480,8 +489,8 @@ function OutcomeModal({ m, viewer, onClose }) {
         </select>
       </${Field}>
     </div>
-    <${Field} label="Key positions conceded"><${Textarea} rows=2 value=${o.conceded} onInput=${(e) => set("conceded", e.target.value)} /></${Field}>
-    <${Field} label="Key positions held"><${Textarea} rows=2 value=${o.held} onInput=${(e) => set("held", e.target.value)} /></${Field}>
+    <${Field} label="Key positions conceded" hint="Multi-select from the playbook clause list."><${ClausePick} field="conceded" /></${Field}>
+    <${Field} label="Key positions held" hint="Multi-select from the playbook clause list."><${ClausePick} field="held" /></${Field}>
     <${Field} label="External counsel used"><${Toggle} on=${o.externalCounsel} onChange=${(v) => set("externalCounsel", v)} /></${Field}>
     ${o.externalCounsel && html`<div class="grid" style="grid-template-columns:2fr 1fr 1fr;gap:12px">
       <${Field} label="External counsel reference"><${Input} value=${o.externalRef} onInput=${(e) => set("externalRef", e.target.value)} placeholder="firm / engagement ref" /></${Field}>
@@ -747,9 +756,10 @@ function OutcomeTab({ m, viewer }) {
   const [closing, setClosing] = useState(false);
   if (m.outcome) {
     const o = m.outcome;
+    const list = (v) => (Array.isArray(v) ? (v.length ? v.join(", ") : "—") : v || "—");
     const rows = [
       ["Outcome category", o.category], ["Position achieved", o.positionAchieved],
-      ["Positions conceded", o.conceded || "—"], ["Positions held", o.held || "—"],
+      ["Positions conceded", list(o.conceded)], ["Positions held", list(o.held)],
       ["External counsel", o.externalCounsel ? `Yes — ${o.externalRef || "ref n/a"} · ${money(o.externalCost, o.externalCurrency)}` : "No"],
       ["Duration", (o.durationDays != null ? o.durationDays : matterAgeDays(m)) + " days (system-calculated)"],
       ["Closed by", `${nameOf(o.closedBy)} · ${o.closedAt ? fmt.date(o.closedAt) : ""}`],
