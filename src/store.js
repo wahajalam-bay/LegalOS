@@ -14,6 +14,11 @@ import {
   canTransition, TRANSITION_NEEDS_REASON, isTerminal, riskSeverity, proposeRisk,
   normalizeCpName, matterAgeDays,
 } from "./matters2.js";
+// Module 3 — Contract Intelligence: pure model (no imports → no cycle).
+import {
+  CLAUSE_FLOW, CLAUSE_GATE, CLAUSE_SEED_DEFS, TEMPLATE_DEFS,
+  generateRecitals, splitSections, classifyClauseText, sameText, textGap,
+} from "./contracts3.js";
 // Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
 import { MASTER_DATA_SEED, teamPrefix } from "./org.js";
 import { MODULES, moduleByKey, workflowOf, riskGateMissing } from "./modules.js";
@@ -201,6 +206,27 @@ function seed() {
     // Module 2 — Matter Management slices
     counterparties: CP_SEED(),
     matterTasks: M2_TASKS_SEED(),
+    // Module 3 — Contract Intelligence slices. The clause library seeds as
+    // PUBLISHED (approved internal positions); everything else starts empty and
+    // is produced by the engine.
+    clauses3: CLAUSE_SEED_DEFS.map((def, i) => ({
+      id: "LIB-" + String(101 + i).padStart(4, "0"),
+      type: def.type, agreementType: def.agreementType || "Any",
+      jurisdiction: def.jurisdiction || "Any",
+      risk: def.risk, approvalRequired: def.approval,
+      status: "Published", currentVersion: 1,
+      versions: [{ v: 1, tiers: { ...def.tiers }, notes: def.notes || "", guidance: def.guidance || "", author: "u3", reviewer: "u3", approvedBy: "u1", status: "Published", effectiveAt: d2(-40), supersededAt: null, changeSummary: "Initial approved position" }],
+      relatedClauses: [], createdBy: "u3", createdAt: d2(-60), lastReviewedBy: "u1", lastReviewedAt: d2(-40),
+      audit: [{ at: d2(-40), by: "u1", kind: "published", detail: "Approved and published" }],
+    })),
+    templates3: TEMPLATE_DEFS.map((t, i) => ({
+      id: "TPL-" + String(11 + i).padStart(3, "0"), key: t.key,
+      agreementType: t.agreementType, label: t.label, jurisdiction: t.jurisdiction,
+      version: 1, status: "Published",
+      versions: [{ v: 1, by: "u1", at: d2(-40), status: "Published", note: "Approved structure" }],
+      approvedBy: "u1",
+    })),
+    drafts3: [], reviews3: [], deviations3: [], clauseSuggestions: [], aiAudit: [],
     session: { viewAsId: "u1" },
   };
 }
@@ -2124,9 +2150,31 @@ export function counterpartyMatters(cpId) {
 }
 
 /* ---------------- create matter (Phases 2/7) ---------------- */
-const M2_REQUIRED = ["name", "practiceArea", "matterType", "owner"];
+// Practice area → the legal team whose bench owns it.
+const PRACTICE_TEAM = {
+  commercial: "commercial", administrative: "commercial", advisory: "commercial",
+  realestate: "commercial", corporate: "compliance", regulatory: "compliance",
+  disputes: "litigation", ip: "litigation", employment: "litigation",
+};
+// Auto-assignment: the matter goes to the practice-area EXPERT first — the
+// lawyer on the owning team with the most matters of this practice area
+// (experience), ties broken by lightest open load. The Director is notified
+// and can reassign (setMatterOwner is Lead/Director-gated in the UI).
+export function suggestMatterOwner(practiceKey) {
+  const team = PRACTICE_TEAM[practiceKey] || "commercial";
+  const pool = USERS.filter((u) => u.legalTeam === team && (u.rbac === "member" || u.rbac === "lead"));
+  if (!pool.length) return null;
+  const expertise = (uid) => (state.matters || []).filter((m) => m.owner === uid && m.practiceArea === practiceKey).length;
+  const load = (uid) => (state.matters || []).filter((m) => m.owner === uid && !isTerminal(m.status)).length;
+  return pool.slice().sort((a, b) => expertise(b.id) - expertise(a.id) || load(a.id) - load(b.id) || (a.id < b.id ? -1 : 1))[0].id;
+}
+const M2_REQUIRED = ["name", "practiceArea", "matterType"];
 export function createMatter(payload = {}, byUserId) {
   for (const k of M2_REQUIRED) if (!String(payload[k] || "").trim()) return { ok: false, error: `${k} is required` };
+  // Expert-first auto-assignment when no owner is chosen explicitly.
+  const autoAssigned = !payload.owner;
+  if (autoAssigned) payload = { ...payload, owner: suggestMatterOwner(payload.practiceArea) };
+  if (!payload.owner) return { ok: false, error: "owner is required" };
   if (!practiceArea(payload.practiceArea)) return { ok: false, error: "unknown practice area" };
   if (!matterTypesOf(payload.practiceArea).includes(payload.matterType)) return { ok: false, error: "matter type does not belong to the practice area" };
   if (payload.counterpartyId && !counterpartyById(payload.counterpartyId)) return { ok: false, error: "counterparty must reference the master registry" };
@@ -2150,7 +2198,10 @@ export function createMatter(payload = {}, byUserId) {
     relatedMatters: [], outcome: null,
     description: payload.description || null, businessContext: payload.businessContext || null,
     requesterId: payload.requesterId || null,
-    audit: [{ at: now, by: byUserId || null, kind: "created", detail: payload.sourceRequestId ? `Converted from ${payload.sourceRequestId}` : "Matter opened" }],
+    audit: [
+      { at: now, by: byUserId || null, kind: "created", detail: payload.sourceRequestId ? `Converted from ${payload.sourceRequestId}` : "Matter opened" },
+      ...(autoAssigned ? [{ at: now, by: null, kind: "owner", from: "Unassigned", to: _nm(payload.owner), detail: `Auto-assigned to the ${practiceLabelOf(payload.practiceArea)} expert (experience + load) — the Director can reassign` }] : []),
+    ],
     createdBy: byUserId || null, createdAt: now, updatedBy: byUserId || null, updatedAt: now,
     // legacy-compat so the spine / unified worklist keep working
     title: payload.name.trim(), type: "Contract", bu: payload.department || "—",
@@ -2161,9 +2212,17 @@ export function createMatter(payload = {}, byUserId) {
     requestId: payload.sourceRequestId || null,
   };
   addItem("matters", m);
-  if (m.owner !== byUserId) notifyUser(m.owner, { kind: "matter-assign", ref: id, tone: "blue", icon: "folder", title: `${id} assigned to you`, body: m.name, to: "/matters/" + id });
+  if (m.owner !== byUserId) notifyUser(m.owner, { kind: "matter-assign", ref: id, tone: "blue", icon: "folder", title: `${id} assigned to you${autoAssigned ? " (auto — practice-area expert)" : ""}`, body: m.name, to: "/matters/" + id });
+  // The Director is told about every auto-assignment and can reassign.
+  if (autoAssigned) USERS.filter((u) => u.rbac === "head").forEach((u) => notifyUser(u.id, {
+    kind: "matter-auto", ref: id, tone: "purple", icon: "user",
+    title: `${id} auto-assigned to ${_nm(m.owner)}`,
+    body: `${m.name} — routed to the ${practiceLabelOf(m.practiceArea)} expert. Open the matter to reassign.`,
+    to: "/matters/" + id,
+  }));
   return { ok: true, id, matter: m };
 }
+const practiceLabelOf = (k) => (practiceArea(k) || { label: k }).label;
 
 /* ---------------- request → matter conversion (Phase 1) ---------------- */
 // Store-level duplicate guard + full carry-forward, so the lawyer never
@@ -2186,8 +2245,10 @@ export function convertRequestToMatter(requestId, overrides = {}, byUserId) {
     matterType: overrides.matterType || matterTypesOf(practice)[0],
     department: r.department || r.dept || "—",
     counterpartyId,
-    owner: overrides.owner || r.owner,
-    collaborators: overrides.collaborators || [],
+    // Expert-first: unless the converter names an owner, the matter routes to
+    // the practice-area expert (the request's owner becomes a collaborator).
+    owner: overrides.owner || null,
+    collaborators: overrides.collaborators || (r.owner ? [r.owner] : []),
     targetDate: overrides.targetDate || r.dueDate || null,
     value: overrides.value != null ? overrides.value : r.value,
     exposure: overrides.exposure != null ? overrides.exposure : null,
@@ -2368,6 +2429,413 @@ export function setTaskStatus(taskId, status, byUserId) {
   return { ok: true };
 }
 export const tasksForMatter = (matterId) => (state.matterTasks || []).filter((t) => t.matterId === matterId);
+
+/* ============================================================
+   MODULE 3 — CONTRACT INTELLIGENCE & TEMPLATE GENERATION engine.
+   Assembly before generation. The clause library is the source of approved
+   positions; deviations are detected, recorded and approval-routed; every
+   AI-assisted step writes an immutable execution record. Retrieval is
+   authorization-FIRST (filterVisible before any context is built).
+   ============================================================ */
+
+/* ---------------- clause library (Phases 2–5) ---------------- */
+export const clauseById3 = (id) => (state.clauses3 || []).find((c) => c.id === id) || null;
+export const publishedClauses = () => (state.clauses3 || []).filter((c) => c.status === "Published");
+// Published clause for a type + jurisdiction (exact jurisdiction beats "Any").
+export function findLibraryClause(type, jurisdiction) {
+  const pub = publishedClauses().filter((c) => c.type === type);
+  return pub.find((c) => c.jurisdiction === jurisdiction) || pub.find((c) => c.jurisdiction === "Any") || null;
+}
+export const clauseCurrentVersion = (c) => (c.versions || []).find((v) => v.v === c.currentVersion) || (c.versions || [])[0] || null;
+
+function clauseAudit(c, entry, by) {
+  return [...(c.audit || []), { at: nowIso(), by: by || null, ...entry }];
+}
+export function proposeClause(payload = {}, byUserId) {
+  if (!payload.type || !String(payload.tiers && payload.tiers.Preferred || "").trim()) return { ok: false, error: "a clause type and a Preferred-tier text are required" };
+  const c = {
+    id: nextId("clauses3", "LIB-"),
+    type: payload.type, agreementType: payload.agreementType || "Any",
+    jurisdiction: payload.jurisdiction || "Any",
+    risk: payload.risk || "Medium",
+    approvalRequired: payload.approvalRequired || "Lead",
+    status: "Proposed", currentVersion: 1,
+    versions: [{ v: 1, tiers: { ...payload.tiers }, notes: payload.notes || "", guidance: payload.guidance || "", author: byUserId || null, reviewer: null, approvedBy: null, status: "Proposed", effectiveAt: null, supersededAt: null, changeSummary: payload.changeSummary || "Initial proposal" }],
+    relatedClauses: payload.relatedClauses || [],
+    createdBy: byUserId || null, createdAt: nowIso(), lastReviewedBy: null, lastReviewedAt: null,
+    audit: [{ at: nowIso(), by: byUserId || null, kind: "proposed", detail: "Clause proposed" }],
+  };
+  addItem("clauses3", c);
+  return { ok: true, id: c.id, clause: c };
+}
+const CLAUSE_ROLE_OK = (gate, viewer) => !gate
+  || (gate === "lead" && (viewer.rbac === "lead" || viewer.rbac === "head"))
+  || (gate === "head" && viewer.rbac === "head");
+export function advanceClauseStatus(id, to, byUserId) {
+  const c = clauseById3(id);
+  if (!c) return { ok: false, error: "clause not found" };
+  if (!(CLAUSE_FLOW[c.status] || []).includes(to)) return { ok: false, error: `cannot move ${c.status} → ${to}` };
+  const viewer = byId(byUserId) || {};
+  if (!CLAUSE_ROLE_OK(CLAUSE_GATE[to], viewer)) return { ok: false, error: `${to} requires ${CLAUSE_GATE[to] === "head" ? "the Director" : "a Lead or the Director"}` };
+  const patch = { status: to, audit: clauseAudit(c, { kind: "status", from: c.status, to }, byUserId) };
+  if (to === "Manager Review") { patch.lastReviewedBy = byUserId; patch.lastReviewedAt = nowIso(); }
+  if (to === "Published") {
+    patch.versions = (c.versions || []).map((v) => v.v === c.currentVersion ? { ...v, status: "Published", approvedBy: byUserId, effectiveAt: nowIso() } : v);
+  }
+  updateItem("clauses3", id, patch);
+  return { ok: true };
+}
+// Versioning (Phase 4): history is never overwritten; drafts keep pointing at
+// the exact version they used.
+export function newClauseVersion(id, payload = {}, byUserId) {
+  const c = clauseById3(id);
+  if (!c) return { ok: false, error: "clause not found" };
+  const viewer = byId(byUserId) || {};
+  if (viewer.rbac !== "head") return { ok: false, error: "publishing a new version requires the Director" };
+  const cur = clauseCurrentVersion(c);
+  const v = {
+    v: (c.versions || []).length + 1,
+    tiers: { ...(cur ? cur.tiers : {}), ...(payload.tiers || {}) },
+    notes: payload.notes != null ? payload.notes : (cur ? cur.notes : ""),
+    guidance: payload.guidance != null ? payload.guidance : (cur ? cur.guidance : ""),
+    author: byUserId, reviewer: byUserId, approvedBy: byUserId,
+    status: "Published", effectiveAt: nowIso(), supersededAt: null,
+    changeSummary: payload.changeSummary || "Revised position",
+  };
+  updateItem("clauses3", id, {
+    versions: [...(c.versions || []).map((x) => x.v === c.currentVersion ? { ...x, status: "Superseded", supersededAt: nowIso() } : x), v],
+    currentVersion: v.v, status: "Published",
+    lastReviewedBy: byUserId, lastReviewedAt: nowIso(),
+    audit: clauseAudit(c, { kind: "version", detail: `v${v.v} published — ${v.changeSummary}` }, byUserId),
+  });
+  return { ok: true, version: v.v };
+}
+export function retireClause(id, byUserId) {
+  const c = clauseById3(id);
+  if (!c) return { ok: false, error: "clause not found" };
+  if ((byId(byUserId) || {}).rbac !== "head") return { ok: false, error: "retiring requires the Director" };
+  updateItem("clauses3", id, { status: "Retired", audit: clauseAudit(c, { kind: "status", from: c.status, to: "Retired" }, byUserId) });
+  return { ok: true };
+}
+
+/* Feedback loop (Phase 29): lawyers suggest; managers review; the Director
+   publishes. The library is never silently rewritten. */
+export function suggestClauseImprovement(clauseId, { tier, text, reason }, byUserId) {
+  const c = clauseById3(clauseId);
+  if (!c) return { ok: false, error: "clause not found" };
+  if (!String(text || "").trim() || !String(reason || "").trim()) return { ok: false, error: "suggested text and a reason are required" };
+  const s = { id: nextId("clauseSuggestions", "SG-"), clauseId, tier: tier || "Preferred", text: text.trim(), reason: reason.trim(), by: byUserId, at: nowIso(), status: "Proposed", agreementType: c.agreementType, jurisdiction: c.jurisdiction };
+  addItem("clauseSuggestions", s);
+  (USERS || []).filter((u) => u.rbac === "lead" && u.legalTeam).slice(0, 3).forEach((u) => notifyUser(u.id, { kind: "clause-suggestion", ref: s.id, tone: "purple", icon: "sparkles", title: `Clause improvement proposed — ${c.type}`, body: reason.slice(0, 120), to: "/clauses" }));
+  return { ok: true, id: s.id };
+}
+export function reviewSuggestion(id, decision, byUserId) {
+  const s = (state.clauseSuggestions || []).find((x) => x.id === id);
+  if (!s) return { ok: false, error: "suggestion not found" };
+  const viewer = byId(byUserId) || {};
+  if (viewer.rbac !== "lead" && viewer.rbac !== "head") return { ok: false, error: "manager review requires a Lead or the Director" };
+  updateItem("clauseSuggestions", id, { status: decision === "forward" ? "Manager Reviewed" : "Rejected", reviewedBy: byUserId, reviewedAt: nowIso() });
+  return { ok: true };
+}
+export function publishSuggestion(id, byUserId) {
+  const s = (state.clauseSuggestions || []).find((x) => x.id === id);
+  if (!s) return { ok: false, error: "suggestion not found" };
+  if ((byId(byUserId) || {}).rbac !== "head") return { ok: false, error: "publishing requires the Director" };
+  if (s.status !== "Manager Reviewed") return { ok: false, error: "manager review comes first" };
+  const res = newClauseVersion(s.clauseId, { tiers: { [s.tier]: s.text }, changeSummary: "From suggestion " + s.id + " — " + s.reason }, byUserId);
+  if (!res.ok) return res;
+  updateItem("clauseSuggestions", id, { status: "Published", publishedBy: byUserId, publishedAt: nowIso() });
+  return { ok: true, version: res.version };
+}
+
+/* ---------------- AI execution audit (Phase 27) ---------------- */
+function aiExec(rec) {
+  const x = { id: nextId("aiAudit", "AIX-"), engine: "legalos-rules-v1", at: nowIso(), ...rec };
+  addItem("aiAudit", x);
+  return x.id;
+}
+
+/* ---------------- draft assembly (Phases 10–12) ---------------- */
+const DEV_ESCALATE = { Low: "Medium", Medium: "High", High: "Critical", Critical: "Critical" };
+export const draftById = (id) => (state.drafts3 || []).find((d) => d.id === id) || null;
+export function createDraft(params = {}, byUserId) {
+  const tpl = (state.templates3 || []).find((t) => t.agreementType === params.agreementType && t.status === "Published");
+  if (!tpl) return { ok: false, error: "no approved template for " + (params.agreementType || "this agreement type") };
+  if (!params.jurisdiction) return { ok: false, error: "jurisdiction is mandatory" };
+  const cpName = params.counterpartyId ? counterpartyName(params.counterpartyId) : (params.counterpartyName || null);
+  const def = TEMPLATE_DEFS.find((t) => t.key === tpl.key);
+  const clauseRefs = [];
+  const sections = def.sections
+    .filter((s) => s.kind !== "conditional" || (params.features || []).includes(s.feature))
+    .map((s) => {
+      if (s.kind === "fixed") return { key: s.key, heading: s.heading, source: "fixed", text: s.text };
+      if (s.kind === "generated") return { key: s.key, heading: s.heading, source: "generated", text: generateRecitals({ counterpartyName: cpName, ourRole: params.ourRole, agreementType: params.agreementType, jurisdiction: params.jurisdiction }) };
+      if (s.kind === "input") return { key: s.key, heading: s.heading, source: "user-provided", text: `[${s.prompt} — to be completed by the business]`, prompt: s.prompt };
+      // library / conditional-with-clause: ASSEMBLY — approved position or an
+      // explicit gap. Never generated.
+      const cl = findLibraryClause(s.clauseType, params.jurisdiction);
+      if (!cl) return { key: s.key, heading: s.heading, source: "missing", clauseType: s.clauseType, text: "", note: `Source not found in LegalOS — no published ${s.clauseType} position for ${params.jurisdiction}.`, required: !!s.required };
+      const cv = clauseCurrentVersion(cl);
+      clauseRefs.push({ clauseId: cl.id, version: cl.currentVersion, tier: "Preferred", type: cl.type });
+      return { key: s.key, heading: s.heading, source: "library", clauseType: s.clauseType, clauseId: cl.id, clauseVersion: cl.currentVersion, tier: "Preferred", libraryText: cv.tiers.Preferred, text: cv.tiers.Preferred, required: !!s.required };
+    });
+  const now = nowIso();
+  const id = nextId("drafts3", "DRA-");
+  const draft = {
+    id, title: `${params.agreementType}${cpName ? " — " + cpName : ""}`,
+    agreementType: params.agreementType, ourRole: params.ourRole || null,
+    counterpartyId: params.counterpartyId || null, jurisdiction: params.jurisdiction,
+    governingLaw: params.governingLaw || params.jurisdiction,
+    valueBand: params.valueBand || null, term: params.term || null,
+    features: params.features || [], matterId: params.matterId || null,
+    templateId: tpl.id, templateVersion: tpl.version,
+    status: "Draft", version: 1,
+    versions: [{ v: 1, by: byUserId, at: now, note: "Assembled from approved template + library" }],
+    sections, deviations: [],
+    approvedBy: null, approvedAt: null, deliveredAt: null,
+    createdBy: byUserId, createdAt: now, updatedBy: byUserId, updatedAt: now,
+    audit: [{ at: now, by: byUserId, kind: "created", detail: `Assembled from ${tpl.id} v${tpl.version} · ${clauseRefs.length} library clauses` }],
+  };
+  draft.aiExecId = aiExec({ kind: "assembly", user: byUserId, draftId: id, matterId: params.matterId || null, jurisdiction: params.jurisdiction, inputs: { ...params }, clauseSources: clauseRefs, retrievedSources: [], output: `${sections.length} sections assembled` });
+  addItem("drafts3", draft);
+  return { ok: true, id, draft };
+}
+
+// Editing a library section = potential deviation (Phases 13–15). Never silent.
+export function editDraftSection(draftId, sectionKey, text, byUserId) {
+  const d = draftById(draftId);
+  if (!d) return { ok: false, error: "draft not found" };
+  const sec = (d.sections || []).find((s) => s.key === sectionKey);
+  if (!sec) return { ok: false, error: "section not found" };
+  const now = nowIso();
+  let sections = d.sections, deviations = d.deviations || [], audit = d.audit || [];
+  const others = deviations.filter((x) => x.sectionKey !== sectionKey);
+  if (sec.clauseId) {
+    const cl = clauseById3(sec.clauseId);
+    const cv = (cl.versions || []).find((v) => v.v === sec.clauseVersion) || clauseCurrentVersion(cl);
+    if (sameText(text, sec.libraryText)) {
+      // reverted to the library position — deviation closes
+      sections = sections.map((s) => s.key === sectionKey ? { ...s, text: sec.libraryText, source: "library", tier: "Preferred" } : s);
+      deviations = [...others, ...deviations.filter((x) => x.sectionKey === sectionKey).map((x) => ({ ...x, status: "Reverted", resolvedBy: byUserId, resolvedAt: now }))];
+      audit = [...audit, { at: now, by: byUserId, kind: "edit", detail: `${sec.heading} reverted to the library position` }];
+    } else {
+      const tierTo = Object.keys(cv.tiers || {}).find((t) => sameText(text, cv.tiers[t])) || "Custom";
+      const custom = tierTo === "Custom";
+      const risk = custom ? DEV_ESCALATE[cl.risk] || cl.risk : cl.risk;
+      // Below-Fallback (custom) deviations need the Director; tier moves follow
+      // the clause's own approval rule.
+      const approvalRequired = custom ? "HoD" : tierTo === "Fallback" ? (cl.approvalRequired === "None" ? "Lead" : cl.approvalRequired) : cl.approvalRequired;
+      const dev = {
+        id: nextId("deviations3", "DEV-"), draftId, sectionKey, clauseId: cl.id, clauseVersion: sec.clauseVersion,
+        clauseType: cl.type, originalTier: "Preferred", tierTo,
+        originalText: sec.libraryText, currentText: text,
+        gap: textGap(sec.libraryText, text), risk,
+        recommendation: tierTo === "Acceptable" ? "Negotiate to Acceptable" : tierTo === "Fallback" ? "Negotiate to Fallback" : "Reject",
+        approvalRequired, status: approvalRequired === "None" ? "Logged" : "Open",
+        createdBy: byUserId, createdAt: now, resolvedBy: null, resolvedAt: null,
+      };
+      addItem("deviations3", dev);
+      deviations = [...others.filter((x) => x.status !== "Reverted" || x.sectionKey !== sectionKey), dev];
+      sections = sections.map((s) => s.key === sectionKey ? { ...s, text, source: "user-edited", tier: tierTo } : s);
+      audit = [...audit, { at: now, by: byUserId, kind: "deviation", detail: `${sec.heading}: Preferred → ${tierTo} (${risk} risk${approvalRequired !== "None" ? " · " + approvalRequired + " approval required" : ""})` }];
+    }
+  } else {
+    sections = sections.map((s) => s.key === sectionKey ? { ...s, text, source: s.source === "generated" ? "generated" : "user-provided", editedBy: byUserId, editedAt: now } : s);
+    audit = [...audit, { at: now, by: byUserId, kind: "edit", detail: `${sec.heading} edited` }];
+  }
+  const patch = { sections, deviations, audit, updatedBy: byUserId, updatedAt: now };
+  // Editing an approved document reopens review (Phase 33): new version, approval invalidated.
+  if (d.status === "Approved" || d.status === "Delivered") {
+    patch.status = "In Review"; patch.approvedBy = null; patch.approvedAt = null;
+    patch.version = d.version + 1;
+    patch.versions = [...(d.versions || []), { v: d.version + 1, by: byUserId, at: now, note: "Edited after approval — approval invalidated" }];
+    patch.audit = [...patch.audit, { at: now, by: byUserId, kind: "status", from: d.status, to: "In Review", detail: "approval invalidated by post-approval edit" }];
+  }
+  updateItem("drafts3", draftId, patch);
+  return { ok: true };
+}
+export function approveDeviation(devId, byUserId, decision = "Approved") {
+  const dev = (state.deviations3 || []).find((x) => x.id === devId);
+  if (!dev) return { ok: false, error: "deviation not found" };
+  const viewer = byId(byUserId) || {};
+  if (dev.approvalRequired === "HoD" && viewer.rbac !== "head") return { ok: false, error: "below-Fallback deviations require the Director" };
+  if (dev.approvalRequired === "Lead" && !(viewer.rbac === "lead" || viewer.rbac === "head")) return { ok: false, error: "this deviation requires a Lead or the Director" };
+  updateItem("deviations3", devId, { status: decision, resolvedBy: byUserId, resolvedAt: nowIso() });
+  const d = draftById(dev.draftId);
+  if (d) updateItem("drafts3", d.id, {
+    deviations: (d.deviations || []).map((x) => x.id === devId ? { ...x, status: decision, resolvedBy: byUserId, resolvedAt: nowIso() } : x),
+    audit: [...(d.audit || []), { at: nowIso(), by: byUserId, kind: "deviation-" + decision.toLowerCase(), detail: `${dev.clauseType} deviation ${decision.toLowerCase()}` }],
+  });
+  return { ok: true };
+}
+// The human review gate (Phase 28): explicit approval by a named lawyer; blocked
+// while required deviation approvals are outstanding.
+export function draftOutstanding(d) {
+  return (d.deviations || []).filter((x) => x.approvalRequired !== "None" && x.status !== "Approved" && x.status !== "Reverted");
+}
+export function setDraftStatus(draftId, to, byUserId, note) {
+  const d = draftById(draftId);
+  if (!d) return { ok: false, error: "draft not found" };
+  if (to === "Approved") {
+    const out = draftOutstanding(d);
+    if (out.length) return { ok: false, error: "approval blocked — deviations awaiting approval", outstanding: out.map((x) => x.id) };
+    const missing = (d.sections || []).filter((s) => s.source === "missing" && s.required);
+    if (missing.length) return { ok: false, error: "approval blocked — required sections have no approved source: " + missing.map((s) => s.heading).join(", ") };
+    updateItem("drafts3", draftId, { status: "Approved", approvedBy: byUserId, approvedAt: nowIso(), audit: [...(d.audit || []), { at: nowIso(), by: byUserId, kind: "approved", detail: "Final output approved by " + _nm(byUserId) }] });
+    return { ok: true };
+  }
+  if (to === "Delivered") {
+    if (d.status !== "Approved") return { ok: false, error: "only the approved version can be delivered" };
+    updateItem("drafts3", draftId, { status: "Delivered", deliveredAt: nowIso(), audit: [...(d.audit || []), { at: nowIso(), by: byUserId, kind: "delivered", detail: "Released for external delivery" }] });
+    return { ok: true };
+  }
+  updateItem("drafts3", draftId, { status: to, audit: [...(d.audit || []), { at: nowIso(), by: byUserId, kind: "status", from: d.status, to, detail: note || null }] });
+  return { ok: true };
+}
+
+/* ---------------- counterparty review (Phases 17–22) ---------------- */
+export const reviewById3 = (id) => (state.reviews3 || []).find((r) => r.id === id) || null;
+export function createContractReview(payload = {}, byUserId) {
+  const now = nowIso();
+  const id = nextId("reviews3", "CRV-");
+  const base = {
+    id, name: payload.name || "Counterparty draft", agreementType: payload.agreementType || null,
+    jurisdiction: payload.jurisdiction || null, counterpartyId: payload.counterpartyId || null,
+    matterId: payload.matterId || null, uploadedBy: byUserId, uploadedAt: now,
+    decisions: {}, approvedBy: null, approvedAt: null,
+    audit: [{ at: now, by: byUserId, kind: "created", detail: "Counterparty document uploaded" }],
+  };
+  const text = String(payload.text || "").trim();
+  if (!text) {
+    // honest extraction failure — never fabricate content (Phase 18)
+    addItem("reviews3", { ...base, status: "Extraction Failed", findings: [], sourceText: null });
+    return { ok: true, id, status: "Extraction Failed" };
+  }
+  const sections = splitSections(text);
+  const seen = new Map();
+  sections.forEach((s) => {
+    const cls = classifyClauseText((s.heading ? s.heading + ". " : "") + s.text);
+    if (!cls.type) return;
+    const prev = seen.get(cls.type);
+    if (!prev || cls.score > prev.cls.score) seen.set(cls.type, { s, cls });
+  });
+  let fidx = 0;
+  const findings = [];
+  seen.forEach(({ s, cls }, type) => {
+    const lib = findLibraryClause(type, payload.jurisdiction);
+    const f = {
+      id: `F-${++fidx}`, clauseType: type,
+      location: s.n ? `Section ${s.n}${s.heading ? " — " + s.heading : ""}` : (s.heading || "Unlocated"),
+      actualText: s.text.slice(0, 600), confidence: cls.confidence,
+    };
+    if (!lib) {
+      findings.push({ ...f, ourPosition: null, sourceNote: "Source not found in LegalOS — no published position for this clause type.", gap: null, risk: "Medium", recommendation: null, suggestedRedline: null, approvalRequired: "None", jurWarning: false });
+      return;
+    }
+    const cv = clauseCurrentVersion(lib);
+    const matchTier = Object.keys(cv.tiers || {}).find((t) => sameText(s.text, cv.tiers[t])) || null;
+    const belowFallback = !matchTier;
+    const risk = belowFallback ? DEV_ESCALATE[lib.risk] || lib.risk : lib.risk;
+    findings.push({
+      ...f,
+      ourPosition: { clauseId: lib.id, version: lib.currentVersion, tier: "Preferred", text: cv.tiers.Preferred, approvedAt: cv.effectiveAt },
+      tiers: cv.tiers,
+      gap: matchTier ? (matchTier === "Preferred" ? null : { added: [], removed: [], changed: true, note: `Matches our ${matchTier} position, not Preferred.` }) : textGap(cv.tiers.Preferred, s.text),
+      matchTier, risk,
+      recommendation: matchTier === "Preferred" ? "Accept" : matchTier === "Acceptable" ? "Accept" : matchTier === "Fallback" ? "Negotiate to Acceptable" : (risk === "Critical" || risk === "High") ? "Negotiate to Acceptable" : "Negotiate to Acceptable",
+      suggestedRedline: { text: cv.tiers.Preferred, source: "library", clauseId: lib.id, version: lib.currentVersion, tier: "Preferred" },
+      approvalRequired: belowFallback ? "HoD" : matchTier === "Fallback" ? (lib.approvalRequired === "None" ? "Lead" : lib.approvalRequired) : "None",
+      jurWarning: !!(lib.jurisdiction !== "Any" && payload.jurisdiction && lib.jurisdiction !== payload.jurisdiction),
+    });
+  });
+  // Required clauses the counterparty paper is missing entirely.
+  const tplDef = TEMPLATE_DEFS.find((t) => t.agreementType === payload.agreementType);
+  if (tplDef) tplDef.sections.filter((s) => s.required && s.clauseType && !seen.has(s.clauseType)).forEach((s) => {
+    const lib = findLibraryClause(s.clauseType, payload.jurisdiction);
+    if (!lib) return;
+    const cv = clauseCurrentVersion(lib);
+    findings.push({
+      id: `F-${++fidx}`, clauseType: s.clauseType, location: "Not present in document", actualText: null,
+      confidence: "High", missing: true,
+      ourPosition: { clauseId: lib.id, version: lib.currentVersion, tier: "Preferred", text: cv.tiers.Preferred },
+      gap: { changed: true, note: "Clause is absent from the counterparty draft." },
+      risk: lib.risk, recommendation: "Reject",
+      suggestedRedline: { text: cv.tiers.Preferred, source: "library", clauseId: lib.id, version: lib.currentVersion, tier: "Preferred" },
+      approvalRequired: "None", jurWarning: false,
+    });
+  });
+  const rec = { ...base, status: "Findings", findings, sourceText: text };
+  rec.aiExecId = aiExec({ kind: "review-extraction", user: byUserId, reviewId: id, matterId: payload.matterId || null, jurisdiction: payload.jurisdiction || null, inputs: { name: rec.name, chars: text.length }, clauseSources: findings.filter((f) => f.ourPosition).map((f) => ({ clauseId: f.ourPosition.clauseId, version: f.ourPosition.version })), retrievedSources: [], output: `${findings.length} findings` });
+  addItem("reviews3", rec);
+  return { ok: true, id, findings: findings.length };
+}
+export function decideFinding(reviewId, fid, { action, note }, byUserId) {
+  const r = reviewById3(reviewId);
+  if (!r) return { ok: false, error: "review not found" };
+  const f = (r.findings || []).find((x) => x.id === fid);
+  if (!f) return { ok: false, error: "finding not found" };
+  const viewer = byId(byUserId) || {};
+  if (action === "Accept" && f.approvalRequired === "HoD" && viewer.rbac !== "head") return { ok: false, error: "accepting a below-Fallback position requires the Director" };
+  if (action === "Accept" && f.approvalRequired === "Lead" && !(viewer.rbac === "lead" || viewer.rbac === "head")) return { ok: false, error: "accepting this position requires a Lead or the Director" };
+  updateItem("reviews3", reviewId, {
+    decisions: { ...(r.decisions || {}), [fid]: { action, note: note || null, by: byUserId, at: nowIso() } },
+    audit: [...(r.audit || []), { at: nowIso(), by: byUserId, kind: "decision", detail: `${f.clauseType}: ${action}` }],
+  });
+  return { ok: true };
+}
+export function approveReview(reviewId, byUserId) {
+  const r = reviewById3(reviewId);
+  if (!r) return { ok: false, error: "review not found" };
+  const undecided = (r.findings || []).filter((f) => !(r.decisions || {})[f.id]);
+  if (undecided.length) return { ok: false, error: "every finding needs a decision first", outstanding: undecided.map((f) => f.id) };
+  updateItem("reviews3", reviewId, { status: "Approved", approvedBy: byUserId, approvedAt: nowIso(), audit: [...(r.audit || []), { at: nowIso(), by: byUserId, kind: "approved", detail: "Redline approved by " + _nm(byUserId) }] });
+  return { ok: true };
+}
+export function deliverReview(reviewId, byUserId) {
+  const r = reviewById3(reviewId);
+  if (!r) return { ok: false, error: "review not found" };
+  if (r.status !== "Approved") return { ok: false, error: "only an approved redline can be delivered" };
+  updateItem("reviews3", reviewId, { status: "Redline Delivered", deliveredAt: nowIso(), audit: [...(r.audit || []), { at: nowIso(), by: byUserId, kind: "delivered", detail: "Redline released" }] });
+  return { ok: true };
+}
+
+/* ---------------- precedent retrieval (Phases 23–25) ----------------
+   AUTHORIZATION FIRST: sources are permission-filtered BEFORE any card is
+   built — a privileged matter never appears in, or influences, retrieval. */
+export function retrievePrecedent(viewer, { clauseType, counterpartyId, jurisdiction } = {}) {
+  const visMatters = filterVisibleRef(viewer, state.matters || []);
+  const visIds = new Set(visMatters.map((m) => m.id));
+  const cards = [];
+  visMatters.forEach((m) => {
+    const o = m.outcome || {};
+    const held = Array.isArray(o.held) && clauseType && o.held.includes(clauseType);
+    const conceded = Array.isArray(o.conceded) && clauseType && o.conceded.includes(clauseType);
+    if (held || conceded) cards.push({ kind: "MATTER", id: m.id, title: m.name || m.title, why: held ? `Position held on ${clauseType}` : `Conceded on ${clauseType} (${o.positionAchieved || "—"})`, to: "/matters/" + m.id, jurisdiction: m.jurisdiction || null });
+    else if (counterpartyId && m.counterpartyId === counterpartyId) cards.push({ kind: "MATTER", id: m.id, title: m.name || m.title, why: `Same counterparty · ${m.status}`, to: "/matters/" + m.id, jurisdiction: m.jurisdiction || null });
+  });
+  (state.reviews3 || []).forEach((r) => {
+    if (r.matterId && !visIds.has(r.matterId)) return; // privilege travels with the matter
+    (r.findings || []).forEach((f) => {
+      const dec = (r.decisions || {})[f.id];
+      if (dec && clauseType && f.clauseType === clauseType) cards.push({ kind: "REVIEW", id: r.id, title: r.name, why: `Prior decision on ${clauseType}: ${dec.action}`, to: "/reviews", jurisdiction: r.jurisdiction || null });
+    });
+  });
+  (state.deviations3 || []).forEach((dv) => {
+    if (dv.status === "Approved" && clauseType && dv.clauseType === clauseType) {
+      const d = draftById(dv.draftId);
+      if (d && (!d.matterId || visIds.has(d.matterId))) cards.push({ kind: "DRAFT", id: d.id, title: d.title, why: `Approved deviation: Preferred → ${dv.tierTo}`, to: "/drafting/" + d.id, jurisdiction: d.jurisdiction || null });
+    }
+  });
+  const seen = new Set();
+  return cards.filter((c) => { const k = c.kind + c.id + c.why; if (seen.has(k)) return false; seen.add(k); return true; })
+    .map((c) => ({ ...c, jurMismatch: !!(jurisdiction && c.jurisdiction && c.jurisdiction !== jurisdiction) }))
+    .slice(0, 6);
+}
+// rbac import indirection (avoids a static import cycle: rbac ← store).
+// SECURITY: the unbound default DENIES everything — retrieval can never run
+// wider than the access layer just because wiring is missing.
+let filterVisibleRef = () => [];
+export function _bindRbac(fv) { filterVisibleRef = fv; }
 
 // Boot-time pass: generate any periodic filings whose 30-day window has opened.
 // Runs after every hydrate so the calendar is always acted on, never just read.

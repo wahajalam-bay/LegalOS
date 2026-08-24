@@ -40,8 +40,13 @@ import Raise from "./pages/raise.js";
 import MyRequests from "./pages/myrequests.js";
 import Triage from "./pages/triage.js";
 import Costs from "./pages/costs.js";
-import { runOrgSweeps } from "./store.js";
-import { activeUser, landingFor } from "./rbac.js";
+// Module 3 — Contract Intelligence
+import Drafting from "./pages/drafting.js";
+import { runOrgSweeps, _bindRbac } from "./store.js";
+import { activeUser, landingFor, filterVisible } from "./rbac.js";
+// Retrieval security: the store's precedent retrieval denies everything until
+// the access layer is bound. Bind it at boot.
+_bindRbac(filterVisible);
 
 const ROUTES = {
   "/exec": Exec,
@@ -67,6 +72,7 @@ const ROUTES = {
   "/negotiations": Negotiations,
   "/templates": Templates,
   "/clauses": Clauses,
+  "/drafting": Drafting,
   "/knowledge": Knowledge,
   "/litigation": Litigation,
   "/compliance": Compliance,

@@ -58,7 +58,7 @@ const TargetChip = ({ m }) => {
 /* ============================================================
    COUNTERPARTY PICKER (Phase 8) — master-record only, dedupe-first.
    ============================================================ */
-function CounterpartyPicker({ value, onChange, viewer }) {
+export function CounterpartyPicker({ value, onChange, viewer }) {
   const cps = useCollection("counterparties");
   const [q, setQ] = useState("");
   const [adding, setAdding] = useState(false);
@@ -118,7 +118,7 @@ function CreateMatterModal({ fromRequest, onClose, onCreated }) {
     matterType: "",
     department: r ? (r.department || r.dept || DEPARTMENTS[0]) : DEPARTMENTS[0],
     counterpartyId: null,
-    owner: r ? r.owner || viewer.id : viewer.id,
+    owner: "", // "" = auto-assign to the practice-area expert (Director notified)
     collaborators: [],
     targetDate: r && r.dueDate ? String(r.dueDate).slice(0, 10) : "",
     value: r && r.value != null ? r.value : "",
@@ -168,8 +168,9 @@ function CreateMatterModal({ fromRequest, onClose, onCreated }) {
             ${DEPARTMENTS.map((d) => html`<option key=${d}>${d}</option>`)}
           </select>
         </${Field}>
-        <${Field} label="Responsible lawyer *">
+        <${Field} label="Responsible lawyer" hint="Auto routes to the practice-area expert; the Director is notified and can reassign.">
           <select class="select" value=${f.owner} onChange=${(e) => set("owner", e.target.value)}>
+            <option value="">Auto — practice-area expert</option>
             ${LEGAL_USERS.map((u) => html`<option key=${u.id} value=${u.id}>${u.name}</option>`)}
           </select>
         </${Field}>

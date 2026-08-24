@@ -2184,3 +2184,36 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .sheet__fact { display: flex; align-items: baseline; gap: 14px; padding: 10px 13px; background: var(--surface); }
 .sheet__fl { font-size: 12px; color: var(--text-3); flex: none; width: 150px; }
 .sheet__fv { font-size: 13px; font-weight: 600; color: var(--text); min-width: 0; overflow-wrap: anywhere; }
+
+/* Module 3 — provenance badges (label + icon, never colour alone) */
+.srcbadge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .04em;
+  padding: 2px 7px; border-radius: var(--r-full); border: 1px solid var(--border);
+  background: var(--surface-2); color: var(--text-2); white-space: nowrap;
+}
+.srcbadge[data-kind="library"] { background: var(--success-bg); border-color: color-mix(in srgb, var(--success) 35%, transparent); color: var(--success); }
+.srcbadge[data-kind="generated"] { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent-500) 40%, transparent); color: var(--accent-500); border-style: dashed; }
+.srcbadge[data-kind="user-edited"] { background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning) 40%, transparent); color: var(--warning); }
+.srcbadge[data-kind="user-provided"] { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 35%, transparent); color: var(--brand-600); }
+.srcbadge[data-kind="missing"] { background: var(--danger-bg); border-color: color-mix(in srgb, var(--danger) 40%, transparent); color: var(--danger); }
+
+/* Jurisdiction banner (Phase 26 Rule 6) — always prominent */
+.jurbadge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .05em;
+  padding: 3px 10px; border-radius: var(--r-full);
+  background: var(--brand-soft-2); color: var(--brand-600);
+  border: 1px solid color-mix(in srgb, var(--brand) 40%, transparent);
+}
+
+/* Draft workspace: structure | document | intelligence */
+.draft3 { display: grid; grid-template-columns: 220px minmax(0, 1fr) 300px; gap: 14px; align-items: start; }
+@media (max-width: 1100px) { .draft3 { grid-template-columns: 1fr; } }
+.draft3__nav {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 8px 10px; border-radius: var(--r-sm); border: 1px solid transparent;
+  background: none; cursor: pointer; text-align: left;
+}
+.draft3__nav:hover { background: var(--surface-2); }
+.draft3__nav.active { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 30%, transparent); }
