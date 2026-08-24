@@ -4,7 +4,8 @@ import { Icon } from "../icons.js";
 import { Btn, Avatar, Risk, Priority, Pill, Status, Segmented, Modal, Field, Input, Drawer, AICard } from "../ui.js";
 import { PageHead, Toolbar, DataTable } from "../parts.js";
 import { REQUEST_TYPES, BUSINESS_UNITS, WORK_CATEGORIES, inferCategory, nameOf, entityName } from "../data.js";
-import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow } from "../store.js";
+import { useCollection, addItem, updateItem, nextId, nowIso, daysFromNow, convertRequestToMatter } from "../store.js";
+import { activeUser } from "../rbac.js";
 import { navigate } from "../router.js";
 import { CategoryChips, CategoryPill, TagChips, TagEditor, matchCategories, TatCell, SubdivisionPill } from "../shared.js";
 import { rowTat } from "../flow.js";
@@ -154,22 +155,14 @@ export default function Requests() {
   const withTat = filtered.map((r) => ({ ...r, __tat: rowTat(r, ctx) }));
   const onDrop = (status) => { if (drag) { updateItem("requests", drag, { status }); setDrag(null); } };
   // Conversion keeps ONE identity: the matter carries the request id back, and
-  // the request records which matter it was filed as (Workstream A).
+  // the request records which matter it was filed as. Module 2 owns the logic —
+  // duplicate-guarded, counterparty resolved against the master, attachments
+  // carried forward, audited (convertRequestToMatter in store.js).
   const convert = (r) => {
-    const id = nextId("matters", "MAT-");
-    addItem("matters", {
-      id, title: r.title, type: "Contract", status: "Open",
-      priority: (r.priority || "medium").toLowerCase(), risk: r.risk, bu: r.bu,
-      category: r.category, companyTags: [...(r.companyTags || [])],
-      owner: r.owner, opened: nowIso(), due: daysFromNow(10), tasks: 0, docs: 0, comments: 0, progress: 5,
-      // carry the unified-record fields across
-      requestId: r.id, requestType: r.requestType, contractType: r.contractType,
-      entityId: r.entityId, subdivision: r.subdivision, unit: r.unit || r.bu,
-      department: r.department || r.dept, stage: r.stage,
-    });
-    updateItem("requests", r.id, { status: "Triage", matterId: id });
+    const res = convertRequestToMatter(r.id, {}, activeUser().id);
     setOpen(null);
-    navigate("/workspace/" + r.id);
+    if (res.ok) navigate("/matters/" + res.id);
+    else if (res.existing) navigate("/matters/" + res.existing);
   };
   const chips = [{ label: "All units", value: "all" }, ...BUSINESS_UNITS.map((b) => ({ label: b, value: b }))];
 

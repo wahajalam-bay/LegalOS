@@ -61,11 +61,16 @@ export function visibilityOf(viewer, rec) {
   }
   // Legal Department Head — aggregated cross-team view, full drill-down.
   if (viewer.rbac === "head") return "full";
+  // Module 2: the responsible lawyer and named collaborators always have access,
+  // even across teams (Phase 15 — collaborators receive access via the matter).
+  if (isLegal(viewer) && (rec.owner === viewer.id || (rec.collaborators || []).includes(viewer.id))) return "full";
   // Same Legal team → the full record.
   if (viewer.legalTeam && viewer.legalTeam === recTeam(rec)) return "full";
-  // Your own raised request → status / stage / owner / TAT only.
+  // Your own raised request → status / stage / owner / TAT only. This applies to
+  // the REQUEST face only — a requester never gains visibility of the internal
+  // MATTER merely because they raised the originating request (Module 2 §23).
   const raisedBy = rec.requestedById || rec.requesterId || rec.requestedBy;
-  if (raisedBy && raisedBy === viewer.id) return "status";
+  if (raisedBy && raisedBy === viewer.id && !rec.practiceArea) return "status";
   // Business Department Head → their department's outgoing requests.
   if (viewer.rbac === "bizHead" && rec.requestingDept && rec.requestingDept === viewer.dept) return "status";
   return null;

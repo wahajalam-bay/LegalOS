@@ -8,6 +8,12 @@ import {
   stageMeta,
 } from "./data.js";
 import { fixTat, addWorkingDays, weekendFor } from "./tat.js";
+// Module 2 — Matter Management: taxonomy, lifecycle machine, risk matrix.
+import {
+  PRACTICE_AREAS, practiceArea, practiceCode, matterTypesOf, CATEGORY_PRACTICE,
+  canTransition, TRANSITION_NEEDS_REASON, isTerminal, riskSeverity, proposeRisk,
+  normalizeCpName, matterAgeDays,
+} from "./matters2.js";
 // Sprint 6 — the org architecture (FRD): teams, master data, modules, TAT v2.
 import { MASTER_DATA_SEED, teamPrefix } from "./org.js";
 import { MODULES, moduleByKey, workflowOf, riskGateMissing } from "./modules.js";
@@ -48,6 +54,111 @@ const PLAYBOOK_SEED = [
   { id: "PB-06", title: "Procurement & Vendor Playbook", area: "Sourcing · SLAs · risk", icon: "clipboard", updatedAt: null },
 ];
 
+/* ============================================================
+   MODULE 2 — MATTER MANAGEMENT seeds
+   ============================================================ */
+// Counterparty MASTER (Phase 8) — seeded FROM the existing entity registry so
+// nothing is retyped: every non-group company becomes a master record, enriched
+// with the Module 2 fields (relationship, entity type, registration).
+const CP_SEED = () => [
+  ...COMPANIES.filter((c) => c.type !== "Group Entity").map((c, i) => ({
+    id: "CP-" + String(i + 1).padStart(3, "0"),
+    legalName: c.name,
+    tradingNames: [],
+    aliases: [...(c.aliases || [])],
+    jurisdiction: c.jurisdiction || "—",
+    registrationNo: null,
+    entityType: "Company",
+    relationship: c.type === "Vendor" ? "Supplier" : c.type === "Counterparty" ? "Customer" : "Other",
+    parentId: null,
+    entityRef: c.id,          // back-reference to the registry record
+    createdAt: null, createdBy: null,
+  })),
+  // Demo counterparties referenced by the Module 2 seed matters.
+  { id: "CP-900", legalName: "Acme Ltd", tradingNames: [], aliases: ["ACME Limited"], jurisdiction: "Saudi Arabia", registrationNo: "CR-104482", entityType: "Company", relationship: "Customer", parentId: null, entityRef: null, createdAt: null, createdBy: null },
+  { id: "CP-901", legalName: "Orbit Ventures", tradingNames: [], aliases: [], jurisdiction: "UAE", registrationNo: null, entityType: "Company", relationship: "Partner", parentId: null, entityRef: null, createdAt: null, createdBy: null },
+];
+
+// Phase 31 — realistic Module 2 demo matters (new id scheme, varied states).
+const d2 = (n) => new Date(Date.now() + n * 86400000).toISOString();
+const M2_SEED = () => {
+  const cps = CP_SEED();
+  const cp = (name) => (cps.find((c) => c.legalName.toLowerCase().includes(name)) || cps[0]).id;
+  const mk = (id, o) => ({
+    // identity + taxonomy
+    id, name: o.name, practiceArea: o.pa, matterType: o.mt,
+    // people + org
+    department: o.dept, counterpartyId: o.cp || null, owner: o.owner, collaborators: o.collab || [],
+    // lifecycle + dates
+    status: o.status || "Active", openedAt: o.opened, targetDate: o.target || null, closedAt: o.closed || null,
+    // money + risk + privilege. `risk2` is the Module 2 assessment object;
+    // legacy `risk` stays a lowercase severity string so the existing spine /
+    // exec / TAT consumers keep working.
+    value: o.value || null, exposure: o.exposure || null, currency: o.cur || "USD",
+    risk2: o.risk || null,                   // { likelihood, impact, severity, proposed, confirmedBy, confirmedAt, override }
+    risk: o.risk ? o.risk.severity.toLowerCase() : "medium",
+    privilege: o.priv || "Open", namedAccess: o.named || [],
+    // links
+    sourceRequestId: o.req || null, relatedMatters: o.rel || [],
+    outcome: o.outcome || null,
+    // audit (immutable, append-only)
+    audit: [{ at: o.opened, by: o.owner, kind: "created", detail: "Matter opened" }],
+    createdBy: o.owner, createdAt: o.opened, updatedBy: o.owner, updatedAt: o.opened,
+    // legacy-compat fields so the existing spine/worklist keep working
+    title: o.name, type: "Contract", bu: o.dept, opened: o.opened, due: o.target || d2(14),
+    progress: o.status === "Closed" ? 100 : o.progress || 30, priority: o.priority || "medium",
+    stage: o.status === "Closed" ? "Closed" : o.stage || "Legal Review",
+    subdivision: o.sub || "Commercial", entityId: o.entityId || "CO-19", companyTags: [],
+  });
+  return [
+    mk("COM-2026-0147", { name: "Customer Service Agreement — Acme", pa: "commercial", mt: "Customer / Service agreement", dept: "Sales & Marketing", cp: cp("acme"), owner: "u5", collab: ["u9"], status: "Active", opened: d2(-18), target: d2(9), value: 480000, exposure: 120000, risk: { likelihood: "Possible", impact: "Moderate", severity: "Medium", proposed: true }, req: null, progress: 45 }),
+    mk("ADM-2026-0042", { name: "SaaS Renewal — Technology Vendor", pa: "administrative", mt: "SaaS / technology agreement", dept: "IT", cp: cp("amazon"), owner: "u7", status: "Awaiting External", opened: d2(-32), target: d2(4), value: 220000, risk: { likelihood: "Unlikely", impact: "Moderate", severity: "Low", proposed: true }, progress: 60 }),
+    mk("EMP-2026-0021", { name: "Employment Settlement — Regional Sales Lead", pa: "employment", mt: "Termination / settlement", dept: "HR", owner: "u17", collab: ["u18"], status: "Substantively Complete", opened: d2(-51), target: d2(-6), exposure: 300000, cur: "PKR", risk: { likelihood: "Likely", impact: "Moderate", severity: "Medium", proposed: false, confirmedBy: "u6", confirmedAt: d2(-40) }, priv: "Restricted", named: ["u6", "u17", "u18"], sub: "Labour/Employment", progress: 90 }),
+    mk("DIS-2026-0012", { name: "Pre-action Legal Notice — Orbit Ventures", pa: "disputes", mt: "Pre-action / legal notices", dept: "Finance", cp: cp("orbit"), owner: "u6", status: "Active", opened: d2(-9), target: d2(6), exposure: 2000000, risk: { likelihood: "Likely", impact: "Major", severity: "High", proposed: false, confirmedBy: "u6", confirmedAt: d2(-7) }, priv: "Privileged", named: ["u6", "u17"], sub: "Litigation & Disputes", progress: 35, priority: "high" }),
+    mk("REG-2026-0034", { name: "Regulatory Compliance Assessment — PDPL", pa: "regulatory", mt: "Compliance assessment", dept: "IT", owner: "u12", status: "On Hold", opened: d2(-70), target: d2(20), risk: { likelihood: "Possible", impact: "Major", severity: "High", proposed: true }, sub: "Compliance & Regulatory", progress: 50 }),
+    mk("COM-2026-0139", { name: "Distribution Agreement — Delta Trading", pa: "commercial", mt: "Partnership / JV", dept: "Sales & Marketing", cp: cps[2] && cps[2].id, owner: "u5", status: "Closed", opened: d2(-95), target: d2(-30), closed: d2(-22), value: 950000, risk: { likelihood: "Possible", impact: "Moderate", severity: "Medium", proposed: false, confirmedBy: "u3", confirmedAt: d2(-80) }, outcome: { category: "Completed with modifications", positionAchieved: "Substantial", conceded: "Extended cure period to 30 days", held: "Liability cap at 1× fees; our governing law", externalCounsel: false, lessons: "Cure-period concession acceptable when cap holds.", differently: "Engage commercial team before first draft.", closedBy: "u5", closedAt: d2(-22) } }),
+  ];
+};
+
+// Legacy seed matters (MAT-xxx) upgraded in place to the Module 2 shape —
+// same ids, all legacy fields kept (the spine still reads them), new fields
+// added so the register / risk / privilege / audit machinery works everywhere.
+const LEGACY_PRACTICE = {
+  Contract: "commercial", Corporate: "corporate", Litigation: "disputes",
+  Compliance: "regulatory", Employment: "employment", IP: "ip",
+  Policy: "advisory", Regulatory: "regulatory",
+};
+function migrateLegacyMatter(m) {
+  if (m.practiceArea) return m; // already Module 2 shape
+  const pa = LEGACY_PRACTICE[m.type] || "commercial";
+  const sev = m.risk ? m.risk[0].toUpperCase() + m.risk.slice(1) : null;
+  return {
+    ...m,
+    name: m.title,
+    practiceArea: pa,
+    matterType: (matterTypesOf(pa) || [])[0] || m.type,
+    department: m.department || m.bu || "—",
+    counterpartyId: null,
+    collaborators: [],
+    openedAt: m.opened, targetDate: m.due, closedAt: m.progress === 100 ? m.due : null,
+    value: null, exposure: null, currency: "USD",
+    risk2: sev ? { likelihood: null, impact: null, severity: sev === "Critical" ? "Critical" : sev === "High" ? "High" : sev === "Medium" ? "Medium" : "Low", proposed: true } : null,
+    privilege: m.privilege || "Open", namedAccess: m.namedAccess || [],
+    sourceRequestId: m.requestId || null, relatedMatters: [],
+    outcome: null,
+    audit: [{ at: m.opened, by: m.owner, kind: "created", detail: "Matter opened" }],
+    createdBy: m.owner, createdAt: m.opened, updatedBy: m.owner, updatedAt: m.opened,
+  };
+}
+
+// Matter task seeds (Phase 11) — real records, not counts.
+const M2_TASKS_SEED = () => [
+  { id: "MT-0001", matterId: "COM-2026-0147", name: "Review counterparty redlines v2", description: "", owner: "u5", due: d2(2), status: "In Progress", dependsOn: null, createdAt: d2(-6), createdBy: "u5", completedAt: null },
+  { id: "MT-0002", matterId: "COM-2026-0147", name: "Confirm liability cap vs playbook", description: "", owner: "u9", due: d2(4), status: "Not Started", dependsOn: "MT-0001", createdAt: d2(-6), createdBy: "u5", completedAt: null },
+  { id: "MT-0003", matterId: "DIS-2026-0012", name: "Draft pre-action notice", description: "", owner: "u6", due: d2(1), status: "In Progress", dependsOn: null, createdAt: d2(-8), createdBy: "u6", completedAt: null },
+  { id: "MT-0004", matterId: "EMP-2026-0021", name: "Obtain signed settlement deed", description: "", owner: "u17", due: d2(-2), status: "Completed", dependsOn: null, createdAt: d2(-30), createdBy: "u17", completedAt: d2(-3) },
+];
+
 const LS_KEY = "legalos-store-v1";
 const PORTAL_SESSION_KEY = "legalos-portal-session";
 
@@ -56,7 +167,9 @@ const PORTAL_SESSION_KEY = "legalos-portal-session";
 function seed() {
   return {
     requests: [...REQUESTS],
-    matters: [...MATTERS],
+    // Module 2: new-scheme demo matters first, then the legacy seed matters
+    // upgraded in place to the Module 2 shape (same ids, richer record).
+    matters: [...M2_SEED(), ...MATTERS.map(migrateLegacyMatter)],
     contracts: [...CONTRACTS],
     licenses: [...LICENSES],
     companies: [...COMPANIES],
@@ -85,6 +198,9 @@ function seed() {
     slaMatrix: JSON.parse(JSON.stringify(SLA_MATRIX_SEED)),
     playbooks: [...PLAYBOOK_SEED],
     configProposals: [],
+    // Module 2 — Matter Management slices
+    counterparties: CP_SEED(),
+    matterTasks: M2_TASKS_SEED(),
     session: { viewAsId: "u1" },
   };
 }
@@ -1921,6 +2037,337 @@ export function saveLastFilters(module, filters) {
     localStorage.setItem(LAST_KEY, JSON.stringify(all));
   } catch (e) {}
 }
+
+/* ============================================================
+   MODULE 2 — MATTER MANAGEMENT engine.
+   The Matter is the permanent organising record of legal work. Everything here
+   is validated, transition-checked, and appended to an immutable audit trail.
+   ============================================================ */
+
+/* ---------------- audit (Phase 24) ---------------- */
+// Append-only. Never edited, never rewritten — every writer goes through this.
+function auditMatter(m, entry) {
+  return [...(m.audit || []), { at: nowIso(), ...entry }];
+}
+function patchMatter(id, patch, byUserId, auditEntry) {
+  const m = (state.matters || []).find((x) => x.id === id);
+  if (!m) return { ok: false, error: "matter not found" };
+  updateItem("matters", id, {
+    ...patch,
+    updatedBy: byUserId || null, updatedAt: nowIso(),
+    ...(auditEntry ? { audit: auditMatter(m, { by: byUserId || null, ...auditEntry }) } : {}),
+  });
+  return { ok: true, matter: { ...m, ...patch } };
+}
+export const matterById = (id) => (state.matters || []).find((m) => m.id === id) || null;
+
+/* ---------------- Matter ID (Phase 2) ---------------- */
+// [PracticeCode]-[Year]-[Seq], e.g. COM-2026-0148. Sequence is per code+year,
+// derived from the store's own records — immutable, human-readable, sortable.
+export function nextMatterId(practiceKey) {
+  const code = practiceCode(practiceKey);
+  const year = new Date().getFullYear();
+  const prefix = `${code}-${year}-`;
+  const nums = (state.matters || [])
+    .map((m) => String(m.id))
+    .filter((s) => s.startsWith(prefix))
+    .map((s) => parseInt(s.slice(prefix.length), 10))
+    .filter((n) => !isNaN(n));
+  return prefix + String((nums.length ? Math.max(...nums) : 0) + 1).padStart(4, "0");
+}
+
+/* ---------------- counterparty master (Phase 8) ---------------- */
+// No free-text counterparties on matters: a matter references a master record.
+// Duplicate prevention: names are normalised (case, punctuation, Ltd/LLC/Inc…)
+// and checked against legal names, trading names AND aliases before creation.
+export function findCounterparty(name) {
+  const n = normalizeCpName(name);
+  if (!n) return null;
+  return (state.counterparties || []).find((c) =>
+    normalizeCpName(c.legalName) === n ||
+    (c.aliases || []).some((a) => normalizeCpName(a) === n) ||
+    (c.tradingNames || []).some((a) => normalizeCpName(a) === n)) || null;
+}
+export function searchCounterparties(q) {
+  const n = normalizeCpName(q);
+  if (!n) return [];
+  return (state.counterparties || []).filter((c) =>
+    normalizeCpName(c.legalName).includes(n) ||
+    (c.aliases || []).some((a) => normalizeCpName(a).includes(n)));
+}
+export function createCounterparty(payload = {}, byUserId) {
+  const name = String(payload.legalName || "").trim();
+  if (!name) return { ok: false, error: "a legal name is required" };
+  const existing = findCounterparty(name);
+  if (existing) return { ok: true, existed: true, counterparty: existing };
+  const cp = {
+    id: nextId("counterparties", "CP-"),
+    legalName: name,
+    tradingNames: payload.tradingNames || [],
+    aliases: payload.aliases || [],
+    jurisdiction: payload.jurisdiction || "—",
+    registrationNo: payload.registrationNo || null,
+    entityType: payload.entityType || "Company",
+    relationship: payload.relationship || "Other",
+    parentId: payload.parentId || null,
+    entityRef: payload.entityRef || null,
+    createdAt: nowIso(), createdBy: byUserId || null,
+  };
+  addItem("counterparties", cp);
+  return { ok: true, existed: false, counterparty: cp };
+}
+export const counterpartyById = (id) => (state.counterparties || []).find((c) => c.id === id) || null;
+export const counterpartyName = (id) => (counterpartyById(id) || {}).legalName || "—";
+// The consolidated relationship view: everything tied to one counterparty.
+export function counterpartyMatters(cpId) {
+  return (state.matters || []).filter((m) => m.counterpartyId === cpId);
+}
+
+/* ---------------- create matter (Phases 2/7) ---------------- */
+const M2_REQUIRED = ["name", "practiceArea", "matterType", "owner"];
+export function createMatter(payload = {}, byUserId) {
+  for (const k of M2_REQUIRED) if (!String(payload[k] || "").trim()) return { ok: false, error: `${k} is required` };
+  if (!practiceArea(payload.practiceArea)) return { ok: false, error: "unknown practice area" };
+  if (!matterTypesOf(payload.practiceArea).includes(payload.matterType)) return { ok: false, error: "matter type does not belong to the practice area" };
+  if (payload.counterpartyId && !counterpartyById(payload.counterpartyId)) return { ok: false, error: "counterparty must reference the master registry" };
+  const id = nextMatterId(payload.practiceArea);
+  const now = nowIso();
+  const proposal = proposeRisk(payload);
+  const m = {
+    id, name: payload.name.trim(),
+    practiceArea: payload.practiceArea, matterType: payload.matterType,
+    department: payload.department || "—",
+    counterpartyId: payload.counterpartyId || null,
+    owner: payload.owner, collaborators: (payload.collaborators || []).filter((u) => u !== payload.owner),
+    status: "Open", openedAt: now, targetDate: payload.targetDate || null, closedAt: null,
+    value: payload.value == null ? null : Number(payload.value),
+    exposure: payload.exposure == null ? null : Number(payload.exposure),
+    currency: payload.currency || "USD",
+    risk2: { ...proposal, proposed: true },
+    risk: proposal.severity.toLowerCase(), // legacy string face
+    privilege: payload.privilege || "Open", namedAccess: payload.namedAccess || [],
+    sourceRequestId: payload.sourceRequestId || null,
+    relatedMatters: [], outcome: null,
+    description: payload.description || null, businessContext: payload.businessContext || null,
+    requesterId: payload.requesterId || null,
+    audit: [{ at: now, by: byUserId || null, kind: "created", detail: payload.sourceRequestId ? `Converted from ${payload.sourceRequestId}` : "Matter opened" }],
+    createdBy: byUserId || null, createdAt: now, updatedBy: byUserId || null, updatedAt: now,
+    // legacy-compat so the spine / unified worklist keep working
+    title: payload.name.trim(), type: "Contract", bu: payload.department || "—",
+    opened: now, due: payload.targetDate || daysFromNow(14), progress: 5,
+    priority: payload.priority || "medium", stage: "Legal Review",
+    subdivision: payload.subdivision || "Commercial",
+    entityId: payload.entityId || "CO-19", companyTags: payload.companyTags || [],
+    requestId: payload.sourceRequestId || null,
+  };
+  addItem("matters", m);
+  if (m.owner !== byUserId) notifyUser(m.owner, { kind: "matter-assign", ref: id, tone: "blue", icon: "folder", title: `${id} assigned to you`, body: m.name, to: "/matters/" + id });
+  return { ok: true, id, matter: m };
+}
+
+/* ---------------- request → matter conversion (Phase 1) ---------------- */
+// Store-level duplicate guard + full carry-forward, so the lawyer never
+// re-enters what the requester already gave.
+export function convertRequestToMatter(requestId, overrides = {}, byUserId) {
+  const r = (state.requests || []).find((x) => x.id === requestId);
+  if (!r) return { ok: false, error: "request not found" };
+  if (r.matterId && matterById(r.matterId)) return { ok: false, error: "already converted", existing: r.matterId };
+  // counterparty: resolve the request's free-text name against the master,
+  // creating a master record when it is genuinely new.
+  let counterpartyId = overrides.counterpartyId || null;
+  if (!counterpartyId && r.counterparty && r.counterparty !== "—") {
+    const res = createCounterparty({ legalName: r.counterparty, relationship: "Customer" }, byUserId);
+    if (res.ok) counterpartyId = res.counterparty.id;
+  }
+  const practice = overrides.practiceArea || CATEGORY_PRACTICE[r.category || r.proposedCategory] || "commercial";
+  const created = createMatter({
+    name: overrides.name || r.title,
+    practiceArea: practice,
+    matterType: overrides.matterType || matterTypesOf(practice)[0],
+    department: r.department || r.dept || "—",
+    counterpartyId,
+    owner: overrides.owner || r.owner,
+    collaborators: overrides.collaborators || [],
+    targetDate: overrides.targetDate || r.dueDate || null,
+    value: overrides.value != null ? overrides.value : r.value,
+    exposure: overrides.exposure != null ? overrides.exposure : null,
+    currency: r.currency || "USD",
+    privilege: overrides.privilege || "Open",
+    description: r.description || null,
+    businessContext: r.businessContext || null,
+    requesterId: r.requesterId || null,
+    sourceRequestId: r.id,
+    priority: (r.priority || "medium").toLowerCase(),
+    subdivision: r.subdivision, entityId: r.entityId, companyTags: r.companyTags || [],
+  }, byUserId);
+  if (!created.ok) return created;
+  // Attachments carry forward: repository docs keyed to the request gain the
+  // matter link so the matter's Documents tab shows them.
+  (state.repository || []).filter((d) => d.requestId === r.id).forEach((d) => updateItem("repository", d.id, { matterId: created.id }));
+  updateItem("requests", r.id, {
+    matterId: created.id,
+    activity: [...(r.activity || []), { at: nowIso(), by: byUserId || null, action: `Converted to matter ${created.id}` }],
+  });
+  return created;
+}
+
+/* ---------------- lifecycle (Phases 4/20) ---------------- */
+export function setMatterStatus(id, to, byUserId, reason) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  const from = m.status;
+  if (from === to) return { ok: false, error: "already " + to };
+  if (!canTransition(from, to)) return { ok: false, error: `cannot move ${from} → ${to}` };
+  if (TRANSITION_NEEDS_REASON.has(to) && !String(reason || "").trim()) return { ok: false, error: "a reason is required for " + to };
+  if (to === "Closed") return closeMatter(id, m.outcome, byUserId); // closure goes through outcome validation
+  const patch = { status: to };
+  if (from === "Closed" && to === "Active") { patch.closedAt = null; patch.outcome = m.outcome; patch.progress = 90; } // explicit reopen, audited
+  if (to === "Archived") patch.archivedAt = nowIso();
+  return patchMatter(id, patch, byUserId, { kind: "status", from, to, reason: reason || null });
+}
+
+// Phase 19/20 — a matter CANNOT close without a validated outcome.
+export function validateOutcome(outcome) {
+  const missing = [];
+  if (!outcome || !outcome.category) missing.push("outcome category");
+  if (!outcome || !outcome.positionAchieved) missing.push("position achieved vs sought");
+  if (outcome && outcome.externalCounsel) {
+    if (outcome.externalCost == null || outcome.externalCost === "") missing.push("external counsel cost");
+    if (!outcome.externalCurrency) missing.push("external counsel currency");
+  }
+  return missing;
+}
+export function closeMatter(id, outcome, byUserId) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  if (m.status === "Closed" || m.status === "Archived") return { ok: false, error: "matter is already closed" };
+  if (!canTransition(m.status, "Closed")) return { ok: false, error: `cannot close from ${m.status}` };
+  const missing = validateOutcome(outcome);
+  if (missing.length) return { ok: false, error: "outcome incomplete", missing };
+  const now = nowIso();
+  const durationDays = matterAgeDays({ ...m, closedAt: now });
+  return patchMatter(id, {
+    status: "Closed", closedAt: now, progress: 100,
+    outcome: { ...outcome, closedBy: byUserId || null, closedAt: now, durationDays },
+    finalRisk: m.risk2 ? m.risk2.severity : null,
+  }, byUserId, { kind: "closed", detail: `${outcome.category} · ${outcome.positionAchieved} · ${durationDays}d`, from: m.status, to: "Closed" });
+}
+export function reopenMatter(id, byUserId, reason) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  if (m.status !== "Closed") return { ok: false, error: "only a closed matter can be reopened" };
+  if (!String(reason || "").trim()) return { ok: false, error: "a reason is required to reopen" };
+  return patchMatter(id, { status: "Active", closedAt: null, progress: 90 }, byUserId, { kind: "reopened", from: "Closed", to: "Active", reason });
+}
+
+/* ---------------- risk (Phases 12/13) ---------------- */
+// The severity is ALWAYS computed from likelihood × impact — never typed.
+// Confirming values different from the system proposal is an override and
+// requires a reason; both proposal and decision are audited.
+export function assessMatterRisk(id, likelihood, impact, byUserId, reason) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  const severity = riskSeverity(likelihood, impact);
+  if (!severity) return { ok: false, error: "pick a likelihood and an impact" };
+  const prev = m.risk2 || null;
+  const proposal = prev && prev.proposed ? prev : proposeRisk(m);
+  const overridden = proposal && (proposal.likelihood !== likelihood || proposal.impact !== impact);
+  if (overridden && !String(reason || "").trim()) return { ok: false, error: "an override reason is required — you are departing from the system proposal" };
+  const risk2 = {
+    likelihood, impact, severity, proposed: false,
+    confirmedBy: byUserId || null, confirmedAt: nowIso(),
+    ...(overridden ? { override: { from: { likelihood: proposal.likelihood, impact: proposal.impact, severity: proposal.severity }, reason: String(reason).trim() } } : {}),
+  };
+  return patchMatter(id, { risk2, risk: severity.toLowerCase() }, byUserId, {
+    kind: "risk", from: prev ? `${prev.severity}${prev.proposed ? " (proposed)" : ""}` : "unrated", to: severity,
+    reason: overridden ? String(reason).trim() : null,
+  });
+}
+
+/* ---------------- privilege (Phase 14) ---------------- */
+export function setMatterPrivilege(id, tier, namedAccess, byUserId) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  if (!["Open", "Restricted", "Privileged"].includes(tier)) return { ok: false, error: "unknown privilege tier" };
+  return patchMatter(id, { privilege: tier, namedAccess: namedAccess || m.namedAccess || [] }, byUserId,
+    { kind: "privilege", from: m.privilege || "Open", to: tier });
+}
+
+/* ---------------- people (Phase 15) ---------------- */
+export function setMatterOwner(id, ownerId, byUserId) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  if (!ownerId) return { ok: false, error: "a matter must have exactly one responsible lawyer" };
+  const res = patchMatter(id, { owner: ownerId, collaborators: (m.collaborators || []).filter((u) => u !== ownerId) }, byUserId,
+    { kind: "owner", from: _nm(m.owner), to: _nm(ownerId) });
+  if (res.ok && ownerId !== byUserId) notifyUser(ownerId, { kind: "matter-owner", ref: id, tone: "blue", icon: "folder", title: `${id} — you are now the responsible lawyer`, body: m.name, to: "/matters/" + id });
+  return res;
+}
+export function setMatterCollaborators(id, ids, byUserId) {
+  const m = matterById(id);
+  if (!m) return { ok: false, error: "matter not found" };
+  const clean = [...new Set(ids || [])].filter((u) => u && u !== m.owner);
+  return patchMatter(id, { collaborators: clean }, byUserId,
+    { kind: "collaborators", detail: clean.map(_nm).join(", ") || "none" });
+}
+
+/* ---------------- related matters (Phase 16) ---------------- */
+export function linkMatters(aId, bId, relation, byUserId) {
+  if (aId === bId) return { ok: false, error: "a matter cannot relate to itself" };
+  const a = matterById(aId), b = matterById(bId);
+  if (!a || !b) return { ok: false, error: "matter not found" };
+  if ((a.relatedMatters || []).some((r) => r.id === bId)) return { ok: false, error: "already linked" };
+  patchMatter(aId, { relatedMatters: [...(a.relatedMatters || []), { id: bId, relation: relation || "related" }] }, byUserId, { kind: "linked", detail: `→ ${bId}` });
+  patchMatter(bId, { relatedMatters: [...(b.relatedMatters || []), { id: aId, relation: relation || "related" }] }, byUserId, { kind: "linked", detail: `→ ${aId}` });
+  return { ok: true };
+}
+export function unlinkMatters(aId, bId, byUserId) {
+  const a = matterById(aId), b = matterById(bId);
+  if (!a || !b) return { ok: false, error: "matter not found" };
+  patchMatter(aId, { relatedMatters: (a.relatedMatters || []).filter((r) => r.id !== bId) }, byUserId, { kind: "unlinked", detail: `× ${bId}` });
+  patchMatter(bId, { relatedMatters: (b.relatedMatters || []).filter((r) => r.id !== aId) }, byUserId, { kind: "unlinked", detail: `× ${aId}` });
+  return { ok: true };
+}
+
+/* ---------------- tasks (Phase 11) ---------------- */
+// Every task has exactly one owner; duration is derived from system timestamps
+// (createdAt → completedAt) and can never be typed.
+export function addMatterTask(matterId, t = {}, byUserId) {
+  const m = matterById(matterId);
+  if (!m) return { ok: false, error: "matter not found" };
+  if (!String(t.name || "").trim()) return { ok: false, error: "a task name is required" };
+  if (!t.owner) return { ok: false, error: "every task needs exactly one owner" };
+  const task = {
+    id: nextId("matterTasks", "MT-"),
+    matterId, name: t.name.trim(), description: t.description || "",
+    owner: t.owner, due: t.due || null, status: "Not Started",
+    dependsOn: t.dependsOn || null,
+    createdAt: nowIso(), createdBy: byUserId || null, completedAt: null,
+  };
+  addItem("matterTasks", task);
+  patchMatter(matterId, {}, byUserId, { kind: "task", detail: `Task created — ${task.name} (${_nm(task.owner)})` });
+  if (task.owner !== byUserId) notifyUser(task.owner, { kind: "task", ref: task.id, tone: "blue", icon: "checksquare", title: `Task on ${matterId} — ${task.name}`, body: task.due ? "Due " + String(task.due).slice(0, 10) : "", to: "/matters/" + matterId });
+  return { ok: true, task };
+}
+export function updateMatterTask(taskId, patch = {}, byUserId) {
+  const t = (state.matterTasks || []).find((x) => x.id === taskId);
+  if (!t) return { ok: false, error: "task not found" };
+  // duration fields are system-owned
+  delete patch.createdAt; delete patch.completedAt; delete patch.duration;
+  updateItem("matterTasks", taskId, patch);
+  return { ok: true };
+}
+export function setTaskStatus(taskId, status, byUserId) {
+  const t = (state.matterTasks || []).find((x) => x.id === taskId);
+  if (!t) return { ok: false, error: "task not found" };
+  const patch = { status };
+  if (status === "Completed") patch.completedAt = nowIso();
+  else if (t.completedAt) patch.completedAt = null;
+  updateItem("matterTasks", taskId, patch);
+  if (status === "Completed") patchMatter(t.matterId, {}, byUserId, { kind: "task", detail: `Task completed — ${t.name}` });
+  return { ok: true };
+}
+export const tasksForMatter = (matterId) => (state.matterTasks || []).filter((t) => t.matterId === matterId);
 
 // Boot-time pass: generate any periodic filings whose 30-day window has opened.
 // Runs after every hydrate so the calendar is always acted on, never just read.

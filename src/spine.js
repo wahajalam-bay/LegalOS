@@ -24,7 +24,7 @@ import {
   riskGatesFor, entityName, toUsd, USERS,
 } from "./data.js";
 import { LEGAL_TEAMS, PIPELINE_BENCH } from "./org.js";
-import { useActiveUser, isLegal, canReassign, canApprove, canApproveValue, approvalLimitFor } from "./rbac.js";
+import { useActiveUser, isLegal, canReassign, canApprove, canApproveValue, approvalLimitFor, filterVisible } from "./rbac.js";
 import { buildSpine } from "./flow.js";
 import { tatAnalysis, tatLabel } from "./tat.js";
 import { SubdivisionPill, CategoryPill, TatCell } from "./shared.js";
@@ -608,13 +608,17 @@ function RelationshipsZone({ spine }) {
    ============================================================ */
 export function WorkflowSpine({ id, showHeader = true }) {
   const requests = useCollection("requests");
-  const matters = useCollection("matters");
+  const allMatters = useCollection("matters");
   const contracts = useCollection("contracts");
   const repository = useCollection("repository");
   const licenses = useCollection("licenses");
   // The requester roster resolves portal sign-ups (RQ-*) to real names.
   const requesters = useCollection("requesters");
   const [zone, setZone] = useState("input");
+  const spineViewer = useActiveUser();
+  // Module 2 privilege: a restricted matter must not leak through the
+  // Relationships zone of some other record's spine.
+  const matters = useMemo(() => filterVisible(spineViewer, allMatters), [allMatters, spineViewer]);
 
   const spine = useMemo(
     () => buildSpine(id, { requests, matters, contracts, repository, licenses, requesters }),

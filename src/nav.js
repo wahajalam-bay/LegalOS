@@ -44,6 +44,7 @@ export const NAV = [
   ]},
   { section: "Shared", items: [
     { path: "/workspace", label: "Legal Workspace", icon: "layers", badge: REQUESTS.length },
+    { path: "/matters", label: "Matters", icon: "folder" },
     { path: "/repository", label: "Intake & Repository", icon: "scan" },
     { path: "/companies", label: "Entity Registry", icon: "building" },
     { path: "/templates", label: "Templates", icon: "template" },

@@ -273,13 +273,18 @@ function CommandPalette({ onClose }) {
   // Search live store collections so records created in-session are findable.
   const companies = getCollection("companies") || COMPANIES;
   const liveContracts = getCollection("contracts") || CONTRACTS;
-  const liveMatters = getCollection("matters") || MATTERS;
   const liveRequests = getCollection("requests") || [];
   const liveDocs = getCollection("repository") || [];
   // Cross-team search obeys the Section 14 row-level filter — it is the same
-  // gate as the queues, never a bypass.
+  // gate as the queues, never a bypass. Matters are privilege-filtered here
+  // too (Module 2 §14): a Privileged matter must NOT surface in search for
+  // anyone who is not named on it.
   const me = useActiveUser();
   const liveMods = filterVisible(me, getCollection("modRequests") || []);
+  const liveMatters = filterVisible(me, getCollection("matters") || MATTERS);
+  // A document attached to a matter inherits that matter's privilege — it must
+  // not surface in search when the matter itself would not.
+  const matterVisible = (mid) => !mid || liveMatters.some((m) => m.id === mid) ;
   const entities = [
     ...liveMods.map((r) => {
       const d = moduleByKey(r.moduleKey);
@@ -290,7 +295,7 @@ function CommandPalette({ onClose }) {
     ...liveMatters.map((m) => ({ group: "Requests & matters", label: `${m.id} · ${m.title}`, icon: "folder", path: "/matters/" + m.id })),
     ...liveContracts.map((c) => ({ group: "Contracts", label: `${c.id} · ${c.title}`, icon: "file", path: "/contracts/" + c.id })),
     ...liveContracts.filter((c) => c.srNo).map((c) => ({ group: "Contracts", label: `Sr No ${c.srNo} · ${c.physicalRecordRef} · ${c.officeLocation}`, icon: "database", path: "/contracts/" + c.id })),
-    ...liveDocs.map((d) => ({ group: "Documents", label: `${d.id} · ${d.name}`, icon: "scan", path: "/repository/" + d.id })),
+    ...liveDocs.filter((d) => matterVisible(d.matterId)).map((d) => ({ group: "Documents", label: `${d.id} · ${d.name}`, icon: "scan", path: "/repository/" + d.id })),
     ...CONTRACT_TYPE_CODES.map((t) => ({ group: "Contract types", label: t, icon: "file", path: "/workspace" })),
     ...LEGAL_SUBDIVISIONS.map((s) => ({ group: "Legal sub-divisions", label: s, icon: "scale", path: "/workspace" })),
     ...companies.map((c) => ({ group: "Companies & entities", label: `${c.name} · ${c.jur || c.jurisdiction}`, icon: "building", path: "/companies/" + c.id })),
