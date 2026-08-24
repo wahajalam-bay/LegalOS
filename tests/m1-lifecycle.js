@@ -40,7 +40,7 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
       matchesBench: opts.slice().sort().join() === [...O.ASSIGNABLE_BENCH].sort().join(),
       benchIsCredentials: [...O.ASSIGNABLE_BENCH].sort().join() === credLegal.sort().join(),
       hasDirector: opts.includes("u1"),
-      hasOffCredential: ["u18", "u19", "u7", "u11", "u22", "u4", "u8", "u12"].some((id) => opts.includes(id)),
+      hasOffCredential: ["u18", "u19", "u7", "u11", "u22", "u4", "u8", "u12", "u17", "u9", "u21", "u2"].some((id) => opts.includes(id)),
     };
   }));
   ok("assignee picker = EXACTLY the login credential bench", picker.matchesBench && picker.benchIsCredentials && picker.groups >= 3);
@@ -51,10 +51,10 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   // then LEAVES the triage queue.
   const triageId = await p.evaluate(() => { const el = document.querySelector(".triage__panel"); const m = ((el && el.innerText) || "").match(/REQ-\d+/); return m ? m[0] : null; });
   ok("triage queue shows untriaged work (incl. status New)", !!triageId);
-  await p.select(".triage__panel select", "u17"); await wait(300);
+  await p.select(".triage__panel select", "u6"); await wait(300);
   await clickByText(p, ".triage__panel button", "Assign to"); await wait(700);
   const tr = await rec(p, triageId);
-  ok("assigned to a credentialed team member (u17)", tr && tr.owner === "u17" && tr.status === "Assigned");
+  ok("assigned to a credentialed team member (u6)", tr && tr.owner === "u6" && tr.status === "Assigned");
   await go(p, "#/triage");
   ok("assigned request LEAVES the triage queue (no longer 'still in triage')", !(await body(p)).includes(triageId));
 
@@ -62,12 +62,12 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   // ENGINE blocks a cross-team assignment even if the UI is bypassed.
   await viewAs(p, "u6"); await go(p, "#/triage");
   const leadPicker = await p.evaluate(() => [...document.querySelectorAll(".triage__panel select option")].map((o) => o.value).filter((v) => v && v.startsWith("u")));
-  ok("Lead (litigation) sees ONLY their own reportees in the picker", leadPicker.length > 0 && leadPicker.every((id) => ["u6", "u17"].includes(id)));
+  ok("Lead (litigation) sees ONLY their own reportees in the picker", leadPicker.length > 0 && leadPicker.every((id) => id === "u6"));
   const nextId2 = await p.evaluate(() => { const el = document.querySelector(".triage__panel"); const m = ((el && el.innerText) || "").match(/REQ-\d+/); return m ? m[0] : null; });
   // force a CHANGE to a commercial member (whichever differs from the proposal)
   const crossTeam = await p.evaluate((id) => import("/src/store.js").then((S) => {
     const cur = (S.getCollection("requests") || []).find((r) => r.id === id) || {};
-    const target = cur.owner === "u5" ? "u9" : "u5";
+    const target = cur.owner === "u5" ? "u3" : "u5";
     return S.triageDecision(id, { owner: target }, "u6");
   }), nextId2);
   ok("ENGINE blocks a lead assigning outside their team", crossTeam.ok === false && /own reportees/i.test(crossTeam.error));

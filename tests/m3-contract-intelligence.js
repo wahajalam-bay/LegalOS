@@ -150,7 +150,7 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   ok("auto-assignment is audited and reassignable by the Director", (autoM.audit || []).some((a) => a.kind === "owner" && /Auto-assigned/.test(a.detail || "")));
   const dirNotif = await p.evaluate(() => JSON.parse(localStorage.getItem("legalos-store-v1")).notifs.filter((n) => (n.forUserId === "u1" || n.forUserId === "u2") && /auto-assigned/i.test(n.title)));
   ok("the Director is notified of the auto-assignment", dirNotif.length >= 1);
-  const reassign = await S(p, `(S, id) => S.setMatterOwner(id, "u17", "u1")`, auto.id);
+  const reassign = await S(p, `(S, id) => S.setMatterOwner(id, "u5", "u1")`, auto.id);
   ok("the Director can reassign the auto-assigned matter", reassign.ok);
 
   /* ---------- J. UI + requester lockout (Phases 35/36) ---------- */

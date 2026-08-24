@@ -25,39 +25,35 @@ export function signOut() {
 
 /* The credential roster — label is the VIEW the user asked for; sub is the
    person's actual title so the mapping stays honest to the org. */
+/* A deliberately SMALL testing roster — one credential per distinct experience,
+   so a tester can cycle every behaviour in seven clicks:
+   Director · one Lead per team · Associate · Paralegal · Requester. */
 export const CREDENTIAL_GROUPS = [
   {
     section: "Legal — Leadership",
     people: [
       { id: "u1", view: "Director Legal", tone: "purple" },
-      { id: "u2", view: "Deputy Director", tone: "purple" },
     ],
   },
   {
-    section: "Legal — Senior Managers (AD)",
+    section: "Legal — Team Leads (AD / Senior Manager)",
     people: [
-      { id: "u3", view: "Senior Manager · Commercial & Risk", tone: "amber" },
-      { id: "u6", view: "Senior Manager · Litigation & Disputes", tone: "amber" },
-      { id: "u20", view: "Senior Manager · Compliance", tone: "amber" },
+      { id: "u3", view: "Team Lead · Commercial & Risk", tone: "amber" },
+      { id: "u6", view: "Team Lead · Litigation & Disputes", tone: "amber" },
+      { id: "u20", view: "Team Lead · Compliance", tone: "amber" },
     ],
   },
   {
-    section: "Legal — Associates & Paralegals",
+    section: "Legal — Team",
     people: [
-      { id: "u5", view: "Senior Associate · Commercial", tone: "green" },
-      { id: "u17", view: "Senior Associate · Litigation", tone: "green" },
-      { id: "u9", view: "Legal Associate · Commercial", tone: "green" },
-      { id: "u21", view: "Legal Associate · Compliance", tone: "green" },
+      { id: "u5", view: "Legal Associate · Commercial", tone: "green" },
       { id: "u10", view: "Paralegal / Legal Executive", tone: "blue" },
     ],
   },
   {
-    section: "Business departments (requesters)",
+    section: "Business (requester)",
     people: [
       { id: "u16", view: "Finance — CFO", tone: "gray" },
-      { id: "u14", view: "Human Resources — Head of HR", tone: "gray" },
-      { id: "u13", view: "Procurement — VP Procurement", tone: "gray" },
-      { id: "u15", view: "Sales & Marketing — Director", tone: "gray" },
     ],
   },
 ];

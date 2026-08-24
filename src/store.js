@@ -379,14 +379,14 @@ export function duplicateCheck(payload) {
 // (org.js ASSIGNABLE_BENCH) and on the team that owns the sub-division, so a
 // request can never route to someone who isn't a signable view in the system.
 const SUBDIV_OWNER = {
-  "Real Estate & Conveyancing": "u9",   // Elena Popova — Legal Associate · Commercial
-  "Commercial": "u5",                    // Sarah Chen — Senior Associate · Commercial
-  "Litigation & Disputes": "u6",         // David Okonkwo — Senior Manager · Litigation
-  "Compliance & Regulatory": "u21",      // Hassan Ali — Legal Associate · Compliance
-  "IP": "u17",                           // Ahmed Raza — Senior Associate · Litigation
-  "Labour/Employment": "u17",            // Ahmed Raza — Senior Associate · Litigation
-  "Corporate & Governance": "u20",       // Noor Fatima — Senior Manager · Compliance
-  "Data Privacy": "u21",                 // Hassan Ali — Legal Associate · Compliance
+  "Real Estate & Conveyancing": "u5",   // Sarah Chen — Legal Associate · Commercial
+  "Commercial": "u5",                    // Sarah Chen — Legal Associate · Commercial
+  "Litigation & Disputes": "u6",         // David Okonkwo — Team Lead · Litigation
+  "Compliance & Regulatory": "u20",      // Noor Fatima — Team Lead · Compliance
+  "IP": "u6",                            // David Okonkwo — Team Lead · Litigation
+  "Labour/Employment": "u6",             // David Okonkwo — Team Lead · Litigation
+  "Corporate & Governance": "u20",       // Noor Fatima — Team Lead · Compliance
+  "Data Privacy": "u20",                 // Noor Fatima — Team Lead · Compliance
 };
 // One assignment guard for every path (triage, reassign, matters): the target
 // must be a credentialed bench member, and a Team Lead may only assign to

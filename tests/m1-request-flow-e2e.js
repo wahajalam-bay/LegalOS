@@ -36,21 +36,21 @@ const notifsFor = (p, uid, id) => p.evaluate((uid, id) => (JSON.parse(localStora
   const sub = await S(p, `(S) => S.submitLegalRequest({ title: "Warehouse staff dismissal dispute", requestType: "New", entityId: "CO-19", requesterId: "u14", natureOfMatter: "Labour Matters", subdivision: "Labour/Employment", category: "Dispute / Litigation", urgencyBand: "Important", description: "Terminated staff threatening tribunal claim." })`);
   const id = sub.id;
   ok("submitted with a unique reference", sub.ok && /^REQ-\d+/.test(id));
-  ok("routed to the labour EXPERT on the credential bench (u17)", sub.owner === "u17" && BENCH.includes(sub.owner));
+  ok("routed to the labour EXPERT on the credential bench (u6 — litigation lead)", sub.owner === "u6" && BENCH.includes(sub.owner));
   ok("requester acknowledged", (await notifsFor(p, "u14", id)).some((n) => /received/i.test(n.title)));
-  ok("expert (u17) + litigation lead (u6) notified — and only them", (await notifsFor(p, "u17", id)).length >= 1 && (await notifsFor(p, "u6", id)).length >= 1 && (await notifsFor(p, "u3", id)).length === 0);
+  ok("the litigation desk (u6) notified — and no other team lead", (await notifsFor(p, "u6", id)).length >= 1 && (await notifsFor(p, "u3", id)).length === 0);
 
   /* ---- 2) TRIAGE (David u6 — the correct lead) ---- */
   await viewAs(p, "u6"); await go(p, "#/triage/" + id);
   ok("deep-link opens the queue with THIS request selected", (await p.evaluate(() => (document.querySelector(".triage__panel") || {}).innerText || "")).includes(id));
-  await p.select(".triage__panel select", "u17"); await wait(300);
+  await p.select(".triage__panel select", "u6"); await wait(300);
   await clickByText(p, ".triage__panel button", "Assign"); await wait(700);
   let r = await reqOf(p, id);
-  ok("lead assigned to his own reportee — status Assigned", r.owner === "u17" && r.status === "Assigned");
+  ok("lead assigned within his own team — status Assigned", r.owner === "u6" && r.status === "Assigned");
   ok("it LEFT the triage queue", !(await body(p)).includes(id) || !(await p.evaluate((x) => (document.querySelector(".triage__panel") || { innerText: "" }).innerText.includes(x), id)));
 
   /* ---- 3) OWNER'S BOARD (u17) + advance the pipeline ---- */
-  await viewAs(p, "u17"); await go(p, "#/requests");
+  await viewAs(p, "u6"); await go(p, "#/requests");
   ok("owner sees it on their board (Assigned lane)", (await body(p)).includes(id));
   await go(p, "#/workspace/" + id);
   await clickByText(p, ".spine button", "Advance to"); await wait(600); // → Legal Review
@@ -58,25 +58,25 @@ const notifsFor = (p, uid, id) => p.evaluate((uid, id) => (JSON.parse(localStora
   ok("owner advanced Assigned → Legal Review", r.stage === "Legal Review");
 
   // hold pauses the clock; the requester is asked; resume returns the ball
-  await S(p, `(S, id) => S.holdRequest(id, "business", "u17", "need the termination letter")`, id);
+  await S(p, `(S, id) => S.holdRequest(id, "business", "u10", "need the termination letter")`, id);
   r = await reqOf(p, id);
   ok("hold: ball with the business, clock paused", r.blockedOn === "business");
   ok("requester told 'we need something from you'", (await notifsFor(p, "u14", id)).some((n) => /need something/i.test(n.title)));
-  await S(p, `(S, id) => S.resumeRequest(id, "u17")`, id);
+  await S(p, `(S, id) => S.resumeRequest(id, "u10")`, id);
 
   // advance to the Approval gate
   for (const stage of ["Notice Drafting", "Approval"]) {
-    await S(p, `(S, id) => S.advanceRequestStage(id, "u17")`, id);
+    await S(p, `(S, id) => S.advanceRequestStage(id, "u10")`, id);
     r = await reqOf(p, id);
   }
   // Termination path: Intake→Triage→Legal Review→Notice Drafting→Approval… walk until Approval
   let guardCount = 0;
-  while (r.stage !== "Approval" && guardCount++ < 6) { await S(p, `(S, id) => S.advanceRequestStage(id, "u17")`, id); r = await reqOf(p, id); }
+  while (r.stage !== "Approval" && guardCount++ < 6) { await S(p, `(S, id) => S.advanceRequestStage(id, "u10")`, id); r = await reqOf(p, id); }
   ok("reached the Approval gate", r.stage === "Approval");
 
   /* ---- 4) APPROVAL: engine-enforced authority ---- */
-  const assocTry = await S(p, `(S, id) => S.advanceRequestStage(id, "u17")`, id);
-  ok("ENGINE blocks the associate at Approval (no UI bypass possible)", assocTry.ok === false && /approval requires/i.test(assocTry.error));
+  const assocTry = await S(p, `(S, id) => S.advanceRequestStage(id, "u10")`, id);
+  ok("ENGINE blocks a non-approver (paralegal) at Approval — no UI bypass possible", assocTry.ok === false && /approval requires/i.test(assocTry.error));
   await S(p, `(S, id) => S.updateItem("requests", id, { value: 5000000 })`, id);
   const leadHighTry = await S(p, `(S, id) => S.advanceRequestStage(id, "u6")`, id);
   ok("ENGINE blocks a lead ABOVE the value threshold", leadHighTry.ok === false && /Director/i.test(leadHighTry.error));
@@ -89,12 +89,12 @@ const notifsFor = (p, uid, id) => p.evaluate((uid, id) => (JSON.parse(localStora
   await wait(700);
   r = await reqOf(p, id);
   ok("lead (within threshold) signed off — moved past Approval", r.stage !== "Approval" && r.status !== "Pending Approval");
-  ok("whoever sent it up (u17) hears the approval came through", (await notifsFor(p, "u17", id)).some((n) => /approved/i.test(n.title)));
+  ok("whoever sent it up (u10) hears the approval came through", (await notifsFor(p, "u10", id)).some((n) => /approved/i.test(n.title)));
 
   /* ---- 5) run to DELIVERY ---- */
   guardCount = 0;
   while (!["Delivered"].includes((r || {}).status) && guardCount++ < 6) {
-    const step = await S(p, `(S, id) => S.advanceRequestStage(id, "u17")`, id);
+    const step = await S(p, `(S, id) => S.advanceRequestStage(id, "u10")`, id);
     if (!step.ok) { await S(p, `(S, id) => S.advanceRequestStage(id, "u6")`, id); }
     r = await reqOf(p, id);
   }

@@ -42,15 +42,12 @@ export const LEGAL_TEAMS = [
 // surface (triage, reassign, auto-routing, matter experts) draws from THIS list
 // and nothing else, so a case can never be sent to someone who isn't a
 // credentialed view in the system.
-//   u3  Priya Nair    — Senior Manager · Commercial & Risk
-//   u6  David Okonkwo — Senior Manager · Litigation & Disputes
-//   u20 Noor Fatima   — Senior Manager · Compliance
-//   u5  Sarah Chen    — Senior Associate · Commercial
-//   u17 Ahmed Raza    — Senior Associate · Litigation
-//   u9  Elena Popova  — Legal Associate · Commercial
-//   u21 Hassan Ali    — Legal Associate · Compliance
+//   u3  Priya Nair    — Team Lead · Commercial & Risk
+//   u6  David Okonkwo — Team Lead · Litigation & Disputes
+//   u20 Noor Fatima   — Team Lead · Compliance
+//   u5  Sarah Chen    — Legal Associate · Commercial
 //   u10 Yousef Nasser — Paralegal / Legal Executive
-export const ASSIGNABLE_BENCH = ["u3", "u6", "u20", "u5", "u17", "u9", "u21", "u10"];
+export const ASSIGNABLE_BENCH = ["u3", "u6", "u20", "u5", "u10"];
 export const PIPELINE_BENCH = ASSIGNABLE_BENCH; // legacy alias
 
 export const teamByKey = (key) => LEGAL_TEAMS.find((t) => t.key === key) || null;
