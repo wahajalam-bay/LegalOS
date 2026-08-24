@@ -1460,6 +1460,33 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .tatchip--closed { background: var(--surface-2); color: var(--text-3); }
 
 /* KPI strip */
+/* StatStrip KPI cards — one system with the module-register KPIs below. */
+.statkpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px; margin-bottom: 18px;
+}
+.statkpi {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 13px 16px;
+  border-left-width: 3px; box-shadow: var(--shadow-xs);
+  min-width: 0;
+}
+.statkpi__n {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 21px; font-weight: 750; letter-spacing: -0.02em; color: var(--text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.statkpi__l { font-size: 11.5px; color: var(--text-2); margin-top: 3px; line-height: 1.3; }
+.statkpi--blue { border-left-color: var(--brand); }
+.statkpi--green { border-left-color: var(--success); }
+.statkpi--amber { border-left-color: var(--warning); }
+.statkpi--red { border-left-color: var(--danger); }
+.statkpi--purple { border-left-color: var(--accent-500); }
+.statkpi--gray { border-left-color: var(--border-strong); }
+@media (max-width: 768px) { .statkpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 .modkpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
 .modkpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; border-left-width: 3px; }
 .modkpi__n { font-size: 22px; font-weight: 750; letter-spacing: -0.02em; color: var(--text); }

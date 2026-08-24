@@ -55,11 +55,19 @@ export function useFilter(rows, keys) {
 }
 
 // Stat strip (small inline KPIs above a table)
+// KPI strip — proper cards in the same visual language as the module-register
+// KPIs (.modkpi): bordered card, left accent, tabular number, tiny label.
+// stats: [{ value, label, trend?, trendDir?, tone? }] — tone is optional; when
+// omitted the accent cycles so mixed strips still read as one system.
+const KPI_TONES = ["blue", "green", "amber", "purple", "red", "gray"];
 export function StatStrip({ stats }) {
-  return html`<div class="row wrap" style="gap:28px;margin-bottom:18px;padding:2px 2px">
-    ${stats.map((s, i) => html`<div key=${i}>
-      <div class="stat-inline"><b>${s.value}</b>${s.trend && html`<span class=${cx("trend", s.trendDir === "up" ? "trend--up" : s.trendDir === "down" ? "trend--down" : "trend--flat")}>${s.trend}</span>`}</div>
-      <div class="muted tiny" style="margin-top:2px">${s.label}</div>
+  return html`<div class="statkpis">
+    ${stats.map((s, i) => html`<div key=${i} class=${cx("statkpi", "statkpi--" + (s.tone || KPI_TONES[i % KPI_TONES.length]))}>
+      <div class="statkpi__n">
+        ${s.value}
+        ${s.trend && html`<span class=${cx("trend", s.trendDir === "up" ? "trend--up" : s.trendDir === "down" ? "trend--down" : "trend--flat")}>${s.trend}</span>`}
+      </div>
+      <div class="statkpi__l">${s.label}</div>
     </div>`)}
   </div>`;
 }
