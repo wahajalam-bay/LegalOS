@@ -5,7 +5,7 @@
 // paralegals, and the business departments). Picking one signs you in as that
 // identity — nav, queues, privilege and approvals all follow — and the same
 // screen is reachable any time from Sign out to cycle between views.
-import { html, cx, useState, useEffect } from "../core.js";
+import { html, cx, useState } from "../core.js";
 import { Icon } from "../icons.js";
 import { Avatar, Pill } from "../ui.js";
 import { byId } from "../data.js";
@@ -35,7 +35,11 @@ export function signOut() {
    contract — the sidebar's View-As switcher flattens it, and the routing tests
    walk it — so `lane` is additive and nothing downstream needs to know about
    the tabs. */
-export const LOGIN_TABS = [
+/* The two mounts are separate front doors with separate rosters. There is no
+   tab and no override: /legalos/ offers legal identities, /legalos/portal/
+   offers requesters. Which lane you get is decided by the mount alone, so the
+   legal mount can never present the requester view (and vice versa). */
+export const LOGIN_LANES = [
   {
     key: "legal",
     label: "Legal team",
@@ -96,18 +100,11 @@ export const isRequesterDoor = () => {
   try { return /\/portal\/?$/.test(window.location.pathname); } catch (e) { return false; }
 };
 
-export default function Login({ tab }) {
+export default function Login() {
   const [busy, setBusy] = useState(null);
   const door = isRequesterDoor();
-  // On the requester door there is only one lane and no choice to offer.
-  // Elsewhere, #/login/<tab> selects the starting tab; an unknown or absent
-  // value falls back to the first. Kept in state so the tabs stay clickable.
-  const tabs = door ? LOGIN_TABS.filter((t) => t.key === "requester") : LOGIN_TABS;
-  const wanted = !door && LOGIN_TABS.some((t) => t.key === tab) ? tab : null;
-  const [lane, setLane] = useState(door ? "requester" : wanted || LOGIN_TABS[0].key);
-  useEffect(() => { if (wanted) setLane(wanted); }, [wanted]);
-  const activeTab = tabs.find((t) => t.key === lane) || tabs[0];
-  const groups = CREDENTIAL_GROUPS.filter((g) => g.lane === activeTab.key);
+  const laneKey = door ? "requester" : "legal";
+  const groups = CREDENTIAL_GROUPS.filter((g) => g.lane === laneKey);
   const enter = (id) => {
     setBusy(id);
     try { localStorage.setItem(AUTH_KEY, "1"); } catch (e) {}
@@ -133,14 +130,6 @@ export default function Login({ tab }) {
           : html`Choose an identity to sign in. Everything follows the credential — navigation,
               queues, approvals, privilege and what the requester is allowed to see.`}
       </div>
-
-      ${tabs.length > 1 && html`<div class="login__tabs" role="tablist">
-        ${tabs.map((t) => html`<button key=${t.key} role="tab" aria-selected=${t.key === lane}
-          class=${cx("login__tab", t.key === lane && "is-on")} onClick=${() => setLane(t.key)}>
-          ${t.label}
-        </button>`)}
-      </div>`}
-      ${tabs.length > 1 && html`<div class="login__tabnote">${activeTab.blurb}</div>`}
 
       ${groups.map((g) => html`<div key=${g.section} class="login__group">
         <div class="login__label">${g.section}</div>

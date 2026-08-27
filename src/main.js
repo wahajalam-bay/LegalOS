@@ -120,17 +120,21 @@ function App() {
   const [path] = useRoute();
   const { base, id } = parsePath(path);
   const door = isRequesterDoor();
-  // Invariant 1 — a legal identity is not admitted here; fall back to the
-  // portal's own (requester-only) sign-in.
-  const wrongIdentity = door && isLegal(activeUser());
+  // Invariant 1 — the two mounts do not share identities, in EITHER direction.
+  // The mounts share an origin and therefore localStorage, so without this a
+  // legal sign-in at /legalos/ would carry into the portal, and a requester
+  // sign-in would render the legal mount. Either way the wrong front door ends
+  // up showing the wrong product; fall back to that mount's own sign-in.
+  const legalIdentity = isLegal(activeUser());
+  const wrongIdentity = door ? legalIdentity : !legalIdentity;
   // Invariant 2 — clamp the route to what the portal serves.
   const blocked = door && !wrongIdentity && isAuthed() && base !== "/login" && !REQUESTER_DOOR_PATHS.has(base);
   useEffect(() => { if (blocked) navigate("/raise"); }, [blocked]);
 
-  // The credential picker renders bare — no shell until someone signs in.
-  // #/login/<tab> preselects a sign-in tab; the portal always forces its own.
+  // The credential picker renders bare — no shell until someone signs in. It
+  // picks its own roster from the mount, so there is nothing to pass in.
   if (base === "/login" || !isAuthed() || wrongIdentity) {
-    return html`<${Login} tab=${door ? "requester" : id} />`;
+    return html`<${Login} />`;
   }
   const effBase = blocked ? "/raise" : base;
   const Page = ROUTES[effBase] || NotFound;

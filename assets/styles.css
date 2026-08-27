@@ -2298,46 +2298,6 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .login__sub { font-size: 12.5px; color: var(--text-2); margin-top: 1px; }
 .login__lead { font-size: 13.5px; color: var(--text-2); margin: 14px 0 26px; max-width: 560px; line-height: 1.5; }
 .login__group { margin-bottom: 22px; }
-
-/* Sign-in tabs — one per entry lane (legal dashboard vs requester view). A
-   segmented control rather than underlined tabs, so it reads as "pick a side"
-   rather than as navigation within one roster. */
-.login__tabs {
-  display: inline-flex;
-  gap: 4px;
-  padding: 4px;
-  margin-bottom: 10px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-.login__tab {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  padding: 8px 18px;
-  border-radius: 9px;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-2);
-  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
-}
-.login__tab:hover { color: var(--text); }
-.login__tab.is-on {
-  background: var(--surface);
-  /* --brand is theme-aware (--brand-600 is not: it is a single dark green in the
-     base :root, which vanishes on a dark surface). */
-  color: var(--brand);
-  box-shadow: var(--shadow-sm, 0 1px 2px rgb(0 0 0 / 8%));
-}
-.login__tabnote {
-  font-size: 12.5px;
-  color: var(--text-3);
-  margin: 0 0 22px;
-  max-width: 560px;
-}
 .login__label {
   font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   color: var(--text-3); margin-bottom: 10px;
