@@ -3,7 +3,7 @@ import { html, createRoot, useEffect } from "./core.js";
 import { useRoute, parsePath, navigate } from "./router.js";
 import { REQUESTER_DOOR_PATHS } from "./nav.js";
 import { Shell } from "./layout.js";
-import { Empty } from "./ui.js";
+import { Empty, Btn } from "./ui.js";
 
 import Dashboard from "./pages/dashboard.js";
 import Requests from "./pages/requests.js";
@@ -45,7 +45,7 @@ import Drafting from "./pages/drafting.js";
 // The credential picker (sign-in / switch-view screen)
 import Login, { isAuthed, isRequesterDoor } from "./pages/login.js";
 import { runOrgSweeps, _bindRbac } from "./store.js";
-import { activeUser, landingFor, filterVisible, useActiveUser, isLegal } from "./rbac.js";
+import { activeUser, landingFor, filterVisible, useActiveUser, isLegal, canOpenPath } from "./rbac.js";
 // Retrieval security: the store's precedent retrieval denies everything until
 // the access layer is bound. Bind it at boot.
 _bindRbac(filterVisible);
@@ -96,6 +96,26 @@ function LegalRequests() {
   return isLegal(useActiveUser()) ? html`<${Requests} />` : html`<${MyRequests} />`;
 }
 
+// A page this identity may not open. Shown instead of the page — deliberately
+// NOT a silent redirect, so the person can see that the address was refused
+// rather than wondering why they landed somewhere else, and deliberately with no
+// hint of the content behind it.
+function NoAccess({ path }) {
+  const me = useActiveUser();
+  // Say WHY in the requester's own terms — "internal to Legal" is the honest
+  // reason and stops them hunting for a link that does not exist. For legal
+  // staff it is a privilege boundary, so name the escalation instead.
+  const text = isLegal(me)
+    ? `This page is not available for ${me.role || "your role"}. Ask the Legal Director if you need it.`
+    : "This area is internal to the Legal department. From your home you can raise a legal request and follow your own requests end to end.";
+  return html`<div class="page">
+    <${Empty} icon="lock" title="You do not have access to this page" text=${text} />
+    <div class="row" style="justify-content:center;margin-top:14px">
+      <${Btn} onClick=${() => navigate(landingFor(me))}>Back to my home</${Btn}>
+    </div>
+  </div>`;
+}
+
 function NotFound() {
   return html`<div class="page"><${Empty} icon="search" title="Page not found" text="This module isn't available yet." /></div>`;
 }
@@ -138,6 +158,13 @@ function App() {
     return html`<${Login} />`;
   }
   const effBase = blocked ? "/raise" : base;
+  // Page-level access, enforced HERE and not merely by hiding the menu row: the
+  // hash is user input, and every privileged page used to open for anyone who
+  // typed it. Same rule the sidebar is built from (canOpenPath), so a visible
+  // row is always openable and a hidden one is always refused.
+  if (!canOpenPath(activeUser(), path)) {
+    return html`<${Shell} path=${path}><${NoAccess} path=${path} key="noaccess" /></${Shell}>`;
+  }
   const Page = ROUTES[effBase] || NotFound;
   return html`<${Shell} path=${path}><${Page} id=${id} path=${path} key=${effBase} /></${Shell}>`;
 }

@@ -143,29 +143,52 @@ export const canExport = (user) => !!roleOf(user).exportData;
 // act on. Modules off the user's team, leadership-only analytics/admin, and the
 // triage queue are hidden by designation. A business requester sees only the
 // front door.
-export function navForUser(user) {
-  const rbac = (user && user.rbac) || "requester";
-  const isLegal = ["head", "lead", "member", "paralegal"].includes(rbac);
-  const isMgmt = rbac === "head" || rbac === "lead";
+/* ---------------- Page-level access (Section 14.1) ----------------
+   ONE rule, used by BOTH the sidebar and the router. Filtering the menu is not
+   access control: every privileged page was reachable by typing its hash, so a
+   Paralegal could open Settings, Organization, the Executive Overview, Cost
+   Analysis and other teams' modules. The nav is now built from this function and
+   the router refuses anything it rejects, so the two can never drift.
 
-  const itemOk = (item) => {
-    const p = item.path || "";
-    if (!isLegal) return p === "/raise" || p === "/requests" || p === "/flow-map"; // requester: raise + track
-    if (p === "/raise") return false;                               // only business requesters raise (PRD §3.1)
-    if (p === "/my-requests") return false;                         // retired: merged into /requests
-    if (p === "/triage") return isMgmt;                              // triage = Director / AD
-    if (p === "/exec") return isMgmt;                                // executive overview = leadership
-    if (p === "/organization" || p === "/portal") return rbac === "head";
-    if (p === "/settings") return isMgmt;                            // AD proposes, Director publishes
-    if (p.startsWith("/m/")) { const def = moduleByKey(p.slice(3)); return def ? canBrowseModule(user, def) : true; }
-    return true;
-  };
-  const sectionOk = (name) => (name === "Insight & Governance" || name === "Administration") ? isMgmt : true;
+   Row-level visibility (visibilityOf / filterVisible) still applies on top: this
+   decides whether a PAGE opens, that decides which RECORDS it may show. */
+const LEGAL_RBAC = ["head", "lead", "member", "paralegal"];
+// Leadership only — the department-wide views and the config surfaces.
+const MGMT_ONLY = new Set(["/exec", "/settings", "/triage", "/costs", "/analyzer", "/pipelines", "/reports"]);
+// Director only.
+const HEAD_ONLY = new Set(["/organization", "/portal"]);
+// Everything a business requester may open, and nothing else.
+const REQUESTER_PATHS = new Set(["/raise", "/requests", "/my-requests", "/my-tasks", "/flow-map", "/login"]);
+
+export function canOpenPath(user, path) {
+  const rbac = (user && user.rbac) || "requester";
+  const legal = LEGAL_RBAC.includes(rbac);
+  const mgmt = rbac === "head" || rbac === "lead";
+  const parts = String(path || "").split("?")[0].split("/").filter(Boolean);
+  const base = "/" + (parts[0] || "");
+
+  if (base === "/login") return true;              // the credential screen is always reachable
+  if (!legal) return REQUESTER_PATHS.has(base);     // requester: raise + track + how it works
+  if (base === "/raise") return false;              // only the business raises (PRD 3.1)
+  if (base === "/my-requests") return true;         // reachable alias of /requests
+  if (HEAD_ONLY.has(base)) return rbac === "head";
+  if (MGMT_ONLY.has(base)) return mgmt;
+  if (base === "/m") {                              // a team module obeys its own gate
+    const def = parts[1] && moduleByKey(parts[1]);
+    return def ? canBrowseModule(user, def) : true;
+  }
+  return true;                                      // the shared legal surfaces
+}
+
+export function navForUser(user) {
+  // The menu is exactly "the pages this identity may open", so it can never
+  // show a row the router would refuse. /my-requests is the one exception: a
+  // reachable alias that is retired from the menu.
+  const itemOk = (item) => item.path !== "/my-requests" && canOpenPath(user, item.path);
 
   return NAV
-    .filter((s) => sectionOk(s.section))
-    .map((s) => ({ ...s, items: s.items.filter(itemOk) }))
-    .filter((s) => s.items.length > 0);
+    .map((sec) => ({ ...sec, items: sec.items.filter(itemOk) }))
+    .filter((sec) => sec.items.length > 0);
 }
 
 // People pickers: legal staff of a given team (for owner assignment).
