@@ -13,7 +13,11 @@ const path = require("path");
 const fs = require("fs");
 
 const ROOT = path.join(__dirname, "..");
-const BASE = "http://localhost:4600/";
+// LEGALOS_PORT keeps a test run off a LIVE instance: on the server :4600 is the
+// deployed service, and pointing the suites at it both drives production and
+// loses the run when deploy/go.sh frees the port. Default is unchanged.
+const PORT = process.env.LEGALOS_PORT || "4600";
+const BASE = `http://localhost:${PORT}/`;
 
 const ping = () => new Promise((resolve) => {
   const req = http.get(BASE, (res) => { res.resume(); resolve(res.statusCode === 200); });
@@ -32,7 +36,7 @@ const ping = () => new Promise((resolve) => {
   // Boot the server if :4600 is not already answering.
   let server = null;
   if (!(await ping())) {
-    server = spawn("node", ["server.js"], { cwd: ROOT, stdio: "ignore" });
+    server = spawn("node", ["server.js"], { cwd: ROOT, stdio: "ignore", env: { ...process.env, PORT } });
     for (let i = 0; i < 20 && !(await ping()); i++) await new Promise((r) => setTimeout(r, 400));
     if (!(await ping())) { console.error("server failed to start on :4600"); process.exit(1); }
     console.log("server: started :4600 (will stop after the run)");
@@ -43,7 +47,7 @@ const ping = () => new Promise((resolve) => {
   const results = [];
   for (const suite of suites) {
     process.stdout.write(`\n=== ${suite} ===\n`);
-    const r = spawnSync("node", [path.join(__dirname, suite)], { cwd: __dirname, encoding: "utf8", timeout: 300000 });
+    const r = spawnSync("node", [path.join(__dirname, suite)], { cwd: __dirname, encoding: "utf8", timeout: 300000, env: { ...process.env, LEGALOS_PORT: PORT } });
     const out = (r.stdout || "") + (r.stderr || "");
     // show only the verdict lines to keep the scoreboard readable
     out.split("\n").filter((l) => /^(PASS|FAIL|FATAL|====|console errors)/.test(l)).forEach((l) => console.log(l));

@@ -171,7 +171,7 @@ export default function MyRequests() {
   }));
 
   return html`<div class="page">
-    <${PageHead} title="My Requests" sub="Everything you've raised with Legal — track status and turnaround here."
+    <${PageHead} title="Legal Requests" sub="Everything you've raised with Legal — track status and turnaround here."
       actions=${html`<${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise")}>New request</${Btn}>`} />
 
     ${mine.length === 0

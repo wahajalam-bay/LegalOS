@@ -1,6 +1,7 @@
 // LegalOS entry point.
-import { html, createRoot } from "./core.js";
-import { useRoute, parsePath } from "./router.js";
+import { html, createRoot, useEffect } from "./core.js";
+import { useRoute, parsePath, navigate } from "./router.js";
+import { REQUESTER_DOOR_PATHS } from "./nav.js";
 import { Shell } from "./layout.js";
 import { Empty } from "./ui.js";
 
@@ -42,9 +43,9 @@ import Costs from "./pages/costs.js";
 // Module 3 — Contract Intelligence
 import Drafting from "./pages/drafting.js";
 // The credential picker (sign-in / switch-view screen)
-import Login, { isAuthed } from "./pages/login.js";
+import Login, { isAuthed, isRequesterDoor } from "./pages/login.js";
 import { runOrgSweeps, _bindRbac } from "./store.js";
-import { activeUser, landingFor, filterVisible } from "./rbac.js";
+import { activeUser, landingFor, filterVisible, useActiveUser, isLegal } from "./rbac.js";
 // Retrieval security: the store's precedent retrieval denies everything until
 // the access layer is bound. Bind it at boot.
 _bindRbac(filterVisible);
@@ -53,10 +54,10 @@ const ROUTES = {
   "/exec": Exec,
   "/flow-map": FlowMap,
   "/m": ModulePage,
-  "/my-tasks": Requests, // merged into Legal Requests (alias keeps old links/landings working)
+  "/my-tasks": LegalRequests, // merged into Legal Requests (alias keeps old links/landings working)
   "/triage": Triage,
   "/raise": Raise,
-  "/my-requests": MyRequests,
+  "/my-requests": LegalRequests, // retired nav entry; alias keeps old links working
   "/costs": Costs,
   "/dashboard": Dashboard,
   "/workspace": Workspace,
@@ -65,7 +66,7 @@ const ROUTES = {
   "/analyzer": Analyzer,
   "/pipelines": Pipelines,
   "/portal": Portal,
-  "/requests": Requests,
+  "/requests": LegalRequests,
   "/matters": Matters,
   "/contracts": Contracts,
   "/reviews": Reviews,
@@ -87,17 +88,53 @@ const ROUTES = {
   "/companies": Companies,
 };
 
+// Legal Requests serves BOTH audiences from one nav entry and one URL: legal
+// staff get the team queue, a requester gets their own requests (what used to be
+// the separate "My Requests" item). The identity decides the view, so there is
+// nothing to keep in sync between two menu entries.
+function LegalRequests() {
+  return isLegal(useActiveUser()) ? html`<${Requests} />` : html`<${MyRequests} />`;
+}
+
 function NotFound() {
   return html`<div class="page"><${Empty} icon="search" title="Page not found" text="This module isn't available yet." /></div>`;
 }
 
+/* The requester portal (/portal/) is a REQUESTING surface, nothing else. The
+   two invariants below are enforced in the router rather than by hiding links,
+   because hiding a link is not enforcement — a typed hash would walk straight
+   past it:
+
+     1. it can only ever run as a REQUESTER identity. localStorage is shared
+        with the root mount (same origin), so signing in as legal at /legalos/
+        would otherwise carry that identity into the portal;
+     2. it can only reach the requesting routes. Anything else is rewritten to
+        Raise Request, so the address bar never claims a view the portal will
+        not serve.
+
+   /legalos/ stays the legal department's way in; /legalos/portal/ is the
+   business's. */
+// The allowlist lives in nav.js — see REQUESTER_DOOR_PATHS.
+
 function App() {
   const [path] = useRoute();
   const { base, id } = parsePath(path);
+  const door = isRequesterDoor();
+  // Invariant 1 — a legal identity is not admitted here; fall back to the
+  // portal's own (requester-only) sign-in.
+  const wrongIdentity = door && isLegal(activeUser());
+  // Invariant 2 — clamp the route to what the portal serves.
+  const blocked = door && !wrongIdentity && isAuthed() && base !== "/login" && !REQUESTER_DOOR_PATHS.has(base);
+  useEffect(() => { if (blocked) navigate("/raise"); }, [blocked]);
+
   // The credential picker renders bare — no shell until someone signs in.
-  if (base === "/login" || !isAuthed()) return html`<${Login} />`;
-  const Page = ROUTES[base] || NotFound;
-  return html`<${Shell} path=${path}><${Page} id=${id} path=${path} key=${base} /></${Shell}>`;
+  // #/login/<tab> preselects a sign-in tab; the portal always forces its own.
+  if (base === "/login" || !isAuthed() || wrongIdentity) {
+    return html`<${Login} tab=${door ? "requester" : id} />`;
+  }
+  const effBase = blocked ? "/raise" : base;
+  const Page = ROUTES[effBase] || NotFound;
+  return html`<${Shell} path=${path}><${Page} id=${id} path=${path} key=${effBase} /></${Shell}>`;
 }
 
 // Section 5.2 / 7.2 / 9 / 12 — renewal triggers, reminder buckets and SLA-breach

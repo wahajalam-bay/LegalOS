@@ -81,7 +81,7 @@ export default function Portal() {
     <${PageHead} title="Requester Portal"
       sub="The business-facing request form — a separate application, connected to LegalOS in real time."
       actions=${html`<${Btn} variant="ghost" icon="settings" onClick=${() => navigate("/settings")}>Configure the form</${Btn}>
-        <a class="btn btn--primary" href="/portal/" target="_blank" rel="noreferrer">
+        <a class="btn btn--primary" href="portal/" target="_blank" rel="noreferrer">
           <${Icon} name="externalLink" size=16 />Open the portal
         </a>`} />
 
@@ -124,7 +124,7 @@ export default function Portal() {
       ${portal.length === 0
         ? html`<${Empty} icon="inbox" title="Nothing has come through the portal yet"
             text="Open the portal, sign in with any work email and submit a request — it lands in Triage here immediately."
-            action=${html`<a class="btn btn--primary" href="/portal/" target="_blank" rel="noreferrer"><${Icon} name="externalLink" size=16 />Open the portal</a>`} />`
+            action=${html`<a class="btn btn--primary" href="portal/" target="_blank" rel="noreferrer"><${Icon} name="externalLink" size=16 />Open the portal</a>`} />`
         : html`<${Fragment0}>
           <div class="grid" style="grid-template-columns:1fr 300px;gap:16px;align-items:start">
             <div class="card card--pad col" style="gap:12px">

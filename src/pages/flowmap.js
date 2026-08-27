@@ -272,7 +272,7 @@ export default function FlowMap() {
             <li>Upload what legal asks for</li>
             <li>Message the lawyer handling it</li>
           </ul>
-          <a class="twoapp__link" href="/portal/" target="_blank" rel="noreferrer">Open the portal <${Icon} name="externalLink" size=12 /></a>
+          <a class="twoapp__link" href="portal/" target="_blank" rel="noreferrer">Open the portal <${Icon} name="externalLink" size=12 /></a>
         </div>
 
         <div class="twoapp__bridge" aria-hidden="true">

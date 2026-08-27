@@ -212,6 +212,33 @@ svg { display: block; }
 .nav { flex: 1; overflow-y: auto; padding: 6px 12px 16px; }
 .nav__section { margin-top: 14px; }
 .nav__label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em; color: var(--sidebar-fg-dim); padding: 6px 10px; font-weight: 600; }
+/* A group header is a real button now — it opens and closes the group. The
+   chevron points down when open, right when closed, so the state reads without
+   colour. */
+.nav__label--toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 600;
+  color: var(--sidebar-fg-dim);
+  cursor: pointer;
+  border-radius: 7px;
+  text-align: left;
+  transition: background .14s, color .14s;
+}
+.nav__label--toggle:hover { background: rgba(255,255,255,.06); color: #fff; }
+.nav__label--toggle svg { flex: none; transform: rotate(-90deg); transition: transform .16s ease; opacity: .8; }
+.nav__label--toggle.is-open svg { transform: rotate(0deg); }
+.nav__label-text { flex: 1; min-width: 0; }
+.nav__label--toggle .nav__badge { margin-left: 0; }
+.nav__section--pinned { margin-top: 6px; }
 .nav__item {
   display: flex; align-items: center; gap: 11px; padding: 8px 10px; border-radius: var(--r-sm);
   color: var(--sidebar-fg); font-weight: 500; font-size: 13px; cursor: pointer; position: relative;
@@ -2271,6 +2298,46 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .login__sub { font-size: 12.5px; color: var(--text-2); margin-top: 1px; }
 .login__lead { font-size: 13.5px; color: var(--text-2); margin: 14px 0 26px; max-width: 560px; line-height: 1.5; }
 .login__group { margin-bottom: 22px; }
+
+/* Sign-in tabs — one per entry lane (legal dashboard vs requester view). A
+   segmented control rather than underlined tabs, so it reads as "pick a side"
+   rather than as navigation within one roster. */
+.login__tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.login__tab {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+.login__tab:hover { color: var(--text); }
+.login__tab.is-on {
+  background: var(--surface);
+  /* --brand is theme-aware (--brand-600 is not: it is a single dark green in the
+     base :root, which vanishes on a dark surface). */
+  color: var(--brand);
+  box-shadow: var(--shadow-sm, 0 1px 2px rgb(0 0 0 / 8%));
+}
+.login__tabnote {
+  font-size: 12.5px;
+  color: var(--text-3);
+  margin: 0 0 22px;
+  max-width: 560px;
+}
 .login__label {
   font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   color: var(--text-3); margin-bottom: 10px;
@@ -2287,7 +2354,7 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .login__card.busy { border-color: var(--brand); background: var(--brand-soft); }
 .login__meta { flex: 1; min-width: 0; }
 .login__who { font-size: 13.5px; font-weight: 700; color: var(--text); }
-.login__view { font-size: 11.5px; font-weight: 600; color: var(--brand-600); margin-top: 1px; }
+.login__view { font-size: 11.5px; font-weight: 600; color: var(--brand); margin-top: 1px; }
 .login__role { font-size: 11px; color: var(--text-3); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .login__go { color: var(--text-3); flex: none; }
 .login__card:hover .login__go { color: var(--brand); }

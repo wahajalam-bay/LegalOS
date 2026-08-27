@@ -21,7 +21,7 @@ export const MODULES = [
   {
     key: "contracts",
     team: "commercial",
-    label: "Contracts",
+    label: "Contract Review",
     icon: "file",
     noun: "contract request",
     subTypeLabel: "Contract Type",
@@ -54,7 +54,7 @@ export const MODULES = [
   {
     key: "vetting",
     team: "commercial",
-    label: "Risk Vetting",
+    label: "Risk Analysis",
     icon: "checkcircle",
     noun: "vetting request",
     subTypeLabel: "Vetting Subject",

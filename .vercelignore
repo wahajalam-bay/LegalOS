@@ -11,5 +11,8 @@ legalos/
 .vercel
 server.err.log
 
+# Server deploy kit (systemd unit, nginx block, runbook) — internal
+deploy/
+
 # New TypeScript foundation (Module 1) — built alongside; not part of the live static prototype yet
 app/

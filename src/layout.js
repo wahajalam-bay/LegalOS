@@ -2,13 +2,13 @@
 import { html, cx, fmt, useState, useEffect, useRef, Fragment } from "./core.js";
 import { Icon } from "./icons.js";
 import { Avatar, Btn, Dropdown, MenuItem, Pill } from "./ui.js";
-import { NAV, NAV_FLAT, labelFor } from "./nav.js";
+import { NAV, NAV_FLAT, labelFor, REQUESTER_DOOR_PATHS } from "./nav.js";
 import { navigate, parsePath } from "./router.js";
 import { COMPANY, NOTIFICATIONS, USERS, CONTRACTS, MATTERS, COMPANIES, LICENSES, licenseStatus, byId, CONTRACT_TYPE_CODES, LEGAL_SUBDIVISIONS } from "./data.js";
 import { getCollection, notifsFor, markNotifsRead, useCollection } from "./store.js";
 import { allReminders } from "./reminders.js";
 import { TourOverlay, TourButton } from "./tour.js";
-import { signOut, CREDENTIAL_GROUPS } from "./pages/login.js";
+import { signOut, CREDENTIAL_GROUPS, isRequesterDoor } from "./pages/login.js";
 import { senderName } from "./messages.js";
 // Sprint 6 — the org architecture: View As, RBAC-filtered search, team modules.
 import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser } from "./rbac.js";
@@ -18,6 +18,10 @@ import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser } from 
 // SSO identity and never shows the switcher.
 const DEMO_PERSONAS = (() => {
   try {
+    // Never on the requester portal: that surface is for requesting, and
+    // switching identity from it is exactly what must not be possible — not
+    // even on a local build.
+    if (isRequesterDoor()) return false;
     const h = location.hostname;
     return h === "localhost" || h === "127.0.0.1" || /[?&]personas=1/.test(location.search);
   } catch (e) { return false; }
@@ -25,6 +29,18 @@ const DEMO_PERSONAS = (() => {
 import { teamShort, RBAC_ROLES } from "./org.js";
 import { moduleByKey } from "./modules.js";
 import { ToastHost } from "./toast.js";
+
+/* ---------------- Collapsed nav groups ----------------
+   Which groups a person leaves open is a per-browser preference, so it lives in
+   localStorage like the theme. Absent key = closed; the group holding the
+   current page is forced open regardless (see Sidebar). */
+const NAV_OPEN_KEY = "legalos-nav-open";
+function readNavOpen() {
+  try { return JSON.parse(localStorage.getItem(NAV_OPEN_KEY) || "{}") || {}; } catch (e) { return {}; }
+}
+function writeNavOpen(map) {
+  try { localStorage.setItem(NAV_OPEN_KEY, JSON.stringify(map)); } catch (e) {}
+}
 
 /* ---------------- Theme ---------------- */
 export function getTheme() { return localStorage.getItem("legalos-theme") || "light"; }
@@ -74,6 +90,32 @@ function Sidebar({ path, collapsed }) {
   const myOpen = mods.filter((r) => r.owner === me.id && r.status !== "Closed").length;
   const badgeFor = (it) => (it.badge === "myTasks" ? (myOpen || undefined) : it.badge);
   const isActive = (it) => (it.path.startsWith("/m/") ? path.startsWith(it.path) : base === it.path);
+
+  const sections = navForUser(me);
+  // The group holding the current page is always open: arriving by deep link or
+  // command palette must never land you on a page whose nav row is hidden.
+  const activeSection = (sections.find((sec) => sec.items.some(isActive)) || {}).section || null;
+  const [openMap, setOpenMap] = useState(readNavOpen);
+  const isOpenFor = (name, m) => name === activeSection || !!m[name];
+  const isOpen = (sec) => isOpenFor(sec.section, openMap);
+  const toggle = (name) => setOpenMap((m) => {
+    const next = { ...m, [name]: !isOpenFor(name, m) };
+    writeNavOpen(next);
+    return next;
+  });
+  // A closed group must still surface what needs attention, or a licence alert
+  // silently disappears behind a chevron.
+  const groupBadge = (sec) => sec.items.reduce((n, it) => n + (Number(badgeFor(it)) || 0), 0);
+  const groupAlert = (sec) => sec.items.some((it) => it.alert);
+
+  const navItem = (it) => html`<div key=${it.path}
+    class=${cx("nav__item", isActive(it) && "active")}
+    onClick=${() => navigate(it.path)}>
+    <${Icon} name=${it.icon} size=17 />
+    <span>${it.label}</span>
+    ${badgeFor(it) && html`<span class=${cx("nav__badge", it.alert && "nav__badge--alert")}>${badgeFor(it)}</span>`}
+  </div>`;
+
   return html`<aside class="sidebar">
     <div class="sidebar__brand">
       <svg class="sidebar__brand-logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0d7a3f"/><path d="M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z" fill="white"/></svg>
@@ -95,16 +137,22 @@ function Sidebar({ path, collapsed }) {
     </${Dropdown}>
 
     <nav class="nav">
-      ${navForUser(me).map((sec) => html`<div class="nav__section" key=${sec.section}>
-        <div class="nav__label">${sec.section}</div>
-        ${sec.items.map((it) => html`<div key=${it.path}
-          class=${cx("nav__item", isActive(it) && "active")}
-          onClick=${() => navigate(it.path)}>
-          <${Icon} name=${it.icon} size=17 />
-          <span>${it.label}</span>
-          ${badgeFor(it) && html`<span class=${cx("nav__badge", it.alert && "nav__badge--alert")}>${badgeFor(it)}</span>`}
-        </div>`)}
-      </div>`)}
+      ${sections.map((sec) => sec.section === null
+        // Pinned group: no header, never collapsible — the request queue.
+        ? html`<div class="nav__section nav__section--pinned" key="pinned">
+            ${sec.items.map(navItem)}
+          </div>`
+        : html`<div class="nav__section" key=${sec.section}>
+            <button type="button" class=${cx("nav__label", "nav__label--toggle", isOpen(sec) && "is-open")}
+              aria-expanded=${isOpen(sec) ? "true" : "false"}
+              onClick=${() => toggle(sec.section)}>
+              <${Icon} name="chevronDown" size=13 />
+              <span class="nav__label-text">${sec.section}</span>
+              ${!isOpen(sec) && groupBadge(sec) > 0 && html`<span
+                class=${cx("nav__badge", groupAlert(sec) && "nav__badge--alert")}>${groupBadge(sec)}</span>`}
+            </button>
+            ${isOpen(sec) && html`<div class="nav__items">${sec.items.map(navItem)}</div>`}
+          </div>`)}
     </nav>
 
     <div class="sidebar__foot">
@@ -117,13 +165,17 @@ function Sidebar({ path, collapsed }) {
 // through the credential screen (Sign out → pick another view).
 function UserChip() {
   const me = useActiveUser();
+  // On the requester portal the only action is leaving: Settings is a legal
+  // configuration surface, and the sign-out copy must not advertise identity
+  // switching the portal does not offer (it returns to the requester roster).
+  const door = isRequesterDoor();
   return html`<${Dropdown} align="left" width=${240} drop="up" trigger=${html`<div class="sidebar__user">
     <${Avatar} name=${me.name} size="md" />
     <div class="sidebar__user-meta"><div class="sidebar__user-name">${me.name}</div><div class="sidebar__user-role">${me.role}</div></div>
     <${Icon} name="chevronDown" size=15 style=${{ color: "var(--sidebar-fg-dim)" }} />
   </div>`}>
-    <${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>
-    <${MenuItem} icon="arrowLeft" onClick=${signOut}>Sign out — switch identity</${MenuItem}>
+    ${!door && html`<${MenuItem} icon="settings" onClick=${() => navigate("/settings")}>Settings</${MenuItem}>`}
+    <${MenuItem} icon="arrowLeft" onClick=${signOut}>${door ? "Sign out" : "Sign out — switch identity"}</${MenuItem}>
   </${Dropdown}>`;
 }
 
@@ -259,7 +311,17 @@ function CommandPalette({ onClose }) {
   useEffect(() => { inputRef.current && inputRef.current.focus(); }, []);
 
   const ql = q.toLowerCase();
-  const navResults = NAV_FLAT.filter((i) => i.label.toLowerCase().includes(ql)).map((i) => ({ group: "Navigate", label: i.label, icon: i.icon, path: i.path }));
+  const me = useActiveUser();
+  // The palette must not offer a destination this identity or this surface
+  // cannot open. On the requester portal that is the door allowlist; elsewhere
+  // it is the same role filter the sidebar uses, so a requester's palette can
+  // no longer list the executive overview.
+  const door = isRequesterDoor();
+  const navAllowed = new Set(navForUser(me).flatMap((sec) => sec.items).map((i) => i.path));
+  const reachable = (p) => (door ? REQUESTER_DOOR_PATHS.has(p) : navAllowed.has(p));
+  const navResults = NAV_FLAT
+    .filter((i) => i.label.toLowerCase().includes(ql) && reachable(i.path))
+    .map((i) => ({ group: "Navigate", label: i.label, icon: i.icon, path: i.path }));
   const actions = [
     { group: "Actions", label: "Raise a request to any Legal team", icon: "plus", path: "/raise" },
     { group: "Actions", label: "My Tasks — most urgent first", icon: "checksquare", path: "/my-tasks" },
@@ -276,7 +338,7 @@ function CommandPalette({ onClose }) {
     { group: "Actions", label: "Upload contract for AI review", icon: "scan", path: "/reviews" },
     { group: "Actions", label: "Generate NDA from template", icon: "sparkles", path: "/templates" },
     { group: "Actions", label: "Ask AI Copilot", icon: "robot", path: "/copilot" },
-  ].filter((a) => a.label.toLowerCase().includes(ql));
+  ].filter((a) => a.label.toLowerCase().includes(ql) && (!door || REQUESTER_DOOR_PATHS.has(a.path)));
   // Search live store collections so records created in-session are findable.
   const companies = getCollection("companies") || COMPANIES;
   const liveContracts = getCollection("contracts") || CONTRACTS;
@@ -286,7 +348,6 @@ function CommandPalette({ onClose }) {
   // gate as the queues, never a bypass. Matters are privilege-filtered here
   // too (Module 2 §14): a Privileged matter must NOT surface in search for
   // anyone who is not named on it.
-  const me = useActiveUser();
   const liveMods = filterVisible(me, getCollection("modRequests") || []);
   const liveMatters = filterVisible(me, getCollection("matters") || MATTERS);
   // A document attached to a matter inherits that matter's privilege — it must

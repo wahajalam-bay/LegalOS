@@ -136,7 +136,7 @@ function RequestFormAdmin() {
               : "Requesters see a holding page until you publish."}
           </div>
         </div>
-        <a class="btn btn--ghost" href="/portal/" target="_blank" rel="noreferrer">
+        <a class="btn btn--ghost" href="portal/" target="_blank" rel="noreferrer">
           <${Icon} name="externalLink" size=16 />${branding.published ? "Open the portal" : "Preview the portal"}
         </a>
         <${Btn} variant=${branding.published ? "ghost" : "primary"} icon=${branding.published ? "lock" : "globe"}

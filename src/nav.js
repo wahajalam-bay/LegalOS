@@ -10,16 +10,34 @@ const LICENSE_BADGE = _licAlerts.length;
 const LICENSE_ALERT = _licAlerts.some((s) => s.key === "Expired" || s.key === "Critical");
 
 export const NAV = [
+  // Pinned above the collapsible groups: the request queue is where everyone
+  // starts, so it must never be behind a closed dropdown. `section: null` means
+  // "no group header, not collapsible".
+  { section: null, items: [
+    // ONE entry for both audiences. Legal staff get the queue, a requester gets
+    // their own requests — /requests dispatches on the identity (see main.js),
+    // which is what retired the separate "My Requests" item.
+    { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
+    { path: "/triage", label: "Triage", icon: "filter" },
+    { path: "/raise", label: "Raise Request", icon: "plus" },
+  ]},
   { section: "Overview", items: [
     { path: "/exec", label: "Executive Overview", icon: "star" },
     { path: "/flow-map", label: "How It Works", icon: "git" },
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
   ]},
-  { section: "My Work", items: [
-    { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
-    { path: "/triage", label: "Triage", icon: "filter" },
-    { path: "/my-requests", label: "My Requests", icon: "list" },
-    { path: "/raise", label: "Raise Request", icon: "plus" },
+  // The three legal teams, in the order the department reads them.
+  { section: "Commercial & Risk Mitigation", items: [
+    { path: "/m/contracts", label: "Contract Review", icon: "file" },
+    { path: "/m/vetting", label: "Risk Analysis", icon: "checkcircle" },
+    { path: "/tracker", label: "Contract Tracker", icon: "grid" },
+  ]},
+  { section: "Compliance & Licences", items: [
+    { path: "/m/agreements", label: "Lease, Loan & Service", icon: "clipboard" },
+    { path: "/m/resolutions", label: "Resolutions", icon: "checksquare" },
+    { path: "/m/licenses", label: "License Renewals", icon: "fileCheck" },
+    { path: "/m/filings", label: "SECP Filings", icon: "book" },
+    { path: "/licenses", label: "License Register", icon: "database", badge: LICENSE_BADGE || undefined, alert: LICENSE_ALERT },
   ]},
   { section: "Litigation & Disputes", items: [
     { path: "/m/cases", label: "Case Handling", icon: "gavel" },
@@ -29,18 +47,6 @@ export const NAV = [
     { path: "/m/police", label: "Police Complaints", icon: "alertTriangle" },
     { path: "/m/notices", label: "Notices", icon: "mail" },
     { path: "/m/inspections", label: "Govt Inspections", icon: "shield" },
-  ]},
-  { section: "Commercial & Risk", items: [
-    { path: "/m/contracts", label: "Contracts", icon: "file" },
-    { path: "/m/vetting", label: "Risk Vetting", icon: "checkcircle" },
-    { path: "/tracker", label: "Contract Tracker", icon: "grid" },
-  ]},
-  { section: "Compliance", items: [
-    { path: "/m/agreements", label: "Lease, Loan & Service", icon: "clipboard" },
-    { path: "/m/resolutions", label: "Resolutions", icon: "checksquare" },
-    { path: "/m/licenses", label: "License Renewals", icon: "fileCheck" },
-    { path: "/m/filings", label: "SECP Filings", icon: "book" },
-    { path: "/licenses", label: "License Register", icon: "database", badge: LICENSE_BADGE || undefined, alert: LICENSE_ALERT },
   ]},
   { section: "Shared", items: [
     { path: "/workspace", label: "Legal Workspace", icon: "layers", badge: REQUESTS.length },
@@ -64,6 +70,13 @@ export const NAV = [
     { path: "/settings", label: "Settings", icon: "settings" },
   ]},
 ];
+
+/* What the requester portal (/portal/) is allowed to reach. It is a requesting
+   surface: raise one, track your own, read how the process works. Everything
+   else belongs to the legal mount at /legalos/. Shared by the router (which
+   enforces it) and the command palette (which must not offer what the router
+   would refuse). */
+export const REQUESTER_DOOR_PATHS = new Set(["/login", "/raise", "/requests", "/my-requests", "/flow-map"]);
 
 export const NAV_FLAT = NAV.flatMap((s) => s.items);
 export const labelFor = (path) => (NAV_FLAT.find((i) => path.startsWith(i.path)) || { label: "LegalOS" }).label;

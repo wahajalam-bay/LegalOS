@@ -7,8 +7,9 @@
 //   off the open queues → requester's tracking shows it complete.
 // Every owner who ever touches the request must be on the credential bench.
 const puppeteer = require("puppeteer-core");
-const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
-const BASE = "http://localhost:4600";
+const CHROME = process.env.CHROME || process.env.PUPPETEER_EXECUTABLE_PATH ||
+  "C:/Program Files/Google/Chrome/Application/chrome.exe";  // Windows dev default
+const BASE = `http://localhost:${process.env.LEGALOS_PORT || "4600"}`;
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const results = []; const errs = [];
 const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + n); };

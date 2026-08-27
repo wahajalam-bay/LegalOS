@@ -5,7 +5,7 @@
 // paralegals, and the business departments). Picking one signs you in as that
 // identity — nav, queues, privilege and approvals all follow — and the same
 // screen is reachable any time from Sign out to cycle between views.
-import { html, cx, useState } from "../core.js";
+import { html, cx, useState, useEffect } from "../core.js";
 import { Icon } from "../icons.js";
 import { Avatar, Pill } from "../ui.js";
 import { byId } from "../data.js";
@@ -27,15 +27,37 @@ export function signOut() {
    person's actual title so the mapping stays honest to the org. */
 /* A deliberately SMALL testing roster — one credential per distinct experience,
    so a tester can cycle every behaviour in seven clicks:
-   Director · one Lead per team · Associate · Paralegal · Requester. */
+   Director · one Lead per team · Associate · Paralegal · Requester.
+
+   The roster is split into two TABS by where a credential lands, not by job
+   title: `legal` credentials open the legal dashboard, `requester` credentials
+   open the requester view (/raise). The flat {section, people} shape is a
+   contract — the sidebar's View-As switcher flattens it, and the routing tests
+   walk it — so `lane` is additive and nothing downstream needs to know about
+   the tabs. */
+export const LOGIN_TABS = [
+  {
+    key: "legal",
+    label: "Legal team",
+    blurb: "Opens the legal dashboard \u2014 queues, triage, approvals and the matter workspace.",
+  },
+  {
+    key: "requester",
+    label: "Requester",
+    blurb: "Opens the requester view \u2014 raise a legal request and follow it end to end.",
+  },
+];
+
 export const CREDENTIAL_GROUPS = [
   {
+    lane: "legal",
     section: "Legal — Leadership",
     people: [
       { id: "u1", view: "Director Legal", tone: "purple" },
     ],
   },
   {
+    lane: "legal",
     section: "Legal — Team Leads (AD / Senior Manager)",
     people: [
       { id: "u3", view: "Team Lead · Commercial & Risk", tone: "amber" },
@@ -44,6 +66,7 @@ export const CREDENTIAL_GROUPS = [
     ],
   },
   {
+    lane: "legal",
     section: "Legal — Team",
     people: [
       { id: "u5", view: "Legal Associate · Commercial", tone: "green" },
@@ -51,15 +74,40 @@ export const CREDENTIAL_GROUPS = [
     ],
   },
   {
-    section: "Business (requester)",
+    lane: "requester",
+    // Department heads, one per business function. All four are rbac "bizHead",
+    // so each lands on /raise and sees only its own department's requests.
+    section: "Business — department heads",
     people: [
       { id: "u16", view: "Finance — CFO", tone: "gray" },
+      { id: "u13", view: "Procurement — VP", tone: "gray" },
+      { id: "u14", view: "HR — Head of HR", tone: "gray" },
+      { id: "u15", view: "Sales & Marketing — Director", tone: "gray" },
     ],
   },
 ];
 
-export default function Login() {
+/* The /portal/ document is the BUSINESS front door. A requester who signs out
+   there must not be offered legal identities, so that mount locks the roster to
+   the requester lane and drops the tab bar entirely — sign out lands back on a
+   requester-only screen because the pathname survives a hash navigation. The
+   root mount keeps both tabs; that is the legal team's way in. */
+export const isRequesterDoor = () => {
+  try { return /\/portal\/?$/.test(window.location.pathname); } catch (e) { return false; }
+};
+
+export default function Login({ tab }) {
   const [busy, setBusy] = useState(null);
+  const door = isRequesterDoor();
+  // On the requester door there is only one lane and no choice to offer.
+  // Elsewhere, #/login/<tab> selects the starting tab; an unknown or absent
+  // value falls back to the first. Kept in state so the tabs stay clickable.
+  const tabs = door ? LOGIN_TABS.filter((t) => t.key === "requester") : LOGIN_TABS;
+  const wanted = !door && LOGIN_TABS.some((t) => t.key === tab) ? tab : null;
+  const [lane, setLane] = useState(door ? "requester" : wanted || LOGIN_TABS[0].key);
+  useEffect(() => { if (wanted) setLane(wanted); }, [wanted]);
+  const activeTab = tabs.find((t) => t.key === lane) || tabs[0];
+  const groups = CREDENTIAL_GROUPS.filter((g) => g.lane === activeTab.key);
   const enter = (id) => {
     setBusy(id);
     try { localStorage.setItem(AUTH_KEY, "1"); } catch (e) {}
@@ -78,11 +126,23 @@ export default function Login() {
         </div>
       </div>
       <div class="login__lead">
-        Choose an identity to sign in. Everything follows the credential — navigation,
-        queues, approvals, privilege and what the requester is allowed to see.
+        ${door
+          ? html`Sign in to raise a legal request and follow it end to end. Pick the
+              department you are raising for — the form, the routing and the turnaround
+              all follow it.`
+          : html`Choose an identity to sign in. Everything follows the credential — navigation,
+              queues, approvals, privilege and what the requester is allowed to see.`}
       </div>
 
-      ${CREDENTIAL_GROUPS.map((g) => html`<div key=${g.section} class="login__group">
+      ${tabs.length > 1 && html`<div class="login__tabs" role="tablist">
+        ${tabs.map((t) => html`<button key=${t.key} role="tab" aria-selected=${t.key === lane}
+          class=${cx("login__tab", t.key === lane && "is-on")} onClick=${() => setLane(t.key)}>
+          ${t.label}
+        </button>`)}
+      </div>`}
+      ${tabs.length > 1 && html`<div class="login__tabnote">${activeTab.blurb}</div>`}
+
+      ${groups.map((g) => html`<div key=${g.section} class="login__group">
         <div class="login__label">${g.section}</div>
         <div class="login__grid">
           ${g.people.map((pp) => {

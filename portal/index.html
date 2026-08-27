@@ -3,16 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Legal Requests — Requester Portal</title>
+    <title>Legal Requests — Requester</title>
     <meta name="description" content="Raise a legal request and follow it end to end." />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230891b2'/%3E%3Cpath d='M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z' fill='white'/%3E%3C/svg%3E" />
+
+    <!-- This document is the REQUESTER DOOR. It boots the same LegalOS shell as
+         the root, not a separate application: one codebase, one design system,
+         one store. `base` is what makes that work — the shell's assets and links
+         are all relative to the mount root, and this page sits one level below
+         it, so "../" puts every relative URL back on the mount root while the
+         address bar stays at /portal/. It is relative on purpose: the same file
+         is correct at "/" locally and at "/legalos/" behind nginx. -->
+    <base href="../" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <!-- Same design system as LegalOS, so the portal reads as the same product family. -->
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
 
     <script type="importmap">
       {
@@ -22,6 +30,23 @@
           "htm": "https://esm.sh/htm@3.1.1"
         }
       }
+    </script>
+
+    <script>
+      // Pick the entry route BEFORE the shell boots. A classic script runs ahead
+      // of the deferred module, and main.js only defaults the hash when there is
+      // none, so setting it here wins without a second render or a reload.
+      //   signed out -> the sign-in screen, already on the Requester tab
+      //   signed in  -> straight to Raise Request
+      (function () {
+        try {
+          if (window.location.hash) return;
+          var authed = localStorage.getItem("legalos-authed") === "1";
+          window.location.hash = authed ? "/raise" : "/login/requester";
+        } catch (e) {
+          window.location.hash = "/login/requester";
+        }
+      })();
     </script>
   </head>
   <body>
@@ -34,14 +59,14 @@
           </svg>
         </div>
         <div class="boot__spinner"></div>
-        <div class="boot__text">Loading the request portal…</div>
+        <div class="boot__text">Loading legal requests…</div>
       </div>
     </div>
 
     <div id="boot-error" style="display:none">
       <div class="boot boot--error">
         <div class="boot__text" style="max-width:520px;text-align:center">
-          <strong>The request portal hit an error while starting.</strong><br /><br />
+          <strong>Legal Requests hit an error while starting.</strong><br /><br />
           <span id="boot-error-msg" style="font-family:monospace;font-size:12px;color:#ef4444;word-break:break-word"></span>
           <br /><br />
           <span style="font-size:12px;color:#6b7280">First load needs internet (React loads from a CDN). If this persists, share this message.</span>
@@ -72,8 +97,6 @@
       }, 12000);
     </script>
 
-    <!-- Its own entry point. It imports the SHARED data contract from /src, so the
-         portal can later be split into its own deployable without a rewrite. -->
-    <script type="module" src="/src/portal/main.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>

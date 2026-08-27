@@ -9,14 +9,28 @@ export function currentPath() {
 }
 
 export function navigate(path) {
+  // Writing the SAME hash fires no hashchange, so subscribers never re-run —
+  // which stranded anyone signing in as the persona whose home is already the
+  // current route (Director Legal lands on /exec, the boot route). The auth
+  // state behind the route had changed even though the route had not, so nudge
+  // the listeners explicitly.
+  if (window.location.hash.replace(/^#/, "") === path) {
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    return;
+  }
   window.location.hash = path;
 }
 
 export function useRoute() {
   const [path, setPath] = useState(currentPath());
+  // A same-route nudge (see navigate) carries no new path, so setPath alone would
+  // be a no-op and React would skip the render. This tick always changes, so the
+  // subscriber re-runs and re-reads state that moved behind an unchanged route.
+  const [, tick] = useState(0);
   useEffect(() => {
     const onChange = () => {
       setPath(currentPath());
+      tick((n) => n + 1);
       const c = document.querySelector(".content");
       if (c) c.scrollTop = 0;
     };

@@ -1,0 +1,36 @@
+[Unit]
+Description=LegalOS — Enterprise Legal Operations prototype (static, Node built-ins) — /legalos
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/zameen_bse_reports/LegalOS/legalos
+Environment=TZ=Asia/Karachi
+
+# PORT lives here so it is visible to anyone reading the unit. It must match the
+# proxy_pass port in the nginx block.
+Environment=PORT=4600
+
+# /usr/bin/node (v18) on purpose: server.js is zero-dependency and uses only Node
+# built-ins, so it needs no nvm toolchain and no /home access. The TEST suite
+# needs Node 20 (puppeteer-core is ESM-only) — that is a dev-time concern, not a
+# runtime one. See deploy/DEPLOY.md.
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=legalos
+
+# The app is read-only: it serves files and keeps no server-side state (the
+# prototype persists everything in the browser's localStorage), so it needs no
+# writable path anywhere.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
