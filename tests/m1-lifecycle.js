@@ -32,7 +32,7 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   await viewAs(p, "u1"); await go(p, "#/triage");
   // The assignable people are EXACTLY the credential bench on the login screen
   // (minus the Directors), grouped by team — never anyone else.
-  const picker = await p.evaluate(() => Promise.all([import("/src-v8/org.js"), import("/src-v8/pages/login.js")]).then(([O, L]) => {
+  const picker = await p.evaluate(() => Promise.all([import("/src-v10/org.js"), import("/src-v10/pages/login.js")]).then(([O, L]) => {
     const opts = [...document.querySelectorAll(".triage__panel select option")].map((o) => o.value).filter((v) => v && v.startsWith("u"));
     const credLegal = L.CREDENTIAL_GROUPS.filter((g) => /Legal —/.test(g.section) && !/Leadership/.test(g.section)).flatMap((g) => g.people.map((x) => x.id));
     return {
@@ -66,13 +66,13 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   ok("Lead (litigation) sees ONLY their own reportees in the picker", leadPicker.length > 0 && leadPicker.every((id) => id === "u6"));
   const nextId2 = await p.evaluate(() => { const el = document.querySelector(".triage__panel"); const m = ((el && el.innerText) || "").match(/REQ-\d+/); return m ? m[0] : null; });
   // force a CHANGE to a commercial member (whichever differs from the proposal)
-  const crossTeam = await p.evaluate((id) => import("/src-v8/store.js").then((S) => {
+  const crossTeam = await p.evaluate((id) => import("/src-v10/store.js").then((S) => {
     const cur = (S.getCollection("requests") || []).find((r) => r.id === id) || {};
     const target = cur.owner === "u5" ? "u3" : "u5";
     return S.triageDecision(id, { owner: target }, "u6");
   }), nextId2);
   ok("ENGINE blocks a lead assigning outside their team", crossTeam.ok === false && /own reportees/i.test(crossTeam.error));
-  const offBench = await p.evaluate((id) => import("/src-v8/store.js").then((S) => S.reassignRequest(id, "u18", "u1")), triageId);
+  const offBench = await p.evaluate((id) => import("/src-v10/store.js").then((S) => S.reassignRequest(id, "u18", "u1")), triageId);
   ok("ENGINE blocks assignment to anyone off the credential bench (even by the Director)", offBench.ok === false && /credential bench/i.test(offBench.error));
   await viewAs(p, "u1");
 
