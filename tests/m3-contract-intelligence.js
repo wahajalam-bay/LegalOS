@@ -11,7 +11,7 @@ const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + 
 const body = (p) => p.evaluate(() => document.body.innerText);
 async function viewAs(p, uid) { await p.evaluate((uid) => { const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k) || "{}"); s.session = s.session || {}; s.session.viewAsId = uid; localStorage.setItem(k, JSON.stringify(s)); }, uid); }
 async function go(p, hash) { await p.evaluate((h) => { location.hash = h; }, hash); await p.reload({ waitUntil: "networkidle2" }); await wait(1100); }
-const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src/store.js").then((S) => (${fn})(S, ...args));`), ...args);
+const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src-v7/store.js").then((S) => (${fn})(S, ...args));`), ...args);
 
 (async () => {
   const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
@@ -135,7 +135,7 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
 
   /* ---------- H. retrieval security (Phase 25/39) ---------- */
   await S(p, `(S) => { const m = S.createMatter({ name: "Precedent source", practiceArea: "commercial", matterType: "Customer / Service agreement", owner: "u6", department: "Finance" }, "u1"); S.setMatterStatus(m.id, "Active", "u1"); S.closeMatter(m.id, { category: "Settled", positionAchieved: "Substantial", held: ["Limitation of Liability"], conceded: [], externalCounsel: false }, "u1"); S.setMatterPrivilege(m.id, "Privileged", ["u6"], "u1"); window.__pm = m.id; }`);
-  const retr = await p.evaluate(() => Promise.all([import("/src/store.js"), import("/src/data.js")]).then(([S, D]) => ({
+  const retr = await p.evaluate(() => Promise.all([import("/src-v7/store.js"), import("/src-v7/data.js")]).then(([S, D]) => ({
     u5: S.retrievePrecedent(D.byId("u5"), { clauseType: "Limitation of Liability" }).map((c) => c.id),
     u6: S.retrievePrecedent(D.byId("u6"), { clauseType: "Limitation of Liability" }).map((c) => c.id),
   })));
@@ -146,7 +146,7 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   await S(p, `(S) => { S.getCollection && null; }`);
   const auto = await S(p, `(S) => S.createMatter({ name: "Auto-routed dispute", practiceArea: "disputes", matterType: "Litigation", department: "Finance" }, "u1")`);
   const autoM = await S(p, `(S, id) => S.matterById(id)`, auto.id);
-  const litTeam = await p.evaluate((owner) => import("/src/data.js").then((D) => (D.byId(owner) || {}).legalTeam), autoM.owner);
+  const litTeam = await p.evaluate((owner) => import("/src-v7/data.js").then((D) => (D.byId(owner) || {}).legalTeam), autoM.owner);
   ok("matter auto-assigns to the practice-area EXPERT (right team)", auto.ok && litTeam === "litigation");
   ok("auto-assignment is audited and reassignable by the Director", (autoM.audit || []).some((a) => a.kind === "owner" && /Auto-assigned/.test(a.detail || "")));
   const dirNotif = await p.evaluate(() => JSON.parse(localStorage.getItem("legalos-store-v1")).notifs.filter((n) => (n.forUserId === "u1" || n.forUserId === "u2") && /auto-assigned/i.test(n.title)));

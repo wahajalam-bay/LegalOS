@@ -31,7 +31,7 @@ const MIME = {
 // The app itself needs none of them, and a deployment is public to everyone
 // the access policy admits.
 const DENY = [
-  /(^|\/)\./,               // dotfiles/dirs — .git above all, plus .vercel, .gitignore
+  /(^|\/)\./,               // dotfiles/dirs — .git above all, plus .gitignore
   /\.(docx|bat|log|bak|orig)$/i,
   /^\/legalos\//,           // stale nested duplicate of this same tree
   /^\/node_modules\//,

@@ -120,13 +120,14 @@ function App() {
   const [path] = useRoute();
   const { base, id } = parsePath(path);
   const door = isRequesterDoor();
-  // Invariant 1 — the two mounts do not share identities, in EITHER direction.
-  // The mounts share an origin and therefore localStorage, so without this a
-  // legal sign-in at /legalos/ would carry into the portal, and a requester
-  // sign-in would render the legal mount. Either way the wrong front door ends
-  // up showing the wrong product; fall back to that mount's own sign-in.
-  const legalIdentity = isLegal(activeUser());
-  const wrongIdentity = door ? legalIdentity : !legalIdentity;
+  // Invariant 1 — the PORTAL never runs as a legal identity. The mounts share an
+  // origin and therefore localStorage, so without this a legal sign-in at
+  // /legalos/ carries into the portal and a General Counsel ends up looking at
+  // the full legal shell under /portal/. Deliberately one-directional: the legal
+  // mount simply never OFFERS a requester credential (login picks its roster
+  // from the mount), so it needs no matching refusal — and refusing one there
+  // would lock out the requester journeys the suites drive from the root.
+  const wrongIdentity = door && isLegal(activeUser());
   // Invariant 2 — clamp the route to what the portal serves.
   const blocked = door && !wrongIdentity && isAuthed() && base !== "/login" && !REQUESTER_DOOR_PATHS.has(base);
   useEffect(() => { if (blocked) navigate("/raise"); }, [blocked]);

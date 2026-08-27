@@ -14,12 +14,17 @@ export const NAV = [
     { path: "/exec", label: "Executive Overview", icon: "star" },
     { path: "/flow-map", label: "How It Works", icon: "git" },
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
-    // ONE row for the whole request flow, sitting under Operational Dashboard.
-    // Triage is a STAGE of a legal request, not a separate destination, and the
-    // page already leads with its "Awaiting triage" count — so it has no nav row
-    // of its own (the /triage route still resolves for links and that tile).
-    // The same row serves both audiences: legal staff get the team queue, a
-    // requester gets their own requests (see LegalRequests in main.js).
+  ]},
+  // NOT part of Overview, and not collapsible: `section: null` renders these
+  // rows with no header, always visible. They sit here so the position reads the
+  // same whether Overview is open or shut — directly under it either way.
+  //
+  // ONE row for the whole request flow. Triage is a STAGE of a legal request,
+  // not a separate destination, and the page already leads with its "Awaiting
+  // triage" count, so it has no row of its own (the /triage route still resolves
+  // for links and for that tile). The row serves both audiences: legal staff get
+  // the team queue, a requester gets their own requests (see main.js).
+  { section: null, items: [
     { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
     { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},

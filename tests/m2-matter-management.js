@@ -11,7 +11,7 @@ const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + 
 const body = (p) => p.evaluate(() => document.body.innerText);
 async function viewAs(p, uid) { await p.evaluate((uid) => { const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k) || "{}"); s.session = s.session || {}; s.session.viewAsId = uid; localStorage.setItem(k, JSON.stringify(s)); }, uid); }
 async function go(p, hash) { await p.evaluate((h) => { location.hash = h; }, hash); await p.reload({ waitUntil: "networkidle2" }); await wait(1100); }
-const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src/store.js").then((S) => (${fn})(S, ...args));`), ...args);
+const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src-v7/store.js").then((S) => (${fn})(S, ...args));`), ...args);
 
 (async () => {
   const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
@@ -55,7 +55,7 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   ok("every transition is audited (with reason where given)", audits.filter((a) => a.startsWith("status")).length >= 3 && audits.some((a) => a.includes("waiting on regulator")));
 
   /* ---------- risk matrix + override ---------- */
-  const sev = await p.evaluate(() => import("/src/matters2.js").then((M) => [M.riskSeverity("Likely", "Major"), M.riskSeverity("Almost Certain", "Minor"), M.riskSeverity("Likely", "Critical"), M.riskSeverity("Rare", "Critical"), M.riskSeverity("Possible", "Major")]));
+  const sev = await p.evaluate(() => import("/src-v7/matters2.js").then((M) => [M.riskSeverity("Likely", "Major"), M.riskSeverity("Almost Certain", "Minor"), M.riskSeverity("Likely", "Critical"), M.riskSeverity("Rare", "Critical"), M.riskSeverity("Possible", "Major")]));
   ok("risk matrix matches Aug-2026 PRD §4.6 (Critical/Medium/Critical/Medium/High)", sev[0] === "Critical" && sev[1] === "Medium" && sev[2] === "Critical" && sev[3] === "Medium" && sev[4] === "High");
   const overrideNoReason = await S(p, `(S, id) => S.assessMatterRisk(id, "Likely", "Major", "u3")`, mid);
   ok("overriding the system proposal without a reason is blocked", overrideNoReason.ok === false && /override/i.test(overrideNoReason.error));
@@ -129,13 +129,13 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   await go(p, "#/matters/DIS-2026-0012");
   t = await body(p);
   ok("SECURITY: direct URL access to privileged matter DENIED", /Not found or no access/i.test(t) && !/Orbit Ventures/.test(t));
-  const canSee5 = await p.evaluate(() => Promise.all([import("/src/rbac.js"), import("/src/store.js"), import("/src/data.js")]).then(([R, S, D]) => {
+  const canSee5 = await p.evaluate(() => Promise.all([import("/src-v7/rbac.js"), import("/src-v7/store.js"), import("/src-v7/data.js")]).then(([R, S, D]) => {
     const m = S.matterById("DIS-2026-0012");
     return { u5: R.canSee(D.byId("u5"), m), u6: R.canSee(D.byId("u6"), m), u17: R.canSee(D.byId("u17"), m), u16: R.canSee(D.byId("u16"), m) };
   }));
   ok("SECURITY: access layer — named users yes, others no", canSee5.u5 === false && canSee5.u6 === true && canSee5.u17 === true && canSee5.u16 === false);
   // search: the palette source is filterVisible — verify the same gate excludes it
-  const searchLeak = await p.evaluate(() => Promise.all([import("/src/rbac.js"), import("/src/store.js"), import("/src/data.js")]).then(([R, S, D]) =>
+  const searchLeak = await p.evaluate(() => Promise.all([import("/src-v7/rbac.js"), import("/src-v7/store.js"), import("/src-v7/data.js")]).then(([R, S, D]) =>
     R.filterVisible(D.byId("u5"), S.getCollection("matters")).some((m) => m.id === "DIS-2026-0012")));
   ok("SECURITY: privileged matter does NOT appear in search results", searchLeak === false);
   // named user u6 CAN open it
@@ -148,7 +148,7 @@ const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import(
   ok("requester is locked out of the register", /Matters are internal/i.test(t));
   await go(p, "#/matters/" + conv.id);
   ok("requester cannot open a matter converted from their own request", /Not found or no access/i.test(await body(p)));
-  const reqSees = await p.evaluate((id) => Promise.all([import("/src/rbac.js"), import("/src/store.js"), import("/src/data.js")]).then(([R, S, D]) => R.canSee(D.byId("u16"), S.matterById(id))), conv.id);
+  const reqSees = await p.evaluate((id) => Promise.all([import("/src-v7/rbac.js"), import("/src-v7/store.js"), import("/src-v7/data.js")]).then(([R, S, D]) => R.canSee(D.byId("u16"), S.matterById(id))), conv.id);
   ok("requester gains no matter visibility via requesterId", reqSees === false);
 
   /* ---------- UI create (Scenario 2 via screen) ---------- */

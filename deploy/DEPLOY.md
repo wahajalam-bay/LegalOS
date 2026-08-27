@@ -136,8 +136,7 @@ dependency and is the obvious hardening step if it becomes a problem.
 ## The `app/` directory is not deployed
 
 `app/` is the TypeScript/Vite "Module 1 foundation" being built alongside the
-prototype. It is not part of what is served (it is in `.vercelignore` and in the
-server's block list). When it takes over, it will need its own deploy step —
+prototype. It is not part of what is served (it is in the server's block list). When it takes over, it will need its own deploy step —
 a Vite build plus pointing this same mount at `app/dist`.
 
 ## Running the test suite (dev machines, not the server)

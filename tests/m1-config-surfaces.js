@@ -79,8 +79,19 @@ async function ls(p, path) { return p.evaluate((path) => { const s = JSON.parse(
   const after = (await ls(p, "playbooks") || []).length;
   ok("Director can publish a new playbook", after === before + 1);
 
-  // (5) precedent/playbook KB is in the nav for legal
+  // (5) precedent/playbook KB is in the nav for legal.
+  // Nav groups now ship collapsed, so the row is not in the DOM until its group
+  // is opened — expand it first, which also proves the disclosure works.
   await viewAs(p, "u5"); await go(p, "#/my-tasks");
+  const opened = await p.evaluate(() => {
+    const h = [...document.querySelectorAll(".nav__label--toggle")]
+      .find((e) => /shared/i.test(e.innerText || ""));
+    if (!h) return false;
+    h.click();
+    return true;
+  });
+  await wait(400);
+  ok("Shared nav group expands on click", opened);
   ok("Knowledge Base (Precedents & Playbooks) is in the sidebar", /Precedents & Playbooks/i.test(await body(p)));
 
   console.log("console errors:", errs.length, errs.slice(0, 8).join(" | "));

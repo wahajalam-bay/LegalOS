@@ -30,18 +30,6 @@ import { teamShort, RBAC_ROLES } from "./org.js";
 import { moduleByKey } from "./modules.js";
 import { ToastHost } from "./toast.js";
 
-/* ---------------- Collapsed nav groups ----------------
-   Which groups a person leaves open is a per-browser preference, so it lives in
-   localStorage like the theme. Absent key = closed; the group holding the
-   current page is forced open regardless (see Sidebar). */
-const NAV_OPEN_KEY = "legalos-nav-open";
-function readNavOpen() {
-  try { return JSON.parse(localStorage.getItem(NAV_OPEN_KEY) || "{}") || {}; } catch (e) { return {}; }
-}
-function writeNavOpen(map) {
-  try { localStorage.setItem(NAV_OPEN_KEY, JSON.stringify(map)); } catch (e) {}
-}
-
 /* ---------------- Theme ---------------- */
 export function getTheme() { return localStorage.getItem("legalos-theme") || "light"; }
 export function setTheme(t) {
@@ -92,17 +80,12 @@ function Sidebar({ path, collapsed }) {
   const isActive = (it) => (it.path.startsWith("/m/") ? path.startsWith(it.path) : base === it.path);
 
   const sections = navForUser(me);
-  // The group holding the current page is always open: arriving by deep link or
-  // command palette must never land you on a page whose nav row is hidden.
-  const activeSection = (sections.find((sec) => sec.items.some(isActive)) || {}).section || null;
-  const [openMap, setOpenMap] = useState(readNavOpen);
-  const isOpenFor = (name, m) => name === activeSection || !!m[name];
-  const isOpen = (sec) => isOpenFor(sec.section, openMap);
-  const toggle = (name) => setOpenMap((m) => {
-    const next = { ...m, [name]: !isOpenFor(name, m) };
-    writeNavOpen(next);
-    return next;
-  });
+  // EVERY group starts collapsed on every page load — deliberately not
+  // remembered, and the group holding the current page is not forced open, so
+  // arriving at the page always shows the same compact nav.
+  const [openMap, setOpenMap] = useState({});
+  const isOpen = (sec) => !!openMap[sec.section];
+  const toggle = (name) => setOpenMap((m) => ({ ...m, [name]: !m[name] }));
   // A closed group must still surface what needs attention, or a licence alert
   // silently disappears behind a chevron.
   const groupBadge = (sec) => sec.items.reduce((n, it) => n + (Number(badgeFor(it)) || 0), 0);
@@ -137,7 +120,12 @@ function Sidebar({ path, collapsed }) {
     </${Dropdown}>
 
     <nav class="nav">
-      ${sections.map((sec) => html`<div class="nav__section" key=${sec.section}>
+      ${sections.map((sec) => sec.section === null
+        // No header, never collapsible — the request row.
+        ? html`<div class="nav__section nav__section--bare" key="bare">
+            ${sec.items.map(navItem)}
+          </div>`
+        : html`<div class="nav__section" key=${sec.section}>
             <button type="button" class=${cx("nav__label", "nav__label--toggle", isOpen(sec) && "is-open")}
               aria-expanded=${isOpen(sec) ? "true" : "false"}
               onClick=${() => toggle(sec.section)}>
