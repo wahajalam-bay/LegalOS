@@ -28,6 +28,18 @@ cur=$srcv
 next=$((cur + 1))
 
 ln -sfn src "src-v${next}"
+
+# GUARD: this repo was cloned with core.symlinks=false, so `git checkout` once
+# wrote src-v* as 3-byte TEXT files containing "src" — the module entry 404'd and
+# the live site hung on "Loading LegalOS...". core.symlinks is now true locally;
+# re-assert it and repair anything that is not a symlink.
+git config core.symlinks true 2>/dev/null || true
+for l in src-v*; do
+  if [ -e "$l" ] && [ ! -L "$l" ]; then
+    echo "  repairing $l (was a regular file, not a symlink)"
+    rm -f "$l"; ln -s src "$l"
+  fi
+done
 for f in index.html portal/index.html; do
   sed -i -e "s|src-v${cur}/main\.js|src-v${next}/main.js|" \
          -e "s|styles\.css?v=[0-9]\+|styles.css?v=${next}|" "$f"

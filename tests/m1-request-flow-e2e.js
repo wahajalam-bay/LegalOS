@@ -17,7 +17,7 @@ const body = (p) => p.evaluate(() => document.body.innerText);
 async function clickByText(p, sel, text) { return p.evaluate((sel, text) => { const el = [...document.querySelectorAll(sel)].find((e) => (e.textContent || "").toLowerCase().includes(text.toLowerCase())); if (el) { el.click(); return true; } return false; }, sel, text); }
 async function viewAs(p, uid) { await p.evaluate((uid) => { const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k) || "{}"); s.session = s.session || {}; s.session.viewAsId = uid; localStorage.setItem(k, JSON.stringify(s)); }, uid); }
 async function go(p, hash) { await p.evaluate((h) => { location.hash = h; }, hash); await p.reload({ waitUntil: "networkidle2" }); await wait(1100); }
-const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src-v7/store.js").then((S) => (${fn})(S, ...args));`), ...args);
+const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src-v8/store.js").then((S) => (${fn})(S, ...args));`), ...args);
 const reqOf = (p, id) => S(p, `(S, id) => (S.getCollection("requests") || []).find((r) => r.id === id) || null`, id);
 const notifsFor = (p, uid, id) => p.evaluate((uid, id) => (JSON.parse(localStorage.getItem("legalos-store-v1")).notifs || []).filter((n) => n.forUserId === uid && (!id || (n.title || "").includes(id))), uid, id);
 
@@ -31,7 +31,7 @@ const notifsFor = (p, uid, id) => p.evaluate((uid, id) => (JSON.parse(localStora
   await p.evaluate(() => localStorage.removeItem("legalos-store-v1"));
   await p.reload({ waitUntil: "networkidle2" }); await wait(600);
 
-  const BENCH = await p.evaluate(() => import("/src-v7/org.js").then((O) => O.ASSIGNABLE_BENCH));
+  const BENCH = await p.evaluate(() => import("/src-v8/org.js").then((O) => O.ASSIGNABLE_BENCH));
 
   /* ---- 1) SUBMIT (requester u14) — routed to the labour expert, lead told ---- */
   const sub = await S(p, `(S) => S.submitLegalRequest({ title: "Warehouse staff dismissal dispute", requestType: "New", entityId: "CO-19", requesterId: "u14", natureOfMatter: "Labour Matters", subdivision: "Labour/Employment", category: "Dispute / Litigation", urgencyBand: "Important", description: "Terminated staff threatening tribunal claim." })`);

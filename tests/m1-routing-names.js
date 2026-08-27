@@ -24,7 +24,7 @@ const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + 
   await p.reload({ waitUntil: "networkidle2" }); await wait(600);
 
   const audit = await p.evaluate(() => Promise.all([
-    import("/src-v7/data.js"), import("/src-v7/store.js"), import("/src-v7/org.js"), import("/src-v7/pages/login.js"),
+    import("/src-v8/data.js"), import("/src-v8/store.js"), import("/src-v8/org.js"), import("/src-v8/pages/login.js"),
   ]).then(([D, S, O, L]) => {
     const problems = [];
     const teamOf = (uid) => (D.byId(uid) || {}).legalTeam || null;
@@ -95,7 +95,7 @@ const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + 
 
   // 5) END TO END: a Labour request goes to the employment counsel on the
   //    litigation team, and the LITIGATION lead is notified — not someone else.
-  const e2e = await p.evaluate(() => Promise.all([import("/src-v7/store.js"), import("/src-v7/data.js")]).then(([S, D]) => {
+  const e2e = await p.evaluate(() => Promise.all([import("/src-v8/store.js"), import("/src-v8/data.js")]).then(([S, D]) => {
     const res = S.submitLegalRequest({ title: "Dismissal dispute — warehouse staff", requestType: "New", entityId: "CO-19", requesterId: "u14", natureOfMatter: "Labour Matters", subdivision: "Labour/Employment", category: "Dispute / Litigation", urgencyBand: "Important", description: "x" });
     const owner = D.byId(res.owner) || {};
     const notifs = (S.getCollection("notifs") || []).filter((n) => n.title && n.title.includes(res.id));
