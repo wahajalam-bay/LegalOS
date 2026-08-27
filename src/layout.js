@@ -137,12 +137,7 @@ function Sidebar({ path, collapsed }) {
     </${Dropdown}>
 
     <nav class="nav">
-      ${sections.map((sec) => sec.section === null
-        // Pinned group: no header, never collapsible — the request queue.
-        ? html`<div class="nav__section nav__section--pinned" key="pinned">
-            ${sec.items.map(navItem)}
-          </div>`
-        : html`<div class="nav__section" key=${sec.section}>
+      ${sections.map((sec) => html`<div class="nav__section" key=${sec.section}>
             <button type="button" class=${cx("nav__label", "nav__label--toggle", isOpen(sec) && "is-open")}
               aria-expanded=${isOpen(sec) ? "true" : "false"}
               onClick=${() => toggle(sec.section)}>

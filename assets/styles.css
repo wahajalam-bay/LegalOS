@@ -223,10 +223,13 @@ svg { display: block; }
   border: 0;
   background: transparent;
   font: inherit;
-  font-size: 10.5px;
+  /* Slightly tighter than a plain nav label so the longest group name
+     ("COMMERCIAL & RISK MITIGATION") fits the sidebar on one line without
+     being truncated. */
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: .07em;
-  font-weight: 600;
+  letter-spacing: .04em;
+  font-weight: 700;
   color: var(--sidebar-fg-dim);
   cursor: pointer;
   border-radius: 7px;
@@ -236,9 +239,10 @@ svg { display: block; }
 .nav__label--toggle:hover { background: rgba(255,255,255,.06); color: #fff; }
 .nav__label--toggle svg { flex: none; transform: rotate(-90deg); transition: transform .16s ease; opacity: .8; }
 .nav__label--toggle.is-open svg { transform: rotate(0deg); }
-.nav__label-text { flex: 1; min-width: 0; }
-.nav__label--toggle .nav__badge { margin-left: 0; }
-.nav__section--pinned { margin-top: 6px; }
+/* nowrap + ellipsis: "COMMERCIAL & RISK MITIGATION" is wider than a 244px
+   sidebar, and a wrapped header pushes the chevron onto its own line. */
+.nav__label-text { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav__label--toggle .nav__badge { margin-left: 6px; flex: none; }
 .nav__item {
   display: flex; align-items: center; gap: 11px; padding: 8px 10px; border-radius: var(--r-sm);
   color: var(--sidebar-fg); font-weight: 500; font-size: 13px; cursor: pointer; position: relative;

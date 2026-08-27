@@ -10,21 +10,18 @@ const LICENSE_BADGE = _licAlerts.length;
 const LICENSE_ALERT = _licAlerts.some((s) => s.key === "Expired" || s.key === "Critical");
 
 export const NAV = [
-  // Pinned above the collapsible groups: the request queue is where everyone
-  // starts, so it must never be behind a closed dropdown. `section: null` means
-  // "no group header, not collapsible".
-  { section: null, items: [
-    // ONE entry for both audiences. Legal staff get the queue, a requester gets
-    // their own requests — /requests dispatches on the identity (see main.js),
-    // which is what retired the separate "My Requests" item.
-    { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
-    { path: "/triage", label: "Triage", icon: "filter" },
-    { path: "/raise", label: "Raise Request", icon: "plus" },
-  ]},
   { section: "Overview", items: [
     { path: "/exec", label: "Executive Overview", icon: "star" },
     { path: "/flow-map", label: "How It Works", icon: "git" },
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
+    // ONE row for the whole request flow, sitting under Operational Dashboard.
+    // Triage is a STAGE of a legal request, not a separate destination, and the
+    // page already leads with its "Awaiting triage" count — so it has no nav row
+    // of its own (the /triage route still resolves for links and that tile).
+    // The same row serves both audiences: legal staff get the team queue, a
+    // requester gets their own requests (see LegalRequests in main.js).
+    { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
+    { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},
   // The three legal teams, in the order the department reads them.
   { section: "Commercial & Risk Mitigation", items: [
