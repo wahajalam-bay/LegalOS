@@ -10,7 +10,7 @@ const LICENSE_BADGE = _licAlerts.length;
 const LICENSE_ALERT = _licAlerts.some((s) => s.key === "Expired" || s.key === "Critical");
 
 export const NAV = [
-  { section: "Overview", items: [
+  { section: "Overview", icon: "dashboard", items: [
     { path: "/exec", label: "Executive Overview", icon: "star" },
     { path: "/flow-map", label: "How It Works", icon: "git" },
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
@@ -33,19 +33,19 @@ export const NAV = [
     { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},
   // The three legal teams, in the order the department reads them.
-  { section: "Commercial & Risk Mitigation", items: [
+  { section: "Commercial & Risk Mitigation", icon: "file", items: [
     { path: "/m/contracts", label: "Contract Review", icon: "file" },
     { path: "/m/vetting", label: "Risk Analysis", icon: "checkcircle" },
     { path: "/tracker", label: "Contract Tracker", icon: "grid" },
   ]},
-  { section: "Compliance & Licences", items: [
+  { section: "Compliance & Licences", icon: "shield", items: [
     { path: "/m/agreements", label: "Lease, Loan & Service", icon: "clipboard" },
     { path: "/m/resolutions", label: "Resolutions", icon: "checksquare" },
     { path: "/m/licenses", label: "License Renewals", icon: "fileCheck" },
     { path: "/m/filings", label: "SECP Filings", icon: "book" },
     { path: "/licenses", label: "License Register", icon: "database", badge: LICENSE_BADGE || undefined, alert: LICENSE_ALERT },
   ]},
-  { section: "Litigation & Disputes", items: [
+  { section: "Litigation & Disputes", icon: "gavel", items: [
     { path: "/m/cases", label: "Case Handling", icon: "gavel" },
     { path: "/m/assetRecovery", label: "Asset Recovery", icon: "refresh" },
     { path: "/m/ip", label: "IP Portfolio", icon: "tag" },
@@ -54,7 +54,7 @@ export const NAV = [
     { path: "/m/notices", label: "Notices", icon: "mail" },
     { path: "/m/inspections", label: "Govt Inspections", icon: "shield" },
   ]},
-  { section: "Shared", items: [
+  { section: "Shared", icon: "library", items: [
     { path: "/matters", label: "Matters", icon: "folder" },
     { path: "/repository", label: "Intake & Repository", icon: "scan" },
     { path: "/companies", label: "Entity Registry", icon: "building" },
@@ -63,13 +63,13 @@ export const NAV = [
     { path: "/clauses", label: "Clause Library", icon: "library" },
     { path: "/knowledge", label: "Precedents & Playbooks", icon: "book" },
   ]},
-  { section: "Insight & Governance", items: [
+  { section: "Insight & Governance", icon: "barchart", items: [
     { path: "/costs", label: "Cost Analysis", icon: "dollar" },
     { path: "/analyzer", label: "Data Analyzer", icon: "cpu" },
     { path: "/pipelines", label: "Team Pipelines", icon: "columns" },
     { path: "/reports", label: "Reports", icon: "barchart" },
   ]},
-  { section: "Administration", items: [
+  { section: "Administration", icon: "settings", items: [
     { path: "/portal", label: "Requester Portal", icon: "user" },
     { path: "/organization", label: "Organization", icon: "users" },
     { path: "/settings", label: "Settings", icon: "settings" },

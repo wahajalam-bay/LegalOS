@@ -183,7 +183,12 @@ svg { display: block; }
 /* ============================================================
    APP SHELL
    ============================================================ */
-.app { display: grid; grid-template-columns: var(--sidebar-w) 1fr; height: 100vh; overflow: hidden; }
+.app {
+  display: grid; grid-template-columns: var(--sidebar-w) 1fr; height: 100vh; overflow: hidden;
+  /* The whole shell is driven by one variable, so animating the track width
+     slides the sidebar and the page together instead of the content snapping. */
+  transition: grid-template-columns .28s cubic-bezier(.4, 0, .2, 1);
+}
 .app.app--collapsed { --sidebar-w: 72px; }
 
 /* Sidebar */
@@ -191,8 +196,16 @@ svg { display: block; }
   background: var(--sidebar-bg); color: var(--sidebar-fg);
   display: flex; flex-direction: column; height: 100vh;
   border-right: 1px solid rgba(255,255,255,.05); z-index: var(--z-sidebar);
-  transition: width .18s ease;
+  overflow: hidden;
+  transition: width .28s cubic-bezier(.4, 0, .2, 1);
 }
+/* Labels ease out with the track rather than vanishing a frame early. */
+.nav__item span, .sidebar__brand-text, .sidebar__user-meta, .workspace__meta {
+  transition: opacity .18s ease;
+}
+.app--collapsed .sidebar__footrow { flex-direction: column-reverse; gap: 8px; }
+.app--collapsed .sidebar__footrow > *:first-child { flex: none; width: 100%; }
+.app--collapsed .sidebar__rail svg { transform: rotate(180deg); }
 .sidebar__brand { display: flex; align-items: center; gap: 10px; padding: 16px 18px; height: var(--topbar-h); }
 .sidebar__brand-logo { width: 30px; height: 30px; border-radius: 8px; flex: none; }
 .sidebar__brand-name { font-weight: 700; color: #fff; font-size: 15px; letter-spacing: -0.01em; white-space: nowrap; }
@@ -241,15 +254,17 @@ svg { display: block; }
   transition: background .13s, color .13s;
 }
 .nav__label--toggle:hover { background: rgba(255,255,255,.06); color: #fff; }
-.nav__label--toggle svg {
-  flex: none;
-  margin-top: 1px;
-  width: 16px; height: 16px;
-  opacity: .75;
+/* Leading icon: same slot and size as a nav row's icon, so headers and rows
+   share one left edge. Only the trailing chevron rotates. */
+.nav__label--toggle > svg:first-child { flex: none; opacity: .85; }
+.nav__chev {
+  flex: none; margin-left: 4px; opacity: .6;
   transform: rotate(-90deg);
-  transition: transform .16s ease;
+  transition: transform .22s cubic-bezier(.4, 0, .2, 1);
 }
-.nav__label--toggle.is-open svg { transform: rotate(0deg); opacity: .95; }
+.nav__label--toggle.is-open .nav__chev { transform: rotate(0deg); }
+.nav__label--toggle.is-open { color: #fff; }
+.nav__label--toggle.is-open > svg:first-child { opacity: 1; }
 /* Open group: the header is the parent of the rows below it, so mark it and
    inset the children rather than leaving two flat lists. */
 .nav__label--toggle.is-open { color: #fff; }
@@ -280,8 +295,18 @@ svg { display: block; }
 .app--collapsed .nav__item span { display: none; }
 .app--collapsed .nav__item { justify-content: center; padding: 9px 0; gap: 0; }
 .app--collapsed .nav { padding: 6px 10px 16px; }
-.app--collapsed .nav__section--rail { margin-top: 0; }
-.app--collapsed .nav__section--rail + .nav__section--rail { margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.07); }
+.app--collapsed .nav__section--rail { margin-top: 2px; }
+/* One separator, between the standalone rows and the groups — not one per
+   group, which just made stripes. */
+.app--collapsed .nav__section--railbare + .nav__section--rail { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.08); }
+.app--collapsed .nav__item { position: relative; border-radius: 9px; }
+/* Badge counts do not fit a 72px rail; a dot says "needs attention" instead. */
+.nav__dot {
+  position: absolute; top: 6px; right: 14px; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brand-400); box-shadow: 0 0 0 2px var(--sidebar-bg);
+}
+.nav__dot--alert { background: var(--danger); }
+.app--collapsed .nav__section--rail .nav__item { margin: 2px 0; }
 .app--collapsed .nav__items { margin-left: 0; padding-left: 0; border-left: 0; }
 .app--collapsed .sidebar__brand { padding: 16px 0; justify-content: center; }
 .app--collapsed .workspace { justify-content: center; padding-left: 0; padding-right: 0; }
@@ -291,14 +316,28 @@ svg { display: block; }
 .app--collapsed .nav__item.active::before { left: -10px; }
 
 /* The rail toggle lives in the brand row; the close button is drawer-only. */
-.sidebar__rail, .sidebar__close {
-  margin-left: auto; flex: none; display: inline-flex; align-items: center; justify-content: center;
-  width: 26px; height: 26px; border: 0; border-radius: 7px; cursor: pointer;
+/* The collapse control lives at the BOTTOM, out of the brand row: it is a
+   preference you set once, not something to trip over next to the logo. */
+/* Bottom bar: identity on the left, collapse on the right. Collapsing is a
+   preference you set once, so it sits out of the way rather than beside the
+   logo. In the rail the two stack, toggle above avatar. */
+.sidebar__footrow { display: flex; align-items: center; gap: 6px; }
+.sidebar__footrow > *:first-child { flex: 1; min-width: 0; }
+.sidebar__rail {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border: 0; border-radius: var(--r-sm); cursor: pointer;
+  background: transparent; color: var(--sidebar-fg-dim);
+  transition: background .16s ease, color .16s ease;
+}
+.sidebar__rail:hover { background: rgba(255,255,255,.08); color: #fff; }
+.sidebar__rail svg { flex: none; transition: transform .28s cubic-bezier(.4,0,.2,1); }
+.sidebar__close {
+  margin-left: auto; flex: none; display: none; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border: 0; border-radius: 7px; cursor: pointer;
   background: rgba(255,255,255,.07); color: var(--sidebar-fg);
   transition: background .13s, color .13s;
 }
-.sidebar__rail:hover, .sidebar__close:hover { background: rgba(255,255,255,.16); color: #fff; }
-.sidebar__close { display: none; }
+.sidebar__close:hover { background: rgba(255,255,255,.16); color: #fff; }
 .topbar__menu {
   display: none; flex: none; align-items: center; justify-content: center;
   width: 36px; height: 36px; margin-left: -6px; border: 0; border-radius: 9px;
@@ -349,7 +388,8 @@ svg { display: block; }
   .pagehead__actions, .exec__actions { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sidebar { transition: none; }
+  .app, .sidebar, .sidebar__rail svg,
+  .nav__item span, .sidebar__brand-text, .sidebar__user-meta, .workspace__meta { transition: none; }
 }
 
 .sidebar__foot { padding: 10px 12px; border-top: 1px solid rgba(255,255,255,.06); }
@@ -532,13 +572,22 @@ svg { display: block; }
 }
 .table { table-layout: auto; }
 .table tbody td {
-  white-space: normal; overflow-wrap: anywhere; word-break: normal;
-  max-width: 340px; min-width: 0;
+  white-space: normal; overflow-wrap: break-word; word-break: normal;
+  max-width: 200px; min-width: 0; line-height: 1.32;
 }
+/* Secondary lines inside a cell are context, not headlines: one line, clipped.
+   These were the widest thing in several columns ("New · Vendor MSA · Amazon
+   Web Services" forced its column to ~200px on its own). */
+.table td .tiny, .table td .muted, .table td .cell-sub {
+  display: block; max-width: 100%;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* Category-style stacks of pills read fine side by side and save a line. */
+.table td .pill + .pill { margin-left: 4px; }
 /* Atomic values must never be split across lines. */
 .table td .pill, .table td .status, .table td .cell-mono,
 .table td time, .table td .tiny { white-space: nowrap; }
-.table td .cell-strong { overflow-wrap: anywhere; }
+.table td .cell-strong { overflow-wrap: break-word; }
 @media (max-width: 1024px) {
   .table { font-size: 12.5px; }
   .table thead th { padding: 9px 11px; }
@@ -549,17 +598,29 @@ svg { display: block; }
   .table thead th { padding: 8px 9px; }
   .table tbody td { padding: 9px 9px; max-width: 180px; }
 }
-.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 .table thead th {
   position: sticky; top: 0; background: var(--surface-2); text-align: left; font-weight: 600; color: var(--text-2);
-  font-size: 11.5px; letter-spacing: .03em; text-transform: uppercase; padding: 11px 16px; border-bottom: 1px solid var(--border); white-space: nowrap; z-index: 1;
+  font-size: 11px; letter-spacing: .03em; text-transform: uppercase; padding: 9px 10px; border-bottom: 1px solid var(--border); z-index: 1;
+  /* Headers were nowrap, so a two-word label like "COMPANY / ENTITY" set the
+     column's minimum width and the table could never shrink to its data.
+     Letting the label wrap costs one header line and buys real width. */
+  white-space: normal; line-height: 1.25; max-width: 130px; vertical-align: bottom;
 }
-.table tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.table tbody td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
 .table tbody tr { transition: background .12s; }
 .table tbody tr:hover { background: var(--surface-2); }
 .table tbody tr:last-child td { border-bottom: none; }
 .table .cell-strong { font-weight: 600; color: var(--text); }
 .table .cell-mono { font-family: var(--mono); font-size: 12px; color: var(--text-2); }
+
+/* Table density: chrome inside a cell is scaled down with the cell, otherwise
+   pills and avatars keep the row tall no matter how little padding is left. */
+.table td .pill { height: 19px; padding: 0 7px; font-size: 10.5px; }
+.table td .avatar, .table td .avatar--sm { width: 24px; height: 24px; font-size: 10px; }
+.table td .tiny, .table td .muted { font-size: 10.5px; line-height: 1.25; }
+.table td .cell-mono { font-size: 11px; }
+.table td > .row { gap: 7px; }
 .rowlink { cursor: pointer; }
 .rowactions { opacity: 0; transition: opacity .12s; }
 .table tbody tr:hover .rowactions { opacity: 1; }
@@ -1012,9 +1073,18 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .drill__n { font-size: 11px; font-weight: 700; color: var(--text-2); background: var(--surface-3); padding: 2px 8px; border-radius: var(--r-full); font-variant-numeric: tabular-nums; flex: none; }
 
 /* ---- dense tracker table + inline quick-edit ---- */
-.dense .table th, .dense .table td { padding: 8px 10px; font-size: 12px; white-space: nowrap; }
-.dense .table td.wrapcell { white-space: normal; min-width: 190px; }
-.table td.wrapcell { min-width: 200px; }
+/* A dense table used to be nowrap everywhere, which meant each column was as
+   wide as its longest single line and the whole grid ran ~200px past its card
+   no matter how the padding was tuned. Cells wrap now, capped, so the table
+   fits its container; atomic values inside a cell keep their own nowrap. */
+.dense .table th, .dense .table td {
+  padding: 8px 10px; font-size: 12px;
+  white-space: normal; overflow-wrap: break-word; line-height: 1.3;
+}
+.dense .table th { max-width: 120px; vertical-align: bottom; }
+.dense .table td { max-width: 168px; }
+.dense .table td.wrapcell { white-space: normal; min-width: 150px; }
+.table td.wrapcell { min-width: 150px; }
 .qedit {
   width: 100%; min-width: 72px; padding: 4px 7px; font-size: 12px;
   border: 1px solid transparent; border-radius: var(--r-xs);
@@ -1283,14 +1353,6 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
   padding-bottom: 26px; margin-bottom: 26px;
   border-bottom: 1px solid var(--border);
 }
-.exec__eyebrow {
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-  font-size: 11.5px; font-weight: 650; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--text-3); margin-bottom: 12px;
-}
-.exec__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--brand); flex: none; }
-.exec__asof { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--text-3); }
-.exec__asof::before { content: "·"; margin-right: 8px; }
 .exec__title {
   font-size: 30px; line-height: 1.2; font-weight: 700; letter-spacing: -.025em;
   margin: 0; max-width: 22ch; color: var(--text);

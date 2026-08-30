@@ -114,11 +114,6 @@ function Sidebar({ path, collapsed, onToggleRail, onClose }) {
         <div class="sidebar__brand-name">LegalOS</div>
         <div class="sidebar__brand-sub">Enterprise</div>
       </div>
-      <button type="button" class="sidebar__rail" onClick=${onToggleRail}
-        title=${collapsed ? "Expand the sidebar" : "Collapse the sidebar"}
-        aria-label=${collapsed ? "Expand the sidebar" : "Collapse the sidebar"}>
-        <${Icon} name=${collapsed ? "chevronRight" : "chevronLeft"} size=16 />
-      </button>
       <button type="button" class="sidebar__close" onClick=${onClose} aria-label="Close navigation">
         <${Icon} name="x" size=18 />
       </button>
@@ -137,12 +132,19 @@ function Sidebar({ path, collapsed, onToggleRail, onClose }) {
 
     <nav class="nav">
       ${collapsed
-        // Rail: group headers are unreadable at 72px and hiding them would bury
-        // their contents, so every permitted row is shown flat, icon-only, with
-        // the label as a tooltip. Nothing becomes unreachable by collapsing.
-        ? sections.map((sec) => html`<div class="nav__section nav__section--rail" key=${sec.section || "bare"}>
-            ${sec.items.map(navItem)}
-          </div>`)
+        // Rail: ONE icon per top-level entry. Nested rows stay hidden — a column
+        // of 34 undifferentiated icons is not a navigation, it is a wall. A group
+        // icon opens the sidebar on that group, so nothing becomes unreachable.
+        ? sections.map((sec) => sec.section === null
+            ? html`<div class="nav__section nav__section--rail nav__section--railbare" key="bare">${sec.items.map(navItem)}</div>`
+            : html`<div class="nav__section nav__section--rail" key=${sec.section}>
+                <div class=${cx("nav__item", sec.items.some(isActive) && "active")}
+                  title=${sec.section}
+                  onClick=${() => { setOpenMap((m) => ({ ...m, [sec.section]: true })); onToggleRail(); }}>
+                  <${Icon} name=${sec.icon || "grid"} size=17 />
+                  ${groupBadge(sec) > 0 && html`<span class=${cx("nav__dot", groupAlert(sec) && "nav__dot--alert")}></span>`}
+                </div>
+              </div>`)
         : sections.map((sec) => sec.section === null
         // No header, never collapsible — the request row.
         ? html`<div class="nav__section nav__section--bare" key="bare">
@@ -152,17 +154,25 @@ function Sidebar({ path, collapsed, onToggleRail, onClose }) {
             <button type="button" class=${cx("nav__label", "nav__label--toggle", isOpen(sec) && "is-open")}
               aria-expanded=${isOpen(sec) ? "true" : "false"}
               onClick=${() => toggle(sec.section)}>
-              <${Icon} name="chevronDown" size=13 />
+              <${Icon} name=${sec.icon || "grid"} size=17 />
               <span class="nav__label-text">${sec.section}</span>
               ${!isOpen(sec) && groupBadge(sec) > 0 && html`<span
                 class=${cx("nav__badge", groupAlert(sec) && "nav__badge--alert")}>${groupBadge(sec)}</span>`}
+              <${Icon} name="chevronDown" size=14 class="nav__chev" />
             </button>
             ${isOpen(sec) && html`<div class="nav__items">${sec.items.map(navItem)}</div>`}
           </div>`)}
     </nav>
 
     <div class="sidebar__foot">
-      ${DEMO_PERSONAS ? html`<${ViewAs} />` : html`<${UserChip} />`}
+      <div class="sidebar__footrow">
+        ${DEMO_PERSONAS ? html`<${ViewAs} />` : html`<${UserChip} />`}
+        <button type="button" class="sidebar__rail" onClick=${onToggleRail}
+          title=${collapsed ? "Expand the sidebar" : "Collapse the sidebar"}
+          aria-label=${collapsed ? "Expand the sidebar" : "Collapse the sidebar"}>
+          <${Icon} name="panelLeft" size=17 />
+        </button>
+      </div>
     </div>
   </aside>`;
 }

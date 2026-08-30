@@ -160,7 +160,6 @@ export default function FlowMap() {
   return html`<div class="page flowpage fade-in">
     <header class="exec__head">
       <div style="min-width:0;flex:1">
-        <div class="exec__eyebrow"><span class="exec__dot"></span>How it works</div>
         <h1 class="exec__title">Every request travels the same path, and you can see where each one is.</h1>
         <p class="exec__lede">
           Nine stages from a business request to a signed contract that is filed and watched.

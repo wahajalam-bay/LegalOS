@@ -149,10 +149,6 @@ function ExecOverview() {
     <!-- headline band -->
     <header class="exec__head">
       <div style="min-width:0;flex:1">
-        <div class="exec__eyebrow">
-          <span class="exec__dot"></span>${COMPANY.name} · Legal
-          <span class="exec__asof">as of ${fmt.date(m.now)}</span>
-        </div>
         <h1 class="exec__title">Every legal request, from the business to a signed contract, on one system.</h1>
         <p class="exec__lede">
           One front door for the business, a fixed turnaround on every request, and a full record of
