@@ -218,13 +218,13 @@ function ContractList() {
   const critical = CONTRACTS.filter((c) => c.risk === "critical").length;
 
   return html`<div class="page page--wide fade-in">
-    <${PageHead} title="Contracts" sub="The full contract lifecycle — from request to renewal — in one governed repository."
+    <${PageHead} title="Contracts" sub="The historic record — every contract on the book, from request to renewal, including the ones already done."
       actions=${html`<${Btn} variant="ghost" icon="grid" onClick=${() => navigate("/tracker")}>Tracker</${Btn}>
         <${Btn} variant="ghost" icon="upload" onClick=${() => navigate("/repository")}>Import</${Btn}>
         <${Btn} variant="primary" icon="plus" onClick=${() => setModal(true)}>New contract</${Btn}>`} />
     ${modal && html`<${NewContractModal} onClose=${() => setModal(false)} onCreate=${(c) => addItem("contracts", c)} />`}
     <${StatStrip} stats=${[
-      { value: CONTRACTS.length, label: "Contracts on the book" },
+      { value: CONTRACTS.length, label: "Total contracts" },
       { value: fmt.money(totalVal), label: "Total contract value", trend: "+14%", trendDir: "up" },
       { value: expiring30, label: "Expiring < 30 days", trend: "▲", trendDir: "up" },
       { value: critical, label: "Critical risk", trendDir: "flat" },

@@ -36,6 +36,9 @@ export const NAV = [
   { section: "Commercial & Risk Mitigation", icon: "file", items: [
     { path: "/m/contracts", label: "Contract Review", icon: "file" },
     { path: "/m/vetting", label: "Risk Analysis", icon: "checkcircle" },
+    // The historic record: every contract ever done, not just what is in flight.
+    // It had no nav row at all and was reachable only from other pages.
+    { path: "/contracts", label: "Contracts", icon: "folder" },
     { path: "/tracker", label: "Contract Tracker", icon: "grid" },
   ]},
   { section: "Compliance & Licences", icon: "shield", items: [
