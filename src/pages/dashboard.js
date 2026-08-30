@@ -5,6 +5,7 @@ import { Metric, Section, Btn, Avatar, Pill, Risk, Status, Progress, AICard } fr
 import { Donut, AreaTrend, StackBar, HBars, Funnel } from "../charts.js";
 import { navigate } from "../router.js";
 import { DASH, AI_INSIGHTS, ACTIVITY, APPROVALS, CONTRACTS, REQUESTS, WORK_CATEGORIES, CATEGORY_TONE, categoryOf, licenseStatus, byId, nameOf, toUsd } from "../data.js";
+import { useActiveUser } from "../rbac.js";
 import { useCollection } from "../store.js";
 import { unifiedRows, rowTat } from "../flow.js";
 import { allReminders } from "../reminders.js";
@@ -33,6 +34,7 @@ function HeatMap() {
 }
 
 export default function Dashboard() {
+  const viewer = useActiveUser();
   const k = DASH.kpis;
   const toneBg = { amber: "var(--warning-bg)", red: "var(--danger-bg)", blue: "var(--brand-soft)", purple: "var(--accent-soft)", green: "var(--success-bg)" };
   const toneFg = { amber: "var(--warning)", red: "var(--danger)", blue: "var(--brand)", purple: "var(--accent-500)", green: "var(--success)" };
@@ -67,7 +69,7 @@ export default function Dashboard() {
   return html`<div class="page fade-in">
     <div class="pagehead">
       <div class="pagehead__main">
-        <div class="pagehead__title">${greeting()}, Layla</div>
+        <div class="pagehead__title">${greeting()}, ${viewer.name.split(" ")[0]}</div>
         <div class="pagehead__sub">${new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })} · Here's the state of the legal function today.</div>
       </div>
       <div class="pagehead__actions">

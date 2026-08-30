@@ -11,7 +11,12 @@ const LICENSE_ALERT = _licAlerts.some((s) => s.key === "Expired" || s.key === "C
 
 export const NAV = [
   { section: "Overview", icon: "dashboard", items: [
+    // One row per role. canOpenPath decides which of these a person sees, so the
+    // menu and the router can never disagree: a Director gets the organisation
+    // views, a lead their team, an associate their own work.
     { path: "/exec", label: "Executive Overview", icon: "star" },
+    { path: "/team", label: "Team Dashboard", icon: "users" },
+    { path: "/me", label: "My Dashboard", icon: "user" },
     { path: "/flow-map", label: "How It Works", icon: "git" },
     { path: "/dashboard", label: "Operational Dashboard", icon: "dashboard" },
   ]},

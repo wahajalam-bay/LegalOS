@@ -6,6 +6,8 @@ import { Shell } from "./layout.js";
 import { Empty, Btn } from "./ui.js";
 
 import Dashboard from "./pages/dashboard.js";
+import TeamDashboard from "./pages/team.js";
+import MyDashboard from "./pages/me.js";
 import Requests from "./pages/requests.js";
 import Matters from "./pages/matters.js";
 import Contracts from "./pages/contracts.js";
@@ -60,6 +62,8 @@ const ROUTES = {
   "/my-requests": LegalRequests, // retired nav entry; alias keeps old links working
   "/costs": Costs,
   "/dashboard": Dashboard,
+  "/team": TeamDashboard,
+  "/me": MyDashboard,
   "/workspace": Workspace,
   "/tracker": Tracker,
   "/repository": RepositoryPage,

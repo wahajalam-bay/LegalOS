@@ -153,12 +153,19 @@ export const canExport = (user) => !!roleOf(user).exportData;
    Row-level visibility (visibilityOf / filterVisible) still applies on top: this
    decides whether a PAGE opens, that decides which RECORDS it may show. */
 const LEGAL_RBAC = ["head", "lead", "member", "paralegal"];
-// Leadership only — the department-wide views and the config surfaces.
-const MGMT_ONLY = new Set(["/exec", "/settings", "/triage", "/costs", "/analyzer", "/pipelines", "/reports"]);
+// Leadership only — the config and cross-team surfaces.
+const MGMT_ONLY = new Set(["/settings", "/triage", "/costs", "/analyzer", "/pipelines", "/reports"]);
+// Dashboards are role-scoped, and the scoping is enforced HERE, not by hiding a
+// nav row: the Executive Overview and the org-wide Operational Dashboard are the
+// Director's alone, the Team Dashboard is a lead's own team, and My Dashboard is
+// an individual's own work. Typing another role's URL is refused like any other
+// privileged page.
+const LEAD_ONLY = new Set(["/team"]);
+const IC_ONLY = new Set(["/me"]);
 // Director only.
 // The entity registry is a Director-level view of the whole group, so it sits
 // with Organization rather than in the shared surfaces.
-const HEAD_ONLY = new Set(["/organization", "/portal", "/companies"]);
+const HEAD_ONLY = new Set(["/organization", "/portal", "/companies", "/exec", "/dashboard"]);
 // Everything a business requester may open, and nothing else.
 const REQUESTER_PATHS = new Set(["/raise", "/requests", "/my-requests", "/my-tasks", "/flow-map", "/login"]);
 
@@ -174,6 +181,8 @@ export function canOpenPath(user, path) {
   if (base === "/raise") return false;              // only the business raises (PRD 3.1)
   if (base === "/my-requests") return true;         // reachable alias of /requests
   if (HEAD_ONLY.has(base)) return rbac === "head";
+  if (LEAD_ONLY.has(base)) return rbac === "lead";
+  if (IC_ONLY.has(base)) return rbac === "member" || rbac === "paralegal";
   if (MGMT_ONLY.has(base)) return mgmt;
   if (base === "/m") {                              // a team module obeys its own gate
     const def = parts[1] && moduleByKey(parts[1]);
