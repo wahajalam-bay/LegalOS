@@ -10,7 +10,7 @@ import { navigate } from "./router.js";
 import {
   WORK_CATEGORIES, CATEGORY_TONE, COMPANIES, categoryOf, subdivisionOf,
   BUSINESS_UNITS, DEPARTMENTS, LEGAL_SUBDIVISIONS, SUBDIVISION_TONE,
-  CONTRACT_TYPE_CODES, USERS, nameOf,
+  CONTRACT_TYPE_CODES, USERS, nameOf, entityName,
 } from "./data.js";
 
 /* ---------- Categories (Feature 6) ---------- */
@@ -167,16 +167,18 @@ const SORTERS = {
   tat: (r) => (r.__tat ? (r.__tat.remaining == null ? 0 : r.__tat.remaining) : 0),
   activity: (r) => new Date(r.updated || r.received || r.requestDate || r.created || r.opened || r.start || 0).getTime(),
   srNo: (r) => Number(r.srNo || 0),
+  entity: (r) => String(entityName(r.entityId) || r.company || "").toLowerCase(),
   title: (r) => String(r.title || r.name || r.area || "").toLowerCase(),
 };
 export const SORT_OPTIONS = [
-  { key: "due", label: "Due date" },
+  // "Due date" is the TASK's date, not the contract's — say so, because the
+  // list also sorts by contract expiry right underneath it.
+  { key: "due", label: "Task due date" },
   { key: "tat", label: "TAT health" },
   { key: "value", label: "Value" },
   { key: "expiry", label: "Expiry" },
-  { key: "activity", label: "Last activity" },
+  { key: "entity", label: "Entity" },
   { key: "srNo", label: "Sr No" },
-  { key: "title", label: "Title" },
 ];
 
 // The engine. `rows` may carry a precomputed `__tat` for TAT filtering/sorting.

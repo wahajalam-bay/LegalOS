@@ -273,6 +273,11 @@ export default function Requests() {
       { key: "requester", label: "Requestee", width: "124px", render: (r) => { const q = r.requesterId || r.requester; return html`<div class="row" style="gap:7px"><${Avatar} name=${nameOf(q)} size="sm" /><div style="min-width:0"><div class="tiny strong">${nameOf(q).split(" ")[0]}</div><div class="tiny muted">${r.department || r.dept}</div></div></div>`; } },
       { key: "category", label: "Category", render: (r) => html`<div class="col" style="gap:4px;align-items:flex-start"><${CategoryPill} item=${r} /><${SubdivisionPill} item=${r} /></div>` },
       { key: "entityId", label: "Company / Entity", width: "142px", render: (r) => html`<button class="tagchip" onClick=${(e) => { e.stopPropagation(); navigate("/companies/" + r.entityId); }}><${Icon} name="building" size=11 />${entityName(r.entityId)}</button>` },
+      // Contract value: what the request is worth, so the queue can be read by
+      // exposure and not just by date.
+      { key: "value", label: "Contract Value", align: "right", width: "104px", render: (r) => r.value
+        ? html`<span class="strong">${fmt.money(r.value, r.currency)}</span>`
+        : html`<span class="tiny muted">—</span>` },
       { key: "due", label: "Due Date", width: "94px", render: (r) => { const d = r.dueDate || r.due; const late = new Date(d) < Date.now(); return html`<div><div class=${cx("tiny strong", late && "risk--critical")}>${fmt.dateShort(d)}</div><div class="tiny muted">${fmt.until(d)}</div></div>`; } },
       { key: "tatAnalysis", label: "TAT Analysis", width: "140px", render: (r) => html`<div><div class="tiny strong">${r.__tat.days}d allowed</div><div class="tiny muted">${tatAnalysis(r.__tat)}</div></div>` },
       { key: "tatStatus", label: "TAT Status", width: "168px", render: (r) => html`<${TatCell} tat=${r.__tat} />` },
