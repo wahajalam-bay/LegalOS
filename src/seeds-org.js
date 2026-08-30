@@ -93,9 +93,9 @@ const CRM = [
   mk("contracts", {
     title: "PPA — Bayut KSA Off-Plan (Dar Al Diyar development)",
     subType: "PPA", requestingDept: "Sales & Marketing", requestedBy: req("Rakan Al-Otaibi", "Sales Lead — Riyadh", "rakan@bayut.sa"),
-    entityId: "CO-22", owner: "u22", assignedBy: "u3", stage: "Risk Assessment", raisedDaysAgo: 8, pace: 1,
+    entityId: "CO-22", owner: "u7", assignedBy: "u3", stage: "Risk Assessment", raisedDaysAgo: 8, pace: 1,
     fields: { jurisdictionModel: "KSA", ppaCategory: "Off-Plan Project", templateType: "Existing Template", counterpartyId: "CO-46", value: 1200000, currency: "USD", expiry: d(365), renewalFlag: true, riskRating: "Medium", riskReviewedBy: "u3", instructions: "" },
-    versions: [{ v: "1.0", at: d(-4), by: "u22", note: "From existing KSA off-plan template" }, { v: "1.1", at: d(-1), by: "u22", note: "Counterparty markups folded in" }],
+    versions: [{ v: "1.0", at: d(-4), by: "u7", note: "From existing KSA off-plan template" }, { v: "1.1", at: d(-1), by: "u7", note: "Counterparty markups folded in" }],
     costs: [{ type: "Internal Effort", estimated: 40000, actual: null, currency: "PKR", attribution: "Recharged to requesting department" }],
   }),
   mk("contracts", {
@@ -117,14 +117,14 @@ const CRM = [
   mk("contracts", {
     title: "Service Agreement — facilities management, Riyadh HQ",
     subType: "Service Agreement", requestingDept: "Admin", requestedBy: req("Nadia Al-Harbi", "Office Manager", "nadia@bayut.sa"),
-    entityId: "CO-22", owner: "u22", assignedBy: "u3", stage: "Executed / Closed", raisedDaysAgo: 22, pace: 2, closed: true,
+    entityId: "CO-22", owner: "u7", assignedBy: "u3", stage: "Executed / Closed", raisedDaysAgo: 22, pace: 2, closed: true,
     fields: { templateType: "Existing Template", counterpartyId: "CO-45", value: 220000, currency: "SAR", expiry: d(365), renewalFlag: true },
     costs: [{ type: "Internal Effort", estimated: 20000, actual: 18000, currency: "PKR", attribution: "Legal operating budget" }],
   }),
   mk("contracts", {
     title: "Agreement to Sell — plot 114-B, DHA Phase 6 disposal",
     subType: "Agreement to Sell", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
-    entityId: "CO-37", owner: "u9", assignedBy: "u3", stage: "Assigned", raisedDaysAgo: 1, pace: 1,
+    entityId: "CO-37", owner: "u5", assignedBy: "u3", stage: "Assigned", raisedDaysAgo: 1, pace: 1,
     fields: { templateType: "Existing Template", counterpartyId: "CO-33", value: 96500000, currency: "PKR", expiry: d(90), renewalFlag: false, instructions: "Buyer wants possession before full payment — do not concede." },
   }),
   mk("vetting", {
@@ -136,7 +136,7 @@ const CRM = [
   mk("vetting", {
     title: "Deal structure review — media barter with TV network",
     subType: "Deal Structure Review", requestingDept: "Sales & Marketing", requestedBy: req("Ravi Menon", "Sales Director", "ravi.menon@northwind.com"), requestedById: "u15",
-    entityId: "CO-36", owner: "u22", assignedBy: "u3", stage: "Closed", raisedDaysAgo: 12, pace: 2, closed: true,
+    entityId: "CO-36", owner: "u7", assignedBy: "u3", stage: "Closed", raisedDaysAgo: 12, pace: 2, closed: true,
     fields: { counterpartyId: "CO-50", context: "Airtime-for-inventory barter.", riskRating: "Low", advisory: "Approved with quarterly true-up and a 60-day exit." },
   }),
 ];
@@ -146,17 +146,17 @@ const CMP = [
   mk("agreements", {
     title: "Office lease — Mega Tower floors 7–9, Lahore",
     subType: "Lease Agreement", requestingDept: "Admin", requestedBy: req("Shahid Mehmood", "Admin Manager", "shahid.m@zameen.com"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Executed / Closed", raisedDaysAgo: 400, pace: 3, closed: true,
-    fields: { counterpartyId: "CO-48", value: 84000000, currency: "PKR", expiry: d(21), renewalTerm: "3 years", renewalDue: d(21), renewalStatus: "Trigger Raised", renewalOwner: "u21" },
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Executed / Closed", raisedDaysAgo: 400, pace: 3, closed: true,
+    fields: { counterpartyId: "CO-48", value: 84000000, currency: "PKR", expiry: d(21), renewalTerm: "3 years", renewalDue: d(21), renewalStatus: "Trigger Raised", renewalOwner: "u12" },
     driveLink: "https://drive.google.com/drive/folders/lease-megatower-7-9",
   }),
   mk("agreements", {
     title: "Working-capital facility — HBL PKR 500M line",
     subType: "Loan Agreement", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
-    entityId: "CO-36", owner: "u8", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 11, pace: 2, priority: "High",
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 11, pace: 2, priority: "High",
     holds: [{ dept: "Finance", reason: "Awaiting Documents", startDaysAgo: 6, endDaysAgo: 2 }],
     comments: [
-      { at: d(-6), by: "u8", text: "The bank wants the board resolution and last two audited statements before term sheet sign-off.", internal: false },
+      { at: d(-6), by: "u12", text: "The bank wants the board resolution and last two audited statements before term sheet sign-off.", internal: false },
       { at: d(-2), by: "u16", text: "Both sent to the bank directly; copies attached here for the record.", internal: false },
     ],
     fields: { counterpartyId: "CO-42", value: 500000000, currency: "PKR", expiry: d(365), renewalTerm: "1 year", renewalDue: d(335), renewalStatus: "Not Due" },
@@ -165,14 +165,14 @@ const CMP = [
   mk("agreements", {
     title: "Security services agreement — Askari Guards, all PK offices",
     subType: "Service Agreement", requestingDept: "Admin", requestedBy: req("Shahid Mehmood", "Admin Manager", "shahid.m@zameen.com"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Drafting", raisedDaysAgo: 4, pace: 1,
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Drafting", raisedDaysAgo: 4, pace: 1,
     fields: { counterpartyId: "CO-44", value: 38400000, currency: "PKR", expiry: d(365), renewalTerm: "1 year", renewalDue: d(335), renewalStatus: "Not Due" },
   }),
   mk("agreements", {
     title: "Renewal — Mega Tower lease floors 7–9",
     subType: "Lease Agreement", flow: "renewal", requestingDept: "Admin", requestedBy: req("System", "Renewal Trigger", "legalos"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Terms Review", raisedDaysAgo: 9, pace: 3,
-    fields: { counterpartyId: "CO-48", value: 84000000, currency: "PKR", renewalTerm: "3 years", renewalDue: d(21), renewalStatus: "In Progress", renewalOwner: "u21" },
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Terms Review", raisedDaysAgo: 9, pace: 3,
+    fields: { counterpartyId: "CO-48", value: 84000000, currency: "PKR", renewalTerm: "3 years", renewalDue: d(21), renewalStatus: "In Progress", renewalOwner: "u12" },
     activity: [{ at: d(-9), by: null, action: "Renewal trigger generated automatically 30 days before Renewal Due Date" }],
   }),
   mk("agreements", {
@@ -184,7 +184,7 @@ const CMP = [
   mk("agreements", {
     title: "Cleaning & maintenance SLA — Square One Building",
     subType: "Service Agreement", requestingDept: "Admin", requestedBy: req("Bushra Anwar", "Facilities Lead", "bushra.a@zameen.com"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Submission for Signature", raisedDaysAgo: 10, pace: 2,
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Submission for Signature", raisedDaysAgo: 10, pace: 2,
     fields: { counterpartyId: "CO-51", value: 9600000, currency: "PKR", expiry: d(365), renewalTerm: "1 year", renewalDue: d(335), renewalStatus: "Not Due" },
   }),
 
@@ -192,14 +192,14 @@ const CMP = [
   mk("resolutions", {
     title: "Board Resolution — authorize HBL facility signatories",
     subType: "Board Resolution", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 15, pace: 2, closed: true,
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 15, pace: 2, closed: true,
     fields: { purpose: "Authorize CFO and Company Secretary to execute HBL facility documents.", urgency: "Urgent", authority: "Bank", authorizedPersons: "Klaus Werner (CFO, CNIC 35202-1234567-1); Saad Cheema (Company Secretary, CNIC 35201-7654321-9)", resolutionDate: d(-9), uploadedToTracker: true, trackerUploadDate: d(-8), trackerLink: "https://drive.google.com/resolutions-tracker#R-118" },
     costs: [{ type: "Filing & Government Fee", estimated: 5000, actual: 5000, currency: "PKR", attribution: "Recharged to requesting department" }],
   }),
   mk("resolutions", {
     title: "Partners Resolution — LESCO tariff reclassification, B64",
     subType: "Partners Resolution", requestingDept: "Admin", requestedBy: req("Shahid Mehmood", "Admin Manager", "shahid.m@zameen.com"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Finalize & Sign", raisedDaysAgo: 4, pace: 1, priority: "High",
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Finalize & Sign", raisedDaysAgo: 4, pace: 1, priority: "High",
     fields: { purpose: "Authorize filing for commercial tariff reclassification of the B64 office with LESCO.", urgency: "Urgent", authority: "LESCO", authorizedPersons: "Shahid Mehmood (Admin Manager, CNIC 35200-2244668-5)" },
   }),
   mk("resolutions", {
@@ -211,13 +211,13 @@ const CMP = [
   mk("resolutions", {
     title: "Board Resolution — EPA hearing representation, Mega Tower generators",
     subType: "Board Resolution", requestingDept: "Operations", requestedBy: req("Kamran Abbasi", "Operations Head", "kamran.a@zameen.com"),
-    entityId: "CO-37", owner: "u21", assignedBy: "u20", stage: "Drafting", raisedDaysAgo: 1, pace: 1,
-    fields: { purpose: "Authorize counsel to appear before EPA on generator emissions notice.", urgency: "Urgent", authority: "EPA", authorizedPersons: "Ahmed Raza (Senior Counsel)" },
+    entityId: "CO-37", owner: "u12", assignedBy: "u20", stage: "Drafting", raisedDaysAgo: 1, pace: 1,
+    fields: { purpose: "Authorize counsel to appear before EPA on generator emissions notice.", urgency: "Urgent", authority: "EPA", authorizedPersons: "Hasan Majeed (Senior Counsel)" },
   }),
   mk("resolutions", {
     title: "Board Resolution — open SNB collection account, Riyadh",
     subType: "Board Resolution", requestingDept: "Finance", requestedBy: req("Amna Javed", "Treasury Manager", "amna.javed@zameen.com"),
-    entityId: "CO-22", owner: "u8", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 25, pace: 2, closed: true,
+    entityId: "CO-22", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 25, pace: 2, closed: true,
     fields: { purpose: "Open SAR collection account with Saudi National Bank.", urgency: "Normal", authority: "Bank", authorizedPersons: "Rakan Al-Otaibi (Finance Manager KSA)", resolutionDate: d(-18), uploadedToTracker: true, trackerUploadDate: d(-17), trackerLink: "https://drive.google.com/resolutions-tracker#R-121" },
   }),
   mk("resolutions", {
@@ -229,14 +229,14 @@ const CMP = [
   mk("resolutions", {
     title: "Board Resolution — HR provident fund trustee change",
     subType: "Board Resolution", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@northwind.com"), requestedById: "u14",
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Assigned", raisedDaysAgo: 1, pace: 1,
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Assigned", raisedDaysAgo: 1, pace: 1,
     fields: { purpose: "Replace retiring PF trustee and update bank mandate.", urgency: "Normal", authority: "Bank", authorizedPersons: "TBD" },
   }),
   mk("resolutions", {
     title: "Board Resolution — authorize FIR filing against vendor",
-    subType: "Board Resolution", requestingDept: "Admin", requestedBy: req("Ahmed Raza", "Senior Counsel", "ahmed.raza@northwind.com"), requestedById: "u17",
-    entityId: "CO-37", owner: "u21", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 20, pace: 1, closed: true,
-    fields: { purpose: "Authorize Recovery Officer to file police complaint against ZD-project vendor for material theft.", urgency: "Urgent", authority: "SECP", authorizedPersons: "Mariam Khan (Recovery Officer, CNIC 35201-5566778-2)", resolutionDate: d(-15), uploadedToTracker: true, trackerUploadDate: d(-14) },
+    subType: "Board Resolution", requestingDept: "Admin", requestedBy: req("Hasan Majeed", "Senior Counsel", "ahmed.raza@northwind.com"), requestedById: "u17",
+    entityId: "CO-37", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 20, pace: 1, closed: true,
+    fields: { purpose: "Authorize Recovery Officer to file police complaint against ZD-project vendor for material theft.", urgency: "Urgent", authority: "SECP", authorizedPersons: "Salman Khan (Recovery Officer, CNIC 35201-5566778-2)", resolutionDate: d(-15), uploadedToTracker: true, trackerUploadDate: d(-14) },
   }),
 
   // License renewals — the workflow module beside the register.
@@ -251,14 +251,14 @@ const CMP = [
   mk("licenses", {
     title: "Commercial registration renewal — Zameen Media",
     subType: "Commercial Registration", requestingDept: "Finance", requestedBy: req("System", "Renewal Trigger", "legalos"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Assigned", raisedDaysAgo: 3, pace: 1,
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Assigned", raisedDaysAgo: 3, pace: 1,
     fields: { licenseName: "SECP Certificate of Incorporation — annual return", authority: "SECP", issueDate: d(-1090), renewalTerm: "1 year", renewalDue: d(24), renewalStatus: "Trigger Raised", linkedLicenseId: "LIC-014" },
     activity: [{ at: d(-3), by: null, action: "Renewal trigger generated automatically 30 days before Renewal Due Date" }],
   }),
   mk("licenses", {
     title: "Municipality license renewal — Dubizzle Mega Tower",
     subType: "Municipality License", requestingDept: "Admin", requestedBy: req("System", "Renewal Trigger", "legalos"),
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Awaiting Response", raisedDaysAgo: 18, pace: 3,
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Awaiting Response", raisedDaysAgo: 18, pace: 3,
     fields: { licenseName: "LDA commercial premises license", authority: "LDA / Municipality", issueDate: d(-380), renewalTerm: "1 year", renewalDue: d(-2), renewalStatus: "In Progress" },
     costs: [{ type: "Filing & Government Fee", estimated: 65000, actual: 65000, currency: "PKR", invoiceNo: "LDA-CH-99182", attribution: "Legal operating budget" }],
   }),
@@ -278,7 +278,7 @@ const CMP = [
     subType: "Form A — Annual Return", flow: "periodic", requestingDept: "Legal",
     requestedBy: req("System", "Filing trigger — 30 days before due", "legalos"),
     entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 310, pace: 4, closed: true,
-    fields: { filingCategory: "Periodic (Annual)", periodEnd: d(-350), dueDate: d(-280), filingDate: d(-283), authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: true, srn: "SRN-25-118332" },
+    fields: { filingCategory: "Periodic (Annual)", periodEnd: d(-350), dueDate: d(-280), filingDate: d(-283), authorizedPerson: "Sana Hurmat (Company Secretary)", ctcApplied: true, srn: "SRN-25-118332" },
     activity: [{ at: d(-310), by: null, action: "System-generated 30 days before the statutory due date (Filing Module 8.2)" }],
     costs: [{ type: "Filing & Government Fee", estimated: 10000, actual: 9500, currency: "PKR", invoiceNo: "SECP-CH-25-4471", attribution: "Legal operating budget" }],
   }),
@@ -287,17 +287,17 @@ const CMP = [
     subType: "Form A — Annual Return", flow: "periodic", requestingDept: "Legal",
     requestedBy: req("System", "Filing trigger — 30 days before due", "legalos"),
     entityId: "CO-20", owner: "u12", assignedBy: "u20", stage: "Preparation", raisedDaysAgo: 22, pace: 8, priority: "High",
-    fields: { filingCategory: "Periodic (Annual)", periodEnd: d(-224), dueDate: d(8), authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: false },
+    fields: { filingCategory: "Periodic (Annual)", periodEnd: d(-224), dueDate: d(8), authorizedPerson: "Sana Hurmat (Company Secretary)", ctcApplied: false },
     activity: [{ at: d(-22), by: null, action: "System-generated 30 days before the statutory due date (Filing Module 8.2)" }],
   }),
   mk("filings", {
     title: "Form 29 — Zameen Media change of directors",
     subType: "Form 29 — Directors & Officers Change", requestingDept: "Finance",
     requestedBy: req("Imran Qureshi", "Finance Director", "imran.q@zameen.com"), requestedById: "u16",
-    entityId: "CO-36", owner: "u21", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 9, pace: 2,
-    fields: { filingCategory: "Event-Based", dueDate: d(6), linkedResolutionId: "CMP-0014", authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: false },
+    entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 9, pace: 2,
+    fields: { filingCategory: "Event-Based", dueDate: d(6), linkedResolutionId: "CMP-0014", authorizedPerson: "Sana Hurmat (Company Secretary)", ctcApplied: false },
     comments: [
-      { at: d(-4), by: "u21", text: "Need the signed resolution and Form 28 consents of both incoming directors before I can file.", internal: false },
+      { at: d(-4), by: "u12", text: "Need the signed resolution and Form 28 consents of both incoming directors before I can file.", internal: false },
       { at: d(-2), by: "u16", text: "Consents signed and scanned — attached on the resolution record.", internal: false },
     ],
   }),
@@ -313,8 +313,8 @@ const CMP = [
     title: "Form 3 — OLX Pakistan allotment of shares",
     subType: "Form 3 — Allotment of Shares", requestingDept: "Finance",
     requestedBy: req("Imran Qureshi", "Finance Director", "imran.q@zameen.com"), requestedById: "u16",
-    entityId: "CO-21", owner: "u21", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 45, pace: 5, closed: true,
-    fields: { filingCategory: "Event-Based", dueDate: d(-15), filingDate: d(-30), authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: true, srn: "SRN-26-009114" },
+    entityId: "CO-21", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 45, pace: 5, closed: true,
+    fields: { filingCategory: "Event-Based", dueDate: d(-15), filingDate: d(-30), authorizedPerson: "Sana Hurmat (Company Secretary)", ctcApplied: true, srn: "SRN-26-009114" },
     costs: [{ type: "Filing & Government Fee", estimated: 7500, actual: 7500, currency: "PKR", invoiceNo: "SECP-CH-26-1108", attribution: "Recharged to requesting department" }],
   }),
   mk("filings", {
@@ -322,7 +322,7 @@ const CMP = [
     subType: "Form 19 — Mortgage / Charge", requestingDept: "Finance",
     requestedBy: req("Imran Qureshi", "Finance Director", "imran.q@zameen.com"), requestedById: "u16",
     entityId: "CO-20", owner: "u12", assignedBy: "u20", stage: "Filed with SECP", raisedDaysAgo: 14, pace: 3,
-    fields: { filingCategory: "Event-Based", dueDate: d(4), filingDate: d(-3), linkedResolutionId: "CMP-0013", authorizedPerson: "Hassan Ali (Company Secretary)", ctcApplied: false, srn: "SRN-26-014772" },
+    fields: { filingCategory: "Event-Based", dueDate: d(4), filingDate: d(-3), linkedResolutionId: "CMP-0013", authorizedPerson: "Sana Hurmat (Company Secretary)", ctcApplied: false, srn: "SRN-26-014772" },
   }),
 ];
 
@@ -332,9 +332,9 @@ const CMP = [
    `nextDue` comes within 30 days — OLX below is inside that window on a fresh
    seed, so the trigger demonstrably fires on first boot. */
 export const FILING_SCHEDULE = [
-  { entityId: "CO-36", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(85), periodEnd: d(15), authorizedPerson: "Hassan Ali (Company Secretary)", active: true },
-  { entityId: "CO-20", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(8), periodEnd: d(-224), authorizedPerson: "Hassan Ali (Company Secretary)", active: true },
-  { entityId: "CO-21", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(22), periodEnd: d(-190), authorizedPerson: "Hassan Ali (Company Secretary)", active: true },
+  { entityId: "CO-36", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(85), periodEnd: d(15), authorizedPerson: "Sana Hurmat (Company Secretary)", active: true },
+  { entityId: "CO-20", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(8), periodEnd: d(-224), authorizedPerson: "Sana Hurmat (Company Secretary)", active: true },
+  { entityId: "CO-21", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(22), periodEnd: d(-190), authorizedPerson: "Sana Hurmat (Company Secretary)", active: true },
   { entityId: "CO-24", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(150), periodEnd: d(60), authorizedPerson: "External consultant — Corplink Associates", active: true },
   { entityId: "CO-25", formType: "Form A — Annual Return", frequency: "Annual", nextDue: d(60), periodEnd: d(-30), authorizedPerson: "External consultant — Corplink Associates", active: true },
 ];
@@ -377,19 +377,19 @@ const LIT = [
       { id: "ATT-1", name: "termination-memo-ZM-8817.pdf", size: 182000, at: d(-5), by: "u14" },
       { id: "ATT-2", name: "attendance-register-2026H1.xlsx", size: 96000, at: d(-1), by: "u14" },
     ],
-    fields: { caseNumber: "LAB-3321/2026", court: "Punjab Labour Court No. 4", position: "Respondent", caseStatus: "In Progress", filingDate: d(-45), counselType: "Internal", counselName: "Ahmed Raza", recoverablePkr: 0, exposurePkr: 3800000, riskRating: "Medium", proceedings: "Reply drafted; awaiting attendance records from HR." },
+    fields: { caseNumber: "LAB-3321/2026", court: "Punjab Labour Court No. 4", position: "Respondent", caseStatus: "In Progress", filingDate: d(-45), counselType: "Internal", counselName: "Hasan Majeed", recoverablePkr: 0, exposurePkr: 3800000, riskRating: "Medium", proceedings: "Reply drafted; awaiting attendance records from HR." },
     hearings: [
-      { id: "H1", date: d(-15), type: "First hearing", attendedBy: "Internal — Ahmed Raza", outcome: "Reply ordered within 14 days", nextDate: d(3) },
+      { id: "H1", date: d(-15), type: "First hearing", attendedBy: "Internal — Hasan Majeed", outcome: "Reply ordered within 14 days", nextDate: d(3) },
     ],
   }),
   mk("cases", {
     title: "Consumer complaint — booking refund, Riverview Enclave",
     subType: "Consumer Complaint", requestingDept: "Operations", requestedBy: req("Kamran Abbasi", "Operations Head", "kamran.a@zameen.com"),
     entityId: "CO-37", owner: "u17", assignedBy: "u6", stage: "Submitted to Court", raisedDaysAgo: 16, pace: 3,
-    fields: { caseNumber: "CC-889/2026", court: "Consumer Court, Lahore", position: "Respondent", caseStatus: "In Progress", filingDate: d(-70), counselType: "Internal", counselName: "Ahmed Raza", recoverablePkr: 0, exposurePkr: 5400000, riskRating: "Low" },
+    fields: { caseNumber: "CC-889/2026", court: "Consumer Court, Lahore", position: "Respondent", caseStatus: "In Progress", filingDate: d(-70), counselType: "Internal", counselName: "Hasan Majeed", recoverablePkr: 0, exposurePkr: 5400000, riskRating: "Low" },
     hearings: [
-      { id: "H1", date: d(-25), type: "First hearing", attendedBy: "Internal — Ahmed Raza", outcome: "Complainant evidence recorded", nextDate: d(-2) },
-      { id: "H2", date: d(-2), type: "Evidence", attendedBy: "Internal — Ahmed Raza", outcome: "Our evidence submitted", nextDate: d(9) },
+      { id: "H1", date: d(-25), type: "First hearing", attendedBy: "Internal — Hasan Majeed", outcome: "Complainant evidence recorded", nextDate: d(-2) },
+      { id: "H2", date: d(-2), type: "Evidence", attendedBy: "Internal — Hasan Majeed", outcome: "Our evidence submitted", nextDate: d(9) },
     ],
   }),
   mk("cases", {
@@ -406,9 +406,9 @@ const LIT = [
     title: "Criminal complaint follow-up — cheque dishonour, agency dues",
     subType: "Criminal Complaint", requestingDept: "Finance", requestedBy: req("Amna Javed", "Treasury Manager", "amna.javed@zameen.com"),
     entityId: "CO-37", owner: "u18", assignedBy: "u6", stage: "Submitted to Court", raisedDaysAgo: 20, pace: 4,
-    fields: { caseNumber: "FIR-441/26 u/s 489-F", court: "Judicial Magistrate, Model Town", position: "Complainant", caseStatus: "In Progress", filingDate: d(-50), counselType: "Internal", counselName: "Mariam Khan", recoverablePkr: 7200000, exposurePkr: 0, riskRating: "Low" },
+    fields: { caseNumber: "FIR-441/26 u/s 489-F", court: "Judicial Magistrate, Model Town", position: "Complainant", caseStatus: "In Progress", filingDate: d(-50), counselType: "Internal", counselName: "Salman Khan", recoverablePkr: 7200000, exposurePkr: 0, riskRating: "Low" },
     hearings: [
-      { id: "H1", date: d(-10), type: "First hearing", attendedBy: "Internal — Mariam Khan", outcome: "Accused summoned", nextDate: d(11) },
+      { id: "H1", date: d(-10), type: "First hearing", attendedBy: "Internal — Salman Khan", outcome: "Accused summoned", nextDate: d(11) },
     ],
   }),
 
@@ -491,13 +491,13 @@ const LIT = [
   }),
   mk("ip", {
     title: "Prosecution — OLX MOTORS composite mark (PK, cl. 35)",
-    subType: "New Filing", requestingDept: "Legal", requestedBy: req("Bilal Sheikh", "IP Counsel", "bilal.sheikh@northwind.com"), requestedById: "u19",
+    subType: "New Filing", requestingDept: "Legal", requestedBy: req("Afzal Chaudhary", "IP Counsel", "bilal.sheikh@northwind.com"), requestedById: "u19",
     entityId: "CO-36", owner: "u19", assignedBy: "u6", stage: "Submission to IP Office", raisedDaysAgo: 60, pace: 10,
     fields: { markName: "OLX MOTORS", country: "Pakistan", classes: "35", filingDate: d(-55), ipStatus: "Pending Registration", subStatus: "Published", registeredOwner: "CO-36", localCounsel: "Vellani & Vellani" },
   }),
   mk("ip", {
     title: "Portfolio record — DUBIZZLE word mark (UAE, cl. 35/38)",
-    subType: "Renewal", requestingDept: "Legal", requestedBy: req("Bilal Sheikh", "IP Counsel", "bilal.sheikh@northwind.com"), requestedById: "u19",
+    subType: "Renewal", requestingDept: "Legal", requestedBy: req("Afzal Chaudhary", "IP Counsel", "bilal.sheikh@northwind.com"), requestedById: "u19",
     entityId: "CO-36", owner: "u19", assignedBy: "u6", stage: "Registered / Renewed / Closed", raisedDaysAgo: 90, pace: 15, closed: true,
     fields: { markName: "DUBIZZLE", country: "UAE", classes: "35, 38", regNumber: "AE-201599", regDate: d(-2500), renewalDue: d(650), ipStatus: "Renewed", subStatus: "Renewed", registeredOwner: "CO-36", localCounsel: "Al Tamimi & Co." },
   }),
@@ -533,19 +533,19 @@ const LIT = [
     title: "Complaint — material theft by ZD-project vendor",
     subType: "Against ZD-project vendors", requestingDept: "Admin", requestedBy: req("Shahid Mehmood", "Admin Manager", "shahid.m@zameen.com"),
     entityId: "CO-37", owner: "u18", assignedBy: "u6", stage: "FIR Lodged", raisedDaysAgo: 19, pace: 4, priority: "High",
-    fields: { reason: "Steel and cabling pilfered from Riverview site store by vendor staff.", filedBy: "Mariam Khan", authorizedPerson: "Mariam Khan (Recovery Officer)", boardResolutionProvided: true, policeStation: "PS Defence-A, Lahore", complaintDate: d(-15), firDate: d(-7) },
+    fields: { reason: "Steel and cabling pilfered from Riverview site store by vendor staff.", filedBy: "Salman Khan", authorizedPerson: "Salman Khan (Recovery Officer)", boardResolutionProvided: true, policeStation: "PS Defence-A, Lahore", complaintDate: d(-15), firDate: d(-7) },
   }),
   mk("police", {
     title: "Complaint — data theft by ex-employee (CRM export)",
     subType: "Against ex-employees", requestingDept: "IT", requestedBy: req("Danish Iqbal", "Head of Infrastructure", "danish.iqbal@zameen.com"),
     entityId: "CO-36", owner: "u17", assignedBy: "u6", stage: "Filed with Police Station", raisedDaysAgo: 6, pace: 1,
-    fields: { reason: "Departing sales lead exported client CRM data to personal drive.", filedBy: "Ahmed Raza", authorizedPerson: "Ahmed Raza (Senior Counsel)", boardResolutionProvided: true, policeStation: "FIA Cyber Crime Wing, Lahore", complaintDate: d(-3) },
+    fields: { reason: "Departing sales lead exported client CRM data to personal drive.", filedBy: "Hasan Majeed", authorizedPerson: "Hasan Majeed (Senior Counsel)", boardResolutionProvided: true, policeStation: "FIA Cyber Crime Wing, Lahore", complaintDate: d(-3) },
   }),
   mk("police", {
     title: "Complaint — cheque fraud by ZD buyer on resale",
     subType: "Against ZD buyers", requestingDept: "Finance", requestedBy: req("Amna Javed", "Treasury Manager", "amna.javed@zameen.com"),
     entityId: "CO-37", owner: "u18", assignedBy: "u6", stage: "Authorization (Board Resolution)", raisedDaysAgo: 2, pace: 1,
-    fields: { reason: "Buyer issued dishonoured cheques against instalment plan then attempted unit resale.", filedBy: "TBD", authorizedPerson: "Mariam Khan (Recovery Officer)", boardResolutionProvided: false, policeStation: "PS Gulberg, Lahore" },
+    fields: { reason: "Buyer issued dishonoured cheques against instalment plan then attempted unit resale.", filedBy: "TBD", authorizedPerson: "Salman Khan (Recovery Officer)", boardResolutionProvided: false, policeStation: "PS Gulberg, Lahore" },
   }),
 
   // 8.5.2 Notices — received and issued, with auto-response for standard kinds.

@@ -33,10 +33,10 @@ function PlaybookEditor({ pb, viewer, onClose }) {
   </${Modal}>`;
 }
 const OPINIONS = [
-  { title: "Enforceability of 18-month non-compete under UAE law", who: "u8", date: "2 weeks ago" },
-  { title: "Cross-border data transfer under Saudi PDPL", who: "u4", date: "1 month ago" },
+  { title: "Enforceability of 18-month non-compete under UAE law", who: "u12", date: "2 weeks ago" },
+  { title: "Cross-border data transfer under Saudi PDPL", who: "u20", date: "1 month ago" },
   { title: "Liability caps in long-term energy PPAs", who: "u3", date: "3 weeks ago" },
-  { title: "Board authority for Singapore capital raise", who: "u2", date: "5 days ago" },
+  { title: "Board authority for Singapore capital raise", who: "u1", date: "5 days ago" },
 ];
 const SOPS = [
   { title: "How to raise a legal request", cat: "Intake" },

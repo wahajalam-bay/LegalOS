@@ -475,7 +475,7 @@ const CANNED = [
   { q: /renew|expir/i, a: "23 contracts expire within 30 days; 3 will **auto-renew** (Salesforce, Oracle NetSuite, Adobe CC) at a combined +$310K uplift. I can draft opt-out notices for all three." },
   { q: /nda/i, a: "I can generate a Mutual NDA from template T-01 (v4.2). Based on the counterparty jurisdiction I'll insert the right governing-law and confidentiality-term clauses. Shall I pre-fill it?" },
   { q: /summar/i, a: "Here's the 20-second read: 37 reviews are pending (2 breaching SLA today), 12 approvals await sign-off, and the Neom Solar PPA is the critical path this week. TAT is trending down to 3.4 days — a 29% improvement YoY." },
-  { q: /workload|capacity|balance/i, a: "Sarah Chen is at 90% capacity (18/20) and owns 4 of the 5 highest-risk matters. Tom Bennett has headroom (12/18). I'd recommend reassigning the Deloitte SOW and Adobe renewal to rebalance." },
+  { q: /workload|capacity|balance/i, a: "Ahmed Sardar is at 90% capacity (18/20) and owns 4 of the 5 highest-risk matters. Sana Hurmat has headroom (12/18). I'd recommend reassigning the Deloitte SOW and Adobe renewal to rebalance." },
 ];
 function respond(text) {
   const hit = CANNED.find((c) => c.q.test(text));

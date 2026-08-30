@@ -103,7 +103,7 @@ function IntakeModal({ onClose, onCreate }) {
       counterparty: form.counterparty || "—",
       owner: "u5", requester: "u13",
       due: daysFromNow(form.urgency === "Urgent" ? 2 : 7), created: nowIso(),
-      aiSummary: `Captured via intake. AI pre-scored this ${type} as ${URGENCY_RISK[form.urgency] || "medium"} risk; suggested owner Sarah Chen (Commercial).`,
+      aiSummary: `Captured via intake. AI pre-scored this ${type} as ${URGENCY_RISK[form.urgency] || "medium"} risk; suggested owner Ahmed Sardar (Commercial).`,
     });
     onClose();
   };
@@ -138,7 +138,7 @@ function IntakeModal({ onClose, onCreate }) {
           ${questions.map((qn) => html`<${Input} key=${qn} placeholder=${qn} />`)}
         </div>
       </${Field}>
-      <${AICard} title="AI pre-assessment">Based on type and urgency, this will be logged as <b>${URGENCY_RISK[form.urgency] || "medium"} risk</b>, routed to <b>Sarah Chen</b> (Commercial). Estimated turnaround <b>${form.urgency === "Urgent" ? "1.5" : "3.2"} days</b>.</${AICard}>
+      <${AICard} title="AI pre-assessment">Based on type and urgency, this will be logged as <b>${URGENCY_RISK[form.urgency] || "medium"} risk</b>, routed to <b>Ahmed Sardar</b> (Commercial). Estimated turnaround <b>${form.urgency === "Urgent" ? "1.5" : "3.2"} days</b>.</${AICard}>
     </div>`}
   </${Modal}>`;
 }

@@ -161,7 +161,7 @@ export default function Negotiations() {
 
         <div class="grid" style="grid-template-columns:1fr 1fr">
           <${Section} title="Version history" icon="layers" bodyClass="col">
-            ${[{ v: "v3.0", w: deal.owner, t: "counterparty redlines", when: "Today", tone: "amber" }, { v: "v2.0", w: "u11", t: "our counter", when: "3 days ago", tone: "blue" }, { v: "v1.0", w: deal.owner, t: "initial draft", when: "11 days ago", tone: "gray" }].map((v) => html`<div key=${v.v} class="feed__item" style="align-items:center">
+            ${[{ v: "v3.0", w: deal.owner, t: "counterparty redlines", when: "Today", tone: "amber" }, { v: "v2.0", w: "u10", t: "our counter", when: "3 days ago", tone: "blue" }, { v: "v1.0", w: deal.owner, t: "initial draft", when: "11 days ago", tone: "gray" }].map((v) => html`<div key=${v.v} class="feed__item" style="align-items:center">
               <div class="notif__ico" style="width:32px;height:32px;background:var(--surface-3);color:var(--text-2)"><${Icon} name="gitbranch" size=15 /></div>
               <div style="flex:1"><div class="strong tiny">${v.v} · ${v.t}</div><div class="tiny muted">${nameOf(v.w)} · ${v.when}</div></div>
               <${Btn} variant="ghost" size="sm">Compare</${Btn}>
@@ -172,9 +172,9 @@ export default function Negotiations() {
 
         <${Section} title="Discussion" icon="message" bodyClass="col">
           <${Comment} author=${nameOf(deal.owner)} time="2h ago" text="Their liability position is a non-starter. Countering at 1× with a data-breach supercap." />
-          <${Comment} author="Layla Al-Rashid" time="1h ago" text="Agreed. Trade the termination notice period if you must, but the change-in-law clause needs a cost-sharing cap." />
+          <${Comment} author="Maryam Haq" time="1h ago" text="Agreed. Trade the termination notice period if you must, but the change-in-law clause needs a cost-sharing cap." />
           <div class="row" style="gap:10px;margin-top:10px;align-items:flex-end">
-            <${Avatar} name="Layla Al-Rashid" size="md" />
+            <${Avatar} name="Maryam Haq" size="md" />
             <textarea class="textarea" rows=1 placeholder="Add a comment…" style="min-height:38px" value=${comment} onInput=${(e) => setComment(e.target.value)}></textarea>
             <${Btn} variant="primary" icon="send" onClick=${() => setComment("")} />
           </div>

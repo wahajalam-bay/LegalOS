@@ -64,17 +64,22 @@ export const CREDENTIAL_GROUPS = [
     lane: "legal",
     section: "Legal — Team Leads (AD / Senior Manager)",
     people: [
-      { id: "u3", view: "Team Lead · Commercial & Risk", tone: "amber" },
-      { id: "u6", view: "Team Lead · Litigation & Disputes", tone: "amber" },
-      { id: "u20", view: "Team Lead · Compliance", tone: "amber" },
+      { id: "u6", view: "Head of Litigation & Disputes", tone: "amber" },
+      { id: "u3", view: "Head of Commercial Contracts", tone: "amber" },
+      { id: "u17", view: "Senior Manager · Litigation & Disputes", tone: "amber" },
+      { id: "u20", view: "Manager Compliance", tone: "amber" },
     ],
   },
   {
     lane: "legal",
     section: "Legal — Team",
     people: [
-      { id: "u5", view: "Legal Associate · Commercial", tone: "green" },
-      { id: "u10", view: "Paralegal / Legal Executive", tone: "blue" },
+      { id: "u18", view: "Senior Associate · Litigation & Disputes", tone: "green" },
+      { id: "u19", view: "Recovery · Litigation & Disputes", tone: "green" },
+      { id: "u7", view: "Assistant Manager · Commercial Contracts", tone: "green" },
+      { id: "u5", view: "Associate · Commercial Contracts", tone: "green" },
+      { id: "u12", view: "Associate · Compliance", tone: "green" },
+      { id: "u10", view: "Legal Executive", tone: "blue" },
     ],
   },
   {

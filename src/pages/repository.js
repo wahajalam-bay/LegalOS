@@ -146,7 +146,7 @@ function AddDocModal({ onClose, onCreated }) {
       // A real integration replaces both of these with the Drive file id + webViewLink.
       storagePath: `/legal/${entity.jur || "XX"}/${String(f.contractType || f.kind).replace(/[^A-Za-z0-9]+/g, "-").toLowerCase()}/${id}.pdf`,
       driveLink: `https://drive.google.com/file/d/legalos-${id.toLowerCase()}/view`,
-      access: [{ userId: f.owner, level: "edit" }, { userId: "u1", level: "comment" }, { userId: "u11", level: "view" }],
+      access: [{ userId: f.owner, level: "edit" }, { userId: "u1", level: "comment" }, { userId: "u10", level: "view" }],
     };
     addItem("repository", doc);
 

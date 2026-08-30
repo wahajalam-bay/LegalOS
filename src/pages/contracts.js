@@ -378,7 +378,7 @@ export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Cont
             </div>`)}
           </div>`}
           ${tab === "approvals" && html`<div class="col" style="gap:10px">
-            ${[{ r: "Legal Review — Sarah Chen", s: "approved" }, { r: "Risk Review — Priya Nair", s: "approved" }, { r: "Finance — Klaus Werner", s: "pending" }, { r: "General Counsel — Layla Al-Rashid", s: "pending" }].map((a, i) => html`<div key=${i} class=${cx("approval", `approval--${a.s}`)}>
+            ${[{ r: "Legal Review — Ahmed Sardar", s: "approved" }, { r: "Risk Review — Imran Tariq Mir", s: "approved" }, { r: "Finance — Klaus Werner", s: "pending" }, { r: "General Counsel — Maryam Haq", s: "pending" }].map((a, i) => html`<div key=${i} class=${cx("approval", `approval--${a.s}`)}>
               <div class="notif__ico" style=${`width:32px;height:32px;background:${a.s === "approved" ? "var(--success-bg)" : "var(--warning-bg)"};color:${a.s === "approved" ? "var(--success)" : "var(--warning)"}`}><${Icon} name=${a.s === "approved" ? "check" : "clock"} size=15 /></div>
               <div style="flex:1"><div class="strong" style="font-size:13px">${a.r}</div><div class="tiny muted">${a.s === "approved" ? "Approved" : "Awaiting decision"}</div></div>
               <${Status} value=${a.s === "approved" ? "Approved" : "Pending Approval"} />

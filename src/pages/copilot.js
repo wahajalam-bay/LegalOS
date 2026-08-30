@@ -73,7 +73,7 @@ export default function Copilot() {
         <div class="chat" ref=${scRef} style="flex:1">
           ${!started ? html`<div class="col center" style="flex:1;text-align:center;gap:20px;padding:20px">
             <div class="metric__icon" style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#0d7a3f,#0891b2);color:#fff"><${Icon} name="sparkles" size=28 /></div>
-            <div><div style="font-size:22px;font-weight:750;letter-spacing:-.02em">How can I help, Layla?</div><div class="muted" style="margin-top:6px">Ask about your matters, contracts, risk or compliance — or start a task.</div></div>
+            <div><div style="font-size:22px;font-weight:750;letter-spacing:-.02em">How can I help, Maryam?</div><div class="muted" style="margin-top:6px">Ask about your matters, contracts, risk or compliance — or start a task.</div></div>
             <div class="grid" style="grid-template-columns:1fr 1fr;gap:10px;max-width:620px;width:100%;margin-top:6px">
               ${PROMPTS.map((p) => html`<button key=${p} class="card card--hover card--pad" style="text-align:left;font-size:13px;font-weight:500;cursor:pointer" onClick=${() => send(p)}>
                 <${Icon} name="sparkles" size=14 style=${{ color: "var(--accent-500)", display: "inline", verticalAlign: "-2px", marginRight: "8px" }} />${p}

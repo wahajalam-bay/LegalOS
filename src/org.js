@@ -42,12 +42,14 @@ export const LEGAL_TEAMS = [
 // surface (triage, reassign, auto-routing, matter experts) draws from THIS list
 // and nothing else, so a case can never be sent to someone who isn't a
 // credentialed view in the system.
-//   u3  Priya Nair    — Team Lead · Commercial & Risk
-//   u6  David Okonkwo — Team Lead · Litigation & Disputes
-//   u20 Noor Fatima   — Team Lead · Compliance
-//   u5  Sarah Chen    — Legal Associate · Commercial
-//   u10 Yousef Nasser — Paralegal / Legal Executive
-export const ASSIGNABLE_BENCH = ["u3", "u6", "u20", "u5", "u10"];
+//   u3  Imran Tariq Mir    — Team Lead · Commercial & Risk
+//   u6  Salman Rashid — Team Lead · Litigation & Disputes
+//   u20 Arsalan Sandhu   — Team Lead · Compliance
+//   u5  Ahmed Sardar    — Legal Associate · Commercial
+//   u10 Ali Raza — Paralegal / Legal Executive
+// Everyone below the Director on the sign-in roster is assignable — the bench
+// IS the credential list, which m1-lifecycle asserts explicitly.
+export const ASSIGNABLE_BENCH = ["u6", "u3", "u17", "u20", "u18", "u19", "u7", "u5", "u12", "u10"];
 export const PIPELINE_BENCH = ASSIGNABLE_BENCH; // legacy alias
 
 export const teamByKey = (key) => LEGAL_TEAMS.find((t) => t.key === key) || null;

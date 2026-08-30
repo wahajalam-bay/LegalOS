@@ -116,7 +116,7 @@ const M2_SEED = () => {
     subdivision: o.sub || "Commercial", entityId: o.entityId || "CO-19", companyTags: [],
   });
   return [
-    mk("COM-2026-0147", { name: "Customer Service Agreement — Acme", pa: "commercial", mt: "Customer / Service agreement", dept: "Sales & Marketing", cp: cp("acme"), owner: "u5", collab: ["u9"], status: "Active", opened: d2(-18), target: d2(9), value: 480000, exposure: 120000, risk: { likelihood: "Possible", impact: "Moderate", severity: "Medium", proposed: true }, req: null, progress: 45 }),
+    mk("COM-2026-0147", { name: "Customer Service Agreement — Acme", pa: "commercial", mt: "Customer / Service agreement", dept: "Sales & Marketing", cp: cp("acme"), owner: "u5", collab: ["u5"], status: "Active", opened: d2(-18), target: d2(9), value: 480000, exposure: 120000, risk: { likelihood: "Possible", impact: "Moderate", severity: "Medium", proposed: true }, req: null, progress: 45 }),
     mk("ADM-2026-0042", { name: "SaaS Renewal — Technology Vendor", pa: "administrative", mt: "SaaS / technology agreement", dept: "IT", cp: cp("amazon"), owner: "u7", status: "Awaiting External", opened: d2(-32), target: d2(4), value: 220000, risk: { likelihood: "Unlikely", impact: "Moderate", severity: "Low", proposed: true }, progress: 60 }),
     mk("EMP-2026-0021", { name: "Employment Settlement — Regional Sales Lead", pa: "employment", mt: "Termination / settlement", dept: "HR", owner: "u17", collab: ["u18"], status: "Substantively Complete", opened: d2(-51), target: d2(-6), exposure: 300000, cur: "PKR", risk: { likelihood: "Likely", impact: "Moderate", severity: "Medium", proposed: false, confirmedBy: "u6", confirmedAt: d2(-40) }, priv: "Restricted", named: ["u6", "u17", "u18"], sub: "Labour/Employment", progress: 90 }),
     mk("DIS-2026-0012", { name: "Pre-action Legal Notice — Orbit Ventures", pa: "disputes", mt: "Pre-action / legal notices", dept: "Finance", cp: cp("orbit"), owner: "u6", status: "Active", opened: d2(-9), target: d2(6), exposure: 2000000, risk: { likelihood: "Likely", impact: "Major", severity: "High", proposed: false, confirmedBy: "u6", confirmedAt: d2(-7) }, priv: "Privileged", named: ["u6", "u17"], sub: "Litigation & Disputes", progress: 35, priority: "high" }),
@@ -159,7 +159,7 @@ function migrateLegacyMatter(m) {
 // Matter task seeds (Phase 11) — real records, not counts.
 const M2_TASKS_SEED = () => [
   { id: "MT-0001", matterId: "COM-2026-0147", name: "Review counterparty redlines v2", description: "", owner: "u5", due: d2(2), status: "In Progress", dependsOn: null, createdAt: d2(-6), createdBy: "u5", completedAt: null },
-  { id: "MT-0002", matterId: "COM-2026-0147", name: "Confirm liability cap vs playbook", description: "", owner: "u9", due: d2(4), status: "Not Started", dependsOn: "MT-0001", createdAt: d2(-6), createdBy: "u5", completedAt: null },
+  { id: "MT-0002", matterId: "COM-2026-0147", name: "Confirm liability cap vs playbook", description: "", owner: "u5", due: d2(4), status: "Not Started", dependsOn: "MT-0001", createdAt: d2(-6), createdBy: "u5", completedAt: null },
   { id: "MT-0003", matterId: "DIS-2026-0012", name: "Draft pre-action notice", description: "", owner: "u6", due: d2(1), status: "In Progress", dependsOn: null, createdAt: d2(-8), createdBy: "u6", completedAt: null },
   { id: "MT-0004", matterId: "EMP-2026-0021", name: "Obtain signed settlement deed", description: "", owner: "u17", due: d2(-2), status: "Completed", dependsOn: null, createdAt: d2(-30), createdBy: "u17", completedAt: d2(-3) },
 ];
@@ -379,14 +379,14 @@ export function duplicateCheck(payload) {
 // (org.js ASSIGNABLE_BENCH) and on the team that owns the sub-division, so a
 // request can never route to someone who isn't a signable view in the system.
 const SUBDIV_OWNER = {
-  "Real Estate & Conveyancing": "u5",   // Sarah Chen — Legal Associate · Commercial
-  "Commercial": "u5",                    // Sarah Chen — Legal Associate · Commercial
-  "Litigation & Disputes": "u6",         // David Okonkwo — Team Lead · Litigation
-  "Compliance & Regulatory": "u20",      // Noor Fatima — Team Lead · Compliance
-  "IP": "u6",                            // David Okonkwo — Team Lead · Litigation
-  "Labour/Employment": "u6",             // David Okonkwo — Team Lead · Litigation
-  "Corporate & Governance": "u20",       // Noor Fatima — Team Lead · Compliance
-  "Data Privacy": "u20",                 // Noor Fatima — Team Lead · Compliance
+  "Real Estate & Conveyancing": "u5",   // Ahmed Sardar — Legal Associate · Commercial
+  "Commercial": "u5",                    // Ahmed Sardar — Legal Associate · Commercial
+  "Litigation & Disputes": "u6",         // Salman Rashid — Team Lead · Litigation
+  "Compliance & Regulatory": "u20",      // Arsalan Sandhu — Team Lead · Compliance
+  "IP": "u6",                            // Salman Rashid — Team Lead · Litigation
+  "Labour/Employment": "u6",             // Salman Rashid — Team Lead · Litigation
+  "Corporate & Governance": "u20",       // Arsalan Sandhu — Team Lead · Compliance
+  "Data Privacy": "u20",                 // Arsalan Sandhu — Team Lead · Compliance
 };
 // One assignment guard for every path (triage, reassign, matters): the target
 // must be a credentialed bench member, and a Team Lead may only assign to
