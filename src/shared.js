@@ -317,6 +317,9 @@ export function FilterBar({
   module, filters, onPatch, onToggle, onClear,
   dims = ["units", "departments", "entities", "contractTypes", "subdivisions", "categories", "owners", "statuses", "risks", "tatStatuses"],
   dateFields = [], rows = [], statuses, right, placeholder = "Search…",
+  // Chip labels differ by page: "Status" means contract status on the tracker
+  // and request status elsewhere. Override per page rather than globally.
+  labels = {},
 }) {
   const companies = getCollection("companies") || COMPANIES;
   const views = viewsFor(module);
@@ -355,7 +358,7 @@ export function FilterBar({
       <${OptList} options=${optsOf(WORK_CATEGORIES)} selected=${filters.categories} counts=${counts} onToggle=${(v) => onToggle("categories", v)} /></${Pop}>`,
     owners: () => html`<${Pop} key="owners" label="Team member" icon="user" count=${filters.owners.length} width=${270}>
       <${OptList} searchable=${true} counts=${counts} options=${legalTeam.map((u) => ({ value: u.id, label: `${u.name} · ${u.team}` }))} selected=${filters.owners} onToggle=${(v) => onToggle("owners", v)} /></${Pop}>`,
-    statuses: () => html`<${Pop} key="statuses" label="Status" icon="activity" count=${filters.statuses.length}>
+    statuses: () => html`<${Pop} key="statuses" label=${labels.statuses || "Status"} icon="activity" count=${filters.statuses.length}>
       <${OptList} options=${optsOf(statusOpts)} selected=${filters.statuses} counts=${counts} onToggle=${(v) => onToggle("statuses", v)} /></${Pop}>`,
     risks: () => html`<${Pop} key="risks" label="Risk tier" icon="alertTriangle" count=${filters.risks.length} width=${200}>
       <${OptList} options=${RISK_TIERS.map((r) => ({ value: r, label: titleCase(r) }))} selected=${filters.risks} counts=${counts} onToggle=${(v) => onToggle("risks", v)} /></${Pop}>`,
@@ -389,7 +392,7 @@ export function FilterBar({
       <div style="width:250px;flex:none"><${SearchInput} value=${filters.q} onChange=${(v) => onPatch({ q: v })} placeholder=${placeholder} /></div>
       ${dims.map((d) => (DIMS[d] ? DIMS[d]() : null))}
 
-      ${dateFields.length > 0 && html`<${Pop} label="Dates & expiry" icon="calendar" width=${280}
+      ${dateFields.length > 0 && html`<${Pop} label=${labels.dates || "Dates & expiry"} icon="calendar" width=${280}
         count=${filters.datePreset || filters.dateFrom || filters.dateTo ? 1 : 0}>
         <div class="col" style="gap:10px">
           <${Field} label="Date field">

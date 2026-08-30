@@ -99,7 +99,7 @@ const STEPS = [
     route: "/matters",
     target: ".statkpis",
     title: "Module 2 — the Matter is the permanent record",
-    caption: "The whole portfolio: practice area, owner, status, risk, target and ageing, with My Matters and work queues (needs action, overdue, awaiting external). New matters auto-route to the practice-area expert; the Director is notified and can reassign.",
+    caption: "The whole portfolio: practice area, owner, status, risk, target and aging, with My Matters and work queues (needs action, overdue, awaiting external). New matters auto-route to the practice-area expert; the Director is notified and can reassign.",
   },
   {
     route: "/matters/DIS-2026-0012",

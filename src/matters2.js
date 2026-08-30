@@ -3,7 +3,7 @@
 // The Matter is the permanent organising record of legal work. This module is
 // deliberately pure data + pure functions (no React, no store import) in the
 // same style as modules.js: the taxonomy, the lifecycle state machine, the
-// likelihood × impact risk matrix, ageing bands, and the id scheme. store.js
+// likelihood × impact risk matrix, aging bands, and the id scheme. store.js
 // implements the persistence/engine on top of this; the pages render it.
 
 /* ============================================================

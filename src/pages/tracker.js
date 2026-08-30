@@ -99,10 +99,12 @@ export default function Tracker() {
   });
 
   // Dashboard cards — each one narrows the tracker rather than leaving it.
-  const activeCount = filtered.filter((c) => /Active|Executed|Signed/.test(c.status)).length;
+  // "Active" means the contract has not expired — a status of Executed/Signed on
+  // a contract whose term ended is not active in any useful sense.
+  const activeCount = filtered.filter((c) => c.expiry && new Date(c.expiry) >= new Date()).length;
   const expiring = filtered.filter((c) => { const d = (new Date(c.expiry) - Date.now()) / 86400000; return d >= 0 && d <= 90; });
   const expiringValue = expiring.reduce((s, c) => s + toUsd(c.value, c.currency), 0);
-  // Ageing by expiry, in one card: the horizon matters more than a single
+  // Aging by expiry, in one card: the horizon matters more than a single
   // "within 90 days" count, and each bucket is its own drill-down.
   const age = (() => {
     const b = { over: [], d30: [], d60: [], d90: [] };
@@ -139,19 +141,18 @@ export default function Tracker() {
     <!-- dashboard cards: click to narrow the grid below -->
     <div class="grid grid--kpi" style="margin-bottom:18px">
       <${Metric} icon="file" tone="blue" label="Active contracts" value=${activeCount}
-        foot=${`${filtered.length} rows in scope`}
+        foot=${`not yet expired · ${filtered.length} rows in scope`}
         onClick=${() => patch({ statuses: ["Active"] })} />
       <div class="agetile">
         <div class="agetile__head">
           <span class="agetile__ico"><${Icon} name="clock" size=15 /></span>
           <div style="min-width:0">
-            <div class="agetile__label">Contract ageing</div>
+            <div class="agetile__label">Contract aging</div>
             <div class="agetile__sub">${fmt.money(expiringValue)} at risk within 90 days</div>
           </div>
         </div>
         <div class="agetile__buckets">
           ${[
-            { k: "overdue", n: age.over.length, cap: "Overdue", tone: "over" },
             { k: "exp30", n: age.d30.length, cap: "≤30 days", tone: "d30" },
             { k: "exp60", n: age.d60.length, cap: "31–60", tone: "d60" },
             { k: "exp90", n: age.d90.length, cap: "61–90", tone: "d90" },
@@ -170,6 +171,8 @@ export default function Tracker() {
 
     <${FilterBar} module="tracker" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
       rows=${rows}
+      dims=${["departments", "entities", "contractTypes", "subdivisions", "owners", "statuses", "risks", "tatStatuses"]}
+      labels=${{ statuses: "Contract status", dates: "Expiry based aging" }}
       dateFields=${[
         { key: "expiry", label: "Expiry" },
         { key: "start", label: "Execution / start" },

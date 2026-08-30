@@ -348,7 +348,7 @@ function MatterList() {
         <select class="input input--sm" value=${sort} onChange=${(e) => setSort(e.target.value)}>
           <option value="urgency">Sort: urgency</option>
           <option value="target">Sort: target date</option>
-          <option value="age">Sort: ageing</option>
+          <option value="age">Sort: aging</option>
           <option value="updated">Sort: recently updated</option>
           <option value="risk">Sort: risk</option>
         </select>

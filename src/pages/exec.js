@@ -68,7 +68,7 @@ function useExecMetrics() {
     const thisQuarter = requests.filter((r) => new Date(r.requestDate || r.created) >= qStart).length;
     const highRisk = rows.filter((r) => ["high", "critical"].includes((r.risk || "").toLowerCase()) && !r.__tat.done).length;
 
-    // Task load, and three ageing profiles that all answer "what lands soon?".
+    // Task load, and three aging profiles that all answer "what lands soon?".
     // One helper, three sources, so every bucket is defined identically.
     const pendingTasks = rows.filter((r) => !r.__tat.done);
     const buckets = (items, dateOf) => {
@@ -192,9 +192,9 @@ function ExecOverview() {
     </section>
 
     <!-- what lands soon: one tile per horizon, bucketed and colour-coded -->
-    <section class="exec__ageing">
+    <section class="exec__aging">
       ${[
-        { label: "Contract ageing", icon: "file", sub: "by expiry date", b: m.ageContracts,
+        { label: "Contract aging", icon: "file", sub: "by expiry date", b: m.ageContracts,
           go: (k) => openWorkspace("contracts", { dateField: "expiry", datePreset: k }) },
         { label: "Compliance deadlines", icon: "shield", sub: "by due date", b: m.ageCompliance,
           go: (k) => openWorkspace("worklist", { subdivisions: ["Compliance"], dateField: "due", datePreset: k }) },

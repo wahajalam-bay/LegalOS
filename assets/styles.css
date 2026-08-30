@@ -1422,11 +1422,11 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .etile__label { font-size: 12px; font-weight: 600; color: var(--text-2); }
 .etile__sowhat { font-size: 11px; color: var(--text-3); line-height: 1.4; }
 
-/* Ageing tiles: one card per horizon, four colour-coded buckets inside it, each
+/* Aging tiles: one card per horizon, four colour-coded buckets inside it, each
    bucket a drill-down. Colour carries urgency, the number carries the load. */
 /* Half-width now, so the donut and its legend do not stretch apart. */
 .exec__split .donut, .exec__split svg.donut { max-width: 100%; }
-.exec__ageing {
+.exec__aging {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px; margin-bottom: 22px;
 }
