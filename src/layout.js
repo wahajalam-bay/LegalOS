@@ -30,6 +30,13 @@ import { teamShort, RBAC_ROLES } from "./org.js";
 import { moduleByKey } from "./modules.js";
 import { ToastHost } from "./toast.js";
 
+/* ---------------- Sidebar rail ----------------
+   Collapsing the sidebar is a lasting preference (unlike the nav groups, which
+   always start shut), so it is remembered per browser. */
+const SIDEBAR_KEY = "legalos-sidebar-collapsed";
+const readCollapsed = () => { try { return localStorage.getItem(SIDEBAR_KEY) === "1"; } catch (e) { return false; } };
+const writeCollapsed = (v) => { try { localStorage.setItem(SIDEBAR_KEY, v ? "1" : "0"); } catch (e) {} };
+
 /* ---------------- Theme ---------------- */
 export function getTheme() { return localStorage.getItem("legalos-theme") || "light"; }
 export function setTheme(t) {
@@ -70,7 +77,7 @@ function ViewAs() {
 }
 
 /* ---------------- Sidebar ---------------- */
-function Sidebar({ path, collapsed }) {
+function Sidebar({ path, collapsed, onToggleRail, onClose }) {
   const { base } = parsePath(path);
   const me = useActiveUser();
   const mods = useCollection("modRequests");
@@ -93,6 +100,7 @@ function Sidebar({ path, collapsed }) {
 
   const navItem = (it) => html`<div key=${it.path}
     class=${cx("nav__item", isActive(it) && "active")}
+    title=${it.label}
     onClick=${() => navigate(it.path)}>
     <${Icon} name=${it.icon} size=17 />
     <span>${it.label}</span>
@@ -106,6 +114,14 @@ function Sidebar({ path, collapsed }) {
         <div class="sidebar__brand-name">LegalOS</div>
         <div class="sidebar__brand-sub">Enterprise</div>
       </div>
+      <button type="button" class="sidebar__rail" onClick=${onToggleRail}
+        title=${collapsed ? "Expand the sidebar" : "Collapse the sidebar"}
+        aria-label=${collapsed ? "Expand the sidebar" : "Collapse the sidebar"}>
+        <${Icon} name=${collapsed ? "chevronRight" : "chevronLeft"} size=16 />
+      </button>
+      <button type="button" class="sidebar__close" onClick=${onClose} aria-label="Close navigation">
+        <${Icon} name="x" size=18 />
+      </button>
     </div>
 
     <${Dropdown} align="left" width=${220} trigger=${html`<div class="workspace">
@@ -120,7 +136,14 @@ function Sidebar({ path, collapsed }) {
     </${Dropdown}>
 
     <nav class="nav">
-      ${sections.map((sec) => sec.section === null
+      ${collapsed
+        // Rail: group headers are unreadable at 72px and hiding them would bury
+        // their contents, so every permitted row is shown flat, icon-only, with
+        // the label as a tooltip. Nothing becomes unreachable by collapsing.
+        ? sections.map((sec) => html`<div class="nav__section nav__section--rail" key=${sec.section || "bare"}>
+            ${sec.items.map(navItem)}
+          </div>`)
+        : sections.map((sec) => sec.section === null
         // No header, never collapsible — the request row.
         ? html`<div class="nav__section nav__section--bare" key="bare">
             ${sec.items.map(navItem)}
@@ -398,7 +421,7 @@ function CommandPalette({ onClose }) {
 }
 
 /* ---------------- Topbar ---------------- */
-function Topbar({ path, onSearch, onToggleTheme, theme }) {
+function Topbar({ path, onSearch, onToggleTheme, theme, onMenu }) {
   const { base, id, sub } = parsePath(path);
   const me = useActiveUser();
   // /m/<moduleKey>/<recordId> — crumbs show the module label, then the record.
@@ -408,6 +431,9 @@ function Topbar({ path, onSearch, onToggleTheme, theme }) {
   const crumbBase = isModule ? "/m/" + id : base;
   const leafId = isModule ? sub : id;
   return html`<header class="topbar">
+    <button type="button" class="topbar__menu" onClick=${onMenu} aria-label="Open navigation">
+      <${Icon} name="menu" size=18 />
+    </button>
     <div class="topbar__crumbs">
       <span class="clickable hoverline" onClick=${() => navigate("/dashboard")}>${COMPANY.short}</span>
       <${Icon} name="chevronRight" size=14 />
@@ -500,6 +526,19 @@ export function Shell({ path, children }) {
   const [theme, setThemeState] = useState(getTheme());
   const [palette, setPalette] = useState(false);
   const [copilot, setCopilot] = useState(false);
+  // Rail (wide screens) and drawer (narrow) are separate states: collapsing to a
+  // rail is a preference, opening the drawer is a momentary action.
+  const [collapsed, setCollapsed] = useState(readCollapsed);
+  const [drawer, setDrawer] = useState(false);
+  const toggleRail = () => setCollapsed((c) => { writeCollapsed(!c); return !c; });
+  // Navigating on a phone must put the drawer away, or the page you just opened
+  // is behind it.
+  useEffect(() => { setDrawer(false); }, [path]);
+  useEffect(() => {
+    const onEsc = (e) => { if (e.key === "Escape") setDrawer(false); };
+    window.addEventListener("keydown", onEsc);
+    return () => window.removeEventListener("keydown", onEsc);
+  }, []);
 
   useEffect(() => { setTheme(theme); }, [theme]);
   useEffect(() => {
@@ -510,10 +549,12 @@ export function Shell({ path, children }) {
     return () => window.removeEventListener("keydown", h);
   }, []);
 
-  return html`<div class="app">
-    <${Sidebar} path=${path} />
+  return html`<div class=${cx("app", collapsed && "app--collapsed", drawer && "app--drawer")}>
+    <${Sidebar} path=${path} collapsed=${collapsed} onToggleRail=${toggleRail} onClose=${() => setDrawer(false)} />
+    <div class="app__scrim" onClick=${() => setDrawer(false)} aria-hidden="true"></div>
     <div class="main">
       <${Topbar} path=${path} theme=${theme}
+        onMenu=${() => setDrawer((d) => !d)}
         onSearch=${() => setPalette(true)}
         onToggleTheme=${() => setThemeState(theme === "dark" ? "light" : "dark")} />
       <div class="content">${children}</div>

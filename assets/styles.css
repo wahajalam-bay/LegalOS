@@ -270,10 +270,87 @@ svg { display: block; }
 .nav__item svg { flex: none; opacity: .9; }
 .nav__badge { margin-left: auto; background: rgba(255,255,255,.12); color:#fff; font-size: 10.5px; font-weight: 600; padding: 1px 7px; border-radius: 999px; }
 .nav__badge--alert { background: var(--danger); }
+/* ---- Rail (collapsed sidebar) ----------------------------------------
+   72px of icons. Group headers are dropped entirely rather than shown
+   unreadable, and the sidebar renders every permitted row flat, so collapsing
+   never hides a destination. Labels survive as tooltips. */
 .app--collapsed .nav__label, .app--collapsed .nav__badge,
 .app--collapsed .sidebar__brand-text, .app--collapsed .workspace__meta,
+.app--collapsed .sidebar__user-meta,
 .app--collapsed .nav__item span { display: none; }
-.app--collapsed .nav__item { justify-content: center; }
+.app--collapsed .nav__item { justify-content: center; padding: 9px 0; gap: 0; }
+.app--collapsed .nav { padding: 6px 10px 16px; }
+.app--collapsed .nav__section--rail { margin-top: 0; }
+.app--collapsed .nav__section--rail + .nav__section--rail { margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.07); }
+.app--collapsed .nav__items { margin-left: 0; padding-left: 0; border-left: 0; }
+.app--collapsed .sidebar__brand { padding: 16px 0; justify-content: center; }
+.app--collapsed .workspace { justify-content: center; padding-left: 0; padding-right: 0; }
+.app--collapsed .workspace > svg { display: none; }
+.app--collapsed .sidebar__user { justify-content: center; }
+.app--collapsed .sidebar__rail { position: static; margin: 0; }
+.app--collapsed .nav__item.active::before { left: -10px; }
+
+/* The rail toggle lives in the brand row; the close button is drawer-only. */
+.sidebar__rail, .sidebar__close {
+  margin-left: auto; flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border: 0; border-radius: 7px; cursor: pointer;
+  background: rgba(255,255,255,.07); color: var(--sidebar-fg);
+  transition: background .13s, color .13s;
+}
+.sidebar__rail:hover, .sidebar__close:hover { background: rgba(255,255,255,.16); color: #fff; }
+.sidebar__close { display: none; }
+.topbar__menu {
+  display: none; flex: none; align-items: center; justify-content: center;
+  width: 36px; height: 36px; margin-left: -6px; border: 0; border-radius: 9px;
+  background: transparent; color: var(--text-2); cursor: pointer;
+}
+.topbar__menu:hover { background: var(--surface-2); color: var(--text); }
+.app__scrim { display: none; }
+
+/* ---- Narrow screens: the sidebar becomes a drawer -------------------- */
+@media (max-width: 1024px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed; inset: 0 auto 0 0; width: var(--sidebar-w-open, 268px);
+    transform: translateX(-100%); transition: transform .22s ease;
+    box-shadow: 0 0 40px rgba(0,0,0,.35);
+  }
+  /* A rail makes no sense in a drawer — always open it at full width. */
+  .app--collapsed { --sidebar-w: 0px; }
+  .app--collapsed .sidebar__brand-text, .app--collapsed .workspace__meta,
+  .app--collapsed .sidebar__user-meta, .app--collapsed .nav__item span,
+  .app--collapsed .nav__label, .app--collapsed .nav__badge { display: revert; }
+  .app--collapsed .nav__item { justify-content: flex-start; padding: 8px 10px; gap: 11px; }
+  /* Above the topbar, or the drawer's own brand row (and its close button)
+     sits underneath it and cannot be seen or clicked. */
+  .sidebar { z-index: calc(var(--z-topbar) + 2); }
+  .app--drawer .sidebar { transform: translateX(0); }
+  .app--drawer .app__scrim {
+    display: block; position: fixed; inset: 0; z-index: calc(var(--z-topbar) + 1);
+    background: rgba(4, 20, 12, .5); backdrop-filter: blur(2px);
+  }
+  .sidebar__rail { display: none; }
+  .sidebar__close { display: inline-flex; }
+  .topbar__menu { display: inline-flex; }
+  .page { padding: 20px 18px 56px; }
+}
+@media (max-width: 640px) {
+  .page { padding: 16px 12px 48px; }
+  .topbar { padding: 0 10px; gap: 8px; }
+  .topbar__crumbs { font-size: 12px; }
+}
+/* Action rows are flex and were pushing past the content box on a phone (the
+   page header's buttons, and the executive header's three). Let them wrap and
+   the header stacks instead of overflowing. */
+.pagehead, .pagehead__actions, .exec__actions { flex-wrap: wrap; }
+.pagehead__actions, .exec__actions { min-width: 0; }
+@media (max-width: 760px) {
+  .pagehead { gap: 12px; }
+  .pagehead__actions, .exec__actions { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sidebar { transition: none; }
+}
 
 .sidebar__foot { padding: 10px 12px; border-top: 1px solid rgba(255,255,255,.06); }
 .sidebar__user { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-radius: var(--r-sm); cursor: pointer; }
@@ -436,7 +513,42 @@ svg { display: block; }
 .avatar-stack .avatar:first-child { margin-left: 0; }
 
 /* Tables */
-.tablewrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--surface); }
+/* A table must fit its container, not force the reader to drag. Cells wrap and
+   long unbroken strings break, so a column cannot blow the layout out; a hard
+   max-width stops one verbose cell dominating. Horizontal scroll stays as a last
+   resort, and the shadow on the right edge makes it discoverable when it happens
+   instead of silently hiding a column. */
+.tablewrap {
+  overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--surface);
+  max-width: 100%;
+  background-image: linear-gradient(to right, var(--surface) 30%, transparent),
+                    linear-gradient(to left, var(--surface) 30%, transparent),
+                    linear-gradient(to right, rgba(0,0,0,.10), transparent 12px),
+                    linear-gradient(to left, rgba(0,0,0,.10), transparent 12px);
+  background-position: left center, right center, left center, right center;
+  background-repeat: no-repeat;
+  background-size: 28px 100%, 28px 100%, 12px 100%, 12px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+.table { table-layout: auto; }
+.table tbody td {
+  white-space: normal; overflow-wrap: anywhere; word-break: normal;
+  max-width: 340px; min-width: 0;
+}
+/* Atomic values must never be split across lines. */
+.table td .pill, .table td .status, .table td .cell-mono,
+.table td time, .table td .tiny { white-space: nowrap; }
+.table td .cell-strong { overflow-wrap: anywhere; }
+@media (max-width: 1024px) {
+  .table { font-size: 12.5px; }
+  .table thead th { padding: 9px 11px; }
+  .table tbody td { padding: 10px 11px; max-width: 240px; }
+}
+@media (max-width: 640px) {
+  .table { font-size: 12px; }
+  .table thead th { padding: 8px 9px; }
+  .table tbody td { padding: 9px 9px; max-width: 180px; }
+}
 .table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .table thead th {
   position: sticky; top: 0; background: var(--surface-2); text-align: left; font-weight: 600; color: var(--text-2);
