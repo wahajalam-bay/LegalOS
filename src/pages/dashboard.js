@@ -79,7 +79,7 @@ export default function Dashboard() {
     </div>
 
     <div class="grid grid--kpi" style="margin-bottom:16px">
-      <${Metric} label="Active Contracts" value=${fmt.num(k.activeContracts)} icon="file" tone="blue" trend="+6%" trendDir="up" foot=${html`${k.nearExpiry} nearing expiry`} onClick=${() => navigate("/contracts")} />
+      <${Metric} label="Active Contracts" value=${fmt.num(k.activeContracts)} icon="file" tone="blue" trend="+6%" trendDir="up" foot=${html`${k.nearExpiry} nearing expiry`} onClick=${() => navigate("/tracker")} />
       <${Metric} label="Pending Reviews" value=${k.pendingReviews} icon="checkcircle" tone="amber" trend="-12%" trendDir="down" foot=${html`<span style="color:var(--danger)">2 breaching SLA</span>`} onClick=${() => navigate("/reviews")} />
       <${Metric} label="Avg. Turnaround" value=${html`${k.avgTat}<span style="font-size:15px;font-weight:600;color:var(--text-3)"> days</span>`} icon="clock" tone="green" trend="-29%" trendDir="down" foot="Fastest in 12 months" />
       <${Metric} label="Approvals Pending" value=${k.approvalsPending} icon="checksquare" tone="purple" trend="+3" trendDir="up" foot="2 high-value deals" onClick=${() => navigate("/approvals")} />
@@ -170,7 +170,7 @@ export default function Dashboard() {
       </${Section}>
 
       <div class="col" style="gap:16px">
-        <${AICard} title="Contract spend" action=${html`<button class="tiny" style="color:var(--accent-600);font-weight:600" onClick=${() => navigate("/contracts")}>View contracts →</button>`}>
+        <${AICard} title="Contract spend" action=${html`<button class="tiny" style="color:var(--accent-600);font-weight:600" onClick=${() => navigate("/tracker")}>Open the tracker →</button>`}>
           <b>${fmt.money(committedUsd)}</b> of <b>${fmt.money(totalValUsd)}</b> total contracted value is committed or spent (${totalValUsd ? Math.round((committedUsd / totalValUsd) * 100) : 0}%).${overspend ? html` <b>${overspend}</b> contract${overspend === 1 ? " is" : "s are"} over budget.` : ""}
         </${AICard}>
         <div class="card card--pad col" style="gap:10px">

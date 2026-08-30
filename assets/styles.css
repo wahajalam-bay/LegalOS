@@ -1457,6 +1457,49 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 :root[data-theme="dark"] .agebkt--d60 { color: var(--brand); }
 @media (max-width: 620px) { .agetile__buckets { grid-template-columns: repeat(2, 1fr); } }
 
+/* The Director's hierarchy: organisation -> team -> desk / owner -> work item.
+   Each level opens in place, so drilling never leaves the executive context. */
+.orgnode { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); overflow: hidden; }
+.orgnode__head {
+  display: flex; align-items: center; gap: 11px; width: 100%; padding: 12px 14px;
+  border: 0; background: transparent; cursor: pointer; font: inherit; color: inherit;
+  transition: background .13s;
+}
+.orgnode__head:hover { background: var(--surface-2); }
+.orgnode__head.is-open { background: var(--surface-2); }
+.orgnode__chev { flex: none; opacity: .55; transform: rotate(-90deg); transition: transform .18s ease; }
+.orgnode__head.is-open .orgnode__chev { transform: rotate(0deg); }
+.orgnode__ico {
+  width: 30px; height: 30px; border-radius: 9px; flex: none; display: flex; align-items: center;
+  justify-content: center; background: var(--brand-soft); color: var(--brand);
+}
+.orgnode__name { font-size: 13.5px; font-weight: 650; color: var(--text); }
+.orgnode__sub { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+.orgnode__nums { display: flex; gap: 14px; flex: none; }
+.orgnode__n { font-size: 11.5px; color: var(--text-2); white-space: nowrap; }
+.orgnode__n b { color: var(--text); font-size: 13px; }
+.orgnode__body { border-top: 1px solid var(--border); padding: 14px; background: var(--surface-2); }
+.orgnode__cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 20px; }
+.orgrow {
+  display: flex; align-items: center; gap: 9px; width: 100%; padding: 7px 10px;
+  border: 0; border-radius: var(--r-sm); background: var(--surface); cursor: pointer;
+  font: inherit; color: inherit; text-align: left; transition: background .12s;
+}
+.orgrow:hover { background: var(--brand-soft); }
+.orgrow.is-open { background: var(--brand-soft); }
+.orgrow__name { font-size: 12.5px; font-weight: 600; color: var(--text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.orgnode__work { margin: 4px 0 8px 22px; padding-left: 12px; border-left: 2px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+.orgwork {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 6px 10px;
+  border: 0; border-radius: var(--r-sm); background: transparent; cursor: pointer; font: inherit; color: inherit;
+  transition: background .12s;
+}
+.orgwork:hover { background: var(--surface); }
+@media (max-width: 900px) {
+  .orgnode__cols { grid-template-columns: 1fr; }
+  .orgnode__nums { display: none; }
+}
+
 .exec__split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 26px; align-items: start; }
 
 /* ---- the board note ---- */

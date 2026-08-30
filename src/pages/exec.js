@@ -8,8 +8,9 @@
 // internal jargon, no em dashes. Operational modules keep their own language.
 import { html, cx, fmt, useState, useMemo } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Pill, Empty, Modal } from "../ui.js";
+import { Btn, Pill, Empty, Modal, Progress } from "../ui.js";
 import { PageHead } from "../parts.js";
+import { useOrgTree, OrgTree } from "./orgtree.js";
 import { navigate } from "../router.js";
 import { useCollection, setWorkspaceTarget } from "../store.js";
 import {
@@ -160,6 +161,9 @@ function ExecOverview() {
   // The portfolio tile drills into where the value sits, in place rather than
   // taking over a slot on the page.
   const [valueDrill, setValueDrill] = useState(false);
+  const [pendingDrill, setPendingDrill] = useState(false);
+  // The hierarchy: organisation -> team -> desk / owner -> work item.
+  const tree = useOrgTree();
   const m = useExecMetrics();
   const n = narrative(m);
 
@@ -185,6 +189,10 @@ function ExecOverview() {
         soWhat=${`committed at ${m.committed} days, was ${m.tatThen} in January`}
         delta=${m.tatDelta + "%"} deltaDir="down" spark=${m.trend}
         onClick=${() => navigate("/pipelines")} />
+      <${HeroTile} label="Pending tasks" icon="inbox"
+        value=${m.pendingTasks.length}
+        soWhat="open across the desks — click for the breakdown"
+        onClick=${() => setPendingDrill(true)} />
       <${HeroTile} label="Overdue tasks" icon="alertTriangle"
         value=${m.delayed.length}
         soWhat=${m.delayed.length ? `past their agreed date — ${[...new Set(m.delayed.map((d) => d.__tat.blockingStage))].slice(0, 2).join(", ")}` : "nothing past its date"}
@@ -226,24 +234,34 @@ function ExecOverview() {
 
 
     <!-- where the value sits, and who does the work -->
-    <!-- pending tasks, as a chart you can click into -->
-    <section class="exec__split">
-      <div class="card card--pad col clickable card--hover" style="gap:14px"
-        onClick=${() => openWorkspace("worklist", {})}>
-        <div class="row" style="align-items:flex-start">
-          <div style="min-width:0">
-            <h2 class="exec__h2">Pending tasks</h2>
-            <p class="exec__sub">${m.pendingTasks.length} open across the desks. Click any desk to open its worklist.</p>
-          </div>
-          <div class="spacer"></div>
-          <${Icon} name="chevronRight" size=18 style=${{ color: "var(--text-3)" }} />
-        </div>
-        <${ShareDonut} data=${m.pendingBySubdiv} size=${132} thickness=${17}
-          centerValue=${m.pendingTasks.length} centerLabel="open" />
-        <${TableTwin} rows=${m.pendingBySubdiv} cols=${["Legal desk", "Open tasks"]} />
+    <!-- the legal function, drillable end to end -->
+    <section class="exec__section" style="margin-bottom:22px">
+      <div class="exec__sechead">
+        <h2 class="exec__h2">The legal function</h2>
+        <span class="tiny muted">Open a team to see its desks, who is holding what, and the work itself.</span>
       </div>
+      ${tree.facts.length > 0 && html`<div class="row wrap" style="gap:8px;margin-bottom:12px">
+        ${tree.facts.map((f, i) => html`<span key=${i} class="tiny" style="background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:5px 11px;color:var(--text-2)">${f}</span>`)}
+      </div>`}
+      <${OrgTree} tree=${tree} />
 
-      <div class="exec__note" style="margin:0">
+      <div class="card card--pad col" style="gap:12px;margin-top:16px">
+        <div>
+          <h2 class="exec__h2">Where all open work is sitting</h2>
+          <p class="exec__sub">Across every team. Click a stage to open that queue.</p>
+        </div>
+        <div class="col" style="gap:7px">
+          ${tree.byStage.slice(0, 10).map((st, i) => html`<button key=${st.stage} class="orgrow"
+            onClick=${() => openWorkspace("worklist", {})}>
+            <span class="orgrow__name" style="min-width:170px">${st.stage}</span>
+            <div style="flex:1"><${Progress} value=${Math.round((st.n / (tree.all.open.length || 1)) * 100)} tone=${i === 0 ? "amber" : ""} /></div>
+            <span class="tiny strong" style="width:30px;text-align:right">${st.n}</span>
+          </button>`)}
+        </div>
+      </div>
+    </section>
+
+    <section class="exec__note">
       <div class="exec__noteHead">
         <span class="exec__ico"><${Icon} name="book" size=15 /></span>
         <h2 class="exec__h2" style="margin:0">What changed this quarter</h2>
@@ -255,7 +273,6 @@ function ExecOverview() {
         <${Btn} variant="soft" size="sm" icon="play" onClick=${() => startTour()}>Walk me through it</${Btn}>
         <${Btn} variant="ghost" size="sm" icon="dashboard" onClick=${() => navigate("/dashboard")}>Operational dashboard</${Btn}>
       </div>
-      </div>
     </section>
 
     <!-- the board note -->
@@ -266,6 +283,16 @@ function ExecOverview() {
         dashboard and the module detail sit behind every number above.
       </span>
     </footer>
+    ${pendingDrill && html`<${Modal} title="Pending tasks" icon="inbox" width=${640}
+      onClose=${() => setPendingDrill(false)}>
+      <p class="exec__sub" style="margin-bottom:14px">${m.pendingTasks.length} open across the desks. Click a desk to open its worklist.</p>
+      <${ShareDonut} data=${m.pendingBySubdiv} size=${150} thickness=${18}
+        centerValue=${m.pendingTasks.length} centerLabel="open" />
+      <div style="margin-top:14px">
+        <${TableTwin} rows=${m.pendingBySubdiv} cols=${["Legal desk", "Open tasks"]} />
+      </div>
+    </${Modal}>`}
+
     ${valueDrill && html`<${Modal} title="Where the value sits" icon="dollar" width=${720}
       onClose=${() => setValueDrill(false)}>
       <p class="exec__sub" style="margin-bottom:14px">Live contract value by entity, in US dollars for comparison.</p>
