@@ -1348,18 +1348,7 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 
 /* ---- shared exec chrome ---- */
 .execpage, .flowpage { max-width: 1240px; margin: 0 auto; }
-.exec__head {
-  display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap;
-  padding-bottom: 26px; margin-bottom: 26px;
-  border-bottom: 1px solid var(--border);
-}
-.exec__title {
-  font-size: 30px; line-height: 1.2; font-weight: 700; letter-spacing: -.025em;
-  margin: 0; max-width: 22ch; color: var(--text);
-}
-.exec__lede {
-  margin: 12px 0 0; font-size: 14px; line-height: 1.65; color: var(--text-2); max-width: 62ch;
-}
+.exec__head { display: flex; justify-content: flex-end; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
 .exec__actions { display: flex; gap: 8px; flex-wrap: wrap; flex: none; padding-top: 4px; }
 .exec__h2 { font-size: 15px; font-weight: 700; letter-spacing: -.012em; margin: 0; color: var(--text); }
 .exec__sub { font-size: 12.5px; line-height: 1.6; color: var(--text-3); margin: 5px 0 0; max-width: 56ch; }
@@ -1656,7 +1645,6 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 @media (max-width: 700px) {
   .exec__tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tourbtn__t { display: none; }
-  .exec__title { font-size: 24px; max-width: none; }
   .brief__cols, .brief__flow, .brief__metrics { grid-template-columns: 1fr; }
   .brief__sheet { padding: 22px 20px; }
 }

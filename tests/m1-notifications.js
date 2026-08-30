@@ -48,7 +48,7 @@ async function notifs(p, forUserId) { return p.evaluate((u) => { const s = JSON.
 
   // ---- A) Full-screen detail sheet ----
   await viewAs(p, "u16"); await go(p, "#/my-requests");
-  await p.evaluate(() => { const el = [...document.querySelectorAll(".mreq")].find((c) => /REQ-ADV/.test(c.textContent)); if (el) el.click(); });
+  await p.evaluate(() => { const el = [...document.querySelectorAll(".mreq, .table tbody tr")].find((c) => /REQ-ADV/.test(c.textContent)); if (el) el.click(); });
   await wait(700);
   const sheet = await p.$(".sheet");
   ok("clicking a request opens a full-screen sheet", !!sheet);

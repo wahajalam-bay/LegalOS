@@ -41,7 +41,7 @@ async function ls(p, path) { return p.evaluate((path) => { const s = JSON.parse(
 
   // (1) requester can reply in-app
   await viewAs(p, "u16"); await go(p, "#/my-requests");
-  await p.evaluate(() => { const el = [...document.querySelectorAll(".mreq")].find((c) => /REQ-CHAT/.test(c.textContent)); if (el) el.click(); });
+  await p.evaluate(() => { const el = [...document.querySelectorAll(".mreq, .table tbody tr")].find((c) => /REQ-CHAT/.test(c.textContent)); if (el) el.click(); });
   await wait(700);
   const t = await body(p);
   ok("requester sheet shows in-app Messages", /Messages with Legal/i.test(t));

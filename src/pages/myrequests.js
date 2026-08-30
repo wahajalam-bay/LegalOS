@@ -5,10 +5,11 @@
 // content (category label, owner, priority, triage notes, risk).
 import { html, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Status, Pill, Empty, Drawer, Timeline, Progress } from "../ui.js";
+import { Btn, Status, Pill, Empty, Drawer, Timeline, Progress, Segmented } from "../ui.js";
 import { PageHead } from "../parts.js";
 import { useCollection, requestStages } from "../store.js";
 import { useActiveUser } from "../rbac.js";
+import { byId } from "../data.js";
 import { navigate } from "../router.js";
 import { ChatThread, unreadCount } from "../messages.js";
 
@@ -155,10 +156,85 @@ function RequesterPipeline({ r }) {
   </div>`;
 }
 
+
+/* The tabular view. Columns are the ones a requester actually tracks against:
+   what it is, who it is with, who raised it, who in Legal holds it, what kind of
+   request, and the turnaround. Every column sorts; the default is by turnaround
+   so whatever is closest to its deadline is on top. */
+const COLS = [
+  { key: "title",        label: "Contract",       get: (r) => r.title || "—" },
+  { key: "counterparty", label: "Counter party",  get: (r) => r.counterparty && r.counterparty !== "—" ? r.counterparty : "—" },
+  { key: "requester",    label: "Requester",      get: (r) => personName(r.requesterId || r.requester) || r.requesterEmail || "—" },
+  { key: "assignee",     label: "Assignee (POC)", get: (r) => personName(r.owner) || "Awaiting triage" },
+  { key: "type",         label: "Request type",   get: (r) => r.requestType || r.type || r.contractType || "—" },
+  { key: "tat",          label: "TAT",            get: (r) => tatDue(r) || 0 },
+];
+
+function personName(id) {
+  if (!id) return null;
+  const u = byId(id);
+  return u ? u.name : null;
+}
+const tatDue = (r) => {
+  const d = (r.tat && r.tat.dueAt) || r.dueDate || r.due || null;
+  return d ? new Date(d).getTime() : null;
+};
+// Working days left, phrased for someone who is waiting rather than working it.
+function tatCell(r) {
+  const due = tatDue(r);
+  if (!due) return html`<span class="muted">Set at triage</span>`;
+  if (DONE.has(r.status)) return html`<span class="muted">${fmt.date(new Date(due))}</span>`;
+  const days = Math.ceil((due - Date.now()) / 86400000);
+  const tone = days < 0 ? "red" : days <= 2 ? "amber" : "green";
+  const when = days < 0 ? `${Math.abs(days)}d overdue` : days === 0 ? "Due today" : `in ${days}d`;
+  return html`<div class="col" style="gap:2px">
+    <span class="cell-strong">${fmt.date(new Date(due))}</span>
+    <${Pill} tone=${tone}>${when}</${Pill}>
+  </div>`;
+}
+
+function RequestTable({ items, onOpen }) {
+  const [sort, setSort] = useState({ key: "tat", dir: 1 });
+  const col = COLS.find((c) => c.key === sort.key) || COLS[5];
+  const rows = [...items].sort((a, b) => {
+    const av = col.get(a), bv = col.get(b);
+    // Anything without a turnaround yet sorts last rather than pretending to be urgent.
+    if (sort.key === "tat") {
+      const an = av || Infinity, bn = bv || Infinity;
+      return (an - bn) * sort.dir;
+    }
+    return String(av).localeCompare(String(bv), undefined, { numeric: true }) * sort.dir;
+  });
+  const head = (c) => html`<th key=${c.key} class="clickable"
+    onClick=${() => setSort((s) => ({ key: c.key, dir: s.key === c.key ? -s.dir : 1 }))}>
+    ${c.label}${sort.key === c.key ? html`<${Icon} name=${sort.dir === 1 ? "chevronDown" : "chevronRight"} size=11 style=${{ marginLeft: "4px", verticalAlign: "-1px" }} />` : null}
+  </th>`;
+  return html`<div class="tablewrap dense"><table class="table">
+    <thead><tr>${COLS.map(head)}<th>Status</th></tr></thead>
+    <tbody>
+      ${rows.map((r) => html`<tr key=${r.id} class="rowlink" onClick=${() => onOpen(r)}>
+        <td class="wrapcell">
+          <div class="cell-strong">${r.title}</div>
+          <div class="tiny muted">${r.id} · submitted ${submittedAt(r) ? fmt.date(submittedAt(r)) : "—"}</div>
+        </td>
+        <td>${COLS[1].get(r)}</td>
+        <td>${COLS[2].get(r)}</td>
+        <td>${personName(r.owner) || html`<span class="muted">Awaiting triage</span>`}</td>
+        <td>${COLS[4].get(r)}</td>
+        <td>${tatCell(r)}</td>
+        <td><${Status} value=${r.status} /></td>
+      </tr>`)}
+    </tbody>
+  </table></div>`;
+}
+
 export default function MyRequests() {
   const viewer = useActiveUser();
   const requests = useCollection("requests");
   const [open, setOpen] = useState(null);
+  // List first: a requester tracking several matters wants to scan them, and the
+  // cards only really pay off once there are few enough to look at one by one.
+  const [view, setView] = useState("list");
 
   const mine = requests
     .filter((r) => r.requesterId === viewer.id || (viewer.email && r.requesterEmail === viewer.email))
@@ -172,7 +248,9 @@ export default function MyRequests() {
 
   return html`<div class="page">
     <${PageHead} title="Legal Requests" sub="Everything you've raised with Legal — track status and turnaround here."
-      actions=${html`<${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise")}>New request</${Btn}>`} />
+      actions=${html`<${Segmented} value=${view} onChange=${setView}
+          options=${[{ label: "List", value: "list", icon: "list" }, { label: "Cards", value: "cards", icon: "columns" }]} />
+        <${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise")}>New request</${Btn}>`} />
 
     ${mine.length === 0
       ? html`<${Empty} icon="inbox" title="No requests yet"
@@ -181,11 +259,15 @@ export default function MyRequests() {
       : html`<div class="col" style="gap:22px">
           ${active.length > 0 && html`<div>
             <div class="panel__title" style="margin-bottom:12px">In progress <span class="tiny muted">· ${active.length}</span></div>
-            <${Grid} items=${active} onOpen=${setOpen} />
+            ${view === "list"
+              ? html`<${RequestTable} items=${active} onOpen=${setOpen} />`
+              : html`<${Grid} items=${active} onOpen=${setOpen} />`}
           </div>`}
           ${done.length > 0 && html`<div>
             <div class="panel__title" style="margin-bottom:12px">Completed <span class="tiny muted">· ${done.length}</span></div>
-            <${Grid} items=${done} onOpen=${setOpen} />
+            ${view === "list"
+              ? html`<${RequestTable} items=${done} onOpen=${setOpen} />`
+              : html`<${Grid} items=${done} onOpen=${setOpen} />`}
           </div>`}
         </div>`}
 

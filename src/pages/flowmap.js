@@ -159,13 +159,6 @@ export default function FlowMap() {
 
   return html`<div class="page flowpage fade-in">
     <header class="exec__head">
-      <div style="min-width:0;flex:1">
-        <h1 class="exec__title">Every request travels the same path, and you can see where each one is.</h1>
-        <p class="exec__lede">
-          Nine stages from a business request to a signed contract that is filed and watched.
-          The numbers below are live. Click any stage to see exactly what is sitting there.
-        </p>
-      </div>
       <div class="exec__actions">
         <${Btn} variant="primary" icon="play" onClick=${() => startTour()}>Take the tour</${Btn}>
         <${Btn} variant="ghost" icon="dashboard" onClick=${() => navigate("/exec")}>Executive overview</${Btn}>

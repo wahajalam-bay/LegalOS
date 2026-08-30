@@ -146,22 +146,6 @@ function ExecOverview() {
   ];
 
   return html`<div class="page execpage fade-in">
-    <!-- headline band -->
-    <header class="exec__head">
-      <div style="min-width:0;flex:1">
-        <h1 class="exec__title">Every legal request, from the business to a signed contract, on one system.</h1>
-        <p class="exec__lede">
-          One front door for the business, a fixed turnaround on every request, and a full record of
-          who held what and for how long. ${m.liveCount} live contracts across ${m.entityCount} entities
-          in Saudi Arabia, the UAE and Pakistan.
-        </p>
-      </div>
-      <div class="exec__actions">
-        <${Btn} variant="primary" size="lg" icon="play" onClick=${() => startTour()}>Take the 5 minute tour</${Btn}>
-        <${Btn} variant="ghost" icon="git" onClick=${() => navigate("/flow-map")}>See how it works</${Btn}>
-        <${Btn} variant="ghost" icon="download" onClick=${() => navigate("/exec/brief")}>Executive brief</${Btn}>
-      </div>
-    </header>
 
     <!-- the four numbers a CEO actually asks about -->
     <section class="exec__heroes">
