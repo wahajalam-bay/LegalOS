@@ -287,7 +287,8 @@ function ExecOverview() {
       onClose=${() => setPendingDrill(false)}>
       <p class="exec__sub" style="margin-bottom:14px">${m.pendingTasks.length} open across the desks. Click a desk to open its worklist.</p>
       <${ShareDonut} data=${m.pendingBySubdiv} size=${150} thickness=${18}
-        centerValue=${m.pendingTasks.length} centerLabel="open" />
+        centerValue=${m.pendingTasks.length} centerLabel="open"
+        onSlice=${(d) => { setPendingDrill(false); openWorkspace("worklist", d.label.startsWith("Other") ? {} : { subdivisions: [d.label] }); }} />
       <div style="margin-top:14px">
         <${TableTwin} rows=${m.pendingBySubdiv} cols=${["Legal desk", "Open tasks"]} />
       </div>

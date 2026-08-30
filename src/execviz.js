@@ -104,7 +104,7 @@ export function RankBars({ data = [], format = (v) => v, note, emphasiseTop, onR
    generated hue. The legend carries the exact value AND the share, so close
    slices are compared as numbers rather than by angle.
    ============================================================ */
-export function ShareDonut({ data = [], size = 168, thickness = 20, centerValue, centerLabel, format = (v) => v }) {
+export function ShareDonut({ data, size = 170, thickness = 20, centerValue, centerLabel, format = (v) => v, onSlice }) {
   const total = data.reduce((s, d) => s + d.value, 0) || 1;
   const [hover, setHover] = useState(-1);
   const r = (size - thickness) / 2;
@@ -141,7 +141,9 @@ export function ShareDonut({ data = [], size = 168, thickness = 20, centerValue,
       ${data.map((d, i) => html`<div key=${d.label} class="row"
         onMouseEnter=${() => setHover(i)} onMouseLeave=${() => setHover(-1)}
         title=${`${d.label}: ${format(d.value)} (${Math.round((d.value / total) * 100)}%)`}
-        style=${`gap:9px;cursor:default;opacity:${hover === -1 || hover === i ? 1 : 0.55};transition:opacity .14s`}>
+        onClick=${onSlice ? () => onSlice(d, i) : null}
+        role=${onSlice ? "button" : null}
+        style=${`gap:9px;cursor:${onSlice ? "pointer" : "default"};opacity:${hover === -1 || hover === i ? 1 : 0.55};transition:opacity .14s`}>
         <span class="tag-dot" style=${`background:${d.color || seriesColor(i)}`}></span>
         <span class="viz__legend">${d.label}</span>
         <span class="spacer"></span>

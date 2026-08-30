@@ -303,18 +303,19 @@ function NotifButton() {
   const unread = items.filter((n) => n.unread).length;
   const toneBg = { amber: "var(--warning-bg)", red: "var(--danger-bg)", blue: "var(--brand-soft)", purple: "var(--accent-soft)", green: "var(--success-bg)" };
   const toneFg = { amber: "var(--warning)", red: "var(--danger)", blue: "var(--brand)", purple: "var(--accent-500)", green: "var(--success)" };
-  return html`<${Dropdown} width=${380} trigger=${html`<button class="iconbtn"><${Icon} name="bell" size=18 />${unread > 0 && html`<span class="iconbtn__dot"></span>`}</button>`}>
+  return html`<${Dropdown} width=${380} trigger=${html`<button class="iconbtn" title="Notifications"><${Icon} name="bell" size=18 />${unread > 0 && html`<span class="iconbtn__dot"></span>`}</button>`}>
     <div class="row" style="padding:6px 10px 10px">
       <span class="strong">Notifications</span>
       <span class="spacer"></span>
       <button class="tiny" style="color:var(--brand);font-weight:600" onClick=${(e) => { e.stopPropagation(); setItems(items.map((n) => ({ ...n, unread: false }))); }}>Mark all read</button>
     </div>
     <div style="max-height:400px;overflow-y:auto;margin:0 -6px">
-      ${items.map((n) => html`<div key=${n.id} class=${cx("notif", n.unread && "notif--unread", n.path && "clickable")}
-        onClick=${n.path ? () => navigate(n.path) : null}>
+      ${items.map((n) => { const dest = n.path || n.to; return html`<div key=${n.id} class=${cx("notif", n.unread && "notif--unread", dest && "clickable")}
+        title=${dest ? "Open the record behind this" : null}
+        onClick=${dest ? () => navigate(dest) : null}>
         <div class="notif__ico" style=${`background:${toneBg[n.tone]};color:${toneFg[n.tone]}`}><${Icon} name=${n.icon} size=16 /></div>
         <div style="flex:1"><div class="notif__text">${n.title}</div><div class="notif__time">${fmt.rel(n.time)}</div></div>
-      </div>`)}
+      </div>`; })}
     </div>
   </${Dropdown}>`;
 }
@@ -507,7 +508,7 @@ function CopilotDock({ open, onClose }) {
         <div class="metric__icon" style="background:linear-gradient(135deg,#0d7a3f,#0891b2);color:#fff"><${Icon} name="sparkles" size=17 /></div>
         <div><div class="modal__title" style="font-size:14px">Legal Copilot</div><div class="tiny muted">Context: 1,284 contracts · 12 matters</div></div>
         <div class="spacer"></div>
-        <button class="iconbtn" onClick=${onClose}><${Icon} name="x" size=18 /></button>
+        <button class="iconbtn" title="Close" onClick=${onClose}><${Icon} name="x" size=18 /></button>
       </div>
       <div class="chat" ref=${scRef}>
         ${msgs.map((m, i) => html`<div key=${i} class=${cx("msg", `msg--${m.role}`)}>
