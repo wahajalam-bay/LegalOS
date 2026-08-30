@@ -709,12 +709,16 @@ export const CONTRACT_REQUEST_TYPES = ["New", "Revision", "Extension", "Draft", 
 // Each request type presets an ordered stage path. Risk tier deepens the
 // review/approval segment at render time (see riskGatesFor below).
 export const LIFECYCLE_PATHS = {
-  New: ["Intake", "Triage", "Legal Review", "Drafting", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
-  Revision: ["Intake", "Triage", "Legal Review", "Redlining", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
+  // The department's standard path. "Triage" keeps its KEY — it is wired into
+  // tone maps, stage weights, aliases and the TAT fix — and is DISPLAYED as
+  // "Assigned" (the POC is assigned here) via STAGE_META.label. Renaming the key
+  // itself would have collided with the separate "Assigned" request status.
+  New: ["Intake", "Triage", "Legal Review", "Internal Review", "External Review", "Drafting", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
+  Revision: ["Intake", "Triage", "Legal Review", "Internal Review", "External Review", "Redlining", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
   Extension: ["Intake", "Triage", "Legal Review", "Drafting", "Approval", "Signature", "Executed", "Repository"],
   Draft: ["Intake", "Triage", "Drafting", "Legal Review", "Approval", "Repository"],
   Termination: ["Intake", "Triage", "Legal Review", "Notice Drafting", "Approval", "Notice Served", "Closed"],
-  Amendment: ["Intake", "Triage", "Legal Review", "Drafting", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
+  Amendment: ["Intake", "Triage", "Legal Review", "Internal Review", "External Review", "Drafting", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
   Commercial: ["Intake", "Triage", "Commercial Review", "Legal Review", "Negotiation", "Approval", "Signature", "Executed", "Repository"],
 };
 export const lifecyclePathFor = (requestType) => LIFECYCLE_PATHS[requestType] || LIFECYCLE_PATHS.New;
@@ -723,9 +727,11 @@ export const lifecyclePathFor = (requestType) => LIFECYCLE_PATHS[requestType] ||
 // artifacts the stage produces (these become the OUTPUT zone's provenance).
 export const STAGE_META = {
   "Intake": { icon: "inbox", ball: "business", role: "Requester", entry: "Request submitted with the mandatory fields", exit: "Mandatory fields complete and supporting documents attached", artifacts: ["Request form", "Attachments"] },
-  "Triage": { icon: "filter", ball: "legal", role: "Triage counsel", entry: "Request landed in the department queue", exit: "Category, sub-division, owner and TAT fixed; duplicates checked", artifacts: ["Triage note", "TAT assignment"] },
+  "Triage": { label: "Assigned", icon: "filter", ball: "legal", role: "Triage counsel", entry: "Request landed in the department queue", exit: "Category, sub-division, owner and TAT fixed; duplicates checked", artifacts: ["Triage note", "TAT assignment"] },
   "Commercial Review": { icon: "dollar", ball: "business", role: "Commercial owner", entry: "Triaged and routed as a commercial request", exit: "Commercial terms and budget confirmed by the business", artifacts: ["Commercial term sheet"] },
   "Legal Review": { icon: "eye", ball: "legal", role: "Reviewing counsel", entry: "Owner assigned and documents readable", exit: "Risk assessed, playbook deviations logged, position agreed", artifacts: ["Review memo", "Risk assessment"] },
+  "Internal Review": { icon: "users", ball: "legal", role: "Reviewing counsel", entry: "Legal position drafted", exit: "Internal stakeholders have signed off on the position", artifacts: ["Internal review note"] },
+  "External Review": { icon: "externalLink", ball: "counterparty", role: "External counsel / counterparty", entry: "Position cleared internally", exit: "External comments received and reconciled", artifacts: ["External comments"] },
   "Drafting": { icon: "edit", ball: "legal", role: "Drafter", entry: "Position agreed and template version selected", exit: "Draft generated from an approved template version", artifacts: ["Draft agreement"] },
   "Redlining": { icon: "gitbranch", ball: "legal", role: "Drafter", entry: "Counterparty paper or prior version received", exit: "Redlines applied and deviations flagged", artifacts: ["Redlined draft", "Deviation log"] },
   "Notice Drafting": { icon: "edit", ball: "legal", role: "Drafter", entry: "Termination grounds confirmed", exit: "Notice drafted against the contractual notice clause", artifacts: ["Termination notice"] },
@@ -737,6 +743,9 @@ export const STAGE_META = {
   "Repository": { icon: "database", ball: "legal", role: "Contract manager", entry: "Executed document available", exit: "Drive link saved, tracker row created, Sr No mapped to the physical record", artifacts: ["Repository record", "Drive link", "Tracker row", "Physical record ref"] },
   "Closed": { icon: "checkcircle", ball: "legal", role: "Owner", entry: "Outcome delivered", exit: "Matter closed and archived", artifacts: ["Closure note"] },
 };
+// What a stage is CALLED on screen. Keys stay stable for the logic; labels can
+// be renamed without touching tone maps, weights or aliases.
+export const stageDisplay = (name) => (STAGE_META[name] && STAGE_META[name].label) || name;
 export const stageMeta = (name) => STAGE_META[name] || { icon: "circle", ball: "legal", role: "Owner", entry: "—", exit: "—", artifacts: [] };
 export const BALL_LABEL = { legal: "Legal", business: "Business", counterparty: "Counterparty" };
 

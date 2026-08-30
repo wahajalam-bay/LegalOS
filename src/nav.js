@@ -60,7 +60,7 @@ export const NAV = [
   { section: "Shared", icon: "library", items: [
     { path: "/matters", label: "Matters", icon: "folder" },
     { path: "/repository", label: "Intake & Repository", icon: "scan" },
-    { path: "/companies", label: "Entity Registry", icon: "building" },
+    { path: "/companies", label: "Companies & Entities", icon: "building" },
     { path: "/drafting", label: "Contract Intelligence", icon: "sparkles" },
     { path: "/templates", label: "Templates", icon: "template" },
     { path: "/clauses", label: "Clause Library", icon: "library" },

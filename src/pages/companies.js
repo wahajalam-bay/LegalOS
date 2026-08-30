@@ -132,10 +132,21 @@ function CompanyDetail({ id }) {
   const totalVal = g.contracts.reduce((s, x) => s + usd(x.value || 0, x.currency), 0);
   const totalSpend = g.contracts.reduce((s, x) => s + usd(x.spendToDate || 0, x.currency), 0);
   const openMatters = g.matters.filter((m) => m.progress < 100).length;
+  // The six numbers a Legal Director asks an entity for. Overdue is measured
+  // against the matter's own target date, and contract aging against expiry —
+  // neither existed as a number on this page before.
+  const overdueMatters = g.matters.filter((m) => {
+    const due = m.targetDate || m.dueDate || m.due;
+    return m.progress < 100 && due && new Date(due) < new Date();
+  }).length;
+  const expiringContracts = g.contracts.filter((x) => {
+    if (!x.expiry) return false;
+    const d = (new Date(x.expiry) - Date.now()) / 86400000;
+    return d >= 0 && d <= 90;
+  }).length;
 
   const tabs = [
     // The live org-module work is the first thing to see on an entity.
-    { key: "work", label: "Legal work", icon: "briefcase", count: work.length },
     // Workstream C: the drill-down hierarchy is the default way in.
     { key: "browse", label: "By contract type", icon: "layers", count: new Set(g.contracts.map((c) => c.contractType)).size },
     { key: "contracts", label: "Contracts", icon: "file", count: g.contracts.length },
@@ -157,13 +168,12 @@ function CompanyDetail({ id }) {
     </div>
 
     <${StatStrip} stats=${[
-      { value: work.length, label: "Module work" },
-      { value: g.contracts.length, label: "Contracts" },
-      { value: fmt.money(totalVal), label: "Total value" },
-      { value: fmt.money(totalSpend), label: "Spend to date" },
-      { value: openMatters, label: "Open matters" },
-      { value: g.litigation.length, label: "Litigation" },
-      { value: lic.length, label: "Licenses" },
+      { value: openMatters, label: "Pending matters", onClick: () => setTab("matters") },
+      { value: overdueMatters, label: "Overdue matters", tone: overdueMatters ? "red" : undefined, onClick: () => setTab("matters") },
+      { value: expiringContracts, label: "Expiring contracts", title: "Expiring within 90 days", tone: expiringContracts ? "amber" : undefined, onClick: () => setTab("contracts") },
+      { value: fmt.money(totalSpend), label: "Legal spend", onClick: () => setTab("contracts") },
+      { value: g.litigation.length, label: "Number of legal cases", onClick: () => setTab("litigation") },
+      { value: fmt.money(totalVal), label: "Aggregate portfolio value", title: "Total contract value", onClick: () => setTab("contracts") },
     ]} />
 
     ${c.riskNote ? html`<div style="margin-bottom:16px"><${AICard} title="Relationship note">${c.riskNote}</${AICard}></div>` : ""}

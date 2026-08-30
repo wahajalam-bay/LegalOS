@@ -14,7 +14,7 @@
 //
 // Pure model code — no React. spine.js renders what this returns.
 import {
-  LIFECYCLE_PATHS, lifecyclePathFor, stageMeta, STAGE_META, riskGatesFor,
+  LIFECYCLE_PATHS, lifecyclePathFor, stageMeta, stageDisplay, STAGE_META, riskGatesFor,
   entityById, entityName, nameOf, byId, subdivisionOf, categoryOf,
   REVIEWS, APPROVALS, LITIGATION, TEMPLATES, contractTypeMeta,
 } from "./data.js";
@@ -169,6 +169,7 @@ export function buildStages(rec = {}, ctx = {}, now = new Date()) {
 
   return path.map((name, i) => {
     const meta = stageMeta(name);
+    const label = stageDisplay(name);
     const state = i < idx ? "done" : i === idx ? (rec.blockedOn ? "blocked" : "active") : "pending";
 
     let enteredAt = null, exitedAt = null;
@@ -202,6 +203,8 @@ export function buildStages(rec = {}, ctx = {}, now = new Date()) {
 
     return {
       name,
+      // What the rail shows. `name` stays the stable key the logic matches on.
+      label,
       icon: meta.icon,
       state,
       role: meta.role,

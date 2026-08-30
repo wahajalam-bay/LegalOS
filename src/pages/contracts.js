@@ -17,7 +17,19 @@ import { rowTat } from "../flow.js";
 const burnPct = (c) => ((c.value || 0) ? Math.round(((c.spendToDate || 0) / c.value) * 100) : 0);
 const commitBurnPct = (c) => ((c.value || 0) ? Math.round((((c.spendToDate || 0) + (c.committedSpend || 0)) / c.value) * 100) : 0);
 
-const CLM_STAGES = ["Request", "Intake", "Review", "Drafting", "Negotiation", "Approval", "Signature", "Executed", "Active", "Renewal"];
+// Eight stages, not ten. "Intake" was a hand-off inside Request and "Executed"
+// is the moment Active begins — neither earned a step of its own on a rail
+// this long. Records still carry the finer-grained stage names, so STAGE_FOLD
+// maps what the data says onto what the rail shows; without it a value like
+// "Legal Review" missed the rail entirely and fell back to a hardcoded index.
+const CLM_STAGES = ["Request", "Review", "Drafting", "Negotiation", "Approval", "Signature", "Active", "Renewal"];
+const STAGE_FOLD = {
+  Intake: "Request", Triage: "Request",
+  "Legal Review": "Review", Vetting: "Review",
+  "Notice Drafting": "Drafting",
+  Executed: "Active", Signed: "Active", Repository: "Active", Extraction: "Active", Archive: "Active",
+};
+const railStage = (stage) => STAGE_FOLD[stage] || stage;
 const CONTRACT_TYPES = ["MSA", "SaaS / MSA", "Vendor", "Consultancy", "Lease", "Partnership", "Framework", "Supply", "SOW", "Insurance", "Reseller"];
 const CURRENCIES = ["USD", "SAR", "AED", "GBP", "EUR", "PKR"];
 
@@ -67,13 +79,26 @@ const CLAUSES_NAV = [
   { n: "10", t: "Governing Law & Disputes", risk: null },
 ];
 
-/* ---- Feature 2: Spend tab + add-expense ---- */
+/* ---- Feature 2: Spend tab + add-expense ----
+   Cost is tracked by TYPE, not as one undifferentiated "spend to date":
+   external counsel, internal legal time, and the administrative outlay
+   (stamp paper, attestation, notarisation). Entries recorded before this
+   existed are read as external legal, which is what they were. */
+export const COST_TYPES = [
+  { key: "external", label: "External legal cost", hint: "outside counsel, filing agents" },
+  { key: "internalLegal", label: "Internal legal cost", hint: "in-house time charged to the matter" },
+  { key: "internalAdmin", label: "Internal admin cost", hint: "stamp paper, attestation, notarisation" },
+];
+const costOf = (entries, key) => (entries || [])
+  .filter((e) => (e.costType || "external") === key)
+  .reduce((sum, e) => sum + (Number(e.amount) || 0), 0);
+
 function AddExpenseModal({ c, onClose }) {
-  const [f, setF] = useState({ date: new Date().toISOString().slice(0, 10), description: "", amount: "", invoiceRef: "" });
+  const [f, setF] = useState({ date: new Date().toISOString().slice(0, 10), description: "", amount: "", invoiceRef: "", costType: "external" });
   const set = (k, v) => setF((s) => ({ ...s, [k]: v }));
   const submit = () => {
     const amt = Number(String(f.amount).replace(/[^0-9.]/g, "")) || 0;
-    const entry = { id: c.id + "-E" + ((c.spendEntries || []).length + 1) + "-" + Date.now().toString().slice(-4), date: new Date(f.date + "T00:00:00").toISOString(), description: f.description.trim() || "Expense", amount: amt, invoiceRef: f.invoiceRef.trim() || "—", by: "u1" };
+    const entry = { id: c.id + "-E" + ((c.spendEntries || []).length + 1) + "-" + Date.now().toString().slice(-4), date: new Date(f.date + "T00:00:00").toISOString(), description: f.description.trim() || "Expense", amount: amt, invoiceRef: f.invoiceRef.trim() || "—", costType: f.costType, by: "u1" };
     updateItem("contracts", c.id, { spendEntries: [entry, ...(c.spendEntries || [])], spendToDate: (c.spendToDate || 0) + amt });
     onClose();
   };
@@ -86,25 +111,38 @@ function AddExpenseModal({ c, onClose }) {
       </div>
       <${Field} label="Description"><${Input} placeholder="e.g. Q3 milestone invoice" value=${f.description} onInput=${(e) => set("description", e.target.value)} /></${Field}>
       <${Field} label="Invoice reference"><${Input} placeholder="e.g. INV-2026-0142" value=${f.invoiceRef} onInput=${(e) => set("invoiceRef", e.target.value)} /></${Field}>
+      <${Field} label="Cost type">
+        <select class="input" value=${f.costType} onChange=${(e) => set("costType", e.target.value)}>
+          ${COST_TYPES.map((t) => html`<option key=${t.key} value=${t.key}>${t.label} — ${t.hint}</option>`)}
+        </select>
+      </${Field}>
     </div>
   </${Modal}>`;
 }
 
 function SpendTab({ c }) {
   const [add, setAdd] = useState(false);
-  const total = c.value || 0, spend = c.spendToDate || 0, committed = c.committedSpend || 0;
-  const remaining = total - spend - committed;
+  // Clicking a cost card filters the entries beneath it; clicking it again clears.
+  const [costFilter, setCostFilter] = useState("");
+  const total = c.value || 0;
   const commitBurn = commitBurnPct(c);
   const tone = commitBurn > 100 ? "red" : commitBurn > 80 ? "amber" : "";
-  const entries = c.spendEntries || [];
+  const all = c.spendEntries || [];
+  const entries = costFilter ? all.filter((e) => (e.costType || "external") === costFilter) : all;
   return html`<div class="col" style="gap:16px">
     <${StatStrip} stats=${[
-      { value: fmt.money(total, c.currency), label: "Total value" },
-      { value: fmt.money(spend, c.currency), label: "Spend to date" },
-      { value: fmt.money(committed, c.currency), label: "Committed" },
-      { value: fmt.money(remaining, c.currency), label: "Remaining" },
-      { value: burnPct(c) + "%", label: "Burn" },
+      { value: fmt.money(total, c.currency), label: "Total contract value" },
+      ...COST_TYPES.map((t) => ({
+        value: fmt.money(costOf(all, t.key), c.currency),
+        label: t.label,
+        title: t.hint,
+        onClick: () => setCostFilter((k) => (k === t.key ? "" : t.key)),
+      })),
     ]} />
+    ${costFilter && html`<div class="row" style="gap:8px">
+      <span class="tiny muted">Showing ${COST_TYPES.find((t) => t.key === costFilter).label} only</span>
+      <button class="cellbtn cellbtn--text" onClick=${() => setCostFilter("")}><span class="tiny strong">Clear</span></button>
+    </div>`}
     <div class="card card--pad col" style="gap:10px">
       <div class="row"><span class="strong tiny">Budget burn</span><div class="spacer"></div><span class=${cx("tiny strong", tone === "red" && "risk--critical", tone === "amber" && "risk--high")}>${commitBurn}% committed</span></div>
       <${Progress} value=${Math.min(100, commitBurn)} tone=${tone} />
@@ -115,6 +153,7 @@ function SpendTab({ c }) {
       { key: "date", label: "Date", render: (e) => html`<span class="tiny">${fmt.date(e.date)}</span>` },
       { key: "description", label: "Description", render: (e) => html`<span class="cell-strong">${e.description}</span>` },
       { key: "invoiceRef", label: "Invoice", render: (e) => html`<span class="tiny mono">${e.invoiceRef}</span>` },
+      { key: "costType", label: "Cost type", render: (e) => html`<${Pill} tone="gray">${(COST_TYPES.find((t) => t.key === (e.costType || "external")) || {}).label}</${Pill}>` },
       { key: "by", label: "By", render: (e) => html`<${Avatar} name=${nameOf(e.by)} size="sm" />` },
       { key: "amount", label: "Amount", align: "right", render: (e) => html`<span class="strong">${fmt.money(e.amount, c.currency)}</span>` },
     ]} rows=${entries} empty=${html`<div class="empty" style="padding:26px"><${Icon} name="dollar" size=30 /><div>No expenses recorded yet.</div></div>`} />
@@ -258,12 +297,15 @@ function ContractList() {
 // on it from the tracker must return you to the tracker.
 export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Contracts" }) {
   const c = useCollection("contracts").find((x) => x.id === id);
-  // "Flow" is the DEFAULT tab — the process, not just the document.
+  // "Workflow" is the DEFAULT tab — the process, not just the document.
   const [tab, setTab] = useState("flow");
   const [active, setActive] = useState("6");
   const [tagEdit, setTagEdit] = useState(false);
   if (!c) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate(backTo)}>Back</${Btn}><div class="empty">Contract not found.</div></div>`;
-  const stageIdx = CLM_STAGES.indexOf(c.stage === "Signature" ? "Signature" : c.stage) >= 0 ? CLM_STAGES.indexOf(c.stage) : 8;
+  // Unknown stages land on Active rather than a magic number, so adding a stage
+  // to the rail can never silently move where every odd record points.
+  const foldedIdx = CLM_STAGES.indexOf(railStage(c.stage));
+  const stageIdx = foldedIdx >= 0 ? foldedIdx : CLM_STAGES.indexOf("Active");
 
   return html`<div class="page page--wide fade-in">
     <div class="row" style="margin-bottom:14px"><${Btn} variant="ghost" size="sm" icon="arrowLeft" onClick=${() => navigate(backTo)}>${backLabel}</${Btn}></div>
@@ -292,7 +334,7 @@ export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Cont
     <!-- Flow is the default view: input → stages → outputs → relationships -->
     <div class="card" style="margin-bottom:16px"><div style="padding:6px 18px 0">
       <${Tabs} active=${tab} onChange=${setTab} tabs=${[
-        { key: "flow", label: "Flow", icon: "workflow" },
+        { key: "flow", label: "Workflow", icon: "workflow" },
         { key: "document", label: "Document", icon: "file" },
         { key: "versions", label: "Versions", icon: "layers", count: 3 },
         { key: "spend", label: "Spend", icon: "dollar" },
@@ -303,8 +345,8 @@ export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Cont
     </div></div>
 
     ${tab === "flow" ? html`<${WorkflowSpine} id=${c.id} showHeader=${false} />` : html`
-    <div class="grid" style="grid-template-columns:240px 1fr 330px;align-items:start;gap:16px">
-      <div class="card" style="position:sticky;top:16px">
+    <div class="grid" style=${`grid-template-columns:${tab === "document" ? "240px 1fr 330px" : "1fr 330px"};align-items:start;gap:16px`}>
+      ${tab === "document" && html`<div class="card" style="position:sticky;top:16px">
         <div class="card__head" style="padding:13px 15px"><div class="card__title" style="font-size:13px">Clause Navigator</div></div>
         <div style="padding:8px">
           ${CLAUSES_NAV.map((cl) => html`<div key=${cl.n} class=${cx("menu__item")} style=${`padding:8px 10px;${active === cl.n ? "background:var(--brand-soft)" : ""}`} onClick=${() => setActive(cl.n)}>
@@ -313,7 +355,7 @@ export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Cont
             ${cl.risk && html`<span class="tag-dot" style=${`background:${cl.risk === "high" ? "var(--danger)" : "var(--warning)"}`}></span>`}
           </div>`)}
         </div>
-      </div>
+      </div>`}
 
       <div class="card">
         <div class="card__body">

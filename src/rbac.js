@@ -156,7 +156,9 @@ const LEGAL_RBAC = ["head", "lead", "member", "paralegal"];
 // Leadership only — the department-wide views and the config surfaces.
 const MGMT_ONLY = new Set(["/exec", "/settings", "/triage", "/costs", "/analyzer", "/pipelines", "/reports"]);
 // Director only.
-const HEAD_ONLY = new Set(["/organization", "/portal"]);
+// The entity registry is a Director-level view of the whole group, so it sits
+// with Organization rather than in the shared surfaces.
+const HEAD_ONLY = new Set(["/organization", "/portal", "/companies"]);
 // Everything a business requester may open, and nothing else.
 const REQUESTER_PATHS = new Set(["/raise", "/requests", "/my-requests", "/my-tasks", "/flow-map", "/login"]);
 

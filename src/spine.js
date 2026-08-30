@@ -414,7 +414,7 @@ function ProcessZone({ spine }) {
           </span>
           ${(st.state === "active" || st.state === "blocked") && html`<span class="rail__here">you are here</span>`}
         </div>
-        <div class="rail__name">${st.name}</div>
+        <div class="rail__name">${st.label || st.name}</div>
         <div class="rail__meta">${st.holderName}</div>
         <div class="row" style="gap:4px;margin-top:5px">
           <${Pill} tone=${BALL_TONE[st.ballWith]}>${BALL_LABEL[st.ballWith]}</${Pill}>
@@ -428,7 +428,7 @@ function ProcessZone({ spine }) {
       <div class="row wrap" style="gap:10px">
         <div class="notif__ico" style=${`width:34px;height:34px;background:${STATE_COLOR[s.state]}1f;color:${STATE_COLOR[s.state]}`}><${Icon} name=${s.icon} size=16 /></div>
         <div style="min-width:0">
-          <div class="strong" style="font-size:14.5px">${s.name}</div>
+          <div class="strong" style="font-size:14.5px">${s.label || s.name}</div>
           <div class="tiny muted">${s.role} · ${s.state === "done" ? "completed" : s.state === "pending" ? "not started" : s.state === "blocked" ? "blocked" : "in progress"}</div>
         </div>
         <div class="spacer"></div>
