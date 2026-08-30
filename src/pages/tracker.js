@@ -10,6 +10,7 @@ import { Icon } from "../icons.js";
 import { Btn, Pill, Status, Risk, Avatar, Metric, Empty, Modal, Field, Input } from "../ui.js";
 import { PageHead, DataTable } from "../parts.js";
 import { navigate } from "../router.js";
+import { ContractWorkspace } from "./contracts.js";
 import { useCollection, updateItem } from "../store.js";
 import {
   nameOf, USERS, entityName, entityById, OFFICE_LOCATIONS, toUsd, licenseStatus,
@@ -84,7 +85,15 @@ function exportCsv(rows) {
   URL.revokeObjectURL(url);
 }
 
-export default function Tracker() {
+// #/tracker/<contractId> opens the lifecycle IN THE TRACKER. The tracker is the
+// current, ongoing work; Contracts is the historic record. Clicking a live row
+// should not dump you into the archive.
+export default function Tracker({ id }) {
+  if (id) return html`<${ContractWorkspace} id=${id} backTo="/tracker" backLabel="Contract Tracker" />`;
+  return html`<${TrackerGrid} />`;
+}
+
+function TrackerGrid() {
   const contracts = useCollection("contracts");
   const repository = useCollection("repository");
   const requests = useCollection("requests");
@@ -182,7 +191,7 @@ export default function Tracker() {
 
     <div class="dense">
       <${DataTable} rows=${filtered}
-        onRow=${(c) => navigate("/contracts/" + c.id)}
+        onRow=${(c) => navigate("/tracker/" + c.id)}
         empty=${html`<${Empty} icon="grid" title="No rows match" text="Clear a filter, or widen the date window." />`}
         columns=${[
           // Sr No is inline-editable because it maps to the physical record.
@@ -198,7 +207,7 @@ export default function Tracker() {
           { key: "owner", label: "Owner", width: "116px", render: (c) => html`<${EditSelect} value=${c.owner}
               options=${USERS.slice(0, 12).map((u) => ({ value: u.id, label: u.name.split(" ")[0] + " " + (u.name.split(" ")[1] || "").slice(0, 1) }))}
               onSave=${(v) => save(c.id, { owner: v })} />` },
-          { key: "value", label: "Value", align: "right", width: "104px", render: (c) => html`<button class="cellbtn cellbtn--text" style="width:100%;text-align:right" title="Open this contract" onClick=${(e) => { e.stopPropagation(); navigate("/contracts/" + c.id); }}><span class="strong">${fmt.money(c.value, c.currency)}</span></button>` },
+          { key: "value", label: "Value", align: "right", width: "104px", render: (c) => html`<button class="cellbtn cellbtn--text" style="width:100%;text-align:right" title="Open this contract" onClick=${(e) => { e.stopPropagation(); navigate("/tracker/" + c.id); }}><span class="strong">${fmt.money(c.value, c.currency)}</span></button>` },
           { key: "ppaValue", label: "PPA Value", align: "right", width: "104px", render: (c) => c.ppaValue ? html`<span class="strong">${fmt.money(c.ppaValue, c.currency)}</span>` : html`<span class="tiny muted">—</span>` },
           { key: "landValue", label: "Land Value", align: "right", width: "104px", render: (c) => c.landValue ? html`<span class="strong">${fmt.money(c.landValue, c.currency)}</span>` : html`<span class="tiny muted">—</span>` },
           { key: "start", label: "Start", width: "88px", render: (c) => html`<${EditText} type="date" width="112px" value=${c.start ? new Date(c.start).toISOString().slice(0, 10) : ""} onSave=${(v) => v && save(c.id, { start: new Date(v + "T00:00:00").toISOString() })} />` },
@@ -215,7 +224,7 @@ export default function Tracker() {
             ? html`<a class="tagchip" href=${c.driveLink} target="_blank" rel="noreferrer" onClick=${(e) => e.stopPropagation()}><${Icon} name="externalLink" size=11 />Open</a>`
             : html`<span class="tiny muted">—</span>` },
           { key: "stage", label: "Stage", width: "104px", render: (c) => html`<${Status} value=${c.stage || c.status} />` },
-          { key: "flow", label: "", width: "76px", render: (c) => html`<${Btn} variant="soft" size="sm" icon="workflow" onClick=${(e) => { e.stopPropagation(); navigate("/contracts/" + c.id); }}>Flow</${Btn}>` },
+          { key: "flow", label: "", width: "76px", render: (c) => html`<${Btn} variant="soft" size="sm" icon="workflow" onClick=${(e) => { e.stopPropagation(); navigate("/tracker/" + c.id); }}>Flow</${Btn}>` },
         ]} />
     </div>
 

@@ -253,17 +253,20 @@ function ContractList() {
   </div>`;
 }
 
-function ContractWorkspace({ id }) {
+// `backTo`/`backLabel` let the SAME lifecycle view serve two lists: the Contract
+// Tracker (current, ongoing work) and Contracts (the historic record). Landing
+// on it from the tracker must return you to the tracker.
+export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Contracts" }) {
   const c = useCollection("contracts").find((x) => x.id === id);
   // "Flow" is the DEFAULT tab — the process, not just the document.
   const [tab, setTab] = useState("flow");
   const [active, setActive] = useState("6");
   const [tagEdit, setTagEdit] = useState(false);
-  if (!c) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate("/contracts")}>Back</${Btn}><div class="empty">Contract not found.</div></div>`;
+  if (!c) return html`<div class="page"><${Btn} icon="arrowLeft" onClick=${() => navigate(backTo)}>Back</${Btn}><div class="empty">Contract not found.</div></div>`;
   const stageIdx = CLM_STAGES.indexOf(c.stage === "Signature" ? "Signature" : c.stage) >= 0 ? CLM_STAGES.indexOf(c.stage) : 8;
 
   return html`<div class="page page--wide fade-in">
-    <div class="row" style="margin-bottom:14px"><${Btn} variant="ghost" size="sm" icon="arrowLeft" onClick=${() => navigate("/contracts")}>Contracts</${Btn}></div>
+    <div class="row" style="margin-bottom:14px"><${Btn} variant="ghost" size="sm" icon="arrowLeft" onClick=${() => navigate(backTo)}>${backLabel}</${Btn}></div>
     <div class="pagehead" style="margin-bottom:16px">
       <div class="pagehead__main">
         <div class="row wrap" style="gap:8px;margin-bottom:8px"><span class="mono muted">${c.id}</span><${Status} value=${c.status} /><${Risk} level=${c.risk} /><${Pill} tone="gray">${c.type}</${Pill}><${CategoryPill} item=${c} /></div>
