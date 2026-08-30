@@ -140,12 +140,14 @@ export function ShareDonut({ data = [], size = 168, thickness = 20, centerValue,
     <div class="col" style="gap:8px;flex:1;min-width:170px">
       ${data.map((d, i) => html`<div key=${d.label} class="row"
         onMouseEnter=${() => setHover(i)} onMouseLeave=${() => setHover(-1)}
+        title=${`${d.label}: ${format(d.value)} (${Math.round((d.value / total) * 100)}%)`}
         style=${`gap:9px;cursor:default;opacity:${hover === -1 || hover === i ? 1 : 0.55};transition:opacity .14s`}>
         <span class="tag-dot" style=${`background:${d.color || seriesColor(i)}`}></span>
         <span class="viz__legend">${d.label}</span>
         <span class="spacer"></span>
-        <span class="viz__legendval">${format(d.value)}</span>
-        <span class="viz__legendpct">${Math.round((d.value / total) * 100)}%</span>
+        ${/* The figures are on hover and behind "Show the numbers" — printing them
+             here as well just crowds the chart. */ null}
+        ${hover === i && html`<span class="viz__legendval">${format(d.value)}</span>`}
       </div>`)}
     </div>
   </div>`;

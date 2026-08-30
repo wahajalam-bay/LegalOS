@@ -8,7 +8,8 @@
 // internal jargon, no em dashes. Operational modules keep their own language.
 import { html, cx, fmt, useState, useMemo } from "../core.js";
 import { Icon } from "../icons.js";
-import { Btn, Pill, Empty } from "../ui.js";
+import { Btn, Pill, Empty, Modal } from "../ui.js";
+import { PageHead } from "../parts.js";
 import { navigate } from "../router.js";
 import { useCollection, setWorkspaceTarget } from "../store.js";
 import {
@@ -67,6 +68,23 @@ function useExecMetrics() {
     const thisQuarter = requests.filter((r) => new Date(r.requestDate || r.created) >= qStart).length;
     const highRisk = rows.filter((r) => ["high", "critical"].includes((r.risk || "").toLowerCase()) && !r.__tat.done).length;
 
+    // Task load, and three ageing profiles that all answer "what lands soon?".
+    // One helper, three sources, so every bucket is defined identically.
+    const pendingTasks = rows.filter((r) => !r.__tat.done);
+    const buckets = (items, dateOf) => {
+      const b = { over: [], d30: [], d60: [], d90: [] };
+      items.forEach((it) => {
+        const raw = dateOf(it);
+        if (!raw) return;
+        const d = (new Date(raw) - now) / 86400000;
+        if (d < 0) b.over.push(it);
+        else if (d <= 30) b.d30.push(it);
+        else if (d <= 60) b.d60.push(it);
+        else if (d <= 90) b.d90.push(it);
+      });
+      return b;
+    };
+
     const expiring = live.filter((c) => { const d = (new Date(c.expiry) - now) / 86400000; return d >= 0 && d <= 90; });
     const expiringValue = expiring.reduce((s, c) => s + toUsd(c.value, c.currency), 0);
 
@@ -95,8 +113,20 @@ function useExecMetrics() {
     const reminders = allReminders(contracts, now);
     const blockingStages = [...new Set(delayed.map((d) => d.__tat.blockingStage).filter(Boolean))];
 
+    // Pending tasks BY DESK, so the donut and its centre count the same thing.
+    const pendingBySubdiv = (() => {
+      const g = new Map();
+      pendingTasks.forEach((r) => { const k = subdivisionOf(r) || "Unassigned"; g.set(k, (g.get(k) || 0) + 1); });
+      return foldSeries([...g.entries()].sort((a, b) => b[1] - a[1]), { otherLabel: "Other desks" });
+    })();
+    const ageContracts = buckets(live, (c) => c.expiry);
+    const ageLicences = buckets(licenses, (l) => l.expiryDate);
+    const complianceRows = rows.filter((r) => /compliance/i.test(subdivisionOf(r) || "") || /compliance/i.test(r.legalTeam || ""));
+    const ageCompliance = buckets(complianceRows, (r) => r.__tat && r.__tat.dueAt);
+
     return {
       now, portfolio, ppaValue, landValue,
+      pendingTasks, pendingBySubdiv, ageContracts, ageLicences, ageCompliance,
       tatNow, tatThen, tatDelta, committed, trend: DASH.tatTrend,
       adoption, portalCount, requestCount: requests.length, requesters: requesters.length,
       outsideLegal, onTime, delayed, thisQuarter, highRisk,
@@ -127,6 +157,9 @@ function narrative(m) {
    The Executive Overview
    ============================================================ */
 function ExecOverview() {
+  // The portfolio tile drills into where the value sits, in place rather than
+  // taking over a slot on the page.
+  const [valueDrill, setValueDrill] = useState(false);
   const m = useExecMetrics();
   const n = narrative(m);
 
@@ -135,81 +168,82 @@ function ExecOverview() {
     setWorkspaceTarget({ lens, filters: { ...EMPTY_FILTERS, ...(filters || {}) } });
     navigate("/workspace");
   };
-
-  const tiles = [
-    { label: "Requests this quarter", value: m.thisQuarter, soWhat: `${m.requestCount} on the books in total`, icon: "inbox", go: () => openWorkspace("log", {}) },
-    { label: "Inside the agreed window", value: m.onTime + "%", soWhat: m.delayed.length ? `${m.delayed.length} running late` : "nothing past its date", icon: "clock", tone: m.onTime >= 80 ? "good" : "warn", go: () => openWorkspace("worklist", { tatStatuses: ["Delayed"] }) },
-    { label: "High or critical risk open", value: m.highRisk, soWhat: "each on a deeper review path", icon: "alertTriangle", tone: "warn", go: () => openWorkspace("worklist", { risks: ["high", "critical"] }) },
-    { label: "Renewals in 90 days", value: m.expiring.length, soWhat: `${fmt.money(m.expiringValue)} of value to decide on`, icon: "refresh", go: () => openWorkspace("contracts", { dateField: "expiry", datePreset: "exp90" }) },
-    { label: "Documents read by machine", value: m.extracted, soWhat: `of ${m.docCount} filed, values extracted not typed`, icon: "cpu", go: () => navigate("/analyzer") },
-    { label: "Licences in good standing", value: `${m.licValid}/${m.licCount}`, soWhat: m.licAtRisk ? `${m.licAtRisk} need attention` : "all valid", icon: "fileCheck", tone: m.licAtRisk ? "warn" : "good", go: () => navigate("/licenses") },
-  ];
+
 
   return html`<div class="page execpage fade-in">
+    <${PageHead} title="Executive Overview"
+      sub="The department at a glance — value under management, turnaround, what is overdue and what lands next." />
 
     <!-- the four numbers a CEO actually asks about -->
     <section class="exec__heroes">
       <${HeroTile} label="Contract value under management" icon="dollar"
         value=${fmt.money(m.portfolio)}
         soWhat=${`${m.liveCount} live contracts across ${m.entityCount} entities`}
-        onClick=${() => navigate("/tracker")} />
+        onClick=${() => setValueDrill(true)} />
       <${HeroTile} label="Average turnaround" icon="clock"
         value=${m.tatNow} unit="days"
         soWhat=${`committed at ${m.committed} days, was ${m.tatThen} in January`}
         delta=${m.tatDelta + "%"} deltaDir="down" spark=${m.trend}
         onClick=${() => navigate("/pipelines")} />
-      <${HeroTile} label="Requests that never touch email" icon="inbox"
-        value=${m.adoption} unit="%"
-        soWhat=${`${m.portalCount} raised through the portal by ${m.requesters} people`}
-        onClick=${() => navigate("/portal")} />
-      <${HeroTile} label="Waiting time that is not legal's" icon="users"
-        value=${m.outsideLegal} unit="%"
-        soWhat="sat with the business or the counterparty, and the clock knows it"
-        onClick=${() => navigate("/pipelines")} />
+      <${HeroTile} label="Overdue tasks" icon="alertTriangle"
+        value=${m.delayed.length}
+        soWhat=${m.delayed.length ? `past their agreed date — ${[...new Set(m.delayed.map((d) => d.__tat.blockingStage))].slice(0, 2).join(", ")}` : "nothing past its date"}
+        onClick=${() => openWorkspace("worklist", { tatStatuses: ["Delayed"] })} />
     </section>
 
-    <!-- the whole department on one page -->
-    <section class="exec__section">
-      <div class="exec__sechead">
-        <h2 class="exec__h2">The whole department on one page</h2>
-        <span class="tiny muted">Every tile opens the detail behind it.</span>
-      </div>
-      <div class="exec__tiles">
-        ${tiles.map((t) => html`<button key=${t.label} class=${cx("etile", t.tone && `etile--${t.tone}`)} onClick=${t.go}>
-          <span class="etile__ico"><${Icon} name=${t.icon} size=15 /></span>
-          <span class="etile__value">${t.value}</span>
-          <span class="etile__label">${t.label}</span>
-          <span class="etile__sowhat">${t.soWhat}</span>
-        </button>`)}
-      </div>
+    <!-- what lands soon: one tile per horizon, bucketed and colour-coded -->
+    <section class="exec__ageing">
+      ${[
+        { label: "Contract ageing", icon: "file", sub: "by expiry date", b: m.ageContracts,
+          go: (k) => openWorkspace("contracts", { dateField: "expiry", datePreset: k }) },
+        { label: "Compliance deadlines", icon: "shield", sub: "by due date", b: m.ageCompliance,
+          go: (k) => openWorkspace("worklist", { subdivisions: ["Compliance"], dateField: "due", datePreset: k }) },
+        { label: "Licensing renewals", icon: "fileCheck", sub: "by licence expiry", b: m.ageLicences,
+          go: () => navigate("/licenses") },
+      ].map((t) => html`<div key=${t.label} class="agetile">
+        <div class="agetile__head">
+          <span class="agetile__ico"><${Icon} name=${t.icon} size=15 /></span>
+          <div style="min-width:0">
+            <div class="agetile__label">${t.label}</div>
+            <div class="agetile__sub">${t.sub}</div>
+          </div>
+        </div>
+        <div class="agetile__buckets">
+          ${[
+            { k: "overdue", n: t.b.over.length, cap: "Overdue", tone: "over" },
+            { k: "exp30", n: t.b.d30.length, cap: "≤30 days", tone: "d30" },
+            { k: "exp60", n: t.b.d60.length, cap: "31–60", tone: "d60" },
+            { k: "exp90", n: t.b.d90.length, cap: "61–90", tone: "d90" },
+          ].map((x) => html`<button key=${x.k} class=${"agebkt agebkt--" + x.tone}
+            title=${`${x.n} ${t.label.toLowerCase()} ${x.cap.toLowerCase()}`}
+            onClick=${() => t.go(x.k)}>
+            <span class="agebkt__n">${x.n}</span>
+            <span class="agebkt__cap">${x.cap}</span>
+          </button>`)}
+        </div>
+      </div>`)}
     </section>
+
 
     <!-- where the value sits, and who does the work -->
+    <!-- pending tasks, as a chart you can click into -->
     <section class="exec__split">
-      <div class="card card--pad col" style="gap:14px">
-        <div>
-          <h2 class="exec__h2">Where the value sits</h2>
-          <p class="exec__sub">Live contract value by entity, in US dollars for comparison.</p>
+      <div class="card card--pad col clickable card--hover" style="gap:14px"
+        onClick=${() => openWorkspace("worklist", {})}>
+        <div class="row" style="align-items:flex-start">
+          <div style="min-width:0">
+            <h2 class="exec__h2">Pending tasks</h2>
+            <p class="exec__sub">${m.pendingTasks.length} open across the desks. Click any desk to open its worklist.</p>
+          </div>
+          <div class="spacer"></div>
+          <${Icon} name="chevronRight" size=18 style=${{ color: "var(--text-3)" }} />
         </div>
-        <${RankBars} data=${m.byEntity} format=${(v) => fmt.money(v)}
-          onRow=${(d) => { setWorkspaceTarget({ lens: "contracts", filters: { ...EMPTY_FILTERS, entities: [d.id] } }); navigate("/workspace"); }}
-          note=${m.ppaValue ? `Of that, ${fmt.money(m.ppaValue)} is property purchase commitments and ${fmt.money(m.landValue)} is land.` : null} />
-        <${TableTwin} rows=${m.byEntity} cols=${["Entity", "Live value"]} format=${(v) => fmt.money(v)} />
+        <${ShareDonut} data=${m.pendingBySubdiv} size=${132} thickness=${17}
+          centerValue=${m.pendingTasks.length} centerLabel="open" />
+        <${TableTwin} rows=${m.pendingBySubdiv} cols=${["Legal desk", "Open tasks"]} />
       </div>
 
-      <div class="card card--pad col" style="gap:14px">
-        <div>
-          <h2 class="exec__h2">Who does the work</h2>
-          <p class="exec__sub">Open matters and live contracts by legal desk.</p>
-        </div>
-        <${ShareDonut} data=${m.bySubdiv} size=${158} thickness=${19}
-          centerValue=${m.rowCount + m.liveCount} centerLabel="records" />
-        <${TableTwin} rows=${m.bySubdiv} cols=${["Legal desk", "Records"]} />
-      </div>
-    </section>
-
-    <!-- the board note -->
-    <section class="exec__note">
+      <div class="exec__note" style="margin:0">
       <div class="exec__noteHead">
         <span class="exec__ico"><${Icon} name="book" size=15 /></span>
         <h2 class="exec__h2" style="margin:0">What changed this quarter</h2>
@@ -221,7 +255,10 @@ function ExecOverview() {
         <${Btn} variant="soft" size="sm" icon="play" onClick=${() => startTour()}>Walk me through it</${Btn}>
         <${Btn} variant="ghost" size="sm" icon="dashboard" onClick=${() => navigate("/dashboard")}>Operational dashboard</${Btn}>
       </div>
+      </div>
     </section>
+
+    <!-- the board note -->
 
     <footer class="exec__foot">
       <span class="tiny muted">
@@ -229,6 +266,16 @@ function ExecOverview() {
         dashboard and the module detail sit behind every number above.
       </span>
     </footer>
+    ${valueDrill && html`<${Modal} title="Where the value sits" icon="dollar" width=${720}
+      onClose=${() => setValueDrill(false)}>
+      <p class="exec__sub" style="margin-bottom:14px">Live contract value by entity, in US dollars for comparison.</p>
+      <${RankBars} data=${m.byEntity} format=${(v) => fmt.money(v)}
+        onRow=${(d) => { setValueDrill(false); setWorkspaceTarget({ lens: "contracts", filters: { ...EMPTY_FILTERS, entities: [d.id] } }); navigate("/workspace"); }}
+        note=${m.ppaValue ? `Of that, ${fmt.money(m.ppaValue)} is property purchase commitments and ${fmt.money(m.landValue)} is land.` : null} />
+      <div style="margin-top:14px">
+        <${TableTwin} rows=${m.byEntity} cols=${["Entity", "Live value"]} format=${(v) => fmt.money(v)} />
+      </div>
+    </${Modal}>`}
   </div>`;
 }
 

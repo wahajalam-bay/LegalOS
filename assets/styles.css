@@ -1422,6 +1422,41 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .etile__label { font-size: 12px; font-weight: 600; color: var(--text-2); }
 .etile__sowhat { font-size: 11px; color: var(--text-3); line-height: 1.4; }
 
+/* Ageing tiles: one card per horizon, four colour-coded buckets inside it, each
+   bucket a drill-down. Colour carries urgency, the number carries the load. */
+/* Half-width now, so the donut and its legend do not stretch apart. */
+.exec__split .donut, .exec__split svg.donut { max-width: 100%; }
+.exec__ageing {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px; margin-bottom: 22px;
+}
+.agetile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 16px 14px; }
+.agetile__head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.agetile__ico {
+  width: 30px; height: 30px; border-radius: 9px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand-soft); color: var(--brand);
+}
+.agetile__label { font-size: 13.5px; font-weight: 650; color: var(--text); }
+.agetile__sub { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+.agetile__buckets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.agebkt {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 9px 4px; border-radius: var(--r-sm); cursor: pointer;
+  border: 1px solid transparent; font: inherit;
+  transition: transform .12s, box-shadow .12s, border-color .12s;
+}
+.agebkt:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.agebkt:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.agebkt__n { font-size: 19px; font-weight: 750; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.agebkt__cap { font-size: 10px; font-weight: 600; letter-spacing: .02em; opacity: .85; }
+.agebkt--over { background: var(--danger-bg); color: var(--danger); }
+.agebkt--d30  { background: var(--warning-bg); color: var(--warning); }
+.agebkt--d60  { background: var(--brand-soft); color: var(--brand-600); }
+.agebkt--d90  { background: var(--surface-2); color: var(--text-2); }
+:root[data-theme="dark"] .agebkt--d60 { color: var(--brand); }
+@media (max-width: 620px) { .agetile__buckets { grid-template-columns: repeat(2, 1fr); } }
+
 .exec__split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 26px; align-items: start; }
 
 /* ---- the board note ---- */
