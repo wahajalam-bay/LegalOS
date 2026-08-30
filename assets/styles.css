@@ -622,6 +622,16 @@ svg { display: block; }
 .table td .cell-mono { font-size: 11px; }
 .table td > .row { gap: 7px; }
 .rowlink { cursor: pointer; }
+/* A cell that filters is a control, so it has to look and behave like one —
+   without inheriting button chrome inside a dense grid. */
+.cellbtn {
+  border: 0; background: transparent; padding: 0; margin: 0; font: inherit; color: inherit;
+  cursor: pointer; text-align: left; border-radius: 6px;
+  transition: opacity .12s, background .12s;
+}
+.cellbtn:hover { opacity: .78; }
+.cellbtn--text:hover { background: var(--surface-2); text-decoration: underline; text-underline-offset: 2px; }
+.cellbtn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .rowactions { opacity: 0; transition: opacity .12s; }
 .table tbody tr:hover .rowactions { opacity: 1; }
 
@@ -2404,6 +2414,45 @@ button:focus-visible, .btn:focus-visible, a:focus-visible {
 .rpipe__step--upcoming .rpipe__dot { background: var(--surface); border-color: var(--border-strong); }
 .rpipe__step--upcoming .rpipe__name { color: var(--text-3); font-weight: 500; }
 .rpipe__step--upcoming .rpipe__sub { color: var(--text-3); opacity: .7; }
+
+/* Horizontal pipeline: the nine stages read left-to-right as a journey. Each
+   step is a fixed-width column so the dots line up on one axis; the track
+   scrolls inside itself rather than crushing the labels. */
+.rpipe--h {
+  /* The base .rpipe is a column; this must say row explicitly or it inherits it. */
+  display: flex; flex-direction: row; align-items: flex-start; gap: 0;
+  overflow-x: auto; padding: 4px 2px 10px; scrollbar-width: thin;
+}
+.rpipe--h .rpipe__step { flex: 1 0 118px; min-width: 118px; display: block; text-align: center; }
+.rpipe--h .rpipe__rail {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  height: 26px; margin-bottom: 9px;
+}
+.rpipe--h .rpipe__line {
+  /* The base rule is a vertical 2px rail (width:2px; flex:1). Both have to be
+     unset here or the connector renders as a tick instead of a line. */
+  position: absolute; top: 50%; left: 50%; right: -50%; width: auto; height: 2px; min-height: 0; flex: none;
+  transform: translateY(-50%); margin: 0;
+  background: var(--border); z-index: 0;
+}
+.rpipe--h .rpipe__line--before { left: -50%; right: 50%; }
+.rpipe--h .rpipe__dot { position: relative; z-index: 1; margin: 0; }
+.rpipe--h .rpipe__step--done .rpipe__line,
+.rpipe--h .rpipe__step--current .rpipe__line--before { background: var(--brand); }
+.rpipe--h .rpipe__body { padding: 0 6px; }
+.rpipe--h .rpipe__name { display: block; font-size: 12.5px; font-weight: 600; }
+.rpipe--h .rpipe__sub { font-size: 10.5px; line-height: 1.3; margin-top: 3px; }
+.rpipe--h .rpipe__at { font-size: 10.5px; margin-top: 4px; }
+.rpipe--h .rpipe__here { display: inline-block; margin-top: 4px; }
+
+/* Card view carries the same facts as the table, so switching view never costs
+   you information. */
+.mreq__facts {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 10px;
+  margin: 10px 0 2px; font-size: 11.5px;
+}
+.mreq__fl { color: var(--text-3); white-space: nowrap; }
+.mreq__fv { color: var(--text-2); font-weight: 550; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* My Requests — full-screen detail sheet */
 .sheet {

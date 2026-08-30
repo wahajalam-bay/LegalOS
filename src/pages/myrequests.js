@@ -67,6 +67,12 @@ function RequestCard({ r, onOpen }) {
     <div class="mreq__title">${r.title}</div>
     ${r.requesterOption && html`<div class="mreq__what"><${Icon} name="message" size=12 />${r.requesterOption}</div>`}
 
+    <div class="mreq__facts">
+      <span class="mreq__fl">Counter party</span><span class="mreq__fv">${r.counterparty && r.counterparty !== "—" ? r.counterparty : "—"}</span>
+      <span class="mreq__fl">Assignee (POC)</span><span class="mreq__fv">${personName(r.owner) || "Awaiting triage"}</span>
+      <span class="mreq__fl">Request type</span><span class="mreq__fv">${r.requestType || r.type || r.contractType || "—"}</span>
+    </div>
+
     <div class="mreq__prog">
       <div class="mreq__proghead">
         <span class="mreq__stage">${done ? html`<${Icon} name="checkcircle" size=12 style=${{ ...II, color: "var(--success)" }} />` : ""}${friendlyStage(r)}</span>
@@ -133,23 +139,24 @@ function RequesterPipeline({ r }) {
     const hit = (r.stageLog || []).filter((x) => x.stage === s).pop();
     return hit && (hit.enteredAt || hit.at) ? (hit.enteredAt || hit.at) : null;
   };
-  return html`<div class="rpipe">
+  // Horizontal: the stages read left-to-right as a journey, which is how someone
+  // waiting thinks about it. The track scrolls inside itself on narrow screens
+  // rather than crushing the labels.
+  return html`<div class="rpipe rpipe--h">
     ${path.map((s, i) => {
       const state = doneAll || i < idx ? "done" : i === idx ? "current" : "upcoming";
       const at = stampFor(s);
       return html`<div key=${s} class=${"rpipe__step rpipe__step--" + state}>
         <div class="rpipe__rail">
-          <div class="rpipe__dot">${state === "done" ? html`<${Icon} name="check" size=12 />` : state === "current" ? "" : ""}</div>
+          ${i > 0 && html`<div class="rpipe__line rpipe__line--before"></div>`}
+          <div class="rpipe__dot">${state === "done" ? html`<${Icon} name="check" size=12 />` : ""}</div>
           ${i < path.length - 1 && html`<div class="rpipe__line"></div>`}
         </div>
         <div class="rpipe__body">
-          <div class="rpipe__row">
-            <span class="rpipe__name">${stageLabel(s)}</span>
-            ${state === "current" && !doneAll && html`<span class="rpipe__here">You are here</span>`}
-            <div class="spacer"></div>
-            ${at && html`<span class="rpipe__at">${fmt.date(at)}</span>`}
-          </div>
+          <span class="rpipe__name">${stageLabel(s)}</span>
+          ${state === "current" && !doneAll && html`<span class="rpipe__here">You are here</span>`}
           <div class="rpipe__sub">${STAGE_SUB[s] || ""}</div>
+          ${at && html`<div class="rpipe__at">${fmt.date(at)}</div>`}
         </div>
       </div>`;
     })}
@@ -235,6 +242,8 @@ export default function MyRequests() {
   // List first: a requester tracking several matters wants to scan them, and the
   // cards only really pay off once there are few enough to look at one by one.
   const [view, setView] = useState("list");
+  // Drill down to just the open work or just the closed record.
+  const [scope, setScope] = useState("all");
 
   const mine = requests
     .filter((r) => r.requesterId === viewer.id || (viewer.email && r.requesterEmail === viewer.email))
@@ -250,6 +259,8 @@ export default function MyRequests() {
     <${PageHead} title="Legal Requests" sub="Everything you've raised with Legal — track status and turnaround here."
       actions=${html`<${Segmented} value=${view} onChange=${setView}
           options=${[{ label: "List", value: "list", icon: "list" }, { label: "Cards", value: "cards", icon: "columns" }]} />
+        <${Segmented} value=${scope} onChange=${setScope}
+          options=${[{ label: "All", value: "all" }, { label: "Active", value: "active" }, { label: "Closed", value: "done" }]} />
         <${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise")}>New request</${Btn}>`} />
 
     ${mine.length === 0
@@ -257,13 +268,13 @@ export default function MyRequests() {
           text="Raise your first legal request and you'll be able to track it here."
           action=${html`<${Btn} variant="primary" icon="plus" onClick=${() => navigate("/raise")}>Raise a request</${Btn}>`} />`
       : html`<div class="col" style="gap:22px">
-          ${active.length > 0 && html`<div>
+          ${scope !== "done" && active.length > 0 && html`<div>
             <div class="panel__title" style="margin-bottom:12px">In progress <span class="tiny muted">· ${active.length}</span></div>
             ${view === "list"
               ? html`<${RequestTable} items=${active} onOpen=${setOpen} />`
               : html`<${Grid} items=${active} onOpen=${setOpen} />`}
           </div>`}
-          ${done.length > 0 && html`<div>
+          ${scope !== "active" && done.length > 0 && html`<div>
             <div class="panel__title" style="margin-bottom:12px">Completed <span class="tiny muted">· ${done.length}</span></div>
             ${view === "list"
               ? html`<${RequestTable} items=${done} onOpen=${setOpen} />`
@@ -282,8 +293,15 @@ function RequestSheet({ r, onClose }) {
   const done = DONE.has(r.status) || r.progress === 100;
   const l2 = r.layer2 || {};
   const l2rows = Object.keys(l2).filter((k) => l2[k]);
+  // Ticket information: everything a requester would otherwise chase someone for.
   const facts = [
     ["Reference", r.id],
+    ["Status", r.status || "—"],
+    ["Current stage", friendlyStage(r)],
+    ["Request type", r.requestType || r.type || r.contractType || "—"],
+    ["Counter party", r.counterparty && r.counterparty !== "—" ? r.counterparty : "—"],
+    ["Assignee (POC)", personName(r.owner) || "Awaiting triage"],
+    ["Raised by", personName(r.requesterId || r.requester) || r.requesterEmail || "—"],
     ["Submitted", submittedAt(r) ? fmt.date(submittedAt(r)) : "—"],
     ["Expected turnaround", r.tat && r.tat.dueAt ? fmt.date(r.tat.dueAt) : "Set at triage"],
     ["Needed by", r.dueDate ? fmt.date(r.dueDate) : "No date given"],

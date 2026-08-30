@@ -137,7 +137,8 @@ export default function Tracker() {
         foot=${topEntity ? entityName(topEntity[0]) : "—"}
         onClick=${() => topEntity && patch({ entities: [topEntity[0]] })} />
       <${Metric} icon="database" tone="purple" label="Mapped to a physical record" value=${filtered.filter((c) => c.physicalRecordRef).length}
-        foot=${`${new Set(filtered.map((c) => c.officeLocation)).size} office locations`} />
+        foot=${`${new Set(filtered.map((c) => c.officeLocation)).size} office locations`}
+        onClick=${() => navigate("/repository")} />
     </div>
 
     <${FilterBar} module="tracker" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
@@ -151,22 +152,23 @@ export default function Tracker() {
 
     <div class="dense">
       <${DataTable} rows=${filtered}
+        onRow=${(c) => navigate("/contracts/" + c.id)}
         empty=${html`<${Empty} icon="grid" title="No rows match" text="Clear a filter, or widen the date window." />`}
         columns=${[
           // Sr No is inline-editable because it maps to the physical record.
           { key: "srNo", label: "Sr No", width: "70px", render: (c) => html`<${EditText} value=${c.srNo} type="number" width="58px" onSave=${(v) => save(c.id, { srNo: v, physicalRecordRef: v ? "PR-" + v : c.physicalRecordRef })} />` },
           { key: "entityId", label: "Company / Entity", width: "128px", render: (c) => html`<button class="tagchip" onClick=${(e) => { e.stopPropagation(); navigate("/companies/" + c.entityId); }}><${Icon} name="building" size=11 />${entityName(c.entityId)}</button>` },
-          { key: "contractType", label: "Contract Type", width: "132px", render: (c) => html`<${Pill} tone="indigo">${c.contractType}</${Pill}>` },
+          { key: "contractType", label: "Contract Type", width: "132px", render: (c) => html`<button class="cellbtn" title=${"Filter to " + c.contractType} onClick=${(e) => { e.stopPropagation(); toggle("contractTypes", c.contractType); }}><${Pill} tone="indigo">${c.contractType}</${Pill}></button>` },
           { key: "title", label: "Contract / Counterparty", render: (c) => html`<div class="wrapcell">
               <div class="cell-strong">${c.title}</div>
               <div class="tiny muted">${c.id} · ${c.counterparty}</div>
             </div>` },
-          { key: "category", label: "Category", width: "132px", render: (c) => html`<span class="tiny">${c.category}</span>` },
-          { key: "subdivision", label: "Legal Sub-div", width: "120px", render: (c) => html`<${SubdivisionPill} item=${c} />` },
+          { key: "category", label: "Category", width: "132px", render: (c) => html`<button class="cellbtn cellbtn--text" title=${"Filter to " + c.category} onClick=${(e) => { e.stopPropagation(); toggle("categories", c.category); }}><span class="tiny">${c.category}</span></button>` },
+          { key: "subdivision", label: "Legal Sub-div", width: "120px", render: (c) => html`<button class="cellbtn" title="Filter to this sub-division" onClick=${(e) => { e.stopPropagation(); c.subdivision && toggle("subdivisions", c.subdivision); }}><${SubdivisionPill} item=${c} /></button>` },
           { key: "owner", label: "Owner", width: "116px", render: (c) => html`<${EditSelect} value=${c.owner}
               options=${USERS.slice(0, 12).map((u) => ({ value: u.id, label: u.name.split(" ")[0] + " " + (u.name.split(" ")[1] || "").slice(0, 1) }))}
               onSave=${(v) => save(c.id, { owner: v })} />` },
-          { key: "value", label: "Value", align: "right", width: "104px", render: (c) => html`<span class="strong">${fmt.money(c.value, c.currency)}</span>` },
+          { key: "value", label: "Value", align: "right", width: "104px", render: (c) => html`<button class="cellbtn cellbtn--text" style="width:100%;text-align:right" title="Open this contract" onClick=${(e) => { e.stopPropagation(); navigate("/contracts/" + c.id); }}><span class="strong">${fmt.money(c.value, c.currency)}</span></button>` },
           { key: "ppaValue", label: "PPA Value", align: "right", width: "104px", render: (c) => c.ppaValue ? html`<span class="strong">${fmt.money(c.ppaValue, c.currency)}</span>` : html`<span class="tiny muted">—</span>` },
           { key: "landValue", label: "Land Value", align: "right", width: "104px", render: (c) => c.landValue ? html`<span class="strong">${fmt.money(c.landValue, c.currency)}</span>` : html`<span class="tiny muted">—</span>` },
           { key: "start", label: "Start", width: "88px", render: (c) => html`<${EditText} type="date" width="112px" value=${c.start ? new Date(c.start).toISOString().slice(0, 10) : ""} onSave=${(v) => v && save(c.id, { start: new Date(v + "T00:00:00").toISOString() })} />` },
@@ -176,7 +178,7 @@ export default function Tracker() {
               <div class=${cx("tiny", noticeIn <= 0 ? "risk--critical" : noticeIn <= 14 ? "risk--high" : "muted")}>${noticeIn <= 0 ? "window closed" : "in " + noticeIn + "d"}</div>
             </div>`; } },
           { key: "tat", label: "TAT Status", width: "166px", render: (c) => html`<${TatCell} tat=${c.__tat} />` },
-          { key: "physicalRecordRef", label: "Physical Record", width: "104px", render: (c) => html`<span class="mono tiny">${c.physicalRecordRef || "—"}</span>` },
+          { key: "physicalRecordRef", label: "Physical Record", width: "104px", render: (c) => c.physicalRecordRef ? html`<button class="cellbtn cellbtn--text" title="Open Intake & Repository" onClick=${(e) => { e.stopPropagation(); navigate("/repository"); }}><span class="mono tiny">${c.physicalRecordRef}</span></button>` : html`<span class="tiny muted">—</span>` },
           { key: "officeLocation", label: "Office Location", width: "150px", render: (c) => html`<${EditSelect} value=${c.officeLocation}
               options=${OFFICE_LOCATIONS.map((o) => ({ value: o, label: o }))} onSave=${(v) => save(c.id, { officeLocation: v })} />` },
           { key: "driveLink", label: "Drive", width: "60px", render: (c) => c.driveLink
