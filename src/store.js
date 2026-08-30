@@ -231,9 +231,28 @@ function seed() {
   };
 }
 
+// The true-hierarchy change (2026-08-30) deleted seven demo staff ids after
+// remapping their seed references. A browser that persisted the OLD store
+// still holds records owned by those ids, and byId() on one of them crashes
+// the render — so the same remap is applied to the saved store on load. Ids
+// only ever appear as whole quoted tokens, which is what makes the string
+// pass safe.
+const RETIRED_IDS = { u2: "u1", u4: "u20", u8: "u12", u9: "u5", u11: "u10", u21: "u12", u22: "u7" };
+function migrateRetiredIds(raw) {
+  let out = raw;
+  for (const [old, now] of Object.entries(RETIRED_IDS)) out = out.split(`"${old}"`).join(`"${now}"`);
+  // The Zameen rebrand (same day): a saved store still carries Northwind entity
+  // and email strings in its seeded records.
+  out = out.split("Northwind Global Holdings").join("Zameen Group")
+           .split("Northwind").join("Zameen")
+           .split("northwind.com").join("zameen.com");
+  return out;
+}
+
 function load() {
   try {
-    const raw = localStorage.getItem(LS_KEY);
+    const raw0 = localStorage.getItem(LS_KEY);
+    const raw = raw0 && migrateRetiredIds(raw0);
     if (raw) return JSON.parse(raw);
   } catch (e) {}
   return null;

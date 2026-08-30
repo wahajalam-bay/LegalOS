@@ -124,7 +124,7 @@ export default function Login() {
         <svg class="login__logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0d7a3f"/><path d="M9 22V10h2.6c3 0 4.8 1.9 4.8 4.8v.2c0 2.9-1.8 4.8-4.8 4.8H11v2H9Zm9 0V10h2v10h5v2h-7Z" fill="white"/></svg>
         <div>
           <div class="login__name">LegalOS</div>
-          <div class="login__sub">Enterprise Legal Operations · Northwind Global Holdings</div>
+          <div class="login__sub">Enterprise Legal Operations · Zameen Group</div>
         </div>
       </div>
       <div class="login__lead">

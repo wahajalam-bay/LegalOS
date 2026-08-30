@@ -277,7 +277,7 @@ export const M3_AGREEMENT_TYPES = TEMPLATE_DEFS.map((t) => t.agreementType);
 // The permitted use of generation: connective language only (Phase 11).
 // Deterministic here — clearly marked AI-SUGGESTED in the UI either way.
 export function generateRecitals({ counterpartyName, ourRole, agreementType, jurisdiction }) {
-  const us = "Northwind Global Holdings";
+  const us = "Zameen Group";
   const them = counterpartyName || "the Counterparty";
   const doing = agreementType === "NDA"
     ? "wish to exchange confidential information to evaluate a potential business relationship"

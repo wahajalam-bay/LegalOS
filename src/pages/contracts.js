@@ -360,7 +360,7 @@ export function ContractWorkspace({ id, backTo = "/contracts", backLabel = "Cont
       <div class="card">
         <div class="card__body">
           ${tab === "document" && html`<div class="doc">
-            <div style="text-align:center;margin-bottom:24px"><div style="font-size:16px;font-weight:700;letter-spacing:.02em">${c.type.toUpperCase()} AGREEMENT</div><div class="tiny muted" style="margin-top:4px">Between ${c.counterparty} and Northwind Global Holdings</div></div>
+            <div style="text-align:center;margin-bottom:24px"><div style="font-size:16px;font-weight:700;letter-spacing:.02em">${c.type.toUpperCase()} AGREEMENT</div><div class="tiny muted" style="margin-top:4px">Between ${c.counterparty} and Zameen Group</div></div>
             <h3>4. Term &amp; Renewal</h3>
             <p>This Agreement shall commence on the Effective Date and continue for an initial term of <span class="clause-hl">${c.autoRenew ? "twelve (12) months, automatically renewing for successive 12-month periods unless either party provides sixty (60) days' written notice" : "the period set out in the Order Form"}</span>.</p>
             <h3>6. Limitation of Liability</h3>

@@ -572,7 +572,7 @@ export default function Settings() {
 
         ${sec === "general" && html`<${Section} title="Organization" icon="building">
           <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px">
-            <${Field} label="Organization name"><${Input} value="Northwind Global Holdings" /></${Field}>
+            <${Field} label="Organization name"><${Input} value="Zameen Group" /></${Field}>
             <${Field} label="Primary region"><select class="select"><option>Saudi Arabia</option><option>UAE</option><option>United Kingdom</option></select></${Field}>
             <${Field} label="Default currency"><select class="select"><option>USD</option><option>SAR</option><option>AED</option><option>GBP</option></select></${Field}>
             <${Field} label="Fiscal year start"><select class="select"><option>January</option><option>April</option></select></${Field}>

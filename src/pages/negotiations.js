@@ -143,7 +143,7 @@ export default function Negotiations() {
         <${Section} title="Redline comparison" icon="gitbranch" sub=${"Round " + roundCount(deal) + " · 3 clauses in disagreement"}>
           <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
             <div class="col" style="gap:12px">
-              <div class="row" style="gap:8px"><${Avatar} name="Northwind Legal" color="#0d7a3f" size="sm" /><span class="strong tiny">Our position</span></div>
+              <div class="row" style="gap:8px"><${Avatar} name="Zameen Legal" color="#0d7a3f" size="sm" /><span class="strong tiny">Our position</span></div>
               ${REDLINES.ours.map((r, i) => html`<div key=${i} style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px">
                 <div class="tiny strong" style="margin-bottom:6px;color:var(--brand)">${r.c}</div>
                 <div class="tiny" style="line-height:1.6">${r.t}<span class="clause-hl">${r.hl}</span>${r.after}</div>

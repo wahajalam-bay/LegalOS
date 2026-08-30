@@ -32,7 +32,7 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   await viewAs(p, "u1"); await go(p, "#/triage");
   // The assignable people are EXACTLY the credential bench on the login screen
   // (minus the Directors), grouped by team — never anyone else.
-  const picker = await p.evaluate(() => Promise.all([import("/src-v69/org.js"), import("/src-v69/pages/login.js")]).then(([O, L]) => {
+  const picker = await p.evaluate(() => Promise.all([import("/src-v71/org.js"), import("/src-v71/pages/login.js")]).then(([O, L]) => {
     const opts = [...document.querySelectorAll(".triage__panel select option")].map((o) => o.value).filter((v) => v && v.startsWith("u"));
     const credLegal = L.CREDENTIAL_GROUPS.filter((g) => /Legal —/.test(g.section) && !/Leadership/.test(g.section)).flatMap((g) => g.people.map((x) => x.id));
     return {
@@ -70,7 +70,7 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   ok("Lead (litigation) sees ONLY their own reportees in the picker", leadPicker.length > 0 && leadPicker.every((id) => ["u6", "u17", "u18", "u19"].includes(id)));
   const nextId2 = await p.evaluate(() => { const el = document.querySelector(".triage__panel"); const m = ((el && el.innerText) || "").match(/REQ-\d+/); return m ? m[0] : null; });
   // force a CHANGE to a commercial member (whichever differs from the proposal)
-  const crossTeam = await p.evaluate((id) => import("/src-v69/store.js").then((S) => {
+  const crossTeam = await p.evaluate((id) => import("/src-v71/store.js").then((S) => {
     const cur = (S.getCollection("requests") || []).find((r) => r.id === id) || {};
     const target = cur.owner === "u5" ? "u3" : "u5";
     return S.triageDecision(id, { owner: target }, "u6");
@@ -78,7 +78,7 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
   ok("ENGINE blocks a lead assigning outside their team", crossTeam.ok === false && /own reportees/i.test(crossTeam.error));
   // u18 (Salman Khan) is on the bench now; a requester is the id that can never
   // be assignable, so the off-bench guard is exercised with u16.
-  const offBench = await p.evaluate((id) => import("/src-v69/store.js").then((S) => S.reassignRequest(id, "u16", "u1")), triageId);
+  const offBench = await p.evaluate((id) => import("/src-v71/store.js").then((S) => S.reassignRequest(id, "u16", "u1")), triageId);
   ok("ENGINE blocks assignment to anyone off the credential bench (even by the Director)", offBench.ok === false && /credential bench/i.test(offBench.error));
   await viewAs(p, "u1");
 
@@ -90,7 +90,7 @@ async function shownStage(p, id) { return p.evaluate((id) => { const s = JSON.pa
     const iso0 = new Date(2026, 0, 5).toISOString(); const isoDue = new Date(2026, 0, 8).toISOString();
     const mk = (id) => ({
       id, title: "Test NDA " + id, requestType: "New", contractType: "NDA / MoU / LOI",
-      requesterId: "u16", requesterEmail: "klaus.werner@northwind.com", department: "Finance",
+      requesterId: "u16", requesterEmail: "klaus.werner@zameen.com", department: "Finance",
       channel: "internal", entityId: eid, risk: "medium", priority: "Medium",
       status: "Assigned", stage: "Assigned", owner: "u3", progress: 0,
       requestDate: iso0, tat: { days: 3, fixedAt: iso0, dueAt: isoDue, basis: "NDA / MoU / LOI × medium" },

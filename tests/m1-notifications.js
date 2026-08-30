@@ -31,7 +31,7 @@ async function notifs(p, forUserId) { return p.evaluate((u) => { const s = JSON.
     const iso = new Date(2026, 0, 5).toISOString();
     const mk = (id, extra) => Object.assign({
       id, title: "NDA " + id, requestType: "New", contractType: "NDA / MoU / LOI",
-      requesterId: "u16", requesterEmail: "klaus.werner@northwind.com", department: "Finance",
+      requesterId: "u16", requesterEmail: "klaus.werner@zameen.com", department: "Finance",
       channel: "internal", entityId: eid, risk: "medium", priority: "Medium",
       status: "Assigned", stage: "Assigned", owner: "u3", progress: 0,
       requesterOption: "We're entering into an agreement with someone",

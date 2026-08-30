@@ -123,7 +123,7 @@ const CRM = [
   }),
   mk("contracts", {
     title: "Agreement to Sell — plot 114-B, DHA Phase 6 disposal",
-    subType: "Agreement to Sell", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
+    subType: "Agreement to Sell", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@zameen.com"), requestedById: "u16",
     entityId: "CO-37", owner: "u5", assignedBy: "u3", stage: "Assigned", raisedDaysAgo: 1, pace: 1,
     fields: { templateType: "Existing Template", counterpartyId: "CO-33", value: 96500000, currency: "PKR", expiry: d(90), renewalFlag: false, instructions: "Buyer wants possession before full payment — do not concede." },
   }),
@@ -135,7 +135,7 @@ const CRM = [
   }),
   mk("vetting", {
     title: "Deal structure review — media barter with TV network",
-    subType: "Deal Structure Review", requestingDept: "Sales & Marketing", requestedBy: req("Ravi Menon", "Sales Director", "ravi.menon@northwind.com"), requestedById: "u15",
+    subType: "Deal Structure Review", requestingDept: "Sales & Marketing", requestedBy: req("Ravi Menon", "Sales Director", "ravi.menon@zameen.com"), requestedById: "u15",
     entityId: "CO-36", owner: "u7", assignedBy: "u3", stage: "Closed", raisedDaysAgo: 12, pace: 2, closed: true,
     fields: { counterpartyId: "CO-50", context: "Airtime-for-inventory barter.", riskRating: "Low", advisory: "Approved with quarterly true-up and a 60-day exit." },
   }),
@@ -152,7 +152,7 @@ const CMP = [
   }),
   mk("agreements", {
     title: "Working-capital facility — HBL PKR 500M line",
-    subType: "Loan Agreement", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
+    subType: "Loan Agreement", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@zameen.com"), requestedById: "u16",
     entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Internal Review", raisedDaysAgo: 11, pace: 2, priority: "High",
     holds: [{ dept: "Finance", reason: "Awaiting Documents", startDaysAgo: 6, endDaysAgo: 2 }],
     comments: [
@@ -191,7 +191,7 @@ const CMP = [
   // Resolutions — deliberately spread across departments (Section 6.4 report).
   mk("resolutions", {
     title: "Board Resolution — authorize HBL facility signatories",
-    subType: "Board Resolution", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@northwind.com"), requestedById: "u16",
+    subType: "Board Resolution", requestingDept: "Finance", requestedBy: req("Klaus Werner", "CFO", "klaus.werner@zameen.com"), requestedById: "u16",
     entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 15, pace: 2, closed: true,
     fields: { purpose: "Authorize CFO and Company Secretary to execute HBL facility documents.", urgency: "Urgent", authority: "Bank", authorizedPersons: "Klaus Werner (CFO, CNIC 35202-1234567-1); Saad Cheema (Company Secretary, CNIC 35201-7654321-9)", resolutionDate: d(-9), uploadedToTracker: true, trackerUploadDate: d(-8), trackerLink: "https://drive.google.com/resolutions-tracker#R-118" },
     costs: [{ type: "Filing & Government Fee", estimated: 5000, actual: 5000, currency: "PKR", attribution: "Recharged to requesting department" }],
@@ -228,13 +228,13 @@ const CMP = [
   }),
   mk("resolutions", {
     title: "Board Resolution — HR provident fund trustee change",
-    subType: "Board Resolution", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@northwind.com"), requestedById: "u14",
+    subType: "Board Resolution", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@zameen.com"), requestedById: "u14",
     entityId: "CO-36", owner: "u12", assignedBy: "u20", stage: "Assigned", raisedDaysAgo: 1, pace: 1,
     fields: { purpose: "Replace retiring PF trustee and update bank mandate.", urgency: "Normal", authority: "Bank", authorizedPersons: "TBD" },
   }),
   mk("resolutions", {
     title: "Board Resolution — authorize FIR filing against vendor",
-    subType: "Board Resolution", requestingDept: "Admin", requestedBy: req("Hasan Majeed", "Senior Counsel", "ahmed.raza@northwind.com"), requestedById: "u17",
+    subType: "Board Resolution", requestingDept: "Admin", requestedBy: req("Hasan Majeed", "Senior Counsel", "ahmed.raza@zameen.com"), requestedById: "u17",
     entityId: "CO-37", owner: "u12", assignedBy: "u20", stage: "Closed", raisedDaysAgo: 20, pace: 1, closed: true,
     fields: { purpose: "Authorize Recovery Officer to file police complaint against ZD-project vendor for material theft.", urgency: "Urgent", authority: "SECP", authorizedPersons: "Salman Khan (Recovery Officer, CNIC 35201-5566778-2)", resolutionDate: d(-15), uploadedToTracker: true, trackerUploadDate: d(-14) },
   }),
@@ -365,7 +365,7 @@ const LIT = [
   }),
   mk("cases", {
     title: "Labour case — reinstatement claim, ex-sales executive",
-    subType: "Labour Case", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@northwind.com"), requestedById: "u14",
+    subType: "Labour Case", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@zameen.com"), requestedById: "u14",
     entityId: "CO-36", owner: "u17", assignedBy: "u6", stage: "Internal Review", raisedDaysAgo: 5, pace: 1, priority: "High",
     holds: [{ dept: "HR", reason: "Awaiting Documents", startDaysAgo: 2 }],
     comments: [
@@ -415,7 +415,7 @@ const LIT = [
   // 8.2 Asset Recovery — HR / Admin / Legal source-tagged field groups.
   mk("assetRecovery", {
     title: "Asset recovery — Usman Ghani (ex-Sales, Lahore)",
-    subType: "Central", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@northwind.com"), requestedById: "u14",
+    subType: "Central", requestingDept: "HR", requestedBy: req("Fatima Al-Sayed", "Head of HR", "fatima.alsayed@zameen.com"), requestedById: "u14",
     entityId: "CO-36", owner: "u18", assignedBy: "u6", stage: "Negotiation / Recovery", raisedDaysAgo: 12, pace: 2, priority: "High",
     fields: {
       employeeId: "ZM-8841", employeeName: "Usman Ghani", department: "Sales & Marketing", city: "Lahore", month: "June 2026",
@@ -491,13 +491,13 @@ const LIT = [
   }),
   mk("ip", {
     title: "Prosecution — OLX MOTORS composite mark (PK, cl. 35)",
-    subType: "New Filing", requestingDept: "Legal", requestedBy: req("Afzal Chaudhary", "IP Counsel", "bilal.sheikh@northwind.com"), requestedById: "u19",
+    subType: "New Filing", requestingDept: "Legal", requestedBy: req("Afzal Chaudhary", "IP Counsel", "bilal.sheikh@zameen.com"), requestedById: "u19",
     entityId: "CO-36", owner: "u19", assignedBy: "u6", stage: "Submission to IP Office", raisedDaysAgo: 60, pace: 10,
     fields: { markName: "OLX MOTORS", country: "Pakistan", classes: "35", filingDate: d(-55), ipStatus: "Pending Registration", subStatus: "Published", registeredOwner: "CO-36", localCounsel: "Vellani & Vellani" },
   }),
   mk("ip", {
     title: "Portfolio record — DUBIZZLE word mark (UAE, cl. 35/38)",
-    subType: "Renewal", requestingDept: "Legal", requestedBy: req("Afzal Chaudhary", "IP Counsel", "bilal.sheikh@northwind.com"), requestedById: "u19",
+    subType: "Renewal", requestingDept: "Legal", requestedBy: req("Afzal Chaudhary", "IP Counsel", "bilal.sheikh@zameen.com"), requestedById: "u19",
     entityId: "CO-36", owner: "u19", assignedBy: "u6", stage: "Registered / Renewed / Closed", raisedDaysAgo: 90, pace: 15, closed: true,
     fields: { markName: "DUBIZZLE", country: "UAE", classes: "35, 38", regNumber: "AE-201599", regDate: d(-2500), renewalDue: d(650), ipStatus: "Renewed", subStatus: "Renewed", registeredOwner: "CO-36", localCounsel: "Al Tamimi & Co." },
   }),

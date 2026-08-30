@@ -92,7 +92,7 @@ export default function Templates() {
   // assembly lives in Module 3 (/drafting).
   const generateStatic = (t) => {
     const v = currentApproved(t);
-    const bodyText = `${t.title.toUpperCase()}\n\nBetween: Northwind Global Holdings\nAnd: ${genCp.trim() || "[Counterparty]"}\nCountry: ${genCountry}\nTemplate: ${t.id} ${v.version} (approved)\n\n${v.body || "1. Standard clauses per the approved template."}`;
+    const bodyText = `${t.title.toUpperCase()}\n\nBetween: Zameen Group\nAnd: ${genCp.trim() || "[Counterparty]"}\nCountry: ${genCountry}\nTemplate: ${t.id} ${v.version} (approved)\n\n${v.body || "1. Standard clauses per the approved template."}`;
     const doc = {
       id: nextId("repository", "DOC-"),
       name: `${t.title} — ${genCp.trim() || "draft"} (${v.version}).docx`,
