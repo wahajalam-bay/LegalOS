@@ -26,6 +26,9 @@ export const NAV = [
   // the team queue, a requester gets their own requests (see main.js).
   { section: null, items: [
     { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
+    // The historic record: every contract on the book, including the ones already
+    // done. Sits with the request queue rather than inside a team group.
+    { path: "/contracts", label: "Contracts", icon: "folder" },
     // The command surface the legal team lives in. It was inside "Shared", which
     // ships collapsed, so in practice nobody could find it — it belongs next to
     // the request queue, always visible.
@@ -36,9 +39,6 @@ export const NAV = [
   { section: "Commercial & Risk Mitigation", icon: "file", items: [
     { path: "/m/contracts", label: "Contract Review", icon: "file" },
     { path: "/m/vetting", label: "Risk Analysis", icon: "checkcircle" },
-    // The historic record: every contract ever done, not just what is in flight.
-    // It had no nav row at all and was reachable only from other pages.
-    { path: "/contracts", label: "Contracts", icon: "folder" },
     { path: "/tracker", label: "Contract Tracker", icon: "grid" },
   ]},
   { section: "Compliance & Licences", icon: "shield", items: [
