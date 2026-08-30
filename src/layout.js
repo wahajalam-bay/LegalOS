@@ -11,7 +11,7 @@ import { TourOverlay, TourButton } from "./tour.js";
 import { signOut, CREDENTIAL_GROUPS, isRequesterDoor } from "./pages/login.js";
 import { senderName } from "./messages.js";
 // Sprint 6 — the org architecture: View As, RBAC-filtered search, team modules.
-import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser } from "./rbac.js";
+import { useActiveUser, setViewAs, landingFor, filterVisible, navForUser, canOpenPath } from "./rbac.js";
 
 // The View-As persona switcher is a demo/testing affordance only. It appears
 // when running locally (or with ?personas=1); a production build uses the real
@@ -300,8 +300,11 @@ function CommandPalette({ onClose }) {
   // it is the same role filter the sidebar uses, so a requester's palette can
   // no longer list the executive overview.
   const door = isRequesterDoor();
-  const navAllowed = new Set(navForUser(me).flatMap((sec) => sec.items).map((i) => i.path));
-  const reachable = (p) => (door ? REQUESTER_DOOR_PATHS.has(p) : navAllowed.has(p));
+  // Offer nothing this identity cannot open. The Actions list is hand-written and
+  // points at pages outside the nav (/copilot, /reviews, /my-tasks), so it needs
+  // the page gate itself, not just the nav paths — otherwise the palette shows a
+  // shortcut that lands on "you do not have access".
+  const reachable = (p) => (door ? REQUESTER_DOOR_PATHS.has(p) : canOpenPath(me, p));
   const navResults = NAV_FLAT
     .filter((i) => i.label.toLowerCase().includes(ql) && reachable(i.path))
     .map((i) => ({ group: "Navigate", label: i.label, icon: i.icon, path: i.path }));
@@ -321,7 +324,7 @@ function CommandPalette({ onClose }) {
     { group: "Actions", label: "Upload contract for AI review", icon: "scan", path: "/reviews" },
     { group: "Actions", label: "Generate NDA from template", icon: "sparkles", path: "/templates" },
     { group: "Actions", label: "Ask AI Copilot", icon: "robot", path: "/copilot" },
-  ].filter((a) => a.label.toLowerCase().includes(ql) && (!door || REQUESTER_DOOR_PATHS.has(a.path)));
+  ].filter((a) => a.label.toLowerCase().includes(ql) && reachable(a.path));
   // Search live store collections so records created in-session are findable.
   const companies = getCollection("companies") || COMPANIES;
   const liveContracts = getCollection("contracts") || CONTRACTS;

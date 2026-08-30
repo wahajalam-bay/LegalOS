@@ -62,7 +62,12 @@ export function useFilter(rows, keys) {
 const KPI_TONES = ["blue", "green", "amber", "purple", "red", "gray"];
 export function StatStrip({ stats }) {
   return html`<div class="statkpis">
-    ${stats.map((s, i) => html`<div key=${i} class=${cx("statkpi", "statkpi--" + (s.tone || KPI_TONES[i % KPI_TONES.length]))}>
+    ${stats.map((s, i) => html`<div key=${i}
+      class=${cx("statkpi", "statkpi--" + (s.tone || KPI_TONES[i % KPI_TONES.length]), s.onClick && "statkpi--link")}
+      role=${s.onClick ? "button" : undefined} tabindex=${s.onClick ? 0 : undefined}
+      title=${s.title || undefined}
+      onClick=${s.onClick}
+      onKeyDown=${s.onClick ? ((e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); s.onClick(); } }) : undefined}>
       <div class="statkpi__n">
         ${s.value}
         ${s.trend && html`<span class=${cx("trend", s.trendDir === "up" ? "trend--up" : s.trendDir === "down" ? "trend--down" : "trend--flat")}>${s.trend}</span>`}

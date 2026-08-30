@@ -1542,6 +1542,10 @@ a.dest__v:hover, button.dest__v:hover { text-decoration: underline; }
 .statkpi--click:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); border-color: var(--border-strong); }
 .statkpi--on { background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 45%, transparent); }
 .statkpi--on .statkpi__l { color: var(--brand-600); font-weight: 600; }
+/* A stat that is also a way in has to look like one. */
+.statkpi--link { cursor: pointer; transition: border-color .13s, box-shadow .13s, transform .13s; }
+.statkpi--link:hover { border-color: color-mix(in srgb, var(--brand) 45%, var(--border)); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.statkpi--link:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 @media (max-width: 768px) { .statkpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .modkpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }

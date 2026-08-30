@@ -224,7 +224,10 @@ export default function Requests() {
 
     <${StatStrip} stats=${[
       { value: openReqs.length, label: "Open requests", tone: "blue" },
-      { value: base.filter(UNTRIAGED).length, label: "Awaiting triage", tone: "purple" },
+      { value: base.filter(UNTRIAGED).length, label: "Awaiting triage", tone: "purple",
+        // Triage has no nav row of its own any more, so this count IS the way in
+        // to the queue. Without it the queue was reachable only per-request.
+        ...(canTriage(viewer) ? { onClick: () => navigate("/triage"), title: "Open the triage queue" } : {}) },
       // Non-approvers never see the "my approval" phrasing — nothing is theirs to sign.
       ...(canApprove(viewer) ? [{ value: myApprovals.length, label: "Awaiting my approval", tone: "amber" }] : []),
       { value: modRows.length, label: "Module tasks open", tone: "green" },

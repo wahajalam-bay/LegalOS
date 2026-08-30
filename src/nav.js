@@ -26,6 +26,10 @@ export const NAV = [
   // the team queue, a requester gets their own requests (see main.js).
   { section: null, items: [
     { path: "/requests", label: "Legal Requests", icon: "inbox", badge: "myTasks" },
+    // The command surface the legal team lives in. It was inside "Shared", which
+    // ships collapsed, so in practice nobody could find it — it belongs next to
+    // the request queue, always visible.
+    { path: "/workspace", label: "Legal Workspace", icon: "layers", badge: REQUESTS.length },
     { path: "/raise", label: "Raise Request", icon: "plus" },
   ]},
   // The three legal teams, in the order the department reads them.
@@ -51,7 +55,6 @@ export const NAV = [
     { path: "/m/inspections", label: "Govt Inspections", icon: "shield" },
   ]},
   { section: "Shared", items: [
-    { path: "/workspace", label: "Legal Workspace", icon: "layers", badge: REQUESTS.length },
     { path: "/matters", label: "Matters", icon: "folder" },
     { path: "/repository", label: "Intake & Repository", icon: "scan" },
     { path: "/companies", label: "Entity Registry", icon: "building" },
