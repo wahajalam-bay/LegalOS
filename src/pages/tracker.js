@@ -102,6 +102,20 @@ export default function Tracker() {
   const activeCount = filtered.filter((c) => /Active|Executed|Signed/.test(c.status)).length;
   const expiring = filtered.filter((c) => { const d = (new Date(c.expiry) - Date.now()) / 86400000; return d >= 0 && d <= 90; });
   const expiringValue = expiring.reduce((s, c) => s + toUsd(c.value, c.currency), 0);
+  // Ageing by expiry, in one card: the horizon matters more than a single
+  // "within 90 days" count, and each bucket is its own drill-down.
+  const age = (() => {
+    const b = { over: [], d30: [], d60: [], d90: [] };
+    filtered.forEach((c) => {
+      if (!c.expiry) return;
+      const d = (new Date(c.expiry) - Date.now()) / 86400000;
+      if (d < 0) b.over.push(c);
+      else if (d <= 30) b.d30.push(c);
+      else if (d <= 60) b.d60.push(c);
+      else if (d <= 90) b.d90.push(c);
+    });
+    return b;
+  })();
   const delayed = filtered.filter((c) => c.__tat.status === "Delayed");
   const byEntity = useMemo(() => {
     const m = new Map();
@@ -127,18 +141,31 @@ export default function Tracker() {
       <${Metric} icon="file" tone="blue" label="Active contracts" value=${activeCount}
         foot=${`${filtered.length} rows in scope`}
         onClick=${() => patch({ statuses: ["Active"] })} />
-      <${Metric} icon="clock" tone="amber" label="Expiring ≤90 days" value=${expiring.length}
-        foot=${`${fmt.money(expiringValue)} at risk`}
-        onClick=${() => patch({ dateField: "expiry", datePreset: "exp90" })} />
-      <${Metric} icon="alertTriangle" tone="red" label="Delayed" value=${delayed.length}
+      <div class="agetile">
+        <div class="agetile__head">
+          <span class="agetile__ico"><${Icon} name="clock" size=15 /></span>
+          <div style="min-width:0">
+            <div class="agetile__label">Contract ageing</div>
+            <div class="agetile__sub">${fmt.money(expiringValue)} at risk within 90 days</div>
+          </div>
+        </div>
+        <div class="agetile__buckets">
+          ${[
+            { k: "overdue", n: age.over.length, cap: "Overdue", tone: "over" },
+            { k: "exp30", n: age.d30.length, cap: "≤30 days", tone: "d30" },
+            { k: "exp60", n: age.d60.length, cap: "31–60", tone: "d60" },
+            { k: "exp90", n: age.d90.length, cap: "61–90", tone: "d90" },
+          ].map((x) => html`<button key=${x.k} class=${"agebkt agebkt--" + x.tone}
+            title=${`${x.n} contracts ${x.cap.toLowerCase()}`}
+            onClick=${() => patch({ dateField: "expiry", datePreset: x.k })}>
+            <span class="agebkt__n">${x.n}</span>
+            <span class="agebkt__cap">${x.cap}</span>
+          </button>`)}
+        </div>
+      </div>
+      <${Metric} icon="alertTriangle" tone="red" label="Overdue" value=${delayed.length}
         foot=${delayed.length ? `blocked at ${[...new Set(delayed.map((d) => d.__tat.blockingStage))].slice(0, 2).join(", ")}` : "nothing past TAT"}
         onClick=${() => patch({ tatStatuses: ["Delayed"] })} />
-      <${Metric} icon="building" tone="green" label="Largest entity by value" value=${topEntity ? fmt.money(topEntity[1]) : "—"}
-        foot=${topEntity ? entityName(topEntity[0]) : "—"}
-        onClick=${() => topEntity && patch({ entities: [topEntity[0]] })} />
-      <${Metric} icon="database" tone="purple" label="Mapped to a physical record" value=${filtered.filter((c) => c.physicalRecordRef).length}
-        foot=${`${new Set(filtered.map((c) => c.officeLocation)).size} office locations`}
-        onClick=${() => navigate("/repository")} />
     </div>
 
     <${FilterBar} module="tracker" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
