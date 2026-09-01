@@ -165,7 +165,9 @@ const IC_ONLY = new Set(["/me"]);
 // Director only.
 // The entity registry is a Director-level view of the whole group, so it sits
 // with Organization rather than in the shared surfaces.
-const HEAD_ONLY = new Set(["/organization", "/portal", "/companies", "/exec", "/dashboard"]);
+// /contracts (the historic register) and /tracker carry the organisation's
+// real contract book — Director-only, like the executive views.
+const HEAD_ONLY = new Set(["/organization", "/portal", "/companies", "/exec", "/dashboard", "/contracts", "/tracker"]);
 // Everything a business requester may open, and nothing else.
 const REQUESTER_PATHS = new Set(["/raise", "/requests", "/my-requests", "/my-tasks", "/flow-map", "/login"]);
 
