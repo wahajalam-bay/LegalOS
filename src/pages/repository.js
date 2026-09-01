@@ -10,6 +10,7 @@
 //
 // The repository is the single source of truth linking
 //   digital file (drive link) ←→ operational row (tracker) ←→ physical record.
+import { activeUser, canOpenPath } from "../rbac.js";
 import { html, cx, fmt, useState, useMemo, Fragment } from "../core.js";
 import { Icon } from "../icons.js";
 import {
@@ -281,7 +282,7 @@ function RepositoryList() {
   return html`<div class="page page--wide fade-in">
     <${PageHead} title="Intake & Repository"
       sub="Add or scan a document, run OCR, extract the fields — then it lands in the Drive folder, the tracker and the physical-record index at once."
-      actions=${html`<${Btn} variant="ghost" icon="grid" onClick=${() => navigate("/tracker")}>Open tracker</${Btn}>
+      actions=${html`${canOpenPath(activeUser(), "/tracker") && html`<${Btn} variant="ghost" icon="grid" onClick=${() => navigate("/tracker")}>Open tracker</${Btn}>`}
         <${Btn} variant="primary" icon="plus" onClick=${() => setAdd(true)}>Add document</${Btn}>`} />
 
     <!-- the pipeline, as a mini spine -->
@@ -331,7 +332,7 @@ function RepositoryList() {
             ? html`<a class="tagchip" href=${d.driveLink} target="_blank" rel="noreferrer" onClick=${(e) => e.stopPropagation()}><${Icon} name="externalLink" size=11 />Open</a>`
             : html`<span class="tiny muted">—</span>` },
           { key: "contractId", label: "Tracker row", width: "94px", render: (d) => d.contractId
-            ? html`<button class="facechip" onClick=${(e) => { e.stopPropagation(); navigate("/contracts/" + d.contractId); }}>${d.contractId}</button>`
+            ? (canOpenPath(activeUser(), "/contracts") ? html`<button class="facechip" onClick=${(e) => { e.stopPropagation(); navigate("/contracts/" + d.contractId); }}>${d.contractId}</button>` : html`<span class="tiny mono muted">—</span>`)
             : html`<span class="tiny muted">standalone</span>` },
         ]} />
     </div>
@@ -412,7 +413,7 @@ function DocDetail({ id }) {
       <div class="pagehead__actions">
         <${Btn} variant="ghost" icon="refresh" onClick=${rerunOcr}>Re-run extraction</${Btn}>
         ${doc.driveLink && html`<a class="btn btn--ghost" href=${doc.driveLink} target="_blank" rel="noreferrer"><${Icon} name="externalLink" size=16 />Open in Drive</a>`}
-        ${contract && html`<${Btn} variant="primary" icon="workflow" onClick=${() => navigate("/contracts/" + contract.id)}>Open the flow</${Btn}>`}
+        ${contract && canOpenPath(activeUser(), "/contracts") && html`<${Btn} variant="primary" icon="workflow" onClick=${() => navigate("/contracts/" + contract.id)}>Open the flow</${Btn}>`}
       </div>
     </div>
 
@@ -441,7 +442,7 @@ function DocDetail({ id }) {
         <div style="flex:1;min-width:0">
           <div class="dest__l">Tracker row</div>
           ${doc.contractId
-            ? html`<button class="dest__v" onClick=${() => navigate("/tracker")}>${doc.contractId} →</button><div class="tiny muted" style="margin-top:2px">operational row</div>`
+            ? (canOpenPath(activeUser(), "/tracker") ? html`<button class="dest__v" onClick=${() => navigate("/tracker")}>${doc.contractId} →</button><div class="tiny muted" style="margin-top:2px">operational row</div>` : html`<div class="dest__v muted">Restricted</div>`)
             : html`<div class="dest__v muted">Standalone document</div>`}
         </div>
       </div>

@@ -15,7 +15,6 @@ import { useActiveUser } from "../rbac.js";
 import { nameOf, byId, subdivisionOf, USERS } from "../data.js";
 import { LEGAL_TEAMS, teamOfSubdivision } from "../org.js";
 import { unifiedRows, rowTat } from "../flow.js";
-import { allReminders } from "../reminders.js";
 import { EMPTY_FILTERS } from "../shared.js";
 
 const greeting = () => {
@@ -78,10 +77,7 @@ export default function TeamDashboard() {
     })();
 
     // Reminders, narrowed to contracts this team owns.
-    const teamContracts = contracts.filter((c) => teamOfSubdivision(subdivisionOf(c)) === teamKey || memberIds.has(c.owner));
-    const reminders = allReminders(teamContracts, new Date()).slice(0, 6);
-
-    return { rows, open, overdue, slaPct, avgTat, pendingReview, due7: dueIn(7), perMember, byStage, reminders, members, done };
+    return { rows, open, overdue, slaPct, avgTat, pendingReview, due7: dueIn(7), perMember, byStage, members, done };
   }, [requests, matters, contracts, repository, licenses, teamKey]);
 
   const openTeamList = (extra) => {
@@ -143,7 +139,7 @@ export default function TeamDashboard() {
       </div>
     </section>
 
-    <section class="exec__split" style="margin-top:16px">
+    <section class="exec__split exec__split--one" style="margin-top:16px">
       <div class="card card--pad col" style="gap:12px">
         <div class="row">
           <div><h2 class="exec__h2">Delayed work</h2><p class="exec__sub">Past the agreed turnaround, with the stage holding it.</p></div>
@@ -166,26 +162,9 @@ export default function TeamDashboard() {
         </div>
       </div>
 
-      <div class="card card--pad col" style="gap:12px">
-        <div class="row">
-          <div><h2 class="exec__h2">Lifecycle reminders</h2><p class="exec__sub">Renewals and notice windows on your team's contracts.</p></div>
-          <div class="spacer"></div>
-          <${Pill} tone="blue">${m.reminders.length} live</${Pill}>
-        </div>
-        <div class="col" style="gap:8px">
-          ${m.reminders.map((r, i) => html`<button key=${i} class="cellbtn" style="width:100%"
-            onClick=${() => r.contractId && navigate("/contracts/" + r.contractId)}>
-            <div class="row" style="gap:10px;text-align:left">
-              <${Icon} name="bell" size=15 style=${{ color: "var(--warning)", flex: "none" }} />
-              <div style="min-width:0;flex:1">
-                <div class="tiny strong">${r.title}</div>
-                <div class="tiny muted">${r.detail || r.note || ""}</div>
-              </div>
-            </div>
-          </button>`)}
-          ${m.reminders.length === 0 && html`<${Empty} icon="bell" title="Nothing upcoming" text="No renewal or notice windows on your team's contracts." />`}
-        </div>
-      </div>
+      <!-- The reminders card lived here; it was derived entirely from the
+           contract book, which is Director-only — it must not even show on
+           this dashboard. -->
     </section>
   </div>`;
 }

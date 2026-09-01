@@ -1,4 +1,5 @@
 // Licenses & Registrations (Feature 1) — auto validity status + renewals.
+import { activeUser, canOpenPath } from "../rbac.js";
 import { html, cx, fmt, useState } from "../core.js";
 import { Icon } from "../icons.js";
 import { Btn, Avatar, Pill, Tabs, Chip, Drawer, Modal, Field, Input, Progress, Timeline, AICard } from "../ui.js";
@@ -133,7 +134,7 @@ export default function Licenses() {
         ${(open.companyTags || []).length ? html`<div><div class="tiny muted" style="margin-bottom:6px;font-weight:600">Company tags</div><${TagChips} ids=${open.companyTags} /></div>` : ""}
 
         ${(open.linkedMatterId || open.linkedContractId) ? html`<div><div class="tiny muted" style="margin-bottom:6px;font-weight:600">Linked records</div><div class="row wrap" style="gap:6px">
-          ${open.linkedContractId ? html`<button class="tagchip" onClick=${() => navigate("/contracts/" + open.linkedContractId)}><${Icon} name="file" size=12 />${open.linkedContractId}</button>` : ""}
+          ${open.linkedContractId && canOpenPath(activeUser(), "/contracts") ? html`<button class="tagchip" onClick=${() => navigate("/contracts/" + open.linkedContractId)}><${Icon} name="file" size=12 />${open.linkedContractId}</button>` : ""}
           ${open.linkedMatterId ? html`<button class="tagchip" onClick=${() => navigate("/matters/" + open.linkedMatterId)}><${Icon} name="folder" size=12 />${open.linkedMatterId}</button>` : ""}
         </div></div>` : ""}
 

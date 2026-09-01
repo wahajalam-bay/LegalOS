@@ -28,10 +28,14 @@ import {
 } from "../shared.js";
 import { CategoryPill, TagChips } from "../shared.js";
 import { unifiedRows, rowTat } from "../flow.js";
+import { activeUser, canOpenPath } from "../rbac.js";
 import { tatAnalysis } from "../tat.js";
 import { WorkflowSpine } from "../spine.js";
 import { IntakeForm } from "../intake.js";
 
+// The Contracts and Browse lenses render the executed book, which is
+// Director-only — lensesFor() removes them for everyone else, and a saved
+// lens pointing at them is clamped back to the worklist.
 const LENSES = [
   { key: "worklist", label: "Worklist", icon: "inbox", hint: "requests + matters as one flow" },
   { key: "log", label: "Request Log", icon: "clipboard", hint: "every incoming request, auditable" },
@@ -350,7 +354,12 @@ function WorkspaceHome() {
   // given lens, already narrowed. Read once at mount so a later render cannot
   // re-apply it and fight the user's own filtering.
   const [target] = useState(() => takeWorkspaceTarget());
-  const [lens, setLens] = useState(() => (target && target.lens) || "worklist");
+  const canBook = canOpenPath(activeUser(), "/contracts");
+  const lenses = LENSES.filter((l) => canBook || (l.key !== "contracts" && l.key !== "browse"));
+  const [lens, setLens] = useState(() => {
+    const want = (target && target.lens) || "worklist";
+    return lenses.some((l) => l.key === want) ? want : "worklist";
+  });
   const [intake, setIntake] = useState(false);
   const { filters, patch, toggle, clear } = useFilters("workspace", (target && target.filters) || {}, { force: !!target });
 
@@ -411,7 +420,7 @@ function WorkspaceHome() {
 
     <div style="margin-bottom:14px">
       <div class="lens">
-        ${LENSES.map((l) => html`<button key=${l.key} class=${cx(lens === l.key && "active")} onClick=${() => setLens(l.key)} title=${l.hint}>
+        ${lenses.map((l) => html`<button key=${l.key} class=${cx(lens === l.key && "active")} onClick=${() => setLens(l.key)} title=${l.hint}>
           <${Icon} name=${l.icon} size=15 />${l.label}
         </button>`)}
       </div>

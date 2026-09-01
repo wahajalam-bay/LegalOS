@@ -13,6 +13,7 @@
 //   RELATIONSHIPS everything connected, every item click-through
 //
 // Pure model code — no React. spine.js renders what this returns.
+import { activeUser, canOpenPath } from "./rbac.js";
 import {
   LIFECYCLE_PATHS, lifecyclePathFor, stageMeta, stageDisplay, STAGE_META, riskGatesFor,
   entityById, entityName, nameOf, byId, subdivisionOf, categoryOf,
@@ -429,18 +430,21 @@ function buildRelationships(rec, { request, matter, contract, entity, docs }, ct
     const label = verb && rec.linkedContractId === contract.id
       ? "Subject contract — being " + verb
       : "Contract face — the executed agreement";
-    push("This record", "file", contract.id, label, "/contracts/" + contract.id);
+    // Contract entries in the related rail exist only for someone who may open
+    // the book — for everyone else they must not even show.
+    const canBook = canOpenPath(activeUser(), "/contracts");
+    if (canBook) push("This record", "file", contract.id, label, "/contracts/" + contract.id);
   }
 
   if (contract && contract.parentContractId) {
     const p = contracts.find((c) => c.id === contract.parentContractId);
-    if (p) push("Contract family", "gitbranch", p.title, "Parent contract · " + p.id, "/contracts/" + p.id);
+    if (p && canOpenPath(activeUser(), "/contracts")) push("Contract family", "gitbranch", p.title, "Parent contract · " + p.id, "/contracts/" + p.id);
   }
-  contracts.filter((c) => c.parentContractId === (contract ? contract.id : null)).forEach((ch) => push("Contract family", "gitbranch", ch.title, "Child · " + ch.id, "/contracts/" + ch.id));
+  if (canOpenPath(activeUser(), "/contracts")) contracts.filter((c) => c.parentContractId === (contract ? contract.id : null)).forEach((ch) => push("Contract family", "gitbranch", ch.title, "Child · " + ch.id, "/contracts/" + ch.id));
 
   // Sibling work touching the same counterparties (the overlap signal).
   const siblings = contracts.filter((c) => c.id !== (contract || {}).id && (c.companyTags || []).some((t) => tags.includes(t)));
-  siblings.slice(0, 5).forEach((c) => push("Related contracts", "file", c.title, `${c.id} · ${c.contractType} · ${c.status}`, "/contracts/" + c.id));
+  if (canOpenPath(activeUser(), "/contracts")) siblings.slice(0, 5).forEach((c) => push("Related contracts", "file", c.title, `${c.id} · ${c.contractType} · ${c.status}`, "/contracts/" + c.id));
 
   (ctx.matters || []).filter((m) => m.id !== (matter || {}).id && (m.companyTags || []).some((t) => tags.includes(t)))
     .slice(0, 4).forEach((m) => push("Related matters", "folder", m.title, `${m.id} · ${m.status}`, "/matters/" + m.id));

@@ -154,7 +154,7 @@ export const canExport = (user) => !!roleOf(user).exportData;
    decides whether a PAGE opens, that decides which RECORDS it may show. */
 const LEGAL_RBAC = ["head", "lead", "member", "paralegal"];
 // Leadership only — the config and cross-team surfaces.
-const MGMT_ONLY = new Set(["/settings", "/triage", "/costs", "/analyzer", "/pipelines", "/reports"]);
+const MGMT_ONLY = new Set(["/settings", "/triage", "/costs", "/pipelines", "/reports"]);
 // Dashboards are role-scoped, and the scoping is enforced HERE, not by hiding a
 // nav row: the Executive Overview and the org-wide Operational Dashboard are the
 // Director's alone, the Team Dashboard is a lead's own team, and My Dashboard is
@@ -167,7 +167,7 @@ const IC_ONLY = new Set(["/me"]);
 // with Organization rather than in the shared surfaces.
 // /contracts (the historic register) and /tracker carry the organisation's
 // real contract book — Director-only, like the executive views.
-const HEAD_ONLY = new Set(["/organization", "/portal", "/companies", "/exec", "/dashboard", "/contracts", "/tracker"]);
+const HEAD_ONLY = new Set(["/organization", "/portal", "/companies", "/exec", "/dashboard", "/contracts", "/tracker", "/negotiations", "/analyzer"]);
 // Everything a business requester may open, and nothing else.
 const REQUESTER_PATHS = new Set(["/raise", "/requests", "/my-requests", "/my-tasks", "/flow-map", "/login"]);
 

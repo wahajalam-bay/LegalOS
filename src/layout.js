@@ -381,8 +381,10 @@ function CommandPalette({ onClose }) {
     // Every record routes to its Flow view — the spine is the destination.
     ...liveRequests.map((r) => ({ group: "Requests & matters", label: `${r.id} · ${r.title}`, icon: "inbox", path: "/workspace/" + r.id })),
     ...liveMatters.map((m) => ({ group: "Requests & matters", label: `${m.id} · ${m.title}`, icon: "folder", path: "/matters/" + m.id })),
-    ...liveContracts.map((c) => ({ group: "Contracts", label: `${c.id} · ${c.title}`, icon: "file", path: "/contracts/" + c.id })),
-    ...liveContracts.filter((c) => c.srNo).map((c) => ({ group: "Contracts", label: `Sr No ${c.srNo} · ${c.physicalRecordRef} · ${c.officeLocation}`, icon: "database", path: "/contracts/" + c.id })),
+    // The contract book is Director-only — its records must not even SURFACE
+    // in search for anyone else (same rule as privileged matters above).
+    ...(canOpenPath(me, "/contracts") ? liveContracts.map((c) => ({ group: "Contracts", label: `${c.id} · ${c.title}`, icon: "file", path: "/contracts/" + c.id })) : []),
+    ...(canOpenPath(me, "/contracts") ? liveContracts.filter((c) => c.srNo).map((c) => ({ group: "Contracts", label: `Sr No ${c.srNo} · ${c.physicalRecordRef} · ${c.officeLocation}`, icon: "database", path: "/contracts/" + c.id })) : []),
     ...liveDocs.filter((d) => matterVisible(d.matterId)).map((d) => ({ group: "Documents", label: `${d.id} · ${d.name}`, icon: "scan", path: "/repository/" + d.id })),
     ...CONTRACT_TYPE_CODES.map((t) => ({ group: "Contract types", label: t, icon: "file", path: "/workspace" })),
     ...LEGAL_SUBDIVISIONS.map((s) => ({ group: "Legal sub-divisions", label: s, icon: "scale", path: "/workspace" })),

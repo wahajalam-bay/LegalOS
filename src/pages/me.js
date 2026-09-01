@@ -13,7 +13,6 @@ import { useActiveUser } from "../rbac.js";
 import { nameOf, subdivisionOf } from "../data.js";
 import { LEGAL_TEAMS } from "../org.js";
 import { unifiedRows, rowTat } from "../flow.js";
-import { allReminders } from "../reminders.js";
 import { EMPTY_FILTERS } from "../shared.js";
 
 const greeting = () => {
@@ -65,10 +64,7 @@ export default function MyDashboard() {
       return [...g.entries()].map(([stage, n]) => ({ stage, n })).sort((a, b) => b.n - a.n);
     })();
 
-    const myContracts = contracts.filter((c) => c.owner === me.id);
-    const reminders = allReminders(myContracts, new Date()).slice(0, 5);
-
-    return { mine, open, done, overdue, dueToday, due7, due30, inReview, waitingOnMe, slaPct, avgTat, attention, byStage, reminders };
+    return { mine, open, done, overdue, dueToday, due7, due30, inReview, waitingOnMe, slaPct, avgTat, attention, byStage };
   }, [requests, matters, contracts, repository, licenses, me.id]);
 
   const openMine = (extra) => {
@@ -146,7 +142,7 @@ export default function MyDashboard() {
       </div>
     </section>
 
-    <section class="exec__split" style="margin-top:16px">
+    <section class="exec__split exec__split--one" style="margin-top:16px">
       <div class="card card--pad col" style="gap:12px">
         <h2 class="exec__h2">Upcoming deadlines</h2>
         ${[["Today", m.dueToday], ["Next 7 days", m.due7.filter((r) => !m.dueToday.includes(r))], ["Next 30 days", m.due30]]
@@ -166,20 +162,9 @@ export default function MyDashboard() {
           && html`<${Empty} icon="calendar" title="Nothing scheduled" text="No deadlines on your work in the next 30 days." />`}
       </div>
 
-      <div class="card card--pad col" style="gap:12px">
-        <h2 class="exec__h2">My reminders</h2>
-        <p class="exec__sub">Renewals and notice windows on contracts you own.</p>
-        <div class="col" style="gap:8px">
-          ${m.reminders.map((r, i) => html`<button key=${i} class="cellbtn" style="width:100%"
-            onClick=${() => r.contractId && navigate("/contracts/" + r.contractId)}>
-            <div class="row" style="gap:10px;text-align:left">
-              <${Icon} name="bell" size=15 style=${{ color: "var(--warning)", flex: "none" }} />
-              <div style="min-width:0;flex:1"><div class="tiny strong">${r.title}</div><div class="tiny muted">${r.detail || r.note || ""}</div></div>
-            </div>
-          </button>`)}
-          ${m.reminders.length === 0 && html`<${Empty} icon="bell" title="Nothing upcoming" text="No renewal or notice windows on contracts you own." />`}
-        </div>
-      </div>
+      <!-- The reminders card lived here; it was derived entirely from the
+           contract book, which is Director-only — it must not even show on
+           this dashboard. -->
     </section>
   </div>`;
 }

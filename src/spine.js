@@ -24,7 +24,7 @@ import {
   riskGatesFor, entityName, toUsd, USERS,
 } from "./data.js";
 import { LEGAL_TEAMS, ASSIGNABLE_BENCH } from "./org.js";
-import { useActiveUser, isLegal, canReassign, canApprove, canApproveValue, approvalLimitFor, filterVisible } from "./rbac.js";
+import { useActiveUser, isLegal, canReassign, canApprove, canApproveValue, approvalLimitFor, filterVisible, activeUser, canOpenPath } from "./rbac.js";
 import { buildSpine } from "./flow.js";
 import { tatAnalysis, tatLabel } from "./tat.js";
 import { SubdivisionPill, CategoryPill, TatCell } from "./shared.js";
@@ -131,7 +131,7 @@ function InputZone({ spine }) {
         <!-- the prior contract it attaches to -->
         ${input.parent && html`<div class="card card--pad col" style="gap:10px">
           <div class="row"><span class="strong">Attaches to</span><div class="spacer"></div><${Pill} tone="indigo">prior contract</${Pill}></div>
-          <div class="row clickable" style="gap:10px" onClick=${() => navigate("/contracts/" + input.parent.id)}>
+          <div class=${canOpenPath(activeUser(), "/contracts") ? "row clickable" : "row"} style="gap:10px" onClick=${() => canOpenPath(activeUser(), "/contracts") && navigate("/contracts/" + input.parent.id)}>
             <div class="notif__ico" style="width:32px;height:32px;background:var(--surface-3);color:var(--text-2)"><${Icon} name="file" size=15 /></div>
             <div style="flex:1;min-width:0"><div class="strong tiny">${input.parent.title}</div><div class="tiny muted">${input.parent.id} · ${input.parent.type} · ${fmt.money(input.parent.value, input.parent.currency)}</div></div>
             <${Icon} name="chevronRight" size=15 style=${{ color: "var(--text-3)" }} />
@@ -501,7 +501,9 @@ function OutputZone({ spine }) {
         <div style="flex:1;min-width:0">
           <div class="dest__l">Tracker row</div>
           ${output.trackerRow
-            ? html`<button class="dest__v" onClick=${() => navigate("/tracker")}>${output.trackerRow.id} →</button>
+            ? html`${canOpenPath(activeUser(), "/tracker")
+                 ? html`<button class="dest__v" onClick=${() => navigate("/tracker")}>${output.trackerRow.id} →</button>`
+                 : html`<span class="dest__v">${output.trackerRow.id}</span>`}
                    <div class="tiny muted" style="margin-top:2px">Sr No ${output.trackerRow.srNo}</div>`
             : html`<div class="dest__v muted">No tracker row yet</div>`}
         </div>
@@ -673,7 +675,7 @@ export function WorkflowSpine({ id, showHeader = true }) {
         <div class="row" style="gap:6px">
           ${request && html`<button class="facechip" onClick=${() => navigate("/workspace/" + request.id)}><${Icon} name="inbox" size=12 />${request.id}</button>`}
           ${matter && html`<button class="facechip" onClick=${() => navigate("/matters/" + matter.id)}><${Icon} name="folder" size=12 />${matter.id}</button>`}
-          ${contract && html`<button class="facechip" onClick=${() => navigate("/contracts/" + contract.id)}><${Icon} name="file" size=12 />${contract.id}</button>`}
+          ${contract && canOpenPath(activeUser(), "/contracts") && html`<button class="facechip" onClick=${() => navigate("/contracts/" + contract.id)}><${Icon} name="file" size=12 />${contract.id}</button>`}
         </div>
       </div>
     </div>`}
