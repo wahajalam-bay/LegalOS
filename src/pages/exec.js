@@ -39,7 +39,9 @@ function useExecMetrics() {
     const qStart = new Date(now.getFullYear(), Math.floor(now.getMonth() / 3) * 3, 1);
 
     const rows = unifiedRows(requests, matters).map((u) => ({ ...u.record, id: u.id, __tat: rowTat(u.record, ctx) }));
-    const live = contracts.filter((c) => !/Terminated|Archived/.test(c.status || ""));
+    // "Live" excludes the concluded book: the real register carries 633 Expired
+    // records, and value under management must not count them.
+    const live = contracts.filter((c) => !/Terminated|Archived|Expired/.test(c.status || ""));
 
     // Portfolio under management, in one currency so it can be added up.
     const portfolio = live.reduce((s, c) => s + toUsd(c.value, c.currency), 0);

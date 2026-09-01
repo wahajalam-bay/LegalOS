@@ -286,7 +286,7 @@ function ContractList() {
       { key: "risk", label: "Risk", render: (c) => html`<${Risk} level=${c.risk} />` },
       { key: "status", label: "Status", render: (c) => html`<${Status} value=${c.status} />` },
       { key: "tat", label: "TAT Status", width: "160px", render: (c) => html`<${TatCell} tat=${c.__tat} />` },
-      { key: "owner", label: "Owner", render: (c) => html`<${Avatar} name=${nameOf(c.owner)} size="sm" />` },
+      { key: "owner", label: "Owner", render: (c) => html`<${Avatar} name=${c.owner ? nameOf(c.owner) : (c.handlerName || "—")} title=${c.owner ? nameOf(c.owner) : (c.handlerName || "")} size="sm" />` },
       { key: "expiry", label: "Expiry", render: (c) => { const days = Math.round((new Date(c.expiry) - Date.now()) / 86400000); return html`<span class=${cx("tiny", days > 0 && days < 30 && "risk--high")} style="font-weight:600">${days < 0 ? "Expired" : fmt.date(c.expiry)}</span>`; } },
     ]} rows=${rows} />
   </div>`;

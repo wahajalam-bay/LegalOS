@@ -253,7 +253,19 @@ function load() {
   try {
     const raw0 = localStorage.getItem(LS_KEY);
     const raw = raw0 && migrateRetiredIds(raw0);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const obj = JSON.parse(raw);
+      // The demo contract seed (CTR-1167..1187, CTR-2001..2029) was replaced by
+      // the real register (CTR-0001..0723). A saved store still carries the demo
+      // records as if user-created; drop exactly those ids so only real ones and
+      // genuinely user-created contracts remain. mergeState then backfills the
+      // real seed records the snapshot predates.
+      if (obj && Array.isArray(obj.contracts)) {
+        const demo = /^CTR-(11(6[7-9]|7\d|8[0-7])|20(0[1-9]|1\d|2[0-9]))$/;
+        obj.contracts = obj.contracts.filter((c) => !(c && demo.test(c.id)));
+      }
+      return obj;
+    }
   } catch (e) {}
   return null;
 }

@@ -85,15 +85,24 @@ export const fmt = {
   num(n) { return (n || 0).toLocaleString(); },
   pct(n) { return `${n > 0 ? "+" : ""}${n}%`; },
   date(d) {
+    // Real register records legitimately lack dates — render a dash, never crash.
+    if (d == null) return "—";
     const dt = typeof d === "string" ? new Date(d) : d;
+    if (!(dt instanceof Date) || isNaN(dt)) return "—";
     return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
   },
   dateShort(d) {
+    // Real register records legitimately lack dates — render a dash, never crash.
+    if (d == null) return "—";
     const dt = typeof d === "string" ? new Date(d) : d;
+    if (!(dt instanceof Date) || isNaN(dt)) return "—";
     return dt.toLocaleDateString("en-US", { month: "short", day: "numeric" });
   },
   rel(d) {
+    // Real register records legitimately lack dates — render a dash, never crash.
+    if (d == null) return "—";
     const dt = typeof d === "string" ? new Date(d) : d;
+    if (!(dt instanceof Date) || isNaN(dt)) return "—";
     const diff = Date.now() - dt.getTime();
     const m = Math.floor(diff / 60000);
     if (m < 1) return "just now";
