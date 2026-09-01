@@ -243,17 +243,22 @@ function ContractList() {
 
   const ctx = { requests, matters, contracts: CONTRACTS, repository };
   const withTat = CONTRACTS.map((c) => ({ ...c, __tat: rowTat(c, ctx) }));
+  // Expiring is a DATE fact, not a status — the real register has no "Expiring"
+  // status, it has expiry dates. A contract is expiring if it ends within 30
+  // days and has not ended yet.
+  const isExpiring = (c) => { const d = (new Date(c.expiry) - Date.now()) / 86400000; return d >= 0 && d <= 30; };
   const tabs = [
     { key: "all", label: "All", count: CONTRACTS.length },
     { key: "Active", label: "Active", count: CONTRACTS.filter((c) => c.status === "Active").length },
-    { key: "Expiring", label: "Expiring", count: CONTRACTS.filter((c) => c.status === "Expiring").length },
+    { key: "Expiring", label: "Expiring", count: CONTRACTS.filter(isExpiring).length },
     { key: "In Negotiation", label: "In Negotiation", count: CONTRACTS.filter((c) => c.status === "In Negotiation").length },
     { key: "Drafting", label: "Drafting", count: CONTRACTS.filter((c) => c.status === "Drafting").length },
+    { key: "Expired", label: "Expired", count: CONTRACTS.filter((c) => c.status === "Expired").length },
   ];
   let rows = applyFilters(withTat, filters, { searchKeys: ["title", "counterparty", "id", "contractType", "landRef", "physicalRecordRef"] });
-  if (tab !== "all") rows = rows.filter((c) => c.status === tab);
+  if (tab !== "all") rows = rows.filter((c) => (tab === "Expiring" ? isExpiring(c) : c.status === tab));
   const totalVal = CONTRACTS.reduce((s, c) => s + toUsd(c.value, c.currency), 0);
-  const expiring30 = CONTRACTS.filter((c) => { const d = (new Date(c.expiry) - Date.now()) / 86400000; return d >= 0 && d <= 30; }).length;
+  const expiring30 = CONTRACTS.filter(isExpiring).length;
   const critical = CONTRACTS.filter((c) => c.risk === "critical").length;
 
   return html`<div class="page page--wide fade-in">
@@ -262,12 +267,16 @@ function ContractList() {
         <${Btn} variant="ghost" icon="upload" onClick=${() => navigate("/repository")}>Import</${Btn}>
         <${Btn} variant="primary" icon="plus" onClick=${() => setModal(true)}>New contract</${Btn}>`} />
     ${modal && html`<${NewContractModal} onClose=${() => setModal(false)} onCreate=${(c) => addItem("contracts", c)} />`}
+    <!-- Live register facts, no invented trend chips. Each card opens its slice
+         of the book; the value card shows the multi-currency total in USD with
+         the PKR book value underneath, since the register is PKR. -->
     <${StatStrip} stats=${[
-      { value: CONTRACTS.length, label: "Total contracts" },
-      { value: fmt.money(totalVal), label: "Total contract value", trend: "+14%", trendDir: "up" },
-      { value: expiring30, label: "Expiring < 30 days", trend: "▲", trendDir: "up" },
-      { value: critical, label: "Critical risk", trendDir: "flat" },
-      { value: withTat.filter((c) => c.__tat.status === "Delayed").length, label: "Past TAT" },
+      { value: CONTRACTS.length, label: "Total contracts", onClick: () => setTab("all") },
+      { value: fmt.money(totalVal), label: "Total contract value", title: "USD equivalent across the register" },
+      { value: expiring30, label: "Expiring < 30 days", tone: expiring30 ? "amber" : "", onClick: () => setTab("Expiring") },
+      { value: critical, label: "Critical risk", tone: critical ? "red" : "", title: "Value ≥ PKR 10B", onClick: () => { setTab("all"); patch({ risks: ["critical"] }); } },
+      { value: CONTRACTS.filter((c) => c.status === "Active").length, label: "Active", tone: "green", onClick: () => setTab("Active") },
+      { value: CONTRACTS.filter((c) => c.status === "Expired").length, label: "Expired", onClick: () => setTab("Expired") },
     ]} />
     <div style="margin-bottom:14px"><${Tabs} tabs=${tabs} active=${tab} onChange=${setTab} /></div>
     <${FilterBar} module="contracts" filters=${filters} onPatch=${patch} onToggle=${toggle} onClear=${clear}
