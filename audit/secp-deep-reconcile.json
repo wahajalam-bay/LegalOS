@@ -1,0 +1,511 @@
+{
+ "drive": {
+  "entityFolders": 43,
+  "childFolders": 381,
+  "folders": 675,
+  "files": 3367,
+  "kinds": {
+   "RESOLUTIONS": 5,
+   "REGISTER_OF_MEMBERS": 43,
+   "FILING_YEAR": 250,
+   "REGISTER_OF_DIRECTORS": 42,
+   "STAFF_FUNDS": 8,
+   "SHARE_CERTIFICATES": 28,
+   "CORPORATE_ACTION": 1,
+   "OTHER_STATUTORY_REGISTER": 1,
+   "SECP_CORRESPONDENCE": 1,
+   "COMPANY_PROFILE": 1,
+   "CROSS_COMPANY_FOLDER": 1
+  }
+ },
+ "legalos": {
+  "entities": 43,
+  "years": 250
+ },
+ "problems": {
+  "entityMissing": [],
+  "yearMissing": [],
+  "registerMissing": [],
+  "fileUnaccounted": [],
+  "emptyRegisterFolders": [
+   "Downtown Rise Developments (Private) Limited [formerly Delta Centauri Developments] / Share Certificates"
+  ]
+ },
+ "unclassified": [],
+ "entities": [
+  {
+   "name": "Property Transaction Services (Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "RESOLUTIONS",
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 86
+  },
+  {
+   "name": "TAAD Technologies Private Limited formerly [TAAD Property Consultants (Private) Limited]",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "RESOLUTIONS",
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 89
+  },
+  {
+   "name": "ZI Projects (Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "RESOLUTIONS",
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 45
+  },
+  {
+   "name": "ZI Universal (Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 41
+  },
+  {
+   "name": "Mall 35 Facilities Management (Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "RESOLUTIONS",
+    "REGISTER_OF_DIRECTORS",
+    "STAFF_FUNDS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 15
+  },
+  {
+   "name": "Zameen Nord (SMC-Private) Limited",
+   "group": "group",
+   "years": 7,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 71
+  },
+  {
+   "name": "Zameen Delta (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 113
+  },
+  {
+   "name": "ZTech Management and IP Services (SMC-Private) Limited",
+   "group": "group",
+   "years": 3,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 15
+  },
+  {
+   "name": "Zameen Zeta (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 51
+  },
+  {
+   "name": "Zameen Vistas (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 49
+  },
+  {
+   "name": "Zameen Terra (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 8
+  },
+  {
+   "name": "Zameen South (SMC-Private) Limited",
+   "group": "group",
+   "years": 7,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 80
+  },
+  {
+   "name": "Zameen Sigma (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 112
+  },
+  {
+   "name": "Zameen Residences (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 69
+  },
+  {
+   "name": "Zameen Properties (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 14
+  },
+  {
+   "name": "Zameen Prime (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 16
+  },
+  {
+   "name": "Zameen Pavilion (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 45
+  },
+  {
+   "name": "Zameen Omega (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "CORPORATE_ACTION",
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 61
+  },
+  {
+   "name": "Zameen Nexus (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "OTHER_STATUTORY_REGISTER"
+   ],
+   "files": 12
+  },
+  {
+   "name": "Zameen Venture One (Private) Limited",
+   "group": "group",
+   "years": 9,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 185
+  },
+  {
+   "name": "Zameen REIT Management Company Limited",
+   "group": "group",
+   "years": 4,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS",
+    "SECP_CORRESPONDENCE",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 150
+  },
+  {
+   "name": "Zameen Platinum (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 112
+  },
+  {
+   "name": "Zameen Media (Private) Limited",
+   "group": "group",
+   "years": 15,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS",
+    "STAFF_FUNDS",
+    "STAFF_FUNDS",
+    "COMPANY_PROFILE"
+   ],
+   "files": 204
+  },
+  {
+   "name": "Zameen Medallion (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 214
+  },
+  {
+   "name": "Zameen Magnus (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 8
+  },
+  {
+   "name": "Zameen Luxe (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 47
+  },
+  {
+   "name": "Zameen Habitat (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 15
+  },
+  {
+   "name": "Zameen Forte (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 55
+  },
+  {
+   "name": "Zameen Developments (Private) Limited",
+   "group": "group",
+   "years": 9,
+   "registers": [
+    "STAFF_FUNDS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS",
+    "STAFF_FUNDS"
+   ],
+   "files": 178
+  },
+  {
+   "name": "Zameen Crest (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 175
+  },
+  {
+   "name": "Zameen Core (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 74
+  },
+  {
+   "name": "Zameen Centre (SMC-Private) Limited",
+   "group": "group",
+   "years": 7,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 93
+  },
+  {
+   "name": "Zameen Axis (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 111
+  },
+  {
+   "name": "Zameen Arcs (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 138
+  },
+  {
+   "name": "Zameen Apex (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 15
+  },
+  {
+   "name": "Zameen Alpha (Private) Limited",
+   "group": "group",
+   "years": 8,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 108
+  },
+  {
+   "name": "Online Goods Store (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_MEMBERS",
+    "REGISTER_OF_DIRECTORS"
+   ],
+   "files": 17
+  },
+  {
+   "name": "Online Classifieds Pakistan (SMC-Private) Limited",
+   "group": "group",
+   "years": 10,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "STAFF_FUNDS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 124
+  },
+  {
+   "name": "MyZameen (SMC-Private) Limited",
+   "group": "group",
+   "years": 2,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 9
+  },
+  {
+   "name": "Dynamic Zameen Solutions (SMC-Private) Limited",
+   "group": "group",
+   "years": 3,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 13
+  },
+  {
+   "name": "Dubizzle Labs (SMC-Private) Limited",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS",
+    "STAFF_FUNDS",
+    "RESOLUTIONS",
+    "STAFF_FUNDS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 139
+  },
+  {
+   "name": "Downtown Rise Developments (Private) Limited [formerly Delta Centauri Developments]",
+   "group": "group",
+   "years": 6,
+   "registers": [
+    "SHARE_CERTIFICATES",
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS"
+   ],
+   "files": 108
+  },
+  {
+   "name": "Deevar Developers (Private) Limited",
+   "group": "group",
+   "years": 10,
+   "registers": [
+    "REGISTER_OF_DIRECTORS",
+    "REGISTER_OF_MEMBERS",
+    "SHARE_CERTIFICATES"
+   ],
+   "files": 83
+  }
+ ]
+}

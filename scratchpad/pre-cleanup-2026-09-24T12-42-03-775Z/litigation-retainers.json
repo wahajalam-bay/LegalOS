@@ -1,0 +1,23 @@
+{
+  "retainers": [
+    {
+      "id": "RET-MUFGV07M-0",
+      "issuingFirm": "CLM",
+      "invoiceNumber": "123",
+      "dateReceived": "2026-09-24",
+      "amount": 250000,
+      "currency": "PKR",
+      "amountPaid": 0,
+      "paymentDate": "",
+      "status": "Unpaid",
+      "entity": "",
+      "periodFrom": "",
+      "periodTo": "",
+      "notes": "",
+      "documents": [],
+      "recordedBy": "salman.khan@zameen.com",
+      "recordedAt": "2026-09-24T11:46:33.298Z",
+      "outstanding": 250000
+    }
+  ]
+}

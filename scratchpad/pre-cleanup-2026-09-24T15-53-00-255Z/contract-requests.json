@@ -1,0 +1,145 @@
+{
+  "requests": [
+    {
+      "id": "CR-7DF6A8E202",
+      "type": "CRF-08",
+      "status": "Draft",
+      "values": {
+        "request": {
+          "requester": "Reporting",
+          "department": ""
+        }
+      },
+      "attachments": [],
+      "approvals": [],
+      "legal": {
+        "receivedDate": null,
+        "reference": null,
+        "assignee": null,
+        "targetDate": null,
+        "remarks": ""
+      },
+      "escalated": false,
+      "createdBy": {
+        "id": null,
+        "name": "Reporting",
+        "email": "reporting@zameen.com"
+      },
+      "createdAt": "2026-09-24T13:41:08.220Z",
+      "updatedBy": null,
+      "updatedAt": null,
+      "submittedAt": null,
+      "acceptedAt": null,
+      "closedAt": null,
+      "timeline": [
+        {
+          "id": "EV-AAA64941",
+          "at": "2026-09-24T13:41:08.220Z",
+          "event": "Draft Created",
+          "by": {
+            "id": null,
+            "name": "Reporting",
+            "email": "reporting@zameen.com"
+          },
+          "byName": "Reporting",
+          "detail": "Joint Venture Agreement"
+        }
+      ]
+    },
+    {
+      "id": "CR-59D6AFB88B",
+      "type": "CRF-06",
+      "status": "Draft",
+      "values": {
+        "request": {
+          "requester": "Reporting",
+          "department": ""
+        }
+      },
+      "attachments": [],
+      "approvals": [],
+      "legal": {
+        "receivedDate": null,
+        "reference": null,
+        "assignee": null,
+        "targetDate": null,
+        "remarks": ""
+      },
+      "escalated": false,
+      "createdBy": {
+        "id": null,
+        "name": "Reporting",
+        "email": "reporting@zameen.com"
+      },
+      "createdAt": "2026-09-24T13:37:58.636Z",
+      "updatedBy": null,
+      "updatedAt": null,
+      "submittedAt": null,
+      "acceptedAt": null,
+      "closedAt": null,
+      "timeline": [
+        {
+          "id": "EV-EDCA4159",
+          "at": "2026-09-24T13:37:58.636Z",
+          "event": "Draft Created",
+          "by": {
+            "id": null,
+            "name": "Reporting",
+            "email": "reporting@zameen.com"
+          },
+          "byName": "Reporting",
+          "detail": "Consultancy Agreement"
+        }
+      ]
+    },
+    {
+      "id": "CR-B707CEFE0C",
+      "type": "CRF-01",
+      "status": "Draft",
+      "values": {
+        "request": {
+          "requester": "Reporting",
+          "department": ""
+        }
+      },
+      "attachments": [],
+      "approvals": [],
+      "legal": {
+        "receivedDate": null,
+        "reference": null,
+        "assignee": null,
+        "targetDate": null,
+        "remarks": ""
+      },
+      "escalated": false,
+      "createdBy": {
+        "id": null,
+        "name": "Reporting",
+        "email": "reporting@zameen.com"
+      },
+      "createdAt": "2026-09-24T13:35:58.980Z",
+      "updatedBy": null,
+      "updatedAt": null,
+      "submittedAt": null,
+      "acceptedAt": null,
+      "closedAt": null,
+      "timeline": [
+        {
+          "id": "EV-90401601",
+          "at": "2026-09-24T13:35:58.980Z",
+          "event": "Draft Created",
+          "by": {
+            "id": null,
+            "name": "Reporting",
+            "email": "reporting@zameen.com"
+          },
+          "byName": "Reporting",
+          "detail": "IT & Project Sales Services Agreement / PPA"
+        }
+      ]
+    }
+  ],
+  "sequences": {
+    "CRF02:2026": 3
+  }
+}

@@ -1,0 +1,2018 @@
+[
+ {
+  "project": "Grande Palladium",
+  "length": 4,
+  "grade": "CONFIRMED_CHAIN",
+  "parentReferences": 2,
+  "numbered": 2,
+  "dated": 3,
+  "projectsNamed": [
+   "Grande Palladium"
+  ],
+  "steps": [
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": "28TH DECEMBER, 2020",
+    "filename": "First Addendum 14012023.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": "28TH DECEMBER, 2020",
+    "filename": "First Addendum 14012023 second draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Construction Management Agreement 12012023.docx"
+   },
+   {
+    "stage": "NOVATION",
+    "no": null,
+    "date": "28111 day of December, 2020",
+    "filename": "Joint Venture Agreement_Zameen Axis and Earthlink Developments_20201228.pdf"
+   }
+  ]
+ },
+ {
+  "project": "Golf View Rumanza",
+  "length": 4,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 2,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "PO CDR APPLICATION0001 (1) - CBD Business Bay II.pdf"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": "05-06-2024",
+    "filename": "240719-CBD Down Payment-Business Bay 2-Final.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Auction 24 IM.pdf"
+   },
+   {
+    "stage": "NOVATION",
+    "no": null,
+    "date": "1st day of December 2021",
+    "filename": "JVA-Zameen Zeta_Bodla Developers_Shaa Projects_20211201_.pdf"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Ace Homes (ZAH)",
+  "length": 4,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Ace Homes"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231106-Agreement to Sell-Zameen Ace Home-v2 - Clean.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231103-Agreement to Sell-Zameen Ace Home-v2 - Tracked.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell_ Zameen Ace Homes_20190627.docx"
+   }
+  ]
+ },
+ {
+  "project": "Boulevard Heights",
+  "length": 2,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 2,
+  "projectsNamed": [
+   "Boulevard Heights"
+  ],
+  "steps": [
+   {
+    "stage": "TERMINATION",
+    "no": null,
+    "date": "30th April, 2022",
+    "filename": "Partnership Dissolution Deed 24012023.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "19-05-2022",
+    "filename": "Conditional Sale of Land Agreement_20221103 (1).pdf"
+   }
+  ]
+ },
+ {
+  "project": "Mall 35",
+  "length": 3,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 1,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "CNIC Copy of Fazal ur Rehman.pdf"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "CAR Insurance Adamjee.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "25th day of February 2020",
+    "filename": "Franchise Agreement_Mall 35 & Hotel One_20200225.pdf"
+   }
+  ]
+ },
+ {
+  "project": "Downtown Rumanza",
+  "length": 3,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 1,
+  "projectsNamed": [
+   "Downtown Rumanza"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2021-10-20",
+    "filename": "Sale of Land Agreement_DHAM & DCD_20211020.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Service Apartments.docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Opal",
+  "length": 3,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 1,
+  "projectsNamed": [
+   "Zameen Opal"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "approved floor plans.PDF"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": "2019-12-26",
+    "filename": "Grey Structure Technical Specifications Volume III_Zameen Opal 26122019.PDF"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": null,
+    "date": null,
+    "filename": "Grey Structure Tender and Conditions of Contract Volume I_Zameen Opal 26122019.pdf"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Aurum",
+  "length": 2,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Aurum"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "15 A Property Tax Challan_1.PDF"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell [20201124].docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Ace Mall",
+  "length": 6,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 3,
+  "projectsNamed": [
+   "Zameen Ace Mall"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "15 A Property Tax Challan_1.PDF"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "Letter of Asscociation -JV copy.pdf"
+   },
+   {
+    "stage": "TERMINATION",
+    "no": null,
+    "date": "21st day of August, 2020",
+    "filename": "Termination Agreement [Draft].docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2nd day of November, 2020",
+    "filename": "Construction of Drain Pipeline Agreement [20201124].docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2020-10-21",
+    "filename": "Geotechnical Consultancy Agreement [20201020].docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell  [20190624].docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Phoenix",
+  "length": 2,
+  "grade": "CONFIRMED_CHAIN",
+  "parentReferences": 2,
+  "numbered": 0,
+  "dated": 2,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "NOVATION",
+    "no": null,
+    "date": "09.08.2021",
+    "filename": "133 Shadman Documents_.pdf"
+   },
+   {
+    "stage": "NOVATION",
+    "no": null,
+    "date": "09.08.2021",
+    "filename": "133 Shadman Documents_.pdf"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Eon",
+  "length": 10,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250903-Zameen Eon-Letter of Intent-Final (without Cashback).docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250903-Zameen Eon-Letter of Intent-Final (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Eon-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Eon-Agreement to Sell-(with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Eon-Agreement to Sell-LOI Units (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Eon-Agreement to Sell-LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Eon-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Eon-Agreement to Sell-(with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Eon-Agreement to Sell-LOI Units (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Eon-Agreement to Sell-LOI Units (with Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen - Grande Palladium-Rawalpindi",
+  "length": 5,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Grande Palladium"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix D-Monthly Payment Schedule (Only for GR SPA).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250127-Zameen Developments-Agreement to Sell-Ivory by ZD (without GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250127-Zameen Developments-Agreement to Sell-Ivory by ZD (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20210921 PRIV Grande Palladium_Agreement to Sell.docx"
+   }
+  ]
+ },
+ {
+  "project": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "length": 5,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Vault"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250912-Insurance Facilitation Clause.odt"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250912-Zameen Developments-Agreement to Sell-(with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250912-Zameen Developments-Agreement to Sell-(without Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "length": 4,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Vault"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Developments-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260204-Zameen Developments-Agreement to Sell-(with Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "length": 4,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Vault"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Developments-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Developments-Agreement to Sell-(with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "length": 4,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Vault"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250929-Zameen Developments-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250929-Zameen Developments-Agreement to Sell-(with Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Jade - Lahore",
+  "length": 21,
+  "grade": "HUMAN_REVIEW_CHAIN",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Jade",
+   "Zameen Arx",
+   "Zameen Aurum"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250715-Appendix D-Monthly Payment Schedule (Cashback).docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250715-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1 - Copy.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230606 - Agreement to Sell (Zameen Jade) without Furnishing Clause.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250715-Zameen Developments-Agreement to Sell-Zameen Jade (without Cashback)-Revised.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250715-Zameen Developments-Agreement to Sell-Zameen Jade (with Cashback)-Revised.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230606 - Agreement to Sell for Zameen Jade (New).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230606 - Agreement to Sell for Zameen Jade.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell (Zameen Aurum) - Base Draft for Furnishing Clause (Approved by CEO).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Sample Template Jade-ATS with GR.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Sample Template Jade-ATS with GR.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Phoenix - Lahore",
+  "length": 8,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 3,
+  "projectsNamed": [
+   "Zameen Jade"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "Booking Form - Zameen Phoenix.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230905 - Agreement to Sell (Zameen Phoenix) - v1 - Copy.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230830 - Agreement to Sell (Base Draft - Jade).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230111 - Agreement to Sell for Zameen Phoenix - Penthouse, Appartments, shops - Final.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230106-Agreement to Sell for Zameen Phoenix - Old.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2025-11-27",
+    "filename": "251127-Zameen Phoenix-Agreement to Sell (with Cashback.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2023-09-20",
+    "filename": "230920 - Agreement to Sell (Zameen Phoenix) - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2023-09-20",
+    "filename": "230920 - Agreement to Sell (Zameen Phoenix) - v1.pdf"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Hive",
+  "length": 4,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260805-Zameen Hive-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260724-Zameen Hive-Agreement to Sell-(with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260610-Zameen Hive-Agreement to Sell-LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260708-Zameen Hive-Agreement to Sell-LOI Units (without Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Quadrangle - Lahore",
+  "length": 9,
+  "grade": "PROBABLE_CHAIN",
+  "parentReferences": 0,
+  "numbered": 1,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Quadrangle"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "250303-First Amendment- Zameen Quadrangle (Price Escalation).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240214 - Agreement To Sell (Zameen Quadrangle)-Commercial Shop (without Insurance and Furnishing Clause).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231031 - Agreement To Sell (Zameen Quadrangle) - v3.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230911 - Agreement To Sell (Zameen Quadrangle) - v3.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Quadrangle Agreement to Sell v2.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20220412 PRIV Zameen Quadrangle SPA v2.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231031 - Agreement To Sell (Zameen Quadrangle) - v3.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Quadrangle Agreement to Sell (1).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Quadrangle Agreement to Sell (1).pdf"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Neo - Lahore",
+  "length": 10,
+  "grade": "HUMAN_REVIEW_CHAIN",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Neo",
+   "Zameen Jade"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix D-Monthly Payment Schedule.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230918 - Agreement to Sell (Zameen Neo) - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230918 - Agreement to Sell (Zameen Neo) - v1.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230913 - Agreement to Sell (Zameen Neo) - Working Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Zameen NEO - SPA.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20220329 PRIV Zameen Neo Agreement to Sell (final) (1) - Copy.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Neo.v1 (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241108-Zameen Developments-Agreement to Sell-Zameen Neo (with GR).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Opal - Lahore (SPA Amendment and License Model)",
+  "length": 32,
+  "grade": "PROBABLE_CHAIN",
+  "parentReferences": 0,
+  "numbered": 20,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Opal"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "20221012 Zameen Opal Price Revision Letter to Customers (clean).docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "Opal- Inflation Cost Reminder.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "221213 - First Amendment- SPA - OPAL - V1 - Price Revision.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "221213 - First Amendment- SPA - OPAL - V2- Telephone.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "221213 - First Amendment- SPA - OPAL.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "221229 - First Addendum - Early Possession - V2 - Clean.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "221229 - First Addendum - Early Possession - V2.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "221229 - First Addendum - Early Possession - V1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "221220 - First Amendment - Early Possession AS Reviewed.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "230127 - First Amendment to SPA - Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": null,
+    "filename": "230127 - First Amendment to SPA - Preliminary Draft.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "Sub-License Agreement (Preliminary Draft) - V2 - Revised.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "Sub-License Agreement (Preliminary Draft) (1) - AS Reviewd.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230313 - First Addendum - Early Possession - V2 - Revised AS.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230310 - License Terms and Conditions - V2 Revised AS.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "Sub-License Agreement (Preliminary Draft).docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "221229 - First Addendum - Early Possession - V2 - Clean.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230327 - Sub-License Agreement  - V3 - Revised.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230327 - First Addendum - Early Possession - V3 - Revised.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "Sub-License Agreement (Preliminary Draft) - V2 - Revised (AS) Reviewed.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230310 - License Terms and Conditions - V2 Revised.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230313 - First Addendum - Early Possession - V2 - Revised.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "221229 - SPA Revised - Possession Prior to Completion of Payment Plan.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Title Document - Old OPAL SPA.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "221229 - SPA Revised - V1 (Revised).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "221221- SPA Revised - AS Reviewed.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Title Document - Old OPAL SPA.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "221221- SPA Revised.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "221219 - Opal Revised - SPA amendment - Early Possession.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "230126 - SPA Revised - V2 - Clean.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "221229 - SPA Revised - V2.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": null,
+    "date": null,
+    "filename": "License Terms and Conditions - V1.docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen- Ivory by EDZD (Ex Grande Palladium))",
+  "length": 2,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251211-Ivory by Zameen Developments-Agreement to Sell (with cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251119-Ivory by Zameen Developments-Agreement to Sell (without cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Vault-NSIT-Lahore",
+  "length": 10,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Vault"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250423-Appendix D-Monthly Payment Schedule-(For Cashback Units Only).docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250728-Zameen Developments-Agreement to Sell-Zameen Vault for LOI Units (with Cashback)-Amended Clause 8.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250715-Zameen Developments-Agreement to Sell-Zameen Vault for LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250630-Zameen Developments-Agreement to Sell-Zameen Vault for LOI Units (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250630-Zameen Developments-Agreement to Sell-Zameen Vault (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250630-Zameen Developments-Agreement to Sell-Zameen Vault (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250630-Zameen Developments-Agreement to Sell-Zameen Vault for LOI Units (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260106-Zameen Vault-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260106-Zameen Vault-Agreement to Sell-(with Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "ZD - Golf View Rumanza - Multan",
+  "length": 16,
+  "grade": "HUMAN_REVIEW_CHAIN",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Golf View Rumanza",
+   "Zameen Aurum",
+   "Zameen Ace Mall"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix D-Monthly Payment Schedule.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "241127-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231025 - Agreement to Sell - Golf View Rumanza - Revised Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260611-Golf View Rumanza-Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260611-Golf View Rumanza-Agreement to Sell-(with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "GVR Agreement to sell 11-3-24.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231220-Leaseback Agreement-GVR-GR Model.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231220-Agreement to Sell-Golf View Rumanza-Revised with GRM-v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft (2).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft (1).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241220-Zameen Developments-Agreement to Sell-GVR.v4 (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240229-Agreement to Sell-GVR (with GR)-v3 (Final).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240229-Agreement to Sell-GVR (with GR)-v2 (Final).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240115-Agreement to Sell-GVR (with GR)-v1-Final.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240103-Agreement to Sell-GVR (with GR)-v1.docx"
+   }
+  ]
+ },
+ {
+  "project": "Mehran Icon (Karachi)",
+  "length": 2,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "260325-IT Services Agreement (Mehran Icon).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260325-Zameen Project Sales Agreement (Mehran Icon).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen - Mall 35",
+  "length": 8,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 3,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Mall 35 Agreement to Sell for Hotel Apartment Revised Original.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2023-11-14",
+    "filename": "231114 - Mall 35 Agreement to Sell and Leaseback Agreement (Hotel Apartment) Revised - V3.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2023-11-02",
+    "filename": "231102 - Mall 35 Agreement to Sell for Hotel Apartment v3.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Mall35 Agreement to Sell.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "MALL-35 Commercial SPA[1].pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "HOTEL & LEASEBACK AGREEMENT_MALL 35.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "2019-09-09",
+    "filename": "Leaseback Agreement for Hotel Apartments_Mall 35_20190909.docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Arx - Lahore",
+  "length": 15,
+  "grade": "HUMAN_REVIEW_CHAIN",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Arx",
+   "Zameen Jade"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "Summary of Changes to SPA for SA.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250411-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250423-Zameen Developments-Agreement to Sell-Zameen Arx (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250225-Zameen Developments-Agreement to Sell-Zameen Arx (without GR).pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250225-Zameen Developments-Agreement to Sell-Zameen Arx (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250225-Zameen Developments-Agreement to Sell-Zameen Arx (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250721-Zameen Developments-Agreement to Sell-Zameen Arx (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260416-Zameen Arx-Agreement to Sell (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Arx.v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241212-Zameen Developments-Agreement to Sell-Zameen Arx.v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241211-Zameen Developments-Agreement to Sell-Zameen Arx.v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Arx.v1 (Without GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250411-Service Apartments-Agreement to Sell-Zameen Arx (with GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250411-Service Apartments-Agreement to Sell-Zameen Arx (without GR).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9)",
+  "length": 6,
+  "grade": "PROBABLE_CHAIN",
+  "parentReferences": 0,
+  "numbered": 3,
+  "dated": 1,
+  "projectsNamed": [],
+  "steps": [
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230221 - First Addendum - Zameen Ace Homes - V2.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230221 - First Addendum - Zameen Ace Homes - V1.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": 1,
+    "date": null,
+    "filename": "230221 - First Addendum - Zameen Ace Homes - V1 (1).docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": null,
+    "date": "31st day of May, 2019",
+    "filename": "20190404 Agreement to Sell for 13 Block -H Gulberg.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": null,
+    "date": null,
+    "filename": "20220811_PreBookingForm_Right of first purchase.docx"
+   },
+   {
+    "stage": "ADDENDUM",
+    "no": null,
+    "date": null,
+    "filename": "230220 - Agreement to Sell - Usman Cheema and V4 Capital.docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Ace Mall - ZAM",
+  "length": 19,
+  "grade": "HUMAN_REVIEW_CHAIN",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 2,
+  "projectsNamed": [
+   "Zameen Ace Mall",
+   "Downtown Rumanza",
+   "Zameen Jade"
+  ],
+  "steps": [
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231011 - Agreement to Sell - ZAM - Commercial Shops - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231011 - Leaseback Agreement - ZAM - Commercial Shops - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231011 - Agreement to Sell - ZAM - Commercial Shops - Tracks.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell for residencial apartments_ZAM_20190624_FIDIC escalation.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell for hotel apartments_ZAM_20190422.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell - Base Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20220118 PRIV Downtown Rumanza_Agreement to Sell for Hotel Apartments.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "26.10.2018",
+    "filename": "Leaseback Agreement_ZAM_Edit_EA[28042022].docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Agreement to Sell for shops _ZAM_20190624_FIDIC escalation.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": "26.10.2018",
+    "filename": "Leaseback Agreement_ZAM_20190422.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231025 - Agreement to Sell - ZAM - Commercial Shops - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231025 - Leaseback Agreement - ZAM - Commercial Shops - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240919-Agreement to Sell-ZAM-Commercial Shops-v2 (with GR at 15_).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231025 - Agreement to Sell - ZAM - Commercial Shops - v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251024-Zameen Ace Mall (ZAM)- Agreement to Sell-(without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250929-Zameen Ace Mall (ZAM)-Agreement to Sell-(with Cashback).docx"
+   }
+  ]
+ },
+ {
+  "project": "Zameen Opal - Completed Units",
+  "length": 16,
+  "grade": "FOLDER_GROUPED",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Zameen Opal"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "240124-License Agreement-Zameen Opal-v1.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "240124-Agreement to Sell-Zameen Opal-Appendix C.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240124-License Agreement-Zameen Opal-v2.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240124-Agreement to Sell Zameen Opal (Completed Units with Licensing Model) v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240124-License Agreement-Zameen Opal-v2.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Comparison Standard Doc and New Doc.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240117-Agreement to Sell Zameen Opal-Completed Units-with Licensing Model.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240103-Agreement to Sell-Zameen Opal-Completed Units.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "BASE DRAFT.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240305-License Agreement-Zameen Opal-v4 - Updated (25.4.2024).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240305-Agreement to Sell Zameen Opal (Completed Units with Licensing Model) v2.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240305-License Agreement-Zameen Opal-v4.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240124-Agreement to Sell Zameen Opal (Completed Units with Licensing Model) v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240124-License Agreement-Zameen Opal-v3.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240305-License Agreement-Zameen Opal-v4.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240305-Agreement to Sell Zameen Opal (Completed Units with Licensing Model) v2.docx"
+   }
+  ]
+ },
+ {
+  "project": "ZD - Downtown Rumanza - Multan",
+  "length": 18,
+  "grade": "HUMAN_REVIEW_CHAIN",
+  "parentReferences": 0,
+  "numbered": 0,
+  "dated": 0,
+  "projectsNamed": [
+   "Downtown Rumanza",
+   "Zameen Aurum"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250129-Appendix C-List of Materials.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "250129-Appendix B-Purchased Unit Floor Plan.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250423-Zameen Developments-Agreement to Sell-(Standard Draft) (Without GR) v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250414-Zameen Developments-Agreement to Sell-(Standard Draft) (Without GR) v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250129-Zameen Developments-Agreement to Sell-DTR.v1 (Without GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250716-Zameen Developments-Agreement to Sell-DTR (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "250716-Zameen Developments-Agreement to Sell-DTR (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260112-Downtown Rumanza (DTR)-Agreement to Sell (with Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "260112-Downtown Rumanza (DTR)-Agreement to Sell (without Cashback).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240229-Agreement to Sell-DTR (with GR)-v3-Final (Commercial Units Only).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "DTR Agreement to sell 11-3-24.pdf"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240229-Agreement to Sell-DTR (with GR)-v2-Final (Commercial Units Only).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240115-Agreement to Sell-DTR with GR (Commecial Units Only)-v1-Final.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "240103-Agreement to Sell-DTR (with GR)-v1.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Base Draft.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231019-Downtown Rumanza-Agreement to Sell-v2.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "241218-Zameen Developments-Agreement to Sell-DTR.v1 (Without GR).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "231019-Downtown Rumanza-Agreement to Sell-v2.docx"
+   }
+  ]
+ },
+ {
+  "project": "PPA_s",
+  "length": 5,
+  "grade": "CONFIRMED_CHAIN",
+  "parentReferences": 1,
+  "numbered": 1,
+  "dated": 2,
+  "projectsNamed": [
+   "Boulevard Heights"
+  ],
+  "steps": [
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": null,
+    "filename": "IT Services Agreement- Madison Square-Tipu Bloc SNA comments 02.12.2025.docx"
+   },
+   {
+    "stage": "ORIGINAL",
+    "no": null,
+    "date": "2023-09",
+    "filename": "Final Writ Nabeel Ahmed 24090071 .docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": 1,
+    "date": "19th April 2024",
+    "filename": "240429 - Fifth Amendment- Boulevard Heights - v2.docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "Project Sales Agreement- Madison Square Tipu Block 02.12.2025 SNA tracked (1).docx"
+   },
+   {
+    "stage": "AMENDMENT",
+    "no": null,
+    "date": null,
+    "filename": "251112- Project Sales- Madison Square (Tipu Block).docx"
+   }
+  ]
+ }
+]

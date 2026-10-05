@@ -10,3 +10,17 @@ legalos/
 
 # test-run artifacts (regenerated on every suite run)
 tests/*.png
+
+# Runtime secrets + caches — NEVER commit.
+# Holds the Google service-account key, the legal.os mailbox credential,
+# the Drive index cache and the mail log.
+config/
+config/requests.json
+audit-summary.json
+audit-trackers.json
+audit-records.json
+audit-files.json
+load-results.json
+interaction-inventory.json
+interaction-results.json
+source-registry.json

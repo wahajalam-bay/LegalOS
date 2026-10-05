@@ -1,0 +1,209 @@
+{
+ "builtAt": 1789971042415,
+ "proposals": [
+  {
+   "family": "contracts",
+   "recordId": "CTR-1F59UZD",
+   "record": "Emerald Lodges",
+   "words": [
+    "emerald",
+    "lodges"
+   ],
+   "hits": 1,
+   "documents": [
+    {
+     "id": "1Dgw8DY8O652p24zBA6vbfdtaDe6xzaZ5",
+     "name": "Settlementagreement_ZameenMediaandShoukatetc_20201119.pdf",
+     "root": "Commercial_Zameen Media Contracts",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+     "words": [
+      "emerald",
+      "lodges"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    }
+   ]
+  },
+  {
+   "family": "contracts",
+   "recordId": "CTR-1F59YIU",
+   "record": "Tenanacy Agreement Feroz Ali",
+   "words": [
+    "tenanacy",
+    "feroz"
+   ],
+   "hits": 6,
+   "documents": [
+    {
+     "id": "1Q-hCujXFVzDqJFOS1KKxwI0ezUXnUiWS",
+     "name": "TenanacyAgreement_EMPG Labs_Feroz ALi_20210630.pdf",
+     "root": "Compliance Data _LegalOS",
+     "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / Lease Agreements",
+     "words": [
+      "tenanacy",
+      "feroz"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    }
+   ]
+  },
+  {
+   "family": "contracts",
+   "recordId": "CTR-1F59ZEU",
+   "record": "Maintenance Services Agreemen",
+   "words": [
+    "maintenance",
+    "agreemen"
+   ],
+   "hits": 6,
+   "documents": [
+    {
+     "id": "17rxX0tjj9sx5VONWumathyjOd6GpDjGo",
+     "name": "MaintenanceServicesAgreemenThirdFloorMagaTower_NaveedShah_EMPGLabs_20210107 3rd floor.pdf",
+     "root": "Compliance Data _LegalOS",
+     "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / General Agreements",
+     "words": [
+      "maintenance",
+      "agreemen"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    },
+    {
+     "id": "1J8yF62mbRH9NI-0g7MwVt1QiRwGi9giT",
+     "name": "MaintenanceServicesAgreemen_GF_MagaTower_NaveedShah_EMPGLabs_20210701.pdf",
+     "root": "Compliance Data _LegalOS",
+     "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / General Agreements",
+     "words": [
+      "maintenance",
+      "agreemen"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    },
+    {
+     "id": "1GtkltmSgYEb_vtovOM_5CUiYAuQnv5Si",
+     "name": "MaintenanceServicesAgreemen_GF_MagaTower_NaveedShah_EMPGLabs_20210701 (1).pdf",
+     "root": "Compliance Data _LegalOS",
+     "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / General Agreements (1)",
+     "words": [
+      "maintenance",
+      "agreemen"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    },
+    {
+     "id": "1J5e2-NaiDPbXVs23pAGw_EAGFIICFZp8",
+     "name": "MaintenanceServicesAgreemen_8th Floor_MagaTower_NaveedShah_EMPGLabs_20210909_.pdf",
+     "root": "Compliance Data _LegalOS",
+     "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / General Agreements",
+     "words": [
+      "maintenance",
+      "agreemen"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    },
+    {
+     "id": "1KvhH0avC9jSB1Ho_0r0kob_4TWPOaWJB",
+     "name": "MaintenanceServicesAgreemen_8th Floor_MagaTower_NaveedShah_EMPGLabs_20210909_ (1).pdf",
+     "root": "Compliance Data _LegalOS",
+     "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / General Agreements (1)",
+     "words": [
+      "maintenance",
+      "agreemen"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    }
+   ]
+  },
+  {
+   "family": "litigation",
+   "recordId": "LIT-1RGPUJV",
+   "record": "Faran Parvez vs Zameen Media (Private) Limited",
+   "words": [
+    "faran",
+    "parvez"
+   ],
+   "hits": 3,
+   "documents": [
+    {
+     "id": "1eA8EkIm5z0JfDw0-xQbgl1e1M2f6tX2f",
+     "name": "Judgment-Faran Parvez vs ZMPL-ISB.pdf",
+     "root": "Litigation & Dispute - LegalOS",
+     "folderPath": "Litigation & Dispute - LegalOS / Litigation Files / Severance Claims / Faran Pervez Vs Zameen Media (Pvt) Ltd",
+     "words": [
+      "faran",
+      "parvez"
+     ],
+     "verified": false,
+     "read": "NOT_READ"
+    }
+   ]
+  },
+  {
+   "family": "litigation",
+   "recordId": "LIT-1YSDWJX",
+   "record": "Faran Parvez vs Zameen Media (Private) Limited",
+   "words": [
+    "faran",
+    "parvez"
+   ],
+   "hits": 3,
+   "documents": [
+    {
+     "id": "1eA8EkIm5z0JfDw0-xQbgl1e1M2f6tX2f",
+     "name": "Judgment-Faran Parvez vs ZMPL-ISB.pdf",
+     "root": "Litigation & Dispute - LegalOS",
+     "folderPath": "Litigation & Dispute - LegalOS / Litigation Files / Severance Claims / Faran Pervez Vs Zameen Media (Pvt) Ltd",
+     "words": [
+      "faran",
+      "parvez"
+     ],
+     "verified": false,
+     "read": "NOT_READ"
+    }
+   ]
+  },
+  {
+   "family": "notices",
+   "recordId": "NTC-0NG4SUE",
+   "record": "127",
+   "words": [
+    "bushra",
+    "farooq"
+   ],
+   "hits": 6,
+   "documents": [
+    {
+     "id": "1xwwOqhSQZOvEE5R8vMXnOzl2b-SZW_kz",
+     "name": "Suit - Zameen Media vs. Bushra Farooq, etc..pdf",
+     "root": "Litigation & Dispute - LegalOS",
+     "folderPath": "Litigation & Dispute - LegalOS / Litigation Files / Non-Compete / ZMPL vs. Bushra Farooq Butt, etc",
+     "words": [
+      "bushra",
+      "farooq"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    },
+    {
+     "id": "1XlZ0CHWwipybzp9zybdW1__zyy624ZkG",
+     "name": "Written Statement - D. No. 1 - Zameen Media vs. Bushra Farooq, etc..pdf",
+     "root": "Litigation & Dispute - LegalOS",
+     "folderPath": "Litigation & Dispute - LegalOS / Litigation Files / Non-Compete / ZMPL vs. Bushra Farooq Butt, etc",
+     "words": [
+      "bushra",
+      "farooq"
+     ],
+     "verified": false,
+     "read": "SCAN_READ_VIA_INDEX"
+    }
+   ]
+  }
+ ]
+}

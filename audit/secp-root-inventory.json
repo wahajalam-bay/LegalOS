@@ -1,0 +1,26 @@
+{
+  "root": "Entities data for secp filing",
+  "files": 3367,
+  "rootChildren": {
+    "Group Entities": 3091,
+    "Non-Group Entities": 276
+  },
+  "unknownRootChildren": [],
+  "pathDepths": {
+    "3": 1,
+    "4": 1694,
+    "5": 1429,
+    "6": 148,
+    "7": 79,
+    "8": 16
+  },
+  "mimeTypes": {
+    "image/jpeg": 9,
+    "application/pdf": 3237,
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": 6,
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": 113,
+    "image/png": 1,
+    "application/msword": 1
+  },
+  "generatedAt": "2026-09-24T04:32:35.393Z"
+}

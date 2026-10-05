@@ -1,0 +1,3933 @@
+[
+ {
+  "fileId": "14TgP-HcK_iBIlIh0bRfVMxnZ907f9rw0",
+  "filename": "Election Commission Act 2017 MCQs.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "NON_COMMERCIAL_SOURCE_CONTAMINATION",
+  "basis": "study material — multiple-choice questions on the Election Commission Act",
+  "evidence": [
+   {
+    "field": "filename",
+    "value": "Election Commission Act 2017 MCQs.pdf",
+    "source": "filename",
+    "confidence": "HIGH"
+   }
+  ],
+  "safety": "SAFE_AUTO_RECLASSIFY"
+ },
+ {
+  "fileId": "1AUOewo6k2p7ISDW9AP1r7dX6i_I-iO31",
+  "filename": "written_examination_qualified_sub_inspector_fast_track_04_2024_02.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "NON_COMMERCIAL_SOURCE_CONTAMINATION",
+  "basis": "a police recruitment examination list",
+  "evidence": [
+   {
+    "field": "filename",
+    "value": "written_examination_qualified_sub_inspector_fast_track_04_2024_02.pdf",
+    "source": "filename",
+    "confidence": "HIGH"
+   }
+  ],
+  "safety": "SAFE_AUTO_RECLASSIFY"
+ },
+ {
+  "fileId": "1dn4uooeCuBTZ4kDdMfod_NtpQKzqN7Yn",
+  "filename": "Website Terms of Use_OLX Mall_20210716.DOCX",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Website Terms of Use",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank effective date, placeholder copyright years",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Company",
+     "the Seller"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2021-07-16",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1iUIbdo9DDEPfGkVR0sGEkv0_-3pKr5uP",
+  "filename": "Termination Agreement [Draft].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Termination Agreement",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block, placeholder text",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Contract",
+     "the Termination Agreement"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "21st day of August, 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1AKeTTmed0zaFhKehw0OsidA0DG8Ov8rl",
+  "filename": "Pilling Contract [20201012].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Piling Agreement",
+  "from": "TEMPLATE",
+  "to": "HISTORICAL_EXECUTED_DOCUMENT",
+  "basis": "names 2 parties, carries a date, and names the project Mall 35 (Phase I) — an executed instrument retained in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Mall 35 (Employer)",
+     "SWIS-TECH (Contractor)"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "27th day of December, 2019",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1pGolrXPBInKEYdpxXM4z8vl4Co7mT5bU",
+  "filename": "20200225 PRIV ZAGC JV_MOU [MH_printed version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / MOUs",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Venture One (Private) Limited",
+     "Mr. Muhammad Amir son of Samsaamuddin",
+     "construction thereof",
+     "architectural development",
+     "both parties shall be paid to both Zameen",
+     "the Partner"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "24th day of February 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1Bz6OEDbKsk6p7evJi6uQmtiuUaO2WEnd",
+  "filename": "Logistics Services Agreement_Online Classifieds PK & Shaheen Cargo Services [execution version]_20210402.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Logistics Agreement",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "executed between named parties but names no project — retained as a worked example",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Service Provider",
+     "OLX along with all annexures"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "14 day of April 2021",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1MCSUW-YnPLXXQi6B3qO-irK0xYaOW3KE",
+  "filename": "Final Lease Agreement Draft - Zameen.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Lease Agreement",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block, placeholder text, [●]",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Lessor 1 (unnamed individual)",
+     "Lessor 2 (unnamed individual)",
+     "Lessor 3 (unnamed individual)",
+     "OLX Classifieds Pakistan (SMC-Private) Limited (Lessee)"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "August 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1dZKq-k5a3iVX5WSO1ZN11Bdb5JWR25ZN",
+  "filename": "Amended and Restated JV Agreement (execution version).doc",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Alpha (Private) Limited",
+     "EBCO Constructions (Private) Limited"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2019-06-28",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1D1Oid4d4JkhtcToaiGEF4OwV-FMG6eux",
+  "filename": "Partnership Deed [Final Draft 20201224].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block, placeholder text [●]",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Partners",
+     "on such conditions as may be",
+     "the Partners in the form of a written",
+     "signed resolution",
+     "Arbitration Arbitration Any dispute"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "28th day of December, 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1QDSrh7EAaZdTthnt6syjogLbQvce9XHJ",
+  "filename": "Joint Venture Agreement- [20190531].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: held in the contract templates library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "ZAMEEN ALPHA (PRIVATE) LIMITED",
+     "EBCO CONSTRUCTION S",
+     "the Parties including all Annexures",
+     "other documents that are incorporated to the said Agreement",
+     "the Landowner",
+     "the Joint Venture"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "3rd day of June 2019",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1qLBlrM0VM0s9n_qV3NprlfBJ_o8-tC6G",
+  "filename": "Undertaking for Payments-Medallion Account.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "FHS Resorts (Private) Limited",
+     "Zameen Medallion (Private) Limited",
+     "Zameen Media (Private) Limited",
+     "Zameen Core (SMC-Private) Limited"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "25th March 2024",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1SFxk4Sh3LeCyFlZu5ZDGevqwvTpZoSju",
+  "filename": "Franchise Agreement_Mall 35 & Hotel One [EXECUTION VERSION].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Franchise Agreement",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block, placeholder text",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Franchisor",
+     "third parties that may be deemed reasonably necessary"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "25th day of February 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1-O5cv55II71fdDtraZPKQipT7xcFRSAD",
+  "filename": "Excavation Agreeement [23062020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Excavation Agreement",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block, blank witness fields",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Parties hereto",
+     "shall override any and all other prior understandings and agreements"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "23rd day of June, 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1hD1rrEVq2QnaScf5Cys5_eblrDT1zpNX",
+  "filename": "CONTRACT AGREEMENT [Final Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "the pages show it signed — Completed execution block in the closing text: typed signatory names, CNIC numbers (e.g. 33100-9348842-3, 37405-9931068-5, 35202-2881321-3) and dates of 27 October 2020 for Contractor and two Employer signatories; signature lines appear as blank underscores in the extracted text and the witness block is left blank. — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Parties",
+     "supersede and override any prior agreements"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "27 October 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1HU3-CHXUWuNtiBNi9tBCOeDak5kVh0zu",
+  "filename": "AgreementforsupplyofReadyMixConcrete_ZameenPlatinumTetraReadyMix_20210504.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "from": "TEMPLATE",
+  "to": "HISTORICAL_EXECUTED_DOCUMENT",
+  "basis": "the pages show it signed — signed under the Tetra Ready Mix (Private) Limited seal and the Zameen Platinum (Private) Limited seal with FK initials, attested by notary public Sarwar Ahmad Khan; it names project Zameen Aurum — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Platinum (Private) Limited, Purchaser",
+     "Tetra Ready Mix (Private) Limited, Supplier"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2021-05-04",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1ZCYOGw7MquNYcf5EgffakGvFQqpfT8V7",
+  "filename": "Construction of Drain Pipeline Agreement [20201124].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "from": "TEMPLATE",
+  "to": "HISTORICAL_EXECUTED_DOCUMENT",
+  "basis": "the pages show it signed — Named signatories with CNIC numbers and dates (2 Nov 2020) in the execution block for Contractor and Employer in the closing text; it names project Zameen Ace Mall — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Parties including its annexures attached hereto. means the priced",
+     "the Parties hereto",
+     "shall override any and all other prior understandings and agreements"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2nd day of November, 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1UEvlU9elI0dUOr9Qs-PV2TJqFpEx072g",
+  "filename": "Geotechnical Consultancy Agreement [20201020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "from": "TEMPLATE",
+  "to": "HISTORICAL_EXECUTED_DOCUMENT",
+  "basis": "names 2 parties, carries a date, and names the project Zameen Ace Mall — an executed instrument retained in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "ZUI Investments",
+     "Muhammad Irfan trading as Birudo Engineers"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2020-10-21",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1CtMGDJsRwqrDACCOMMu8N6RQPG9y-0_9",
+  "filename": "MEP Design Consultancy Agreement [07072020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "from": "TEMPLATE",
+  "to": "HISTORICAL_EXECUTED_DOCUMENT",
+  "basis": "names 4 parties, carries a date, and names the project Zameen Ace Mall — an executed instrument retained in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "ZUI Investments",
+     "Jers Consultancy",
+     "the Client",
+     "the Consultant"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "09th day of July, 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1KLLqTFI0Hru4l__bIf_1_FVPIOaSiFZL",
+  "filename": "MOU Marketing- BAFL  Zameen [Clean Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Banking and Finance",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block, placeholder text (date shown as '_________ December, 2020')",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "the Parties in a final definitive agreement executed by",
+     "between the Parties"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "December 2020",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1RgFZY2MdsbezM-pUmMVA5w8_ZSsvGT3c",
+  "filename": "ATM Agreement - Bank Alfalah Final 20200902.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Banking and Finance",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "executed between named parties but names no project — retained as a worked example",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited, through Tanzain Shafqat",
+     "Bank Alfalah Limited, through Nabila Sattar"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2020-09-02",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1zl50Jc8pvUdxkAxkUoVAGfBGGgQgi665",
+  "filename": "1908.002.01-DMA-CTL - HBFC DMA First Amendment.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / HBFCL",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "the pages show it signed — Zameen's initials ZAK and the customer's initials under the House Building Finance Company Ltd seal, attested by notary public Sarwar Ahmad Khan — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "House Building Finance Company Limited"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2019-11-01",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1l3g-p-0RwISZJS1Pn6axvHNt5LNMwEQs",
+  "filename": "20190801 DMA-HBFCL.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / HBFCL",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "the pages show it signed — Signatures for both Zameen (Zeeshan Ali Khan) and Customer (Faisal Murad) plus two witness signatures with names/CNICs on page 8; company stamps of Zameen Media and House Building Finance Company on the last pages — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "House Building Finance Company Limited (HBFCL)"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2019-08-01",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "118qYhRgz1c0nVtgovGLk3DXEFNri9mmL",
+  "filename": "20190828- First Amendment- HBFCL- [RB].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / 00 Drafts",
+  "from": "TEMPLATE",
+  "to": "TEMPLATE",
+  "basis": "the pages show it is not executed — draft markers seen: blank signature block",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "House Building Company Limited"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "1st day of September, 2019",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1HAmgItYJeR3BXh7H5_37MjjkxaQqQHI0",
+  "filename": "20190913 PRIV Google Advertising Service Agreement [2019].pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Google",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "the pages show it signed — stamped Legal Dept Google with a signature — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Google Asia Pacific Pte. Ltd., Singapore",
+     "Zameen Media (Pvt) Ltd"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2019-09-13",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1TF1j_rFZnYg7KxIfPXSp3pKOCakbafur",
+  "filename": "1908_002.00CTL-DMA - Escorts Bank.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Escorts",
+  "from": "TEMPLATE",
+  "to": "REFERENCE_EXECUTED_SAMPLE",
+  "basis": "the pages show it signed — Bank's initials and Zameen's initials on page 1 of 9, attested by notary public Sarwar Ahmad Khan — an executed instrument kept in the precedent library",
+  "safety": "SAFE_AUTO_RECLASSIFY",
+  "evidence": [
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "Escorts Investment Bank Limited"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementDate",
+    "value": "2019-08-29",
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInText",
+    "value": [],
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "folder",
+    "value": "template library",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   }
+  ]
+ },
+ {
+  "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore",
+  "from": "attached to Zameen Neo - Lahore",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank party fields, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Neo - Lahore",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank party fields, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Jade",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "from": "attached to ZD - Golf View Rumanza - Multan",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "ZD - Golf View Rumanza - Multan",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Wp6dWr0vkNCYm2MDFniv7-FNXvWFRvth",
+  "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250225-With and Without Rental Promo",
+  "from": "attached to Zameen Arx - Lahore",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Arx - Lahore",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "filename",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Jade",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1_OmhyWKE6nyUSYJRGqRRzvXQip3i1caw",
+  "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+  "from": "attached to Zameen Jade - Lahore",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Jade - Lahore",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Arx"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Arx",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1BzuXSd9_9r6yMBxK-z0ltt2T2OlAj_D-",
+  "filename": "Agreement to Sell (Zameen Aurum) - Base Draft for Furnishing Clause (Approved by CEO).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause",
+  "from": "attached to Zameen Jade - Lahore",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Jade - Lahore",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1_EDGNWlb5fR40hHbCuTkare2yfiDQSRt",
+  "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model",
+  "from": "attached to Zameen Jade - Lahore",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Jade - Lahore",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Arx"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Arx",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1n3vBlKXz1Tl0px3NJvR3q8jJyFfA3A_w",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing)",
+  "from": "attached to ZD - Downtown Rumanza - Multan",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "ZD - Downtown Rumanza - Multan",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1KJWHX7cTOr7gYonOCXR81Y8APcO2qH6J",
+  "filename": "20220118 PRIV Downtown Rumanza_Agreement to Sell for Hotel Apartments.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+  "from": "attached to Zameen Ace Mall - ZAM",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text, blank fill-in lines (unit number, purchase price, dates); stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall - ZAM",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "filename",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 1,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text, blank fill-in lines (unit number, purchase price, dates)",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Down Town Rumanza",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1bxusfdTeSQIlhUR4rqB8r6zrcQ21GYXo",
+  "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+  "from": "attached to Zameen Ace Mall - ZAM",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text, [●] placeholders, blank party/date fields; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall - ZAM",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "filename",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 1,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text, [●] placeholders, blank party/date fields",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Down Town Rumanza",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1072CD7yPdXToWDxHy5fpgZpC7WnXQBf4",
+  "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / GR at 15 Percent",
+  "from": "attached to Zameen Ace Mall - ZAM",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall - ZAM",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "filename",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Jade",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "filename": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "from": "attached to Zameen Ace Mall",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text, [●] placeholders; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 6,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text, [●] placeholders",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Ace Mall",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "filename": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "from": "attached to Zameen Ace Mall",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text, [●] placeholders; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 6,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text, [●] placeholders",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Ace Mall",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "filename": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "from": "attached to Zameen Ace Mall",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text, [●] placeholders; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 6,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text, [●] placeholders",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Ace Mall",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "filename": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "from": "attached to Zameen Ace Mall",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text, [●] placeholders; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 6,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text, [●] placeholders",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Ace Mall",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1_OmhyWKE6nyUSYJRGqRRzvXQip3i1caw",
+  "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+  "from": "attached to Zameen Jade",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Jade",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Arx"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Arx",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1BzuXSd9_9r6yMBxK-z0ltt2T2OlAj_D-",
+  "filename": "Agreement to Sell (Zameen Aurum) - Base Draft for Furnishing Clause (Approved by CEO).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause",
+  "from": "attached to Zameen Jade",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Jade",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1_EDGNWlb5fR40hHbCuTkare2yfiDQSRt",
+  "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model",
+  "from": "attached to Zameen Jade",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, placeholder text; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Jade",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Arx"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, placeholder text",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Arx",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore",
+  "from": "attached to Zameen Neo",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank party fields, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Zameen Neo",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 4,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank party fields, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Jade",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "filename": "Base Draft (2).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank party fields; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 3,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank party fields",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Golf View Rumanza",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "filename": "Base Draft (2).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank party fields; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 3,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank party fields",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Golf View Rumanza",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "filename": "Base Draft (2).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank party fields; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 3,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank party fields",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Golf View Rumanza",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank execution date, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank execution date, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "filename": "Base Draft (2).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "from": "attached to Golf View Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, blank party fields; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 3,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, blank party fields",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Golf View Rumanza",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1n3vBlKXz1Tl0px3NJvR3q8jJyFfA3A_w",
+  "filename": "Base Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing)",
+  "from": "attached to Downtown Rumanza",
+  "to": "KEEP where it is",
+  "basis": "read end to end: not executed — draft markers seen: blank signature block, filed under a different project's folder; stale project wording in an unsigned draft is expected and is not a misfiling",
+  "safety": "LIKELY_DRAFT_COPY",
+  "evidence": [
+   {
+    "field": "folder",
+    "value": "Downtown Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "projectInFilename",
+    "value": [],
+    "source": "filename",
+    "confidence": "NONE"
+   },
+   {
+    "field": "siblingsNamingSameProject",
+    "value": 0,
+    "source": "sibling documents",
+    "confidence": "LOW"
+   },
+   {
+    "field": "executionSignals",
+    "value": {
+     "parties": 5,
+     "date": null
+    },
+    "source": "document content",
+    "confidence": "LOW"
+   },
+   {
+    "field": "signaturePage",
+    "value": "NOT_EXECUTED",
+    "source": "every page read visually",
+    "evidence": "draft markers seen: blank signature block, filed under a different project's folder",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "every page read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1ZqqVNgn1RBkd9n5PuBMBDHpflUbnfGDy",
+  "filename": "PART I- GENERAL CONSTRUCTION [Final Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+  "from": "TEMPLATE",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project MALL 35 at HIGH confidence, corroborated by propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "MALL 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "MALL 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "CONSTRUCTION",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1ZCYOGw7MquNYcf5EgffakGvFQqpfT8V7",
+  "filename": "Construction of Drain Pipeline Agreement [20201124].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Ace Mall at HIGH confidence, corroborated by entity and counterparty and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Ace Mall",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZUI Investments",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Shelters Construction (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Plot No. 15-A Sector J, Phase II, DHA, Islamabad",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "CONSTRUCTION",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1eXHFxJzLk80X-nBcW8rcoKZcNq4fU3gl",
+  "filename": "Water Boring and Drilling Agreement [23072020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "from": "TEMPLATE",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at HIGH confidence, corroborated by entity and counterparty and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Mudassar Tanvir Khan (MS Corporation)",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Mall 35, Plot No.35-A, Police Station Road, Saddar, Rawalpindi Cantt.",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "CONSTRUCTION",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1MI0qm2-JsOoYMb8Hv5k65LejWosgjokP",
+  "filename": "Agreement to Sell for Hotel Apartments [20190903].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+  "from": "TEMPLATE",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at HIGH confidence, corroborated by entity and propertyOrUnit and agreementNumber",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "HA/001",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1rAtEwy57FZARyVE4ZLPUb2wquCNgLDfM",
+  "filename": "Agreement to Sell for Shops [20190905].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+  "from": "TEMPLATE",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit and agreementNumber",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35 (partnership firm)",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial Shop, Plot No. 35/A, Police Station Road, Rawalpindi Cantt.",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "CS/001",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "SALE_DEED",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1qlqpI3gcPYnAkTXoRvSYVzDisuGlCFAx",
+  "filename": "Agreement to Sell  [20190624].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Ace Mall at HIGH confidence, corroborated by entity and agreementNumber",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Ace Mall",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZUI Investments",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "RA/001",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1AXmQw4Q5NkNp-RXx7jCUnBDAG2AN_ZnO",
+  "filename": "Agreement to Sell [20201124].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Aurum at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Platinum (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1WEArI1Z7fbGh_NKIlwwkrNF5gUqmMvHX",
+  "filename": "Agreement to Sell (Land-Mall 35) [20201106].doc",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+  "from": "TEMPLATE",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 real estate project at HIGH confidence, corroborated by entity and counterparty and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35 real estate project",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Naseehuddin Sheikh",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Mall 35 (joint venture of Zameen Alpha (Pvt) Ltd and EBCO Constructions (Pvt) Ltd)",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Plot No. 35/A, Police Station Road, Rawalpindi Cantt., measuring 2554.62 sq. yards",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": null,
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "19nk8J6KxJdj69YG81ngFnlT9ByZ3pvSe",
+  "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "15sxq8B2puqNoAnvZ91Nrj1m2D7v0qfv_",
+  "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit at Plot No. B-24-01, Silicon IT District, NSIT City, Lahore",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1sQGbY8y2fFovWrJKYCS0rWEjJ70afWRa",
+  "filename": "250912-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Od4z35FC-Iatek1UYMTDrJVyXVC6wYtq",
+  "filename": "250912-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit (office/commercial shop/plaza/food court) at Plot No. B-24-01, Silicon IT District, NSIT City, Lahore",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1436Jy_kZR3MG019pYyovPkOjsatRdZh9",
+  "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit at Plot No. B-24-01, Silicon IT District, NSIT City, Lahore",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1jLr8nlDhqlrgBAclg8TwVmh59LvG8OVX",
+  "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1TtaMbxLGFvc8IVGZf8mu_CfWo0tLyOxe",
+  "filename": "260204-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1zLuode2QjGND4ukZEBsZLZmw2njk1V39",
+  "filename": "260204-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit (office/commercial shop/plaza/food court), Plot No. B-24-01, Silicon IT District, NSIT City, Lahore",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1omQ_2dDYzE9CdmKB64x2inR49c38LeEi",
+  "filename": "Zameen Aurum - T&Cs (Payment Receipt) - Reviewed FINAL 02062020 Clean.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Payment Receipts & Booking Form",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Aurum at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Aurum",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Aurum",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "RECEIPT",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1WuTxTBPjYTjtOzCs6y5JrLxb82WOUCD_",
+  "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1cMxXqVnJijuJ2cdtwV_FNAnrXcy3yJp-",
+  "filename": "251009-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1Zd8vS0UhEGq0CPYrY80-U892M9IpsI97",
+  "filename": "251009-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1H9XnAFjw5zCDGBmyAQe8-6Arjuk9h4BK",
+  "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "SALE_DEED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1eEX9dnFCIXa5VN1NadZndiwzOhIVGH1i",
+  "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial/office/plaza/food court unit (Purchased Unit)",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1dd5H7SMsiKYJyfz3UTDT0rMBtfaDYPha",
+  "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1JOcGdZKbgUg2cqSbK1PGmodFhq8hH-PY",
+  "filename": "250929-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1PXjy-1mYzjAFkGUlSwJqtDA-LVREJhy-",
+  "filename": "250929-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "SALE_DEED",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1CuB20ZlMtPfA_QVjRlsOBWMRiJZ1KqVR",
+  "filename": "230830 - Agreement to Sell (Base Draft - Jade).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Jade at HIGH confidence, corroborated by entity",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Jade",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Arcs (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1LBWU5eKF6ACC3pFezuWkbjSiZ_d5cs2A",
+  "filename": "Mall 35 Agreement to Sell for Hotel Apartment Revised Original.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Hotel Apartment",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1Qg6gCNjN5gD4pdEsWyHjRA-Q8IQjLQo_",
+  "filename": "231114 - Mall 35 Agreement to Sell and Leaseback Agreement (Hotel Apartment) Revised - V3.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Hotel Apartment",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1sAaBRVB_zPTPd8Rc4EzRl2ud-9pQjUnT",
+  "filename": "231102 - Mall 35 Agreement to Sell for Hotel Apartment v3.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Hotel Apartment",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1IiBOoj1zCCAocopJQ6gOlO36AbsBDIlR",
+  "filename": "Mall35 Agreement to Sell.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Mall 35 - Commercial Shops",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial Shop, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1q8Rc15wAOUTnnpbrGFZbSCuu1cam307t",
+  "filename": "MALL-35 Commercial SPA[1].pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Mall 35 - Commercial Shops",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit and agreementNumber",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial Shop, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "CS/521",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1fQ9_OW4BMlYWJ8fohmEtG8G6BkGCkS3g",
+  "filename": "HOTEL & LEASEBACK AGREEMENT_MALL 35.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Mall 35 - Commercial Shops / Amendment to Leaseback - Fixed Rental Commission",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at HIGH confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1ccQfmsQGqpw4RvkjSuHI4SAtW1YpXJC1",
+  "filename": "Leaseback Agreement for Hotel Apartments_Mall 35_20190909.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Mall 35 - Commercial Shops / Amendment to Leaseback - Fixed Rental Commission",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Mall 35 at CONFIRMED confidence, corroborated by entity and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Mall 35",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "TEMPLATE",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1u6Fjo3YSO2TOS6KLSnccIJFoLXImRvLA",
+  "filename": "GolfViewRumanza_20220204.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Golf View Rumanza at CONFIRMED confidence, corroborated by entity and counterparty",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Golf View Rumanza",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Media (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "counterparty",
+    "value": "ZB Developers",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1tEs1rsX2l92Ef97BcuzUAzjkkNbuJzwy",
+  "filename": "240429 - Fifth Amendment- Boulevard Heights - v2.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+  "from": "PROJECT_ONLY_SOURCE_DOCUMENT",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Boulevard Heights at CONFIRMED confidence, corroborated by entity and counterparty and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Boulevard Heights",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Media (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "counterparty",
+    "value": "ZSS Developers",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "one tower B+G+6, 128 residential apartments and 233 shops; inventory revised 379 to 389 units",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "PPA",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ },
+ {
+  "fileId": "1q86KXtFTubieSN5uX2gsOG0I8kRxlZJi",
+  "filename": "Settlement Challan (2).pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Grande Palladium at HIGH confidence, corroborated by entity and counterparty",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Grande Palladium",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "RECEIPT",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "15eRsATpMFfHuL9F0YsK9WwD2Wemfva2b",
+  "filename": "Corporate Guarantee Challan.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Grande Palladium at HIGH confidence, corroborated by entity and counterparty",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Grande Palladium",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "RECEIPT",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1YaOyerJUWKchRoM5XEYvrTJdT61uU925",
+  "filename": "JV Termination Challan.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Grande Palladium at HIGH confidence, corroborated by entity and counterparty",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Grande Palladium",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "RECEIPT",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1aNdZKkHrs87P5S38XeOr4G8b8imMAuYW",
+  "filename": "Challan Partnership.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Grande Palladium at HIGH confidence, corroborated by entity and counterparty",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Grande Palladium",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "documentType",
+    "value": "RECEIPT",
+    "source": "pages read visually",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ {
+  "fileId": "1s9yZaLQfQ5edWTWyvDAf5oIUpTIyKkvK",
+  "filename": "250818-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+  "from": "UNRESOLVED_REQUIRES_HUMAN",
+  "to": "PROJECT_DOCUMENT (placed from the pages)",
+  "basis": "the pages name project Zameen Vault at CONFIRMED confidence, corroborated by entity and counterparty and propertyOrUnit",
+  "safety": "SAFE_AUTO_ATTACH",
+  "evidence": [
+   {
+    "field": "projectOnThePages",
+    "value": "Zameen Vault",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "counterparty",
+    "value": "Punjab Central Business District Development Authority",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Plot No. B-24-01 measuring 21.39 kanal at NSIT, Silicon IT District, Lahore",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   },
+   {
+    "field": "documentType",
+    "value": "SALE_DEED",
+    "source": "pages read visually",
+    "confidence": "CONFIRMED"
+   }
+  ]
+ }
+]

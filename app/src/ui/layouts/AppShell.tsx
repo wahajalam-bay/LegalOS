@@ -11,9 +11,15 @@ import { NotificationsBell } from "@/ui/notifications";
 
 const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
 
-// Persona switching ("View As") is a demo/localhost testing tool only. In a
-// production build (import.meta.env.DEV === false) it is never rendered.
-const DEMO_MODE = import.meta.env.DEV;
+// Persona switching ("View As") is a demo/testing tool, never a shipped
+// production feature. It is OFF by default in a production build; it is available
+// in local dev, when built with VITE_DEMO=1, or on any deploy via the "?demo"
+// URL flag (so the hosted demo can showcase every role without real auth).
+const hasDemoFlag = (() => {
+  try { return typeof window !== "undefined" && new URLSearchParams(window.location.search).has("demo"); }
+  catch { return false; }
+})();
+const DEMO_MODE = import.meta.env.DEV || import.meta.env.VITE_DEMO === "1" || hasDemoFlag;
 
 interface NavItem { to: string; label: string; icon: string; soon?: boolean }
 const WORKSPACE: NavItem[] = [

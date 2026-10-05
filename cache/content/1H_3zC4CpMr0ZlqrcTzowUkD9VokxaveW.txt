@@ -1,0 +1,458 @@
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: CE922036-CFDA-4117-A39A-396A7F961A8F
+
+ZAMEEN AXIS (PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+NON-CURRENT ASSETS
+Investment in joint venture
+
+5
+
+144,003,251
+
+148,210,159
+
+CURRENT ASSETS
+Other receivable
+Cash and bank balance
+
+6
+7
+
+32,363
+349,235
+381,598
+
+32,363
+11,675,853
+11,708,216
+
+144,384,849
+
+159,918,375
+
+100,000
+
+100,000
+
+8
+
+2,000
+(42,293,250)
+(42,291,250)
+
+2,000
+(26,787,827)
+(26,785,827)
+
+NON-CURRENT LIABILITIES
+Loan from the Parent Company
+
+9
+
+133,568,155
+
+159,200,000
+
+CURRENT LIABILITIES
+Accrued markup on loan from Parent Company
+Other payables
+
+9
+10
+
+51,830,160
+1,277,784
+53,107,944
+
+26,698,414
+805,788
+27,504,202
+
+144,384,849
+
+159,918,375
+
+ASSETS
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+SHARE CAPITAL AND RESERVES
+Authorized share capital
+10,000 (2022: 10,000) ordinary shares of Rs. 10 each
+Issued, subscribed and paid up share capital
+Accumulated losses
+
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+11
+
+The annexed notes from 1 to 22 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 1 of 18
+
+DocuSign Envelope ID: CE922036-CFDA-4117-A39A-396A7F961A8F
+
+ZAMEEN AXIS (PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+Administrative expenses
+
+12
+
+Operating loss
+Finance cost
+
+13
+
+Other income
+
+14
+
+Share of profit from joint venture
+
+5
+
+Loss before taxation
+Taxation
+
+15
+
+Loss for the year
+
+2022
+Rupees
+
+2023
+Rupees
+(498,614)
+
+(475,694)
+
+(498,614)
+
+(475,694)
+
+(25,131,746)
+
+(14,416,638)
+
+10,124,937
+
+1,193,399
+
+(15,505,423)
+
+(13,671,301)
+-
+
+(15,505,423)
+
+Other comprehensive income
+
+27,632
+
+(13,671,301)
+-
+
+-
+
+Total comprehensive loss for the year
+
+(15,505,423)
+
+(13,671,301)
+
+The annexed notes from 1 to 22 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 2 of 18
+
+DocuSign Envelope ID: CE922036-CFDA-4117-A39A-396A7F961A8F
+
+ZAMEEN AXIS (PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+Capital reserve
+
+Revenue reserve
+
+Issued, subscribed
+and paid up share
+capital
+
+Accumulated losses
+
+Total
+
+------------------------Rupees------------------------Balance as at 1 July 2021
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2022
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2023
+
+2,000
+
+(13,116,526)
+
+(13,114,526)
+
+-
+
+(13,671,301)
+(13,671,301)
+
+(13,671,301)
+(13,671,301)
+
+2,000
+
+(26,787,827)
+
+(26,785,827)
+
+-
+
+(15,505,423)
+(15,505,423)
+
+(15,505,423)
+(15,505,423)
+
+2,000
+
+(42,293,250)
+
+(42,291,250)
+
+The annexed notes from 1 to 22 form an integral part of these financial statements.
+
+_________________________
+DIRECTOR
+
+_________________________
+CHIEF EXECUTIVE
+
+Page 3 of 18
+
+DocuSign Envelope ID: CE922036-CFDA-4117-A39A-396A7F961A8F
+
+ZAMEEN AXIS (PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+(15,505,423)
+
+(13,671,301)
+
+(10,124,937)
+25,131,746
+15,006,809
+(498,614)
+
+(1,193,399)
+(27,632)
+14,416,638
+13,195,607
+(475,694)
+
+OPERATING ACTIVITIES
+Loss before taxation
+Adjustments to reconcile loss before tax
+to net cash flows:
+Share of profit from joint venture
+Liabilities written back
+Finance cost
+
+14
+13
+
+Operating loss before working capital changes
+Working capital adjustments:
+Increase in current assets
+Other receivable
+
+-
+
+(32,363)
+
+Increase in current liabilities
+Other payables
+
+471,996
+
+106,378
+
+Net cash used in operating activities
+
+(26,618)
+
+(401,679)
+
+(Withdrawal from) / Investment in joint venture
+
+14,331,845
+
+(19,900,000)
+
+Net cash generated from / (used in) investing activities
+
+14,331,845
+
+(19,900,000)
+
+Net cash flows (used in) / generated from financing activities
+
+(25,631,845)
+(25,631,845)
+(25,631,845)
+
+31,200,000
+31,200,000
+31,200,000
+
+Net (decrease) / increase in cash and cash equivalents
+Cash and cash equivalents at the beginning of the year
+Cash and cash equivalents at the end of the year
+
+(11,326,618)
+11,675,853
+349,235
+
+10,898,321
+777,532
+11,675,853
+
+INVESTING ACTIVITIES
+
+FINANCING ACTIVITIES
+Proceeds of loan from the Parent Company
+Loan repaid to the Parent Company
+
+7
+
+The annexed notes from 1 to 22 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 4 of 18
+
+DocuSign Envelope ID: CE922036-CFDA-4117-A39A-396A7F961A8F
+
+ZAMEEN AXIS (PRIVATE) LIMITED
+NOTES TO THE FINANCIAL STATEMENTS
+AS AT 30 JUNE 2023
+1
+
+THE COMPANY AND ITS OPERATIONS
+
+1.1
+
+Corporate and general information
+Zameen Axis (Private) Limited ("the Company") was incorporated on 27 February 2019 as a Private Limited Company
+under the Companies Act (The Act). The Company's principal activity is to engage in the business of development of
+all types of real estate including commercial markets and multi-storey buildings, shopping centres etc. The registered
+office of the Company is situated at Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore. The Company is a
+subsidiary of Zameen Venture One (Private) Limited ("the Parent Company"), a Company incorporated in Pakistan.
+The ultimate parent of the company is Dubizzle Group Holdings Limited, , a Company incorporated in United Arab
+Emirates (UAE).
+
+1.2
+
+The Company holds 50% share in EDZD Developers (the Firm), a partnership firm which was established on 28 Dec
+2020 in Pakistan between Zameen Axis (Private) Limited and Earthlink Developments LLP. The firm was registered
+with the Registrar of Firms under section 58 (I) of the Partnership Act, 1932 on 26 October 2018. Its primary place of
+business and registered office is located at Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore. The principal
+activity of the Firm is to undertake, manage, market and sell the project, EDZD on the land located in Bahria Town
+Phase 6, GT Road Rawalpindi. The Company's owners / directors are also Partners in the Firm. As at 30 June 2023,
+the project has not yet started.
+The Company has incurred loss of Rs. 15,505,423 (2022: Rs. 13,671,301) and its accumulated losses as at the
+reporting date amounts to Rs. 42,293,250 (2022: Rs. 26,787,827) resulting in a negative equity of Rs. 42,291,250
+(2022: Rs. 26,785,827) as at that date. The Parent Company has committed to provide financial support to the
+Company, enabling the Company to continue its operations as going concern and fulfil all of its financial obligation.
+Based on which the financial statements of the Company are prepared on going concern basis.
+
+2
+
+BASIS OF PREPARATION
+
+2.1
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting standards as
+applicable in Pakistan. The accounting and reporting standards applicable in Pakistan comprise of:
+- International Financial Reporting Standards (IFRS Standards) issued by the International Accounting Standards
+Board (IASB) as notified under the Companies Act, 2017; and
+- Provisions of and directives issued under the Companies Act, 2017.
+Where provisions of and directives issued under the Companies Act, 2017 differ from the IFRS standards, the
+provisions of and directives of the Companies Act, 2017 have been followed.
+
+2.2
+
+Basis of measurement
+These financial statements have been prepared under the historical cost convention unless otherwise stated.
+
+2.3
+
+Functional and presentation currency
+These financial statements are presented in Pak Rupees, which is the Company’s functional currency. All figures have
+been rounded off to the nearest Rupee, unless otherwise stated.
+
+2.4
+
+Standards, interpretations and amendments to published accounting standards
+The accounting policies adopted are consistent with those of the previous financial period, except for the following
+new and amended standards and interpretations effective for annual period beginning on July 01, 2022, as listed
+below:
+
+2.4.1 New Standards, Interpretations and Amendments effective in the reporting period
+The accounting policies adopted in the preparation of these financial statements are consistent with those of the
+previous financial year, except for following amendments to accounting standards which are effective for annual
+periods beginning on or after July 01, 2022 (unless otherwise stated).
+IFRS 3 Business Combinations – The amendment updates a reference in IFRS 3 to the Conceptual Framework for
+Financial Reporting without changing the accounting requirements for business combinations.
+
+Page 5 of 18

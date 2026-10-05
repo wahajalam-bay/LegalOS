@@ -56,6 +56,15 @@ check /.git/config          404 "blocked: .git"
 check /package.json         404 "blocked: package.json"
 check /legalos/index.html   404 "blocked: stale nested copy"
 check /tests/run-all.js     404 "blocked: tests"
+# The credentials the API reads. If either of these ever answers 200 the Google
+# key and the mailbox password are being handed out as static files.
+check /config/legalos.config.json  404 "blocked: secrets"
+check /config/service-account.json 404 "blocked: SA key"
+# The API itself: health is public, everything else demands a verified
+# Cloudflare Access assertion. A 200 on /api/me here would mean the API is
+# answering to anyone who can reach the port.
+check /api/health           200 "api health"
+check /api/me               401 "api requires auth"
 if [ "$fail" != 0 ]; then
   echo "    LOCAL CHECKS FAILED"; journalctl -u ${NAME} -n 30 --no-pager; exit 1; fi
 echo "    all local checks passed"
@@ -117,6 +126,8 @@ dcheck /legalos/assets/styles.css  200
 dcheck /legalos/src/main.js        200
 dcheck /legalos/portal/            200
 dcheck /legalos/.git/config        404
+dcheck /legalos/config/legalos.config.json 404
+dcheck /legalos/api/me             401
 if [ "$dfail" != 0 ]; then
   echo ""
   echo "    ⚠ ROUTE CHECKS FAILED — the service is up but the domain route is wrong."

@@ -1,0 +1,387 @@
+{
+ "builtAt": "2026-09-23T06:05:48.835Z",
+ "gaps": 18,
+ "byStatus": {
+  "CONFIRMED_PARENT": 2,
+  "SOURCE_ONLY_CHILD": 8,
+  "PROBABLE_PARENT_NOT_OPERATIONAL": 7,
+  "NO_PARENT_REQUIRED": 1
+ },
+ "unresolved": 0,
+ "resolutionRule": "same internal entity AND same counterparty AND an agreement starting on or before the child's date; linked only when exactly one candidate survives",
+ "detail": [
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6TFY",
+   "document": "106.1 - Dec 2016 Pearl One-1st Floor-First Amendment-Zameen (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2016-12-01",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Munawar Hussain Malik",
+   "candidateCount": 1,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6TFZ",
+     "title": "Tenancy Agreement with Munawar Hussain 2nd  & 3rd Floor",
+     "start": "2015-12-01"
+    }
+   ],
+   "parentRecordId": "CTR-1QZ6TFZ",
+   "parentTitle": "Tenancy Agreement with Munawar Hussain 2nd  & 3rd Floor",
+   "parentStart": "2015-12-01",
+   "status": "CONFIRMED_PARENT",
+   "why": "exactly one earlier agreement with the same entity and counterparty"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6TFY",
+   "document": "Termination Agreement 2nd pearl One_Munawar Hussain_Imzee Consulting_20210630 (1).pdf",
+   "relationship": "TERMINATION",
+   "effectiveDate": "2021-06-30",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Munawar Hussain Malik",
+   "candidateCount": 1,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6TFZ",
+     "title": "Tenancy Agreement with Munawar Hussain 2nd  & 3rd Floor",
+     "start": "2015-12-01"
+    }
+   ],
+   "parentRecordId": "CTR-1QZ6TFZ",
+   "parentTitle": "Tenancy Agreement with Munawar Hussain 2nd  & 3rd Floor",
+   "parentStart": "2015-12-01",
+   "status": "CONFIRMED_PARENT",
+   "why": "exactly one earlier agreement with the same entity and counterparty"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6TFZ",
+   "document": "108.1-Nov2015PearlOne-2nd3rdFloor-FirstAmendment-Zameen (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2015-01-01",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Munawar Hussain Malik",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THQ",
+   "document": "Second Amendment_Zameen Media and M Ali Ilyas Khan_20210301 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2021-03-01",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Muhammad Ilyas Khan",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "Supplementary Agreement_Zameen Media and Jawed Iqbal_20200819 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2020-08-19",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "Second Amendment_Zameen Media and Jawed Iqbal_20201026_0001 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2020-10-26",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "Second Amendment_Zameen Media and Jawed Iqbal_20201026_0001 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2020-10-26",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "Second Amendment to Lease_Zameen Media and Jawed Iqbal_20210114 (2nd Floor) (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2021-01-14",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "First Amendment to Lease Agreement_Zameen Media and Jawed Iqbal_20210304 (4th Floor) (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2021-03-04",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "Third Amendment Lease Agreement_jawed Iqbal_Zameen Media_20210930_ (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2021-09-30",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6THS",
+   "document": "Third Amendment Lease Agreement_jawed Iqbal_Zameen Media_20210930_ (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2021-09-30",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Jawed Iqbal",
+   "candidateCount": 2,
+   "candidates": [
+    {
+     "id": "CTR-1QZ6THT",
+     "title": "Lease Agreement",
+     "start": "2019-01-01"
+    },
+    {
+     "id": "CTR-1QZ6TJI",
+     "title": "Lease Agreement 4th Floor Susan Road Faisalabad",
+     "start": "2020-02-16"
+    }
+   ],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "PROBABLE_PARENT_NOT_OPERATIONAL",
+   "why": "2 earlier agreements share this entity and counterparty; the source does not say which was varied"
+  },
+  {
+   "family": "leases",
+   "childRecordId": "CTR-1QZ6TKE",
+   "document": "First Amendment to lease Agreement 20201121 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2020-11-21",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Naveed Hassan",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "services",
+   "childRecordId": "CTR-1AVF7HJ",
+   "document": "FirstAmendmentofAskariguardsAgreement_Mall35_20191126 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2019-11-26",
+   "entity": "Zameen Developments (Private) Limited",
+   "counterparty": "Askari Guards (PRIVATE) Limited",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "services",
+   "childRecordId": "CTR-1AVF7HJ",
+   "document": "FirstAmendmentofAskariguardsAgreement_Mall35_20191126.pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2019-11-26",
+   "entity": "Zameen Developments (Private) Limited",
+   "counterparty": "Askari Guards (PRIVATE) Limited",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "services",
+   "childRecordId": "CTR-10EG48A",
+   "document": "Third Amendment _Lease Agreement 2nd Floor Susan Road Faisalabad_20211227 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2021-12-27",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "HBFCL Through Faisal Murad",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "services",
+   "childRecordId": "CTR-10EG48A",
+   "document": "Second Amendment Lease Agreement 4th Floor Faisalabad_20220201 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2022-02-01",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "HBFCL Through Faisal Murad",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "services",
+   "childRecordId": "CTR-0YGTVEV",
+   "document": "FirstAmendmentofSupplyVeyBottle_20220329 (1).pdf",
+   "relationship": "AMENDMENT",
+   "effectiveDate": "2022-03-29",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Syed Zubair Hussain",
+   "candidateCount": 0,
+   "candidates": [],
+   "parentRecordId": null,
+   "parentTitle": null,
+   "parentStart": null,
+   "status": "SOURCE_ONLY_CHILD",
+   "why": "no earlier agreement with this entity and counterparty exists in the register — the instrument it varies is not in LegalOS"
+  },
+  {
+   "family": "licences",
+   "recordId": "LIC-0Q7NIBQ",
+   "document": "NOTIFICATION  (Extension in validity of Licences upto  August 31,  2026) (1).pdf",
+   "lifecycle": "EXTENSION",
+   "date": "2026-01-01",
+   "agreementsOnRecord": 1,
+   "earliestAgreement": "PEC License_ZD Engineering Solutions_20260311 (1).pdf",
+   "earliestAgreementDate": "2026-03-11",
+   "why": "the record is not a spend agreement",
+   "status": "NO_PARENT_REQUIRED"
+  }
+ ]
+}

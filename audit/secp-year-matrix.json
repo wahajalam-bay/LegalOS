@@ -1,0 +1,3706 @@
+{
+  "years": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "entities": 43,
+  "entityYearRecords": 250,
+  "matrix": [
+    {
+      "entity": "Deevar Developers (Private) Limited",
+      "entityKey": "deevar developers",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2018": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2019": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 14,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Downtown Rise Developments (Private) Limited [formerly Delta Centauri Developments]",
+      "entityKey": "downtown rise developments formerly delta centauri developments",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 29,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 34,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 26,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Dubizzle Labs (SMC-Private) Limited",
+      "entityKey": "dubizzle labs",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 18,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 49,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Dynamic Zameen Solutions (SMC-Private) Limited",
+      "entityKey": "dynamic zameen solutions",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Mall 35 Facilities Management (Private) Limited",
+      "entityKey": "mall 35 facilities management",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "non-group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": null,
+        "2026": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "MyZameen (SMC-Private) Limited",
+      "entityKey": "myzameen",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Online Classifieds Pakistan (SMC-Private) Limited",
+      "entityKey": "online classifieds pakistan",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2018": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2019": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 23,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 27,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Online Goods Store (SMC-Private) Limited",
+      "entityKey": "online goods store",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Property Transaction Services (Private) Limited",
+      "entityKey": "property transaction services",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "non-group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 26,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 23,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": null
+      }
+    },
+    {
+      "entity": "TAAD Technologies Private Limited formerly [TAAD Property Consultants (Private) Limited]",
+      "entityKey": "taad technologies formerly taad property consultants",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "non-group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 24,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 26,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": null
+      }
+    },
+    {
+      "entity": "Zameen Alpha (Private) Limited",
+      "entityKey": "zameen alpha",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 36,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 22,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Apex (SMC-Private) Limited",
+      "entityKey": "zameen apex",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Arcs (Private) Limited",
+      "entityKey": "zameen arcs",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 38,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 29,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Axis (Private) Limited",
+      "entityKey": "zameen axis",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 34,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 19,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Centre (SMC-Private) Limited",
+      "entityKey": "zameen centre",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 19,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 30,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Core (SMC-Private) Limited",
+      "entityKey": "zameen core",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 33,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Crest (SMC-Private) Limited",
+      "entityKey": "zameen crest",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 23,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Delta (Private) Limited",
+      "entityKey": "zameen delta",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 32,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 16,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 20,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 74,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 20,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 18,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 14,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 16,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Developments (Private) Limited",
+      "entityKey": "zameen developments",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2019": {
+          "folder": true,
+          "documents": 38,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 15,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 37,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 15,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 18,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Forte (SMC-Private) Limited",
+      "entityKey": "zameen forte",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Habitat (SMC-Private) Limited",
+      "entityKey": "zameen habitat",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Luxe (SMC-Private) Limited",
+      "entityKey": "zameen luxe",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 18,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Magnus (SMC-Private) Limited",
+      "entityKey": "zameen magnus",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Medallion (Private) Limited",
+      "entityKey": "zameen medallion",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 28,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 40,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 22,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Media (Private) Limited",
+      "entityKey": "zameen media",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2013": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2014": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2015": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2016": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2017": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2018": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2019": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 32,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 26,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 22,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Nexus (SMC-Private) Limited",
+      "entityKey": "zameen nexus",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Nord (SMC-Private) Limited",
+      "entityKey": "zameen nord",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": {
+          "folder": true,
+          "documents": 14,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 28,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 32,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 38,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Omega (SMC-Private) Limited",
+      "entityKey": "zameen omega",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Pavilion (SMC-Private) Limited",
+      "entityKey": "zameen pavilion",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 18,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Platinum (Private) Limited",
+      "entityKey": "zameen platinum",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 16,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 15,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 32,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Prime (SMC-Private) Limited",
+      "entityKey": "zameen prime",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2025": null,
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Properties (SMC-Private) Limited",
+      "entityKey": "zameen properties",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen REIT Management Company Limited",
+      "entityKey": "zameen reit management",
+      "entityType": "OTHER",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": {
+          "folder": true,
+          "documents": 40,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 46,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 19"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 33,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 15,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Residences (SMC-Private) Limited",
+      "entityKey": "zameen residences",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 16,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 19,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Sigma (Private) Limited",
+      "entityKey": "zameen sigma",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 36,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 8,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen South (SMC-Private) Limited",
+      "entityKey": "zameen south",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": {
+          "folder": true,
+          "documents": 7,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 31,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Terra (SMC-Private) Limited",
+      "entityKey": "zameen terra",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Venture One (Private) Limited",
+      "entityKey": "zameen venture one",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2019": {
+          "folder": true,
+          "documents": 61,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2020": {
+          "folder": true,
+          "documents": 25,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2021": {
+          "folder": true,
+          "documents": 12,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 34,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 13,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 9,
+          "financialStatements": "AVAILABLE",
+          "agm": "EVIDENCED",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Vistas (SMC-Private) Limited",
+      "entityKey": "zameen vistas",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 18,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "Zameen Zeta (SMC-Private) Limited",
+      "entityKey": "zameen zeta",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 14,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 17,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 3,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 4,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "ZI Projects (Private) Limited",
+      "entityKey": "zi projects",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "non-group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 11,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 21,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "ZI Universal (Private) Limited",
+      "entityKey": "zi universal",
+      "entityType": "PRIVATE_LIMITED",
+      "group": "non-group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": {
+          "folder": true,
+          "documents": 10,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "EVIDENCE_OF_SUBMISSION",
+          "acknowledgementStatus": "RECEIVED"
+        },
+        "2022": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2023": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2024": {
+          "folder": true,
+          "documents": 20,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 2,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NO_SOURCE_DOCUMENT",
+          "agmApplicable": true,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    },
+    {
+      "entity": "ZTech Management and IP Services (SMC-Private) Limited",
+      "entityKey": "ztech management ip services",
+      "entityType": "SMC",
+      "group": "group",
+      "years": {
+        "2012": null,
+        "2013": null,
+        "2014": null,
+        "2015": null,
+        "2016": null,
+        "2017": null,
+        "2018": null,
+        "2019": null,
+        "2020": null,
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": {
+          "folder": true,
+          "documents": 6,
+          "financialStatements": "NO_SOURCE_DOCUMENT",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2025": {
+          "folder": true,
+          "documents": 1,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        },
+        "2026": {
+          "folder": true,
+          "documents": 5,
+          "financialStatements": "AVAILABLE",
+          "agm": "NOT_APPLICABLE",
+          "agmApplicable": false,
+          "forms": [
+            "Form A",
+            "Form 9",
+            "Form 19"
+          ],
+          "filingStatus": "NOT_RECORDED",
+          "acknowledgementStatus": "NONE"
+        }
+      }
+    }
+  ]
+}

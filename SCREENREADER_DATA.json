@@ -1,0 +1,335 @@
+{
+  "generatedAt": "2026-09-28T11:46:53.219Z",
+  "method": "Chrome accessibility semantics read from the rendered DOM (the tree assistive technology consumes). NOT a screen-reader run; no conformance level claimed.",
+  "flows": [
+    {
+      "workflow": "Requester Home",
+      "route": "/portal",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Requester Portal"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 34,
+      "unnamed": 0,
+      "fields": 0,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [
+        {
+          "headers": 9,
+          "namedHeaders": 9,
+          "sortable": 0,
+          "rows": 3,
+          "linkRows": 3,
+          "rowLinks": 3
+        }
+      ],
+      "tablists": [
+        {
+          "label": "",
+          "tabs": 3,
+          "named": 3,
+          "selected": 1
+        }
+      ],
+      "liveRegions": 0,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Raise a Legal Request",
+      "route": "/raise",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "You do not have access to this page"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 20,
+      "unnamed": 0,
+      "fields": 0,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [],
+      "tablists": [],
+      "liveRegions": 0,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Legal Requests",
+      "route": "/requests?rv=list",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Legal Requests"
+        },
+        {
+          "level": "h2",
+          "text": "No module tasks"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 57,
+      "unnamed": 0,
+      "fields": 1,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [
+        {
+          "headers": 11,
+          "namedHeaders": 11,
+          "sortable": 10,
+          "rows": 3,
+          "linkRows": 3,
+          "rowLinks": 3
+        }
+      ],
+      "tablists": [
+        {
+          "label": "",
+          "tabs": 3,
+          "named": 3,
+          "selected": 1
+        }
+      ],
+      "liveRegions": 1,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Litigation Register",
+      "route": "/litigation",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Litigation & Disputes"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 652,
+      "unnamed": 0,
+      "fields": 1,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [
+        {
+          "headers": 10,
+          "namedHeaders": 10,
+          "sortable": 10,
+          "rows": 120,
+          "linkRows": 120,
+          "rowLinks": 120
+        }
+      ],
+      "tablists": [],
+      "liveRegions": 1,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Contract Register",
+      "route": "/contracts",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Contracts"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 639,
+      "unnamed": 0,
+      "fields": 1,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [
+        {
+          "headers": 10,
+          "namedHeaders": 10,
+          "sortable": 9,
+          "rows": 120,
+          "linkRows": 120,
+          "rowLinks": 120
+        }
+      ],
+      "tablists": [],
+      "liveRegions": 1,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Compliance Register",
+      "route": "/compliance/licenses",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Licences & Permits"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 77,
+      "unnamed": 0,
+      "fields": 1,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [
+        {
+          "headers": 8,
+          "namedHeaders": 8,
+          "sortable": 8,
+          "rows": 8,
+          "linkRows": 8,
+          "rowLinks": 8
+        }
+      ],
+      "tablists": [],
+      "liveRegions": 1,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Record Detail",
+      "route": "/rec/licence/LIC-0Q7NIBP",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "PCATP · ZD Design Consultants (Registered Partnership)"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 28,
+      "unnamed": 0,
+      "fields": 0,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [],
+      "tablists": [
+        {
+          "label": "",
+          "tabs": 3,
+          "named": 3,
+          "selected": 1
+        }
+      ],
+      "liveRegions": 0,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Documents",
+      "route": "/knowledge",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Knowledge Base"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 33,
+      "unnamed": 0,
+      "fields": 1,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [],
+      "tablists": [],
+      "liveRegions": 0,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    },
+    {
+      "workflow": "Users & Access",
+      "route": "/access",
+      "title": "LegalOS — Enterprise Legal Operations",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Users & Access"
+        }
+      ],
+      "landmarks": {
+        "nav": 1,
+        "main": 1,
+        "banner": 1,
+        "search": 0
+      },
+      "controls": 44,
+      "unnamed": 0,
+      "fields": 1,
+      "unlabelled": 0,
+      "placeholderOnly": 0,
+      "tables": [
+        {
+          "headers": 7,
+          "namedHeaders": 7,
+          "sortable": 7,
+          "rows": 12,
+          "linkRows": 12,
+          "rowLinks": 12
+        }
+      ],
+      "tablists": [
+        {
+          "label": "",
+          "tabs": 3,
+          "named": 3,
+          "selected": 1
+        }
+      ],
+      "liveRegions": 1,
+      "imagesWithoutAlt": 0,
+      "svgExposedToAT": 0
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+IT SERVICES AGREEMENT 
+ 
+ This IT Services Agreement (this “ Agreement ”) is entered into at Lahore [ ● ] on this 1 4 th day of [●DATE] [●MONTH] November 202 5 by and between: 
+ 
+ ZAMEEN MEDIA (PRIVATE) LIMITED , a company incorporated under the laws of Pakistan, with its registered office at Pearl One, 94 B/I, M . M . Alam Road, Gulberg III, Lahore, acting through its duly authorised representative [ Mr. Adil Ahmad Kamal ] (“ Zameen ” which expression shall, where the context so admits, mean and include its successors-in-interest and permitted assigns) . 
+ 
+ AND 
+ 
+ [ ● ] , MAQEN DEVELOPERS (PRIVATE) LIMITED , a company incorporated under the laws of Pakistan, with its registered office at [ ● ] , 56, Block-3, Gulberg III , Lahore, acting through its duly authorised representative [ ● ] , Mr. Muhammad Umar bearing CNIC No. 35202-7956467-9 (“ Customer ” which expression shall, where the context so admits, mean and include its successors-in-interest and permitted assigns). 
+ 
+ ( Zameen and the Customer shall also individually be referred to as “ Party ” and, collectively, “ Parties ” ) 
+ 
+ 
+ 
+ WHEREAS 
+ 
+ The Customer is undertaking business activities relating to a real estate project, named and styled as ‘ Madison Square- II Tipu Block ’ , comprising [ ● ] of commercial shops and corporate o ffices , based on area of 4 kanals and located at [ ● ] , Plot No. 7, Tipu Block, New Garden Town, Lahore , (“ Project ”) ; 
+ 
+ Zameen is in the business of providing digital solutions and IT and IT-enabled services to real estate developers, including inter alia generation of leads to attract more audience towards the business of the Customer ; and 
+ 
+ The Parties are desirous of entering into this Agreement for performance of the aforementioned services by Zameen with respect to the Project, including access to and utilization of Zameen’s online portal ‘www.zameen.com’ and lead generation system, on the understanding that the Customer shall grant Zameen exclusive rights to provide the se IT Services for the Project , as per the terms and conditions of this Agreement . 
+ 
+ NOW, THEREFORE , Zameen and the Customer, intending to be legally bound, agree to the terms and conditions set forth in this Agreement. 
+ 
+ GENERAL TERMS AND CONDITIONS 
+ 
+ DEFINITIONS &amp; INTERPRETATION : 
+ Definitions : 
+ 
+ Affected Party has the meaning assigned to it in Clause 16.3 ; 
+ 
+ Competent Authority means any federal, provincial or local government or any other competent authority empowered by law, which has jurisdiction over any aspect or part of the Project ; 
+ 
+ Defaulting Charges has the meaning assigned to it in Clause 15 .2 ; 
+ 
+ Escrow Account has the meaning assigned to it in Clause 9.1 ; 
+ 
+ Escrow Agent has the meaning assigned to it in Clause 9. 4 ; 
+ 
+ Intellectual Property means, with respect to a P arty, its inventions, technological innovations, discoveries, designs, formulas, know-how, processes, business methods, patents, trademarks, service marks, copyrights, computer software, ideas, creations, writings, lectures, illustrations, photographs, motion pictures, scientific and mathematical models, improvements to all such property, and all recorded material defining, describing, or illustrating all such property, whether in hard copy or electronic form ; 
+ 
+ Inventory means the total number of Units listed in Table A of Annexure A ; 
+ 
+ Invoiced Amount has the meaning assigned to it in Clause 8. 1 ; 
+ 
+ IT Services means all the IT services listed in Annexure B to be provided by Zameen during the Term ; 
+ 
+ Lead (s) means a ny person who expresses an y interest in the Project on a nd from the Effective Date; 
+ 
+ Product Specifications shall include the Inventory, Price Schedule, Payment Plans, Project Floor Plans and Permissible Discounts as specified in Annexure A; 
+ 
+ Price Schedule means the benchmark price s for Units in the Inventory on the basis of which the market price is to be determined for the graphics to be designed and social media campaigns, as specified in Table B of Annexure A ; 
+ 
+ Service Fee means the consideration payable to Zameen for the performance of IT Services, as stipulated in Clause 5.1 ; 
+ 
+ Service Period has the meaning assigned to it in Clause 4.1 ; 
+ 
+ Schedule of Work means the Schedule of Work attached as Annexure C ; 
+ 
+ Term has the meaning assigned to it in Clause 2.1 ; and 
+ 
+ Unit means a single hotel/service apartment commercial shop or corporate office in the Project as listed in Table A of Annexure A . 
+ 
+ Interpretation : 
+ 
+ Any terms used in this Agreement in the singular, where the context so permits, shall be deemed to include the plural and vice versa. 
+ 
+ TERM &amp; SCOPE: 
+ 
+ This Agreement shall be effective from [● ] [ the Effective Date ] and may be terminated after the expiry of the Service Period in accordance with Clause 1 3 .1 below (“ Term ”) . 
+ 
+ The Customer has agreed to exclusively avail Zameen’s IT Services with respect to the Project, and Zameen has agreed to provide the IT Services to the Customer subject to the grant of exclusivity by the Customer to Zameen, as per the terms and conditions of this Agreement. 
+ 
+ EXCLUSIVITY 
+ 
+ The Customer hereby grants an exclusive right to Zameen to provide IT Services with respect to the Project, to the exclusion of all third parties, except to the limited extent permitted under this Agreement. For the avoidance of doubt, Zameen shall have the exclusive rights to generate Leads with respect to the Inventory, and only such Leads shall be converted by the Customer, during the Term. 
+ 
+ Customer understands and acknowledges that Zameen shall have the right to authorize any third party, subject to written consent of the Customer , to provide IT Services , or any part thereof , in respect of the Project during the Term. 
+ 
+ Notwithstanding anything in this Agreement, the Customer hereby grants to Zameen, until 1 (one) year after the termination of this Agreement, the right of first refusal to provide IT Services upon the same terms and conditions offered by a third-party , with respect to any other inventory available in the Project and/or in any other real estate project(s) undertaken by the Customer. Provided that: 
+ 
+ The Customer is under no obligation and shall have exclusive discretion to utilize the IT Services against any unit at any time; and 
+ 
+ The right of first refusal shall extend to any unit or inventory made available for IT Services during the Term or within 1 (one) year of expiry t hereof . 
+ 
+ The right of first refusal under Clause 3. 3 is exclusively granted to Zameen on the terms and conditions in this Agreement, or as otherwise mutually agreed in writing between the Parties. 
+ 
+ SERVICES 
+ 
+ Zameen shall provide the IT Services for a period of three (3) years commencing from the lapse of the Mobilisation Time (“ Service Period ”) , subject to the Customer acquiring and maintaining all necessary approvals and no-objection certificates for the Project from Competent A uthorities. 
+ 
+ The Customer acknowledges and agrees that for performance of IT Services under this Agreement, Zameen shall have the absolute right and discretion to determine the mediums used to deliver the IT Services with respect to the Project, including , inter alia , determining the appropriate strategy, budget and platforms to utilise. 
+ 
+ Zameen shall utilise its proprietary softwares , including inter alia PropForce and CRM, for the purpose of providing IT Services such as inventory management, Leads generation, Leads management, call logging, etc. 
+ 
+ Customer acknowledges and agrees that the provision of the IT Services hereunder shall not be construed as Zameen providing any services to a b uyer or Lead of the Customer. Further, Zameen , for the purposes of this Agreement, is not an agent of the Customer and is merely providing IT Services for generating Leads for the products of the Customer. 
+ 
+ Customer acknowledges and confirms that the Customer shall be solely responsible for recovery of any payments from buyers . 
+ 
+ SERVICE FEES 
+ 
+ As consideration for the performance of IT Services, Zameen shall be entitled to a Service Fee equal to PKR 3075 / - (Pakistani Rupees [●] Three thousand and seventy-five only) for every Lead generated by Zameen during the Service Period (“ Service Fee ”) . 
+ 
+ The number of Leads generated by Zameen shall be variable, but Zameen shall not charge an aggregate Service Fee exceeding PKR 719,586,600 /- (Pakistani Rupees [●] only Seventy-one million nine hundred fifty-eight thousand and six hundred rupees ) during the Term . 
+ 
+ The Customer agrees and acknowledges that Zameen shall be entitled to the applicable Service Fee against any Leads generated within a period of ninety (90) days from the expiry or termination of this Contract. 
+ 
+ PERFORMANCE OF IT SERVICES 
+ 
+ Zameen shall mobilise IT Services under this Agreement after [●] ( [●] ) 30 days following the provision of the following documents, material and information by the Customer ( “Mobilisation Time” ) required to enable Zameen to perform the IT Services : 
+ 
+ A ll necessary approvals for the Project from the relevant development, local, municipal authority or any other C ompetent A uthority , altogether confirming that the Customer has the legal authority to launch the Project ; and 
+ 
+ The Product Specifications including a ll necessary documents , materials , plans , floor plans, buyer payment plans, pricing, inventory details required for the purpose of graphics designing and migrat ion to the identified platforms and softwares along with any other medium determined by Zameen for the purpose of performing the IT Services . ; 
+ 
+ Execute an Escrow Agreement with the Escrow Agent in accordance with Clause 9. 5 . 
+ 
+ The Customer undertakes to provide Zameen with periodic updates as to the Product Specifications (as listed in Annexure A) and available Inventory of the Project so as to enable Zameen to update the digital marketing material and the details of the Inventory in the inventory management software regularly. 
+ 
+ All graphics designed for the Project shall include Zameen’s brand name and/or Zameen’s logo/trademarks as an official and exclusive service partner. 
+ 
+ PR ODUCT SPECIFICATIONS 
+ 
+ Zameen shall rely strictly on the p roduct s pecification s and p ayment p lans provided by the Customer in Annexure A . 
+ 
+ The Customer shall not modify any product specifications, including the Product Specification in Annexure A , during the Term, unless it notifie s the Zameen in advance hereto, subject to the anticipated impact on market conditions. 
+ 
+ The Customer confirms that the number of Units in the Project may vary as a result of structural reorganisation ,. . Any Unit created as a result of the reorganisation of the Inventory or addition of square footage thereto , shall be deemed to be come part of the Inventory . 
+ 
+ PAYMENT FOR IT SERVICES 
+ 
+ Zameen shall issue invoice s to the Customer periodically for payment of the Service Fee with respect to IT Services rendered during the invoice period ( “Invoiced Amount” ) . It is stated for the sake of clarity , that the Service Fee shall be payable by the Customer notwithstanding any documents to be filed, submitted and / or completed by or with respect to any Lead or Unit . 
+ 
+ Zameen’s invoice shall be deemed approved and accepted by the Customer on the lapse of seven ( 7 ) calendar days from the date of invoice, unless the Customer raises any reasonable dispute / objection , in writing , in case of over or under-billing . If no objection is received within the stipulated time above, the Customer shall have no right to raise any objection there after. 
+ 
+ Any objection notified by the Customer in accordance with Clause 8. 2 above must contain proof of over or under-billing . Moreover, the Parties shall ensure that any such objection or dispute is resolved within three (3) days from the date of notification . 
+ 
+ In the event that Customer fails to approve Zameen’s invoice ( s ) or issue letter (s) of instruction to the Escrow Agent under Clause 8.2, within 7 ( seven ) calendar days from the date of any such invoice, or within 7 ( seven ) calendar days of resolution of any objection raised by the Customer under Clause 8.2 , as the case may be, then Customer shall pay late p enalty of PKR [●]/- . Provided that l ate payment charges shall be in addition to the unpaid invoice and shall be paid by the Customer in aggregate . 
+ 
+ Any delay on the part of Customer in approving the invoice (s) and / or signing of the letter (s) of instruction shall result in an automatic proportionate extension of the Service Period of this Agreement. 
+ 
+ All applicable taxes shall be borne by either party as per local law(s). 
+ 
+ ESCROW ACCOUNT 
+ 
+ In order to ensure security of payments under this Agreement, the Parties agree and undertake to make all reasonable efforts to open an escrow account for collection and disbursal of payments ( “Escrow Account” ) , wherein the Customer shall collect all deposits against Inventory sold by the Customer up to a maximum of thirt y -five percent ( 30 3 5 %) of the s ale p rice of a Unit . The funds deposited in the Escrow Account shall ultimately be disbursed in the manner set-out hereunder , which shall be subject to collection of a minimum balance equal to ten percent (10%) of the s ale p rice of a Unit . 
+ 
+ The Escrow Account shall be opened and remain operational during the Term or such other time period after termination of the Agreement as may be mutually agreed between the Parties . 
+ 
+ All the expenses, fees, cost and tax es associated with the opening and operations of the Escrow Account, shall be borne by Zameen . 
+ 
+ The Escrow Account shall be opened with a scheduled bank of Pakistan mutually agreed between the Parties (“ Escrow Agent ”), in the denomination of the Pakistan Rupee and registered at a branch of bank mutually agreed between the Parties . 
+ 
+ The Parties shall do and cause to be done all such acts, deeds and things as lawfully required for the purpose of opening and operating the Escrow Account, including but not limited to entering into an escrow agreement with the Escrow Agent , providing corporate and constitutive documents, and completing signature cards , as well as for closure of the Escrow Account after expiry or termination of this Agreement . 
+ 
+ Funds from the Escrow Account shall be disbursed in light of approved invoices and on the basis a letter of instruction issued by the Parties to the Escrow Agent in the manner and form as prescribed by the Escrow Agent. 
+ 
+ The Escrow Agent shall only disburse funds from the Escrow Account strictly in accordance with the aforementioned letter of instruction duly signed by the authorised representative / signatory of each Party . 
+ 
+ Immediately upon receipt of written instructions from the Parties, the Escrow Agent shall disburse the funds as standing to the credit of the Escrow Account. 
+ 
+ In the event that any f unds remain in the Escrow Account after expiry or termination of this Agreement , the Parties shall issue final written instructions to the Escrow Agent for disbursal of such remaining f unds before closing the Escrow Account . 
+ 
+ CUSTOMER RESPONSIBILITIES &amp; WARRANTIES 
+ 
+ Zameen Sales hereby represents and warrants that: 
+ 
+ it has power to execute, deliver and perform its obligations under this Agreement; and all necessary action has been taken to authorize the execution, delivery and performance of this Agreement, which constitutes its valid and legally binding obligations enforceable in accordance with the terms stated herein. 
+ 
+ the execution, delivery and performance of this Agreement will not (a) contravene any existing law, regulation or authorization to which it is subject (b) result in any breach of or default under any agreement or other instrument to which it is a Party or is subject to or (c) contravene any provision of its constitutive documents or rules and regulations to which it is subject. 
+ 
+ Zameen Sales shall ensure and undertakes that at all times there is nothing in any law applicable to Zameen Sales including but not limited to its constitutive laws, bye-laws, rules, regulations and policies, by whatever name called, which prevents, restricts, curtails, hampers or hinders the objectives of this Agreement. 
+ 
+ Zameen Sales has sufficient capacity, resources, technical expertise, capital, and know-how necessary for the effective performance of its obligations under this Agreement including specialties in sales, marketing and promotion 
+ 
+ 
+ The Customer hereby represents, warrants , affirms or undertakes as follows: 
+ 
+ The Customer has the lawful authority to enter into and execute this Agreement [ through the duly authorized representative first mentioned above ] . 
+ 
+ The Customer is the absolute owner of the Project and the Project land area (or holds a valid attorney from the landowner to develop, manage and sell the Project), and that the Project and the Project lands are free from any lien, charge, encumbrance, etc. of whatsoever nature, which shall remain unencumbered throughout the Term except in accordance with this Agreement. The Customer further undertakes to obtain and maintain all necessary permissions, approvals and NOCs for the Project from all Competent Authorities as and when required, until completion of the Project. In the event of any revocation, lapse or non-compliance with respect to such permissions and approvals, the Customer shall immediately inform Zameen. 
+ 
+ The Customer acknowledges and undertakes that the Product Specification attached herewith as Annexure A shall be accurate and in accordance with the approvals granted by the Competent Authorities, and the Customer shall construct the Project strictly in compliance thereof. The Customer further undertakes that it shall not make any changes whatsoever to the Project Specifications, or make any other significant structural change without consulting with Zameen , and a failure to do so shall be construed as a material breach of this Agreement. 
+ 
+ The Customer owns all rights, title and interest in and to the Intellectual Property related to the Project, and the use of the same does not and will not result in the breach of the Intellectual Property Rights of any third party. 
+ 
+ The Customer shall strictly adhere to the construction schedule (“Schedule of Work”) in respect of the Project, attached herewith as Annexure C . In the event that Customer fails to adhere to the Schedule of Work and work on the site has been halted for a period exceeding thirty (30) days, Zameen may suspend the IT Services in respect of the Project, as well as utilization of Zameen’ online portal, after providing the Customer a notice of thirty (30) days in writing. The said suspension shall continue till Customer is in compliance with the Schedule of Work. Zameen may consult with Customer before suspension of services under this clause. Any delay in construction by the Customer in terms of this clause shall result in an equal extension in the Service Period . 
+ 
+ The Customer is and shall be liable to pay, and shall pay, all sums due and payable for the purchase, transfer and conveyance of the Project land, construction and development of the Project, along with any government dues, taxes, penalties and/or charges in relation t heret o. However, the Customer shall not be responsible to pay any sales tax on services on any services rendered by Zameen Sales. All taxes due in relation to the services contemplated under this Agreement shall be paid exclusively by Zameen Sales. 
+ 
+ The Customer shall ensure timely payment to Zameen under this Agreement, strictly in accordance with the provisions hereof . 
+ 
+ Notwithstanding anything contrary contained in this Agreement, in the event Customer fails to timely perform any of its obligations under this Agreement, the Service Period shall be automaticall

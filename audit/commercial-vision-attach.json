@@ -1,0 +1,614 @@
+[
+ {
+  "fileId": "1ZqqVNgn1RBkd9n5PuBMBDHpflUbnfGDy",
+  "filename": "PART I- GENERAL CONSTRUCTION [Final Version].docx",
+  "toProject": "Mall 35",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "propertyOrUnit",
+    "value": "MALL 35"
+   }
+  ]
+ },
+ {
+  "fileId": "1ZCYOGw7MquNYcf5EgffakGvFQqpfT8V7",
+  "filename": "Construction of Drain Pipeline Agreement [20201124].docx",
+  "toProject": "Zameen Ace Mall",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZUI Investments"
+   },
+   {
+    "field": "counterparty",
+    "value": "Shelters Construction (Private) Limited"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Plot No. 15-A Sector J, Phase II, DHA, Islamabad"
+   }
+  ]
+ },
+ {
+  "fileId": "1eXHFxJzLk80X-nBcW8rcoKZcNq4fU3gl",
+  "filename": "Water Boring and Drilling Agreement [23072020].docx",
+  "toProject": "Mall 35",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "counterparty",
+    "value": "Mudassar Tanvir Khan (MS Corporation)"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Mall 35, Plot No.35-A, Police Station Road, Saddar, Rawalpindi Cantt."
+   }
+  ]
+ },
+ {
+  "fileId": "1MI0qm2-JsOoYMb8Hv5k65LejWosgjokP",
+  "filename": "Agreement to Sell for Hotel Apartments [20190903].docx",
+  "toProject": "Mall 35",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "HA/001"
+   }
+  ]
+ },
+ {
+  "fileId": "1rAtEwy57FZARyVE4ZLPUb2wquCNgLDfM",
+  "filename": "Agreement to Sell for Shops [20190905].docx",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35 (partnership firm)"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial Shop, Plot No. 35/A, Police Station Road, Rawalpindi Cantt."
+   },
+   {
+    "field": "agreementNumber",
+    "value": "CS/001"
+   }
+  ]
+ },
+ {
+  "fileId": "1qlqpI3gcPYnAkTXoRvSYVzDisuGlCFAx",
+  "filename": "Agreement to Sell  [20190624].docx",
+  "toProject": "Zameen Ace Mall",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZUI Investments"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "RA/001"
+   }
+  ]
+ },
+ {
+  "fileId": "1AXmQw4Q5NkNp-RXx7jCUnBDAG2AN_ZnO",
+  "filename": "Agreement to Sell [20201124].docx",
+  "toProject": "Zameen Aurum",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Platinum (Private) Limited"
+   }
+  ]
+ },
+ {
+  "fileId": "1WEArI1Z7fbGh_NKIlwwkrNF5gUqmMvHX",
+  "filename": "Agreement to Sell (Land-Mall 35) [20201106].doc",
+  "toProject": "Mall 35",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Naseehuddin Sheikh"
+   },
+   {
+    "field": "counterparty",
+    "value": "Mall 35 (joint venture of Zameen Alpha (Pvt) Ltd and EBCO Constructions (Pvt) Ltd)"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Plot No. 35/A, Police Station Road, Rawalpindi Cantt., measuring 2554.62 sq. yards"
+   }
+  ]
+ },
+ {
+  "fileId": "19nk8J6KxJdj69YG81ngFnlT9ByZ3pvSe",
+  "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   }
+  ]
+ },
+ {
+  "fileId": "15sxq8B2puqNoAnvZ91Nrj1m2D7v0qfv_",
+  "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit at Plot No. B-24-01, Silicon IT District, NSIT City, Lahore"
+   }
+  ]
+ },
+ {
+  "fileId": "1sQGbY8y2fFovWrJKYCS0rWEjJ70afWRa",
+  "filename": "250912-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1Od4z35FC-Iatek1UYMTDrJVyXVC6wYtq",
+  "filename": "250912-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit (office/commercial shop/plaza/food court) at Plot No. B-24-01, Silicon IT District, NSIT City, Lahore"
+   }
+  ]
+ },
+ {
+  "fileId": "1436Jy_kZR3MG019pYyovPkOjsatRdZh9",
+  "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit at Plot No. B-24-01, Silicon IT District, NSIT City, Lahore"
+   }
+  ]
+ },
+ {
+  "fileId": "1jLr8nlDhqlrgBAclg8TwVmh59LvG8OVX",
+  "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   }
+  ]
+ },
+ {
+  "fileId": "1TtaMbxLGFvc8IVGZf8mu_CfWo0tLyOxe",
+  "filename": "260204-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1zLuode2QjGND4ukZEBsZLZmw2njk1V39",
+  "filename": "260204-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Purchased Unit (office/commercial shop/plaza/food court), Plot No. B-24-01, Silicon IT District, NSIT City, Lahore"
+   }
+  ]
+ },
+ {
+  "fileId": "1omQ_2dDYzE9CdmKB64x2inR49c38LeEi",
+  "filename": "Zameen Aurum - T&Cs (Payment Receipt) - Reviewed FINAL 02062020 Clean.docx",
+  "toProject": "Zameen Aurum",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Aurum"
+   }
+  ]
+ },
+ {
+  "fileId": "1WuTxTBPjYTjtOzCs6y5JrLxb82WOUCD_",
+  "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1cMxXqVnJijuJ2cdtwV_FNAnrXcy3yJp-",
+  "filename": "251009-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   }
+  ]
+ },
+ {
+  "fileId": "1Zd8vS0UhEGq0CPYrY80-U892M9IpsI97",
+  "filename": "251009-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1H9XnAFjw5zCDGBmyAQe8-6Arjuk9h4BK",
+  "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1eEX9dnFCIXa5VN1NadZndiwzOhIVGH1i",
+  "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial/office/plaza/food court unit (Purchased Unit)"
+   }
+  ]
+ },
+ {
+  "fileId": "1dd5H7SMsiKYJyfz3UTDT0rMBtfaDYPha",
+  "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1JOcGdZKbgUg2cqSbK1PGmodFhq8hH-PY",
+  "filename": "250929-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1PXjy-1mYzjAFkGUlSwJqtDA-LVREJhy-",
+  "filename": "250929-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "toProject": "Zameen Vault",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "ZAMEEN CREST (SMC-PRIVATE) LIMITED"
+   }
+  ]
+ },
+ {
+  "fileId": "1CuB20ZlMtPfA_QVjRlsOBWMRiJZ1KqVR",
+  "filename": "230830 - Agreement to Sell (Base Draft - Jade).docx",
+  "toProject": "Zameen Jade",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Arcs (Private) Limited"
+   }
+  ]
+ },
+ {
+  "fileId": "1LBWU5eKF6ACC3pFezuWkbjSiZ_d5cs2A",
+  "filename": "Mall 35 Agreement to Sell for Hotel Apartment Revised Original.pdf",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi"
+   }
+  ]
+ },
+ {
+  "fileId": "1Qg6gCNjN5gD4pdEsWyHjRA-Q8IQjLQo_",
+  "filename": "231114 - Mall 35 Agreement to Sell and Leaseback Agreement (Hotel Apartment) Revised - V3.docx",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi"
+   }
+  ]
+ },
+ {
+  "fileId": "1sAaBRVB_zPTPd8Rc4EzRl2ud-9pQjUnT",
+  "filename": "231102 - Mall 35 Agreement to Sell for Hotel Apartment v3.docx",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi"
+   }
+  ]
+ },
+ {
+  "fileId": "1IiBOoj1zCCAocopJQ6gOlO36AbsBDIlR",
+  "filename": "Mall35 Agreement to Sell.pdf",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial Shop, Plot No. 35/A, Police Station Road, Rawalpindi"
+   }
+  ]
+ },
+ {
+  "fileId": "1q8Rc15wAOUTnnpbrGFZbSCuu1cam307t",
+  "filename": "MALL-35 Commercial SPA[1].pdf",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Commercial Shop, Plot No. 35/A, Police Station Road, Rawalpindi"
+   },
+   {
+    "field": "agreementNumber",
+    "value": "CS/521"
+   }
+  ]
+ },
+ {
+  "fileId": "1fQ9_OW4BMlYWJ8fohmEtG8G6BkGCkS3g",
+  "filename": "HOTEL & LEASEBACK AGREEMENT_MALL 35.pdf",
+  "toProject": "Mall 35",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Plot No. 35/A, Police Station Road, Rawalpindi"
+   }
+  ]
+ },
+ {
+  "fileId": "1ccQfmsQGqpw4RvkjSuHI4SAtW1YpXJC1",
+  "filename": "Leaseback Agreement for Hotel Apartments_Mall 35_20190909.docx",
+  "toProject": "Mall 35",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Mall 35"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Hotel Apartment, Mall 35"
+   }
+  ]
+ },
+ {
+  "fileId": "1u6Fjo3YSO2TOS6KLSnccIJFoLXImRvLA",
+  "filename": "GolfViewRumanza_20220204.pdf",
+  "toProject": "Golf View Rumanza",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Media (Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "ZB Developers"
+   }
+  ]
+ },
+ {
+  "fileId": "1tEs1rsX2l92Ef97BcuzUAzjkkNbuJzwy",
+  "filename": "240429 - Fifth Amendment- Boulevard Heights - v2.docx",
+  "toProject": "Boulevard Heights",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Media (Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "ZSS Developers"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "one tower B+G+6, 128 residential apartments and 233 shops; inventory revised 379 to 389 units"
+   }
+  ]
+ },
+ {
+  "fileId": "1q86KXtFTubieSN5uX2gsOG0I8kRxlZJi",
+  "filename": "Settlement Challan (2).pdf",
+  "toProject": "Grande Palladium",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP"
+   }
+  ]
+ },
+ {
+  "fileId": "15eRsATpMFfHuL9F0YsK9WwD2Wemfva2b",
+  "filename": "Corporate Guarantee Challan.pdf",
+  "toProject": "Grande Palladium",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP"
+   }
+  ]
+ },
+ {
+  "fileId": "1YaOyerJUWKchRoM5XEYvrTJdT61uU925",
+  "filename": "JV Termination Challan.pdf",
+  "toProject": "Grande Palladium",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP"
+   }
+  ]
+ },
+ {
+  "fileId": "1aNdZKkHrs87P5S38XeOr4G8b8imMAuYW",
+  "filename": "Challan Partnership.pdf",
+  "toProject": "Grande Palladium",
+  "confidence": "HIGH",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Axis (Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "Earthlink Developments LLP"
+   }
+  ]
+ },
+ {
+  "fileId": "1s9yZaLQfQ5edWTWyvDAf5oIUpTIyKkvK",
+  "filename": "250818-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+  "toProject": "Zameen Vault",
+  "confidence": "CONFIRMED",
+  "corroboration": [
+   {
+    "field": "entity",
+    "value": "Zameen Crest (SMC-Private) Limited"
+   },
+   {
+    "field": "counterparty",
+    "value": "Punjab Central Business District Development Authority"
+   },
+   {
+    "field": "propertyOrUnit",
+    "value": "Plot No. B-24-01 measuring 21.39 kanal at NSIT, Silicon IT District, Lahore"
+   }
+  ]
+ }
+]

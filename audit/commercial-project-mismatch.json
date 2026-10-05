@@ -1,0 +1,1076 @@
+{
+ "summary": {
+  "documentsRead": 377,
+  "withAProjectStated": 264,
+  "named": 66,
+  "note": "only counted where the document names another project that exists in this estate",
+  "contradictsFolder": 18,
+  "executedMismatches": 5,
+  "precedentMismatches": 13,
+  "identifiesUnfoldered": 48
+ },
+ "findings": [
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1Cly-DzwGrzmThw9gdNCkOPCa861oi2EI",
+   "filename": "Aurum Area Summary.pdf",
+   "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Supporting Documents",
+   "folderSays": "Zameen Quadrangle",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": true,
+   "severity": "EXECUTED_DOCUMENT_NAMES_ANOTHER_PROJECT",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1N1uCb_ukxPrD_mKcjede7ziYwsKaTJUz",
+   "filename": "Zameen Aurum - CVT (1).pdf",
+   "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+   "folderSays": "Zameen Ace Mall",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": true,
+   "severity": "EXECUTED_DOCUMENT_NAMES_ANOTHER_PROJECT",
+   "draftMarkers": [
+    "filename says CVT but the receipt is for advance tax under section 236W"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1hL2C1_t3F2gWx_xEiqjdBElQgAXgxENt",
+   "filename": "Zameen Aurum - 236K (1).pdf",
+   "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+   "folderSays": "Zameen Ace Mall",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": true,
+   "severity": "EXECUTED_DOCUMENT_NAMES_ANOTHER_PROJECT",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1Ycyur4V56X9rYmqpgfp-rKMNLocSQnFp",
+   "filename": "Zameen Aurum - Property Tax (1).pdf",
+   "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+   "folderSays": "Zameen Ace Mall",
+   "documentSays": "Zameen Aurum",
+   "entity": "",
+   "executed": true,
+   "severity": "EXECUTED_DOCUMENT_NAMES_ANOTHER_PROJECT",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1cND7s8xDAPFksmX4jx33q0IrDP-cWuMr",
+   "filename": "Zameen Aurum - TMA Tax.jfif",
+   "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+   "folderSays": "Zameen Ace Mall",
+   "documentSays": "Zameen Aurum",
+   "entity": "",
+   "executed": true,
+   "severity": "EXECUTED_DOCUMENT_NAMES_ANOTHER_PROJECT",
+   "draftMarkers": [
+    "the scan also photographs an identity card, recorded here by description only"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1AKeTTmed0zaFhKehw0OsidA0DG8Ov8rl",
+   "filename": "Pilling Contract [20201012].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Piling Agreement",
+   "folderSays": "Piling Agreement",
+   "documentSays": "Mall 35 (Phase I)",
+   "entity": "Mall 35",
+   "executed": null,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1SfRdzy3auUD4NdXlC_KuRIV1SelKrf-c",
+   "filename": "Leaseback Agreement for Hotel Apartments [20190909 ].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Leaseback Agreement",
+   "folderSays": "Leaseback Agreement",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35 (partnership firm)",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Ace Mall",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1iUIbdo9DDEPfGkVR0sGEkv0_-3pKr5uP",
+   "filename": "Termination Agreement [Draft].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Termination Agreement",
+   "folderSays": "Termination Agreement",
+   "documentSays": "Zameen Ace Mall",
+   "entity": "ZUI Investments",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1_n20XTNfTuaw9OheWKZIPX4Y8ZSJoBCf",
+   "filename": "Mall35-AGL.PDF",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1-O5cv55II71fdDtraZPKQipT7xcFRSAD",
+   "filename": "Excavation Agreeement [23062020].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Excavation Agreement",
+   "folderSays": "Excavation Agreement",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "blank witness fields"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1_7DtU5tx2ih_W3KD6Q_HgtQqen6R2MsR",
+   "filename": "PART II- SPECIAL CONDITIONS [Latest Version].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+   "folderSays": "Construction of Grey Structure Contract",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1ZqqVNgn1RBkd9n5PuBMBDHpflUbnfGDy",
+   "filename": "PART I- GENERAL CONSTRUCTION [Final Version].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+   "folderSays": "Construction of Grey Structure Contract",
+   "documentSays": "MALL 35",
+   "entity": "",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Ace Mall",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1ZCYOGw7MquNYcf5EgffakGvFQqpfT8V7",
+   "filename": "Construction of Drain Pipeline Agreement [20201124].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+   "folderSays": "Construction Contracts - Misc",
+   "documentSays": "Zameen Ace Mall",
+   "entity": "ZUI Investments",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank witness signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1eXHFxJzLk80X-nBcW8rcoKZcNq4fU3gl",
+   "filename": "Water Boring and Drilling Agreement [23072020].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+   "folderSays": "Construction Contracts - Misc",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "blank witness fields"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1MI0qm2-JsOoYMb8Hv5k65LejWosgjokP",
+   "filename": "Agreement to Sell for Hotel Apartments [20190903].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+   "folderSays": "Agreement to Sell & Sale Deeds",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Ace Mall",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1qlqpI3gcPYnAkTXoRvSYVzDisuGlCFAx",
+   "filename": "Agreement to Sell  [20190624].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+   "folderSays": "Agreement to Sell & Sale Deeds",
+   "documentSays": "Zameen Ace Mall",
+   "entity": "ZUI Investments",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1rAtEwy57FZARyVE4ZLPUb2wquCNgLDfM",
+   "filename": "Agreement to Sell for Shops [20190905].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+   "folderSays": "Agreement to Sell & Sale Deeds",
+   "documentSays": "Mall 35",
+   "entity": "Mall 35 (partnership firm)",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1AXmQw4Q5NkNp-RXx7jCUnBDAG2AN_ZnO",
+   "filename": "Agreement to Sell [20201124].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+   "folderSays": "Agreement to Sell & Sale Deeds",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "19nk8J6KxJdj69YG81ngFnlT9ByZ3pvSe",
+   "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "folderSays": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "15sxq8B2puqNoAnvZ91Nrj1m2D7v0qfv_",
+   "filename": "250912-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "folderSays": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1sQGbY8y2fFovWrJKYCS0rWEjJ70afWRa",
+   "filename": "250912-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "folderSays": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1Od4z35FC-Iatek1UYMTDrJVyXVC6wYtq",
+   "filename": "250912-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "folderSays": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1436Jy_kZR3MG019pYyovPkOjsatRdZh9",
+   "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "folderSays": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text",
+    "blank signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1jLr8nlDhqlrgBAclg8TwVmh59LvG8OVX",
+   "filename": "260204-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "folderSays": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1TtaMbxLGFvc8IVGZf8mu_CfWo0tLyOxe",
+   "filename": "260204-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "folderSays": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text",
+    "blank signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1omQ_2dDYzE9CdmKB64x2inR49c38LeEi",
+   "filename": "Zameen Aurum - T&Cs (Payment Receipt) - Reviewed FINAL 02062020 Clean.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Payment Receipts & Booking Form",
+   "folderSays": "Payment Receipts & Booking Form",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Aurum",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1zLuode2QjGND4ukZEBsZLZmw2njk1V39",
+   "filename": "260204-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "folderSays": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text ([●])",
+    "blank signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1WuTxTBPjYTjtOzCs6y5JrLxb82WOUCD_",
+   "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "folderSays": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1cMxXqVnJijuJ2cdtwV_FNAnrXcy3yJp-",
+   "filename": "251009-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "folderSays": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1Zd8vS0UhEGq0CPYrY80-U892M9IpsI97",
+   "filename": "251009-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "folderSays": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text",
+    "blank signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1eEX9dnFCIXa5VN1NadZndiwzOhIVGH1i",
+   "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "folderSays": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1H9XnAFjw5zCDGBmyAQe8-6Arjuk9h4BK",
+   "filename": "251009-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "folderSays": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text [●] for developer/project name and address",
+    "blank signature block",
+    "blank fill-in lines for unit number, price, dates and buyer details"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1dd5H7SMsiKYJyfz3UTDT0rMBtfaDYPha",
+   "filename": "250929-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "folderSays": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1JOcGdZKbgUg2cqSbK1PGmodFhq8hH-PY",
+   "filename": "250929-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "folderSays": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "placeholder text",
+    "blank signature block"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1PXjy-1mYzjAFkGUlSwJqtDA-LVREJhy-",
+   "filename": "250929-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "folderSays": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+   "documentSays": "Zameen Vault",
+   "entity": "ZAMEEN CREST (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text",
+    "[●] placeholders for Developer name, project name and address",
+    "blank fill-in unit/price/date lines"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Boulevard Heights",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1tEs1rsX2l92Ef97BcuzUAzjkkNbuJzwy",
+   "filename": "240429 - Fifth Amendment- Boulevard Heights - v2.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Boulevard Heights",
+   "entity": "Zameen Media (Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "version marker v2",
+    "[TO BE ADDED] placeholder"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Grande Palladium",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1q86KXtFTubieSN5uX2gsOG0I8kRxlZJi",
+   "filename": "Settlement Challan (2).pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Grande Palladium",
+   "entity": "Zameen Axis (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Grande Palladium",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "15eRsATpMFfHuL9F0YsK9WwD2Wemfva2b",
+   "filename": "Corporate Guarantee Challan.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Grande Palladium",
+   "entity": "Zameen Axis (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Grande Palladium",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1YaOyerJUWKchRoM5XEYvrTJdT61uU925",
+   "filename": "JV Termination Challan.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Grande Palladium",
+   "entity": "Zameen Axis (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Grande Palladium",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1aNdZKkHrs87P5S38XeOr4G8b8imMAuYW",
+   "filename": "Challan Partnership.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous / EDZD Challans",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Grande Palladium",
+   "entity": "Zameen Axis (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Golf View Rumanza",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1u6Fjo3YSO2TOS6KLSnccIJFoLXImRvLA",
+   "filename": "GolfViewRumanza_20220204.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Golf View Rumanza",
+   "entity": "Zameen Media (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1s9yZaLQfQ5edWTWyvDAf5oIUpTIyKkvK",
+   "filename": "250818-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Crest (SMC-Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1uqDgHSZ506e-cHGRbwnh1i6cBtLDjWWf",
+   "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Media (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Mall 35",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1QDSrh7EAaZdTthnt6syjogLbQvce9XHJ",
+   "filename": "Joint Venture Agreement- [20190531].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+   "folderSays": "JV & Partnerships",
+   "documentSays": "Mall 35",
+   "entity": "Zameen Alpha (Private) Limited",
+   "executed": false,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "held in the contract templates library"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Ace Mall",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1UEvlU9elI0dUOr9Qs-PV2TJqFpEx072g",
+   "filename": "Geotechnical Consultancy Agreement [20201020].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+   "folderSays": "Construction Contracts - Misc",
+   "documentSays": "Zameen Ace Mall",
+   "entity": "ZUI Investments",
+   "executed": null,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Ace Mall",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1CtMGDJsRwqrDACCOMMu8N6RQPG9y-0_9",
+   "filename": "MEP Design Consultancy Agreement [07072020].docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+   "folderSays": "Construction Contracts - Misc",
+   "documentSays": "Zameen Ace Mall",
+   "entity": "ZUI Investments",
+   "executed": null,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Hive",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1fOIZZ5Ayi_HEPqP0eDLj8XZHyFjBsKXF",
+   "filename": "260730 - IT Services Agreement - Zameen Hive_0001.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Hive / IT Services Agreement",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Hive",
+   "entity": "Zameen Media (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [
+    "the e-stamp was issued two months after the stated effective date"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Hive",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "17oZE52RQknHPik_yUfS9tdROlaJHvDwu",
+   "filename": "260730 - Project Sales Agreement - Zameen Hive_0001.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Hive / Project Sales Agreement",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Hive",
+   "entity": "Zameen Core (SMC-Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Quadrangle",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1adnJBO8HZ24yvRl29I-_EhHSbgeieohD",
+   "filename": "AgreementforSupplyofReady-MixConcrete_ZameenQuadrangle_20210616.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Quadrangle",
+   "entity": "",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "MEDIUM"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1i40dEge7tmlnmDzBDtdBx4SC_Mln1992",
+   "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Media (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "MEDIUM"
+  },
+  {
+   "namesKnownProject": "Zameen Vault",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1sR1dyfzkpOT6MXlb3dDdILRsY-aVlHWB",
+   "filename": "Project Sales agreement Zameen Vault_20250508.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Vault",
+   "entity": "Zameen Core (SMC-Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "MEDIUM"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1HU3-CHXUWuNtiBNi9tBCOeDak5kVh0zu",
+   "filename": "AgreementforsupplyofReadyMixConcrete_ZameenPlatinumTetraReadyMix_20210504.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+   "folderSays": "Construction Contracts - Misc",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Eon",
+   "kind": "IDENTIFIES_UNFOLDERED_DOCUMENT",
+   "fileId": "1pEp1Ji3gPwBO4PJ6wqzzCcJM_6ef_FK_",
+   "filename": "Zameen EON Project Sales Agreement_0001.pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Eon / Project Sales Agreement_",
+   "folderSays": "Zameen Media PPA's",
+   "documentSays": "Zameen Eon",
+   "entity": "Zameen Core (SMC-Private) Limited",
+   "executed": true,
+   "severity": "FOLDER_MAKES_NO_PROJECT_CLAIM",
+   "draftMarkers": [],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Jade",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1Wp6dWr0vkNCYm2MDFniv7-FNXvWFRvth",
+   "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).pdf",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250225-With and Without Rental Promo",
+   "folderSays": "Zameen Arx - Lahore",
+   "documentSays": "Zameen Jade",
+   "entity": "Zameen Arcs (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Downtown Rumanza",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1KJWHX7cTOr7gYonOCXR81Y8APcO2qH6J",
+   "filename": "20220118 PRIV Downtown Rumanza_Agreement to Sell for Hotel Apartments.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+   "folderSays": "Zameen Ace Mall - ZAM",
+   "documentSays": "Down Town Rumanza",
+   "entity": "Delta Centauri Developments (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text",
+    "blank fill-in lines (unit number, purchase price, dates)"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Jade",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1072CD7yPdXToWDxHy5fpgZpC7WnXQBf4",
+   "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / GR at 15 Percent",
+   "folderSays": "Zameen Ace Mall - ZAM",
+   "documentSays": "Zameen Jade",
+   "entity": "Zameen Arcs (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Downtown Rumanza",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1bxusfdTeSQIlhUR4rqB8r6zrcQ21GYXo",
+   "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+   "folderSays": "Zameen Ace Mall - ZAM",
+   "documentSays": "Down Town Rumanza",
+   "entity": "Delta Centauri Developments (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text",
+    "[●] placeholders",
+    "blank party/date fields"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Arx",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1_OmhyWKE6nyUSYJRGqRRzvXQip3i1caw",
+   "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+   "folderSays": "Zameen Jade - Lahore",
+   "documentSays": "Zameen Arx",
+   "entity": "Zameen Residences (SMC-Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Arx",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1_EDGNWlb5fR40hHbCuTkare2yfiDQSRt",
+   "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model",
+   "folderSays": "Zameen Jade - Lahore",
+   "documentSays": "Zameen Arx",
+   "entity": "ZAMEEN RESIDENCES (SMC-PRIVATE) LIMITED",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Jade",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1CuB20ZlMtPfA_QVjRlsOBWMRiJZ1KqVR",
+   "filename": "230830 - Agreement to Sell (Base Draft - Jade).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore",
+   "folderSays": "Zameen Phoenix - Lahore",
+   "documentSays": "Zameen Jade",
+   "entity": "Zameen Arcs (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "placeholder text"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Pheonix",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "13sbqSNh8ViAH14vRUZGGtygY384BO_1h",
+   "filename": "Base Draft.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Mall 35 / Hotel Apartment",
+   "folderSays": "Zameen - Mall 35",
+   "documentSays": "Zameen Phoenix",
+   "entity": "Zameen Omega (SMC-Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "blank party fields"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Jade",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+   "filename": "Base Draft.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore",
+   "folderSays": "Zameen Neo - Lahore",
+   "documentSays": "Zameen Jade",
+   "entity": "Zameen Arcs (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "blank party fields",
+    "filed under a different project's folder"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+   "filename": "Base Draft.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+   "folderSays": "ZD - Golf View Rumanza - Multan",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "blank execution date",
+    "filed under a different project's folder"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1UpMldzsOGr_GopHdEA8GmENDvojG_Y60",
+   "filename": "iii - Aurum - Site Plan.pdf",
+   "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+   "folderSays": "Zameen Ace Mall",
+   "documentSays": "Zameen Aurum",
+   "entity": "",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "hand-drawn",
+    "unsigned"
+   ],
+   "confidence": "HIGH"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1BzuXSd9_9r6yMBxK-z0ltt2T2OlAj_D-",
+   "filename": "Agreement to Sell (Zameen Aurum) - Base Draft for Furnishing Clause (Approved by CEO).docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause",
+   "folderSays": "Zameen Jade - Lahore",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "blank execution date"
+   ],
+   "confidence": "CONFIRMED"
+  },
+  {
+   "namesKnownProject": "Zameen Aurum",
+   "kind": "CONTRADICTS_FOLDER",
+   "fileId": "1n3vBlKXz1Tl0px3NJvR3q8jJyFfA3A_w",
+   "filename": "Base Draft.docx",
+   "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing)",
+   "folderSays": "ZD - Downtown Rumanza - Multan",
+   "documentSays": "Zameen Aurum",
+   "entity": "Zameen Platinum (Private) Limited",
+   "executed": false,
+   "severity": "PRECEDENT_CARRIES_ANOTHER_PROJECTS_DETAILS",
+   "draftMarkers": [
+    "blank signature block",
+    "filed under a different project's folder"
+   ],
+   "confidence": "CONFIRMED"
+  }
+ ]
+}

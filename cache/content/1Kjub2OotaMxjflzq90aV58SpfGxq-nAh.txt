@@ -1,0 +1,59 @@
+2024-07-31
+
+Transaction Confirmation Receipt
+Sender
+
+Mubashir Shameer
+
+Sender Phone Number
+
++44 7564 222560
+
+Sender Address
+
+34 Osborne Road, Huddersfield HD15HB, UK
+
+Recipient Name
+
+Ammar Saeed
+
+Recipient Bank Account Number
+
+25677000116803 (HBL- Habib Bank Limited)
+
+Transfer Amount
+
+£278.55
+
+Transfer Fee
+
+£0.00
+
+Total Charged
+
+£278.55
+
+Exchange Rate
+
+£1 = PKR 359.00
+
+Total to Recipient
+
+PKR 100,000.00
+
+Transfer Date
+
+2024-07-31 04:16 GMT+1
+
+Date Available
+
+2024-07-31 08:18 GMT+5
+
+Transaction ID
+
+1784798555194528356
+
+Copyright Taptap Send UK Limited, Registered in England and Wales, Company Number 10416468, Registered Office Epworth House, 25
+City Road, Shoreditch, London, EC1Y 1AA.
+Taptap Send UK Limited is authorised by the Financial Conduct Authority under the Electronic Money Regulations 2011, Firm Reference
+Number 900842, for the issuing of electronic money.

@@ -1,0 +1,1038 @@
+[
+ {
+  "fileId": "1HMXB3gzSAzl-Ay0dYdGkNT16hnRsAPov",
+  "filename": "NOC - Electicity connection TEMPLATE.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "APPROVAL",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1vUNNNJQlC9GxyyL2iYaJQig3hvc6uN1j",
+  "filename": "List of Standard Clauses.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1dn4uooeCuBTZ4kDdMfod_NtpQKzqN7Yn",
+  "filename": "Website Terms of Use_OLX Mall_20210716.DOCX",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Website Terms of Use",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1iUIbdo9DDEPfGkVR0sGEkv0_-3pKr5uP",
+  "filename": "Termination Agreement [Draft].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Termination Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date",
+   "names a specific project"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1DrzWcmvrG3j51Q9HMsBOVGLWiIj2sas0",
+  "filename": "Service Agreeement [classifieds ads]_Zameen Media.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Service Agreement [Classifieds]",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "TEMPLATE",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1bTAHfnmNmrLrhO6Oz4Evrn-SufhqsTdY",
+  "filename": "Privacy Policy_OLX Mall_20210716.doc",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Privacy Policy",
+  "contentState": "CONTENT_DRIVE_OCR",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1OGmw3eINQxkcTBdDALgz4clo64ba-4_8",
+  "filename": "001_Project Promotion Agreement (PPA)_STANDARD TEMPLATE.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / PPA",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1j52HlXzcJ5FJPJCJjSwNT__VFFK6j1b0",
+  "filename": "02 CONCISE TEMPLATE OF PPA.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / PPA",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "PPA",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1FaH37ULkWWjt17VUhxESOfLX2dWG3RDc",
+  "filename": "02 ANNEXURES (Concise).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / PPA",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1_DHpfPYpdI07AmVdL7OqITvAp3b17GF4",
+  "filename": "20230116 - Propforce - Terms of Use - Revised - Clean Draft.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Propforce Terms of Use",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1AKeTTmed0zaFhKehw0OsidA0DG8Ov8rl",
+  "filename": "Pilling Contract [20201012].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Piling Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1KArHr59HRokM31KJFpEmwDrfT3gK_-I5",
+  "filename": "T&Cs of Online Payment Gateway_OLX Mall_20200227 [CLEAN].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Online Payment Gateway",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": null,
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1hs0ssunp8gBUVCiqWdob4kajDO9Ps72Q",
+  "filename": "T&Cs of Online Marketplace Service Agreement_Online Classifieds PK & Seller_20201222.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Online Marketplace Service Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1Mcjy-cFruCgRYgpY9OUEngnSr015GkKB",
+  "filename": "Online Marketplace Service Agreement_Online Classifieds PK & Seller.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Online Marketplace Service Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "AGREEMENT",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "10bzdiABDGpeTangkPoZYGMa-CjrhQoMD",
+  "filename": "NDA [bilateral information exchange]_20233101.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Non-Disclosure Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "NDA",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "160QeYs2pN-qfn5c6f97Amt3yX61CR_KW",
+  "filename": "NDA [unilateral]_20233101.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Non-Disclosure Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "NDA",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1T53TyqyYS5k16LplfUo1FzrvKUyMkZsd",
+  "filename": "EMPG NDA - standard [ ZS Edit 08072020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Non-Disclosure Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "NDA",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1gEUXl4RygpWoVNvIixCEE1iMb1LqM6Gl",
+  "filename": "01 MOU standard.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / MOUs",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "PPA",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1cQgzZ2omN3rTAwO1XDli3hks5biB-w4x",
+  "filename": "Investor Interest MOU 20200904 ZS EDIT.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / MOUs",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "MOU",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1pGolrXPBInKEYdpxXM4z8vl4Co7mT5bU",
+  "filename": "20200225 PRIV ZAGC JV_MOU [MH_printed version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / MOUs",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 6 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1Bz6OEDbKsk6p7evJi6uQmtiuUaO2WEnd",
+  "filename": "Logistics Services Agreement_Online Classifieds PK & Shaheen Cargo Services [execution version]_20210402.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Logistics Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1SfRdzy3auUD4NdXlC_KuRIV1SelKrf-c",
+  "filename": "Leaseback Agreement for Hotel Apartments [20190909 ].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Leaseback Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 5 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1MCSUW-YnPLXXQi6B3qO-irK0xYaOW3KE",
+  "filename": "Final Lease Agreement Draft - Zameen.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Lease Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "LEASE",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 4 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "16dr5MbQwHVBIyzOyAtyzr_o5pxoqY2_F",
+  "filename": "Termination Agreement Imzee- 1st Floor- (Last updated- 20181226).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Lease Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "AGREEMENT",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1dZKq-k5a3iVX5WSO1ZN11Bdb5JWR25ZN",
+  "filename": "Amended and Restated JV Agreement (execution version).doc",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1D1Oid4d4JkhtcToaiGEF4OwV-FMG6eux",
+  "filename": "Partnership Deed [Final Draft 20201224].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 5 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1QDSrh7EAaZdTthnt6syjogLbQvce9XHJ",
+  "filename": "Joint Venture Agreement- [20190531].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 6 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1kJLZ2x42y1UKMVEKCxOLEjy02XBAXIpc",
+  "filename": "Agreement [IT services]_EMPG Labs & Service Recipient.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT Services",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1B0gHsMH3sUcag8fKZonQkEbJg59zgIdu",
+  "filename": "240503 First Addendum_ IT Sevices Agreement-[Draft].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "ADDENDUM",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1vlzILRaz-2xfkvXh3wYEJ2CR_l9P_UIp",
+  "filename": "231204 Zameen Project Sales Agreement.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "17VfqW3AqHwlntCpUjIotXn5Se9G-e3Qz",
+  "filename": "231204 Zameen IT Services Agreement.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1qLBlrM0VM0s9n_qV3NprlfBJ_o8-tC6G",
+  "filename": "Undertaking for Payments-Medallion Account.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": null,
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 4 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "16ee51cCmvMaLdIv4B33LWCiY_Tr4GdT5",
+  "filename": "240216_Tripartite Escrow Agreement_Draft [Legal HO].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 4 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1NK0GvPBiilOgoWPIeqV6BGT75oH9rMRd",
+  "filename": "240124_TripartiteEscrowAgreement_Draft [Post-meeting with Meezan] (1).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 4 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1z4ZQJrxqN0ID6yhlyjQFy76Eul3Hzy_k",
+  "filename": "231123_Memorandum_Tripartite_Standard_Draft [Legal-HO].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "MOU",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1iPAi7jssDjYsvXp56_fA0YINOs_le88M",
+  "filename": "IP Licence Agreement_Template(458562642_1) (1).DOCX",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IP Licensing Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1SFxk4Sh3LeCyFlZu5ZDGevqwvTpZoSju",
+  "filename": "Franchise Agreement_Mall 35 & Hotel One [EXECUTION VERSION].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Franchise Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date",
+   "carries an execution date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1U9GqgJ7aoovdebT4ne3AacoGuQHuYeQk",
+  "filename": "Expo Agreement [Dubai]_20210406.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Expo Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1fyiJJTtL4wK5oNW0R5lpCJKyfmqn7aR8",
+  "filename": "Expo Agreement [Local].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Expo Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 5 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1D1TE-mhnQBAKoPpVVRDauz-7cE9R8Fq2",
+  "filename": "Pakistan Property Show Terms and Conditions.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Expo Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1-O5cv55II71fdDtraZPKQipT7xcFRSAD",
+  "filename": "Excavation Agreeement [23062020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Excavation Agreement",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date",
+   "carries an execution date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1zrjXluyC6Xsa7CyDQE5fa6Q5Qjp_9x-D",
+  "filename": "Vehicle lease financing agreement- Adil Masud.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employee Lease Financing Agreement",
+  "contentState": "CONTENT_DRIVE_OCR",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1uPkFIvyseHw2UqJXyP1f702v1o6PvbOO",
+  "filename": "Design by Zameen Developments Consultancy Agreement for Big Projects [Standard 20210104].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Design by ZD",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1_7DtU5tx2ih_W3KD6Q_HgtQqen6R2MsR",
+  "filename": "PART II- SPECIAL CONDITIONS [Latest Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1hD1rrEVq2QnaScf5Cys5_eblrDT1zpNX",
+  "filename": "CONTRACT AGREEMENT [Final Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an execution date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1ZqqVNgn1RBkd9n5PuBMBDHpflUbnfGDy",
+  "filename": "PART I- GENERAL CONSTRUCTION [Final Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction of Grey Structure Contract",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1pD2fi0G5O3kdC4BlNcrMf-X0gkDvz9ue",
+  "filename": "Construction Contract (20201019).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1HU3-CHXUWuNtiBNi9tBCOeDak5kVh0zu",
+  "filename": "AgreementforsupplyofReadyMixConcrete_ZameenPlatinumTetraReadyMix_20210504.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1v35_NpSuYaj2sCJFlVIEOnYEZwGmUSFP",
+  "filename": "Agreement_TilesSupply_20150726.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_LOCAL_EXTRACT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1ZCYOGw7MquNYcf5EgffakGvFQqpfT8V7",
+  "filename": "Construction of Drain Pipeline Agreement [20201124].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 3 parties",
+   "carries an agreement date",
+   "carries an execution date",
+   "names a specific project"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1UEvlU9elI0dUOr9Qs-PV2TJqFpEx072g",
+  "filename": "Geotechnical Consultancy Agreement [20201020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date",
+   "names a specific project"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "15_FQjldX9hxZtroYIte1LnURAM0miHx_",
+  "filename": "Supply of RMC Agreement [New Draft] 20201014.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1eXHFxJzLk80X-nBcW8rcoKZcNq4fU3gl",
+  "filename": "Water Boring and Drilling Agreement [23072020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1CtMGDJsRwqrDACCOMMu8N6RQPG9y-0_9",
+  "filename": "MEP Design Consultancy Agreement [07072020].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 4 parties",
+   "carries an agreement date",
+   "names a specific project"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1gVTC-cClH3UMEU2R_R55dIRol-kAOAGs",
+  "filename": "Demolition Agreement [20190725].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "CONSTRUCTION",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1w0TnE7UNH8LroFKgcBKcIdlDSMEQwbFt",
+  "filename": "SLA Draft - HBL Cash Management Agreement Final Version.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Banking and Finance",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1KLLqTFI0Hru4l__bIf_1_FVPIOaSiFZL",
+  "filename": "MOU Marketing- BAFL  Zameen [Clean Version].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Banking and Finance",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "MOU",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1RgFZY2MdsbezM-pUmMVA5w8_ZSsvGT3c",
+  "filename": "ATM Agreement - Bank Alfalah Final 20200902.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Banking and Finance",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "14QIbFdNadYu-XkmPY_4ydFuuZAVCQIj4",
+  "filename": "Affiliate agreement- Propforce- Last updated- June 2019.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Affiliate Agreement- Propforce [work in progress]",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 6 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1Ry8Jefn3a2wOS_5OTxWBarIkqE2Zibge",
+  "filename": "20181203 INT Employee Lease Financing Agreement-[RB+MH edit].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employee Lease Financing Agreement / 00 Drafts",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 4 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1fZID4Cotyis6nAnEHKzQ1xeXtPb5v1X6",
+  "filename": "Employment Contract [without probation clause]_Zameen Developments.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Developments (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1Xg3n1pT19TkSyhlBbr_AoxHFjWubvbMA",
+  "filename": "Consultancy Agreement_Zameen Developments.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Developments (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SERVICE",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1rKmOu7U_kCYIhTELileW_9rtJ8TFCoQN",
+  "filename": "Employment Contract [with probation clause]_Zameen Developments.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Developments (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1PYkCJmCWITu4p-pw9b_e-CGt2E1kyOyi",
+  "filename": "Employment Contract [North]_Zameen Media_20233001 [SR, EA & FN edit] CLEAN.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Employment Agreement [North region]",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1dUAWh3eA_lDgcoL1nHmx-6j69a_DeLll",
+  "filename": "Fixed-Term Employment Contract_Online Classifieds Pakistan (1).pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited",
+  "contentState": "CONTENT_LOCAL_EXTRACT",
+  "documentType": "AGREEMENT",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1WuntTRSBXI8gw4cFK8FkkXsKWOnwzpmQ",
+  "filename": "Fixed-Term Employment Contract_Online Classifieds Pakistan.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited",
+  "contentState": "CONTENT_LOCAL_EXTRACT",
+  "documentType": "AGREEMENT",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "10LogAwuO_egqc-AUczQcY8IIiS6cEer5",
+  "filename": "Consultancy Agreement_Online Classifieds Pakistan.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SERVICE",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1ieVnueFULR3_EYkZ15kh7qLMjbievVwN",
+  "filename": "Employment Contract [without probation period]_Online Classifieds Pakistan.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1GVj0GpHE9zRggBjoQr9BcCdMwyPcjvok",
+  "filename": "Employment Contract [with probation clause]_Online Classifieds Pakistan.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1kN3svZaTB8McyIUOKyvsKIE4c8YKvLTQ",
+  "filename": "Fixed-Term Employment Contract_Online Classifieds Pakistan.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "AGREEMENT",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1whyGnR7XX5AltzAp94qABYin2nPogxY4",
+  "filename": "Consultancy Agreement_Dubizzle Labs.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / EMPG Labs (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SERVICE",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "11dN4ceUEKNu9Z--ZsEGEV2tVaTScKVf0",
+  "filename": "Fixed Term Employment Contract_EMPG Labs.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / EMPG Labs (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 3 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "17ujNJwxvKrJkaVrzHBFeHpbxWsDwx4iC",
+  "filename": "Employment Contract [without probation period]_EMPG Labs_20210601.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / EMPG Labs (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1gAFNGr2SMnDhV72qm7TfQeLpyaOnheDu",
+  "filename": "Employment Contract [with probation period]_EMPG Labs_20210603.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / EMPG Labs (SMC-Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1i8aXLcHr_aJxG1gTy4mWJcMrSgq-Qt6e",
+  "filename": "Employment Contract [without probation clause]_Zameen Media_20230320.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Media (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "15RXrzxB43wAWr6UlAOFBmsZSXPnxOFrn",
+  "filename": "Employment Contract [with probation clause]_Zameen Media_20230320.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Media (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1IXssMIoxW_5dEYm0vk6LQiKX8QfysAWm",
+  "filename": "Consultancy Agreement_Zameen Media.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Media (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SERVICE",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 4 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1qtHzmsNkfztL7gPRYHCiEK7jN_J8f5M-",
+  "filename": "Temporary Employment Agreement_Zameen Media.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Zameen Media (Private) Limited",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "SERVICE",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1zl50Jc8pvUdxkAxkUoVAGfBGGgQgi665",
+  "filename": "1908.002.01-DMA-CTL - HBFC DMA First Amendment.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / HBFCL",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "SERVICE",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1l3g-p-0RwISZJS1Pn6axvHNt5LNMwEQs",
+  "filename": "20190801 DMA-HBFCL.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / HBFCL",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "PPA",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date",
+   "carries an execution date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1iWxIyAjYruONeiWPXRbK0pfRHaUcVKRJ",
+  "filename": "Digital Marketing Agreement - Standard 11.10.2021.docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / 00 Drafts",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "NDA",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1wTBB2CzASerSRLlrxdcS6j4i0GKzVxdT",
+  "filename": "PRIV-HBFCL- Digital Marketing Agreement-Zameen (Last updated 20190716).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / 00 Drafts",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "118qYhRgz1c0nVtgovGLk3DXEFNri9mmL",
+  "filename": "20190828- First Amendment- HBFCL- [RB].docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / 00 Drafts",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": null,
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1HAmgItYJeR3BXh7H5_37MjjkxaQqQHI0",
+  "filename": "20190913 PRIV Google Advertising Service Agreement [2019].pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Google",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "SERVICE",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1061lQVRA_lq7RA0LC4ibXg0_VKrifhtw",
+  "filename": "20201029_DMA_Faysal Bank  (2).docx",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Faisal Bank",
+  "contentState": "CONTENT_NATIVE_TEXT",
+  "documentType": "JV",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1c5pHHrs3WvNuJ6yU6MK5jhbBBS69kFE2",
+  "filename": "SCB Legal Agreement.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / SCB",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "SERVICE",
+  "verdict": "PROBABLE_TEMPLATE_WITH_ONE_SIGNAL",
+  "signals": [
+   "names 2 parties"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1TF1j_rFZnYg7KxIfPXSp3pKOCakbafur",
+  "filename": "1908_002.00CTL-DMA - Escorts Bank.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Escorts",
+  "contentState": "CONTENT_VISION_READ",
+  "documentType": "SALE_DEED",
+  "verdict": "LOOKS_EXECUTED_REVIEW",
+  "signals": [
+   "names 2 parties",
+   "carries an agreement date"
+  ],
+  "readable": true
+ },
+ {
+  "fileId": "1KP3siJ4exWBGD59fZmOFRUSwMa8BfLVz",
+  "filename": "20191112 PRIV RA&Co.CA DMA.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Riaz Ahmed & Co Chartered Accountants",
+  "contentState": "CONTENT_DRIVE_OCR",
+  "documentType": "PPA",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ },
+ {
+  "fileId": "1QqoFmiij6vqSXz8bjecdLHJOdGh-nA9p",
+  "filename": "20200106 DMA Allied Bank Limited.pdf",
+  "path": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / Allied Bank Limited",
+  "contentState": "CONTENT_DRIVE_OCR",
+  "documentType": "SALE_DEED",
+  "verdict": "TEMPLATE_CONFIRMED",
+  "signals": [],
+  "readable": true
+ }
+]

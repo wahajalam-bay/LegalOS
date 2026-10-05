@@ -1,0 +1,73 @@
+{
+ "generatedAt": "2026-09-22T05:23:21.282Z",
+ "scope": "Commercial_Zameen Media Contracts",
+ "drive": {
+  "crawl": "unbounded — no depth, file, page or folder cap",
+  "folders": 351,
+  "files": 995,
+  "deepestFolderLevel": 12,
+  "failures": 0,
+  "writesToDrive": 0
+ },
+ "templateLibrary": {
+  "filesUnderRoot": 413,
+  "classified": 413,
+  "unclassified": 0,
+  "byState": {
+   "APPROVED_TEMPLATE": 312,
+   "REFERENCE_DOCUMENT": 19,
+   "DRAFT_TEMPLATE": 50,
+   "EXECUTED_OPERATIONAL_DOCUMENT": 12,
+   "WORK_IN_PROGRESS_TEMPLATE": 1,
+   "STANDARD_CLAUSE_LIBRARY": 3,
+   "NON_TEMPLATE_MISC": 6,
+   "EXECUTED_PRECEDENT_SAMPLE": 3,
+   "EDITOR_ARTEFACT": 7
+  },
+  "executedInstrumentsFoundInTemplateDrawer": 15,
+  "reconciles": true
+ },
+ "contractRegister": {
+  "records": 1252,
+  "withDocuments": 559,
+  "weakIdentity": 13,
+  "incompleteSource": 2,
+  "recordsWithRealConflicts": 106,
+  "realConflictInstances": 527,
+  "conflictsByField": {
+   "firstParty": 44,
+   "documents": 219,
+   "title": 25,
+   "end": 42,
+   "city": 60,
+   "value": 46,
+   "region": 21,
+   "type": 11,
+   "status": 1,
+   "department": 21,
+   "start": 35,
+   "counterParty": 2
+  },
+  "recordsWhereSourcesJustSpellItDifferently": 9,
+  "conflictPolicy": "both values kept and shown; LegalOS does not decide which source is correct"
+ },
+ "ppaWorkbooks": {
+  "workbooksRead": 4,
+  "bothTrackersKept": true,
+  "trackerComparison": "DIVERGENT — both hold rows the other does not",
+  "rowsWithAProjectName": 3683,
+  "logicalAgreements": 1183,
+  "onlyInBroadWorkbooks": 472,
+  "onlyInTrackers": 91,
+  "inBoth": 620,
+  "filingNumbersDifferingAcrossSources": 16
+ },
+ "invariants": {
+  "DRIVE_UNMODIFIED": true,
+  "NO_ARBITRARY_CAPS": true,
+  "UNCLASSIFIED_TEMPLATE_FILE": 0,
+  "TEMPLATE_FILES_RECONCILE": true,
+  "WORKBOOK_ROWS_RECONCILE": true,
+  "FILE_DISPOSITIONS_RECONCILE": true
+ }
+}

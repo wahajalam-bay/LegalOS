@@ -1,0 +1,155 @@
+DATE: 202 2 
+ CONVERTIBLE LOAN FACILITY AGREEMENT 
+ 
+ Between 
+ ONLINE CLASSIFIEDS PAKISTAN (SMC-PRIVATE) LIMITED 
+ 
+ and 
+ 
+ DAFTARKHWAN (PRIVATE) LIMITED 
+ 
+ This agreement (the “ Agreement ”) is dated 202 1 2022 and made between: 
+ EMPG LABS ONLINE CLASSIFIEDS PAKISTAN (SMC-PRIVATE) LIMITED , a company incorporated in Pakistan with company number 0170890 0105302 and whose registered office is at 8 th Floor, Mega Tower, 63-B, Main Boulevard 29 Q, Gulberg II, M.M. Alam Extension Road, Lahore , Gulberg II, Lahore, Gulberg Town, Lahore , Punjab, Pakistan (the “ Lender ” ) ; and 
+ DAFTARKHWAN (PRIVATE) LIMITED , a c ompany incorporated in Pakistan with company number 0102476 and whose registered office is at 3 rd Floor, Vogue Towers, 15 C/2, Gulberg III, M.M. Alam Road, Lahore, Pakistan (the “ Borrower ”). 
+ WHEREAS 
+ The Lender is a member of the group of companies under EMPG Holdings Limited, known as the Emerging Markets Property Group ( the “ EMPG Group ” ). 
+ The Lender has agreed to provide funding to the Borrower in accordance with the terms of this Agreement. 
+ IT IS AGREED as follows: 
+ Definitions and Interpretation 
+ Definitions 
+ In this Agreement : 
+ “ Adjustment Event ” shall mean any or all of the following, at any time, or by reference to any record date, while the Notes remain in issue: 
+ any allotment or issue of Shares by the Borrower by way of capitalisation of profits or reserves; 
+ any cancellation, purchase or redemption of Shares , or any reduction or repayment of Shares , by the Borrower ; 
+ any sub-division or consolidation of Shares by the Borrower ; and 
+ any issue of securities or other instruments convertible into Shares of the Borrower or any grant of options, warrants or other rights to subscribe for, or call for the allotment or issue of Shares in the Borrower ; 
+ “ Authorisation ” shall mean an authorisation, consent, approval, resolution, licence, exemption, filing, notarisation or registration; 
+ “ Business Day ” shall mean a day (other than a Saturday or S unday ) on which banks are open for general business in Pakistan ; 
+ “ Confidential Information ” shall mean the existence of this Agreement and the terms and conditions thereof ; 
+ “ Conversion Notice ” shall have the meaning set forth in Clause REF _Ref82434002 \r \h ‎ 6.1 ; 
+ “ Conversion Rate ” means the PKR:USD exchange rate as determined by the State Bank of Pakistan from time to time a s shown at https://www.sbp.org.pk/ecodata/rates/m2m/M2M-Current.asp ; 
+ “ EMPG Group ” shall have the meaning set forth in Recital REF _Ref82007477 \r \h ‎ (A) ; 
+ “ Encumbrances ” shall mean any and all liens, charges, security interests, options, claims, mortgages, pledges, proxies, voting trusts or agreements, obligations, understandings or arrangements or other restrictions on title or transfer of any nature whatsoever ; 
+ “ Facility ” shall mean the loan facility made available by the Lender to the Borrower pursuant to this Agreement as defined in Clause REF _Ref29751354 \r \h ‎ 2.1 ; 
+ “ Interest ” shall have the meaning set forth in Clause REF _Ref82084806 \r \h ‎ 4.1 ; 
+ “ KIBOR ” means the Karachi Interbank Offered Rate ; 
+ “ Law ” shall mean any statute, law, constitutional provision, code, regulation, ordinance, rule, ruling, judgment, decision, order, writ, injunction, decree, permit, directive, binding guideline or policy, or rule of common law, requirement of or other governmental restriction of or determination by any governmental entity or any interpretation of any of the foregoing by any governmental entity ; 
+ “ Liquidity Event ” shall mean: 
+ a liquidation, dissolution or winding-up of the Borrower ; 
+ a merger or consolidation of the Borrower (other than one in which the existing shareholders of the Borrower , following such merger or consolidation, own the majority (by voting power of the outstanding shares) of the surviving or acquired entity); 
+ an initial public offering on a recognised stock exchange; 
+ the closing of a transfer (by merger, sale, consolidation or otherwise), in one transaction or a series of related transactions, to a person or group of affiliated persons (other than in respect of an intra-group re-organisation), of the shares of the Borrower , where such person or group of affiliated persons would hold more than 50% of the shares of the Borrower ; or 
+ a sale, lease, transfer, exclusive license or other disposition of all, or substantially all of, the assets of the Borrower ; 
+ “ Maturity Date ” shall mean the earlier of (i) the date falling one month after the EMPG Group (acting through one or more of its UAE based group companies) has completed its equity investment in the Borrower ; and (ii) the date falling six three months after the date of this Agreement (or such other date as agreed between the Parties) ; 
+ “ Ordinary Share ” shall mean an ordinary share (including any partly paid ordinary share) in the capital of the Borrower as provided in the Borrower ’s constitutional documents ; 
+ “ Outstanding Amount ” shall mean at any time the then outstanding amount of the Facility ; 
+ “ Party ” shall mean a party to this Agreement ; 
+ “ PKR ” means Pakistani Rupees; 
+ “ Preferred Shares ” shall have the meaning set forth in Clause REF _Ref82007779 \r \h ‎ 6.1 ; 
+ “ Share ” shall mean: 
+ an Ordinary Share; 
+ a Preferred Share; or 
+ any other share of any class in the capital of the Borrower , issued, or to be issued, as applicable; 
+ “ UAE ” shall mean the United Arab Emirates; and 
+ “ USD ” shall mean the lawful currency of the United States of America. 
+ Construction 
+ Unless a contrary indication appears, a reference in this Agreement to: 
+ a “ Lender ”, any “ Party ” or any other person shall be construed so as to include its successors in title, permitted assigns and permitted transferees; 
+ “ indebtedness ” shall include any obligation (whether incurred as principal or as surety) for the payment or repayment of money, whether present or future, actual or contingent; 
+ a “ person ” shall include any individual, firm, company, corporation, government, state or agency of a state or any association, trust, joint venture, consortium or partnership (whether or not having separate legal personality); and 
+ a provision of Law shall be a reference to that provision as amended or re-enacted. 
+ Section, Clause and Schedule headings are for ease of reference only. 
+ The Facility 
+ The Facility 
+ Subject to the terms of this Agreement , the Lender makes available to the Borrower a convertible loan facility in an agg regate amount of PKR [ ] 44,100,000 ( equ al to USD 250,000 ) (the “ Facility ”). 
+ Purpose 
+ The Borrower shall use the Facility for its operational capital requirements. 
+ Availability of the Facility 
+ Following the execution of this Agreement by all Parties thereto, the Lender shall make the Facility available to the Borrower by wire transfer to the bank account of the Borrower as notified by the Borrower to the Lender. 
+ Interest 
+ The Facility will bear interest calculated in accordance with Clause REF _Ref82007972 \r \h ‎ 4.2 on the Outstanding Amount from and including the date on which the Lender pays the full amount of the Facility to the Borrower , payable and convertible in full on the Maturity Date (the “ Interest ”) . 
+ The rate of the Interest shall be equal to one year one-year K IBOR plus 1.75% per annum (the “ Interest Rate ”) unless the Facility is repaid prior to the financial year end of the Borrowe r, in which case no Interest will be payable . 
+ The Interest shall accrue and compound annually at the Interest Rate and shall be calculated on a daily basis and based on a year of 365 days. 
+ All principal payable in respect of the Facility and all Interest thereon shall be paid by the Borrower to the Lender without any deduction or withholding (whether in respect of set-off, counterclaim, duties, taxes or otherwise whatsoever), unless the deduction or withholding is required by law, in which event the Borrower shall: 
+ ensure the deduction or withholding does not exceed the minimum legally required; 
+ pay to the relevant taxation or other authorities, within the period for payment permitted by applicable law, the full amount of the deduction or withholding; and 
+ furnish to the Lender , within the period for payment permitted by applicable law, an official receipt or other evidence of payments to the relevant taxation or other authorities involved for all amounts deducted or withheld as aforesaid. 
+ Repayment 
+ On or before the Maturity Date, the Borrower shall pay the Outstanding Amount plus the Interest in USD (but payable in PKR at the Conversion Rate) by wire transfer to the bank account of the Lender as notified by the Lender to the Borrower, failing which C lause REF _Ref82001298 \r \h ‎ 6 shall apply . 
+ Conversion 
+ Conversion of Facility 
+ If the Borrower fails to repay the Lender in accordance with C lause REF _Ref82001354 \r \h ‎ 4 , the Lender shall be entitled to issue a notice to the Borrower (a “ Conversion Notice ”) requiring that the Outstanding Amount plus Interest in USD be converted into a new class of preferred ordinary shares in the capital of the Borrower (the “ Preferred Shares ”) . 
+ Upon the issue of the Conversion Notice in accordance with Clause REF _Ref82434002 \r \h ‎ 6.1 , the Outstanding Amount plus Interest in USD shall convert into Preferred Shares in accordance with the terms of this Clause REF _Ref82001298 \r \h ‎ 6 and the Borrower hereby undertakes : (i) to procure that it has sufficient authorised but unissued Preferred Shares to allow any such conversion to take place (including without limitation by altering its articles of association and obtaining the relevant approval or permission for share issuance) ; (ii) to obtain the relevant corporate authorities (including without limitation from its shareholders) to allow the conversion to take place; (iii) to issue such Preferred Shares to the Lender. 
+ Number of Preferred Shares 
+ The number of Preferred Shares (rounded up to the nearest whole number) to be issued to the Lender pursuant to clause REF _Ref82007779 \r \h ‎ 6.1 shall be determined as follows: 
+ A = B C 
+ Where: 
+ “ A ” = number of Preferred Shares, and where such number is not a whole number, rounded up to the nearest whole number; 
+ “ B ” = the Outstanding Amount plus the Interest in USD ; and 
+ “ C ” = the c onversion p rice, which shall be equal to USD 4.53 per Preferred Share . 
+ Conversion Procedure 
+ The Borrower shall immediately upon the receipt of a Conversion Notice effect the conversion for the number of Preferred Shares to which the Lender is entitled upon conversion and deliver a copy of the updated register of members of the Borrower along with the relevant form issued by the Securities and Exchange Commission of Pakistan (SECP) recording with the Lender’s name entered as the holder of such number of Preferred Shares, and as soon as practicable thereafter deliver to the Lender a share certificate for such number of Preferred Shares. 
+ The Preferred Shares to which the Lender is entitled upon conversion: 
+ shall be duly authorised and validly issued; 
+ shall be credited as fully-paid, free from all Encumbrances; 
+ shall rank in priority to the class of shares held in the Borrower by the Borrower’s current shareholders; 
+ shall have the right to one vote each; and 
+ shall be convertible to ordinary shares in the Borrower at an initial conversion rate of 1:1 on a fully diluted basis at any time at the option of each holder of more than 75% of that class of Preferred Shares , subject to any necessary adjustments for distributions, splits, combinations or similar events . Such mode of conversion may include, without limitation, a redemption, cancellation or buy back of the relevant Preferred Shares or a combination of any such methods and the subsequent issue of Ordinary Shares. 
+ Adjustments 
+ The Borrower undertakes that until the Maturity Date it shall (pending either the payment of any Outstanding Amount plus Interest or the issue of the Preferred Shares on conversion, each in accordance with the provisions of this Agreement) notify the Lender in writing as soon as reasonably practicable after the relevant board or general meeting of shareholders (whichever is the earliest) has resolved to implement an Adjustment Event specifying the prospective date of the Adjustment Event and the proposed terms of it . 
+ Following an Adjustment Event, the professional advisors or auditors of the Borrower for the time being shall certify to the Borrower in writing the adjustments to the number and nominal value of the Preferred Shares to be converted which they consider to be necessary so that, after such adjustment and on conversion, the Lender shall be entitled to receive the same percentage of the issued share capital of the Borrower carrying the same proportion of votes exercisable at a general meeting of shareholders and the same entitlement to participate in distributions of the Borrower , in each case as nearly as practicable, as would have been the case had no Adjustment Event occurred (and making such reduction or increase as is necessary to the premium arising on the issue and allotment of the Preferred Shares on conversion of the Outstanding Amount ). The Borrower shall then notify the Lender in writing of the necessary adjustment as determined by the professional advisors or auditors. 
+ Liquidation Preference 
+ If the Outstanding Amount is converted into Preferred Shares in accordance with Clause REF _Ref82001298 \r \h ‎ 6 , after such conversion, o n a distribution of assets on a Liquidity Event, the surplus assets of the Borrower remaining after payment of its liabilities shall be applied (to the extent that the Borrower is lawfully permitted to do so): 
+ first, to pay the Lender an amount per Share eq ual to the higher of: 
+ one times the Outstanding Amount that was converted into Preferred Shares , adjusted for share splits, plus any declared but unpaid dividends (provided that if there are insufficient surplus assets to pay the amounts per Share, all of the remaining surplus assets shall be distributed to the Lender ); and 
+ the distribution that would have been made to the Lender if the Preferred Shares had been converted into Ordinary Shares in accordance with clause REF _Ref82430637 \r \h ‎ 6.5.5 (provided that if there are insufficient surplus assets to pay the amounts per Share, all of the remaining surplus assets shall be distributed to the Lender ); and 
+ thereafter to pay the balance to the holders of the Ordinary Shares pro rata to the number of Ordinary Shares held by them. 
+ Warranties 
+ Unless otherwise stated, each Party to this A greement makes the representations and warranties set out in this Clause REF _Ref31707869 \r \h ‎ 8 to the other Party on the date of this Agreement. 
+ Status 
+ It represents and warrants that it is duly incorporated and validly existing under the law of its incorporation. 
+ It has the power to own its assets and carry on its business as it is being conducted. 
+ Binding obligations 
+ The obligations expressed to be assumed by it in this Agreement are legal, valid, binding and enforceable obligations. 
+ Non-conflict with other obligations 
+ The entry into and performance by it of, and the transactions contemplated by this Agreement do not and will not conflict with: 
+ any law or regulation applicable to it; 
+ its constitutional documents; or 
+ any agreement or instrument binding upon it or any of its assets or constitute a default or termination event (however described) under any such agreement or instrument. 
+ Power and authority 
+ It has the power to enter into, perform and deliver, and has taken all necessary action to authorise its entry into, performance and delivery of, this Agreement and the transactions contemplated by it. 
+ No limit on its powers will be exceeded as a result of the borrowing contemplated by this Agreement. 
+ Costs and Expenses 
+ Transaction Expenses 
+ Other than as specifically set forth herein, each of the Borrower and the Lender shall each bear only their own costs and expenses (including legal fees) incurred by them in connection with the negotiation, preparation and execution of this Agreement. 
+ Payment Mechanics 
+ Payment of the Facility 
+ The Lender shall pay the full amount of the Facility to the Borrower’s designated bank account within ten (10) Business Days of written notice from the Borrower to the Lender (such notice to specify the details of the designated bank account). 
+ Business Days 
+ Any payment which is due to be made on a day that is not a Business Day shall be made on the next Business Day in the same calendar month (if there is one) or the preceding Business Day (if   there is not). 
+ Notices 
+ Communications in Writing 
+ Any communication to be made under or in connection with this Agreement shall be made in writing (and be in English) and, unless otherwise stated, may be made by letter. 
+ Addresses 
+ The address of each Party for any communication or document to be made or delivered under or in connection with this Agreement is that identified with its name above, or any substitute address, fax number or department or officer as the Party may notify to the other Parties by not less than five Business Days’ notice. 
+ Delivery 
+ Any communication or document made or delivered by one Party to another under or in connection with this Agreement will only be effective: 
+ in the case of hand delivery to the address shown above, on the next Business Day after delivery; and 
+ in the case of delivery by an internationally recognised overnight courier to the same address, freight prepaid, on the next Business Day after delivery . 
+ Electronic Communication 
+ Any communication to be made between the Parties under or in connection with this Agreement may be made by electronic mail or other electronic means, if all Parties: 
+ explicitly agree that, unless and until notified to the contrary, this is to be an accepted form of communication; 
+ explicitly notify each other in writing of their electronic mail address and/or any other information required to enable the sending and receipt of information by that means ; and 
+ a ny electronic communication will be effective only when actually received in readable form. 
+ Any notice to be sent by electronic mail shall be sent to the following: 
+ if to the Lender, to imran@empg .com and mohammed@empg.com ; and 
+ if to the Borrower, to [ ] and [ ] . HYPERLINK "mailto:ahmad@daftarkhwan.com" ahmad@daftarkhwan.com and HYPERLINK "mailto:saad@daftarkhwan.com" saad@daftarkhwan.com . 
+ Partial Invalidity 
+ If, at any time, any provision of this Agreement is or becomes illegal, invalid or unenforceable in any respect under any Law of any jurisdiction, neither the legality, validity or enforceability of the remaining provisions nor the legality, validity or enforceability of such provision under the Law of any other jurisdiction will in any way be affected or impaired. 
+ Remedies and Waivers 
+ No failure to exercise, nor any delay in exercising, on the part of the Lender, any right or remedy under this Agreement shall operate as a waiver, nor shall any single or partial exercise of any right or remedy prevent any further or other exercise or the exercise of any other right or remedy. The rights and remedies provided in this Agreement are cumulative and not exclusive of any rights or remedies provided by Law. 
+ Amendments and Waivers 
+ Any term of this Agreement may be amended or waived only with the consent of all Parties. Notwithstanding the foregoing, a provision of this Agreement that exists for the sole benefit of the Lender may be waived by the Lender without the consent of the other Parties . 
+ Confidentiality 
+ Each Party agrees to keep the Confidential Information confidential and not to disclose it to anyone, save that: 
+ any Party may disclose Confidential Information provided it is required or

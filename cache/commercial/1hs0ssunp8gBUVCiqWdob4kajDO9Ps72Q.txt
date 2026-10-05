@@ -1,0 +1,603 @@
+TERMS AND CONDITIONS 
+ 
+ 
+ _________________ (the “ Effective Date ”) 
+ 
+ Online Classifieds Pakistan (SMC-Private) Limited (“ OLX ”) provides a collection of online resources which includes an online marketplace and e-commerce platform on the website mall.olx.com.pk and related sites and the mobile application of the platform . 
+ 
+ These Terms and Conditions represent the terms and conditions subject to which OLX’s services in relation to the online marketplace are offered to the Seller, including enabling the Seller to transact with the Customer online . 
+ 
+ DEFINITIONS 
+ 
+ Unless inconsistent with the context, the following words shall have the meaning assigned below:  
+ 
+ “Agreement” means the Online Marketplace Service Agreement executed by and between the Seller and OLX along with all annexures, amendments and revisions; 
+ 
+ “Applicable Law” means any law, proclamation, decree, ministerial decision, statute, statutory instrument, order, regulation, resolution, notice, legal precedent, by-law, directive, treaty or other instrument or requirement having the force of law within Pakistan and issued, declared, passed or given effect in any manner by any government authority; 
+ 
+ “Business Day” means every day of the week except Sundays and public holidays in Pakistan on which banks in which the Parties have account(s) are open for general banking business; 
+ 
+ “Claim” shall mean any and a ll foreseeable or unforeseeable, known and unknown, suspected and unsuspected, disclosed and undisclosed, alleged or actual and consequential action of whatsoever nature , cause of action (whether in tort, agreement or strict liability, and whether in law, equity, statutory or otherwise), dispute , demand, lawsuit, legal proceeding, administrative or other proceedings or litigation; 
+ 
+ “Confidential Information” means any information disclosed, supplied, available or accessible to the Seller, either directly or indirectly, either in writing or orally, relating to or in connection with the se Terms and Conditions and the Agreement including the ir content . Without limiting the generality of the foregoing, Confidential Information shall include inter alia proprietary, business, technical, financial or legal information of OLX , including but not limited to: (a) information relating to OLX products or services (including pricing), business policies or practices, customers (former, current, or potential), investors, employees, business and contractual relationships, business forecasts, sales and merchandising data, warehousing methods and marketing methods and plans; ( b ) information received from third parties that the Seller is obligated to treat as confidential; ( c ) all trade secrets; and ( d ) Customer Information; or any other information of the Customer and information related to any Order; 
+ 
+ “Content” shall mean all information, content and images submitted by the Seller in connection with the Website including but not limited to Product Information and Registration Details ; 
+ 
+ “Customer” means any person purchasing a Product through the Website; 
+ 
+ “Customer Information” means the information provided by the Customer for Order processing and shipping, including but not limited to name, CNIC, contact number, email address and shipping/billing address etc.; 
+ “Delivered by OLX” means the Fulfillment Model whereby the Seller is responsible for maintaining inventory of the Products at its own premises and making the Products available to OLX for delivery to Customers ; 
+ 
+ “Effective Date” means the date set out at the top of these Terms and Conditions ; 
+ 
+ “Events of Default” has the meaning assigned to it in para graph 90 ; 
+ 
+ “Fulfilled by OLX” means the Fulfillment Model whereby the Products are stored at OLX’s warehouse while the ownership of the Products remains with the Seller; 
+ 
+ “Fulfillment Model” means the delivery and storage model assigned to the Seller by OLX , and includes a reference to: ( i ) Delivered by OLX, (ii) Fulfilled by OLX or (iii) any other model assigned by OLX from time to time ; 
+ 
+ “Intellectual Property” means and includes any inventions, technological innovations, discoveries, designs, formulas, know-how, processes, business methods, patents, trademarks, service marks, copyrights, computer software, ideas, creations, writings, lectures, illustrations, photographs, motion pictures, scientific and mathematical models, improvements to all such intellectual property, and all recorded material defining, describing, or illustrating all such intellectual property, whether in hard copy or electronic form; 
+ 
+ “Losses” shall mean any and all damages (including, without limitation, direct, consequential, economic, exemplary, future, incidental, indirect, noneconomic, past, special and punitive), sanctions, settlement payments, disbursements, judgments, liability, losses (including lost income or profit), costs or expenses of any nature whatsoever, whether accrued, absolute, contingent or otherwise, including, without limitation, attorneys’ fees and costs (whether or not a proceeding is initiated ); 
+ 
+ “Order” means the agreement to sell between the Seller and the Customer for the sale and purchase of a Product through the Website; 
+ 
+ “Original Equipment Manufacturer” or “OEM” means the manufacturer of the Product; 
+ 
+ “OLX” means Online Classifieds Pakistan (SMC-Private) Limited; 
+ 
+ “Price” means the price at which a Product is offered for sale by the Seller as listed on the Website, inclusive of Taxes; 
+ 
+ “Policies” means all the policies and guidelines applicable with respect to the use of the Website and Seller Platform, as amended from time to time, including inter alia warehouse operations, packaging, cancellations, rejections, returns, refunds, privacy, quality control and shipping; 
+ 
+ “Product” means the goods or services offered for sale by the Seller on the Website; 
+ 
+ “Product Information” means with respect to a Product any information reasonably required by OLX which may include but is not limited to its description, category, price, technical speci fications, OEM and IMEI (International Mobile Equipment Identity) details ; 
+ 
+ “Product Inventory” means the total number of units of a Product in stock and available for sale through the Website at any given time; 
+ 
+ “Prohibited Products” means the goods or services that are prohibited from being sold through the Website in terms of these Terms and Conditions or under Applicable Laws; 
+ 
+ “ Registration Details ” means the details the Seller must provide upon registering for the Website from time to time (for example: name, phone numbers, email address, age and/or address); 
+ 
+ “Sales Proceeds” means the gross proceeds from the sale of the Products ; 
+ 
+ “Seller” means the Party defined in the preamble of the Agreement ; 
+ 
+ “Seller Platform” mean s the web-based tool or other web services or interfaces, provided by OLX to the Seller to operate and manage the Seller ’s a ccount; 
+ 
+ “Service Charges” means the charges payable by the Seller to OLX for availing the Services under the Agreement; 
+ 
+ “Services” means the services provided by OLX to the Seller in connection with the Website, including but not limited to advertising services, IT and IT-enabled s ervices such as call center services, online payment processing, logistics and warehouse management software , utilization of the online marketplace , Seller Platform and related services ; 
+ 
+ “Taxes” means any direct and indirect federal, provincial or local taxes, duties, cess , fees, levies or charges of whatsoever nature payable with respect to the Products or Service s , as may be prescribed or levied from time to time under any Applicable Law; 
+ 
+ “Terms and Conditions ” means these terms and conditions with respect to the Seller Platform , as amended by OLX from time to time; 
+ 
+ “Third Party Logistics” or “3PL” means a sub-contractor of OLX designated to ship and deliver Orders; 
+ 
+ “ User Terms ” means the terms of use of the Website ; 
+ 
+ “Website” means the e-commerce/online marketplace platform and operated under the domain mall.olx.com.pk , and related mobile application(s) provided by OLX, where Customers and Sellers transact for the sale of Products . 
+ 
+ INTRODUCTION 
+ 
+ These Terms and Conditions along with any and all applicable schedule(s), as updated, amended or revised at OLX’s sole discretion, shall be applicable with respect to the Website, and the Seller agrees to fully comply with them by using and accessing the Website. 
+ 
+ OLX may, at any time and in its sole and absolute discretion, alter, amend or revise the Terms and Conditions and Policies from time to time. The Effective Date at the time the Seller is reading these terms is set out at the top of these Terms and Conditions . Prior to using the Website again in the future, the Seller should check that the Effective Date has not changed. If it has, the Seller should examine the new set of terms and conditions and only use the Website if it accepts the new terms and conditions. If the Seller does not accept the changes, the Seller should immediately discontinue its access to the Website and use of the Service. 
+ 
+ T he Seller shall have seven ( 7 ) days to notify OLX if it does not accept the changes to the Terms and Conditions . In the event that a resolution is not reached with regards to the changes , then the Seller may terminate the Agreement by giving thirty (30) days’ notice in writing to OLX. 
+ 
+ You agree that you are solely responsible to read and review these Terms and Conditions from time to time. 
+ In these Terms and Conditions , unless the contrary intention appears: 
+ 
+ r eference to a party is a reference to a party to the Agreement ; 
+ 
+ reference to a para graph , schedule or annexure is a reference to a para graph or an annexure to the Agreement ; 
+ 
+ reference to the Agreement or another instrument includes any amendment or replacement of either of them; 
+ 
+ reference to a statute, ordinance, code or other law includes regulations and other instruments under it and consolidations, amendments, re-enactment’s or replacements of any of them; 
+ 
+ all words used in the singular shall include the plural; the  present tense  shall include the future  tense ; and the masculine gender shall include the feminine; 
+ 
+ the word “person” includes a firm, a body corporate, an unincorporated association or an authority; 
+ 
+ reference to a person includes a reference to the person's successors, nominees and permitted assigns; 
+ 
+ if a period of time is specified and it is from a given day or the day of an act or event, it is to be calculated exclusive of that day; 
+ 
+ reference to a day is to be interpreted as the period of time commencing at midnight and ending twenty-four (24) hours later; 
+ 
+ reference to a month is a reference to a Gregorian calendar month; 
+ 
+ the table of contents and headings herein are for convenience of reference only, do not constitute parts of the Terms and Conditions and shall not be deemed to limit or otherwise affect any of the provisions hereof;  
+ 
+ where under or pursuant to the Terms and Conditions or anything done under the Terms and Conditions the day on or by which any act, matter or thing is to be done is a day that does not occur in a particular month, such act, matter or thing shall be done on the last day of that month; 
+ 
+ if any obligation under the Terms and Conditions is required to be performed on a day other than a Business Day, being a day (other than a Sunday or Public Holiday) on which banks are open for general banking business in Lahore, Pakistan that obligation is to be performed on the next Business Day; and 
+ 
+ reference to ‘written’ or ‘writing’ means any hand-written, typewritten, or printed communication, including telex, cable and facsimile transmission. 
+ 
+ SELLER ACCOUNT 
+ 
+ A Seller must: 
+ 
+ Be at least eighteen (18) years of age, in case of an individual; 
+ 
+ Not have any criminal record and be compliant with all Applicable Laws; 
+ 
+ Have a valid and operational bank account in its name; and 
+ 
+ Have valid identification or incorporation documents, in case of an individual or legal entity respectively. 
+ 
+ The Seller’s a ccount will be activated by OLX once the Agreement is signed and the Seller will be notified accordingly. 
+ 
+ In registering for the Website, the Seller must provide true, accurate, current and complete Registration Details which the Seller must update after any changes (except age) before using the Website for availing further services in the future. 
+ 
+ The Seller must keep confidential any user identification and password details set-up or given to the Seller as part of OLX’s security procedures and must not disclose them to any third party. 
+ 
+ The Seller is solely responsible for any use of or action taken under the Seller’s account and shall fully indemnify OLX and its affiliates, directors, officers, employees, authorized representatives, consultants, professional consultants or authorized agents from any damages or injury resulting from any unauthorized use of the Seller’s account . 
+ 
+ OLX reserves the right to suspend or terminate a Seller’s account where, in its absolute discretion, it suspects or deems or in OLX’s opinion the Seller has breached these T erms and Conditions or deems such suspension or termination is otherwise appropriate. In the event of such suspension or termination, OLX will notify the Seller by email and the Seller must not seek to re-register on the Website either directly or indirectly or through a related entit y. OLX’s rights under this para graph shall not prejudice any other right or remedy OLX may have in respect of any breach, or any rights, obligations or liabilities accrued prior to such suspension or termination. 
+ 
+ Any correspondence or communication received from the Seller shall be presumed to originate from and have been made with the approval of the Seller and OLX shall be entitled to rely on such correspondence or communication. 
+ 
+ PRODUCT PRICE AND LISTING 
+ 
+ A Product listed on the Website constitutes an offer for sale by the Seller, therefore when an Order is placed for a Product, it is and shall be deemed to constitute an agreement to sell between the Customer and the Seller. 
+ 
+ OLX shall list the Products on the Website at the Price of the relevant Product . The Price shall not be higher than the price at which the Seller offers the same Product through its own sales channels. 
+ 
+ The Website shall show the Product as being sold by the Seller and not by OLX. Listing of the Products on the Website does not, in any manner, imply that OLX is selling, warranting, endorsing or is affiliated with the Seller or the Seller’s Products. 
+ 
+ The Seller shall not offer Prohibited Products for sale including but not limited to: 
+ 
+ Hazardous substance 
+ Arms &amp; Ammunition 
+ Contraband 
+ Explosives 
+ Kites 
+ Liquor 
+ Narcotics 
+ Hookah 
+ Sheesha 
+ Unregistered mobile phones 
+ Stolen goods 
+ Smuggled goods 
+ Age restricted products (pornog raphic books, posters, artwork and adult toys) 
+ Giveaways, lotteries, raffles, or contests 
+ Stocks, bonds, investment interest, and other securities 
+ Digital currency 
+ Bullion 
+ Ivory or other parts of any endangered species 
+ Birth certificate, national identity card, passport and/or visa s 
+ 
+ The final decision for the listing and placement of any Product on the Website shall be at the sole discretion of OLX. 
+ 
+ If OLX delists a Product or prohibits the Seller from selling certain Products on the Website due to any reason whatsoever, including without limitation supplier brand restrictions or if the Seller is not an authorized retailer for any Product, the Seller shall be obligated to withhold such Products from the assortment that it provides to OLX. 
+ 
+ Any Product which OLX, in its sole discretion, decides to stop featuring on the Website will be removed from the Website without any recourse whatsoever . 
+ 
+ OLX may, from time to time and subject to the Seller’s prior consent, offer discounts, promotions and/or offers over and above the Price via multiple channels and the Seller agrees that this does not constitute a change in the ownership of the Product(s). 
+ 
+ The Seller shall display the content (such as text, disclaimers, warnings, notices, labels or other) required to be displayed under Applicable Law in connection with the Product. 
+ 
+ The Seller will be solely responsible for any recall of a Product for any reason whatsoever either by the OEM or under a court order or any Applicable Law, including without limitation all acts, matters, costs and expenses associated with or in relation to such recall. 
+ 
+ The Seller will be liable for any and all Losses arising out of or in connection with any defect /deficiency in the Products. OLX shall have no responsibility or liability with respect to any Product listed or sold through the Website. 
+ 
+ FULFILLMENT MODEL 
+ 
+ OLX will assign the Fulfillment Model to the Seller, which may be Delivered by OLX, Fulfilled by OLX or any other model. 
+ 
+ OLX will notify the Seller seven (7) days prior to any change, amendment or modification in the Fulfillment Model assigned to the Seller. 
+ 
+ PRODUCT INVENTORY 
+ 
+ The Seller must ensure that all Products comply with the applicable product category requirements, such as quality, quantity , description and Seller Inventory requirements, prescribed by OLX, as amended from time to time at OLX’s sole discretion. 
+ 
+ The Seller must examine and remain informed of the requirements for Product Inventory, storage and delivery of the Fulfillment Model assigned to the Seller and any changes, revisions and amendments made by OLX from time to time. 
+ 
+ The Seller must ensure and make adequate arrangements to meet the Product Inventory, storage and delivery requirements as per the Fulfillment Model assigned to the Seller. 
+ The Seller must ensure that all Products will be free of any claim, charge, mortgage, lien, hypothecation or any other security interest of any nature whatsoever . 
+ Any Product which OLX, in its sole discretion, decides to stop featuring on the Website will be removed from the Website and , under the ‘Fulfilled by OLX’ Fulfillment Model , will be returned to the Seller. 
+ 
+ Where the Fulfillment Model is Fulfilled by OLX , in the event of any loss, shrinkage or damage to the Products as a direct result of an act, error or omission of OLX solely then OLX’s liability shall be limited to the maximum extent of the cost of such Products when they were first delivered to OLX’s warehouse and accepted by OLX. 
+ 
+ The Seller acknowledges and agrees that storing its Products at OLX’s warehouse may create a tax nexus for the Seller in the state, province, or other localities in which the Products are sold, and the Seller will be solely responsible for any T axes owed to any tax authority or body as a resul t of such storage. In case any T ax is assessed against OLX in connection with the storage of the Products or otherwise, the Seller will be solely responsible for T axes and will indemnify and keep indemnified and hold OLX harmless in this regard . 
+ 
+ Product Inventory when Delivered by OLX 
+ 
+ Under the ‘ Delivered by OLX ’ Fulfillment Model , i f the Seller reasonab ly anticipates that any Product may go out of stock, it shall immediately notify OLX failing which the Seller’s performance will be negatively affected based on the service level assessment standards. 
+ 
+ Product Inventory when Fulfilled by OLX 
+ 
+ The minimum requirements of the Product Inventory under the ‘Fulfilled by OLX’ Fulfillment Model will be as agreed between the Seller and OLX from time to time , including but not limited to the Product Inventory which the Seller must place at OLX ’s warehouse or any other location specified by OLX within the agreed timeline. 
+ 
+ OLX may alter the type and quantity of the Product Inventory stored at OLX’s warehouse, at any time, by giving five (5) Business Days’ prior notice to the Seller . 
+ 
+ Prior to delivery of the Products to OLX’s warehouse , the Seller shall provide to OLX accurate Product Information with respect to the Products to be stored at OLX’s warehouse . The Seller shall ensure that each Product clearly states its Product Information . Upon delivery to OLX’s warehouse , the Seller shall produce a packing lis t containing the relevant above- mentioned information, which will be subject to verification by OLX . 
+ 
+ Only Products that pass OLX’s quality control check will be stored at the warehouse . 
+ 
+ OLX may charge the S eller a storage f ee and may adjust the amount of the storage f ee against any payments due to the Seller for the sale of any Product(s). 
+ 
+ OLX may, in its sole discretion, move the location of its warehouse as well as location of the warehouse where the Product s are stored . 
+ 
+ O LX has no duty as a bailee and the Seller has no right and/or remedy as a bailor (whether arising under common law or statute or otherwise) arising under or in connection with the Agreement , the se Terms and Conditions , the Seller Platform and the Website . 
+ 
+ 
+ 
+ ORDER PROCESSING AND PACKAGING 
+ 
+ The standards and manner of packaging and processing Orders shall be determined by OLX , at its sole discretion , including but not limited to the branding material, stickers, labels and tags to be used . 
+ 
+ Regardless of the Fulfillment Model assigned to the Seller or with respect to a Product , OLX shall always be responsible for dispatching and delivering the Product(s) to the Customer. 
+ 
+ The Seller must ensure that all Products and their packaging comply with Applicable Law and all applicable marking and labeling requirements as set out in the applicable Policy. 
+ 
+ The Seller acknowledges and agrees that: - 
+ 
+ Neither the 3PL nor OLX shall be liable for any loss including but not limited to Taxes levied on the Order arising due to confiscation of the consigned package by any government or regulatory agencies. 
+ 
+ The 3PL and OLX shall have the right but not the obligation to inspect any Order or Product without prior intimation to the Seller to check the contents thereof . 
+ 
+ In case a Seller’s Product is lost by OLX and/or 3PL during transit or handling, OLX will reimburse the Seller for the Product in question. 
+ 
+ Processing and Packaging when ‘ Delivered by OLX ’ 
+ 
+ The Seller must remain informed of the relevant packaging guidelines , processes and Policies, including any changes, revisions or amendments, and ensure compliance at all times. 
+ 
+ Once an Order is placed on the Website and notified to the Seller, it must be process ed and package d by the Seller within the time specified in the relevant s ervice l evel corresponding to the assigned Fulfillment Model. 
+ 
+ All Orders must be packed by the Seller strictly in compliance with the minimum packaging standards set out in the Policies. The Seller must only use the pac kaging material provided by OLX . 
+ 
+ The Seller must ensure that the packaging material available with the Seller is, at all times, sufficient to package and process the Order(s) in accordance with the packaging guidelines and Policies. 
+ 
+ The Seller is strictly prohibited from using or including any of the Seller’s own material, including but not limited to marketing material, in the packaging of the Order(s). 
+ 
+ The Seller must ensure that the correct Product(s) corresponding to the Order are packaged and sent to the Customers. 
+ 
+ The status of the Order(s) must be updated by the Seller once the Order(s) are packaged and ready for shipment. 
+ 
+ The Seller shall ensure and make proper arrangements for collection of the Order(s) by OLX or the 3PL from the Seller’s warehouse or collection point. 
+ 
+ The Seller shall be liable for any failure or delay with respect to packaging and processing of the Order(s) by the Seller or as a result of inadequate arrangements for Order collection, and for any Losses whatsoever that may result therefrom. Any such f ailure or delay may affect the Seller’s performance and rank . 
+ 
+ Processing and Packaging when Fulfilled by OLX 
+ 
+ Under the Fulfilled by OLX Fulfillment Model, OLX will package and process the Order(s) according to OLX’s standards and Policies . 
+ 
+ OWNERSHIP OF THE PRODUCTS 
+ 
+ The Seller is and shall remain the sole and absolute owner of the Products, including all rig hts, title and interest therein. The title and ownership of a Product will only be transferred to the Customer when the Product has been successfully delivered to the Customer . 
+ 
+ In the event the Customer rejects or returns the Product, title and ownership shall revert to the Seller. 
+ 
+ The ownership of a Product, including any right , title and interest therein, shall not pass to OLX under any circumstances whatsoever . 
+ 
+ RETURNS AND REFUNDS 
+ 
+ The Seller authorizes OLX to provide the Customer with a refund in the event of cancellation or in the event the Product is rejected or returned in accordance with the applicable Policies and User Terms on the Website. 
+ 
+ The Seller will, at all times, be bound by, and adhere to, the terms and conditions of the Policies. 
+ 
+ In the event that a Product is rejected or returned by the Customer for any reason not attributable to OLX , then OLX may charge the Seller the entire cost associated with shipping the Product. 
+ 
+ Under the Fulfilled by OLX Fulfillment Model, if a Product is returned, rejected or cancelled , it may be reincorporated by OLX into the Seller’s In ventory stored at OLX’s warehouse . 
+ 
+ U nless stated otherwise in the Policy in relation to any particular category of Products, the Seller will accept returns , replacement or refund of a Product in the following cases: 
+ 
+ The Product is defective or d amaged , not of merchantable quality or not fit for the intended purpose 
+ 
+ The w rong Product is delivered (e.g. not as listed, wrong type or specifications, etc.) 
+ 
+ The Product delivered is incomplete (e.g. accessories missing) ; and 
+ 
+ Change of mind by the Customer 
+ 
+ Under the Fulfilled by OLX Fulfillment Model, if the Customer requests a replacement in accordance with the applicable Policy, the Seller authorizes OLX to send a replacement Product to the Customer. 
+ 
+ Unless stated otherwise in the relevant Policy, a Customer’s return claim will be subject to a quality control check conducted at OLX’s warehouse to determine the validity of the claim. If the claim is found to be invalid, the Product will be sent back to the Customer. 
+ 
+ The final decision with respect to any Customer dispute solely rests with OLX and the Seller agrees that it shall be bound by OLX’s inquiry into and decision as to the condition of the Product at the time of delivery. 
+ 
+ Unless otherwise stated, in the event of any conflict between these Terms and Conditions and the applicable Policy, the applicable Policy shall prevail. 
+ 
+ SELLER CLAIMS 
+ 
+ In case the Seller raises a claim about the condition of a Product returned by the Customer , OLX will reimburse the Seller for the Product in question provided the case is reviewed and accepted by OLX in favor of the Seller. OLX may also hold the Product temporarily in order to assess the Seller’s claim , to claim insurance and/ or to settle the Claim with a 3PL. This does not mean ownership of the Product has transferred to OLX. 
+ 
+ SELLER PERFORMANCE 
+ 
+ The Seller ’s p erformance and rank on the Website will be assessed on the basis of the service level standards specified by OLX, which will include but not be limited to Customer response, Order processing and delivery, number of completed Orders, etc . Any assessment criteria shall be solely determined by OLX. 
+ 
+ The Seller must, at all times, remain informed of the service levels applicable to the Seller or with respect to a Product, as the case may be, as issued by OLX from time to time. 
+ 
+ The Seller’s rank will be determined on the basis of a routine assessment and may be upgraded or downgraded accordingly . 
+ 
+ The Seller must observe the minimum service levels to avoid the risk of penal ty , delist ing , blacklist ing and/or remov al of the Seller ’s a ccount from the Website . 
+ 
+ OLX may use mechanisms that rate or review or allow the Customers to rate or review the Seller’s Products and Seller performance and OLX may make these ratings publicly available. OLX shall have no liability to the Seller for the content or accuracy of any ratings or reviews. 
+ 
+ If the Seller or any of the Seller’s agents elect to provide or make available suggestions, comments, ideas, improvements, or other feedback or materials to OLX in connection with or related to the Website (including any related technology), OLX shall be free to use, disclose, reproduce, modify, license, transfer and otherwise distribute, and exploit any of the foregoing information or materials in any manner. 
+ 
+ PAYMENTS 
+ 
+ Service Charges 
+ 
+ The Seller is liable to pay to OLX and OLX is entitled to the Service Charges for providing the Service to the Seller. 
+ 
+ The Service Charges will be subject to applicable Taxes. T ax rates are subject to revision as per Applicable Laws . 
+ 
+ The Service Charges for the Products are specific to each Product category and/or brand and are listed on the Seller Platform. The Service Charges are subject to change at any time, on provision of seven (7) days written notice to the Seller, and shall be effective as soon as the changes are reflected on the Seller Platform. 
+ 
+ The Seller authorizes OLX to adjust the Service Charges against the Sales Proceeds prior to remittance of the Sales Proceeds to the Seller. 
+ 
+ Other Charges 
+ 
+ Where , at the request of the Seller, OLX produces digitized images and photographs of the Product(s) for display on the Website, OLX may charge a fee and is entitled to deduct this fee from the Sales Proceeds prior to remittance of the Sales Proceeds to the Seller . 
+ 
+ Sales Proceeds 
+ 
+ OLX will receive and process all payments for the Products sold through the Website on behalf of the Seller. 
+ 
+ The Seller will be entitled to the Sales Proceeds with respect to any Order which is c omplete, provided that: 
+ 
+ t he Sales Proceeds have been received from the Customer in clear funds; 
+ 
+ t he Seller is in compliance with its obligations under the Agreement and the Terms and Conditions ; 
+ 
+ t he Seller is in compliance with Applicable Laws; and 
+ 
+ t here is no C laim arising out of or in connection with any Order , Product or arising out of or in connection with the Agreement , these Terms and Conditions , the use of the Website . 
+ 
+ The Sales Proceeds will be remitted to the Seller once an Order is c omplete in accordance with the Terms and Conditions , as per the bi-monthly payment cycle below: 
+ 
+ Date Order Completed and Payment Received 
+ Date Payment made to the Seller 
+ 1 st – 14 th of any month 
+ 21 st – 23 rd of the same month 
+ 15 th – 31 st of any month 
+ 7 th – 9 th of the next month 
+ 
+ Sales Proceeds will be paid to the Seller by OLX through bank transfer or bank instrument. All payments shall be made in Pakistani Rupees. 
+ 
+ The Seller authorizes OLX to apply any sums due to the Seller hereunder to set-off any sums owed by the Seller to OLX on account of Service Charges , Taxes or any Claims against OLX arising out of or in connection with any act, error or omission by the Seller whether under the Agreement , the Terms and Conditions , any agreement to sell or any other document. Nothing contained herein shall or shall be deemed to limit the Seller’s liability with respect to any Claim or Loss or prejudice any other right or remedy OLX may have. 
+ 
+ OLX shall not be liable for any failure or delay to make payments to the Seller arising due to incomplete or inaccurate information provided by the Seller , including with respect to its bank account. 
+ 
+ OLX shall issue periodical statements to the Seller, through the Seller Platform and/or email, which shall contain relevant payment information related to Sales Proceeds, Service Charges, Taxes, Order cancellations and returns, etc. 
+ 
+ 
+ TAXES 
+ 
+ The Seller shall pay any and all Taxes which may become due or payable with respect to selling or offering for s ale the Products on the Website. 
+ 
+ Taxes with respect to the Service Charges will be deducted and calculated in the name of, and as per the active or inactive tax status of the registered Seller . 
+ 
+ The Seller shall be responsible for payment of all Taxes applicable in connection with the sale of its Products through the Website . For the avoidance of doubt, i t is clarified that OLX shall have no liability in this regard . 
+ 
+ ORDER COMPLETION 
+ 
+ A n Order will be deemed c omplete once: 
+ 
+ t he Product has been delivered in accordance with the requirements of the assigned Fulfillment Model; 
+ 
+ t he Product has been delivered to the Customer with a proof of delivery ; and 
+ 
+ t he returns and/or cancellation period stipulated in the relevant Policy has lapsed . 
+ 
+ REPRESENTATIONS AND WARRANTIES 
+ 
+ Each Party hereby represents and warrants to the other Party as follows:- 
+ 
+ The Party is duly organized and validly existing under the Applicable Laws and the Party has full power and authority to perform its obligations hereunder. 
+ 
+ The completion of the transactions contemplated hereby shall not violate or conflict with any obligation, contract or license of such Party which could reasonably be expected to interfere with the completion of the transactions contemplated herein. 
+ 
+ In addition to the covenants, representations and warranties (express or implied) contained elsewhere in the Terms and Conditions , the Seller hereby warrants, represents , undertakes and acknowledges that :- 
+ 
+ The S eller has the right, power and authority to grant the rights and licenses hereunder free and clear of any Claims, liens and encumbrances and to sell the Products. 
+ 
+ The Seller has the legal right, capacity, power and authority to avail the Service and the Seller’s entry into and performance under the Terms and Conditions and the transactions contemplated by it do not constitute a breach of any Applicable Law, or any obligation or default of any contract by which it is so bound. 
+ 
+ The Seller , its subcontractors, suppliers , vendors and agents involved in the production , manufacturing or delivery of a Product shall comply with the Applicable Laws with respect to the operation of their facilities and their business and labor practices, including without limitation working conditions, wages, hours and minimum age of workers. 
+ 
+ It is OLX’s policy to prohibit and actively pursue the prevention of money laundering and any activity that facilitates money laundering or the financing or of terrorist or criminal activities. OLX is committed to anti-money laundering compliance in accordance with Applicable Law and require s the Seller to adhere to these standards and prevent the use of its Products for money laundering purposes. The Seller warrants that the Seller is not, in any way, directly or indirectly involved in money laundering or financing of terrorist or criminal activities or any other illegal activity. OLX reserves the right to carry out necessary money laundering, terrorism financing, fraud or any other illegal activity check before authorizing Seller’s account, payments or processing of any applicable refunds. 
+ 
+ OLX may at any point require the Seller to provide any financial, business or personal information related to the Products on a case-to-case basis and the Seller shall provide the same to OLX within seven (7) Business Days of such request being made. 
+ 
+ The Seller shall remain liable for the actions of and be responsible for the supervision of each of its executives, officers, directors, employees, representatives , suppliers, vendors, agents and subcontr actors. The Seller shall ensure and procure that each of its executives, directors, employees, consultants , representatives, suppliers, vendors, agents and subcontractors are bound by these Terms and Conditions and Applicable Law including but not limited to with respect to Intellectual Property, Confidential Information, anti-money laundering, anti-bribery and anti-corruption. 
+ 
+ The Seller is solvent , able to pay its debts and is and shall remain a going business concern. 
+ 
+ No insolvency  proceeding of any character, including, without limitation, bankruptcy, receivership, reorganization, composition or arrangement with creditors, voluntary or involuntary, affecting the Seller, is pending or, to the knowledge of the Seller, threatened. The Seller has not taken any action in contemplation of, or that would constitute the basis for, the institution of any such insolvency proceedings. 
+ 
+ There are no proceedings against the Seller, pending or threatened, that could adversely affect the performance of the Seller’s obligations under the Agreement and/or the se Terms and Conditions . 
+ 
+ The Seller warrants to OLX that all its Products sold on the Website, whether manufactured, imported or otherwise produced or provided by the Seller , OEM or others, will: 
+ 
+ comply with relevant product safety, testing and certification requirements as provided under Applicable Laws; 
+ 
+ s trictly conform to the specifications, drawings, samples, performance criteria, and other descriptions referred to or provided on the Website; 
+ 
+ b e of merchantable quality , free of defects/deficiencies and fit for the intended purpose(s); and 
+ 
+ the Seller shall undertake packaging of all Products in accordance with all Applicable Laws and the Seller shall be solely responsible for any violation of law and will indemnify OLX against the consequences of any such violation. 
+ 
+ The Seller is authorized to sell the Products and has and shall maintain: 
+ 
+ certificates of authenticity (or similar documentation) for the Products; and 
+ 
+ documentation (e.g. email verifications from the brand owner or supplier) demonstrating that the Seller is permitted to sell specific brands or the Products through the Website and within the territory of Pakistan. 
+ The Seller has obtained all requisite consents, permits, permissions, authorizations, approvals, NOCs, declarations, registrations, certifications, waivers, exemptions and/or licenses required under the Applicable Laws with respect to the listing and sale of the Products and/or collection, use, processing and distribution of the Content and has the right to further assign such permissions and authorizations to OLX. If and when required, the Seller shall, at its own cost, be solely liable to procure or cause to be procured the aforementioned a pprovals necessary to list and sell the Products through the Website . 
+ 
+ To inform OLX immediately in writing of any change in the particulars of the Seller including but not limited to business name, brand name, address, temporary or permanent closure of its office or business activities, recall and/or discontinuation of any Product. 
+ 
+ The Seller shall exclusively be responsible for the Content submitted by it on the Seller Platform and/or the Website including but not limited to any misuse/ unauthorized use of the Content. 
+ 
+ All Content is true, accurate, complete and up-to-date and shall not: 
+ 
+ be misleading or deceptive; 
+ 
+ be defamatory, libelous, threatening or harassing; 
+ 
+ infringe upon or violate any Intellectual Property or other right of any third party; 
+ 
+ promote or depict violence or adult-oriented content; or 
+ 
+ reflect unfavorably on OLX or the Website or be the type of content that could otherwise adversely impact or damage the reputation or public image of OLX. The Seller shall not use the Content to redirect OLX Customers to any other sales channels. 
+ 
+ The Seller must ensure that the Products, their listing and sale through the Website and use do not infringe upon or violate any Intellectual Property or other right of any third party. 
+ 
+ The Seller shall use reasonable skill, care and diligence in the performance of its obligations under these Terms and Conditions . 
+ 
+ The Seller is fully liable for the Product, Product Inventory and Content. 
+ 
+ The Seller has duly paid any and all Taxes with respect to the import, export, manufacture, production, sale, supply, distribution or delivery of a Product. 
+ 
+ The Seller shall not, during or after termination of the Agreement , engage in conduct or make any representation that injures, harms, corrupts, demeans, disparages , defames, destroys or diminishes, or would reasonably be expected so to do, in any way the reputation or goodwill of OLX, its directors, officers, employees or agents or any of its affiliated, subsidiary or holding companies . 
+ 
+ The Seller shall in performing its obligations under the Agreement and the Terms and Conditions , strictly comply with all Applicable Laws. 
+ 
+ CONTROL OF WEBSITE 
+ 
+ T he appearance, design, functionality and all other aspects of the Website , including without limitation, the operation of the Website, any change, alteration, amendment and/or modification in relation thereto shall be at the sole discretion of OLX . 
+ 
+ OLX may, at its sole discretion, suspend or remove any Product, Content and/or Seller’s a ccount or require the Seller to remove any Product or Content from the Website. 
+ 
+ INTELLECTUAL PROPERTY 
+ 
+ The Seller shall ensure that the sale and/or use of the Products and the Content do not, directly or indirectly, violate Intellectual Property Rights of any third party. The Seller will immediately notify OLX of any actual or alleged infringement of any Intellectual Property of a third party in connection with the Products or Content. The Seller is solely responsible for any Losses arising out of or in relation to any actual or alleged infringement of a third party’s Intellectual Property rights. 
+ 
+ The Seller represents and warrants to OLX that the Seller is not aware of any Claims made by any third party with regards to any alleged or actual patent, copyright, trade secret, trademark, trade name, or other intellectual property right infringement or other claim, demand or action resulting from the manufacture, sale, distribution or use of the Products. 
+ 
+ Notwithstanding anything contained in the Terms and Conditions , the Seller hereby grants OLX a royalty-free, perpetual, irrevocable and non-exclusive right, permission and license to use, reproduce, process and distribute to third parties, all Content. 
+ 
+ Notwithstanding any provision of these Terms and Conditions , nothing herein shall be construed as a grant of license to use OLX’s Intellectual Property, which shall remain the exclusive property of OLX at all times . 
+ 
+ CONFIDENTIAL INFORMATION 
+ 
+ The Seller will not: 
+ 
+ use any Customer Information for conducting surveys or promotional activities, for the purpose of marketing or targeted communication; or 
+ 
+ contact a Customer who has placed an Order with the intent to collect any amounts in connection therewith or to influence such Customer to make an alternative or additional purchase. 
+ 
+ The Seller may : 
+ 
+ use the Confidential Information strictly for the purposes set out in the Terms and Conditions ; 
+ 
+ keep the Confidential Information confidential and not disclose it or allow it to be disclosed to any third party except with the prior written consent of OLX; and 
+ 
+ on termination of the Agreement or susp ension / removal of the Seller’s a ccount, if required by OLX, return or destroy and certify destruction of the Confidential Information. 
+ 
+ The Seller will abide by and maintain adequate data security measures, consistent with industry standards and technology best practices, to protect the Confidential Information from unauthorized disclosure or acquisition by an unauthorized person. 
+ 
+ The Seller will immediately notify OLX of any data breach that allows a third party to view or access or otherwise compromises any Confidential Information. The Seller will also provide OLX any other information that OLX may request concerning such affected persons and the details of the data breach . 
+ 
+ The Seller shall not publicize , disclose, or discuss the existence, content, or scope, whether generalities or details, of the Agreement and/or these Terms and Conditions or make any reference to each other, the business of either to any third party by any means, and through any medium (including but not limited to advertising, web site references, photographs, articles, press releases or interviews, speeches or programs) without obtaining prior written consent except to the extent necessary for the performance of the obligations arising under the Agreement. 
+ 
+ The rights and obligations of the Parties set out in these Terms and Conditions with respect to Confidential Information shall survive termination of the Agreement . 
+ 
+ DISCLAIMER 
+ 
+ Neither OLX nor its affiliates, directors, officers, employees, authorized representatives, consultants, professional consultants or authorized agents make any representations or warranties, express or implied, that the Website, the Seller Platform, Service provided by OLX, or software used to provide the Service shall be uninterrupted, timely, secure, virus-free or error-free, and the Seller agrees that OLX shall not be liable for the consequences of any interruptions or errors, including without limitation, system or software failures or other interruptions that may affect the receipt, processing, acceptance, completion or settlement of any transactions. Neither OLX nor its affiliates, directors, officers, employees, authorized representatives, consultants, professional consultants or authorized agents make any representations or warranties, express or implied, to the Seller with respect to the sale of Products through the Website pursuant to the Agreement , and all such Service s provided by OLX are provided on an “as-is” and “as available” basis. 
+ 
+ OLX and its affiliates, directors, officers, employees, authorized representatives, consultants, professional consultants or authorized agents expressly disclaim all warranties of any kind, whether express, implied, statutory or otherwise, including, without limitation, the implied warranties or conditions of merchantability, fitness for a particular purpose, title and non-infringement of proprietary rights and those implied warranties arising out of course of performance, course of dealing or usage of trade , accuracy, likely results, or reliability of the use of the Products on the Website . 
+ 
+ INDEMNITY 
+ 
+ The Seller shall indemnify and keep indemnified , defend and forever hold harmless OLX, its affiliates, directors, officers, employees, representatives, consultants, professional consultants and agents from and against any and all Claims and Losses whether or not involving a third party Claim, arising out of or in connection with : - 
+ 
+ A ny act, error or omission. 
+ 
+ B reach of any term, repres entation or warranty by the Seller as contained herein. 
+ 
+ Seller’s failure to fulfil, or breach of, its obligations hereunder or otherwise owed to OLX. 
+ 
+ Any C laim made by any Customer on the basis of any Order unless caused by an act or an omission of OLX. 
+ 
+ 
+ In no event shall OLX or its affiliates, directors, officers, employees, authorized representatives, consultants, professional consultants or authorized agents be liable to the Seller or any third party under any theory of tort, contract, strict liability or other legal or equitable theory for Losses, cost of cover or recovery of any investment made by the Seller or its affiliates in connection with the Agreement, or for any loss of business, loss of data, any lost profits, lost revenue along with any exemplary, punitive, special, incidental, indirect or consequential damages or the like arising out of or relating to the Agreement, each of which is hereby excluded by the Agreement of the Parties regardless of whether such Losses were foreseeable or whether OLX has been advised of the possibility of such Losses. 
+ 
+ In no event shall OLX’s aggregate liability to the Seller or any third party for any Claims or Losses for any cause whatsoever, and regardless of the form of action or legal theory, exceed a sum equal to the total Service Charges in relation to the event giving rise to such Claim . 
+ 
+ FORCE MAJEURE 
+ 
+ OLX will not be liable for any delay or failure to perform any of its obligations under these Terms and Conditions by reasons, events or other matters beyond OLX’s reasonable control. 
+ 
+ EVENTS OF DEFAULT 
+ 
+ Any material breach of the Terms and Conditions by the Seller shall be construed as an Event of Default ( “Event of Default” ) which inter alia include s : 
+ 
+ a breach of any terms or conditions of the Terms and Conditions or the Agreement or of any obligation arising therefrom; 
+ 
+ a ny representation becoming untrue, inaccurate or false; 
+ 
+ a breach of warranty; 
+ 
+ b reach of confidentiality obligations ; and/or 
+ 
+ t he Seller committing a criminal offence. 
+ 
+ If, in the opinion of OLX, an Event of Default is anticipated or suspected of having occurred, OLX may , at its sole discretion, do any one or more of the following: 
+ 
+ delist or blacklist the Product(s) ; 
+ 
+ suspend or remove the Seller’s a ccount ; 
+ 
+ de list or blacklist the Seller . 
+ 
+ Upon removal from the Website for any reason whatsoever, the Seller shall immediately cease to use any Confidential Information in its possession in any manner whatsoever and shall return the said Confidential Information to OLX forthwith. 
+ 
+ TERMINATION 
+ 
+ Either Party may terminate the Agreement for any reason by giving thirty (30) days ’ prior written notice to the other Party. 
+ 
+ OLX may terminate the Agreement upon occurrence of an Event of Default, which termination shall be effective as on the date specified by OLX in the notice of termination. 
+ 
+ The Seller may terminate the Agreement by giving thirty (30) days’ notice in writing to OLX i f the Seller does not accept the changes to the Terms and Conditions and a resolution is not reac hed with regards to the changes as stated in para graph 4 . 
+ 
+ In the event of termination of the Agreement for any reason whatsoever, the Seller shall be liable to fulfill all Order(s) placed on or before the date of termination. 
+ 
+ Where the Fulfillment Model is Fulfilled by OLX then upon termination of the Agreement, the Se ller shall, at its own expense , remove the Seller Inventory stored at OLX’s warehouse immediately upon notification by OLX . 
+ 
+ Upon termination, the Seller’s account will be suspended or removed immediately. 
+ 
+ Upon termination, neither Party shall have any rights or obligations under the Agreement or Terms and Conditions unless otherwise specified therein. 
+ 
+ GENERAL PROVISIONS 
+ 
+ These Terms and Conditions shall be governed by and construed in accordance with the law s of the Islamic Republic of Pakistan and the Parties submit to the exclusive juris diction of the courts in Lahore , Pakistan . 
+ 
+ OLX is entitled to assign or subcontract any or all of its rights and obligations under these Terms and Conditions . The Seller shall not assign or otherwise transfer its rights, interest s or obligations under these Terms and Conditions to any third party without the prior written consent of OLX. 
+ 
+ If any provision of these Terms or part thereof shall be void for whatever reason, it shall be deemed deleted and the remaining provisions shall continue in full force and effect. 
+ 
+ Any typographical clerical or other error or omission in any acceptance, invoice or other document on the part of both Parties shall be subject to correction without any liability on the part of either Party. 
+ 
+ Because OLX is not a party to the agreements to sell between the Customers and the Seller, if a dispute arises between them, the Customer and Seller release OLX (and its agents and employees) from Claims arising out of or in any way connected with such disputes, unless such dispute is related or caused by an act of gross negligence of OLX. 
+ 
+ No waiver of any of the provisions of these Terms and Conditions shall constitute a continuing waiver unless otherwise expressly so provided in writing. The failure of either Party to enforce at any time any of the provisions of these Terms and Conditions , shall in no way be construed to be a present or future waiver of such provisions. 
+ 
+ OLX and the Seller are acting hereunder as independent parties. Nothing in these Terms and Conditions creates or shall be construed or deemed to create any association, partnership, joint venture, agency, franchise, sales representative, or employment relationship between the Seller and OLX. The Seller shall have no authority to make or accept any offers or representations on OLX’s behalf and the Seller shall not make any statement, whether on its website, social media or any other platform used by the Seller , contrary to the interests of OLX. The Seller’s personnel shall not be considered employees of OLX, shall not be entitled to any benefits that OLX grants its employees and shall have no authority to act or purport to act on OLX’s behalf. 
+ 
+ Each Party acknowledges and agrees that the rights granted to the other Party in connection with the Service and use of the Website are non-exclusive and that , without limiting the generality of the foregoing, nothing in the se Terms and Conditions shall be deemed or construed to prohibit either Party from participating in similar business arrangements as those described herein. 
+ 
+ The Seller shall neither solicit, entice away, discourage or influence in any way an existing or prospective supplier, vendor, contractor, customer or client of OLX, nor recruit, solicit, induce or attempt to induce for employment, any employee of OLX or its affiliates. 
+ 
+ If these Terms are translated into any other language and there is a discrepancy between the English text and the text of the other language, the English text version will prevail. 
+ 
+ These Terms shall inure to the benefit of and be binding upon each P arty's successors. 
+ 
+ The headings and titles contained in these Terms and Conditions are included for convenience only, and shall not limit or otherwise affect the provisions of these Terms and Conditions . 
+ 
+ Any notice given pursuant to these Terms and Conditions may be served personally or by email to the last known email address of the addressee. It is the responsibility of the Seller promptly to update OLX of any change of address or email address. Such notice shall be deemed to have been duly served upon and received by the addressee, when served personally, at the time of such service or when sent by email twenty-four ( 24 ) hours after the email has been sent. 
+ 
+ The Seller may contact OLX for any query or complaint through phone or email as given below : 
+ 
+ Contact Number : 042 32592992 
+ Email Address: Wecare@olx.com.pk

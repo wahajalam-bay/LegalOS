@@ -1,0 +1,1473 @@
+{
+ "summary": {
+  "duplicateGroups": 87,
+  "contradictions": 7,
+  "duplicateRecords": 9,
+  "templateShared": 7,
+  "inheritable": 19,
+  "inheritableCopies": 19,
+  "orphanSets": 0
+ },
+ "findings": [
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "8387a104eda4e23630f799f8dfb6e17b",
+   "size": 17320,
+   "copies": 13,
+   "records": [
+    "PRP-1KEBLSF",
+    "PRP-1KEBLRH",
+    "PRP-1KEBLRO",
+    "PRP-1KEBLRK",
+    "PRP-1KEBLSD",
+    "PRP-1KEBLRG",
+    "PRP-1KEBLSE"
+   ],
+   "detail": "one blank precedent kept in 13 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 13 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1Jd2m2Bus5TZ0EjrSPhSsmmQfITlLjOWV",
+     "filename": "250411-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250325-With and Without Rental Promo (Service Apartments with Furnishing) / Final Versions with Annexures",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "1rn2dvyUCyPuP6ylQFnZAdpxgRMrcXD7U",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "1gYP8ztJAlQ8dealwV0nUP3jPAgS-pOaK",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Without Rental / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "1i5ToQrXZgTWFiZn3KjkUxHxR4Cxmf5iV",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore / 24-11-27-ATS WITH RENTAL ZAMEEN NEO - 15 UNITS ONLY / 241127-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRH"
+    },
+    {
+     "fileId": "11oaCYsFYuocTTL-d0-CW2mMNgRkV7g_5",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1FQgso_jKxJ5L_hC75LCdXKzENwzjMX4e",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / 241218-Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1aIpO6SF911rydbemCV85DQpFpklAEyJ4",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRK"
+    },
+    {
+     "fileId": "1jYoFxSaKCjajy2tjR9dUuytVh57jUs6_",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Grande Palladium-Rawalpindi / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSD"
+    },
+    {
+     "fileId": "1kctAWSuoPxejkuqbkN1pIY886mb8uiAc",
+     "filename": "250715-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 250715-New SPA Cashback and Non-Cashback",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1BPUVwkKcHF4O1zBXni74kyvisaAMbegb",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "11VP4eh0EaaL3V1HBEBuoEJX_qe-XFtmS",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA without GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1ABuz_64j6CMcDXYmXgRBXvCKsQ1s7DfV",
+     "filename": "250129-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / 250129- New Agreement to Sell (without) GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1bM2FtaNsOtnIZarDuHOkm5BkgB9SCERV",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSE"
+    }
+   ]
+  },
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "17415479bc2ad6b9b0485b95345e5270",
+   "size": 17258,
+   "copies": 13,
+   "records": [
+    "PRP-1KEBLSF",
+    "PRP-1KEBLRH",
+    "PRP-1KEBLRO",
+    "PRP-1KEBLRK",
+    "PRP-1KEBLSD",
+    "PRP-1KEBLRG",
+    "PRP-1KEBLSE"
+   ],
+   "detail": "one blank precedent kept in 13 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 13 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1ckwG9DDt2TGcke8LSF-owircfhq3l8Ix",
+     "filename": "250411-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250325-With and Without Rental Promo (Service Apartments with Furnishing) / Final Versions with Annexures",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "1RmnkcvJ_hCwoubQ0RXMuz_M0Q71Eotv2",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "1vimFKiWCTgbKd3SZYwukwe0uApfDTjSk",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Without Rental / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "17uiiNKG00K0fZ3s6NfZ9H7MekdywI4_k",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore / 24-11-27-ATS WITH RENTAL ZAMEEN NEO - 15 UNITS ONLY / 241127-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRH"
+    },
+    {
+     "fileId": "1GJqMUHQrAfmxxnk-KcbqW2O64chspgp8",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1ndHkM6DkqOhp8Q_F_nEw9DGv44cdHqMv",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / 241218-Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1n1feJNd_-BO-p8SKC6NInK3q2qZLo77R",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRK"
+    },
+    {
+     "fileId": "1-i65Maat29_RQc8wUO5CzoWVwSzETBts",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Grande Palladium-Rawalpindi / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSD"
+    },
+    {
+     "fileId": "17Bu0F7tfPedr4jnfd53U2YxbEDSosWrY",
+     "filename": "250715-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 250715-New SPA Cashback and Non-Cashback",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1Uem8rpktdQFiFMuDw9l6-YGK0VYK1x06",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1hCtUb1Hj4EDn47WrI-4vTd3OxXuSVWNA",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA without GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1RnJZJbQNSPAOsSyGjE0BrIb90lWI7Xng",
+     "filename": "250129-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / 250129- New Agreement to Sell (without) GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1sZeaK8MbGGESN0RUeh-uVXA6V6tLjgTB",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSE"
+    }
+   ]
+  },
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "bd6ba9117ee738df2179f2d2851ee4e8",
+   "size": 24744,
+   "copies": 9,
+   "records": [
+    "PRP-1KEBLSF",
+    "PRP-1KEBLRO",
+    "PRP-1KEBLRK",
+    "PRP-1KEBLRG",
+    "PRP-1KEBLSE"
+   ],
+   "detail": "one blank precedent kept in 9 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 9 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1xb74i7q6FoTLwXElgGCmwd6P8taCsvPT",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "1Qy3H6zt9RtikZtYqzs1zBuAybW6T_nAN",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Without Rental / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSF"
+    },
+    {
+     "fileId": "11vUtigerOc0qRUtJlv7oldaUzGtLukUa",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1E10zEGtZ6ALNOjuRG1lUFc-idkl5zVzm",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / 241218-Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1-YMGfmKxXVFS8_yhr1tiKH2N33RPZPsf",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRK"
+    },
+    {
+     "fileId": "1k88EL-6TVnkVluNbqO8JV1R40Y9bK2UT",
+     "filename": "250715-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 250715-New SPA Cashback and Non-Cashback",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "12tZApPi36_skDYhJqge81MVaGikIFLWf",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1roYiX-ZFp9NzWFpFzRvGC1b5NRLBAxnI",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA without GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "124JVrQ0tYOVWkMVGe4BnpxFFHb_2IhQJ",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSE"
+    }
+   ]
+  },
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "add45dac5bd15c870c1a0413cad183cb",
+   "size": 14509,
+   "copies": 4,
+   "records": [
+    "PRP-1KEBLRO",
+    "PRP-1KEBLRK",
+    "PRP-1KEBLSD",
+    "PRP-1KEBLRG"
+   ],
+   "detail": "one blank precedent kept in 4 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 4 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1NErHS25zK9zK8WWMRAk-bP0cI1-zTRcu",
+     "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "1bIHaBXLSN_wQlEzMUe1WUJPqsT0Kdhih",
+     "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRK"
+    },
+    {
+     "fileId": "1UVxbBcQffpZ_0ULZEritg5itQ6U7Min6",
+     "filename": "241127-Appendix D-Monthly Payment Schedule (Only for GR SPA).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Grande Palladium-Rawalpindi / 241211-Annexures to the Agreement to Sell",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLSD"
+    },
+    {
+     "fileId": "19HGtccinNVebnRwnIuJt9bV3QwbJmbPs",
+     "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    }
+   ]
+  },
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "c51cbcb3ef6d431aba0fbd504d7b742c",
+   "size": 115715,
+   "copies": 3,
+   "records": [
+    "PRP-1KEBLRG",
+    "PRP-1KEBLRH"
+   ],
+   "detail": "one blank precedent kept in 3 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 3 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1Fm-6zVWwfN90kDib5zv26Vr0_md9G2sw",
+     "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRG"
+    },
+    {
+     "fileId": "1CuB20ZlMtPfA_QVjRlsOBWMRiJZ1KqVR",
+     "filename": "230830 - Agreement to Sell (Base Draft - Jade).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": null
+    },
+    {
+     "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+     "filename": "Base Draft.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRH"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "8db693ecd64410ee89ae56cec19e286d",
+   "size": 763541,
+   "copies": 3,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "16em3kpZHGq0722jMoNXfpJo31JLwtzFH",
+     "filename": "REVISED SUBMISSION MAP.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Maps_",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1l7lU3t22Lj15H76kQ2BtxxJVvD2CKSKF",
+     "filename": "Final Map IV2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Maps_",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1m1c-p9GhgpfR_lwFJo7wqUpi5gwFUVmm",
+     "filename": "Final Map IV2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Maps",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "b2371220e22f152ca67765a75ff75c35",
+   "size": 12408610,
+   "copies": 2,
+   "records": [
+    "PRP-1KEBLPS"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record PRP-1KEBLPS as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1CxfrqX8xbemkzrr5rZMmIaGtrfOqwDg0",
+     "filename": "Franchise Agreement_Mall 35 & Hotel One_20200225.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Mall 35 / Franchise Agreement",
+     "project": "Mall 35",
+     "recordId": "PRP-1KEBLPS"
+    },
+    {
+     "fileId": "1YLuzvyKp1ayOMvz-biKd0G_Lyoxi-I22",
+     "filename": "FranchiseAgreement_Mall35HotelOne_20200225.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "784f9861852cb8151395a3cfc68ab544",
+   "size": 100213,
+   "copies": 2,
+   "records": [
+    "PRP-1KEBLRO",
+    "CTR-0MV0AKS"
+   ],
+   "detail": "one blank precedent kept in 2 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 2 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1bxusfdTeSQIlhUR4rqB8r6zrcQ21GYXo",
+     "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1KEBLRO"
+    },
+    {
+     "fileId": "17oCyWvpPPG8z_aO7Wq5DOhMRBJGN0UDi",
+     "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Downtown Rumanza / Leaseback Agreements",
+     "project": "Downtown Rumanza",
+     "recordId": "CTR-0MV0AKS"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "d26468adb2f0ad6547c3b8b65573f956",
+   "size": 592155,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "CTR-12B725T"
+   ],
+   "projects": [
+    "Zameen Aurum",
+    "Zameen Ace Mall"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "11KLq1ca_QUh8djaBgFiEPdsTNu7Ehhxm",
+     "filename": "Form P.T.1_Zameen Platinum_20210121.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "1OGKWXozoBolERm-OXzVWZus-w7U2uj_z",
+     "filename": "Form P.T.1_Zameen Platinum_20210121.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "CTR-12B725T"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "5e3e9c21663fbe4a73c738d9b45e9d85",
+   "size": 2915763,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "CTR-12B725T"
+   ],
+   "projects": [
+    "Zameen Aurum",
+    "Zameen Ace Mall"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "1bb7SyagzfsMZV1-MzuIqbz-6POd-REPH",
+     "filename": "LDA_s Clearance Certificate - 15 A L Gulberg_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "19lfpacifvMUts2oXKLKZeG9fMffg4tU6",
+     "filename": "LDA_s Clearance Certificate - 15 A L Gulberg_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "CTR-12B725T"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "c49c5f7d928f4a009dd0679564afdd47",
+   "size": 654258,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "PRP-1KEBLQM"
+   ],
+   "projects": [
+    "Zameen Aurum",
+    "Zameen Ace Mall"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "18FD7njDPVSbLLf1hih5h3ZSaMj3Uo7_h",
+     "filename": "Zameen Aurum - Property Tax (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "1Ycyur4V56X9rYmqpgfp-rKMNLocSQnFp",
+     "filename": "Zameen Aurum - Property Tax (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "PRP-1KEBLQM"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "711b4de92b22011e243a54c913da2ca4",
+   "size": 402026,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "PRP-1KEBLQM"
+   ],
+   "projects": [
+    "Zameen Aurum",
+    "Zameen Ace Mall"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "1yhhoX-Lykf3DvfhdkYp-wT94ALTj6uEW",
+     "filename": "Zameen Aurum - CVT (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "1N1uCb_ukxPrD_mKcjede7ziYwsKaTJUz",
+     "filename": "Zameen Aurum - CVT (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "PRP-1KEBLQM"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "510416e51df5d72cff93e38ba842e151",
+   "size": 586766,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "CTR-12B725T"
+   ],
+   "projects": [
+    "Zameen Aurum",
+    "Zameen Ace Mall"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "1IidK8KjDeG6LElgKFNd4dfPJ-ReUVduk",
+     "filename": "15 A Property Tax Challan_1.PDF",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "1AH_a0hhcyZaYNdi7F7_6Ice4sODLd-zW",
+     "filename": "15 A Property Tax Challan_1.PDF",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "CTR-12B725T"
+    }
+   ]
+  },
+  {
+   "kind": "TEMPLATE_SHARED",
+   "md5": "11e83e1ebec5bde1d2981fc398482399",
+   "size": 68179,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "CTR-12B725T"
+   ],
+   "detail": "one blank precedent kept in 2 project template sets",
+   "resolution": "no attachment is wrong; count these as one form, not 2 documents",
+   "copiesDetail": [
+    {
+     "fileId": "1KnSxa-YLu6sd8SjssRyjuSoz4drbHIdt",
+     "filename": "iii - Aurum - Site Plan.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "1UpMldzsOGr_GopHdEA8GmENDvojG_Y60",
+     "filename": "iii - Aurum - Site Plan.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "CTR-12B725T"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "f47b22236187e042669e61ef5390b38c",
+   "size": 370792,
+   "copies": 2,
+   "records": [
+    "CTR-1F59WF9",
+    "PRP-1KEBLQM"
+   ],
+   "projects": [
+    "Zameen Aurum",
+    "Zameen Ace Mall"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "1j9lbB7hsEIsR4rGcY8NwCU-EF3wxrkdQ",
+     "filename": "Zameen Aurum - 236K (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs",
+     "project": "Zameen Aurum",
+     "recordId": "CTR-1F59WF9"
+    },
+    {
+     "fileId": "1hL2C1_t3F2gWx_xEiqjdBElQgAXgxENt",
+     "filename": "Zameen Aurum - 236K (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs",
+     "project": "Zameen Ace Mall",
+     "recordId": "PRP-1KEBLQM"
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "c4e6584aaa5198e97446956b5ffb8731",
+   "size": 31075939,
+   "copies": 2,
+   "records": [
+    "CTR-1F5A0UK",
+    "CTR-12B7234"
+   ],
+   "projects": [
+    "Zameen Opal",
+    "Zameen Opal_"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1oVrguey8z-0t368_4oMabJxgiZygNCGU",
+     "filename": "221011 Contract Agreement with PEMS (MEP Works)_Zameen Opal.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / PEMS-MEP Agreement",
+     "project": "Zameen Opal",
+     "recordId": "CTR-1F5A0UK"
+    },
+    {
+     "fileId": "1DEC7SRkdMMFOk1gGOoK35xkcXCcGapAp",
+     "filename": "221011 Contract Agreement with PEMS (MEP Works)_Zameen Opal.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal_ / Constructions Agreement_ / PEMS-MEP Agreement_",
+     "project": "Zameen Opal_",
+     "recordId": "CTR-12B7234"
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "9c5263cfafd435b9039cd90662edaef9",
+   "size": 10297394,
+   "copies": 2,
+   "records": [
+    "CTR-1F59XT5",
+    "CTR-1F59W9Z"
+   ],
+   "projects": [
+    "Zameen Opal"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1_QxahaHqxzEpbNW95TWCNlnigB6TPOPV",
+     "filename": "Excavation Agreement & Tech Specs (Zameen Opal).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Excavation",
+     "project": "Zameen Opal",
+     "recordId": "CTR-1F59XT5"
+    },
+    {
+     "fileId": "1nprK3-tS3AhsKjE9a3dlQYs_nTwkIhnB",
+     "filename": "Excavation Agreement_Zameen Opal 03102019.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Excavation",
+     "project": "Zameen Opal",
+     "recordId": "CTR-1F59W9Z"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "f4a824d814daf9cbd3e56a87bed23925",
+   "size": 13778919,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AFN"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-0MV0AFN as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1s9yZaLQfQ5edWTWyvDAf5oIUpTIyKkvK",
+     "filename": "250818-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    },
+    {
+     "fileId": "1lK913ILEA-Z_fL_ohsPIL2M-oWEvWPtj",
+     "filename": "250813-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Vault_ / Land Documents / Primary Documents",
+     "project": "Zameen Vault_",
+     "recordId": "CTR-0MV0AFN"
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "b3939b713f07ba820ef2b466a1221f09",
+   "size": 27462058,
+   "copies": 2,
+   "records": [
+    "CTR-1F59X37",
+    "CTR-12B725T"
+   ],
+   "projects": [
+    "Zameen Ace Mall",
+    "Zameen Ace Mall_"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1SA00O-2l76JtVev_itX12J1TQQ8hPV-7",
+     "filename": "Deepwell Piling ZAM 20200821_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Construction Agreement / Piling Agreement Deepwell",
+     "project": "Zameen Ace Mall",
+     "recordId": "CTR-1F59X37"
+    },
+    {
+     "fileId": "1soX2-b6jrYHV8W--buRRd7w1MUhohfF0",
+     "filename": "Deepwell Piling ZAM 20200821_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall_ / Construction Documents / Piling Agreement Deepwell_",
+     "project": "Zameen Ace Mall_",
+     "recordId": "CTR-12B725T"
+    }
+   ]
+  },
+  {
+   "kind": "CONTRADICTION",
+   "md5": "19aa31e818d2022105dad465a920d1a8",
+   "size": 9612729,
+   "copies": 2,
+   "records": [
+    "CTR-1F59VJE",
+    "CTR-1F59YJW"
+   ],
+   "projects": [
+    "Zameen Quadrangle",
+    "Zameen Media PPA's"
+   ],
+   "detail": "byte-identical copies are attached to records describing different projects",
+   "resolution": "one attachment is wrong — decide it from the document's own content",
+   "copiesDetail": [
+    {
+     "fileId": "1_cdzTiXrQuXKuL9tE27ljCnKXHktdLo_",
+     "filename": "Agreement for Supply of Ready-Mix Concrete_20210705 Tetra.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Construction Agreements / Ready Mix Concrete Supply Agreements",
+     "project": "Zameen Quadrangle",
+     "recordId": "CTR-1F59VJE"
+    },
+    {
+     "fileId": "19fdUYnIUT558pelKe8WkWnSxTFJwE4Wa",
+     "filename": "Agreement for Supply of Ready-Mix Concrete_20210705 Tetra.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F59YJW"
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "b06aec32caa587d03a67b3357cd740c2",
+   "size": 1016868,
+   "copies": 2,
+   "records": [
+    "CTR-1F59ZD7",
+    "CTR-0MV0B5D"
+   ],
+   "projects": [
+    "Zameen Media PPA's"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1CiZJwfkht7VOHEv7I0lBitce-LrvaIfm",
+     "filename": "SecondAmendmentSpringArch_20220411.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North / Spring Arch (Rawalpindi)",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F59ZD7"
+    },
+    {
+     "fileId": "1mumMCXfoUaqDlakzohBRvGtfM9Lc0Okv",
+     "filename": "Second Amendment Spring Arch_20220411.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0B5D"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "2f07601d3fc288fd7bd3d91c6c95decf",
+   "size": 14503813,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AES"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-0MV0AES as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1aRehJtE8b3JzyQv28ExttNduuC6f2lTY",
+     "filename": "Rockland Villas - PPA.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AES"
+    },
+    {
+     "fileId": "1jVHBtLiG4JjxOB85RoSERqw13u0fzJSV",
+     "filename": "TomorrowLandCountryClubResortVillas_20211230.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "11422f361499fc5f498c73f0e0f4c2e9",
+   "size": 46643558,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0B3R",
+    "CTR-1F59YIT"
+   ],
+   "projects": [
+    "Zameen Media PPA's"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1WbKC8AepluuEbZIGOj1NL1uDUWT1EnFk",
+     "filename": "MallofGujrat_PPA_20210630.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0B3R"
+    },
+    {
+     "fileId": "1lw45t03Obk6G-MnF_AI6nvn-nBQFLLvp",
+     "filename": "MallofGujrat_PPA_20210630.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F59YIT"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "f539d9959a026b4523e18a323a2c3e25",
+   "size": 31793817,
+   "copies": 2,
+   "records": [
+    "CTR-1F5A013"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-1F5A013 as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1BmNFGxIwAqa32XR-lDt5inmcrrrgqQcf",
+     "filename": "GolfViewRumanza_20220204.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F5A013"
+    },
+    {
+     "fileId": "1u6Fjo3YSO2TOS6KLSnccIJFoLXImRvLA",
+     "filename": "GolfViewRumanza_20220204.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "7ab57bdf394f7a160c8d4f3f14eea9e4",
+   "size": 125114,
+   "copies": 2,
+   "records": [
+    "PRP-1IIPG3T"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record PRP-1IIPG3T as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1MlBgD4WEoJGr_fzJf2u9fYQpT74EY7L9",
+     "filename": "Agreement to Sell for residencial apartments_ZAM_20190624_FIDIC escalation.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Residential Apartment",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "PRP-1IIPG3T"
+    },
+    {
+     "fileId": "1qlqpI3gcPYnAkTXoRvSYVzDisuGlCFAx",
+     "filename": "Agreement to Sell  [20190624].docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "2b7bbe7f476a43b9fea3f936697f3d3c",
+   "size": 109480,
+   "copies": 2,
+   "records": [
+    "CTR-1F59W9Y"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-1F59W9Y as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1dXf9K5LFxHjALBqfYLiQvzzQ_9ouiS_f",
+     "filename": "230920 - Agreement to Sell (Zameen Phoenix) - v1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore / Final Version",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": null
+    },
+    {
+     "fileId": "16A2M_8k6pcYb9TYAoZsTbMg2hJtXJDEn",
+     "filename": "Base Draft.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes",
+     "project": "Zameen - Pakistan Contract Templates",
+     "recordId": "CTR-1F59W9Y"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "23e9595f8836985aafff14a393abb3d7",
+   "size": 104126,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1WK9UrjxHa4_VrvTCB6RSI8VfMSE8k7mS",
+     "filename": "LDA Submission .jpg",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / LDA Submission Slip_",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1ArDAuSanMPD4t0dnfAifPLnQpHMmbpkt",
+     "filename": "WhatsApp Image 2026-07-13 at 11.39.43 (1).jpeg",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Approvals",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "c61b83fff1c5b8e068dcd86ed620433b",
+   "size": 5793498,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1s4uvv7JfeQIHfyJx4XpitP1W5krgGu-9",
+     "filename": "Registry Inteqal 290 Rakh Rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1EKQ_y3bKwTSdAcG81E6TPWrKHQTWsIdT",
+     "filename": "Registry Inteqal 290 Rakh Rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "e1269aa7db5625b62335e3d92f445147",
+   "size": 5108265,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1aOYsFiyF-rvPl7P0nCtDfh0iBxx2np5H",
+     "filename": "Registry & Inteqal khasra 286 & 290.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    },
+    {
+     "fileId": "1fiMibH6f6MsyJwT2cOmX3ol1bTDKZg9t",
+     "filename": "Registry & Inteqal khasra 286 & 290 (1).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "7a47d09a33b0ff32040190f42232dbc2",
+   "size": 4685238,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1eJfnaWuGEjgcYGiH2dPHeI9kTkKKF1ls",
+     "filename": "Registry 57k khasra 295 rakh rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1yHZoTak3ZlA7pWxDW4yRubLTfrFlF8Lz",
+     "filename": "Registry 57k khasra 295 rakh rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "3dd11d5215f74f23b354ed66e31d611b",
+   "size": 4964341,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1zewhLjCs_C6JqL0il3SczWpiOQwxkNb5",
+     "filename": "Registry 57k khasra 285 Rakh Rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1SNCb-F-6XoHM4GiBsq_X1P9kBeFGIVG6",
+     "filename": "Registry 57k khasra 285 Rakh Rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "8b52f66fdfbdb30f85727cbed67a697d",
+   "size": 4810720,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1gVX-vmLkJupl6YldLqfr_pS4QMPAc5FB",
+     "filename": "Registry Inteqal khasra 290 & 291.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1nu5nzOXpWnBkXWMB5jY1Ot4cTZdvhigI",
+     "filename": "Registry Inteqal khasra 290 & 291.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "61c89c494d2bc9c42c1790056eb7e468",
+   "size": 4026202,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1DhCA9EwGKeFTgc4UNgTK3vBTfEhivaJQ",
+     "filename": "Registry & NEC 18-9-0 rakh rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1S_N6m6YyDhNAEd2GlTMOxkQhMbYUXhug",
+     "filename": "Registry & NEC 18-9-0 rakh rai in favor of Mr Zia.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "c380cc60fb200f4ff1bebc12cc78c426",
+   "size": 2596597,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1VIzcIGcgHfrjm6yVYy5GdaGYwSHUjMRV",
+     "filename": "Registry 69-4-0 rakh rai (tariq saeed).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1i2Ee5nfWsiYW8ZBDhG_QxuMjCnmo77T3",
+     "filename": "Registry & Inteqal 69-4-0 rakh rai in Favour of ZIa Mohi Ud Din.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "bc0c53e20ced13b17b0de436c88e6d28",
+   "size": 1996956,
+   "copies": 2,
+   "records": [
+    "CTR-12B721D"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-12B721D as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1I5SlCPCZzQJ4FfACpcwhuFRXnPqYX1P3",
+     "filename": "Fards record LDA for revise plan ph-2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Fards",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    },
+    {
+     "fileId": "1134FDEyJfEcR7ZWNxvbb2NsQOqWCnbn6",
+     "filename": "Fards record LDA for revise plan ph-2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "0c958f68a829e3a73fd54027023c0001",
+   "size": 67160987,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AKR"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-0MV0AKR as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1aGyJW0yrX4g7ld35dsEaZEjXe1oY7xhA",
+     "filename": "Verified copies for revised plan phase l.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Ph 1 (Town Houses)_ / Land Documents_",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AKR"
+    },
+    {
+     "fileId": "1Re49AHvmQinZprMLJF7vnzMgmofvvqgk",
+     "filename": "Verified copies for revised plan phase l.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "863d1b58d544d2c44b4e60b7eb0ef840",
+   "size": 22179933,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AKR"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-0MV0AKR as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1PpB0fyqp7hqZYw1cMIS-DAS1c5lMIDez",
+     "filename": "AC Raiwind Report for NOC ADCR Phase1.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Ph 1 (Town Houses)_ / NOC",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AKR"
+    },
+    {
+     "fileId": "1Qnzot9aaZcrWFKCyHbERHlyaVTgL7hY4",
+     "filename": "AC Raiwind Report for NOC ADCR Phase1.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "d444d08a9f82d257b1b5882b094ed5ce",
+   "size": 604175,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AKP",
+    "CTR-1F5A0P6"
+   ],
+   "projects": [
+    "Zameen Media PPA's"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1R_oEfDK3elu-OCQw_hNYeL0hWqav2Olp",
+     "filename": "ZAMEEN UNDERTAKING.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Madison Square (Tipu Block) / Undertaking Madison Square_",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AKP"
+    },
+    {
+     "fileId": "1Z-KhVzMK6K5-m5pn-eZH0Lv2tRamuRps",
+     "filename": "UNDERTAKING MADISON SQUARE TIPU BLOCK.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Madison Square (Tipu Block) / Undertaking Madison Square_",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F5A0P6"
+    }
+   ]
+  },
+  {
+   "kind": "INHERITABLE",
+   "md5": "863569fae91aaa51754c3060554ef092",
+   "size": 5885553,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AKR"
+   ],
+   "detail": "1 copies of an already-placed document are unattached",
+   "resolution": "attach the remaining copies to record CTR-0MV0AKR as duplicates of the same instrument",
+   "copiesDetail": [
+    {
+     "fileId": "1tdd6iUBkOZMATvObYp8HqXXy2Z8FhIbu",
+     "filename": "Fard bay ADP 2-15-121 Shumaila Kiran.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Mall of Icon_ / Land Docs / Fards",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AKR"
+    },
+    {
+     "fileId": "1voF--IBdlrCiXUdOqXQ-2sy_lvoYG1Pv",
+     "filename": "Fard bay ADP 2-15-121 Shumaila Kiran.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+     "project": "Zameen Media PPA's",
+     "recordId": null
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "1c4b711f3a66fa6c94d35c7e5e8be75e",
+   "size": 1677095,
+   "copies": 2,
+   "records": [
+    "CTR-0MV0AKR",
+    "CTR-12B721D"
+   ],
+   "projects": [
+    "Zameen Media PPA's"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1xMfyb-te39UhRR9GE2AHnRtEYBYTpMRA",
+     "filename": "Fard Bay ADP 6-15-180 Maqsood Ahmed.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Mall of Icon_ / Land Docs / Fards",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AKR"
+    },
+    {
+     "fileId": "1rsG-YUhzp6LCEJISkiXVbxJPd7h_tNOW",
+     "filename": "Fard Bay ADP 6-15-180 Maqsood Ahmed.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Fards",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-12B721D"
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "0595c590c6aeb40c89b606f359ab4cb4",
+   "size": 1574360,
+   "copies": 2,
+   "records": [
+    "CTR-1F59X7O",
+    "CTR-1F5A0P6"
+   ],
+   "projects": [
+    "Zameen Media PPA's"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1iJsQ7orSbt2gzYe0N2qP3tD5m7EvdxEq",
+     "filename": "Inter Office MEMO_Madison Square II Tipu Block.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Final Final / Sabse Final / Final Final / Undertaking / Approval",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F59X7O"
+    },
+    {
+     "fileId": "1TzemAe1K7en9sRTyeCFQt_I0Z_3ZkqpE",
+     "filename": "Inter Office MEMO_Madison Square II Tipu Block.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Madison Square (Tipu Block) / Approvals_ / Approval (MEMO)",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-1F5A0P6"
+    }
+   ]
+  },
+  {
+   "kind": "DUPLICATE_RECORDS",
+   "md5": "c3612ab1e7cc1b396a2083327fa425e3",
+   "size": 23960985,
+   "copies": 2,
+   "records": [
+    "PRP-1KEBLSE",
+    "CTR-0MV0AFN"
+   ],
+   "projects": [
+    "Zameen Media PPA's"
+   ],
+   "detail": "one instrument is held by 2 records that describe the same project",
+   "resolution": "merge the duplicate records; no document is attached to the wrong project",
+   "copiesDetail": [
+    {
+     "fileId": "1uqDgHSZ506e-cHGRbwnh1i6cBtLDjWWf",
+     "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+     "project": "Zameen Media PPA's",
+     "recordId": "PRP-1KEBLSE"
+    },
+    {
+     "fileId": "1i40dEge7tmlnmDzBDtdBx4SC_Mln1992",
+     "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest",
+     "project": "Zameen Media PPA's",
+     "recordId": "CTR-0MV0AFN"
+    }
+   ]
+  }
+ ]
+}

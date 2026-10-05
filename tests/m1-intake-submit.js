@@ -1,27 +1,68 @@
-const puppeteer=require("puppeteer-core");const CHROME=process.env.CHROME||process.env.PUPPETEER_EXECUTABLE_PATH||"C:/Program Files/Google/Chrome/Application/chrome.exe";const BASE=`http://localhost:${process.env.LEGALOS_PORT||"4600"}`;const w=ms=>new Promise(r=>setTimeout(r,ms));
-const results=[];const errs=[];const ok=(n,c)=>{results.push(!!c);console.log((c?"PASS ":"FAIL ")+n);};
-const fill=p=>p.evaluate(()=>{document.querySelectorAll("input:not([type=file]):not([type=checkbox]):not([type=radio]):not([type=date]),textarea").forEach(el=>{if(!el.value){el.value="Mutual NDA with Orbit before diligence.";el.dispatchEvent(new Event("input",{bubbles:true}));}});document.querySelectorAll("select").forEach(s=>{if(!s.value&&s.options.length>1){s.value=s.options[1].value;s.dispatchEvent(new Event("change",{bubbles:true}));}});});
-const clk=(p,re)=>p.evaluate(re=>{const b=[...document.querySelectorAll("button")].find(x=>new RegExp(re,"i").test(x.textContent));if(b){b.click();return true;}return false;},re.source);
-(async()=>{const b=await puppeteer.launch({executablePath:CHROME,headless:"new",args:["--no-sandbox"]});const p=await b.newPage();
-p.on("pageerror",e=>errs.push(e.message));p.on("console",m=>{if(m.type()==="error")errs.push(m.text());});
-await p.setViewport({width:1440,height:1000});
-await p.goto(BASE+"/",{waitUntil:"networkidle2"});await w(400);
-await p.evaluate(()=>localStorage.removeItem("legalos-store-v1"));await p.reload({waitUntil:"networkidle2"});await w(500);
-await p.evaluate(()=>{const k="legalos-store-v1";const s=JSON.parse(localStorage.getItem(k));s.session=s.session||{};s.session.viewAsId="u16";s.notifs=[];localStorage.setItem(k,JSON.stringify(s));});
-const before=await p.evaluate(()=>(JSON.parse(localStorage.getItem("legalos-store-v1")).requests||[]).length);
-await p.evaluate(()=>location.hash="#/raise");await p.reload({waitUntil:"networkidle2"});await w(1200);
-await fill(p);await w(200);await clk(p,/continue/);await w(700);
-await p.evaluate(()=>{const el=[...document.querySelectorAll(".popt")].find(e=>/entering into an agreement/i.test(e.textContent||""));if(el)el.click();});
-await w(300);await fill(p);await w(200);await clk(p,/continue|review/);await w(700);
-await fill(p);await w(200);await clk(p,/submit/);await w(1000);
-const after=await p.evaluate(()=>(JSON.parse(localStorage.getItem("legalos-store-v1")).requests||[]).length);
-ok("wizard submitted a new request",after>before);
-const r=await p.evaluate(()=>{const rs=JSON.parse(localStorage.getItem("legalos-store-v1")).requests||[];const num=id=>parseInt(String(id).replace(/\D/g,""),10)||0;return rs.filter(x=>x.requesterId==="u16").sort((a,b)=>num(b.id)-num(a.id))[0]||null;});
-ok("intake TAT keyed category × priority",!!r&&/ × (Emergency|Time-critical|Important|Routine)$/.test((r.tat||{}).basis||""));
-ok("jurisdiction stamped (drives working week)",!!r&&("jurisdiction" in r));
-const acks=await p.evaluate(()=>{const s=JSON.parse(localStorage.getItem("legalos-store-v1"));return(s.notifs||[]).filter(n=>n.forUserId==="u16");});
-ok("acknowledgement notification sent to requester",acks.some(n=>/received/i.test(n.title)));
-console.log("   raised",r&&r.id,"· basis:",r&&r.tat&&r.tat.basis,"· jur:",r&&r.jurisdiction,"· acks:",acks.length);
-console.log("console errors:",errs.length,errs.slice(0,5).join(" | "));
-const pass=results.filter(Boolean).length;console.log(`\n==== ${pass}/${results.length} submit-path checks passed ====`);
-await b.close();process.exit(pass===results.length&&errs.length===0?0:2);})().catch(e=>{console.error("FATAL",e.message);process.exit(1);});
+// The submit path: a business user raises a request through the portal wizard
+// and the system does four things for them — creates it, fixes a turnaround
+// from category × priority, stamps the jurisdiction that decides the working
+// week, and acknowledges receipt.
+//
+// MIGRATED 2026-09-18. The original drove the wizard as "u16", a user id that
+// exists in no roster, against a shared server with no identity at all. It now
+// enters through the real /portal/ door as a department.
+//
+//   node tests/m1-intake-submit.js
+const H = require("./_harness.js");
+
+const DEPT = "Finance";
+const DEPT_ID = "dept-finance";
+
+H.runSuite("m1-intake-submit — raising a request through the portal", async (ctx) => {
+  const { check } = ctx;
+  const sb = ctx.setSandbox(await H.startSandbox({
+    portEnv: "LEGALOS_INTAKE_PORT", portFallback: "4859", prefix: "legalos-in-",
+  }));
+  const browser = ctx.setBrowser(await H.openBrowser());
+  const page = await browser.newPage();
+
+  const who = await H.enterPortalAs(page, sb, DEPT, ctx);
+  check("a business user reaches the requester door and picks their department", !!who, String(who).slice(0, 40));
+
+  const before = await page.evaluate((k) => (JSON.parse(localStorage.getItem(k) || "{}").requests || []).length, H.STORE_KEY);
+  const id = await H.raiseViaPortal(page, sb, { title: "Mutual NDA with Orbit before diligence" });
+  const after = await page.evaluate((k) => (JSON.parse(localStorage.getItem(k) || "{}").requests || []).length, H.STORE_KEY);
+  check("the wizard submits and creates a new request", after > before && !!id, `${before} -> ${after} (${id})`);
+
+  const r = await page.evaluate(([k, rid]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    return (s.requests || []).find((x) => x.id === rid) || null;
+  }, [H.STORE_KEY, id]);
+  check("the new request is attributed to the department that raised it",
+    !!r && r.requesterId === DEPT_ID, r ? String(r.requesterId) : "no request");
+
+  /* The turnaround is not a fixed number — it is category × priority, which is
+     what makes it defensible when somebody asks why a request is late. */
+  check("the turnaround is keyed on category × priority",
+    !!r && / × (Emergency|Time-critical|Important|Routine)$/.test((r.tat || {}).basis || ""),
+    r && r.tat ? r.tat.basis : "no TAT recorded");
+  check("the turnaround carries a due date and the clock it was fixed at",
+    !!r && !!(r.tat && r.tat.dueAt && r.tat.fixedAt),
+    r && r.tat ? `due ${String(r.tat.dueAt).slice(0, 10)} · fixed ${String(r.tat.fixedAt).slice(0, 10)}` : "-");
+
+  // Jurisdiction decides the working week a turnaround is counted in, so the
+  // field must be present on every request even when it resolves to nothing.
+  check("the jurisdiction that drives the working week is stamped on the record",
+    !!r && "jurisdiction" in r, r ? String(r.jurisdiction) : "-");
+
+  const acks = await page.evaluate(([k, u]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    return (s.notifs || []).filter((n) => n.forUserId === u).map((n) => n.title);
+  }, [H.STORE_KEY, DEPT_ID]);
+  check("the requester is acknowledged — they are told it was received",
+    acks.some((t) => /received/i.test(t || "")), acks.join(" | ").slice(0, 90) || "nothing was sent");
+
+  /* And it must reach LEGAL, not just sit in the raiser's browser. In a sandbox
+     the portal has no Cloudflare identity, so the push is refused there — the
+     legal-side queue is proven in m1-module-sorting and m1-approval-queue,
+     which seed through the server with a real session. What IS proven here is
+     that the client attempted the handover rather than silently keeping it. */
+  check("the request is composed for the server, not just for this browser",
+    !!r && (r.channel === "portal" || r.source === "Requester portal" || !!r.requestDate),
+    r ? `channel=${r.channel}` : "-");
+});

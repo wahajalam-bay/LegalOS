@@ -1,0 +1,968 @@
+VIEW IN APP
+
+Print Date 26 Jan, 2024
+
+Statement of Account
+Booking No: MALL35-110
+
+Name
+
+Sheikh Muhammad Wahab
+
+CNIC
+
+37405-9393118-9
+
+Phone No
+
++923215000052
+
+Email
+
+sheikh_whab@gmail.com
+
+Address
+
+Shaheen Chemist, Mall Road, Sadder, Rawalpindi,RAWALPINDI,Pakistan
+
+Booking Information
+
+Account Summary
+
+Booking No
+
+MALL35-110
+
+Booking Date
+
+22 Dec, 2019
+
+Booking Price
+
+PKR 5907000
+
+Overdue Amount
+
+PKR 0
+
+Unit No.
+
+HA-602
+
+Agreement Date
+
+22 Jan, 2020
+
+Total Amount
+
+PKR 5907000
+
+Paid Amount
+
+PKR 5316000
+
+Property Category
+
+Hotel
+
+Net Area (Sqft)
+
+358.0
+
+Billed Amount
+
+PKR -
+
+Outstanding Amount
+
+PKR 591000
+
+Property Type
+
+Apartment
+
+Tax & Additional Information
+Sales Tax
+
+PKR 0
+
+Income Tax
+
+PKR 0
+
+Overdue Charges
+
+PKR 0
+
+Sales Tax Paid
+
+PKR 0
+
+Income Tax Paid
+
+PKR 0
+
+Transfer Fee (If Applicable)
+
+%
+
+Overdue Charges Paid
+
+PKR 0
+
+Transactions
+Inst. Name
+Down Payment
+
+Ref#
+5556
+Ref#
+5557
+Ref#
+5559
+
+Inst. Name
+Installment 1
+
+Due Date
+
+Inst. Amount
+
+22 Dec, 2019
+
+Income Tax
+
+PKR 1772100
+
+PKR 0
+
+Payment
+Amount
+
+Deposit Date
+
+Payment
+Mode
+
+PKR 500000
+
+27 Sep, 2019
+
+cheque
+
+Payment
+Amount
+
+Deposit Date
+
+Payment
+Mode
+
+PKR 1272000
+
+10 Feb, 2019
+
+cheque
+
+Payment
+Amount
+
+Deposit Date
+
+Payment
+Mode
+
+Amount
+Adjusted
+
+30 Dec, 2020
+
+cash
+
+100
+
+PKR 200
+
+Due Date
+
+Inst. Amount
+
+01 Mar, 2020
+
+Phone: +9242111888888
+Email: mall35@zameendevelopments.com
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+500000
+Amount
+Adjusted
+1272000
+
+Income Tax
+
+PKR 322200
+
+Address: 35-A Police Station Rd, Saddar,
+Rawalpindi, Punjab
+
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+This is the computer generated document and
+does not need a signature and a stamp.
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Inst. Name
+
+Due Date
+
+Income Tax
+
+Deposit Date
+
+Payment
+Mode
+
+Amount
+Adjusted
+
+30 Dec, 2020
+
+cash
+
+100
+
+Payment
+Amount
+
+Deposit Date
+
+Payment
+Mode
+
+Amount
+Adjusted
+
+PKR 322000
+
+30 Dec, 2020
+
+Payment
+Amount
+
+Deposit Date
+
+15966
+
+PKR 322000
+
+27 Jun, 2022
+
+Inst. Name
+
+Due Date
+
+Ref#
+5559
+Ref#
+10050
+Ref#
+
+Installment 2
+
+Payment
+Amount
+
+Inst. Amount
+
+PKR 200
+
+01 Jun, 2020
+
+PKR 322000
+
+27 Jun, 2022
+
+Payment
+Amount
+
+Deposit Date
+
+15967
+
+PKR 322000
+
+15 Sep, 2022
+
+Inst. Name
+
+Due Date
+
+Ref#
+
+Installment 3
+
+01 Sep, 2020
+
+Deposit Date
+
+PKR 322000
+
+15 Sep, 2022
+
+Payment
+Amount
+
+Deposit Date
+
+15977
+
+PKR 1879500
+
+10 Oct, 2022
+
+Inst. Name
+
+Due Date
+
+15967
+Ref#
+
+Installment 4
+
+Deposit Date
+
+15977
+
+PKR 1879500
+
+10 Oct, 2022
+
+Inst. Name
+
+Due Date
+
+Installment 5
+
+01 Mar, 2021
+
+Deposit Date
+
+15977
+
+PKR 1879500
+
+10 Oct, 2022
+
+Inst. Name
+
+Due Date
+
+Installment 6
+
+Phone: +9242111888888
+Email: mall35@zameendevelopments.com
+
+Payment
+Mode
+
+PKR 0
+
+PKR 0
+
+PKR 0
+
+PKR
+
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+321700
+Amount
+Adjusted
+500
+
+Income Tax
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+322200
+
+Income Tax
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+
+pay_order
+
+Inst. Amount
+
+01 Jun, 2021
+
+Income Tax
+
+PKR 322200
+
+Payment
+Amount
+
+Ref#
+
+Outstanding
+
+300
+
+pay_order
+
+Inst. Amount
+
+Total
+
+Amount
+Adjusted
+
+pay_order
+
+Payment
+Mode
+
+Overdue Charges
+
+321900
+
+cheque
+Payment
+Mode
+
+Sales Tax
+
+Amount
+Adjusted
+
+PKR 322200
+
+Payment
+Amount
+
+Ref#
+
+Payment
+Mode
+
+Inst. Amount
+
+01 Dec, 2020
+
+PKR 0
+
+PKR 322200
+
+Payment
+Amount
+
+Ref#
+
+Income Tax
+
+cheque
+
+Inst. Amount
+
+Outstanding
+
+100
+
+cheque
+Payment
+Mode
+
+Total
+
+Amount
+Adjusted
+
+cheque
+
+Payment
+Mode
+
+Overdue Charges
+
+322000
+
+PKR 322200
+
+Deposit Date
+
+15966
+
+Payment
+Mode
+
+Inst. Amount
+
+Payment
+Amount
+
+Ref#
+
+cheque
+
+Sales Tax
+
+322200
+
+Income Tax
+
+PKR 322200
+
+Address: 35-A Police Station Rd, Saddar,
+Rawalpindi, Punjab
+
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+This is the computer generated document and
+does not need a signature and a stamp.
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Inst. Name
+
+Due Date
+
+Inst. Amount
+
+Payment
+Amount
+
+Deposit Date
+
+15977
+
+PKR 1879500
+
+10 Oct, 2022
+
+Inst. Name
+
+Due Date
+
+Ref#
+
+Installment 7
+
+01 Sep, 2021
+
+15977
+
+PKR 1879500
+
+10 Oct, 2022
+
+Inst. Name
+
+Due Date
+
+Installment 8
+
+01 Dec, 2021
+
+15977
+
+PKR 1879500
+
+10 Oct, 2022
+
+Inst. Name
+
+Due Date
+
+Deposit Date
+
+PKR 1879500
+
+10 Oct, 2022
+
+Payment
+Amount
+
+Deposit Date
+
+17349
+
+PKR 322000
+
+30 Nov, 2022
+
+Inst. Name
+
+Due Date
+
+15977
+Ref#
+
+Installment 10
+
+Deposit Date
+
+PKR 322000
+
+30 Nov, 2022
+
+Payment
+Amount
+
+Deposit Date
+
+19751
+
+PKR 376300
+
+23 Feb, 2023
+
+Inst. Name
+
+Due Date
+
+17349
+Ref#
+
+Installment 11
+
+Payment
+Mode
+
+01 Sep, 2022
+
+Deposit Date
+
+Payment
+Mode
+
+19751
+
+PKR 376300
+
+23 Feb, 2023
+
+cheque
+
+Inst. Name
+
+Due Date
+
+Possession
+
+Phone: +9242111888888
+Email: mall35@zameendevelopments.com
+
+-
+
+PKR 0
+
+Inst. Amount
+
+Total
+
+Outstanding
+
+PKR 0
+
+PKR 0
+
+PKR
+
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+268000
+Amount
+Adjusted
+54200
+
+Income Tax
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+267800
+Amount
+Adjusted
+54400
+
+Income Tax
+
+PKR 321900
+
+Payment
+Amount
+
+Ref#
+
+Income Tax
+
+cheque
+
+Inst. Amount
+
+Overdue Charges
+
+322200
+
+cheque
+Payment
+Mode
+
+Sales Tax
+
+Amount
+Adjusted
+
+PKR 322200
+
+Payment
+Amount
+
+Ref#
+
+PKR 0
+
+cheque
+
+Inst. Amount
+
+01 Jun, 2022
+
+Income Tax
+
+pay_order
+Payment
+Mode
+
+Outstanding
+
+322200
+
+pay_order
+
+Payment
+Mode
+
+Total
+
+Amount
+Adjusted
+
+PKR 322200
+
+Payment
+Amount
+
+Ref#
+
+Payment
+Mode
+
+Inst. Amount
+
+01 Mar, 2022
+
+PKR 0
+
+PKR 322200
+
+Deposit Date
+
+Installment 9
+
+Income Tax
+
+pay_order
+
+Inst. Amount
+
+Payment
+Amount
+
+Ref#
+
+Payment
+Mode
+
+Overdue Charges
+
+322200
+
+PKR 322200
+
+Deposit Date
+
+Sales Tax
+
+Amount
+Adjusted
+
+pay_order
+
+Inst. Amount
+
+Payment
+Amount
+
+Ref#
+
+Payment
+Mode
+
+Income Tax
+
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+Total
+PKR
+
+Outstanding
+PKR 0
+
+Amount
+Adjusted
+321900
+
+Income Tax
+
+PKR 591000
+
+Address: 35-A Police Station Rd, Saddar,
+Rawalpindi, Punjab
+
+PKR 0
+
+Sales Tax
+PKR 0
+
+Overdue Charges
+PKR 0
+
+This is the computer generated document and
+does not need a signature and a stamp.
+
+Total
+PKR
+
+Outstanding
+PKR 591000

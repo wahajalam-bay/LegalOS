@@ -1,0 +1,162 @@
+{
+ "builtAt": "2026-09-22T17:39:20.199Z",
+ "total": 199,
+ "leases": 102,
+ "services": 83,
+ "other": 14,
+ "arithmetic": "102 + 83 + 14 = 199",
+ "balances": true,
+ "misfiledRecovered": 32,
+ "misfiledByFamily": {
+  "Zameen Group _PK Intercompany Loans": 20,
+  "Resolutions": 4,
+  "Zameen Group_Loan Agreements": 8
+ },
+ "lifecycleActionsLinked": 2,
+ "lifecycleActionsUnlinked": [
+  {
+   "id": "CTR-1QZ6TLZ",
+   "title": "Third Amendment of Pak Telecom mobile limited",
+   "why": "no matching parent agreement in the register"
+  },
+  {
+   "id": "CTR-0YGTVFR",
+   "title": "Lease Agreement Warehouse Green Town",
+   "why": "no matching parent agreement in the register"
+  }
+ ],
+ "byCategory": {
+  "LEASE_AGREEMENT": 102,
+  "SERVICE_AGREEMENT": 83,
+  "BANKING_AND_TREASURY": 1,
+  "NDA_CONFIDENTIALITY": 6,
+  "SALE_AND_PURCHASE": 1,
+  "MEMORANDUM_OF_UNDERSTANDING": 2,
+  "HISTORICAL_ACTION": 2,
+  "FRANCHISE_AND_LICENSING": 2
+ },
+ "remainderAfterLeaseAndService": {
+  "BANKING_AND_TREASURY": 1,
+  "NDA_CONFIDENTIALITY": 6,
+  "SALE_AND_PURCHASE": 1,
+  "MEMORANDUM_OF_UNDERSTANDING": 2,
+  "HISTORICAL_ACTION": 2,
+  "FRANCHISE_AND_LICENSING": 2
+ },
+ "dataCompleteness": {
+  "COMPLETE": 141,
+  "INCOMPLETE_SOURCE": 57,
+  "CONFLICTING_SOURCE": 1
+ },
+ "evidenceStatus": {
+  "DOCUMENTED": 174,
+  "NO_DOCUMENT_ON_FILE": 23,
+  "PARTIALLY_DOCUMENTED": 2
+ },
+ "sourceLocationMismatch": 32,
+ "documentAuthorization": {
+  "all": {
+   "documents": 321,
+   "readableByCompliance": 16,
+   "readableByCommercial": 300
+  },
+  "misfiled": {
+   "documents": 47,
+   "readableByCompliance": 7,
+   "readableByCommercial": 40
+  },
+  "correctlyFiled": {
+   "documents": 274,
+   "readableByCompliance": 9,
+   "readableByCommercial": 260
+  },
+  "note": "Pre-existing scope, unchanged by this reconciliation (scope diff 0/0/0). Granting Compliance read access here is an authorization decision, not a reconciliation step."
+ },
+ "otherTypes": [
+  {
+   "id": "CTR-0T5MGE8",
+   "type": "Cash Management\n Agreement",
+   "title": "Cash Management \nAgreement Habib Bank\n limited",
+   "category": "BANKING_AND_TREASURY"
+  },
+  {
+   "id": "CTR-0WFUCFN",
+   "type": "Non-Disclosure Agreement",
+   "title": "Mutual Non-Disclosure Agreement",
+   "category": "NDA_CONFIDENTIALITY"
+  },
+  {
+   "id": "CTR-0WFUCFP",
+   "type": "Non-Disclosure Agreement",
+   "title": "Non- Disclosure Agreement",
+   "category": "NDA_CONFIDENTIALITY"
+  },
+  {
+   "id": "CTR-1QZ6TGP",
+   "type": "Non-Disclosure Agreement",
+   "title": "Non-Disclosure Agreement",
+   "category": "NDA_CONFIDENTIALITY"
+  },
+  {
+   "id": "CTR-1QZ6TGV",
+   "type": "Sale & Purchase Agreement",
+   "title": "Sale & Purchase Agreement",
+   "category": "SALE_AND_PURCHASE"
+  },
+  {
+   "id": "CTR-1QZ6TK7",
+   "type": "Non-Disclosure Agreement",
+   "title": "Non-Disclosure Agreement",
+   "category": "NDA_CONFIDENTIALITY"
+  },
+  {
+   "id": "CTR-1QZ6TKB",
+   "type": "Non-Disclosure Agreement",
+   "title": "Non-Disclosure Agreement",
+   "category": "NDA_CONFIDENTIALITY"
+  },
+  {
+   "id": "CTR-1QZ6TL8",
+   "type": "Memorandum of Understanding",
+   "title": "Memorandum of Understanding",
+   "category": "MEMORANDUM_OF_UNDERSTANDING"
+  },
+  {
+   "id": "CTR-1QZ6TLV",
+   "type": "Termination Agreement",
+   "title": "Lease Agreement Business Avenue Karachi",
+   "category": "HISTORICAL_ACTION"
+  },
+  {
+   "id": "CTR-1QZ6TM0",
+   "type": "Memorandum of Understanding",
+   "title": "Memorandum of Understanding Furnishia Pakistan",
+   "category": "MEMORANDUM_OF_UNDERSTANDING"
+  },
+  {
+   "id": "CTR-0YGTVEZ",
+   "type": "Franchise Agreement",
+   "title": "Confidentiality Agreement",
+   "category": "NDA_CONFIDENTIALITY"
+  },
+  {
+   "id": "CTR-0YGTVF0",
+   "type": "Franchise Agreement",
+   "title": "International Hotel Licensing",
+   "category": "FRANCHISE_AND_LICENSING"
+  },
+  {
+   "id": "CTR-0YGTVFR",
+   "type": "Novation Agreement",
+   "title": "Lease Agreement Warehouse Green Town",
+   "category": "HISTORICAL_ACTION"
+  },
+  {
+   "id": "CTR-0MISJ1Z",
+   "type": "Franchise Agreement",
+   "title": "Franchise Agreement Hotel One Pvt. Ltd.",
+   "category": "FRANCHISE_AND_LICENSING"
+  }
+ ],
+ "recordsWithNoDocument": 25
+}

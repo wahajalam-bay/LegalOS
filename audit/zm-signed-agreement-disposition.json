@@ -1,0 +1,118 @@
+{
+ "determinedAt": "2026-09-21",
+ "note": "Determined from the recorded reading evidence, the four PPA/Admin/Other workbooks and the live register. Drive was not modified.",
+ "headline": "15 of the 16 are executed. One was read in full and is not, and has been reclassified as a draft.",
+ "dispositions": [
+  {
+   "file": "Vehicle lease financing agreement- Adil Masud.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-10EG48C (ref 95)",
+   "evidence": "Rs 100 stamp N584904, Oath Commissioner attested, 6 Dec 2018; tracker documents column names this exact file",
+   "defect": "also attached to CTR-1F59UV4 (ref 137) — same type, same start, same documents column: one agreement recorded twice"
+  },
+  {
+   "file": "CONTRACT AGREEMENT [Final Version].docx",
+   "outcome": "NOT_EXECUTED_RECLASSIFY_AS_DRAFT",
+   "record": null,
+   "evidence": "read in full: 6 [dot] placeholders remain in the body for BOTH party names and the agreement date; signature lines are blank underscores; witness block empty. A .docx carries no wet signature. Execution block lists intended signatories only.",
+   "defect": "was classified EXECUTED_OPERATIONAL_DOCUMENT on a 1-page MEDIUM-confidence skim"
+  },
+  {
+   "file": "AgreementforsupplyofReadyMixConcrete_ZameenPlatinumTetraReadyMix_20210504.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1F59YJW (ref 1386)",
+   "evidence": "Tetra Ready Mix and Zameen Platinum seals, FK initials; CONFIRMED over 4 pages"
+  },
+  {
+   "file": "Construction of Drain Pipeline Agreement [20201124].docx",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1F59X6Q (ref 1233)",
+   "evidence": "read in full: zero placeholders; names ZUI Investments and Shelters Construction (Private) Limited in the opening; dated 2 November 2020 in the body; signatories with CNICs. Record ref 1233 firstParty is ZUI Investments and its documents column names the drainworks agreement",
+   "defect": "currently attached to the PROPERTY record Zameen Ace Mall, not to contract ref 1233"
+  },
+  {
+   "file": "1908.002.01-DMA-CTL - HBFC DMA First Amendment.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1F59UUG (ref 134)",
+   "evidence": "HBFC seal, notary Sarwar Ahmad Khan; agreement date 2019-11-01 equals the record start exactly"
+  },
+  {
+   "file": "20190801 DMA-HBFCL.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-10EG48B (ref 93)",
+   "evidence": "both parties signed with company stamps, 2 witnesses, CONFIRMED over 4 pages; record ref 93 starts 2019-08-01 and its documents column names this file",
+   "note": "the record already holds a second physical copy from the Compliance root; one agreement, two source locations"
+  },
+  {
+   "file": "20190913 PRIV Google Advertising Service Agreement [2019].pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1F59UUE (ref 132)",
+   "evidence": "stamped by Google's legal department; record type is Google Advertising Service Agreement and its documents column names this exact file",
+   "defect": "the record's TITLE column reads 'Non-Disclosure Agreement' while its type reads 'Google Advertising Service Agreement' — a tracker defect, not a wrong attachment"
+  },
+  {
+   "file": "1908_002.00CTL-DMA - Escorts Bank.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1F59UUD (ref 131)",
+   "evidence": "both parties' initials, notary attested; documents column names this exact file"
+  },
+  {
+   "file": "20191112 PRIV RA&Co.CA DMA.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1F59UV2 (ref 135)",
+   "evidence": "Rs 500 stamp B622390, 12 Nov 2019; record type is Digital Marketing Agreement",
+   "defect": "ref 135's documents column names the EXPO agreement, not this DMA; ref 136 (Expo Agreement) holds no document and the EXPO pdf is attached nowhere"
+  },
+  {
+   "file": "20200106 DMA Allied Bank Limited.pdf",
+   "outcome": "A_LINKED_TO_EXISTING_OPERATIONAL_CONTRACT",
+   "record": "CTR-1QZ6TIN (ref 195)",
+   "evidence": "Rs 500 stamp B618023, both seals, 6 Jan 2020; record titled 'DMA: Allied Bank' starting 2020-01-06"
+  },
+  {
+   "file": "6 Allotment letter of ZAH.pdf",
+   "outcome": "D_HISTORICAL_EXECUTED_DOCUMENT",
+   "record": "PRP-1IIPG3R (Zameen Ace Homes)",
+   "evidence": "six DHA Rawalpindi allotment letters, form DHAI-401(R), serials 72062/72059, sealed and signed by the Director Transfer & Record, 31 Mar 2021",
+   "note": "third-party instruments issued by DHA, evidencing title behind the project; not a Zameen contract"
+  },
+  {
+   "file": "11 Plot Allotment letter of DHA 3.pdf",
+   "outcome": "D_HISTORICAL_EXECUTED_DOCUMENT",
+   "record": "PRP-1IIPG3R (Zameen Ace Homes)",
+   "evidence": "eleven DHA allotment letters, serial 71008 among them, 23 Nov 2020, each sealed and signed"
+  },
+  {
+   "file": "unit-9 st-22  agreement no099.pdf",
+   "outcome": "D_HISTORICAL_EXECUTED_DOCUMENT",
+   "record": "PRP-1IIPG3R (Zameen Ace Homes)",
+   "evidence": "M/s V4 Capital and a named individual, 1 Dec 2020, Rs 300 stamp 081739"
+  },
+  {
+   "file": "Affidavit-by-Seller [1st Step].doc (copy 1)",
+   "outcome": "C_EXECUTED_PRECEDENT_SAMPLE",
+   "record": null,
+   "evidence": "a completed, dated affidavit retained as a worked example in a step-by-step transfer pack"
+  },
+  {
+   "file": "Affidavit-by-Seller [1st Step].doc (copy 2)",
+   "outcome": "C_EXECUTED_PRECEDENT_SAMPLE",
+   "record": null,
+   "evidence": "byte-identical second copy of the same precedent, kept where it lies"
+  },
+  {
+   "file": "20190404 Agreement to Sell for 13 Block -H Gulberg.docx",
+   "outcome": "C_EXECUTED_PRECEDENT_SAMPLE",
+   "record": null,
+   "evidence": "a completed, dated agreement to sell retained as precedent"
+  }
+ ],
+ "defectsFound": [
+  "DUPLICATE LOGICAL CONTRACT: CTR-10EG48C (ref 95) and CTR-1F59UV4 (ref 137) are one vehicle lease — same type, same start 2018-12-06, same documents column; they survive as two because the titles differ and one has a blank counterparty",
+  "DUPLICATE PROPERTY RECORD (suspected): PRP-1IIPG3R and PRP-1IIPG3S are both 'Zameen Ace Homes', Islamabad, each holding the same 25 documents",
+  "WRONG ATTACHMENT: the drain pipeline agreement sits on the Zameen Ace Mall property instead of contract ref 1233",
+  "OVER-ATTACHMENT: contract ref 1233, titled generically 'Construction Agreement', holds 20 documents spanning Mall 35, Zameen Quadrangle, Kingcrete and Tetra, none of which is the drainworks agreement its own documents column names",
+  "MISCLASSIFICATION: CONTRACT AGREEMENT [Final Version].docx is not executed"
+ ],
+ "appliedAt": "2026-09-21T17:45:34.901Z"
+}

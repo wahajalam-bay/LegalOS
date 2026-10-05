@@ -1,0 +1,133 @@
+{
+ "generatedAt": "2026-09-21T13:25:00.424Z",
+ "workbooks": [
+  {
+   "fileId": "1c5JtyYzHvhcPlyHs8ucgF-K09Dsjtx9w",
+   "name": "Reference Numbers (ZD).xlsx",
+   "bytes": 17016,
+   "md5": "5ca6adafc9760a494b3cdd319e9bedc9",
+   "modifiedTime": "2026-09-09T07:00:06.000Z",
+   "sheetCount": 2,
+   "totalNonEmptyRows": 4,
+   "registersSheetCap": 60,
+   "exceedsRegistersCap": false,
+   "sheets": [
+    {
+     "name": "Zameen EON",
+     "hidden": false,
+     "rowsTotal": 999,
+     "rowsNonEmpty": 2,
+     "widestRow": 5,
+     "headerRowIndex": null,
+     "headers": []
+    },
+    {
+     "name": "Zameen Jade",
+     "hidden": false,
+     "rowsTotal": 2,
+     "rowsNonEmpty": 2,
+     "widestRow": 5,
+     "headerRowIndex": null,
+     "headers": []
+    }
+   ]
+  },
+  {
+   "fileId": "1hnzBkMDUQj3o48IARYkFDU_ythmyJOEb",
+   "name": "Other Contracts- Zameen Media .xlsx",
+   "bytes": 198005,
+   "md5": "8edbfa0612d15a522959dcf2fb4631c2",
+   "modifiedTime": "2026-09-09T07:00:04.000Z",
+   "sheetCount": 1,
+   "totalNonEmptyRows": 1124,
+   "registersSheetCap": 60,
+   "exceedsRegistersCap": false,
+   "sheets": [
+    {
+     "name": "Zameen Media-PPA & Contracts Tr",
+     "hidden": false,
+     "rowsTotal": 1262,
+     "rowsNonEmpty": 1124,
+     "widestRow": 24,
+     "headerRowIndex": null,
+     "headers": []
+    }
+   ]
+  },
+  {
+   "fileId": "1i6ygCxBjGbW_KZZ4vvcwhyKs21MtQbrb",
+   "name": "Admin Contracts .xlsx",
+   "bytes": 198148,
+   "md5": "4c8ccd2a18c6166c3815a6212e9d924f",
+   "modifiedTime": "2026-09-09T07:00:02.000Z",
+   "sheetCount": 1,
+   "totalNonEmptyRows": 1124,
+   "registersSheetCap": 60,
+   "exceedsRegistersCap": false,
+   "sheets": [
+    {
+     "name": "Admin Contracts",
+     "hidden": false,
+     "rowsTotal": 1262,
+     "rowsNonEmpty": 1124,
+     "widestRow": 24,
+     "headerRowIndex": null,
+     "headers": []
+    }
+   ]
+  },
+  {
+   "fileId": "13Ah2_2XQ-mi8_qY5DJni7dlsvReXag5b",
+   "name": "00 Zameen Media-PPAs and Finder's Fee Tracker (1).xlsx",
+   "bytes": 157928,
+   "md5": "9aa1ca9495b3a10a42be0cb4d7146f77",
+   "modifiedTime": "2026-09-09T07:00:00.000Z",
+   "sheetCount": 2,
+   "totalNonEmptyRows": 1604,
+   "registersSheetCap": 60,
+   "exceedsRegistersCap": false,
+   "sheets": [
+    {
+     "name": "Zameen Media-PPA & Contracts Tr",
+     "hidden": false,
+     "rowsTotal": 859,
+     "rowsNonEmpty": 810,
+     "widestRow": 24,
+     "headerRowIndex": null,
+     "headers": []
+    },
+    {
+     "name": "_LinkExport",
+     "hidden": false,
+     "rowsTotal": 794,
+     "rowsNonEmpty": 794,
+     "widestRow": 4,
+     "headerRowIndex": null,
+     "headers": []
+    }
+   ]
+  },
+  {
+   "fileId": "1zm27WQVN8IRNRIze6ASYT4J0KD5QXNmT",
+   "name": "00 Zameen Media-PPAs and Finder's Fee Tracker.xlsx",
+   "bytes": 138844,
+   "md5": "646be0aedd3312a54a86a4a0f5eb546b",
+   "modifiedTime": "2026-09-09T06:59:57.000Z",
+   "sheetCount": 1,
+   "totalNonEmptyRows": 810,
+   "registersSheetCap": 60,
+   "exceedsRegistersCap": false,
+   "sheets": [
+    {
+     "name": "Zameen Media-PPA & Contracts Tr",
+     "hidden": false,
+     "rowsTotal": 859,
+     "rowsNonEmpty": 810,
+     "widestRow": 24,
+     "headerRowIndex": null,
+     "headers": []
+    }
+   ]
+  }
+ ]
+}

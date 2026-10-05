@@ -1,0 +1,1600 @@
+[
+ {
+  "fileId": "1pGolrXPBInKEYdpxXM4z8vl4Co7mT5bU",
+  "name": "20200225 PRIV ZAGC JV_MOU [MH_printed version].docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / MOUs",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "24th day of February 2020",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Venture One (Private) Limited",
+     "Mr. Muhammad Amir son of Samsaamuddin",
+     "construction thereof",
+     "architectural development",
+     "both parties shall be paid to both Zameen",
+     "the Partner"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1MCSUW-YnPLXXQi6B3qO-irK0xYaOW3KE",
+  "name": "Final Lease Agreement Draft - Zameen.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Lease Agreement",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "August 2020",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "Lessor 1 (unnamed individual)",
+     "Lessor 2 (unnamed individual)",
+     "Lessor 3 (unnamed individual)",
+     "OLX Classifieds Pakistan (SMC-Private) Limited (Lessee)"
+    ],
+    "source": "every page read visually",
+    "method": "CONTENT_VISION_READ",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "Lessor 1 (unnamed individual)",
+     "Lessor 2 (unnamed individual)",
+     "Lessor 3 (unnamed individual)",
+     "OLX Classifieds Pakistan (SMC-Private) Limited (Lessee)"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1D1Oid4d4JkhtcToaiGEF4OwV-FMG6eux",
+  "name": "Partnership Deed [Final Draft 20201224].docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / JV & Partnerships",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "28th day of December, 2020",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "the Partners",
+     "on such conditions as may be",
+     "the Partners in the form of a written",
+     "signed resolution",
+     "Arbitration Arbitration Any dispute"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1qLBlrM0VM0s9n_qV3NprlfBJ_o8-tC6G",
+  "name": "Undertaking for Payments-Medallion Account.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / IT and PS Templates",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "25th March 2024",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "FHS Resorts (Private) Limited",
+     "Zameen Medallion (Private) Limited",
+     "Zameen Media (Private) Limited",
+     "Zameen Core (SMC-Private) Limited"
+    ],
+    "source": "every page read visually",
+    "method": "CONTENT_VISION_READ",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "FHS Resorts (Private) Limited",
+     "Zameen Medallion (Private) Limited",
+     "Zameen Media (Private) Limited",
+     "Zameen Core (SMC-Private) Limited"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1SFxk4Sh3LeCyFlZu5ZDGevqwvTpZoSju",
+  "name": "Franchise Agreement_Mall 35 & Hotel One [EXECUTION VERSION].docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Franchise Agreement",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "25th day of February 2020",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "the Franchisor",
+     "third parties that may be deemed reasonably necessary"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1ZCYOGw7MquNYcf5EgffakGvFQqpfT8V7",
+  "name": "Construction of Drain Pipeline Agreement [20201124].docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Construction Contracts - Misc",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "2nd day of November, 2020",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "the Parties including its annexures attached hereto. means the priced",
+     "the Parties hereto",
+     "shall override any and all other prior understandings and agreements"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1KLLqTFI0Hru4l__bIf_1_FVPIOaSiFZL",
+  "name": "MOU Marketing- BAFL  Zameen [Clean Version].docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Banking and Finance",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "December 2020",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "the Parties in a final definitive agreement executed by",
+     "between the Parties"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "1l3g-p-0RwISZJS1Pn6axvHNt5LNMwEQs",
+  "name": "20190801 DMA-HBFCL.pdf",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / HBFCL",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "2019-08-01",
+    "source": "document content",
+    "method": "CONTENT_VISION_READ",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "House Building Finance Company Limited (HBFCL)"
+    ],
+    "source": "every page read visually",
+    "method": "CONTENT_VISION_READ",
+    "confidence": "HIGH"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "House Building Finance Company Limited (HBFCL)"
+    ],
+    "source": "document content",
+    "method": "CONTENT_VISION_READ",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "118qYhRgz1c0nVtgovGLk3DXEFNri9mmL",
+  "name": "20190828- First Amendment- HBFCL- [RB].docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / DMA / 00 Drafts",
+  "folderCandidate": "TEMPLATE",
+  "contentCandidate": "EXECUTED_AGREEMENT",
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "agreementDate",
+    "value": "1st day of September, 2019",
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "parties",
+    "value": [
+     "Zameen Media (Private) Limited",
+     "House Building Company Limited"
+    ],
+    "source": "document content",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED"
+ },
+ {
+  "fileId": "19nk8J6KxJdj69YG81ngFnlT9ByZ3pvSe",
+  "name": "250912-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "folderCandidate": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "15sxq8B2puqNoAnvZ91Nrj1m2D7v0qfv_",
+  "name": "250912-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "folderCandidate": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1sQGbY8y2fFovWrJKYCS0rWEjJ70afWRa",
+  "name": "250912-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "folderCandidate": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1Od4z35FC-Iatek1UYMTDrJVyXVC6wYtq",
+  "name": "250912-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "folderCandidate": "0-Agreement to Sell-Standard Templates (15.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1436Jy_kZR3MG019pYyovPkOjsatRdZh9",
+  "name": "260204-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "folderCandidate": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1jLr8nlDhqlrgBAclg8TwVmh59LvG8OVX",
+  "name": "260204-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "folderCandidate": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1TtaMbxLGFvc8IVGZf8mu_CfWo0tLyOxe",
+  "name": "260204-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "folderCandidate": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1zLuode2QjGND4ukZEBsZLZmw2njk1V39",
+  "name": "260204-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "folderCandidate": "3-Agreement to Sell-Standard Templates (04.02.2026)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1omQ_2dDYzE9CdmKB64x2inR49c38LeEi",
+  "name": "Zameen Aurum - T&Cs (Payment Receipt) - Reviewed FINAL 02062020 Clean.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Payment Receipts & Booking Form",
+  "folderCandidate": "Payment Receipts & Booking Form",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "aurum"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "aurum"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1WuTxTBPjYTjtOzCs6y5JrLxb82WOUCD_",
+  "name": "251009-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "folderCandidate": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1cMxXqVnJijuJ2cdtwV_FNAnrXcy3yJp-",
+  "name": "251009-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "folderCandidate": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1Zd8vS0UhEGq0CPYrY80-U892M9IpsI97",
+  "name": "251009-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "folderCandidate": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1H9XnAFjw5zCDGBmyAQe8-6Arjuk9h4BK",
+  "name": "251009-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "folderCandidate": "2-Agreement to Sell-Standard Templates (09.10.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1eEX9dnFCIXa5VN1NadZndiwzOhIVGH1i",
+  "name": "250929-Zameen Developments-Agreement to Sell-LOI Units (without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "folderCandidate": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1dd5H7SMsiKYJyfz3UTDT0rMBtfaDYPha",
+  "name": "250929-Zameen Developments-Agreement to Sell-LOI Units (with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "folderCandidate": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1JOcGdZKbgUg2cqSbK1PGmodFhq8hH-PY",
+  "name": "250929-Zameen Developments-Agreement to Sell-(without Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "folderCandidate": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1PXjy-1mYzjAFkGUlSwJqtDA-LVREJhy-",
+  "name": "250929-Zameen Developments-Agreement to Sell-(with Cashback).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / 1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "folderCandidate": "1-Agreement to Sell-Standard Templates (29.09.2025)",
+  "contentCandidate": [
+   "Zameen Vault"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "vault"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "vault"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1CuB20ZlMtPfA_QVjRlsOBWMRiJZ1KqVR",
+  "name": "230830 - Agreement to Sell (Base Draft - Jade).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore",
+  "folderCandidate": "Zameen Phoenix - Lahore",
+  "contentCandidate": [
+   "Zameen Jade"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "jade"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "jade"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore",
+  "folderCandidate": "Zameen Neo - Lahore",
+  "contentCandidate": [
+   "Zameen Jade"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRH",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "jade"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "jade"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "folderCandidate": "ZD - Golf View Rumanza - Multan",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRK",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "aurum"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "aurum"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1Wp6dWr0vkNCYm2MDFniv7-FNXvWFRvth",
+  "name": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).pdf",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250225-With and Without Rental Promo",
+  "folderCandidate": "Zameen Arx - Lahore",
+  "contentCandidate": [
+   "Zameen Jade"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "jade"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_LOCAL_EXTRACT",
+    "confirmed": [
+     "jade"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1_OmhyWKE6nyUSYJRGqRRzvXQip3i1caw",
+  "name": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+  "folderCandidate": "Zameen Jade - Lahore",
+  "contentCandidate": [
+   "Zameen Arx"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "jade",
+     "arx"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "arx"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1BzuXSd9_9r6yMBxK-z0ltt2T2OlAj_D-",
+  "name": "Agreement to Sell (Zameen Aurum) - Base Draft for Furnishing Clause (Approved by CEO).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause",
+  "folderCandidate": "Zameen Jade - Lahore",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "aurum"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "aurum"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1_EDGNWlb5fR40hHbCuTkare2yfiDQSRt",
+  "name": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model",
+  "folderCandidate": "Zameen Jade - Lahore",
+  "contentCandidate": [
+   "Zameen Arx"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "jade",
+     "arx"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "arx"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1n3vBlKXz1Tl0px3NJvR3q8jJyFfA3A_w",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing)",
+  "folderCandidate": "ZD - Downtown Rumanza - Multan",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRO",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "aurum"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "aurum"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1KJWHX7cTOr7gYonOCXR81Y8APcO2qH6J",
+  "name": "20220118 PRIV Downtown Rumanza_Agreement to Sell for Hotel Apartments.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+  "folderCandidate": "Zameen Ace Mall - ZAM",
+  "contentCandidate": [
+   "Downtown Rumanza"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRO",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "downtown",
+     "rumanza"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "rumanza"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1bxusfdTeSQIlhUR4rqB8r6zrcQ21GYXo",
+  "name": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts",
+  "folderCandidate": "Zameen Ace Mall - ZAM",
+  "contentCandidate": [
+   "Downtown Rumanza"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRO",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "downtown",
+     "rumanza"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "rumanza"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1072CD7yPdXToWDxHy5fpgZpC7WnXQBf4",
+  "name": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / GR at 15 Percent",
+  "folderCandidate": "Zameen Ace Mall - ZAM",
+  "contentCandidate": [
+   "Zameen Jade"
+  ],
+  "trackerCandidate": "properties/PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "jade"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "jade"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1tEs1rsX2l92Ef97BcuzUAzjkkNbuJzwy",
+  "name": "240429 - Fifth Amendment- Boulevard Heights - v2.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous",
+  "folderCandidate": "PPA_s",
+  "contentCandidate": [
+   "Boulevard Heights"
+  ],
+  "trackerCandidate": null,
+  "evidence": [
+   {
+    "field": "projectWords",
+    "value": [
+     "courtyard",
+     "heights",
+     "jinnah",
+     "medallion"
+    ],
+    "source": "document content (confirmed in held text)",
+    "method": "CONTENT_NATIVE_TEXT",
+    "confirmed": [
+     "courtyard",
+     "heights",
+     "jinnah",
+     "medallion"
+    ],
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — a project name inside the document differs from the folder it sits in"
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "name": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "folderCandidate": "Zameen Ace Mall",
+  "contentCandidate": [
+   "Downtown Rumanza"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1IIPG3T",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "name": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "folderCandidate": "Zameen Ace Mall",
+  "contentCandidate": [
+   "Downtown Rumanza"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1IIPG3U",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "name": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "folderCandidate": "Zameen Ace Mall",
+  "contentCandidate": [
+   "Downtown Rumanza"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLPQ",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1Yniy7rtp9L_te0QPjJ0BEunWLH42gRM4",
+  "name": "231011 - Leaseback Agreement - ZAM - Commercial Shops - Tracks.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops",
+  "folderCandidate": "Zameen Ace Mall",
+  "contentCandidate": [
+   "Downtown Rumanza"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLPR",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Ace Mall",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Downtown Rumanza"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1_OmhyWKE6nyUSYJRGqRRzvXQip3i1caw",
+  "name": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR",
+  "folderCandidate": "Zameen Jade",
+  "contentCandidate": [
+   "Zameen Arx"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Jade",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Arx"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1BzuXSd9_9r6yMBxK-z0ltt2T2OlAj_D-",
+  "name": "Agreement to Sell (Zameen Aurum) - Base Draft for Furnishing Clause (Approved by CEO).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause",
+  "folderCandidate": "Zameen Jade",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Jade",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1_EDGNWlb5fR40hHbCuTkare2yfiDQSRt",
+  "name": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model",
+  "folderCandidate": "Zameen Jade",
+  "contentCandidate": [
+   "Zameen Arx"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRG",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Jade",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Arx"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore",
+  "folderCandidate": "Zameen Neo",
+  "contentCandidate": [
+   "Zameen Jade"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRH",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Zameen Neo",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Jade"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRK",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "name": "Base Draft (2).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Ace Mall"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRK",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRL",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "name": "Base Draft (2).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Ace Mall"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRL",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRM",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "name": "Base Draft (2).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Ace Mall"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRM",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1cPawOOTRjKcwzU9T3mepDdRz15xS819O",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRN",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1akuFIIYtcx6pqbpVp7igtwXlYOFaNRjh",
+  "name": "Base Draft (2).docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model",
+  "folderCandidate": "Golf View Rumanza",
+  "contentCandidate": [
+   "Zameen Ace Mall"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRN",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Golf View Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Ace Mall"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ },
+ {
+  "fileId": "1n3vBlKXz1Tl0px3NJvR3q8jJyFfA3A_w",
+  "name": "Base Draft.docx",
+  "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing)",
+  "folderCandidate": "Downtown Rumanza",
+  "contentCandidate": [
+   "Zameen Aurum"
+  ],
+  "filenameCandidate": [],
+  "trackerCandidate": "PRP-1KEBLRO",
+  "evidence": [
+   {
+    "field": "attachedProject",
+    "value": "Downtown Rumanza",
+    "source": "folder",
+    "confidence": "MEDIUM"
+   },
+   {
+    "field": "projectInText",
+    "value": [
+     "Zameen Aurum"
+    ],
+    "source": "document content",
+    "confidence": "HIGH"
+   }
+  ],
+  "confidence": "MEDIUM",
+  "recommended": "HUMAN_REVIEW_REQUIRED — the document names another project but the filename does not corroborate it",
+  "autoResolve": false,
+  "targetProject": null
+ }
+]

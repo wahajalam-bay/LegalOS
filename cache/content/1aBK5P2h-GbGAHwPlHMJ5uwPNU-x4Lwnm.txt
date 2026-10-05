@@ -1,0 +1,413 @@
+A member firm of Ernst & Young Global Limited
+
+
+
+
+
+
+
+
+
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN CORE (SMC-PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+ASSETS
+CURRENT ASSETS
+Advance tax
+Balance with bank
+
+56
+2,315
+2,371
+
+6
+2,035
+2,041
+
+2,371
+
+2,041
+
+100,000
+
+100,000
+
+6
+
+1,000
+(492,854)
+(491,854)
+
+1,000
+(167,459)
+(166,459)
+
+7
+
+494,225
+
+168,500
+
+2,371
+
+2,041
+
+5
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+SHARE CAPITAL AND RESERVES
+Authorized share capital
+10,000 ordinary shares of Rs. 10 each
+Issued, subscribed and paid up share capital
+Accumulated losses
+
+CURRENT LIABILITIES
+Other payables
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+8
+
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+_______________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 1 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN CORE (SMC-PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Note
+
+Administrative expenses
+
+2023
+Rupees
+
+From 27 October
+2021 to 30 June
+2022
+Rupees
+
+(325,725)
+
+(167,500)
+
+(325,725)
+
+(167,500)
+
+330
+
+41
+
+(325,395)
+
+(167,459)
+
+-
+
+-
+
+(325,395)
+
+(167,459)
+
+Other comprehensive income for the year / period
+
+-
+
+-
+
+Total comprehensive loss for the year / period
+
+(325,395)
+
+(167,459)
+
+9
+
+Operating loss
+Other income
+
+10
+
+Loss before taxation
+Taxation
+Loss for the year / period
+
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+_______________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 2 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN CORE (SMC-PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+Capital reserve
+
+Revenue reserve
+
+Issued, subscribed
+and paid up share
+capital
+
+Accumulated
+losses
+
+Total
+
+------------------------Rupees------------------------Issuance of shares
+
+1,000
+
+-
+
+1,000
+
+Loss for the period
+
+-
+
+(167,459)
+
+(167,459)
+
+Other comprehensive income
+
+-
+
+-
+
+-
+
+Total comprehensive loss for the period
+
+-
+
+(167,459)
+
+(167,459)
+
+1,000
+
+(167,459)
+
+(166,459)
+
+-
+
+(325,395)
+(325,395)
+
+(325,395)
+(325,395)
+
+1,000
+
+(492,854)
+
+(491,854)
+
+Balance as at 30 June 2022
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2023
+
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+_______________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 3 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN CORE (SMC-PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Note
+
+2023
+Rupees
+
+From 27 October
+2021 to 30 June
+2022
+Rupees
+
+Operating activities
+Loss before taxation
+
+(325,395)
+
+(167,459)
+
+(330)
+(325,725)
+
+(41)
+(167,500)
+
+325,725
+325,725
+
+168,500
+168,500
+
+(50)
+(50)
+
+(6)
+994
+
+330
+330
+
+41
+41
+
+-
+
+1,000
+1,000
+
+280
+2,035
+2,315
+
+2,035
+2,035
+
+Adjustments to reconcile loss before taxation to net cash flows:
+Other income
+Operating loss before working capital changes
+
+10
+
+Working capital adjustments:
+Increase in current liabilities
+Other payables
+Cash generated from operations
+Income tax paid
+Net cash (used in) / generated from operating activities
+Investing activities
+Interest income received
+Net cash generated from investing activities
+Financing activities
+Subscription money received
+Net cash flow from financing activities
+Net increase in cash and cash balances
+Cash and bank balances at the beginning of period
+Cash and and bank balances at the end of period
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+_______________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 4 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN CORE (SMC-PRIVATE) LIMITED
+NOTES TO THE FINANCIAL STATEMENTS
+FOR THE YEAR ENDED 30 JUNE 2023
+1
+
+COMPANY AND ITS OPERATIONS
+
+1.1
+
+Corporate and General Information
+Zameen Core (SMC-Private) Limited ("the Company") was incorporated on 27 October 2021 as a Single Member Company
+under the Companies Act (The Act). The Company's principal activity is to engage in the business of development of all types of
+real estate including commercial markets and multi-storey buildings, shopping centers etc. The registered office of the Company
+is situated at Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore. The Company is a subsidiary of Zameen Venture One
+(Private) Limited ("the Parent Company"), a company incorporated in Pakistan. The ultimate parent of the Company is Dubizzle
+Group Holdings Limited ( formerly known as EMPG Holdings Limited), a company incorporated in United Arab Emirates (UAE).
+
+The Company is in startup phase, and it is yet to start construction in the project. The Company has incurred loss of Rs. 325,395
+(2022: Rs. 167,459) and its accumulated losses as at the reporting date amounts to Rs. 492,854 (2022: Rs.167,459) resulting in
+a negative equity of Rs. 491,854 (2022: Rs. 166,459) as at that date. The Parent Company has committed to provide financial
+support to the Company, enabling the Company to continue its operations as going concern and fulfil all of its financial obligation.
+Based on which the financial statements of the Company are prepared on going concern basis.
+
+2
+
+BASIS OF PREPARATION
+
+2.1
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting standards as applicable in
+Pakistan. The accounting and reporting standards applicable in Pakistan comprise of:
+- International Financial Reporting Standards (IFRS Standards) issued by the International Accounting Standards Board (IASB)
+as notified under the Companies Act, 2017; and
+- Provisions of and directives issued under the Companies Act, 2017.
+Where provisions of and directives issued under the Companies Act, 2017 differ from the IFRS standards, the provisions of and
+directives of the Companies Act, 2017 have been followed.
+
+2.2
+
+Basis of measurement
+These financial statements have been prepared under the historical cost convention unless otherwise stated. In these financial
+statements, except for the amounts reflected in the statement of cash flows, all transactions have been accounted for on accrual
+basis.
+
+2.3
+
+Functional and presentation currency
+These financial statements are presented in Pak Rupees, which is the Company’s functional currency. All figures have been
+rounded off to the nearest Rupee, unless otherwise stated.
+
+2.4
+
+Standards, interpretations and amendments to published accounting standards
+The following are new and amended standards and interpretations effective for annual period beginning on July 01, 2022, as
+listed below:
+
+2.4.1 New Standards, Interpretations and Amendments effective in the reporting period
+The accounting policies adopted in the preparation of these financial statements are consistent with those of the previous
+financial year, except for following amendments to accounting standards which are effective for annual periods beginning on or
+after July 01, 2022 (unless otherwise stated).
+IFRS 3
+
+Business Combinations – The amendment updates a reference in IFRS 3 to the Conceptual Framework for
+Financial Reporting without changing the accounting requirements for business combinations.
+The amendments add an exception to the recognition principle of IFRS 3 Business Combinations to avoid the
+issue of potential ‘day 2’ gains or losses arising for liabilities and contingent liabilities that would be within the
+scope of IAS 37 Provisions, Contingent Liabilities and Contingent Assets or IFRIC 21 Levies, if incurred
+separately. The exception requires entities to apply the criteria in IAS 37 or IFRIC 21, respectively, instead of the
+Conceptual Framework, to determine whether a present obligation exists at the acquisition date. The
+amendments also add a new paragraph to IFRS 3 to clarify that contingent assets do not qualify for recognition
+at the acquisition date. In accordance with the transitional provisions, the Company applies the amendments
+prospectively, i.e., to business combinations occurring after the beginning of the annual reporting period in which
+it first applies the amendments (the date of initial application).
+
+Page 5 of 15

@@ -1,0 +1,547 @@
+[
+ {
+  "sourceFolder": "Bahria Garden City",
+  "sourceSpelling": "Bahria Garden City",
+  "canonicalProject": "Bahria Garden City",
+  "trackerRecords": [
+   "PRP-1KEBLSB"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 9,
+  "attached": 9,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Grande Palladium",
+  "sourceSpelling": "Grande Palladium",
+  "canonicalProject": "Grande Palladium",
+  "trackerRecords": [
+   "PRP-1KEBLSD"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 5,
+  "attached": 5,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Golf View Rumanza",
+  "sourceSpelling": "Golf View Rumanza",
+  "canonicalProject": "Golf View Rumanza",
+  "trackerRecords": [
+   "PRP-1KEBLRK",
+   "PRP-1KEBLRL",
+   "PRP-1KEBLRM",
+   "PRP-1KEBLRN"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 19,
+  "attached": 19,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Homes (ZAH)",
+  "sourceSpelling": "Zameen Ace Homes (ZAH)",
+  "canonicalProject": "Zameen Ace Homes",
+  "trackerRecords": [
+   "PRP-1IIPG3R",
+   "PRP-1IIPG3S"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 16,
+  "attached": 16,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Verde Residencies",
+  "sourceSpelling": "Verde Residencies",
+  "canonicalProject": "Verde Residencies",
+  "trackerRecords": [
+   "PRP-1KEBLSC"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 6,
+  "attached": 6,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Boulevard Heights",
+  "sourceSpelling": "Boulevard Heights",
+  "canonicalProject": "Boulevard Heights",
+  "trackerRecords": [
+   "PRP-1KEBLRP"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 6,
+  "attached": 6,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Mall 35",
+  "sourceSpelling": "Mall 35",
+  "canonicalProject": "Mall 35",
+  "trackerRecords": [
+   "PRP-1KEBLPS",
+   "PRP-1KEBLPT",
+   "PRP-1KEBLPU",
+   "PRP-1KEBLPV",
+   "PRP-1KEBLPW",
+   "PRP-1KEBLPX"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 29,
+  "attached": 29,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Downtown Rumanza",
+  "sourceSpelling": "Downtown Rumanza",
+  "canonicalProject": "Downtown Rumanza",
+  "trackerRecords": [
+   "PRP-1KEBLRO"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 14,
+  "attached": 14,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Neo",
+  "sourceSpelling": "Zameen Neo",
+  "canonicalProject": "Zameen Neo",
+  "trackerRecords": [
+   "PRP-1KEBLRH"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 21,
+  "attached": 21,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Opal",
+  "sourceSpelling": "Zameen Opal",
+  "canonicalProject": "Zameen Opal",
+  "trackerRecords": [
+   "PRP-1KEBLQP",
+   "PRP-1KEBLQQ",
+   "PRP-1KEBLQR",
+   "PRP-1KEBLQS",
+   "PRP-1KEBLQT",
+   "PRP-1KEBLQU"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 37,
+  "attached": 37,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Vault_",
+  "sourceSpelling": "Zameen Vault_",
+  "canonicalProject": "Zameen Vault",
+  "trackerRecords": [
+   "PRP-1KEBLSE"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 3,
+  "attached": 3,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Aurum",
+  "sourceSpelling": "Zameen Aurum",
+  "canonicalProject": "Zameen Aurum",
+  "trackerRecords": [
+   "PRP-1KEBLQM",
+   "PRP-1KEBLQN",
+   "PRP-1KEBLQO"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 26,
+  "attached": 26,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Mall",
+  "sourceSpelling": "Zameen Ace Mall",
+  "canonicalProject": "Zameen Ace Mall",
+  "trackerRecords": [
+   "PRP-1IIPG3T",
+   "PRP-1IIPG3U",
+   "PRP-1KEBLPQ",
+   "PRP-1KEBLPR"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 30,
+  "attached": 30,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Phoenix",
+  "sourceSpelling": "Zameen Phoenix",
+  "canonicalProject": "Zameen Pheonix",
+  "trackerRecords": [
+   "PRP-1KEBLRJ"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 15,
+  "attached": 15,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Quadrangle",
+  "sourceSpelling": "Zameen Quadrangle",
+  "canonicalProject": "Zameen Quadrangle",
+  "trackerRecords": [
+   "PRP-1KEBLPY",
+   "PRP-1KEBLPZ",
+   "PRP-1KEBLQL"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 41,
+  "attached": 41,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Jade",
+  "sourceSpelling": "Zameen Jade",
+  "canonicalProject": "Zameen Jade",
+  "trackerRecords": [
+   "PRP-1KEBLRG"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 19,
+  "attached": 19,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Phoenix_",
+  "sourceSpelling": "Zameen Phoenix_",
+  "canonicalProject": "Zameen Pheonix",
+  "trackerRecords": [
+   "PRP-1KEBLRJ"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 1,
+  "attached": 1,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Opal_",
+  "sourceSpelling": "Zameen Opal_",
+  "canonicalProject": "Zameen Opal",
+  "trackerRecords": [
+   "PRP-1KEBLQP",
+   "PRP-1KEBLQQ",
+   "PRP-1KEBLQR",
+   "PRP-1KEBLQS",
+   "PRP-1KEBLQT",
+   "PRP-1KEBLQU"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 2,
+  "attached": 2,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Neo_",
+  "sourceSpelling": "Zameen Neo_",
+  "canonicalProject": "Zameen Neo",
+  "trackerRecords": [
+   "PRP-1KEBLRH"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 2,
+  "attached": 2,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Aurum_",
+  "sourceSpelling": "Zameen Aurum_",
+  "canonicalProject": "Zameen Aurum",
+  "trackerRecords": [
+   "PRP-1KEBLQM",
+   "PRP-1KEBLQN",
+   "PRP-1KEBLQO"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 2,
+  "attached": 2,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Mall_",
+  "sourceSpelling": "Zameen Ace Mall_",
+  "canonicalProject": "Zameen Ace Mall",
+  "trackerRecords": [
+   "PRP-1IIPG3T",
+   "PRP-1IIPG3U",
+   "PRP-1KEBLPQ",
+   "PRP-1KEBLPR"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 1,
+  "attached": 1,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Homes (ZAH)_",
+  "sourceSpelling": "Zameen Ace Homes (ZAH)_",
+  "canonicalProject": "Zameen Ace Homes",
+  "trackerRecords": [
+   "PRP-1IIPG3R",
+   "PRP-1IIPG3S"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 1,
+  "attached": 1,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Quadrangle_",
+  "sourceSpelling": "Zameen Quadrangle_",
+  "canonicalProject": "Zameen Quadrangle",
+  "trackerRecords": [
+   "PRP-1KEBLPY",
+   "PRP-1KEBLPZ",
+   "PRP-1KEBLQL"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 1,
+  "attached": 1,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Eon",
+  "sourceSpelling": "Zameen Eon",
+  "canonicalProject": null,
+  "trackerRecords": [],
+  "quality": "SOURCE_NOT_IN_TRACKER",
+  "documents": 11,
+  "attached": 11,
+  "matchEvidence": null
+ },
+ {
+  "sourceFolder": "Zameen - Grande Palladium-Rawalpindi",
+  "sourceSpelling": "Zameen - Grande Palladium-Rawalpindi",
+  "canonicalProject": "Grande Palladium",
+  "trackerRecords": [
+   "PRP-1KEBLSD"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 7,
+  "attached": 7,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Homes",
+  "sourceSpelling": "Zameen Ace Homes",
+  "canonicalProject": "Zameen Ace Homes",
+  "trackerRecords": [
+   "PRP-1IIPG3R",
+   "PRP-1IIPG3S"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 5,
+  "attached": 5,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Jade - Lahore",
+  "sourceSpelling": "Zameen Jade - Lahore",
+  "canonicalProject": "Zameen Jade",
+  "trackerRecords": [
+   "PRP-1KEBLRG"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 31,
+  "attached": 31,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Phoenix - Lahore",
+  "sourceSpelling": "Zameen Phoenix - Lahore",
+  "canonicalProject": "Zameen Pheonix",
+  "trackerRecords": [
+   "PRP-1KEBLRJ"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 8,
+  "attached": 0,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Hive",
+  "sourceSpelling": "Zameen Hive",
+  "canonicalProject": null,
+  "trackerRecords": [],
+  "quality": "SOURCE_NOT_IN_TRACKER",
+  "documents": 4,
+  "attached": 4,
+  "matchEvidence": null
+ },
+ {
+  "sourceFolder": "Zameen Quadrangle - Lahore",
+  "sourceSpelling": "Zameen Quadrangle - Lahore",
+  "canonicalProject": "Zameen Quadrangle",
+  "trackerRecords": [
+   "PRP-1KEBLPY",
+   "PRP-1KEBLPZ",
+   "PRP-1KEBLQL"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 11,
+  "attached": 9,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Neo - Lahore",
+  "sourceSpelling": "Zameen Neo - Lahore",
+  "canonicalProject": "Zameen Neo",
+  "trackerRecords": [
+   "PRP-1KEBLRH"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 12,
+  "attached": 12,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Opal - Lahore (SPA Amendment and License Model)",
+  "sourceSpelling": "Zameen Opal - Lahore (SPA Amendment and License Model)",
+  "canonicalProject": "Zameen Opal",
+  "trackerRecords": [
+   "PRP-1KEBLQP",
+   "PRP-1KEBLQQ",
+   "PRP-1KEBLQR",
+   "PRP-1KEBLQS",
+   "PRP-1KEBLQT",
+   "PRP-1KEBLQU"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 38,
+  "attached": 38,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen- Ivory by EDZD (Ex Grande Palladium))",
+  "sourceSpelling": "Zameen- Ivory by EDZD (Ex Grande Palladium))",
+  "canonicalProject": null,
+  "trackerRecords": [],
+  "quality": "SOURCE_NOT_IN_TRACKER",
+  "documents": 2,
+  "attached": 2,
+  "matchEvidence": null
+ },
+ {
+  "sourceFolder": "Zameen Vault-NSIT-Lahore",
+  "sourceSpelling": "Zameen Vault-NSIT-Lahore",
+  "canonicalProject": "Zameen Vault",
+  "trackerRecords": [
+   "PRP-1KEBLSE"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 21,
+  "attached": 18,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "ZD - Golf View Rumanza - Multan",
+  "sourceSpelling": "ZD - Golf View Rumanza - Multan",
+  "canonicalProject": "Golf View Rumanza",
+  "trackerRecords": [
+   "PRP-1KEBLRK",
+   "PRP-1KEBLRL",
+   "PRP-1KEBLRM",
+   "PRP-1KEBLRN"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 18,
+  "attached": 18,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen - Mall 35",
+  "sourceSpelling": "Zameen - Mall 35",
+  "canonicalProject": "Mall 35",
+  "trackerRecords": [
+   "PRP-1KEBLPS",
+   "PRP-1KEBLPT",
+   "PRP-1KEBLPU",
+   "PRP-1KEBLPV",
+   "PRP-1KEBLPW",
+   "PRP-1KEBLPX"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 8,
+  "attached": 0,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Arx - Lahore",
+  "sourceSpelling": "Zameen Arx - Lahore",
+  "canonicalProject": "Zameen Arx",
+  "trackerRecords": [
+   "PRP-1KEBLSF"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 32,
+  "attached": 32,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9)",
+  "sourceSpelling": "Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9)",
+  "canonicalProject": "Zameen Ace Homes",
+  "trackerRecords": [
+   "PRP-1IIPG3R",
+   "PRP-1IIPG3S"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 19,
+  "attached": 19,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Ace Mall - ZAM",
+  "sourceSpelling": "Zameen Ace Mall - ZAM",
+  "canonicalProject": "Zameen Ace Mall",
+  "trackerRecords": [
+   "PRP-1IIPG3T",
+   "PRP-1IIPG3U",
+   "PRP-1KEBLPQ",
+   "PRP-1KEBLPR"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 19,
+  "attached": 19,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "Zameen Opal - Completed Units",
+  "sourceSpelling": "Zameen Opal - Completed Units",
+  "canonicalProject": "Zameen Opal",
+  "trackerRecords": [
+   "PRP-1KEBLQP",
+   "PRP-1KEBLQQ",
+   "PRP-1KEBLQR",
+   "PRP-1KEBLQS",
+   "PRP-1KEBLQT",
+   "PRP-1KEBLQU"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 27,
+  "attached": 25,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ },
+ {
+  "sourceFolder": "ZD - Downtown Rumanza - Multan",
+  "sourceSpelling": "ZD - Downtown Rumanza - Multan",
+  "canonicalProject": "Downtown Rumanza",
+  "trackerRecords": [
+   "PRP-1KEBLRO"
+  ],
+  "quality": "MATCHED_TO_TRACKER",
+  "documents": 28,
+  "attached": 26,
+  "matchEvidence": "folder name equals or prefixes the tracker project name"
+ }
+]

@@ -1,0 +1,5357 @@
+SEPTEMBER 19, 2020
+DOC ID: BE-424/R01
+
+ZAMEEN ACE MALL, DHA PHASE-II,
+ISLAMABAD
+|PROPOSAL FOR GEOTECHNICAL CONSULTANCY SERVICES|
+BIRUDO ENGINEERS
+107/C, PAF Officers Colony,
+Zarrar Shaheed Road, Lahore, Pakistan
+birudo-eng@outlook.com
+director@birudo-eng.com
++92 30 66 666 010
++92 302 5000 678
+www.birudo-eng.com
+
+BIRUDO ENGINEERS
+Engineering Consultants
+
+Project ID: BE-424
+Ref. No.: BE/2020/138
+Dated: September 19, 2020
+
+Mr. Wajih Nadeem Qamar
+Senior Manager Projects
+Zameen.com, Pearl One, 94-B/I, M. M. Alam Road,
+Gulberg III, Lahore
+
+Project:
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+
+Subject:
+
+Proposal for Geotechnical Consultancy Services (R01)
+
+Dear Sir,
+Referring to the meeting with Mr. Faisal Mir yesterday, our revised proposal for the
+geotechnical consultancy services mainly comprising confirmatory geotechnical
+investigations, design of earth retention and dewatering systems.
+Looking forward to work with you on this project and assuring you of our best technical
+services.
+Sincerely,
+
+__________________
+Dr. Muhammad Irfan
+Chief Executive Officer
+
+Enclosed:
+
+1.
+
+Proposal for Geotechnical Consultancy Services
+
+________________________________________________________________________
+107/C, PAF Officers Colony, Zarrar Shaheed Road, Lahore, Pakistan
+birudo-eng@outlook.com
+www.birudo-eng.com
++92 30 66 666 010
++92
+302 5000 678
+director@birudo-eng.com
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+
+
+DOCUMENT CONTROL SHEET
+
+DOCUMENT
+
+Proposal for Geotechnical Consultancy Services
+
+PROJECT
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+
+DOC. CODE:
+
+BE-424/R01
+
+REVISION
+AUTHOR
+VERIFIED
+
+00
+
+01
+
+INITIALS
+
+FNS
+
+FNS
+
+DATE
+
+16/09/2020
+
+19/09/2020
+
+INITIALS
+
+DMI
+
+DMI
+
+DATE
+
+17/09/2020
+
+19/09/2020
+
+CLIENT
+
+Pearl One, 94, B/I MM Alam Rd,
+Block C 2 Gulberg III, Lahore,
+Punjab.
+107/C, PAF Officers Colony,
+Zarrar Shaheed Road, Lahore,
+Pakistan.
+
+GEOTECHNICAL
+CONSULTANTS
+
+birudo-eng@outlook.com
+director@birudo-eng.com
++92 30 66 666 010
++92 302 5000 678
+
+Doc. Code: BE-424/R01
+
+1
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+
+
+CONTENTS
+
+1.
+
+INTRODUCTION ..................................................................................................3
+
+2.
+
+CONSULTANT PROFILE ........................................................................................3
+
+3.
+
+SCOPE OF SERVICES............................................................................................ 4
+
+3.1.
+
+FIELD WORKS ........................................................................................................................... 4
+
+3.2.
+
+LABORATORY WORKS ............................................................................................................. 4
+
+3.3.
+
+GEOTECHNICAL INVESTIGATIONS REPORT ........................................................................... 5
+
+3.4.
+
+DESIGN OF SHORING SYSTEM................................................................................................ 6
+
+3.5.
+
+DESIGN OF DEWATERING SYSTEM ......................................................................................... 6
+
+4.
+
+DELIVERABLES .................................................................................................... 7
+
+5.
+
+REMUNERATION ................................................................................................. 7
+
+6.
+
+TIMELINES ......................................................................................................... 9
+
+7.
+
+PAYMENT SCHEDULE ......................................................................................... 9
+
+8.
+
+VALIDITY ........................................................................................................... 9
+
+Appendix-A
+
+Doc. Code: BE-424/R01
+
+Company Profile
+
+2
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+1. INTRODUCTION
+Zameen ACE Mall is a mixed use development being constructed at DHA Phase-II, Islamabad.
+The fourteen (14) storied structure is planned to comprise of multiple basements with maximum
+excavation below existing ground level (EGL) of around 65 ft depth. The piling contractor which
+has already been mobilized at site has encountered soil strata which is significantly different
+from the one reported in geotechnical investigations report. A reassessment of geotechnical
+characterization is sought by the client. Besides, an initial review of existing shoring system has
+revealed several technical deficiencies in the design which render the existing design to be
+unsafe. Further, the current design does not take into account possible water ingress during
+excavation works and a comprehensive strategy to control the ground water inflow into the
+excavation needs to be carried out.
+M/s Birudo Engineers (BE) have been invited by the client to submit a proposal to undertake
+the aforementioned services. The following sections of this document summarize TECHNICAL
+and FINANCIAL details of our proposal.
+
+2. CONSULTANT PROFILE
+Consultant is a group of experts from diverse engineering backgrounds and is providing
+consultancy as well as turnkey solutions to Civil, Geotechnical and Soil-Structural Interaction
+issues faced by different Clients. A pool of highly qualified and experienced professionals enable
+consultant to give tailor made and best engineering solutions that are successfully implied on
+previous projects. Our Company Profile showcasing our complete portfolio as well as our
+previously completed projects is attached as Appendix-A to this document.
+
+Doc. Code: BE-424/R01
+
+3
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+3. SCOPE OF SERVICES
+Major activities envisaged for the project are listed below;
+
+
+
+
+
+Confirmatory geotechnical investigations
+Design of shoring system
+Installation of piezometers
+Design of dewatering system
+
+Brief description of step by step activities is described in the following sections;
+3.1. FIELD WORKS
+
+
+
+DRILLING of six (06) boreholes down to a maximum depth of 60 m below existing
+ground level (EGL) using hydraulic feed straight rotary drilling rig. The actual depth of
+boreholes shall however be decided based upon the encountered strata so as to avoid
+puncturing any undesired water aquifer beyond the depth of interest.
+
+
+
+Performance of STANDARD PENETRATION TESTS (SPTs) in overburden soils @ 1.0 m
+depth interval wherever possible,
+
+
+
+Collection of DISTURBED AND UNDISTURBED SOIL SAMPLES from the boreholes
+through Split Spoon/ Shelby/Denison tube samplers,
+
+
+
+Installation of PIEZOMETERS in each of the encountered aquifer (i.e., installation of
+double piezometers in the boreholes). The piezometers shall be so installed so that the
+same
+
+piezometers
+
+may
+
+be
+
+used
+
+to
+
+monitor
+
+ground
+
+water
+
+levels
+
+during
+
+excavation/dewatering works,
+
+
+
+Determination of PIEZOMETERIC HEAD in each piezometer and recording their
+variation over time.
+
+3.2. LABORATORY WORKS
+Subsequent to field investigations, all the soil and groundwater samples shall carefully be
+transported to soil testing laboratory. Laboratory works would include the performance of
+detailed LABORATORY TESTING on selected soil and groundwater samples to obtain the
+followings;
+
+
+Soil classification,
+
+
+
+Index properties,
+
+
+
+Strength and chemical characteristics.
+
+Doc. Code: BE-424/R01
+
+4
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+To accomplish above, the following tests shall be performed on selected soil and groundwater
+samples;
+
+
+Sieve Analysis,
+
+
+
+Hydrometer Analysis,
+
+
+
+Atterberg Limits,
+
+
+
+Specific Gravity,
+
+
+
+Natural Moisture Content,
+
+
+
+Bulk Density,
+
+
+
+Consolidation,
+
+
+
+Direct Shear,
+
+
+
+Unconfined Compression Tests,
+
+
+
+Sulphate, Chloride, Organic matter content in the soil,
+
+
+
+Chemical analysis of water samples i/c Cl, SO4 & pH.
+
+All the tests shall be performed in accordance with relevant ASTM/British Standards.
+3.3. GEOTECHNICAL INVESTIGATIONS REPORT
+A reassessment of the sub-soil conditions is sought by the client since the soil conditions
+encountered in the initial piling bores is significantly different from the one reported in
+geotechnical report of M/s Geo Crust. The nature and strength characteristics of sub-soils need
+to be established accurately in order to re-assess the suitability of already proposed foundation
+system. Evaluation of sub-surface water flow conditions also need to be performed in the
+executed boreholes so as to design an efficient dewatering system. A detailed report on
+geotechnical investigations shall be prepared in the light of field and laboratory data collected
+herein and would comprise the following;
+
+
+
+Executive summary,
+
+
+
+Project outline along with a summary of executed field and laboratory works,
+
+
+
+Maps (site vicinity map and investigation map),
+
+
+
+Field logs,
+
+
+
+Results of in-situ and laboratory testing,
+
+
+
+Topographic, geological and seismic information pertinent to the proposed project site,
+
+Doc. Code: BE-424/R01
+
+5
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+
+
+Cross-sectional profiles of sub-surface soil layers,
+
+
+
+Recommendations for the type of cement to be used based upon chemical analysis,
+
+
+
+Engineering analysis and recommendation for foundation(s),
+
+
+
+Recommendations for soil improvement (where applicable),
+
+
+
+Geotechnical consideration related to the construction of shallow foundations and pile
+foundations,
+
+
+
+Site photographs showing field works.
+
+3.4. DESIGN OF SHORING SYSTEM
+The current design of shoring system has been assessed and found to be technically deficient
+which can cause serious safety hazards during excavation works. Besides, the current
+configuration of ground anchors is not technically viable because of underground water flow
+conditions in the subject area. A revised shoring system comprising contiguous piles, ground
+anchors, soil berms, and other restraining components would therefore be designed and the
+activity would include the following major components.
+
+
+
+Design of shoring piles (geotechnical design + structural design)
+
+
+
+Design of anchors and other restraining components including design of all connection
+details (geometric design + structural design)
+
+
+
+Design of a systematic excavation plan
+
+
+
+Design of capping beam and wale supports
+
+3.5. DESIGN OF DEWATERING SYSTEM
+Boreholes drilled for pile construction have revealed presence of at least two ground water
+aquifers at around 20 ft and 45 ft depth from existing ground level (EGL). The water aquifers
+are likely to be confined in nature as observed from the gushing waterflow in the piling
+boreholes. A systematic dewatering system would therefore be required to excavate down to the
+required foundation level. The design of dewatering system would, in general, involve sump pits,
+drainage channels, well-points, observation wells, pumps, delivery housing, etc.
+
+Doc. Code: BE-424/R01
+
+6
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+4. DELIVERABLES
+Main deliverables of the subject consultancy services include the following;
+
+
+
+
+
+Geotechnical Investigations Report
+Design of Shoring System
+Installation of piezometers at site
+Design of Dewatering System
+
+5. REMUNERATION
+Priced bill of quantities for the scope of work outlined in Section 3 of this document is as
+follows;
+A
+A-1
+A-2
+A-3
+A-4
+
+A-5
+A-6
+
+Geotechnical Investigations
+Mobilization & demobilization of hydraulic feed
+straight rotary drilling rig to/from the site along
+with complete testing equipment and allied
+accessories.
+Point to point shifting of drilling equipment, and
+setting up of machine at every investigation point,
+including setting up of circulation slurry pit.
+
+Demarcation of investigation points using handheld GPS.
+Execution of six (06) exploratory borings in all
+types of soil/rock, four (04) down to 30 m and
+three (03) down to 60 m depth below EGL through
+hydraulic feed straight rotary drilling rig.
+Carrying out Standard Penetration Test (SPT) in
+overburden soils at 1.0m intervals wherever
+possible depending upon type of material and/or
+preservation of rock core samples in core boxes.
+This includes labelling, preservation, appropriate
+storage and transportation of soil/rock core
+samples to testing laboratory in Lahore
+Extraction of Undisturbed (cohesive) soil samples
+from the boreholes using appropriate sampler
+(Sub Total A)
+
+B
+
+Aquifer Monitoring for Dewatering
+
+B-1
+
+Reaming of existing geotechnical boreholes to a
+larger diameter (typically 6"), installation of
+double/triple piezometers in each borehole
+complete with all requisite arrangements of
+shrouding, bail plugging, filter installation, etc.
+(Sub Total B)
+
+Doc. Code: BE-424/R01
+
+Unit
+
+Qty.
+
+Unit Rate
+(PKR.)
+
+Amount
+(PKR.)
+
+Nos.
+
+1
+
+100,000
+
+100,000
+
+Nos.
+
+6
+
+3,000
+
+18,000
+
+Linear
+Meter
+
+270
+
+5,500
+
+1,485,000
+
+Nos.
+
+270
+
+425
+
+114,750
+
+Nos.
+
+12
+
+2,000
+
+24,000
+
+1,750,750
+
+Nos.
+
+6
+
+100,000
+
+600,000
+
+Nos.
+
+6
+
+1,500
+
+9,000
+
+600,000
+
+7
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+C
+
+Laboratory Testing
+
+C-1
+C-2
+C-3
+C-4
+C-5
+C-6
+C-7
+
+Sieve analysis
+Atterberg limits (LL, PL)
+Specific gravity
+Natural moisture content and bulk density
+Unconfined compression test
+Direst shear test
+Consolidation test
+Chemical analysis of soil samples (Cl, SO4 & organic
+content)
+Chemical analysis of groundwater samples (Cl, SO4
+& pH)
+(Sub Total C)
+
+C-8
+C-9
+D
+D-1
+E
+
+E-1
+
+E-2
+
+Nos.
+Nos.
+Nos.
+Nos.
+Nos.
+Nos.
+Nos.
+
+30
+18
+5
+12
+12
+3
+4
+
+300
+500
+400
+100
+1,200
+1,500
+3,000
+
+9,000
+9,000
+2,000
+1,200
+14,400
+4,500
+12,000
+
+Nos.
+
+3
+
+2,000
+
+6,000
+
+64,100
+
+75,000
+
+Nos.
+
+3
+
+2,000
+
+6,000
+
+Geotechnical Investigations Report
+
+Submission of Detailed Geotechnical Investigations
+Report
+(Sub Total D)
+
+Job
+
+1
+
+75,000
+
+75,000
+
+Job
+
+1
+
+300,000
+
+300,000
+
+Job
+
+1
+
+300,000
+
+300,000
+
+Design Works
+
+Design of shoring system
+- Design of shoring piles (geotechnical design +
+structural design)
+- Design of anchors and other restraining
+components including design of all connection
+details (geometric design + structural design)
+- Design of a systematic excavation plan
+- Design of capping beam and wale supports
+Design of dewatering system
+- Design of test wells, observation wells and
+piezometers
+- Design of dewatering system including sump pits,
+drainage channels, well-points, observation wells,
+pumps, delivery housing, etc.
+- Design of water level monitoring scheme
+
+(Sub Total E)
+
+Doc. Code: BE-424/R01
+
+600,000
+
+Total Amount (A+B+C)
+
+PKR
+
+3,089,850
+
+Discounted Amount (@ 3% rebate)
+
+PKR
+
+2,997,155
+
+PRA Tax @ 16%
+
+PKR
+
+479,545
+
+Total Cost of Services
+(inclusive of 16% PRA tax)
+
+PKR
+
+3,476,699
+
+8
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+Notes:
+1.
+
+Our team shall be mobilized to project site within three (03) working days after the receipt of
+work order and mobilization advance.
+
+2. Provision of free and safe access to investigation points is the responsibility of the Client.
+
+6. TIMELINES
+Sr.
+No
+
+Activity
+
+Timeline (Days)
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37
+
+1 Mobilization
+2 Field investigations
+3 Design of shoring system
+4
+5
+
+Geotechnical investigations report
+(including lab testing)
+Design of dewatering system
+(including piezometers installation & monitoring)
+
+Notes:
+a. Above time schedules are tentative.
+b. Actual time of field activities are subjected to weather conditions.
+
+7. PAYMENT SCHEDULE
+The following payment schedule is suggested;
+
+
+
+Advance
+
+20% of Contract amount
+
+
+
+Completion of field investigations
+
+50% of Contract amount
+
+
+
+Submission of shoring system design
+
+10% of Contract amount
+
+
+
+Installation of piezometers
+
+10% of Contract amount
+
+
+
+Submission of GI report & dewatering system
+
+10% of Contract amount
+
+8. VALIDITY
+Our proposal is valid up to thirty (30) days from the submission date of this document.
+
+Doc. Code: BE-424/R01
+
+9
+
+Zameen Ace Mall, DHA Phase-II, Islamabad
+|Proposal for Geotechnical Consultancy Services|
+
+Appendix-A
+Company Profile
+
+Doc. Code: BE-424/R01
+
+Appendix-A (Company Profile)
+
+Birudo Engineers
+Company Profile
+
+107/C, PAF Officers Colony, Zarrar
+Shaheed Road, Lahore, Pakistan
++92 30 66 666 010
++92 302 5000 678
+director@birudo-eng.com
+birudo-eng@outlook.com
+www.birudo-eng.com
+
+
+
+CONTENTS
+
+1
+About Us
+
+2
+3
+
+Organization Chart
+
+Company Brief
+
+Domain of Services
+
+6
+8 List of Completed Projects
+
+Project Data Sheets
+
+17
+40
+
+Software Capabilities
+
+43
+45
+
+Human Resources & CVs
+
+List of Clients
+
+48
+81
+
+HSE Policy
+
+List of Tools and Equipment
+
+83
+
+Quality Policy
+
+COMPANY BRIEF
+
+Trade Name:
+
+BIRUDO ENGINEERS
+
+Contact Info
+
++92 30 66 666 010; +92 302 5000678
+director@birudo-eng.com; birudo-eng@outlook.com
+
+Business Address
+
+107/C, PAF Officer’s Colony, Zarrar Shaheed Road, Lahore
+
+Business Nature
+
+Consulting Engineers
+
+Registration Info
+
+PEC/Consult/1832
+
+Core Expertise
+
+Civil Engineering
+
+Key Personnel
+
+Dr. Muhammad Irfan
+(PhD Civil Engineering)
+Farooq Naveed Sheikh
+(M.Sc. Geotechnical Engineering)
+
+URL
+
+www.birudo-eng.com
+
+1
+
+ABOUT US
+We are a Civil Engineering Consulting Firm, offering state of the art and
+state of the practice engineering solutions with our team of highly
+qualified, competent and seasoned professionals. Our team possesses vast
+experience of handling civil engineering design, management and
+execution of projects included but not limited to Buildings, Roads,
+Highways, Bridges, Power Plants, Dams and Military Facilities, etc. Our
+core expertise includes Geotechnical Investigations, In-situ Geotechnical
+and Geophysical Testing and Surveys, Geotechnical Design (Foundations,
+Dams, Levees, Embankments, Retaining Systems, Machine Foundations,
+Vibration Control in Foundations, etc.), Construction of Cast In-Place
+Concrete Piles, Topographic Surveys, Value Engineering, Ground
+Improvement Works, Highway Design, Traffic Engineering, Pavement
+Performance Evaluation, etc.
+
+We consider ourselves as a ‘Client-Driven’ organization by ensuring the
+requirements and benefits of Clients as our top priority. We strive to
+provide our valued Clients with the international level optimal
+engineering solutions by making full use of hard and soft tools (i.e.,
+equipment and software). All of this is done while maintaining highest
+international standards of health, safety and environmental protection.
+
+2
+
+DOMAIN OF
+SERVICES
+
+3
+
+SERVICES SPHERE:
+We provide project planning, design, execution, supervision, drafting and
+management services for the following engineering disciplines;
+
+
+Geographic Surveys
+o Topographic (Land) Survey of project premises or any certain area of
+interest for all kind of Projects
+o Bathymetric (Under Water) Survey, wherever required
+
+
+
+Geotechnical Engineering
+o Field Geotechnical Investigations (Boreholes, Test Pits, Field
+Testing, Groundwater Monitoring, Soil/Rock/Water Sampling etc.)
+o Preparation of detailed Laboratory Testing Program in the light of
+project requirements
+o Determination of Geotechnical Design Parameters (Static &
+Dynamic)
+o Design of all types of Foundations (Shallow and Deep)
+o Soil Improvement/replacement to optimize Project time and cost
+o Liquefaction Analyses
+o Machine Foundations and Vibration Control
+o Earth Retaining Systems
+o Slope Stabilization
+o Seepage and Ground Water Studies
+o Dam Design
+
+
+
+Instrumented Geotechniques
+o Instrumented Pile Load Tests
+o Landslide Monitoring through Inclinometers, Extensometers, Strain
+Gauges, etc.
+o Sonic Integrity Testing (SIT) on pile foundations
+o Slope movement prediction through sensors
+
+
+
+In-situ
+
+Geotechnical
+
+and
+
+Geophysical
+
+Testing/Monitoring
+
+System
+o Pile Load Tests (Compression, Tension and Lateral Loading Cases)
+o Plate Load Tests
+
+4
+
+o Piezometers
+o Penetrometer Tests (SPT, DCPT, CPT)
+o Water Tests (In-situ Permeability, Lugeon, Infiltration, etc.)
+o Downhole Seismic Survey,
+o Electrical Resistivity Survey (Design of Cathodic Protection),
+o Geological Hazard Assessment Studies
+o Seismotectonic Studies
+
+
+Groundwater/Tubewell Engineering
+o Hydrogeological (Groundwater) Studies
+o Conducting
+
+Reconnaissance
+
+Survey
+
+for
+
+establishing
+
+initial
+
+parameters of groundwater studies
+o Performance of Electrical Resistivity Survey (ERS) for identifying
+subsoil information and potential of groundwater source
+o Design, installation and monitoring of Piezometers
+o Groundwater Quality Assessment
+o Groundwater Assessment Tests (Pump Out/Aquifer Tests) along
+with interpretation of test data and evaluation of aquifer parameters
+o Installation of Tube Wells based on project requirements
+
+
+Traffic and Pavement Engineering
+o Pavement Design
+o Geometric Design
+o Traffic Impact Assessment
+o Parking Demand Analysis
+
+
+
+Construction of Cast In-situ Concrete Piles
+
+
+
+Assisted Quality Assessment of Cast In-situ Concrete Piles
+Joint Interpretation through Instrumentation, Full Scale/High Strain/Low
+Strain Testing and Construction Logs
+
+
+
+Site Selection and Improvement
+
+
+
+Material Engineering
+
+
+
+Construction Supervision of Earthworks, Foundations
+
+
+
+Forensic Engineering Studies
+
+ Value Engineering
+
+5
+
+ORGANIZATION
+CHART
+
+6
+
+ORGANOGRAM
+
+Chief Executive
+Officer
+
+Geophysical Survey
+
+Geotechnical
+Engineering
+
+Pavement Analysis,
+Design & Traffic
+Surveys
+
+Environmental,
+Topographic and
+Batheymatic Survey
+
+Geophysicist
+
+Manager Geotech.
+
+Manager Traffic &
+Pavements
+
+Supervisor
+Surveying
+
+Junior Engineer
+
+Senior Engineer
+
+Field Staff
+
+Surveyors
+
+Junior Engineers /
+Geologists
+
+7
+
+LIST OF
+COMPLETED
+PROJECTS
+
+8
+
+A- Low Strain Pile Integrity Testing
+
+Sr.
+No.
+1
+2
+3
+4
+5
+6
+7
+8
+
+Project Title
+Lahore Sialkot Motorway (M11) Project
+(upto 2.0 m dia, upto 51 m Length)
+Renacon Pharma Greenfield Project, FIEDMC, Faisalabad
+(1.0 m dia, 35 m Length)
+PARCO Penex Process Unit, Mehmood Kot, Punjab, Pakistan
+(0.76 m dia, 26.4 m Length)
+High-Q Tower, Jail Road, Lahore
+(0.76 m dia, 15.0 m Length)
+Colgate-Palmolive Plant, Sundar Industrial Estate, Lahore
+(0.60 m dia, 25.0 m Length)
+Access Bridge at Azad Pattan Hydropower Project
+(1.50 m dia, 36.0 m Length)
+Construction of Ghani Ceramics at FIEDMC, Sahianwala
+(upto 0.60 m dia, upto 16.0 m Length)
+Mother and Child Care Hospital Murree
+(1.2 m dia, upto 20.4 m length)
+
+B- Excavation Support System
+
+Sr.
+No.
+1
+2
+3
+4
+5
+6
+
+Project Title
+High-Q Tower, Jail Road, Lahore
+(No. of Basements: 3)
+29 Storied Twin Towers near Jail Road, Lahore
+(No. of Basements: 3)
+Dawood Heights (2B+G+12F), Ch. Aziz-ud-Din Road, Faisalabad
+(No. of Basements: 2)
+Contaco Head Office Building (2B+G+M+3FLR) ECQ-D-25, Energy City Lusail,
+Qatar
+(No. of Basements: 2)
+P003 Lusail Expressway Project – Storm Water Sewer SW4A Temporary Shaft
+(Depth of excavation: 70 feet)
+Packages Mall Lahore – Septic Tank Excavation
+(Depth of excavation: 20 feet)
+
+C- Geo-environmental/ Environmental Studies
+
+Sr.
+No.
+1
+
+Project Title
+Randhawa Petroleum, Bahawalpur Chowk, Hasilpur
+
+9
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+
+Shell Filling Station at Lahore-Sargodha Road near Sial Mor Toll Plaza
+MAPL at Khayaban-e-Iqbal Road, Saddar Township, Karachi
+Al Sarhad Filling Station, Alipur Bypass Dist., Muzaffar Garh
+Dawood Yahya Filling Station Wasndaywali Dist., Muzaffar Garh
+Caltex Filling Station at Civil Quarters, Kohat Road, Peshawar
+Shalimar CNG & Filling Station at Ring Road, Peshawar
+New Sarhad Gasoline 1, KLP Road near Bahawalpuro
+Joyia Oil Services, District Donga Bonga, Bahawalnagar
+PSO Filling Station at Tailee Wala, Indus Highway
+Al-Saeed Petroleum at Lodhran-Khanewal Expressway, Jahania
+Al-Rohani Shah Awam Petroleum Service at Mastpur, Distrcit Khanewal
+Ch. Sultan Mehmood & Co. Total Petrol Station at Multan Road, Sahiwal
+Old Vision PSO Filling Station at OTS Road, Kohat
+Muhammad Afzal Filling Station at Vehari Bura Road, Vehari
+Adil Petroleum at Indus Highway, Taunsa
+MAPL at Khayaban-e-Iqbal Road, Saddar Township, Karachi
+Ex-Attock Filling Station at PECO Road, Lahore
+Zia-ul-Mustafa Hashmi Filling Station at Multan
+Zohaib Filling Station at Jaranwala Road, Begum Kot
+Malik Mushtaq Filling Station at Lahore-Sheikhupura Road near Khanpur
+Canal
+Imtiaz Safdar Tarar Filling Station at Gujranwala-Alipur Chatta Road, Kalaske
+Sadaat Petroleum Service at Multan Road, Jalalpur Pirwala
+Ghulam Rasool Filling Station at Fortabbad Road, Marot
+Umer Filling Station at Habba Khatoon Underpass, Canal Road, Lahore
+Prime Petroleum at Faisalabad Sangla Hill Road, Faisalabad
+Elahi Petroleum at GT Road, Shahdara
+CNG Systems Service Station at Shahrah-e-Faisal, Karachi
+Gas Centre 2 filling Station, ring road, Peshawar
+Khawaja Brothers Filling Station, Near Lahore-Sialkot Motorway, Daska
+City Filling Station, Larkana, Sindh
+D- Geotechnical
+
+Sr.
+No.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Project Title
+Islamabad International Airport, Islamabad
+PKLI Outpatient Building, Lahore
+1180MW Bhikki Power Plant
+Punjab Forensic Science Agency (PFSA), Lahore
+Taunsa Hydropower Project, Taunsa, D. G. Khan, Punjab
+Daanish Schools at Mankera, Bhakkar, Punjab
+Daanish Schools at Taunsa, D. G. Khan, Punjab
+Daanish Schools at Shorkot, Jhnag, Punjab
+Center of Excellence, Peer Mahal, Toba Tek Singh, Punjab
+
+11
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+
+Center of Excellence, Tandlianwala, Faisalabad, Punjab
+SAFE City, Lahore
+1B+G+5F Multistorey Plaza in Multan
+Mother and Child Care Hospital, Murree
+Geotechnical Design Services for PAPCO White Oil Pipeline Project at Port
+Qasim, Mehmood Kot and Shikarpur
+Geotechnical Investigations for Civic Center Park, Lahore
+Geotechnical Investigations at Adamjee Insurance Plaza, Lahore
+Geotechnical Investigations for 29 Storied Twin Towers near Jail Road, Lahore
+Design of excavation retention system for 29 Storied Twin Towers near Jail
+Road, Lahore
+Geotechnical Investigations for Information Technology University (ITU) near
+Barki Road, Lahore
+Flyover at Shaukat Khanum Cancer Hospital Crossing, Johar Town, Lahore
+Establishment of Central Pathology Lab at Jinnah Hospital, Lahore
+Geotechnical Investigation Services at Waste Water Treatment Plant at
+Pakistan Kidney & Liver Institute (PKLI), Lahore
+Construction of LINAC Bunker at NORI Hospital, Islamabad
+Geotechnical Investigations for a Residential Building in Khayaban-e-Ameen,
+Lahore.
+Expansion of Interwood Factory, Lahore
+Nasima Khatoon Memorial Trust School, Qila Mian Singh, Gujranwala.
+Parking Plaza in Ichra, Lahore
+Geotechnical Investigations for Expansion of Zahur Dye Casting (ZDC) Mill,
+Lahore
+Execution of Plate Load Tests at Bagasse Based Cogeneration Plant, Hunza
+Sugar Mills, Athharah Hazari Darghai Shah, Jhang
+Geotechnical Design Services at Bagasse Based Cogeneration Plant, Hunza
+Sugar Mills, Athharah Hazari Darghai Shah, Jhang
+Construction of Pizza Hut at Plot # 254, S.A. Gardens, G.T. Road, Kala Shah
+Kaku, Dist. Sheikhupura.
+Deewan Food Industry at Crol Ghati, Crol Pind, Lahore
+Construction of Medevo (Pvt) Ltd, Plot # 94, Sundar Industrial Estate, Raiwind
+Road, Lahore
+Construction of Single / Double Basement + Double Storey House at Plot #
+1684, St # 77, Sector F, Phase I, DHA, Islamabad
+Construction of Apartment Building at Khaiwat No. 1/1, Khatooni No. 1/41,
+Saalam Khata No. 167 and Moza Musalah, Defence Road, Lahore
+Construction of Bridge at Daik Nullah, Badar Block, S.A. Gardens, Kala Shah
+Kaku, Dist., Sheikhupura
+Geotechnical Investigations for Underpass in Gujranwala
+Geotechnical Investigations for Office Building in LDA Avenue-1, Lahore
+Geotechnical Investigations Extension of Allama Iqbal International Airport,
+Lahore
+Geotechnical Investigations for School in Gujjumatta, Lahore
+Geotechnical Investigations for WASA Laboratories, Lahore
+
+12
+
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+
+Performance of Plate Load Test @ Adhi Gas Compression Project, Gojar Khan
+Geotechnical Investigations @ Adhi Gas Compression Project, Gojar Khan
+Construction of Glass Lift at NESTLE Head Office, Lahore
+Construction of Project X at SA Gardens, Kala Shah Kaku
+Geotechnical Investigations for the Construction of Waseela Eye Hospital,
+Kamoke
+Construction of Retaining wall at Chairman House, SA Gardens, Kala Shah
+Kaku
+Confirmatory Geotechnical Investigations for the Construction of Multistorey
+Plaza at SA Gardens, Kala Shah Kaku
+Mujtaba Mosque at Ghaziabad, Lahore
+Marquee Near Shaheen Chowk, Gujrat
+Foundation Optimization Services at Renacon Pharma Greenfield Project,
+FIEDMC, Faisalabad
+House of Habib – Faisalabad Mall Construction, Faisalabad
+GO Petroleum – Bulk Oil Depot, Vehari
+Grid Station at Mcleoad Ganj-Mandi Sadiq Ganj Road, Minchinabad
+Cotton Recycling Plant at Plot No. 9 & 10, FIEDMC, Sahianwala
+Gulberg Apartments at Tipu Road, Lahore
+Uppal Pharma at Kala Khatai Narag Mandi Road near Ferozewala
+100,000 Gallons Capacity Overhead Water Tank (OHWT) at AFOHS Complex,
+Lahore
+Bulk Oil Depot at Rajanpur
+Expansion of Bulk Oil Depot at Daulatpur, Sindh
+200 Bedded Mother and Child Hospital, Mianwali
+Multi-Storey Hospital Building at 96-B Hali Road, Lahore
+Ghani-Fortek Porecelain (GVT) Tile Line, Sahianwala Industrial Estate
+(FIEDMC), Faisalabad
+Establishment of Cardiac Centre, D.G Khan
+Construction of 75 Ft Light Pole at Al-Kabir Town, Raiwind Road, Lahore
+Geotechnical Investigations for Roshan Canal Garden, Near Khanpur Canal,
+Lahore Road, Sheikhupura
+Geotechnical Investigations for the Construction of Pakistan Children’s Heart
+Foundation (PCHF) Hospital near Jinnah Terminal, Lahore
+Geotechnical Investigations foe the Jamia Masjid Owaisia at Shadman Colony,
+Gujrat
+Geotechnical Investigations of Commercial Plaza (1B+8F) at Lawrence Road,
+Lahore
+Geotechnical Investigation for 500kV/220kV Double Circuit Transmission Line
+from Trimmu (Jhang) to Faisalabad West Substation (approx. 45km)
+Extension of 220kV Dera Ismail Khan Substation, DI Khan, KPK (Geotechnical
+and Geophysical investigations)
+Upgradation of Sheikh Zaid Medical Complex, Rahim Yar Khan (Geotechnical
+and Geophysical investigations)
+Establishment of 200 Bedded Mother and Child Hospital and Nursing College
+at District Layyah (Geotechnical and Geophysical investigations)
+
+13
+
+E- Geographic Surveys
+
+Sr.
+No.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+
+Project Title
+1B+G+5F Multistorey Plaza in Multan
+Topographic and As-built Survey in Allama Iqbal Sialkot Hospital, Sialkot
+Topographic survey for the construction of Punjab Forensic Science Agency
+(PFSA), Lahore
+Citro PAK Factory, Lahore
+Topographic Survey at University of Murree, Murree
+Civic Center Park, Lahore
+Layout survey for the construction of Residential Building in Khayaban-eAmeen, Lahore
+Establishment of Central Pathology Lab at Jinnah Hospital, Lahore
+(Topographic Survey Services)
+As-Built Survey at Race Course CNG Filling Station near China Chowk, Lahore
+As-Built Survey at Shell Filling Station at Lahore-Sargodha Road near, Sial Mor
+Toll Plaza
+As-Built Survey at Shalimar CNG & Filling Station, Ring Road, Peshawar
+As-Built Survey at Caltex Filling Station, Kohat Road, Civil Quarters, Peshawar
+As-Built Survey at Alhaj Highway Fuels Hayatabad Chowk, Peshawar
+As-Built Survey at Shell Filling Station, Malakand-Mardan Road, Dargai,
+Malakand
+As-Built Survey at Fayyaz CNG Services, Lar City, Multan
+Topographic Survey at Syed Shabbir Shah Filling Station, Jaman Shah, Layyah
+Topographic Survey at Abdul Khaliq Filling Station, Multan Road, DG Khan
+Topographic Survey at Ahtisham Elahi Filling Station at Chiniot Bypass,
+Lahore Road
+Topographic Survey at Eden Filling Station at Chak 208 Road, Kashmir Bridge,
+Faisalabad
+As-Built Survey at Salman Iqbal CNG Station at Lahore-SheikhupuraFaisalabad Road
+As-Built Survey at Rehan Mehboob Filling Station at Canal-Expressway,
+Faisalabad
+As-Built Survey at Sheroz CNG at Lahore-Sargodha Road, Sargodha
+Topographic Survey at Faislabad Road, Sargodha
+Topographic Survey at Bandial Filling Station at Sargodha – Mianwali Road,
+Quaidabad
+Topographic Survey at Peer Mahal Filling Station Shorkot Road Near Peer
+Mahal Interchange
+As-Built Survey at Nuzhat Filling Station, Shorkot Road, Shorkot Cantt
+Topographic Survey at Hakim Filling Station, Talagang Road, Mianwali
+As-Built Survey at New Sarhad Gasoline 1 KLP Road near Bahawalpur
+As-Built Survey at Joyia Oil Services, District Donga Bonga, Bahawalnagar
+Topographic Survey of PSO Filling Station at Tailee Wala, Indus Highway
+14
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+
+As-Built Survey of Al-Saeed Petroleum at Lodhran-Khanewal Expressway,
+Jahania
+As-Built Survey of Al-Rohani Shah Awam Petroleum Service at Mastpur,
+Distrcit Khanewal
+As-Built Survey of Old Vision PSO Filling Station at OTS Road, Kohat
+Topographic Survey of Khadim Hussain Filling Station at Head Muhammad
+Wala, Multan
+Topographic Survey of Mian Ghazanfar Ali Filling Station at Sham Kot,
+Khanewal
+Topographic Survey of Col Khalid Mehmood Filling Station at Shujabad,
+Multan
+Topographic Survey of Syed Iqbal Shah Filling Station at Kot Addu,
+Muzaffargarh
+Topographic Survey of Alam Sher Filling Station at Chichawatni, Sahiwal
+As-Built Survey of Muhammad Afzal Filling Station at Vehari Bura Road,
+Vehari
+Topographic Survey of Ghulam Jillani Filling Station at Qaboola Road, Arif
+Wala, Pakpattan
+Topographic Survey of Muhammad Asif Filling Station at Fort Abbas Marot
+Road, Bahawalnagar
+Topographic Survey of Banzian II Filling Station at Benazir Road, Okara
+Topographic Survey of Muhammad Ameen Filling Station at Depalpur Road,
+Kasur
+As-Built Survey of Adil Petroleum at Indus Highway, Taunsa
+As-Built Survey of Ex-Attock Petroleum Limited Filling Station at PECO Road,
+Lahore
+Topographic Survey of SWOL Garrison Park Lahore Ring Road, Cantt, Lahore
+As-Built Survey of Chaudhary CNG (Ex-Saahil CNG) - Pindi Bhattian
+As-Built Survey of Zia-ul-Mustafa Hashmi Filling Station at Multan
+Topographic Survey of BSL Filling Station at Multan Road, Bhai Pheru
+As-Built Survey of Zohaib Filling Station at Jaranwala Road, Begum Kot,
+Lahore
+As-Built Survey of KB Filling Station Silwali Road, Sargodha
+As-Built Survey of Malik Mushtaq Filling Station at Lahore-Sheikhupura Road
+near Khanpur Canal
+As-Built Survey of Al-Razzaq Filling Station at Trank Road, Gujranwala
+As-Built Survey of Sadaat Petroleum Services at Multan Road, Jalalpur Pirwala
+As-Built Survey of Hussain Petroleum at Multan Bypass, Multan
+Topographic Survey of Baig Filling Station at Jalla Chowk,Tandlianwala
+Topographic Survey of Mid-Town Filling Station at Faisal Town, Lahore
+As-Built Survey of Hi-Tech CNG at Raiwind Road, Lahore
+Topographic Survey of Chaudhary Rizwan Filling Station, Near Jia Bagga
+As-Built Survey of Jhugian CNG at Lahore Road, Nabipura, Sheikhupura
+As-Built Survey of Arshad Filling Station at Chichawatni-Burewala Road,
+Chichawatni
+Topographic Survey of Jani Filling Station at Talagang Road, Mianwali
+
+15
+
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+
+As-Built Survey of Prime Petroleum at Faisalabad Sangla Hill Road, Faisalabad
+As-Built Survey of Hamza Petroleum Service at Fortabbas Yazman Road, Marot
+As-Built Survey of Ali Filling Station at Southern Bypass Road, Multan
+Topographic Survey of Haji Filling Station at Narwala Road, Faisalabad
+As-Built Survey of Umer Filling Station at Habba Khatoon Underpass, Canal
+Road, Lahore
+As-Built Survey of Elahi Petroleum at GT Road, Shahdara
+As-Built Survey of Green SS at GT Road near Shalamar Garden
+Calter Filling Station at Band Road near Yateem Khana, Lahore
+Khawaja Brothers Filling Station, Sialkot-Daska Road, Near Lahore-Sialkot
+Motorway, Daska
+City Filling Station, Wazirabad-Sialkot Road, Wazirabad
+Topographic Survey for the Construction of Pakistan Children’s Heart
+Foundation (PCHF) Hospital near Jinnah Terminal, Lahore
+As-Built Survey of Rao Shakeel Filling Station, Ferozepur Road, Gajju Matta,
+Lahore
+Topographic Survey of Commercial Plaza (1B+8F) at Lawrence Road, Lahore
+F- Pavements, Highways, and Traffic Studies
+
+Sr.
+No.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+
+Project Title
+Traffic Impact Assessment (TIA) for Civic Center Park (Walk n Shop) at Johar
+Town, Lahore
+Traffic Impact Assessment (TIA) for Twin Towers at Jail Road, Lahore
+Verification of JMF through Marshall Stability Testing for Road Network of
+OPF Housing Scheme, Phase 1, Raiwind Road, Lahore
+Design of JMF for Plant Pre-Mixed Bitumionus Carpet Asphaltic Wearing
+Coarse at Fazaia Housing Scheme at Gujranawala
+Traffic Impact Assessment (TIA) of Multistorey Commercial Plaza in Multan
+Design of JMF for Plant Pre-Mixed Bituminous Carpet Asphaltic Wearing
+Coarse for Guide Bund Road, D. I. Khan
+Design of internal road network for Expansion of Zahur Dye Casting (ZDC)
+Mill, Lahore
+Evaluation of Pavement Design Parameters for the Construction of Housing
+and Auditorium Complex at 1180MW CCPP Bhikki, Sheikhupura
+Parking demand analysis for Citro PAK Factory, Lahore
+Traffic Impact Assessment (TIA) for Construction of Deewan Food Industry at
+Crol Ghati, Lahore
+Parking Remodeling Studies for Construction of Cinema at Metro Cash &
+Carry, Ravi Road, Lahore
+Geometric and Structural Design of Two Service Roads for CB-23 SDH Houses
+& IH Houses of Main Boulevard at AFOHS Complex, Lahore
+Geometric and Structural Design of Internal Road Network at Phthalic
+Anhydride Production Plant at FIEDMC, Sahianwala Industrial Estate,
+Faisalabad
+
+16
+
+PROJECT DATA
+SHEETS
+
+17
+
+DESIGN OPTIMIZATION OF DEEP FOUNDATION SYSTEM
+Project:
+
+RENACON Pharma, Sahianwala Industrial Estate, Faisalabad
+
+Client:
+
+RENACON Pharma Limited (Treet Group of Companies)
+
+Location:
+
+Faisalabad, Pakistan
+
+Scope of Work:
+
+
+Desk studies
+
+
+
+Scheduling of full-scale pile load tests
+
+
+
+Design optimization of deep foundation system in coordination with
+Project Design Consultants
+(cost saving up to 30%; approx. PKR 76 Million saved)
+
+
+
+Interpretation of pile load test results
+
+
+
+Vetting of design optimization through proof load tests
+
+Duration of Work:
+
+July 2018 to January 2019
+
+18
+
+VALUE ENGINEERING CONSULTANCY SERVICES
+Project:
+
+Phthalic Anhydride Production Plant, Sahianwala Industrial
+Estate, Faisalabad
+
+Client:
+
+International Petrochemicals Pvt. Limited
+
+Location:
+
+Faisalabad, Pakistan
+
+Scope of Work:
+
+
+Optimization of raft foundation for Main Process Plant area
+(Cost saving of 29%; approx. PKR 20 Million saved)
+
+
+
+Value engineering for Land Development Plans
+(Cost saving up to 45%; approx. PKR 10.5 Million saved)
+
+
+
+Structural and geometric design for internal road network
+
+Duration of Work:
+
+February 2019 to date
+
+19
+
+29 STORIED TWIN TOWERS AT JAIL ROAD, LAHORE
+Project:
+
+29 Storied Twin Towers at Jail Road (4B+G+24F)
+
+Client:
+
+Asian - TYPSA JV
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Work:
+
+
+Detailed Field Investigations (6 boreholes + 4 test pits)
+
+
+
+Performance of In-situ and Laboratory Testing
+
+
+
+Geotechnical Analysis of Subsurface Soil
+
+
+
+Design of Shallow and Deep Foundations.
+
+
+
+Excavation Support System (Design Consultancy Services)
+
+Duration of Work:
+
+January 2018
+
+20
+
+CONSTRUCTION OF HOUSING AND AUDITORIUM
+COMPLEX
+Project:
+
+1180MW CCPP Bhikki
+
+Client:
+
+Infrastructure Development Authority of Punjab (IDAP) &
+Quaid-e-Azam Thermal Power Limited (QATPL)
+
+Location:
+
+Bhikki, Pakistan
+
+Scope of Work:
+
+
+Drilling of twelve (12) boreholes,
+
+
+
+Excavation of eight (08) test pits
+
+
+
+Performance of in-situ and laboratory testing
+
+
+
+Undertaking electrical resistivity survey at three (03) locations
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+December 2016
+
+21
+
+MOTHER AND CHILD CARE HOSPITAL (MCCH),
+MURREE-PAKISTAN
+Project:
+
+Mother and Child Care Hospital (MCCH), Murree.
+
+Client:
+
+IKAN Engineering Services (Pvt) Ltd
+
+Consultants:
+
+NESPAK (Pvt.) Ltd.
+
+Scope of Work:
+
+
+Providing Geotechnical Design Consultancy Services for entire project
+
+
+
+Preparing all technical documents for the review and approval from Project
+Consultants
+
+
+
+Design of Pile Load Tests (with and without INSTRUMENTATION) at the site
+
+
+
+Interpretation of test results and preparation of report for the review and
+approval from Project Consultants
+
+Duration of Work:
+
+2017~2018
+
+22
+
+EXTENSION OF PUNJAB FORENSIC SCIENCE AGENCY
+(PFSA), LAHORE-PAKISTAN
+Project:
+
+Extension of Punjab Forensic Science Agency (PFSA)
+
+Client:
+
+Infrastructure Development Authority of Punjab (IDAP)
+
+Location:
+
+Lahore
+
+Scope of Work:
+
+
+Carrying out Topographic Survey for entire project site
+
+
+
+Drilling of five (05) boreholes, excavation of six (06) test pits, performance of
+in-situ tests, soil (disturbed & undisturbed) and water sampling
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Performance of Electrical Resistivity Survey at the site
+
+
+
+Submission of Geotechnical Investigations Report
+
+Duration of Work:
+
+March 2017
+
+23
+
+ISLAMABAD INTERNATIONAL AIRPORT PROJECT
+Project:
+
+Customs & Cargo Agents and Aviation Buildings at Islamabad
+International Airport Project (IIAP)
+
+Client:
+
+Asian Consulting Engineers
+
+Location:
+
+Islamabad, Pakistan
+
+Scope of Services:
+
+
+Drilling of six (06) boreholes
+
+
+
+Performance of in-situ tests, soil (disturbed & undisturbed) and water sampling
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+October 2016
+
+24
+
+150 MW TAUNSA HYDROPOWER PLANT, TAUNSA, DERA
+GHAZI KHAN, PUNJAB-PAKISTAN
+Project:
+
+150 MW Taunsa Hydropower Plant, Taunsa, Dera Ghazi Khan,
+Punjab - Pakistan
+
+Client:
+
+China National Electric Engineering Company Private Limited
+
+Location:
+
+Taunsa, Pakistan
+
+Scope of Services:
+
+
+Drilling of two (02) boreholes
+
+
+
+Performance of in-situ tests i.e. SPTs and field permeability tests along with soil
+sampling
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Evaluation of sub-soil permeability values
+
+Duration of Work:
+
+March 2017
+
+25
+
+PAKISTAN KIDNEY AND LIVER INSTITUTE &
+RESEARCH CENTRE (PKLI & RC) OUT PATIENTS BUILDING
+Project:
+
+Construction of Out Patients Building in PKLI & RC
+
+Client:
+
+Infrastructure Development Authority of Punjab (IDAP)
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Work:
+
+
+Drilling of three (03) boreholes, performance of in-situ tests, soil (disturbed &
+undisturbed) and water sampling,
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil and foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+
+
+Performance of Electrical Resistivity Survey at the site
+
+Duration of Work:
+
+October 2016
+
+26
+
+UNIVERSITY OF MURREE (UOM), MURREE-PAKISTAN
+Project:
+
+Construction of University of Murree (UOM)
+
+Client:
+
+Infrastructure Development Authority of Punjab (IDAP)
+
+Location:
+
+Murree, Pakistan
+
+Scope of Work:
+
+
+Preparation of topographic maps at 5ft contour intervals.
+
+
+
+Establishment of Benchmarks.
+
+
+
+Submission of Topographic Survey Report
+
+Duration of Work:
+
+June 2017
+
+27
+
+DAANISH SCHOOLS AND CENTERS OF EXCELLENCE
+Project:
+
+Daanish Schools And Centers Of Excellence At Mankera
+(Bhakkar), Shorkot (Jhang), Taunsa (D.G. Khan), Peer Mahal
+(Toba Tek Singh), Tandianwala (Faisalabad)
+
+Client:
+
+Punjab Daanish Schools and Center of Excellence Authority –
+Government of the Punjab
+
+Location:
+
+Mankera (Bhakkar), Shorkot (Jhang), Taunsa (D.G. Khan), Peer
+Mahal (Toba Tek Singh), Tandianwala (Faisalabad), Punjab,
+Pakistan
+
+Scope of Services:
+
+
+
+
+
+
+
+
+More than 1000 m drilling works.
+Execution of test pits (More than 100)
+Performance of in-situ tests, soil (disturbed & undisturbed) and water sampling
+Performance of detailed laboratory testing
+Geotechnical analysis of subsurface soil
+Foundation analysis and design
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+June 2017
+
+28
+
+LAHORE SAFE CITY PROJECT, CANTT. DIVISION,
+LAHORE-PAKISTAN
+Project:
+
+Lahore Safe City Project, Cantt. Division, Lahore-Pakistan
+
+Client:
+
+Huawei Technologies Pakistan (Pvt.) Ltd.
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Services:
+
+
+Geotechnical consultancy services for design optimization
+
+
+
+Drilling of boreholes
+
+
+
+Performance of in-situ tests and soil (disturbed & undisturbed) sampling
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+April 2017
+
+29
+
+LAHORE ORANGE LINE METRO TRAIN PROJECT
+Project:
+
+Lahore Orange Line Metro Train Project (Package-01)
+
+Client:
+
+Lahore Development Authority (LDA)
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Services:
+
+
+Design of Grout Anchors
+
+
+
+Performance of Pull-Out Tests on Grout Anchors
+
+
+
+Performance of Pull-Out Tests on Embedded Steel Plates
+
+Duration of Work:
+
+2017
+
+30
+
+FAZAIA HOUSING SCHEME, GUJRANWALA
+Project:
+
+Design of JMF for Plant Pre-Mixed Bituminous Carpet Asphaltic
+Wearing Course at Fazaia Housing Scheme Gujranwala
+
+Client:
+
+Fazaia Housing
+
+Location:
+
+Gujranwala, Pakistan
+
+Scope of Services:
+
+
+Design of Job Mix Formula (JMF) for plant pre-mixed bituminous carpet
+asphaltic wearing course
+
+
+
+Quality testing for wearing course, base course and sub-base course material
+
+
+
+Quality testing for asphalt
+
+
+
+Evaluation of JMF gradations
+
+
+
+Performance of Marshall Stability Tests
+
+Duration of Work:
+
+April 2016
+
+31
+
+OPF HOUSING SCHEME, PHASE-1, RAIWIND ROAD,
+LAHORE
+Project:
+
+Verification of JMF through Marshall Stability Testing for OPF
+Housing Scheme, Phase-1, Raiwind Road, Lahore
+
+Client:
+
+Overseas Pakistanis Foundation
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Services:
+
+
+Quality testing for wearing course material
+
+
+
+Quality testing for base course material
+
+
+
+Quality testing for sub-base course material
+
+
+
+Quality testing for asphalt
+
+
+
+Performance of Marshall Stability Tests
+
+
+
+Vetting of Job Mix Formula (JMF) for asphaltic wearing course
+
+Duration of Work:
+
+October 2016
+
+32
+
+BAGASSE BASED COGENERATION PLANT AT HUNZA
+SUGER MILLS, ATTARAH HAZARI DARGHAI SHAH, JHANG
+Project:
+
+Bagasse Based Cogeneration Plant at Hunza Suger Mills, Jhang
+
+Client:
+
+AJK Engineers
+
+Location:
+
+Attarah Hazari Shah, Jhang
+
+Scope of Work:
+
+
+Geotechnical Design Services
+
+
+
+Performance of two (02) cyclic plate load tests
+
+
+
+Interpretation of test results and preparation of report
+
+Duration of Work:
+
+February 2017
+
+33
+
+UP-GRADATION OF ALLAMA IQBAL HOSPITAL SIALKOT AS
+TEACHING HOSPITAL
+Project:
+
+Up-Gradation of Allama Iqbal Hospital Sialkot as Teaching
+Hospital
+
+Client:
+
+Infrastructure Development Authority of Punjab (IDAP)
+
+Location:
+
+Sialkot, Pakistan
+
+Scope of Work:
+
+
+Topographic survey of project area
+
+
+
+Establishment of project benchmarks
+
+
+
+Transferring of levels and coordinates to the project site
+
+
+
+As-built survey of footprint of multiple structures
+
+
+
+Detailed as-built survey of emergency block building
+
+Duration of Work:
+
+March 2017
+
+34
+
+INFORMATION TECHNOLOGY UNIVERSITY, LAHORE
+Project:
+
+Geotechnical Investigations for ITU near Barki Road, Lahore
+
+Client:
+
+EA Consulting (Pvt.) Ltd.
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Work:
+
+
+Drilling of borehole, performance of in-situ tests, soil (disturbed &
+undisturbed)
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+September 2017
+
+35
+
+FLYOVER AT SHAUKAT KHANAM CANCER HOSPITAL
+CROSSING, JOHAR TOWN, LAHORE
+Project:
+
+Flyover at Shaukat Khanam Cancer Hospital Crossing, Johar
+Town, Lahore
+
+Client:
+
+Habib Construction Services
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Work:
+
+
+Drilling of borehole, performance of in-situ tests, soil (disturbed &
+undisturbed)
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+November 2017
+
+36
+
+ESTABLISHMENT OF CENTRAL PATHOLOGY LAB AT
+JINNAH HOSPITAL, LAHORE
+Project:
+
+Establishment of Central Pathology Lab at Jinnah Hospital,
+Lahore
+
+Client:
+
+Kashmir Pre-Engineered Construction Pvt. Ltd.
+
+Location:
+
+Lahore, Pakistan
+
+Scope of Work:
+
+
+
+
+
+
+
+
+Drilling of borehole, performance of in-situ tests, soil (disturbed &
+undisturbed)
+Performance of detailed laboratory testing
+Geotechnical analysis of subsurface soil
+Foundation analysis and design
+Recommendations for Foundation Construction
+Topographic survey of project area
+Establishment of project benchmarks
+
+Duration of Work: December 2017
+
+37
+
+EXPANSION OF NORI HOSPITAL BUILDING, ISLAMABAD
+Project:
+
+Expansion of NORI Hospital Building, Islamabad
+
+Client:
+
+Pakistan Atomic Energy Commission (PAEC)
+
+Location:
+
+Islamabad, Pakistan
+
+Scope of Work:
+
+
+Drilling of borehole, performance of in-situ tests, soil (disturbed &
+undisturbed)
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+Duration of Work:
+
+January 2018
+
+38
+
+LAHORE-SIALKOT MOTORWAY (M11) PROJECT
+Project:
+
+Lahore-Sialkot Motorway (M11) Project
+
+Client:
+
+Frontier Works Organization (FWO)
+
+Location:
+
+Lahore-Sialkot, Pakistan
+
+Scope of Work:
+
+
+Performance of Sonic Integrity Testing (SIT) on ~100 Nos. cast in-situ concrete
+piles (diameter upto 2.0 m and length upto 51.0 m)
+
+
+
+Signal processing and interpretation of reflectograms
+
+
+
+Reporting
+
+Duration of Work:
+
+October 2018 to January 2019
+
+39
+
+500kV/220kV DOUBLE CIRCUIT TRANSMISSION LINE
+FROM TRIMMU (JHANG) TO FAISALABAD WEST
+SUBSTATION (APPROX. 45KM)
+Project:
+
+Design,
+
+Manufacture,
+
+Supply,
+
+Installation,
+
+Testing
+
+and
+
+Commissioning of 500KV Double Circuit Transmission Line for Looping In and Out
+of Existing 500KV Muzaffargarh-Gatti Single Circuit Transmission Line at 500KV
+Faisalabad West Substation (approx. 2km) and 220KV Double Circuit Transmission
+Line for In and Out of one Circuit of 220KV D/C T/L from Trimmu (Jhang) Power
+Plant to 220KV T.T. Singh Substation at Faisalabad West Substation (approx. 45km).
+Client:
+
+National Transmission and Despatch Company (NTDC)
+
+Location:
+
+Trimmu (Jhang), Faisalabad, Pakistan
+
+Scope of Work:
+
+
+Drilling of borehole, performance of in-situ tests, soil (disturbed &
+undisturbed)
+
+
+
+Performance of detailed laboratory testing
+
+
+
+Geotechnical analysis of subsurface soil
+
+
+
+Foundation analysis and design
+
+
+
+Recommendations for Foundation Construction
+
+40
+
+LIST OF TOOLS
+DOMAIN OF SERVICS
+AND EQUIPMENT
+
+41
+
+A fleet of personal and rented equipment is being maintained by Birudo
+Engineers which enables it to carry out projects as per requirements and
+specifications. The equipment is kept in top notch condition by regular
+maintenance and standard calibration procedures. A list of main
+equipment available at Birudo Engineers’ disposal is summarized in the
+table below;
+Geotechnical Investigations
+Straight rotary drilling rigs with complete accessories
+
+4 Nos.
+
+Percussion boring rigs with complete accessories
+
+2 Nos.
+
+Hand Auger drilling equipment with complete accessories
+
+4 Nos.
+
+Drilling rods (50 mm)
+
+500 m
+
+SPT Hammer
+
+4 Nos.
+
+SPT Samplers
+
+4 Nos.
+
+SPT Rods
+
+400 m
+
+Casing (100 mm, 125 mm dia.)
+
+100 m
+
+Shelby Tube Samplers
+
+Sufficient
+
+Denison Tube Samplers
+
+Sufficient
+
+Pitcher Tube Samplers
+
+Sufficient
+
+Core Barrels (Single Tube & Double Tube), coring bits and
+casing bits
+
+6 Nos.
+
+Electronic Depth Sounder
+
+4 No.
+
+Electronic Weighing Balance
+
+3 Nos.
+
+Speedy Moisture Meter
+
+2 Nos.
+
+Field Density Test Apparatus (with 6 inch and 12 inches dia.
+cone)
+
+3 sets each
+
+Wooden box for the preservation of undisturbed soil samples
+and rock cores
+
+Sufficient
+
+42
+
+Construction of CIP Concrete Piles
+Reverse rotary drilling rig with allied accessories
+
+4 Nos.
+
+Auger bucket drilling rig with complete tools and plant
+
+4 Nos.
+
+Augers (600 mm to 2000 mm)
+Buckets (600mm to 2000mm)
+Casing (660mm to 1200mm)
+
+Sufficient
+
+Hydraulic crane (25 Ton)
+
+2 Nos.
+
+Tremie Pipe (8 & 10 inches)
+
+3 sets of 30 m
+
+Gen Sets
+
+2 Nos.
+
+Welding Machines
+
+2 Nos.
+
+Bar Bending Machine
+
+2 Nos.
+
+Sonic Integrity Testing (SIT)
+Pile Echo Tester
+
+1 No.
+
+(Model: PET Pro USB)
+Geophysical Testing
+ABEM Terrameter SAS-1000 with complete accessories
+
+1 No.
+
+(for Electrical Resistivity Measurement)
+Land Survey
+Total Station (Sokkia)
+
+1 No.
+
+Electronic Theodolite
+
+1 No.
+
+Handheld GPS (Garmin)
+
+2 Nos.
+
+Differential GPS
+
+1 No.
+
+Leveling instruments with staves
+
+5 Nos.
+
+Theodolites
+
+2 Nos.
+
+Note: Additional project specific requirements are met through rental equipment which is operated
+under full time supervision of Birudo Engineers technical staff.
+
+43
+
+SOFTWARE
+DOMAIN
+OF SERVICS
+CAPABILITIES
+
+44
+
+SOFTWARE RESOURCES
+Our technical staff is equipped with complete hands-on knowledge of
+latest software tools including FINITE ELEMENT METHOD (FEM) based
+computer programs. This enables us to bring our projects to a height
+which is compatible with international standards and engineering
+practice. A brief list of some of the software tools employed by us is given
+in this table below. Additionally, numerous custom-made worksheets to
+suit are work needs and enhance productivity are utilized.
+PET
+PLAXIS 3D
+Bentley gINT
+GeoStudio 2012
+Settle 3D
+RocScience SLIDE
+RocScience SWEDGE
+RocScience DIPS
+RocLab
+LPile Plus (2015)
+GeoSolve WALLAP
+DeepXcav
+Eagle Point
+Arc GIS
+Auto CAD
+Geostructural Analysis
+
+45
+
+LIST OF CLIENTS
+
+46
+
+OUR CLIENTS
+
+
+Frontier Works Organization (FWO)
+
+
+
+Pakistan Air Force (PAF)
+
+
+
+Infrastructure Development Authority Punjab (IDAP)
+
+
+
+Huawei Technologies (Pvt.) Ltd.
+
+
+
+Punjab Daanish Schools and Center of Excellence Authority – Government of the Punjab
+
+
+
+China National Electric Engineering Company Private Limited
+
+
+
+Pak - Arab Pipeline Company Limited (PAPCO)
+
+
+
+National Engineering Services (Pvt.) Ltd. (NESPAK)
+
+
+
+DESCON Engineering Limited
+
+
+
+Information Technology University (ITU)
+
+
+
+Pakistan Petroleum Limited
+
+
+
+Asian Consulting Engineers (Pvt.) Ltd.
+
+
+
+Arif Associates
+
+
+
+Top End Engineering Services
+
+
+
+Quaid-e-Azam Thermal Power Limited (QATPL)
+
+
+
+Lahore Parking Company (Le Park)
+
+
+
+Enterprise Solution Pakistan (ESP)
+
+
+
+AJK Engineers (Pvt.) Ltd.
+
+
+
+IKAN Engineering Services Pvt., Limited
+
+
+
+Civil Aviation Authority Pakistan
+
+
+
+Habib Construction Services Private Limited
+
+
+
+EA Consulting (Pvt.) Ltd.
+
+
+
+Kashmir Pre-Engineered Construction Pvt. Ltd.
+
+
+
+SAITA-DARCO JV
+
+
+
+Pro-Health
+
+
+
+MASTIC Construction Pvt. Ltd.
+
+
+
+Packages Limited
+
+
+
+House of Habib (Pvt.) Ltd.
+
+
+
+Total PARCO Pakistan (Pvt.) Ltd.
+
+
+
+Renacon Pharma (Pvt.) Ltd.
+
+47
+
+48
+
+HUMAN
+RESOURCE & CVs
+
+49
+
+Birudo Engineers are the team of seasoned professionals of Civil
+Engineering discipline. Team Birudo possesses national and international
+working experience in the field of;
+ Geotechnical Investigations
+ In-situ Geotechnical Testing
+ Dam Engineering
+ Geophysical Testing & Surveys
+ Topographic and Bathymetric Surveys
+ Slope Stabilization and Seepage Control
+ Cost Effective Ground Improvement Techniques
+ Groundwater Studies
+ Traffic Engineering
+ Material Engineering
+Organogram of the Company has been attached in Section 2 of the
+document whereas Curriculum Vitae (CVs) of key personnel of the
+company are attached herewith.
+
+50
+
+Dr. Muhammad Irfan
+1.
+
+Designation:
+
+Chief Executive Officer
+
+2.
+
+Nationality:
+
+Pakistani
+
+3.
+
+Profession:
+
+Civil Engineer
+
+4.
+
+Education:
+September, 2014
+
+The University of Tokyo, Japan
+Postdoctoral Research Certificate
+
+March, 2014
+
+The University of Tokyo, Japan
+Ph.D. Geotechnical Engineering
+
+March, 2011
+
+University of Engineering & Technology, Lahore
+M.Sc. Geotechnical Engineering
+
+August, 2008
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering (Honors)
+
+5.
+
+Key Qualification:
+ Geo-hazard mitigation
+ Field investigations
+ Geotechnical design
+ Slope stability
+ Foundation design
+ Excavation support system
+ Finite element modelling (FEM) of geotechnical problems
+ Landslide early warning
+
+6.
+
+Professional Affiliations:
+ Professional Engineer – Pakistan Engineering Council (PEC)
+ Member, Japanese Geotechnical Society (JGS)
+ Corresponding Member, YMPG International Society of Soil Mechanics
+& Geotechnical Engineering (ISSMGE)
+ Member, Japanese Society of Civil Engineers (JSCE)
+ Executive Member, Pakistan Geotechnical Engineering Society (PGES)
+
+51
+
+7.
+
+Professional Experience:
+January 2016 to date
+
+Chief Executive Officer - Birudo
+
+Engineers
+
+
+Information Technology University (ITU), Main Campus,
+Lahore (Geotechnical Investigations and Design of Foundation
+System)
+
+
+
+Technical Consultancy and Design Optimization Services for 100 Bed
+Mother and Child Care Hospital, Murree
+
+
+
+Geotechnical Investigations and Foundation Design at Pakistan
+Kidney and Liver Institue (PKLI), Lahore
+
+
+
+New Islamabad International Airport, Islamabad, Pakistan
+(Geotechnical Investigations and Design of Foundation System)
+
+
+
+1180 MW Combined Cycle Power Plant at Bhikki, Pakistan
+(Geotechnical Investigations and Design of Foundation System)
+
+
+
+Geotechnical Investigations at Punjab Forensic Science Agency,
+Lahore
+
+
+
+Geotechnical Investigations at 150 MW Taunsa Hydropower
+Project
+
+
+
+Daanish Schools Mankera, Taunsa, Tandlianwala, Peer Mahal and
+Shorkot (Geotechnical Investigations and Design of Foundation
+System)
+
+
+
+Geotechnical Investigations for Lahore Safe City Project
+
+
+
+Geotechnical Investigations for Civic Center Park, Lahore
+
+
+
+Geotechnical Investigations and Foundation System Design for 29
+Storied Twin Towers at Lahore
+
+
+
+Design of Earth Retention System for 29 Storied Twin Towers at
+Lahore
+
+
+
+Geotechnical Investigations for 500kV/220kV Double Circuit
+Transmission Line from Trimmu (Jhang) to Faisalabad
+West Substation (approx. 45km)
+
+
+
+Other Projects as mentioned in List of Projects
+
+52
+
+January 2015 to January 2016
+
+
+Freelance Consulting Engineer
+
+Geotechnical Investigations of Engro Gas compression project (Guddu
+– Pakistan)
+
+
+
+Feasibility study of Batakundi Hydropower Project
+
+
+
+Patrind Hydropower Project – Design of Surge Shaft Access Road
+
+
+
+Performance of Nine (09) plate load test for 2x660 MW Coal fired
+power plant at Qadirabad, Sahiwal
+
+
+
+EPTL Thar 2x330 MW CFB Power Project
+
+
+
+Soil investigations works at Dadu 500kV substation Extension project,
+Jamshoro Rahim Yar Khan
+
+
+
+Soil investigations works at Moro 500kV substation Extension project,
+Jamshoro Rahim Yar Khan
+
+
+
+Seepage control measures at point-A room, Sundar Industrial Estate
+Lahore
+
+
+
+Orange Line Metro Train Project, Lahore
+o Geotechnical Investigations
+o Pile Load Tests
+
+
+
+Multistory Plaza at 1-Jail Road, Lahore
+o Geotechnical Investigations
+o Design of shoring system
+
+
+
+1180 MW CCPP Bhikki, Pakistan
+o Geotechnical Investigations
+o Pile Load Tests
+o Geotechnical Design of outfall and intake structures
+
+
+
+1223 MW CCPP Balloki, Pakistan
+o Geotechnical Investigations
+o Pile Load Tests
+o Geotechnical Design of outfall and intake structures
+
+
+
+Design of Infiltration/Evaporation Pond at Gorano, Sindh
+
+
+
+Geotechnical Investigations at 2x337MW Cogen Project Etihad Power
+Limited, Rahim Yar Khan, Punjab, Pakistan
+
+
+
+Geotechnical
+
+investigations
+
+for
+
+expansion
+
+of
+
+Allama
+
+Iqbal
+
+International Airport, Lahore
+
+53
+
+
+
+Geotechnical investigations for the construction of Customs & Cargo
+Agents and Aviation Buildings at Islamabad International Airport,
+Islamabad
+
+
+
+Geotechnical investigations for the construction of OPD Block at
+Pakistan Kidney and Liver Institute (PKLI), Lahore
+
+September 2008 to March 2011
+
+Geotechnical Engineer – Civil
+Engineering Department, UET
+Lahore
+
+
+
+Laboratory investigation of soil properties at Thar Block-II Open Pit
+Lignite Mine
+
+
+8.
+
+Vetting of structural design of the lake in Shahi Bagh Project, Lahore
+
+Publications:
+Journals
+
+ Yulong, C., Irfan, M., and Song, C. (2018). Verification of the Kaiser Effect
+in Rocks Under Tensile Stress: An Experiment Using the Brazilian Test,
+International Journal of Geomechanics, ASCE. (Accepted: In Press), IF:
+2.136.
+
+ Yulong, C., Irfan, M., Uchimura, T., Cheng, G., and Nie, W. (2018). Elastic
+wave velocity monitoring as an emerging technique for rainfall-induced
+landslide prediction, Landslides, Springer. (Online First Article), DOI:
+10.1007/s10346-017-0943-3. IF: 2.870.
+
+ Irfan, M., and Uchimura, T. (2018). Development and performance
+evaluation of disk type piezoelectric transducer for measurement of shear
+and compression wave velocities in soil, Journal of Earthquake
+Engineering,
+
+Taylor
+
+&
+
+Francis.
+
+22(1),
+
+pp.
+
+147-171,
+
+DOI:
+
+10.1080/13632469.2016.1217800. IF: 1.175.
+
+ Yulong, C. and Irfan, M. (2018). Experimental study of Kaiser effect under
+cyclic compression and tension tests, Geomechanics and Engineering,
+
+54
+
+Techno Press. 14(2), pp. 203-209, DOI: 10.12989/gae.2018.14.2.203. IF:
+0.604.
+
+ Irfan, M., Uchimura, T., and Yulong, C. (2017). Effects of Soil Deformation
+and Saturation on Elastic Wave Velocities in relation to Prediction of RainInduced Landslides, Engineering Geology, Elsevier. 230, pp. 84-94, DOI:
+10.1016/j.enggeo.2017.09.024, IF: 1.744.
+
+ Yulong, C., Uchimura, T., Irfan, M., Huang, D. and Xie, J. (2017). Detection
+of Water Infiltration and Deformation of Unsaturated Soils by Elastic Wave
+Velocity, Landslides, Springer. 14(5), pp. 1715-1730. DOI: 10.1007/s10346017-0825-8. IF: 2.870.
+
+
+Zhang, Y., Yulong, C., Jin, P., Yang, W., and Irfan, M. (2017). Effect of
+Loading Rate on the Felicity effect of Three Rock Types, Rock Mechanics and
+Rock
+
+Engineering,
+
+Springer.
+
+(Online
+
+First
+
+Article)
+
+DOI:
+
+doi:10.1007/s00603-017-1178- 2. IF: 2.386.
+
+
+Irfan, M., and Yulong, C. (2017). Segmented Loop Algorithm of Theoretical
+Calculation of Trajectory of Rockfall, Geotechnical and Geological
+Engineering, Springer. 35(1), pp. 377-384. DOI: 10.1007/s10706-016-01138.
+
+
+
+Irfan, M., and Uchimura, T. (2016). Development and performance
+evaluation of disk type piezoelectric transducer for measurement of shear
+and compression wave velocities in soil, Journal of Earthquake
+Engineering,
+
+Taylor
+
+&
+
+Francis.
+
+(Online
+
+First
+
+Article)
+
+DOI:
+
+10.1080/13632469.2016.1217800. IF: 1.247.
+
+
+Khan, M. I., Irfan, M., Aziz, M., and Ammad, H. K. (2016). Geotechnical
+Characteristics of Effluent Contaminated Cohesive Soils, Journal of
+Environmental Engineering and Landscape Management, Taylor &
+Francis. (Online First Article) DOI:10.3846/16486897.2016.1210155. IF:
+0.591.
+
+
+
+Aziz, M., Towhata, I. and Irfan, M. (2016). Strength and deformation
+characteristics of degradable granular soils, Geotechnical Testing Journal,
+ASTM. 39(3), pp. 452-461, DOI: 10.1520/GTJ20150209. IF: 0.786.
+
+55
+
+
+
+Irfan, M., and Uchimura, T. (2016). Modified triaxial apparatus for
+determination of elastic wave velocities during infiltration tests on
+unsaturated soils, KSCE Journal of Civil Engineering, Springer. 20(1), pp.
+197-207, DOI:10.1007/s12205-015-0404-2 IF: 0.511.
+
+
+
+Javed, M. A., Irfan, M., Afaq, S., Yulong, C., and Ahmed, S. (2016). An
+experimental study on the shear strengthening of reinforced concrete deep
+beams with carbon fiber reinforced polymers, KSCE Journal of Civil
+Engineering, Springer, 20(7), pp. 2802-2810, DOI: 10.1007/s12205-0160739-3. IF: 0.511.
+
+
+
+Irfan, M., and Uchimura, T. (2015). Helical filter paper technique for
+uniform distribution of injected moisture in unsaturated triaxial specimens,
+Soils
+
+and
+
+Foundations,
+
+Elsevier,
+
+55(4),
+
+pp.
+
+749-760,
+
+DOI:10.1016/j.sandf.2015.06.008 IF: 0.524.
+
+
+Aziz, M., Saleem, M., and Irfan, M. (2015). Engineering behavior of
+expansive soils treated with rice husk ash, Geomechanics and Engineering,
+Techno Press. 8(2), pp. 173-186. DOI: 10.12989/gae.2015.8.2.173. IF:
+1.085.
+
+
+
+Saleem, T., Ahmed, T., Khurram, N., Irfan, M., & Akmal, U. (2015). Seismic
+safety considerations of non-engineered houses in Pakistan. Science
+International, 27(1), pp. 293-299. ISSN 1013-5316.
+
+
+
+Khalid, N., Ahmad, A., Khalid, S., Ahmed, A. and Irfan, M. (2014) Mineral
+composition and health functionality of Zamzam water: A review,
+International Journal of Food Properties, Taylor & Francis. 17(3), pp. 661677. DOI: 10.1080/10942912.2012.660721 IF: 0.877.
+
+
+
+Irfan, M., Akbar, A., Aziz, M., & Khan, A. H. (2013). A parametric study on
+stability of open excavations in alluvial soils of Lahore district, Pakistan.
+Geotechnical and Geological Engineering, Springer, 31(2), pp. 729-738,
+DOI: 10.1007/s10706-013-9623-9.
+
+
+
+Khan, A. H. and Irfan, M. (2011) Probabilistic analysis of deep excavation
+design and construction practices in Pakistan. Proceedings of the Pakistan
+Academy of Sciences, 48(1), 1-11.
+
+56
+
+Conferences/Symposiums
+
+
+Irfan, M, Uchimura, T., Wang, L., & Yulong, C. (2017). “A real-time based
+early warning system for predicting rain-induced landslides” Proceedings,
+International Conference on New Challenges in Geotechnical Engineering,
+23-24 January 2017, Lahore, Pakistan. pp. 64-68. ISBN 978-969-8442-095
+
+
+
+Raza, M. F., Irfan, M., Ahmad, J., Hassan, M., & Iqbal, A. (2017). “A
+simplified apparatus for the determination of electrical resistivity of soil and
+its application for in-situ soil categorization” Proceedings, International
+Conference on New Challenges in Geotechnical Engineering, 23-24
+January 2017, Lahore, Pakistan. pp. 145-149. ISBN 978-969-8442-09-5
+
+
+
+Sheikh, F. N., Gill, A. A., Masood, T. & Irfan, M. (2016). “Comparative
+analysis of allowable load carrying capacity of laterally loaded piles.”
+Proceedings, 8th Asian Young Geotechnical Engineers’ Conference –
+8AYGEC 2016 – Challenges and Innovations in Geotechnics, 5-7 August
+2016, Astana, Kazakhstan. pp. 89-92. ISBN 978-1-138-03007-7
+
+
+
+Irfan, M., Uchimura, T., and Chen, Y. (2014). A modified apparatus for
+laboratory assessment of soil water characteristic curve (SWCC) and
+associated wave velocities” GeoKANTO-2014, 3-4 October, 2014, Tokyo,
+Japan. Proceedings CD-ROM: Paper ID-A00093.
+
+
+
+Irfan, M., Ghani, M. A. H. and Uchimura, T. (2014). “Use of elastic wave
+velocities for early warning of rain-induced landslides.” Proceedings, 49th
+Japan National Conference on Geotechnical Engineering, 15-18 July 2014,
+Kita-kyushu, Japan. pp. 1957-1958.
+
+
+
+Ghani, M. A. H., Irfan, M. and Uchimura, T. (2014). “An idea for issuing
+rainfall-induced landslide early warning based on suction measurement.”
+Proceedings,
+
+49th
+
+Japan
+
+National
+
+Conference
+
+on
+
+Geotechnical
+
+Engineering, 15-18 July 2014, Kita-kyushu, Japan. pp. 1953-1954.
+
+
+Irfan, M., & Uchimura, T., (2013). “Prediction of slope deformations by
+elastic wave velocities in relation to landslide failures.” Proceedings, 3rd
+International Conference on Geotechnique, Construction Materials and
+Environment – GEOMATE-2013, 13-15 Nov. 2013, Nagoya, Japan. pp. 292297. ISBN: 978-4-9905958-2-1 C3051.
+57
+
+
+
+Irfan, M., Uchimura, T. and Ghani, M., A., H., (2013). “Response of elastic
+wave velocities during constant shear stress drained tests on unsaturated
+triaxial
+
+specimens.”
+
+Proceedings,
+
+3rd
+
+Korea-Japan
+
+Workshop
+
+on
+
+Unsaturated Soils, 1st Nov. 2013, Seoul, Korea. pp. 45-51.
+
+
+Ghani, M., A., H., Uchimura, T. and Irfan, M., (2013). “Simulating
+unsaturated soil behavior on slope using modified simple shear apparatus”
+Proceedings, 3rd Korea-Japan Workshop on Unsaturated Soils, 1st Nov.
+2013, Seoul, Korea. pp. 81-88.
+
+
+
+Irfan, M., & Uchimura, T. (2013). “Measuring shear and compression wave
+velocities in laboratory triaxial tests using disk shaped composite P/S
+piezoelectric transducer.” IACGE 2013: Challenges and Recent Advances in
+Geotechnical and Seismic Research and Practices – ASCE Geotechnical
+Special Publication No. 232, pp. 414-421.
+
+
+
+Irfan, M., & Uchimura, T. (2013). “Effects of soil moisture on shear and
+dilatational wave velocities measured in laboratory triaxial tests.” Advances
+in Soil Mechanics and Geotechnical Engineering (Vol. 2): Proceedings, 5th
+International Young Geotechnical Engineers’ Conference – 5th iYGEC 2013,
+30 Sep.-1 Aug. 2013, Paris, France. pp. 505-509, doi: 10.3233/978-1-61499297-4-505.
+
+
+
+Irfan, M., & Uchimura, T. (2013). “Water saturation effects on elastic wave
+velocities in unsaturated soils.” Proceedings, 48th Japan National
+Conference on Geotechnical Engineering, 23-25 July 2013, Toyama, Japan.
+pp. 865-866.
+
+
+
+Irfan, M., & Uchimura, T. (2013). “A modified triaxial apparatus for
+measurement of shear and compression waves during water injection in
+unsaturated soils.” Proceedings, 13th National Conference on Geotechnical
+Engineering, 14-15 March 2013, Lahore, Pakistan. pp. 20-28.
+
+
+
+Irfan, M., & Uchimura, T. (2013). Criteria for determining Gmax in
+laboratory element tests using disk type piezoelectric transducers,
+Proceedings, 10th International Conference on Urban Earthquake
+Engineering, 1-2 March 2013, Tokyo, Japan. pp. 555-560.
+
+
+
+Kazmi, Z., A., Irfan, M., and Ahmed, T. (2013). Seismic vulnerability
+evaluation of non-engineered structures in Pakistan-A statistical approach
+58
+
+based on cumulative opinion of professionals--, Proceedings, 10th
+International Conference on Urban Earthquake Engineering, 1-2 March
+2013, Tokyo, Japan. pp. 1795-1801.
+
+
+Irfan, M., & Uchimura, T. (2012). “A technique for injection and uniform
+distribution of water in unsaturated triaxial specimen.” GeoKANTO-2012, 56 September, 2012, Tokyo, Japan. Proceedings CD-ROM: Paper ID-A0151.
+
+
+
+Irfan, M., Ahmed, T., & Kazmi, Z. A. (2012) “Evaluation of seismic concern
+in construction of non-engineered structures in Pakistan using cumulative
+opinion
+
+of
+
+professionals”.
+
+Proceedings
+
+of
+
+2nd
+
+International
+
+Multidisciplinary Conference toward Better Pakistan, Peshawar, Pakistan.
+
+
+Kazmi, Z. A., Ahmed, T., Saleem, U. and Irfan, M. (2012) "Evaluation of
+design and construction practices - A lesson learnt from Kashmir
+Earthquake". Proceedings of the International Symposium on Engineering
+Lessons Learned from the 2011 Great East Japan Earthquake, Tokyo,
+Japan. pp 1846-1857.
+
+Others
+
+
+Irfan, M., Saleem, M. M., Naveed, F. and Tufail, A. (2012) Manual and
+Computer Aided Design of Prestressed Concrete Bridges: A comprehensive
+manual, Lap Lambert Academic Publishing, Germany. ISBN: 9783847375081.
+
+9.
+
+Languages:
+Reading
+
+Writing
+
+Speaking
+
+
+
+English
+
+Excellent
+
+Excellent
+
+Excellent
+
+
+
+Urdu
+
+Excellent
+
+Excellent
+
+Excellent
+
+
+
+Punjabi
+
+Excellent
+
+Fair
+
+Excellent
+
+
+
+Japanese
+
+Good
+
+Fair
+
+Fair
+
+59
+
+Farooq Naveed Sheikh
+1.
+
+Designation:
+
+Managing Director
+
+2.
+
+Nationality:
+
+Pakistani
+
+3.
+
+Profession:
+
+Civil Engineer
+
+4.
+
+Education:
+September, 2012
+
+University of Engineering & Technology, Lahore
+M.Sc. Geotechnical Engineering
+
+August, 2008
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering (Honors)
+
+5.
+
+6.
+
+Key Qualification:
+
+
+Geotechnical Investigations
+
+
+
+Interpretation of In-Situ & Laboratory Testing
+
+
+
+Foundation Design
+
+
+
+Slope Stability Analysis
+
+
+
+Seepage Analysis
+
+
+
+Design of Earth Retaining Systems
+
+
+
+Design of Soil Improvement Schemes (Preloading and Stone Columns)
+
+
+
+Reporting
+
+
+
+Preparation of Construction Drawings
+
+Professional Affiliations:
+
+
+Professional Engineer – Pakistan Engineering Council (PEC)
+
+
+
+Member, Pakistan Geotechnical Engineering Society (PGES)
+
+60
+
+7.
+
+Professional Experience:
+June, 2017 to date
+
+Managing Director
+Birudo Engineers
+
+
+
+Information Technology University (ITU), Main Campus, Lahore
+(Geotechnical Investigations and Design of Foundation System)
+
+
+
+Geotechnical Investigations and Foundation System Design for 29
+Storied Twin Towers at Lahore
+
+
+
+Design of Earth Retention System for 29 Storied Twin Towers at
+Lahore
+
+
+
+Mother and Child Care Hospital (MCCH), Murree
+
+
+
+Daanish School Shorkot, Jhang Punjab
+
+
+
+University of Murree
+
+
+
+Civic Center Park, Lahore
+
+
+
+Anchoring Works at Orange Line Metro Train Project (OLMTP),
+Lahore
+
+
+
+Lahore Safe City Project, Cantt. Division, Lahore-Pakistan
+
+
+
+Center of Excellence Peer Mahal, Toba Tek Singh – Punjab
+
+
+
+Geotechnical
+
+Investigations
+
+for
+
+500kV/220kV
+
+Double
+
+Circuit
+
+Transmission Line from Trimmu (Jhang) to Faisalabad West
+Substation (approx. 45km)
+
+
+Other Projects as mentioned in List of Projects
+
+June 2015 to June 2017
+
+Senior Geotechnical Engineer
+Berkeley Associates (Pvt) Ltd
+
+
+
+2x330MW Coal Power Project in Thar
+
+
+
+Jamshoro 2x660MW Super Critical Power Plant Project, Pakistan
+
+
+
+330MW Coal Power Plant at Thar Block II
+
+
+
+330MW Mine Mouth Power Plant Project, Pakistan
+
+
+
+1,223MW CCPP Balloki Pakistan
+
+
+
+1,180MW CCPP Bhikki
+
+
+
+Orange Line Metro Train Project, Lahore
+
+
+
+Punjab Wind Farm Projects
+
+61
+
+
+
+Rehabilitation of Building Defects of Malala Yousaf Zai Daanish
+School (Boys and Girls) Jand District Attock
+
+
+
+Corporate Office Building at Jail Road, Lahore
+
+
+
+Design Review and Validation of P003 Lusail Expressway Project,
+Qatar (Storm Water Sewer SW4A Temporary Shaft)
+
+January 2014 to June 2015
+
+Project Design Engineer
+Keller Grunbau GmbH
+(Keller-Turki Co. Ltd.)
+
+
+
+Shuqaiq Steam Power Project, Shuqaiq – Kingdom of Saudi Arabia
+
+
+
+(Client: Hyundai Heavy Industries Co. Ltd.)
+
+
+
+Yanbu Aramco Sinopec Refining Project, Yanbu – Kingdom of Saudi
+Arabia
+
+
+
+(Client: Enppi)
+
+
+
+Sabic PCQ-02 Project, Jubail – Kingdom of Saudi Arabia
+
+
+
+(Client: SABIC)
+
+
+
+Saudi Aramco Third Party Cogeneration Project, Ras Tanura Kingdom of Saudi Arabia
+
+
+
+(Client: Saudi Aramco)
+
+
+
+Common Utilities and Tank Farm Area, Rabigh – Kingdom of Saudi
+Arabia
+
+
+
+Residential Building for Al-Mouwasat Hospital Accommodation, Qatif
+– Kingdom of Saudi Arabia
+
+August 2012 to January 2014
+
+Staff Geotechnical Engineer
+Berkeley Associates
+
+
+
+Construction of New Khanki Barrage – Design Verification and
+Construction Supervision of Geotechnical Aspects of the Project
+
+
+
+Feasibility Study of 210 MW Naran Hydropower Project, Kyber
+Pakhtunkhwa
+
+62
+
+
+
+Feasibility Study of 190 MW Balakot Hydropower Project, Khyber
+Pakhtunkhwa
+
+
+
+Pre-Feasibility Study of Batakundi Hydropower Project, Kyhber
+Pakhtunkhwa
+
+
+
+Feasibility Study of 12 MW Biomass Based IPP, Faisalabad - Pakistan
+
+
+
+Safety Assessment of Existing Shoring System and Design of
+Rehabilitation/
+
+Strengthening
+
+Measures
+
+at
+
+Mubarak
+
+Center,
+
+Ferozepur Road, Lahore
+
+
+Design of Retaining System without Ground Anchors for Mobilink
+Office Building at QIE, Lahore
+
+
+
+Slope stability analysis of Parking Plazas at Jhika Gali, Bansara Gali,
+General Bus Stand and Lower Topa, Murree
+
+August 2011 to July 2012
+
+Junior Engineer (Civil)
+Water and Power
+Development Authority
+(WAPDA)
+
+
+
+Chiniot Dam Project
+
+
+
+Bhimber Dam Project
+
+
+
+Khapalu Dam Multipurpose Project
+
+
+
+Sanghar Dam Project
+
+
+
+Munda Dam Project
+
+January 2011 to August 2011
+
+Lecturer
+The University of Lahore
+
+
+
+Lecture deliverance
+
+
+
+Development of Soil Mechanics Laboratory
+
+October 2008 to January 2011
+
+Staff Engineer
+Berkeley Associates
+
+
+
+Feasibility Study of Shogo-Sin Hydropower Project, Chitral
+
+63
+
+
+
+Feasibility Study of Shushghai-Zhendoli Hydropower Project, Chitral
+
+
+
+22 MW Jabban Hydroelectric Power Station – Rehabilitation Project,
+Malakand
+
+
+
+425 MW Combined Cycle Power Plant, Nandipur
+
+
+
+Tetra Pak Project 2 Pakistan, Lahore
+
+
+
+New Ammonia Urea Plant, Daharki
+
+
+
+Girls and Boys Hostels at Sharif Medical City, Lahore
+
+
+
+Geotechnical Investigations along LBDC
+
+
+
+Preparation of EPC/ Turnkey Proposals for Canal Hydropower
+Projects at Pakpattan and Okara – Pakistan
+
+8.
+
+Publications:
+
+
+Irfan, M., Saleem, M., Naveed, F. and Tufail, A. (2012) Manual and
+Computer Aided Design of Prestressed Concrete Bridges: A
+comprehensive
+
+manual, Lap
+
+Lambert
+
+Academic
+
+Publishing,
+
+Germany. ISBN: 978-3847375081.
+
+
+Sheikh, F. N., Gill, A. A., Masood, T. & Irfan, M. (2016).
+“Comparative analysis of allowable load carrying capacity of
+laterally loaded piles.” Proceedings, 8th Asian Young Geotechnical
+Engineers’ Conference – 8AYGEC 2016 – Challenges and Innovations
+in Geotechnics, 5-7 August 2016, Astana, Kazakhstan. pp. 89-92.
+ISBN 978-1-138-03007-7.
+
+
+
+Gill, A. A., Sheikh, F. N. & Masood, T. (2017). “Effect of Delayed
+Concreting on Axial Capacity of CIP Bored Piles.” Proceedings,
+International Conference - ICNCGE 2017 - New Challenges in
+Geotechnical Engineering, 23 January 2017, Lahore, Pakistan. pp.
+29-32. ISBN 978-969-8442-09-5.
+
+
+
+Gill, A. A., Sheikh, F. N. & Masood, T. (2017). “Effect of Delayed
+Concreting on Axial Capacity of CIP Bored Piles.” Proceedings,
+International Conference - ICNCGE 2017 - New Challenges in
+64
+
+Geotechnical Engineering, 23 January 2017, Lahore, Pakistan. pp.
+29-32. ISBN 978-969-8442-09-5.
+
+
+Sheikh, F. N., Aziz, M. & Gill, A. A., (2017). “Durability
+Characteristics of Lime and Cement Treated Local Cohesive Soil.”
+Proceedings, International Conference - ICNCGE 2017 - New
+Challenges in Geotechnical Engineering, 23 January 2017, Lahore,
+Pakistan. pp. 154-157. ISBN 978-969-8442-09-5.
+
+9.
+
+Languages:
+Reading
+
+Writing
+
+Speaking
+
+
+
+English
+
+Excellent
+
+Excellent
+
+Excellent
+
+
+
+Urdu
+
+Excellent
+
+Excellent
+
+Excellent
+
+
+
+Punjabi
+
+Excellent
+
+Fair
+
+Excellent
+
+
+
+Arabic
+
+Excellent
+
+Fair
+
+Fair
+
+65
+
+Dr. Muhammad Awais Shafique
+1.
+
+Designation:
+
+Manager Highways/Traffic
+
+2.
+
+Nationality:
+
+Pakistani
+
+3.
+
+Profession:
+
+Civil Engineer
+
+4.
+
+Education:
+March, 2017
+
+The University of Tokyo, Japan
+Postdoctoral Research Certificate
+
+March, 2015
+
+The University of Tokyo, Japan
+Ph.D. Transportation Engineering
+
+March, 2011
+
+University of Engineering & Technology, Lahore
+M.Sc. Transportation Engineering
+
+August, 2008
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering (Honors)
+
+5.
+
+6.
+
+Key Qualification:
+
+
+Field investigations
+
+
+
+Pavement Design
+
+
+
+Traffic Impact Assessment
+
+
+
+Foundation design
+
+
+
+Documentation and reporting
+
+Professional Affiliations:
+
+
+Professional Engineer – Pakistan Engineering Council (PEC)
+
+
+
+Member, Japanese Geotechnical Society (JGS)
+
+
+
+Corresponding Member, YMPG International Society of Soil Mechanics
+& Member, Pakistan Geotechnical Engineering Society (PGES)
+
+66
+
+7.
+
+Professional Experience:
+June 2017 to date
+
+Manager Highways- Birudo Engineers
+
+
+
+Responsible for all type of operation related to traffic engineering
+
+
+
+Development of templates for transportation engineering
+
+
+
+Performing TIA studies
+
+March 2017 to May 2017
+
+
+Freelance Consulting Engineer
+
+TIA Studies for expansion of Allama Iqbal International Airport for
+Asian Consulting Engineers
+
+January 2017 – Present
+
+Assistant professor
+Department of Civil Engineering
+UCP, Lahore, Pakistan
+
+August 2009 – Jan 2017
+
+Lecturer / Assistant Professor
+Department of Transportation Engineering
+And Management.
+UET, Lahore, Pakistan
+
+8.
+
+Publications:
+
+Peer-Reviewed Published Articles
+
+
+Shafique, M. A. and Hato, E. Travel Mode Detection with Varying
+Smartphone Data Collection Frequencies. Sensors 16, no. 5, 716 (2016)
+
+
+
+Shafique, M. A. and Hato, E. Use of acceleration data for
+transportation mode prediction, Transportation, 42(1), 163-188, (2015)
+
+
+
+Shafique, M. A. Hato, E. and Yaginuma, H. Using Probe Person Data
+for Travel Mode Detection, International Journal of Computer,
+Information, Systems and Control Engineering, 8(10), 1482 – 1486,
+(2014)
+
+67
+
+
+
+Shafique, M. A. and Hato, E. Formation of Training and Testing
+Datasets, for Transportation Mode Identification. Journal of Traffic and
+Logistics Engineering, 3(1), 77-80, (2015).
+
+Peer-Reviewed Conference Papers
+
+
+Shafique, M. A. and Qayyum, T. I. Comparison of Bearing Capacity
+Equations for vertical central loading, First International Conference on
+Geotechnique, Construction Materials and Environment (GEOMAT),
+Mie, Japan. (Nov. 2011)
+
+
+
+Shafique, M. A. and Hato, E. Formation of Training and Testing
+Datasets, for Transportation Mode Identification, 4th International
+Conference on Traffic and Transportation Engineering, Madrid, Spain.
+(May 2015)
+
+
+
+Shafique, M. A. and Hato, E. Optimum Training Sample Size for Travel
+Mode Detection using Smartphone, Annual International Conference on
+Transportation, Athens, Greece. (June 2015)
+
+
+
+Shafique, M. A. and Hato, E. A Comparison among various
+Classification Algorithms for Travel Mode Detection using Sensors’ data
+collected by Smartphones, 14th International Conference on Computers
+in Urban Planning and Urban Management, CUPUM 2015, MIT,
+Cambridge, Massachusetts. (July 2015)
+
+
+
+Shafique, M. A. and Hato, E. Modelling of Accelerometer Data for
+Travel Mode Detection by Hierarchical Application of Binomial Logistic
+Regression. Transportation Research Procedia 10, 236-244, (2015), 18th
+Euro Working Group on Transportation, EWGT 2015, Delft, The
+Netherlands. (July 2015).
+
+
+
+Shafique, M. A. and Hato, E. Classification of Travel Data with
+Multiple Sensor Information using Random Forest. Transportation
+Research Procedia 22, 144-153, (2017), 19th Euro Working Group on
+Transportation, EWGT 2016, Istanbul, Turkey. (Sep. 2016).
+
+68
+
+Other Conference Papers
+
+
+Shafique, M. A, Hato, E. and Yaginuma, H. Using Probe Person Data
+for Travel Mode Detection, International Conference on Signal
+Processing, Pattern Recognition and Applications, Osaka, Japan. (Oct.
+2014)
+
+
+
+Shafique, M. A, Eiji Hato and Hideki Yaginuma. Optimum Feature
+Extraction Window Size for the Purpose of Travel Mode Detection using
+Smartphone's Accelerometer, 12th ITS Symposium 2014, Tohoku
+University, Sendai. (Dec 2014)
+
+
+
+Shafique, M. A. and Hato, E. A Review of Travel Data Collection
+Methods. 17th International Conference on Civil Engineering and
+Applied Mechanics, Paris, France. (April 2015)
+
+9.
+
+Languages:
+Reading
+
+Writing
+
+Speaking
+
+
+
+English
+
+Excellent
+
+Excellent
+
+Excellent
+
+
+
+Urdu
+
+Excellent
+
+Excellent
+
+Excellent
+
+
+
+Punjabi
+
+Excellent
+
+Fair
+
+Excellent
+
+
+
+Japanese
+
+Good
+
+Fair
+
+Fair
+
+69
+
+Tayyab Khalid
+1. Designation:
+
+Manager Infrastructure Development
+
+2. Nationality:
+
+Pakistani
+
+3. Profession:
+
+Civil Engineer
+
+4. Education:
+
+5.
+
+September, 2013
+
+The University of Tokyo, Japan
+Master of Science in Civil Engineering
+
+August, 2008
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering (Honors)
+
+Key Qualification:
+
+
+
+
+
+
+
+
+
+
+6.
+
+Professional Affiliations:
+
+
+
+7.
+
+Master Planning
+Interchange’s Design
+Junctions Design
+Site Grading & Storm Water Drainage
+Highways Network System Design Report
+Design Submittals
+Design Basis Report
+Signs & Pavement Marking
+Cost Estimates
+
+Registered Engineer – Pakistan Engineering Council (PEC)
+Student Member, Japanese Society of Civil Engineers (JSCE)
+
+Professional Experience:
+October, 2016 to date
+
+
+
+
+Infrastructure-Highway Design
+Engineer Birudo Engineers
+
+Performance of Cyclic Plate Load tests at Bagasse Based Cogeneration
+Plant at Hunza Suger Mills, Jhang
+Geotechnical Investigations Islamabad International Airport,
+Islamabad
+
+March 2015 to October 2016
+
+
+
+Highway Design Engineer
+Parsons International Limited
+
+Improvement of Intersections in Abu Dhabi, UAE
+70
+
+
+
+
+
+
+
+South Axial Road Project, Mecca Saudi Arabia
+Construction Staging and Detour of Khaleej-al-Arabi Road
+Connection to Maqta Area in Abu Dhabi City
+Internal Roads & Infrastructure in Shakbout City, Abu Dhabi, UAE
+Internal Roads & Infrastructure in MZ-39 Musaffah, Abu Dhabi, UAE
+Internal Roads & Infrastructure in Baniyas, Abu Dhabi, UAE
+
+June 2014 to February 2015
+
+
+
+Development of Ras Al Khair Industrial City Saudi Arabia
+
+October 2013 to May 2014
+
+
+
+Project Engineer (Roads)
+Saudi Consulting Services
+
+Highway Design Engineer
+Engineering Consultancy
+Services Punjab (Pvt.) Ltd.
+
+Construction of Elevated Expressway (3+3 Lane) with Metro Bus
+Service from Main Boulevard Gulberg-III to Motorway M-2, Lahore,
+Pakistan
+
+January 2010 to September 2011 Highway Design Engineer
+National Engineering Services
+Pakistan
+
+
+
+
+
+
+
+Peshawar Northern Bypass Project
+Lahore City Ring Road Project (Northern Loop)
+Kalma Chowk Flyover in Lahore City
+Rehabilitation of Lahore ~ Kasur Road in Lahore City
+Rehabilitation of Canal Road Lahore City
+Rehabilitation of roads in five (05) Main Districts of Province Punjab,
+Pakistan
+
+September 2008 to December 2009
+
+
+8.
+
+Junior Design Engineer
+National Development
+Consultants Pakistan
+
+Pat Feeder Canal Project
+
+Languages:
+
+
+
+
+English
+Urdu
+
+Reading
+
+Writing
+
+Speaking
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+71
+
+Muhammad Kamran Javed
+1. Designation:
+
+Geotechnical Engineer
+
+2. Nationality:
+
+Pakistani
+
+3. Profession:
+
+Civil Engineer
+
+4. Education:
+
+5.
+
+6.
+
+In Progress
+
+PIRT, Superior University, Lahore
+M.S/MPhil Construction & Engineering Management
+
+June, 2015
+
+UCEST, Lahore Leads University, Lahore
+B.Sc. Civil Engineering
+
+Key Qualification:
+
+
+Geotechnical Investigations
+
+
+
+Site Management
+
+
+
+Project Monitoring & Control
+
+
+
+Interpretation of In-Situ & Laboratory Testing
+
+
+
+Foundation Design
+
+
+
+Reporting
+
+Professional Affiliations:
+
+
+7.
+
+Registered Engineer – Pakistan Engineering Council (PEC)
+
+Professional Experience:
+October, 2017 to date
+
+
+
+
+
+
+Geotechnical Engineer
+Birudo Engineers
+
+Geotechnical Investigations for the Extension of Allama Iqbal
+International Airport, Lahore
+Geotechnical Investigations for the Construction of Information
+Technology University (ITU), Barki Road, Lahore
+Geotechnical Investigations for 29 storied Twin Towers, Jail Road,
+Lahore
+Geotechnical Investigations for Flyover at Shaukat Khanum Cancer
+Hospital Crossing, Johar Town, Lahore
+
+72
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Geotechnical Investigations for the Establishment of Central
+Pathology Lab at Jinnah Hospital, Lahore
+Geotechnical Investigations for the Construction of LINAC Bunker
+NORI Hospital, Islamabad
+Geotechnical Investigations at Ali Residencia Apartments, Plot-74,
+Block-L, Gulberg-III, Lahore
+Pile Integrity Testing at Lahore-Sialkot Motorway (M11) Project from
+RD: 22+000 to RD:86+000
+Pile Integrity Testing (3 Piles) at Renacon Pharma Greenfield Project,
+FIEDMC, Sahianwala, Faisalabad
+Geotechnical Investigations at House of Habib - Faisalabad Mall
+Construction, Faisalabad
+Geotechnical Investigations Grid Station at Mcleod Ganj – Mandi
+Sadiq Ganj, Bahawalnagar
+Geotechnical Investigations at GO Petroleum – Bulk Oil Depot, Vehari
+Geotechnical Investigations at Gulberg Apartments, Tipu Road,
+Lahore
+Pile Integrity Test (217 Piles) at Colgate-Palmolive Plant, Sundar
+Industrial Estate, Lahore
+Geotechnical Investigations at Adil Petroleum, Indus Highway,
+Taunsa
+Geotechnical Investigations & Pavement Design for Two Service
+Roads f0r CB-23 SDH Houses & IH Houses of Main Boulevard at
+AFOHS Complex, Lahore
+Geotechnical Investigations for 100,000 Gallons Capacity Overhead
+Water Tank (OHWT) at AFOHS Complex, Lahore
+Geotechnical Investigations at Bulk Oil Depot, Rajanpur
+Geotechnical Investigation: Expansion of Bulk Oil Depot at Daulatpur,
+Sindh
+Geotechnical Investigations & Geophysical Survey for Establishment
+of 200 Bedded Mother and Child Hospital, Mianwali
+Geotechnical Investigations at Ghani – Fortek Porecelain (GVT) Tile
+Line, Sahianwala Industrial Estate (FIEDMC), Faisalabad
+Geotechnical Investigations for Construction of 500 Bedded Hospital,
+Nishtar-2, Multan
+Geotechnical Investigations for Establishment of Cardiac Centre, DG
+Khan
+Pile Integrity Testing at Karot Hydropower Plant, Azad Pattan,
+Punjab
+Pile Integrity Testing at Construction of Ghani Ceramics, FIEDMC,
+Sahianwala
+Geotechnical Investigation at Pakistan Children’s Heart Foundation,
+Hospital Building, Thokar Niaz Baig, Lahore
+Geotechnical Investigation Reporting Design, Manufacture, Supply,
+Installation,
+Testing
+and
+Commissioning
+Plant
+for
+500kV/220kV/132kV Faisalabad Substation
+Geotechnical Investigations for the Construction of Dawood Heights,
+Near Clock Tower, Faisalabad
+
+73
+
+November, 2016 to October, 2017
+
+
+
+
+
+
+
+Civil Engineer
+TEAM Consultants (Pvt.)
+Ltd.
+
+3.6 MW Gugera Canal Hydropower Project, Nankana Sahib
+300 MW Balakot Hydropower Project, Balakot
+58 MW Turtunas Uzghor Hydropower Project, Uzghor
+Hydrology & Sedimentation Study Report, Jagran-II Hydropower
+Project, Jagran
+Root Cause Analysis Report (RCAR) for cracks in PASSCO grain silo’s
+Khairpur (Sindh) and cracks in PASSCO storage halls Multan
+(Punjab)
+
+March, 2017 to June, 2017
+
+
+
+
+Assistant Resident
+Engineer
+TEAM Consultants (Pvt.)
+Ltd.
+Re-Construction of Dangerous School Buildings and Schemes under
+Provision of Missing Facilities, Hafizabad
+Re-Construction of Dangerous School Buildings and Schemes under
+Provision of Missing Facilities, Sheikhupura
+
+June, 2016 to November, 2016
+
+
+
+Site Engineer
+Banu Mukhtar (Pvt.) Ltd.
+Construction of Warehouse and Production Hall, Instaplast (Pvt.)
+Limited, Sheikhupura
+Construction of Cold Re-Rolling Mill and Gantry Crane Foundations,
+Hadeed Pakistan (Pvt.) Limited, Sheikhupura
+
+June, 2015 to June, 2016
+
+
+
+
+8.
+
+Site Geological Engineer
+Berkeley Associates (Pvt.)
+Ltd.
+
+Geotechnical Investigation for the construction of Orange Line Metro
+Train, Lahore
+Geotechnical Investigation for the construction of 1180 MW CCPP
+Bhikhi Power Plant, Sheikhupura
+Geotechnical Investigation for the construction 1223 of MW CCPP
+Baloki Power Plant, Pattoki
+
+Languages:
+
+
+
+
+English
+Urdu
+
+Reading
+
+Writing
+
+Speaking
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+74
+
+Ali Naqi
+1. Designation:
+
+Geotechnical Engineer
+
+2. Nationality:
+
+Pakistani
+
+3. Profession:
+
+Civil Engineer
+
+4. Education:
+June, 2017
+
+5.
+
+6.
+
+Key Qualification:
+
+
+Geotechnical Investigations
+
+
+
+Site Management
+
+
+
+Project Monitoring & Control
+
+
+
+Interpretation of In-Situ & Laboratory Testing
+
+
+
+Foundation Design
+
+
+
+Reporting
+
+Professional Affiliations:
+
+
+7.
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering
+
+Registered Engineer – Pakistan Engineering Council (PEC)
+
+Professional Experience:
+December, 2017 to date
+
+
+
+
+
+
+
+
+Geotechnical Engineer
+Birudo Engineers
+
+Geotechnical Investigations for the construction of Central Pathology
+Lab at Jinnah Hospital, Lahore
+Geotechnical Investigations for the construction of Sports Complex at
+Information Technology University, Barki Road, Lahore
+Pile Integrity Testing at Lahore-Sialkot Motorway (M11) Project from
+RD: 22+000 to RD:86+000
+Pile Integrity Testing (3 Piles) at Renacon Pharma Greenfield Project,
+FIEDMC, Sahianwala, Faisalabad
+Geotechnical Investigations at House of Habib - Faisalabad Mall
+Construction, Faisalabad
+Pile Integrity Test (217 Piles) at Colgate-Palmolive Plant, Sundar
+Industrial Estate, Lahore
+
+75
+
+
+
+
+
+
+
+
+
+Geotechnical Investigations & Pavement Design for Two Service
+Roads f0r CB-23 SDH Houses & IH Houses of Main Boulevard at
+AFOHS Complex, Lahore
+Geotechnical Investigations for 100,000 Gallons Capacity Overhead
+Water Tank (OHWT) at AFOHS Complex, Lahore
+Geotechnical Investigations & Geophysical Survey for Establishment
+of 200 Bedded Mother and Child Hospital, Mianwali
+Geotechnical Investigations at Ghani – Fortek Porecelain (GVT) Tile
+Line, Sahianwala Industrial Estate (FIEDMC), Faisalabad
+Geotechnical Investigations for Construction of 500 Bedded Hospital,
+Nishtar-2, Multan
+Geotechnical Investigations for Establishment of Cardiac Centre, DG
+Khan
+Pile Integrity Testing (20 Piles) at Karot Hydropower Plant, Azad
+Pattan, Punjab
+
+June, 2016 to August, 2016
+
+
+8.
+
+Site Trainee Engineer
+Habib Construction
+Services
+
+Trainee Engineer at the construction of Orange Line Metro Train,
+Lahore
+
+Languages:
+
+ English
+
+
+Urdu
+
+Reading
+
+Writing
+
+Speaking
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+76
+
+Muhammad Husnain Shahid
+1. Designation:
+
+Geotechnical Engineer
+
+2. Nationality:
+
+Pakistani
+
+3. Profession:
+
+Civil Engineer
+
+9. Education:
+In Progress
+
+University of Engineering & Technology, Lahore
+M.Sc. Geotechnical Engineering
+
+June, 2019
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering
+
+10. Key Qualification:
+
+
+Geotechnical Investigations
+
+
+
+Site Management
+
+
+
+Project Monitoring & Control
+
+
+
+Interpretation of In-Situ & Laboratory Testing
+
+
+
+Reporting
+
+11. Professional Affiliations:
+
+
+Registered Engineer – Pakistan Engineering Council (PEC)
+
+12. Professional Experience:
+August, 2019 to date
+
+
+
+
+
+
+
+Geotechnical Engineer
+Birudo Engineers
+
+Pile Integrity Testing at Construction of Ghani Ceramics, FIEDMC,
+Sahianwala
+Geotechnical Investigation at Pakistan Children’s Heart Foundation,
+Hospital Building, Thokar Niaz Baig, Lahore
+Pile Integrity Testing at Karot Hydropower Plant, Azad Pattan,
+Punjab
+Geotechnical Investigation Reporting Design, Manufacture, Supply,
+Installation,
+Testing
+and
+Commissioning
+Plant
+for
+500kV/220kV/132kV Faisalabad Substation
+Geotechnical Investigations for the Construction of Dawood Heights,
+Near Clock Tower, Faisalabad
+
+77
+
+13. Languages:
+
+
+
+
+English
+Urdu
+
+Reading
+
+Writing
+
+Speaking
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+78
+
+Osama Javaid
+1. Designation:
+
+Geotechnical Engineer
+
+2. Nationality:
+
+Pakistani
+
+3. Profession:
+
+Civil Engineer
+
+4. Education:
+June, 2019
+
+University of Engineering & Technology, Lahore
+B.Sc. Civil Engineering
+
+5. Key Qualification:
+ Geotechnical Investigations
+
+
+Site Management
+
+
+
+Project Monitoring & Control
+
+
+
+Interpretation of In-Situ & Laboratory Testing
+
+
+
+Reporting
+
+6. Professional Affiliations:
+
+
+Registered Engineer – Pakistan Engineering Council (PEC)
+
+7. Professional Experience:
+August, 2019 to date
+
+
+
+
+
+
+
+
+
+Geotechnical Engineer
+Birudo Engineers
+
+Geotechnical Investigations at Ghani – Fortek Porecelain (GVT) Tile
+Line, Sahianwala Industrial Estate (FIEDMC), Faisalabad
+Geotechnical Investigations for Construction of 500 Bedded Hospital,
+Nishtar-2, Multan
+Geotechnical Investigations for Establishment of Cardiac Centre, DG
+Khan
+Pile Integrity Testing at Construction of Ghani Ceramics, FIEDMC,
+Sahianwala
+Geotechnical Investigation at Pakistan Children’s Heart Foundation,
+Hospital Building, Thokar Niaz Baig, Lahore
+Pile Integrity Testing at Karot Hydropower Plant, Azad Pattan,
+Punjab
+Structural Inspection of By Pass Tunnel, Patrind Hydropower Plant,
+Muzaffarabad, Azad Jammu & Kashmir
+
+79
+
+
+
+
+Geotechnical Investigation Reporting Design, Manufacture, Supply,
+Installation,
+Testing
+and
+Commissioning
+Plant
+for
+500kV/220kV/132kV Faisalabad Substation
+Geotechnical Investigations for the Construction of Dawood Heights,
+Near Clock Tower, Faisalabad
+
+8. Languages:
+
+
+
+
+English
+Urdu
+
+Reading
+
+Writing
+
+Speaking
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+Excellent
+Excellent
+
+80
+
+QUALITY POLICY
+
+81
+
+We, at BIRUDO ENGINEERS, are committed to provide quality
+Design and Engineering Consultancy services with professionalism
+and dedication to the complete satisfaction of our Clients. The quality
+of our services is sustained through enhancement of technical knowhow and proficiency of our staff. We allocate adequate resources for
+project implementation and seek improvement through a continuous
+system of Monitoring and Evaluation.
+In general, a Site Manager, mainly a Civil Engineer, is responsible for
+overall Quality Assurance (QA) and Quality Control (QC) of the
+project
+
+by
+
+assuring
+
+the
+
+compliance
+
+of
+
+approved
+
+working
+
+methodology/project specifications, relevant international standards
+i.e., ASTM/BS/AASHTO or whichever is applicable. In addition, to
+meet the designated timelines, project progress is tracked by making
+daily/weekly or monthly progress or other project specific required
+reports, based on the volume of the works.
+
+82
+
+HSE POLICY
+
+83
+
+We, BIRUDO ENGINEERS, believe and continually strive for improving the
+quality of our services and products while protecting people and the environment.
+This commitment is in the best interests of our customers, our employees and
+contractors, all stockholders, and communities in which we live and work by
+committing;
+
+
+
+Protect, and strive for improvement of, the health, safety and security of
+our people always;
+
+
+
+Eliminate Quality non-conformances and HSE accidents;
+
+
+
+Meet specified customer requirements and ensure continuous customer
+satisfaction;
+
+
+
+Set Quality & HSE performance objectives, measure results, assess and
+continually improve processes, services and product quality, through the
+use of an effective management system;
+
+
+
+Plan for, respond to and recover from any emergency, crisis and business
+disruption;
+
+
+
+Minimize our impact on the environment through pollution prevention,
+reduction of natural resource consumption and emissions, and the
+reduction and recycling of waste;
+
+
+
+Apply our technical skills to all HSE aspects in the design and engineering
+of our services and products;
+
+
+
+Communicate openly with stakeholders and ensure an understanding of
+our QHSE policies, standards, programs and performance. Reward
+outstanding QHSE performance;
+
+
+
+Improve our performance on issues relevant to our stakeholders that are
+of global concern and on which we can have an impact, and share with
+them our knowledge of successful QHSE programs and initiatives.
+
+We are committed to continually review our policies to ensure ongoing suitability.
+The commitments listed are in addition to our basic obligation to comply with all
+applicable laws and regulations where we operate. This is critical to our business
+success because it allows us to systematically minimize all losses and adds value
+
+84

@@ -1,0 +1,99 @@
+{
+  "requests": [
+    {
+      "id": "CR-FB72D13747",
+      "type": "CRF-04",
+      "status": "Draft",
+      "values": {
+        "request": {
+          "requester": "Reporting",
+          "department": ""
+        }
+      },
+      "attachments": [],
+      "approvals": [],
+      "legal": {
+        "receivedDate": null,
+        "reference": null,
+        "assignee": null,
+        "targetDate": null,
+        "remarks": ""
+      },
+      "escalated": false,
+      "createdBy": {
+        "id": null,
+        "name": "Reporting",
+        "email": "reporting@zameen.com"
+      },
+      "createdAt": "2026-09-24T09:44:06.552Z",
+      "updatedBy": null,
+      "updatedAt": null,
+      "submittedAt": null,
+      "acceptedAt": null,
+      "closedAt": null,
+      "timeline": [
+        {
+          "id": "EV-7F7E9156",
+          "at": "2026-09-24T09:44:06.552Z",
+          "event": "Draft Created",
+          "by": {
+            "id": null,
+            "name": "Reporting",
+            "email": "reporting@zameen.com"
+          },
+          "byName": "Reporting",
+          "detail": "Land Agreement"
+        }
+      ]
+    },
+    {
+      "id": "CR-25C5DEFA26",
+      "type": "CRF-04",
+      "status": "Draft",
+      "values": {
+        "request": {
+          "requester": "Reporting",
+          "department": ""
+        }
+      },
+      "attachments": [],
+      "approvals": [],
+      "legal": {
+        "receivedDate": null,
+        "reference": null,
+        "assignee": null,
+        "targetDate": null,
+        "remarks": ""
+      },
+      "escalated": false,
+      "createdBy": {
+        "id": null,
+        "name": "Reporting",
+        "email": "reporting@zameen.com"
+      },
+      "createdAt": "2026-09-24T09:36:34.516Z",
+      "updatedBy": null,
+      "updatedAt": null,
+      "submittedAt": null,
+      "acceptedAt": null,
+      "closedAt": null,
+      "timeline": [
+        {
+          "id": "EV-F86C248D",
+          "at": "2026-09-24T09:36:34.517Z",
+          "event": "Draft Created",
+          "by": {
+            "id": null,
+            "name": "Reporting",
+            "email": "reporting@zameen.com"
+          },
+          "byName": "Reporting",
+          "detail": "Land Agreement"
+        }
+      ]
+    }
+  ],
+  "sequences": {
+    "CRF02:2026": 3
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "builtAt": "2026-09-22T17:39:20.198Z",
+ "sourceRows": 192,
+ "arithmetic": {
+  "loanAgreements": 60,
+  "lifecycleEventRows": 117,
+  "headerArtifacts": 15,
+  "sum": 192,
+  "equalsSourceRows": true
+ },
+ "logicalLoans": 69,
+ "fromTracker": 60,
+ "driveOnlyFolders": 9,
+ "historyAttached": 85,
+ "historyUnattached": 32,
+ "byCategory": {
+  "international": 25,
+  "intercompany": 44
+ },
+ "sbp": {
+  "REGISTERED": 10,
+  "SUBMITTED": 8,
+  "PENDING": 5,
+  "UNKNOWN": 2,
+  "NOT_REQUIRED": 44
+ },
+ "registerServes": 192,
+ "rawRowsRetainedAs": "registers.loansSource"
+}

@@ -6,25 +6,35 @@
 //     matches the view label
 //   • end to end: a Labour request lands with the litigation employment
 //     counsel AND notifies the litigation team lead; IP lands with IP counsel.
-const puppeteer = require("puppeteer-core");
-const CHROME = process.env.CHROME || process.env.PUPPETEER_EXECUTABLE_PATH ||
-  "C:/Program Files/Google/Chrome/Application/chrome.exe";  // Windows dev default
-const BASE = `http://localhost:${process.env.LEGALOS_PORT || "4600"}`;
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const results = []; const errs = [];
-const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + n); };
+//
+// MIGRATED 2026-09-18: isolated sandbox and a real session. It also used to
+// import the app's modules from a HARDCODED build path ("/src-v263/data.js"),
+// which every `tools/bust-cache.sh` run invalidates — the suite would have
+// started failing on the next build for a reason that has nothing to do with
+// routing. The build directory is now read from the page that is actually
+// being served.
+const H = require("./_harness.js");
 
-(async () => {
-  const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
-  const p = await b.newPage();
-  p.on("pageerror", (e) => errs.push(e.message));
-  p.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
-  await p.goto(BASE + "/", { waitUntil: "networkidle2", timeout: 45000 }); await wait(500);
-  await p.evaluate(() => localStorage.removeItem("legalos-store-v1"));
-  await p.reload({ waitUntil: "networkidle2" }); await wait(600);
+H.runSuite("m1-routing-names — work routes to the right person, every time", async (ctx) => {
+  const { check: ok } = ctx;
+  const sb = ctx.setSandbox(await H.startSandbox({
+    portEnv: "LEGALOS_ROUTING_PORT", portFallback: "4851", prefix: "legalos-rt-",
+  }));
+  const b = ctx.setBrowser(await H.openBrowser());
+  const p = await H.asUser(b, sb, H.USERS.director, ctx);
 
-  const audit = await p.evaluate(() => Promise.all([
-    import("/src-v10/data.js"), import("/src-v10/store.js"), import("/src-v10/org.js"), import("/src-v10/pages/login.js"),
+  // Which build is this server serving? Never assume a version number.
+  // Read it from the SERVED index.html, not the rendered DOM: by the time the
+  // app has booted, its module script tag is long gone from the live tree.
+  const SRC = await p.evaluate(async (base) => {
+    const html = await (await fetch(base + "/", { credentials: "include" })).text();
+    const m = html.match(/(src-v\d+)\//);
+    return m ? m[1] : null;
+  }, sb.base);
+  ok("the served build directory is discoverable, so no version is hardcoded", !!SRC, SRC || "not found");
+
+  const audit = await p.evaluate((SRC) => Promise.all([
+    import("/" + SRC + "/data.js"), import("/" + SRC + "/store.js"), import("/" + SRC + "/org.js"), import("/" + SRC + "/pages/login.js"),
   ]).then(([D, S, O, L]) => {
     const problems = [];
     const teamOf = (uid) => (D.byId(uid) || {}).legalTeam || null;
@@ -88,14 +98,14 @@ const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + 
     }));
 
     return { problems, catChecks };
-  }));
+  }), SRC);
   console.log("   suggested owners:", JSON.stringify(audit.catChecks));
   if (audit.problems.length) audit.problems.forEach((x) => console.log("   ✗ " + x));
   ok("no routing/credential mismatches anywhere", audit.problems.length === 0);
 
   // 5) END TO END: a Labour request goes to the employment counsel on the
   //    litigation team, and the LITIGATION lead is notified — not someone else.
-  const e2e = await p.evaluate(() => Promise.all([import("/src-v10/store.js"), import("/src-v10/data.js")]).then(([S, D]) => {
+  const e2e = await p.evaluate((SRC) => Promise.all([import("/" + SRC + "/store.js"), import("/" + SRC + "/data.js")]).then(([S, D]) => {
     const res = S.submitLegalRequest({ title: "Dismissal dispute — warehouse staff", requestType: "New", entityId: "CO-19", requesterId: "u14", natureOfMatter: "Labour Matters", subdivision: "Labour/Employment", category: "Dispute / Litigation", urgencyBand: "Important", description: "x" });
     const owner = D.byId(res.owner) || {};
     const notifs = (S.getCollection("notifs") || []).filter((n) => n.title && n.title.includes(res.id));
@@ -103,15 +113,10 @@ const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + 
     const wrongLead = notifs.some((n) => ["u3", "u20"].includes(n.forUserId)); // other teams' leads
     const ip = S.submitLegalRequest({ title: "Trademark filing — brand mark", requestType: "New", entityId: "CO-19", requesterId: "u14", natureOfMatter: "Intellectual Property", subdivision: "IP", category: "IP", urgencyBand: "Important", description: "x" });
     return { owner: owner.name, ownerTeam: owner.legalTeam, ownerRbac: owner.rbac, leadNotified, wrongLead, ipOwner: (D.byId(ip.owner) || {}).name, ipOwnerTeam: (D.byId(ip.owner) || {}).legalTeam };
-  }));
+  }), SRC);
   console.log("   labour →", e2e.owner, "(" + e2e.ownerTeam + ")", "· IP →", e2e.ipOwner, "(" + e2e.ipOwnerTeam + ")");
   ok("labour request lands with a LITIGATION counsel (not another team)", e2e.ownerTeam === "litigation" && e2e.ownerRbac !== "paralegal");
   ok("the LITIGATION team lead is notified — and no other team's lead", e2e.leadNotified && !e2e.wrongLead);
   ok("IP request lands with the IP desk on litigation", e2e.ipOwnerTeam === "litigation");
 
-  console.log("console errors:", errs.length, errs.slice(0, 6).join(" | "));
-  const pass = results.filter(Boolean).length;
-  console.log(`\n==== ${pass}/${results.length} routing-integrity checks passed ====`);
-  await b.close();
-  process.exit(pass === results.length && errs.length === 0 ? 0 : 2);
-})().catch((e) => { console.error("FATAL", e.message); process.exit(1); });
+});

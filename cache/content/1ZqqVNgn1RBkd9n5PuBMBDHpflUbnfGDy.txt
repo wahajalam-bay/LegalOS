@@ -1,0 +1,226 @@
+MALL 35 
+ Construction of Grey Structure 
+ PART I - GENERAL CONDITIONS 
+ 
+ Definitions and Interpretation 
+ 
+ Definitions 
+ 1.1 In the Contract (as hereinafter defined) the following words and expressions shall have the meanings hereby assigned to them, except where the context otherwise requires: 
+ (a) ( i ) “ Employer " means the person named in Part II of these Conditions and the legal successors in title to such person, but not (except with the consent of the Contractor) any assignee of such person. 
+ (ii) " Contractor " means the person whose tender has been accepted by the Employer and the legal successors in title to such person, but not (except with the consent of the Employer) any assignee of such person. 
+ (iii) " Subcontractor " means any person named in the Contract as a Subcontractor for a part of the Works or any person to whom a part of the Works has been subcontracted with the consent of the Engineer and the legal successors in title to such person, but not any assignee of any such person. 
+ (iv) “ Engineer ” means, for the purposes of the Contract, any competent person appointed by the Employer and notified to the Contractor to act as the Engineer. Provided always that except in cases of professional misconduct, the Employer shall provide a fair opportunity to the outgoing Engineer to formulate his certifications / recommendations in relation to all outstanding matters, disputes and claims relating to the execution of the Works during his tenure. 
+ (v) “ Engineer’s Representative ” means a person appointed from time to time by the Engineer under Sub-Clause 2.2. 
+ (vi) “ Bidder to Tenderer ” means any person or persons, company, corporation, firm or joint venture submitting a Tender. 
+ (b) ( i ) “ Contract ” means these Conditions (Parts I and II), the Specifications, the Drawings, the summary of costs / Bill of Quantities, the Tender, the Letter of Acceptance, the Contract Agreement (if completed) and such further documents as may be expressly incorporated in the letter of Acceptance or Contract Agreement (if completed). 
+ (ii) “ Specifications ” means the specification of the Works included in the Contract and any modification thereof or addition thereto made under Clause 51 or submitted by the Contractor and approved by the Engineer. 
+ (iii) " Drawings " means all drawings, calculations and technical information of a like nature provided by the Engineer to the Contractor under the Contract and all drawings, calculations, samples, patterns, models, operation and maintenance manuals and other technical information of a like nature submitted by the Contractor and approved by the Engineer. 
+ (iv) '' Summary of Cost " means the priced and completed summary of cost forming part of the Tender. 
+ (v) " Tender " means the Contractor's priced offer to the Employer for the execution and completion of the Works and the remedying of any defects therein in accordance with the provisions of the Contract, as accepted by the Letter of Acceptance. 
+ 
+ The word "Tender" is synonymous with ''Bid" and the words "Tender Documents" with "Bidding Documents". 
+ 
+ (vi) " Letter of Acceptance " means the formal acceptance by the Employer of the Tender. 
+ 
+ (vii) " Contract Agreement " means the contract agreement (if any) referred to in Sub-Clause 9.1. 
+ 
+ (viii) " Appendices to Tender " means the appendices comprised in the form of Tender annexed to these Conditions. 
+ 
+ (ix) " Programme " means the programme to be submitted by the Contractor in accordance with Sub-Clause 14.1, and any approved revisions thereto. 
+ 
+ (c)(1) " Commencement Date " means the date upon which the Contractor receives the notice to commence issued by the Engineer / Employer pursuant to Clause 41. 
+ 
+ (ii) “ Time for Completion ” means the time for completing the execution of and passing the Tests on Completion of the Works or any section or part thereof as stated in the Contract (or as extended under Clause 44) calculated from the Commencement Date. 
+ 
+ (d)( i ) “ Tests on Completion ” means the tests specified in the Contract or otherwise agreed by the Engineer and the Contractor which are to be made by the Contractor before the Works or any Section or part thereof are taken over by the Employer. 
+ 
+ (ii) “ Taking-Over Certificate ” means a certificate issued pursuant to Clause 48. 
+ 
+ (e)( i ) “ Contract Price ” means the sum stated in the Bill of Quantities/ Summary of Cost as payable to the Contractor for the execution and competition of the Works subject to such additions thereto or deductions therefrom as may be made and remedying of any defects therein in accordance with the provisions of the Contract. 
+ 
+ (ii) “ Retention Money ” means the aggregate of all monies retained by the Employer pursuance to Sub-Clause 60.2(a). 
+ 
+ (f)( i ) " Works " mean the Permanent Works and the Temporary Works or either of them as appropriate. 
+ 
+ (ii) " Permanent Works " means the permanent works to be executed (including Plant) in accordance with the Contract. 
+ 
+ (iii) " Temporary Works " means all temporary works of every kind (other than Contractor's Equipment) required in or about the execution and completion of the Works and the remedying of any defects therein. 
+ 
+ (iv) " Plant " means machinery, apparatus and the like intended to form or forming part of the Permanent Works. 
+ 
+ (v) " Contractor's Equipment " means all appliances and things of whatsoever nature (other than Temporary Works) required for the execution and completion of the Works and the remedying of any defects therein, but does not include Plant, materials or other things intended to form or forming part of the Permanent Works. 
+ 
+ (vi) " Section " means a part of the Works specifically identified in the Contract as a Section. 
+ 
+ (vii) " Site " means the places provided by the Employer where the Works are to be executed and any other places as may be specifically designated in the Contract as forming part of the Site. 
+ 
+ (g)( i ) " Cost " means all expenditure properly incurred or to be incurred, whether on or off the Site, including overhead and other charges properly allocable thereto but does not include any allowance for profit. 
+ 
+ (ii) " d ay " means calendar day. 
+ 
+ (iii) ' ' F oreign Currency " means a currency of a country other than that in which the Works are to be located. 
+ 
+ (vi) “ Writing ” means any hand-written, type-written or printed communications, including e-mail, telex, cable and facsimile transmission. 
+ 
+ Headings and Marginal Notes 
+ 1.2 The headings and marginal notes in these Conditions shall not be deemed part thereof or be taken into consideration in the interpretation or construction thereof or of the Contract. 
+ 
+ Interpretation. 
+ 1.3 Words importing persons or parties shall include firms and corporations and any organization having legal capacity. 
+ 
+ Singular and Plural 
+ 1.4 Words importing the singular only also include the p lural and vice versa , where the context requires. 
+ 
+ Notices, Consents, Approvals, Certificates and Determinations. 
+ 
+ 1.5 Wherever in the Contract provision is made for the giving or issue of any notice, consent, approval certificate or determination by any person, unless otherwise specified such notice, consent approval, certificate or determination shall be in writing and the words “notify”, “certify” or “determine” shall be construed accordingly. Any such consent, approval, certificate or determination shall not unreasonably be withheld or delayed. 
+ 
+ Engineer and Engineer’s Representative 
+ 
+ Engineer’s Duties and Authority 
+ 2.1 (a) The Engineer shall carry out the duties specified in the C on tract. 
+ 
+ (b) If , in the opinion of the Engineer , an emergency occurs affecting the safety of life or of the Works or of adjoining property, the Engineer may, without relieving the Contractor of any of his duties and responsibilities under the Contract, instruct the C ontractor to execute all such work or to do all such things as may, in the opinion of the Engineer, be necessary to abate or reduce the risk. The Contractor shall forthwith comply with any such instruction of the Engineer. The Engineer shall determine an addition to the Contract Price, in respect of such instruction, in accordance with Clause 52 and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ (c) Except as expressly stated in the Contract, the Engineer shall have no authority to relieve the Contractor of any of his obligations under the Contract. 
+ 
+ Engineer's Representative 
+ 2.2 The Engineer's Representative shall be appointed by and be responsible to the Engineer and shall carry out such duties and exercise such authority as may be delegated to him by the Engineer under Sub-Clause 2.3. 
+ 
+ The Employer shall ensure that the Engineer's Representative is a professional engineer as defined in the Pakistan Engineering Council Act 1975 (V of 1976). 
+ 
+ Engineer's Authority to Delegate 
+ 2.3 The Engineer may from time to time delegate to the Engineer's Representative any of the duties and authorities vested in the Engineer and he may at any time revoke such delegation . Any such delegation or revocation shall be in writing and shall not take effect until a copy thereof has been delivered to the Employer and the Contractor. 
+ 
+ Any communication given by the Engineer's Representative to the Contractor in accordance with such delegation shall have the same effect as though it had been given by the Engineer. Provided that: 
+ 
+ any failure of the Engineer's Representative to disapprove any work, materials or Plant shall not prejudice the authority of the Engineer to disapprove such work, materials or Plant and to give instructions for the rectification thereof; 
+ 
+ if the Contractor questions any communication of the Engineer’s Representative, he may refer the matter to the Engineer who shall confirm, reverse or vary the contents of such communication. 
+ 
+ Appointment 
+ of Assistants. 
+ 
+ 2.4 The Engineer or the Engineer’s Representative may appoint any number of persons to assist the Engineer’s Representative in the carrying out of his duties under Sub-Clause 2.2. He shall notify to the Contractor the names, duties and scope of authority of such persons. Such assistants shall have no authority to issue any instructions to the Contractor save in so far as such instructions may be necessary to enable them to carry out their duties and to secure their acceptance of materials, plant or workmanship as being in accordance with the Contract, and any instructions given by any of them for those purposes shall be deemed to have been given by the Engineer's Representative. 
+ 
+ Instructions 
+ in Writing 
+ 2.5 Instructions given by the Engineer shall be in writing, provided that if for any reason the Engineer considers it necessary to give any such instruction orally, the Contractor shall comply with such instruction. Confirmation in writing of such oral instructions given by the Engineer, whether before or after carrying out of the instructions, shall be deemed to be an instruction within the meaning of this Sub-Clause. Provided further that if the Contractor, within seven ( 7 ) days, confirms in writing to the Engineer any oral instruction of the Engineer and such confirmation is not contradicted in writing within seven ( 7 ) days by the Engineer it shall be deemed to be an instruction of the Engineer. 
+ 
+ The provisions of this Sub-Clause shall equally apply to instructions given by the Engineer's Representative and any assistants of the Engineer or the Engineer's Representative appointed pursuant to Sub-Clause 2.4. 
+ 
+ Engineer to Act 
+ Impartially 
+ 2.6 Wherever, under the Contract, the Engineer is required to exercise his discrereation bt discretion by: 
+ 
+ giving his decision, opinion or consent, or 
+ expressing his satisfaction or approval, or 
+ determining value, or 
+ otherwise taking action which may affect the rights and obligations of the Employer or the Contractor 
+ he shall exercise such discretion impartially within the terms of the Contract and having regard to all the circumstances. Any such decision, opinion, consent, expression of satisfaction, or approval, determination of value or action may be opened up, reviewed or revised as provided in Clause 67. 
+ Engineer not 
+ Liable 
+ 2.7 Approval, reviews and inspection by the Engineer of any part of the Works does not relieve the Contractor from his sole responsibility and liability for the supply of materials, plant and equipment for construction of the Works and their parts in accordance with the Contract and neither the Engineer’s authority to act nor any decision made by him in good faith as provided for under the Contract whether to exercise or not to exercise such authority shall give rise to any duty or responsibility of the Engineer to the Contractor, any Subcontractor, any of their representatives or employees or any other person performing any portion of the Works. 
+ 
+ 
+ Replacement of 
+ the Engineer 
+ 2.8. If the Employer intend s to replace the Engineer, the Employer shall, not less than fourteen ( 14 ) days before the intended date of replacement, give notice to the Contractor, of the name, address and relevant experience of the intended replacement Engineer. The Employer shall not replace the Engineer with a person against the Contractor raises reasonable objection by notice to the Employer, with supporting particulars. 
+ 
+ Assignment and Subcontracting 
+ 
+ Assignment of 
+ Contract 
+ 
+ 3.1 The Contractor shall not without the prior consent of the Employer (which consent, notwithstanding the provisions of Sub-Clause 1.5, shall be at the sole discretion of the Employer), assign the Contract or any part thereof, or any benefit or interest therein or thereunder, otherwise than by: 
+ 
+ a charge in favour of the Contractor’s bankers of any monies due or to become due under the contract, or 
+ 
+ assignment to contractor’s insurers (in cases where the insurers have discharged the Contractor’s loss or liability of the Contractor’s right to obtain relief against any other party liable. 
+ 
+ Subcontracting 
+ 4.1 The Contractor shall not subcontract the whole of the Works. Except where otherwise provided by the Contract, the Contractor shall not subcontract any part of the Works without the prior consent of the Engineer. Any such consent shall not relieve the Contractor from any liability or obligation under the Contract and he shall be responsible for the act, defaults and neglects of any Subcontractor, his agents, servants or workmen as fully as if they were the acts, defaults or neglects of the Contractor, his agents, servants and workmen. 
+ 
+ Provided that the Contractor shall not be required to obtain such consent for: 
+ 
+ the provision of labour , or 
+ 
+ the purchase of materials which are in accordance with the standards specified in the Contract, or 
+ 
+ the subcontracting of any part of the Works for which the Subcontractor is named in the Contract. 
+ 
+ Assignment of 
+ Subcontractors’ 
+ Obligations. 
+ 4.2 In the event of a s ubcontractor having undertaken towards the Contractor in respect of the W ork executed, or the goods, materials, Plant or services supplied by such s ubcontractor, any continuing obligation extending for a period exceeding that of the Defects Liability Period under the Contract, the Contractor shall at any time, after the expiration of such Period, assign to the Employer, at the Employer's request and cost, the benefit of such obligation for the unexpired duration thereof. 
+ 
+ Contract Documents 
+ 
+ Languages and 
+ Law 
+ 
+ (a) The Contract Documents shall be drawn up in the English language. 
+ 
+ (b) The Contract shall be subject to the Laws of Islamic Republic of Pakistan. 
+ 
+ Priority of 
+ Contract 
+ Documents 
+ 5.2 The several documents forming the C ontract are to be taken as mutually explanatory of one another, but in case of ambiguities or discrepancies the same shall be explained and adjusted by the Engineer who shall thereupon issue to the Contractor instructions thereon and in such event, unless otherwise provided in the Contract, the priority of the documents forming the Contract shall be as follows: 
+ 
+ The Contractor Agreement (if completed); 
+ 
+ The Letter of Acceptance; 
+ 
+ The Tender; 
+ 
+ The Conditions of Particular Application – Part II; 
+ 
+ The General Conditions – Part I; 
+ 
+ The Drawings; 
+ 
+ The Specifications; 
+ 
+ The Summary of Cost; 
+ 
+ Addenda &amp; Corrigenda Nos. 01 
+ 
+ ………………………………….. 
+ 
+ ………………………………….. 
+ 
+ In case of discrepancies between the D rawings, those of larger scale shall govern unless they are superseded by a D rawing of later date regardless of scale. All Drawings and Specifications shall be interpreted in conformity with the Contract and these Conditions. Addendum, if any, shall be deemed to have been incorporated at the appropriate places in the documents forming the Contract. 
+ 
+ Custody and 
+ Supply of 
+ Drawings and 
+ Documents 
+ 6.1 The Drawings shall remain in the sole custody of the Engineer, but two (2) copies thereof shall be provided to the Contractor free of charge. The Contractor shall make at his own cost any further copies required by him. Unless it is strictly necessary for the purposes of the Contract, the Drawings, Specification s and other documents provided by the Employer or the Engineer shall not, without the consent of the Engineer, be used or communicated to a third party by the Contractor. Upon issue of the Defects Liability Certificate, the Contractor shal l return to the Engineer al l Drawings, Specification s and other documents provided under the Contract. 
+ 
+ The Contractor shal l supply to the Engineer four (4) copies of all Drawings, Specification s and other documents submitted by the Contractor and approved by the Engineer in accordance with Clause 7, together with a reproducible copy of any material which cannot be reproduced to an equal standard by photocopying. In addition, the Contractor shall supply such further copies of such Drawings, Specification s and other documents as the Engineer may request in writing for the use of the Employer, who shall pay the cost thereof. 
+ 
+ One Copy of 
+ Drawings to be 
+ kept on Site. 
+ 6.2 One (1) copy of the Drawings, provided to or supplied by the Contractor as aforesaid, shall be kept by the Contractor on the Site and the same shall at all reasonable times be available for inspection and use by the Engineer and by any other person authorized by the Engineer in writing. 
+ 
+ Disruption of 
+ Progress 
+ 
+ 6.3 The Contractor shall give notice to the Engineer with a copy to the Employer, whenever planning or execution of the Works is likely to be delayed or disrupted unless an y further drawing or instruction is issued by the Engineer within a reasonable time. The notice shall include details of the drawing or instruction required and of why and by when it is required and of any delay or disruption likely to be suffered if it is late. 
+ 
+ Delays and Cost 
+ of Delay of 
+ Drawings 
+ 6.4 If, by reason of any failure or inability of the Engineer to issue, within a time reasonable in all the circumstances and drawing or instruction for which notice has been given by the Contractor in accordance with Sub-Clause 6.3, the Contractor suffers delay and / or incurs costs then the Engineer shall after due consultation with the Employer and the Contractor, determine: 
+ 
+ Any extension of time to which the Contractor is entitled under Clause 44, and 
+ 
+ The amount of such costs, which shall be added to the Contract Price, and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Failure by 
+ Contractor to 
+ Submit Drawings 
+ 
+ 6.5 I f the failure or inability of the Engineer to issue any drawings or instructions is caused in whole or in part by the failure of the Contractor to submit Drawings, Specifications or other documents which he is required to submit under the Contract, the Engineer shall take such failure by the Contractor into 

@@ -1,0 +1,116 @@
+DATE: 20 20 
+ intellectual property Licence Agreement 
+ 
+ Between 
+ Name of licensor 
+ 
+ and 
+ Name of licensee 
+ 
+ Table of contents 
+ TOC \h \z \t "CMS AN Heading 1,1, CMS AN Main Heading ,1,CMS AN Unnumbered,2,CMS AN Schedule 1,3,CMS AN Schedule 2,2,CMS AN ALT Schedule 1,3,CMS AN ALT Schedule 2,2,CMS AN Sch 1 XRef,3,CMS AN Sch 2 XRef,2,CMS ALT Sch 1 XRef,3,CMS ALT Sch 2 XRef,2,CMS AN Section,1,CMS AN Schedule,1,CMS AN Sub-Schedule,1,CMS AN Part,2" 1. DEFINITIONS AND INTERPRETATION PAGEREF _Toc24475787 \h 1 
+ 2. DURATION PAGEREF _Toc24475788 \h 2 
+ 3. GRANT OF LICENCE PAGEREF _Toc24475789 \h 2 
+ 4. TITLE AND GOODWILL PAGEREF _Toc24475790 \h 3 
+ 5. RESTRICTIONS ON USE PAGEREF _Toc24475791 \h 3 
+ 6. TRADE MARKS PAGEREF _Toc24475792 \h 3 
+ 7. INTELLECTUAL PROPERTY ASSIGNMENT PAGEREF _Toc24475793 \h 4 
+ 8. INFRINGEMENT PAGEREF _Toc24475794 \h 5 
+ 9. WARRANTIES, INDEMNITY AND LIABILITY PAGEREF _Toc24475795 \h 5 
+ 10. TERMINATION PAGEREF _Toc24475796 \h 6 
+ 11. CONSEQUENCES OF TERMINATION PAGEREF _Toc24475797 \h 7 
+ 12. NOTICE PAGEREF _Toc24475798 \h 7 
+ 13. AMENDMENT PAGEREF _Toc24475799 \h 8 
+ 14. ENTIRE AGREEMENT PAGEREF _Toc24475800 \h 8 
+ 15. SEVERABILITY PAGEREF _Toc24475801 \h 8 
+ 16. NO PARTNERSHIP, JOINT VENTURE OR AGENCY PAGEREF _Toc24475802 \h 8 
+ 17. ASSIGNMENT PAGEREF _Toc24475803 \h 8 
+ 18. WAIVER PAGEREF _Toc24475804 \h 8 
+ 19. GOVERNING LAW AND JURISDICTION PAGEREF _Toc24475805 \h 8 
+ 
+ 
+ 
+ intellectual property LICENCE AGREEMENT 
+ BETWEEN: 
+ [[ ● ] , a company incorporated in [ ● ] under commercial license number [ ● ] and having its registered office at [ ● ] ] / [ [ ● ] , a company incorporated and registered in [ ● ] (registered number [ ● ] ), whose registered office is at [ ● ] ] (the “ Licensor ”); 
+ OLX Classifieds Pakistan (SMC-Private) Limited , a company incorporated and registered in Pakistan whose registered office is at 90-B Hali Road, Gulberg II, Lahore (the “ Licensee ” ) 
+ (Each a “ Party ” and collectively “ Parties ” ). 
+ WHEREAS: 
+ The Licensor is the owner of the Licensed Intellectual Property (as defined below); 
+ The Licensee wish es to use the Licensed Intellectual Property in t he Territory (as defined below) in relation to the Permitted Purpose (as defined below); and 
+ T he Licensor has agreed to grant to the Licensee a licence to use the Licensed Intellectual Property on the terms and conditions set out in this Agreement. 
+ THE PARTIES AGREE as follows: 
+ Definitions and Interpretation 
+ In this Agreement (including the recitals), unless the context otherwise requires: 
+ “ Control ” in relation to an undertaking means: 
+ the ownership or control (directly or indirectly) of more than 50% of the fully diluted voting share capital of the undertaking; or 
+ the ability to direct the casting of more than 50% of the fully diluted votes exercisable at either general meetings and/or the meetings of the board of directors/managers of the undertaking on all, or substantially all, matters; or 
+ the right to appoint or remove directors of the undertaking holding a majority of the voting rights at meetings of the board of directors on all, or substantially all, matters , 
+ ( and the terms " Controlling ," " Controlled by " and " under common Control with " shall be construed accordingly ) ; 
+ “ Commencement Date ” means the date appearing on the front of this Agreement; 
+ “ Competing Company ” means any person, company, entity or organisation which is deemed by the Licensor at its sole discretion to be a competitor in any of the market s , domain s or sector s in which the Licensor operates ; 
+ “ Future Trade Marks ” has the meaning given in c C lause 6 .2 ; 
+ “ Goodwill ” means the g G oodwill and all rights in and associated with or arising from the Licensed Intellectual Property including the Trade Name s and the Trade Marks and any additional g G oodwill generated from their use or exploitation; 
+ “Intellectual Property” means patents, utility models, rights to inventions, copyright and neighbouring and related rights, trade marks and service marks, business names and domain names, rights in get-up and trade dress, G g oodwill and the right to sue for passing off or unfair competition, rights in designs, database rights, rights to use, and protect the confidentiality of, confidential information (including know-how and trade secrets), and all other intellectual property rights, in each case whether registered or unregistered and including all applications and rights to apply for and be granted, renewals or extensions of, and rights to claim priority from, such rights and all similar or equivalent rights or forms of protection which subsist or will subsist now or in the future in any part of the world ; 
+ “ Licensed Intellectual Property ” means all Intellectual P roperty licensed by Licensor to Licensee ; 
+ “ Material ” means any advertising and/or marketing materials, literature or documentation concerning the Permitted Purpose ; and “ Materials ” shall be construed accordingly; 
+ “ Permitted Purpose ” has the meaning given in c C lause REF _Ref520737275 \r \h 3.1 ; 
+ “ Territory ” means Pakistan. [ ● ] 
+ “ Trade Marks ” means any and all such trade and service marks (whether registered or not) as Licensor may own for the purposes of the Licensor's b usiness from time to time including any Future Trade Marks; and 
+ “ Trade Names ” means the company names of each of Licensor and the Licensee or such other names as specified by the L icensor; and 
+ “ Year ” means a calendar year. 
+ Words denoting the singular include the plural and vice versa, words denoting a gender include all genders, and words denoting persons include corporations and all other legal entities. 
+ Unless the context otherwise requires, references in this Agreement to any Clause will be deemed to be a reference to a clause of this Agreement. 
+ The headings are inserted for ease of reference only and will not affect the interpretation or construction of this Agreement. 
+ References in this Agreement to the word “ include ” or “ including ” are to be construed without limitation to the generality of the preceding words. 
+ Duration 
+ Notwithstanding the date or dates of execution, this Agreement shall come into force on the Commencement Date and, unless terminated ea rlier in accordance with Cla use REF _Ref520045717 \r \h 10 , shall continue thereafter in full force and effect in perpetuity . 
+ Grant of Licence 
+ For th e promises and commitments made by the Licensee under this Agreement, the sufficiency of which is hereby acknowledged by the Lice nsor , T t he Licensor hereby grants to the Licensee , and the Licensee hereby accept s , a n [ exclusive ][ non-exclusive , ] [ royalty-free , ] non-transferable and [ non- sub licensable ] licence to u se the Licensed Intellectual Property, Trade Marks and Trade Names in the Territory for the purposes of carrying on the Licensee ’ s b B usiness (“ Permitted Purpose” ) on the terms and conditi ons contained in this Agreement . 
+ Nothing in this Agreement shall or is intended: 
+ to permit the Licensee to use the Licensed Intellectual Property for any purposes other than the Permitted Purpose without the prior written consent of the Licensor; or 
+ to prevent the Licensor from licensing the Licensed Intellectual Property to other parties without restriction . 
+ The Licensor may from time to time add to, delete or vary the Licensed Intellectual Property and Permitted Purpose , subject to the Licensor notifying the Licensee in writing of any such addition, deletion or variation. Provided, however, that no such addition, deletion or variation shall alter, amend , vary or change the Licensed Intellectual Property to an extent that i t becomes redundant for the Permitted Purpose. 
+ The Licensor shall , during the term of this Agreement, maintain all licen ces, permits and authorizations including renewals in the Licensed Intellectual Propert y . 
+ 
+ Title and Goodwill 
+ The Licensee acknowledge s the Licensor ’ s exclusive ownership of the Licensed Intellectual Property and for the avoidance of doubt; this Agreement does not give the Licensee any right, title or interest in or to the Licensed Intellectual Property , except the right to use the Licensed Intellectual Property in accordance with Clause REF _Ref488070784 \w \h \* MERGEFORMAT 3 of this Agreement. 
+ Any use by the Licensee of the Licensed Intellectual Property and all G oodwill arising thereon or deriving the re from, shall vest in and belong solely to the Licensor, and the Licensor may, at any time, call for a co nfirmatory assignation of such G oodwill from the Licensee , and in such instance the Licensee shall execute such assignation promptly . 
+ Restrictions on Use 
+ If the Licensor becomes aware that the Licensee are is not complying with the terms of this Agreement , it shall notify the Licensee in writing of such non-compliance. On receipt of any notice of non-compliance as referred to herein, the Licensee shall immediately cease any non-conforming use of the Licensed Intellectual Property , and refrain in the future from any non-confirming use of the same . 
+ In respect of the licence granted under Clause REF _Ref488070785 \w \h \* MERGEFORMAT 3.1 , the Licensee shall not do, omit to do, or suffer to be done, or authorise or encourage any other person (including third parties) to do, omit to do or suffer to be done, any act or thing which is in any way inconsistent with the Licensor ’ s ownership of the Licensed Intellectual Property or which could impair any application for or registration of any applicable rights comprising the Licensed Intellectual Property. 
+ The Licensee shall only use the Licensed Intellectual Property in a manner and form: ( i ) designed to maintain the Goodwill and reputation for high quality associated with the Licensed Intellectual Property ; (ii) consistent with the use of the Licensed Intellectual Property by the Licensor; (iii) that does not jeopardise the Licensor ’ s ownership of the Licensed Intellectual Property ; (iv) that does not jeopardise, dilute or diminish in any manner the value, image, validity and prestige of the Licensor and/or the Licensed Intellectual Property and (v) that complies with all applicable laws, rules and regulations. 
+ trade marks 
+ Licensee shall not do anything which may adversely affect Licensor 's rights in the Trade Names or the Trade Marks or Licens ed or Intellectual Property or do anything which may bring Licensor or Licensee into disrepute or which may damage the interests of the Licensor Business or the Goodwill. 
+ [ In respect of the registration of the Trade Marks: 
+ Licensee shall provide all reasonable assistance to Licensor (including but not limited to evidence of user) in obtaining registrations in any jurisdiction nominated by Licensor of the Trade Marks; 
+ in no circumstances shall Licensee apply for registration as proprietor S of any trade mark in respect of the Trade Names, the Trade Marks or any or part of them or which would or may conflict with the Trade Names or the Trade Marks; 
+ if, at the time Licensor wishes to apply for registration of a trade mark (the " Future Trade Marks ") and has applied to do so, Licensee are is deemed in law to have rights in the Future Trade Marks which make it necessary for an application to be proceeded in the name of Licensee ; Licensee shall at the request and expense of Licensor make and proceed with such application and do all that is necessary for obtaining registration in the name of Licensee and Licensee shall then assign such registration to Licensor or as Licensor directs; ] 
+ Licensee shall at the request and expense of Licensor do all that is necessary to establish themselves as Licensee of the Trade Marks and where applicable for the registration of Licensee ' permitted use at the Trade Marks Registry in the Territory . 
+ Any licence shall (amongst other provisions) contain the right for Licensor to control the specifications and quality of p roducts and the rights given to Licensee shall be limited to use as part of t h e Permitted Purpose and in such other ways as required by Licensor consistent with this Agreement. 
+ Licensee shall immediately notify Licensor of all infringements or imitations of the Trade Names or the Trade Marks or the Future Trade Marks or any business which appears to be attempting to pass itself off as the Licensor which may come to their attention and of any attempts to challenge either their rights to use the Trade Names or the Trade Marks or the Future Trade Marks or their right to carry on the Permitted Purpose or so long as this Agreement subsists. Licensor shall take such action as in its sole discretion it considers appropriate. 
+ Licensee agree to co-operate in the prosecution of any action including by providing evidence and by being named as a party to any legal proceedings as Licensor requires. Licensor shall have the conduct of any such action and shall pay all legal expenses and costs, which may arise from the joining of Licensee as part ies except for such legal expenses and costs which Licensee may incur by taking separate legal advice. Licensee shall not without Licensor 's prior written consent take any action of whatever nature based upon the Trade Names, Trade Marks or any other legal rights which Licensee are licensed to use or exercise pursuant to this Agreement or any licence entered into between the Parties. 
+ INTELLECTUAL PROPERTY ASSIGNMENT 
+ Licensee agree s that, where Licensee or any e mployees acquire any Intellectual Property after the Commencement Date (whether to any of the Trade Marks, Trade Name, or any other intellectual property and whether by operation of law or otherwise), Licensee hereby assign s and shall procure that their its e mployees shall assign all such rights to Licensor . 
+ Licensee unconditionally and irrevocably waive s , and shall procure that all e mployees shall unconditionally and irrevocably waive, any and all moral rights that Licensee or the e mployees may have or acquire in or to any such Intellectual Property and agree to execute and procure the execution by all such e mployees, of all such documents and do all such acts and things as Licensor may require in order to assign all such rights to Licensor and to waive all such moral rights which Licensee or the e mployees ha ve acquired so as to give full effect to this C c lause. 
+ Licensee acknowledge s that Licensor is the owner of the legal and beneficial rights, title and interests in the Licensor Intellectual Property and the Goodwill and that Licensee ' only rights in respect thereof is to use them for the purposes set out in this Agreement. 
+ Infringement 
+ Each P p arty shall promptly notify the other P p arty of: 
+ any actual or suspected infringement of the Licensed Intellectual Property ; 
+ any third - party claim that any right comprising the Licensed Intellectual Property is invalid; and/or 
+ any claims that the Licensed Intellectual Property infringes any third - party rights, 
+ that it becomes aware of and shall not act in such a way that will prejudice any claim or admit any liability in respect of the Licensed Intellectual Property . 
+ The Licensor shall have the right, but not the obligation, in its sole and absolute discretion to prosecute or defend, at its own expense, all claims, suits, or proceedings involving the Licensed Intellectual Property , and to take any action that it deems desirable or necessary for the protection of the Licensed Intellectual Property . At the Licensor ’ s discretion, it may do so in its name or in the name of both the Licensor and the Licensee , and the Licensee shall not claim any rights against the Licensor as a result of any such action. 
+ If the Licensor decides to take affirmative action against any actual or suspected infringement of the Licensed Intellectual Property or any actual or threatened claim that the Licensed Intellectual Property infringes the rights of any third party, the Licensee shall assist the Licensor, at the Licensor ’ s cost and expense, in taking all steps reasonably required by the Licensor in respect of such action, including without limit, in respect of quantification of any damages claim based on the damages suffered by the Licensor and/or the Licensee as a result of the said infringement or claim. Recovery of costs or damages resulting from any such action shall be distributed between the P p arties in the Licensor ’ s sole discretion, after reimbursement to the Licensor for any costs and expenses incurred in taking such action. 
+ Warranties, Indemnity and Liability 
+ The Licensee acknowledge that, in entering into this Agreement, they do not do so in reliance on any representation, warranty or other provision except as expressly provided in this Agreement and any conditions, warranties, representations, understandings or other similar terms (including in respect of the validity and non-infringement of the Licensed Intellectual Property ), whether express or implied, statutory or otherwise, are excluded from this Agreement to the fullest extent permitted by law. 
+ The Licensee shall indemnify and defend the Licensor from and against all actions, claims, liabilities, damages, loss, costs and expenses whether actual or alleged, including reasonable legal fees, court costs and other legal expenses, arising out of or relating to any unauthorised use of the Licensed Intellectual Property by the Licensee or anyone acting under authority of the Licensee (including, without limitation, any member of the Licensee ’ group) or any breach by the Licensee of the terms of this Agreement or where applicable, the Licensee ’ s failure to comply with any applicable laws and regulations relating to the manufacture, sale, promotion or advertising of all products and materials relating to the Permitted Purpose . 
+ The Licensor shall indemnify and defend the Lic ensee from and against all actions, claims, liabilities, damages, loss, costs and expenses whether actual or alleged, including reasonable legal fees, cou rts costs and other legal expenses , arising out of or in relation to any Li censed Intellectual Property breaching any third party intellectual property rights, failure to maintain or breach of any terms of licences, permissions or authorizations or failure to comply with any applicable laws and regulations 
+ Where the Licensor is seeking to rely upon the indemnity set out in Clause REF _Ref488070823 \r \h 9.2 , in r espect of any such suit, action or claim (whether actual or alleged) (a “ Claim ” ), the Licensor shall: 
+ as soon as reasonably practicable give to the Licensee written notice of the Claim specifying in reasonable detail the nature of the Claim, and all details of the Claim from time to time in the knowledge or possession of the Licensor; 
+ not, without the prior written consent of the Licensee , admit liability or make any offer, promise, compromise, settlement, or communication with the third party in respect of the Claim; 
+ use all reasonable endeavours to mitigate any loss arising out of such Claim by any third party; and 
+ render all reasonable assistance to the Licensee in connection with the defence of any such Claim against the Licensee or, at the request of the Licensee , (and against the Licensee providing to the reasonable satisfaction of the Licensor security for all costs, charges and expenses) surrender to the Licensee or their insurers on their request the conduct in the Licensor ’ s name of the defence, settlement and/or counterclaim of the Claim (provided that the Licensor shall be kept informed as to the conduct of such defence, settlement and/or counterclaim). 
+ Neither P p arty shall have any liability to the other P p arty for any and all: 
+ special, punitive, incidental, indirect or consequential loss or damage; or 
+ loss of profit, turnover, business, contracts, Goodwill , reputation, anticipated savings or management time (whether direct or indirec

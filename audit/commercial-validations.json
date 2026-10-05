@@ -1,0 +1,26 @@
+[
+ {
+  "check": "Al Madev I and Al Madev II hold separate documents",
+  "pass": true,
+  "detail": "Al Madev Complex I: 11 docs [\"Project Sales Agreement\",\"IT Services Agreement\",\"Company Documents\",\"Land Documents\",\"Partnership Documents\",\"Power of Attorney\",\"Undertaking\"] | Al Madev Complex II: 13 docs [\"Undertaking\",\"Power of Attorney\",\"Land Documents\"]",
+  "sharedDocuments": 0
+ },
+ {
+  "check": "Phoenix / Pheonix: both source spellings preserved, mapped not rewritten",
+  "pass": true,
+  "detail": "tracker spelling(s): Zameen Pheonix · Drive folder spelling(s): Zameen Phoenix, Zameen Phoenix_ · documents attached: 16",
+  "matchEvidence": "single adjacent-letter transposition on a 14-character name"
+ },
+ {
+  "check": "Every questioned project attachment is either resolved on stronger evidence or queued for a person",
+  "pass": true,
+  "detail": "17 questioned · 0 auto-resolved (filename and text agree) · 17 queued for human review, each with its evidence",
+  "perProject": [
+   "Zameen Ace Mall: 4",
+   "Zameen Jade: 3",
+   "Zameen Neo: 1",
+   "Golf View Rumanza: 8",
+   "Downtown Rumanza: 1"
+  ]
+ }
+]

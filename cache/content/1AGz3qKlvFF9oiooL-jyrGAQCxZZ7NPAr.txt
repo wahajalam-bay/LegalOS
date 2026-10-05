@@ -1,0 +1,386 @@
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+DEEVAR DEVELOPERS (PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+ASSETS
+NON-CURRENT ASSETS
+Long-term security deposit
+Long-term advance income tax
+
+96,000
+96,000
+
+96,000
+11,341,523
+11,437,523
+
+1,855,852,600
+203,358,428
+195,966,446
+53,469,788
+2,308,647,262
+2,308,743,262
+
+1,108,852,059
+161,865,041
+182,639,515
+36,116,257
+1,489,472,872
+1,500,910,395
+
+5,000,000
+
+5,000,000
+
+10
+
+20,000
+(285,116,756)
+(285,096,756)
+
+20,000
+(153,717,633)
+(153,697,633)
+
+11
+12
+13
+
+457,512,389
+201,711,846
+1,862,302,889
+72,312,894
+2,593,840,018
+
+327,318,099
+51,453,013
+1,241,324,543
+34,512,373
+1,654,608,028
+
+2,308,743,262
+
+1,500,910,395
+
+5
+
+CURRENT ASSETS
+Development property
+Contract costs
+Advances and other receivables
+Cash and bank balances
+
+6
+7
+8
+9
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+CAPITAL AND RESERVES
+Authorized share capital
+500,000 ordinary shares (2022: 500,000) of Rs.10 each
+Issued, subscribed and paid up share capital
+Accumulated losses
+
+CURRENT LIABILITIES
+Current maturity of long-term loans
+Trade and other payables
+Contract liabilities
+Accrued markup on loans
+
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+14
+
+The annexed notes from 1 to 25 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 1 of 21
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+DEEVAR DEVELOPERS (PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+Administrative expenses
+
+15
+
+Operating loss
+
+2023
+Rupees
+
+2022
+Rupees
+
+(964,425)
+
+(502,500)
+
+(964,425)
+
+(502,500)
+
+Finance cost
+
+16
+
+(37,773)
+
+(14,262)
+
+Other expenses
+
+17
+
+(130,194,289)
+
+(73,034,301)
+
+Other income
+
+(130,232,062)
+
+(73,048,563)
+
+Loss before taxation
+
+(131,196,487)
+
+(73,551,063)
+
+(202,636)
+
+(585,863)
+
+(131,399,123)
+
+(74,136,926)
+
+Taxation
+
+18
+
+Loss for the year
+Other comprehensive income
+
+-
+
+Total comprehensive loss for the year
+
+(131,399,123)
+
+(74,136,926)
+
+The annexed notes from 1 to 25 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 2 of 21
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+DEEVAR DEVELOPERS (PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+Capital reserve
+Revenue reserve
+Issued,
+accumulated
+subscribed and
+Total
+losses
+paid up share
+------------------------Rupees------------------------Balance as at 1 July 2021
+Loss for the year
+Other comprehensive income for the year
+Total comprehensive loss
+Balance as at 30 June 2022
+Loss for the year
+Other comprehensive income for the year
+Total comprehensive loss
+Balance as at 30 June 2023
+
+20,000
+
+(79,580,707)
+
+(79,560,707)
+
+-
+
+(74,136,926)
+(74,136,926)
+
+(74,136,926)
+(74,136,926)
+
+20,000
+
+(153,717,633)
+
+(153,697,633)
+
+-
+
+(131,399,123)
+(131,399,123)
+
+(131,399,123)
+(131,399,123)
+
+20,000
+
+(285,116,756)
+
+(285,096,756)
+
+The annexed notes from 1 to 25 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 3 of 21
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+DEEVAR DEVELOPERS (PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+2023
+Rupees
+
+2022
+Rupees
+
+(131,196,487)
+
+(73,551,063)
+
+130,194,289
+(1,002,198)
+
+73,034,301
+(516,762)
+
+(535,154,317)
+(41,493,387)
+2,366,099
+(574,281,605)
+
+(568,248,418)
+(36,255,165)
+(111,565,408)
+(716,068,991)
+
+150,258,833
+446,932,643
+597,191,476
+
+43,630,984
+599,130,936
+642,761,920
+
+Cash generated from / (used in) operations
+
+21,907,673
+
+(73,823,833)
+
+Income tax paid
+Net cash generated from / (used in) operating activities
+
+(4,554,142)
+17,353,531
+
+(4,368,848)
+(78,192,681)
+
+Note
+OPERATING ACTIVITIES
+Loss before taxation
+Adjustment to reconcile loss before taxation to net cash flows
+Exchange loss
+Operating loss before working capital changes
+
+17
+
+Working capital adjustments:
+(Increase) / decrease in current assets:
+Development property
+Contract costs
+Advances and prepayments
+
+Increase in current liabilities:
+Trade and other payables
+Contract liabilities
+
+INVESTING ACTIVITIES
+
+-
+
+-
+
+FINANCING ACTIVITIES
+
+-
+
+-
+
+NET INCREASE / (DECREASE) IN CASH AND CASH EQUIVALENTS
+CASH AND CASH EQUIVALENTS AT BEGINNING OF THE YEAR
+CASH AND CASH EQUIVALENTS AT END OF THE YEAR
+
+9
+
+17,353,531
+36,116,257
+53,469,788
+
+(78,192,681)
+114,308,938
+36,116,257
+
+The annexed notes from 1 to 25 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 4 of 21

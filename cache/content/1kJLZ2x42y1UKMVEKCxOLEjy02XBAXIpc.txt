@@ -1,0 +1,134 @@
+AGREEMENT 
+ 
+ This Agreement (“ Agreement ”) is entered into on this ____ day of ________________ 20 21 (“ Effective Date ”) by and between: 
+ 
+ EMPG LABS ( SMC- PRIVATE) LIMITED , a company incorporated under the laws of Pakistan, with its registered office at Pearl One Plaza, 3 rd Floor, 94-B/I, M.M. Alam Road, Gulberg III, Lahore, Pakistan, acting through its duly authorised representative [●] ( hereinafter referred to as “ Service Provider ” which expression shall, where the context so admits, mean and include its successors-in-interest and permitted assigns). 
+ 
+ AND 
+ 
+ [●] , a company registered with [●] , with its registered office at [●] , acting through its duly authorized representative [●] ( hereinafter referred to as “ Service Recipient ” which expression shall, where the context so admits, mean and include its successors-in-interest and permitted assigns). 
+ 
+ ( The Service Provider and the Service Recipient shall also individually be referred to as “ Party ” and, collectively, “ Parties ”). 
+ 
+ 
+ WHEREAS: 
+ 
+ The Service Provider provides IT Services (defined below) to third parties; and 
+ 
+ The Service Recipient is desirous of availing IT Services from the Service Provider and the Service Provider is desirous of providing such services to the Service Recipient, as per the terms and conditions of this Agreement. 
+ 
+ NOW THEREFORE, the Parties agree as under: 
+ 
+ DEFINITIONS 
+ 
+ Intellectual Property includes, but is not limited to, any inventions, technological innovations, discoveries, designs, formulas, know-how, processes, business methods, patents, trademarks, service marks, copyrights, computer software, ideas, creations, writings, lectures, illustrations, photographs, motion pictures, scientific and mathematical models, improvements to all such property, and all recorded material defining, describing, or illustrating all such property, whether in hard copy or electronic form. 
+ 
+ IT Services   means information technology development and maintenance services, along with related business process outsourcing services including inter alia payroll, human resources, and accounting. 
+ 
+ Force Majeure shall have the meaning assigned to it in Clause 6.1. 
+ 
+ 
+ Service Expenses means all actual costs and expenses incurred by the Service Provider for the performance of IT Services under this Agreement . 
+ 
+ Term shall have the meaning assigned to it in Clause 2.1. 
+ 
+ TERM &amp; SCOPE 
+ 
+ This Agreement shall be effective from the Effective Date and continue in force till the termination of the Agreement ( “Term” ). 
+ 
+ SERVICES 
+ 
+ The Service Provider shall provide IT Services to the Service Recipient, from time to time during the Term, in accordance with the Service Recipient’s business requirements wherein it is expected that ninety percent (90%) of the IT Services shall be expended towards IT development and ten percent (10%) shall be expended towards IT maintenance, or such other division of services as specified and agreed between the Parties from time to time. 
+ 
+ As consideration for performance of IT Services under Clause 3.1, the Service Provider shall be entitled to payment of all costs, including inter alia operational, administrative and human resource costs, incurred by the Service Provider for performance of IT Services for the Service Recipient under this Agreement (“ Service Expenses ”). T he Service Provider may, from time to time, request the Service Recipient to make payment(s) of Service Expenses in advance, if so required, to ensure uninterrupted performance of IT Services for the Service Recipient during the Term. 
+ 
+ The Service Provider shall issue a monthly invoice to the Service Recipient for payment of Service Expenses which shall be payable within 7 (seven) working days of receipt of such invoice. Any Service Expenses paid in advance under Clause 3.2 shall be adjusted accordingly in the monthly invoice. 
+ 
+ The Service Provider shall keep a record of the costs incurred with respect to the performance of IT Services under this Agreement, and shall share such financial record with the Service Recipient , as and when requested, for the purpose of verification of the Service Provider’s invoices. 
+ 
+ The Service Expenses shall be subject to deduction of any and all applicable taxes in accordance with applicable laws. 
+ 
+ Nothing in this Agreement shall prohibit or restrict the Service Recipient from soliciting, directly or indirectly, any employee of the Service Provider during the Term or thereafter. 
+ 
+ OBLIGATIONS &amp; WARRANTIES 
+ 
+ Parties hereby undertake, represent and/or warrant as follows: 
+ Parties have the authority to enter into and execute this Agreement through the duly authorized representative first mentioned above and that they do not thereby violate any judgment, decree, order, injunction, or any statute, law, regulation or rule of any court or any federal, regional, provincial, municipal or other domestic or foreign governmental authority applicable to them or any of their operations or property. 
+ 
+ Upon due execution of the Agreement, the Agreement shall constitute Parties’ valid and binding obligations, enforceable against them in accordance with the terms and conditions of this Agreement. 
+ 
+ Parties have taken all actions necessary for execution and performance of this Agreement. This Agreement has been duly and validly executed by the Parties and constitutes a valid and binding obligation of the Parties enforceable against each Party in accordance with the terms and conditions of the Agreement. 
+ 
+ TERMINATION 
+ 
+ The Service Recipient may terminate this Agreement at any time by giving three (3) months’ prior notice in writing to the Service Provider, whereas the Service Provider may terminate this Agreement at any time by giving six (6) months’ prior notice in writing to the Service Recipient. 
+ 
+ Any payment to the Service Provider that remains or is outstanding at the time of expiry or termination of this Agreement shall be paid by the Service Recipient to the Service Provider within seven (7) days of such expiry or termination. 
+ 
+ FORCE MAJEURE 
+ 
+ Notwithstanding anything to the contrary contained herein, neither Party shall be liable for any delays or failures in performance resulting from acts beyond its reasonable control including, without limitation, acts of God, terrorist acts, war, or civil unrest (“ Force Majeure ”). 
+ 
+ Any delay in performance of the obligations of the Parties, excluding the period(s) pertaining to any payment (s), shall be extended by a period of time equal to the period of interruption caused by the event of Force Majeure. 
+ 
+ GOVERNING LAW AND ARBITRATION 
+ 
+ Any dispute under or arising out of this Agreement shall be referred to arbitration in accordance with the Arbitration Act, 1940 and the decision of the arbitrator shall be final and binding on the Parties, including decision as to costs. The seat of arbitration shall be Lahore, Pakistan and the language or arbitration shall be English. 
+ 
+ This Agreement, and the rights and obligations of the Parties hereunder shall be governed by and construed in accordance with the laws of Pakistan. 
+ 
+ 
+ GENERAL CLAUSES 
+ 
+ Confidentiality: Neither Party shall disclose, without prior written approval of the other Party, any information regarding this Agreement, including the contents of this Agreement and/or the strategy( ies ) employed by the Service Provider for performance of IT Services. 
+ 
+ Intellectual property: The Service Provider hereby assigns to the Service Recipient all rights, title and interest, with respect to any ideas, concepts, techniques, inventions, processes, works of authorship developed or created by the Service Provider, solely or jointly with others, under this or in connection with this Agreement. 
+ 
+ Amendment: This Agreement may not be amended except by an instrument in writing signed for and on behalf of both Parties. 
+ 
+ Severability: The provisions of this Agreement are severable. In case any provision of this Agreement shall be invalid, illegal or otherwise unenforceable, the validity, legality and enforceability of the remaining provisions shall in no way be affected or impaired thereby. Parties shall substitute the affected provisions in such a way that, to the maximum extent possible, the substitution carries out the original intent of the Parties as to the point or points in question. 
+ 
+ Relationship Between the Parties: Nothing contained in this Agreement shall be construed or deemed to create any association, partnership or joint venture, agency, or employer-employee relationship in any manner whatsoever between the Parties. 
+ 
+ Notice: Any notice to be given under this Agreement shall be deemed delivered after twenty-four (24) hours of being sent by email or seventy-two (72) hours of being sent by registered post. 
+ 
+ Interpretation: Any terms used in this Agreement in the singular, where the context so permits, shall be deemed to include the plural and vice versa. The word “person” includes a firm, a body corporate, an unincorporated association or an authority and a reference to a person includes a reference to the person's successors, nominees and assigns. 
+ 
+ Entire Agreement: This Agreement represents the entire agreement between the Parties relating to the subject matter hereof. This Agreement fully and completely expresses the agreement of the Parties relating to the subject matter hereof and supersedes all prior understandings and writings. There are no other courses of dealing, understanding, agreements, representations or warranties, written or oral, except as set forth herein. 
+ 
+ Counterparts: This Agreement may be executed in any number of counterparts or duplicates, each of which shall be an original, and such counterparts or duplicates shall together constitute one and the same contract. 
+ 
+ 
+ 
+ 
+ SIGNATORIES 
+ Agreement 
+ 
+ IN WITNESS WHEREOF, the Parties have signed the Agreement, having fully understood the conditions set therein, of their own free will, in the presence of witnesses 
+ 
+ 
+ EXECUTANTS 
+ 
+ 
+ 
+ 
+ 
+ _______________ _________ _______ __ 
+ For and on behalf of the Service Provider 
+ [●] 
+ 
+ 
+ 
+ _____________________ ________ __ ___ 
+ For and on behalf of the Service Recipient 
+ [●] 
+ 
+ 
+ WITNESSES 
+ 
+ 
+ 
+ 
+ _______________________ ______ ____________________ __________ 
+ Name: Name: 
+ CNIC/Passport No.: CNIC/Passport No.:

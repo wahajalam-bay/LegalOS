@@ -1,0 +1,87 @@
+9/14/2020
+
+FRONTIER DIGITAL VENTURES LTD - ASIC - Company Dataset | Australia Datasets 💿
+
+ASIC - Company Dataset 💿
+Australia Government Open Data
+ASIC - Company Dataset
+
+Home » ASIC - Company Dataset
+SPONSORED SEARCHES
+
+company director name search
+
+company information lookup
+
+asic search
+
+frontier business
+
+dataset or data set
+
+how to see if a company is registered
+
+FRONTIER DIGITAL VENTURES LTD
+This is the detailed information about FRONTIER DIGITAL VENTURES LTD, it was
+incorporated on 2015-11-09, it’s Australian company number is 609183959. The
+company’s status is listed as “REGD” now.
+FRONTIER DIGITAL VENTURES LTD has been operating for 4 year 10 month 5
+days.
+Note:
+Type: specifies the type of company;
+Previous State of Registration: state in which the company was originally registered;
+Date format: YYYY/MM/DD;
+State Registration Number: registration number assigned when originally registered
+by the state;
+ABN: if company has an ABN, then show ABN, else show 0;
+Current Name Indicator: flag indicating whether the company name shown is the
+current company name(Y/Null).
+Company name
+
+Current Name Indicator
+
+FRONTIER DIGITAL VENTURES LTD
+
+Y
+
+FRONTIER DIGITAL VENTURES PTY LTD
+
+ACN: 609183959
+Type: APUB (Australian public company)
+Class: LMSH (Limited by Shares - The liability of the members is limited to the
+amount unpaid on their shares. Shareholders are not required to contribute any
+further monies (in the case of a winding up) if the shares they have taken up are fully
+paid.)
+Sub Class: LIST (Listed public company)
+Status: REGD (Registered.)
+Date of Registration: 2015-11-09
+ABN: 25609183959
+Date of Registration:
+2020-09-07
+
+2020-09-06
+
+2020-09-05
+
+2020-09-04
+
+2020-09-03
+
+2020-09-02
+
+2020-09-01
+
+2020-08-31
+
+2020-08-30
+
+2020-08-29
+
+2020-08-28
+
+2020-08-27
+
+more
+https://aus.databasesets.com/aus-company/acn/609183959
+
+1/2

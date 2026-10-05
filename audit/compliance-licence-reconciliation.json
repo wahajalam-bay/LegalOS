@@ -1,0 +1,169 @@
+{
+ "builtAt": "2026-09-22T17:39:20.225Z",
+ "trackerRows": 7,
+ "driveOnly": 1,
+ "served": 8,
+ "arithmetic": "7 tracker + 1 folder-only = 8",
+ "entityFolders": 8,
+ "unmatchedFolders": [],
+ "historyEntries": 14,
+ "originals": 8,
+ "renewals": 6,
+ "licences": [
+  {
+   "id": "LIC-0Q7NIBP",
+   "entity": "ZD Design Consultants (Registered Partnership)",
+   "authority": "PCATP",
+   "number": "FA/A04825/2025 Category A-4",
+   "issued": "2025-11-11",
+   "expiry": "2026-12-12",
+   "status": "Active",
+   "origin": "source",
+   "documents": 2,
+   "historyEntries": 2,
+   "renewalsOnFile": 1,
+   "currentEffective": {
+    "file": "ZD Design Consultants_Firm Renewal Certificate - 12.01.2026 (2).pdf",
+    "date": "2026-01-12",
+    "validUntil": null,
+    "basis": "latest issue date on file"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-0Q7NIBQ",
+   "entity": "ZD Engineering Solutions",
+   "authority": "PEC",
+   "number": "Consult/2765",
+   "issued": "2026-03-11",
+   "expiry": "2026-06-30",
+   "status": "Renewal Application Submitted",
+   "origin": "source",
+   "documents": 2,
+   "historyEntries": 2,
+   "renewalsOnFile": 1,
+   "currentEffective": {
+    "file": "Letter_PEC Registration_Renewal_ZD Engineering Solutions__20260313  (1).pdf",
+    "date": "2026-03-13",
+    "validUntil": null,
+    "basis": "latest issue date on file"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-0Q7NIBR",
+   "entity": "Zameen Developments (Private) Limited",
+   "authority": "LCCI",
+   "number": "107508 C",
+   "issued": "2026-04-07",
+   "expiry": "2027-03-31",
+   "status": "Active",
+   "origin": "source",
+   "documents": 3,
+   "historyEntries": 3,
+   "renewalsOnFile": 2,
+   "currentEffective": {
+    "file": "Zameen Developments _LCCI Membership_20260407 (1).pdf",
+    "date": "2026-04-07",
+    "validUntil": null,
+    "basis": "latest issue date on file"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-0Q7NIBS",
+   "entity": "Dubizzle Labs (SMC-Private) Limited",
+   "authority": "PSEB",
+   "number": "Z-25-6215/21",
+   "issued": "2025-09-01",
+   "expiry": "2027-08-01",
+   "status": "Active",
+   "origin": "source",
+   "documents": 2,
+   "historyEntries": 2,
+   "renewalsOnFile": 1,
+   "currentEffective": {
+    "file": "Dubizzle Labs_PSEB Registration Certificate_Valid August 2027 (1).pdf",
+    "date": null,
+    "validUntil": "2027-08-01",
+    "basis": "longest stated validity"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-0Q7NIBT",
+   "entity": "Zameen Media (Private) Limited",
+   "authority": "LCCI",
+   "number": "83993 C",
+   "issued": "2026-04-07",
+   "expiry": "2027-03-31",
+   "status": "Active",
+   "origin": "source",
+   "documents": 1,
+   "historyEntries": 1,
+   "renewalsOnFile": 0,
+   "currentEffective": {
+    "file": "Zameen Media_LCCI Membership_20260407 (1).pdf",
+    "date": "2026-04-07",
+    "validUntil": null,
+    "basis": "latest issue date on file"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-0Q7NIBU",
+   "entity": "Zameen REIT Management Company",
+   "authority": "SECP",
+   "number": "SECP/LRD/47/REIT/ZDRML/2022-104",
+   "issued": "2026-05-16",
+   "expiry": "2029-05-16",
+   "status": "Active",
+   "origin": "source",
+   "documents": 2,
+   "historyEntries": 2,
+   "renewalsOnFile": 1,
+   "currentEffective": {
+    "file": "RMC License_Zameen RMC_202606 (1).pdf",
+    "date": "2026-06-01",
+    "validUntil": null,
+    "basis": "latest issue date on file"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-0Q7NIBV",
+   "entity": "Zameen Developments (Private) Limited",
+   "authority": "ABAD",
+   "number": "F.M.2311",
+   "issued": "2026-04-18",
+   "expiry": "2026-12-31",
+   "status": "Active",
+   "origin": "source",
+   "documents": 1,
+   "historyEntries": 1,
+   "renewalsOnFile": 0,
+   "currentEffective": {
+    "file": "Membership Certificate of Association of Builders and Developers (ABAD) _ Zameen Developments_ 20260418 (1).pdf",
+    "date": "2026-04-18",
+    "validUntil": null,
+    "basis": "latest issue date on file"
+   },
+   "currentEffectiveUnknown": null
+  },
+  {
+   "id": "LIC-DC6AADF1",
+   "entity": "Deevar Developers (Pvt) Ltd",
+   "authority": "PEC",
+   "number": null,
+   "issued": null,
+   "expiry": null,
+   "status": null,
+   "origin": "drive",
+   "documents": 1,
+   "historyEntries": 1,
+   "renewalsOnFile": 0,
+   "currentEffective": null,
+   "currentEffectiveUnknown": "no document on file carries an issue date or a stated validity"
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "generatedAt": "2026-09-29T06:16:26.029Z",
+ "crawl": {
+  "startedAt": "2026-09-29T06:16:25.780Z",
+  "completedAt": "2026-09-29T06:16:25.906Z",
+  "status": "COMPLETE",
+  "rootsScanned": 5,
+  "foldersVisited": 1532,
+  "filesVisited": 6846,
+  "unreadableFolders": 0
+ },
+ "roots": [
+  {
+   "id": "1VcLEgwqZlZVv3rSE0r312oBfn-3_1DrS",
+   "name": "Entities data for secp filing",
+   "files": 3367,
+   "folders": 675
+  },
+  {
+   "id": "1lxovwv1Hi7eSsjMrxTwDgVQ-RgX6-SWm",
+   "name": "Litigation & Dispute - LegalOS",
+   "files": 404,
+   "folders": 186
+  },
+  {
+   "id": "153VrBQB4MmJrzXNLk0xwrr5GWZBWfsmi",
+   "name": "Compliance Data _LegalOS",
+   "files": 1772,
+   "folders": 190
+  },
+  {
+   "id": "17iSSfo93-MLJGXwfS2oKCPSC2X5UWLQi",
+   "name": "Commercial_ZD Projects Master Data and Tracker",
+   "files": 308,
+   "folders": 131
+  },
+  {
+   "id": "1oc-G2LpFHYBHT2o83cHOZBPiMSTVMGng",
+   "name": "Commercial_Zameen Media Contracts",
+   "files": 995,
+   "folders": 350
+  }
+ ],
+ "dispositions": {
+  "files": {
+   "SOURCE_TRACKER": 89,
+   "RECORD_DOCUMENT": 1717,
+   "MULTI_RECORD_DOCUMENT": 1127,
+   "ENTITY_DOCUMENT": 101,
+   "PROJECT_DOCUMENT": 39,
+   "MODULE_DOCUMENT": 15,
+   "SECP_YEAR_DOCUMENT": 0,
+   "ACTION_DOCUMENT": 0,
+   "TEMPLATE": 377,
+   "LETTERHEAD": 0,
+   "REFERENCE": 0,
+   "SYSTEM_FILE": 10,
+   "NOT_A_DOCUMENT": 4,
+   "UNRESOLVED": 0,
+   "SECP_FILING_YEAR": 1908,
+   "SECP_AGM": 247,
+   "SECP_EOGM": 27,
+   "SECP_CORPORATE_ACTION": 849,
+   "SECP_SHARE_CERTIFICATE": 103,
+   "SECP_REGISTER_OF_MEMBERS": 57,
+   "SECP_REGISTER_OF_DIRECTORS": 45,
+   "SECP_RESOLUTION": 34,
+   "SECP_SECP_NOTICE": 6,
+   "SECP_PROVIDENT_FUND": 64,
+   "SECP_FINANCIAL_STATEMENTS": 7,
+   "SECP_INCORPORATION": 1,
+   "SECP_CORRESPONDENCE": 10,
+   "SECP_ENTITY_LEVEL": 9
+  },
+  "folders": {
+   "MODULE_ROOT": 0,
+   "ENTITY_FOLDER": 167,
+   "RECORD_FOLDER": 1080,
+   "PROJECT_FOLDER": 44,
+   "FINANCIAL_YEAR_FOLDER": 67,
+   "ACTION_FOLDER": 36,
+   "DOCUMENT_FOLDER": 128,
+   "TEMPLATE_FOLDER": 6,
+   "REFERENCE_FOLDER": 4,
+   "UNRESOLVED": 0
+  },
+  "rows": {
+   "INGESTED_RECORD": 3045,
+   "INCOMPLETE_SOURCE_RECORD": 39,
+   "HISTORY_ROW": 0,
+   "CHILD_ROW": 0,
+   "HEADER": 0,
+   "BLANK": 0,
+   "INVALID_SOURCE_ROW": 0,
+   "OTHER_CLASSIFIED_SOURCE": 23
+  }
+ },
+ "modules": [
+  {
+   "module": "contracts",
+   "sourceObjects": 1302,
+   "normalized": 1302,
+   "difference": 0,
+   "note": "1:1 — register is the normalized form"
+  },
+  {
+   "module": "litigation",
+   "sourceObjects": 359,
+   "normalized": 359,
+   "difference": 0,
+   "note": "1:1"
+  },
+  {
+   "module": "notices",
+   "sourceObjects": 255,
+   "normalized": 255,
+   "difference": 0,
+   "note": "1:1"
+  },
+  {
+   "module": "properties",
+   "sourceObjects": 38,
+   "normalized": 38,
+   "difference": 0,
+   "note": "1:1"
+  },
+  {
+   "module": "loans",
+   "sourceObjects": 192,
+   "normalized": 69,
+   "difference": 123,
+   "note": "{\"sourceRows\":192,\"agreements\":69,\"trackerAgreements\":60,\"driveOnlyAgreements\":9,\"historyRows\":117,\"historyAttached\":85,\"historyUnattached\":32,\"historyAmbiguous\":9,\"headerArtifacts\":15,\"contestedFolders\":1,\"balances\":true}"
+  },
+  {
+   "module": "leases",
+   "sourceObjects": 0,
+   "normalized": 70,
+   "difference": -70,
+   "note": "derived from the spend trackers by Agreement Type"
+  },
+  {
+   "module": "services",
+   "sourceObjects": 0,
+   "normalized": 68,
+   "difference": -68,
+   "note": "derived from the spend trackers by Agreement Type"
+  },
+  {
+   "module": "licences",
+   "sourceObjects": 7,
+   "normalized": 8,
+   "difference": -1,
+   "note": "workbook rows + Drive-only licences"
+  },
+  {
+   "module": "resolutions",
+   "sourceObjects": 954,
+   "normalized": 954,
+   "difference": 0,
+   "note": "1:1"
+  },
+  {
+   "module": "entities",
+   "sourceObjects": 0,
+   "normalized": 73,
+   "difference": -73,
+   "note": "derived from every spelling across sources and Drive folders"
+  }
+ ],
+ "gates": {
+  "UNRESOLVED_FILES": 0,
+  "UNRESOLVED_FOLDERS": 0,
+  "RECORDS_WITHOUT_LINEAGE": 0,
+  "DOCUMENTS_NOT_IN_DRIVE": 0,
+  "DUPLICATE_RECORD_IDS": 0,
+  "MISSING_RECORD_IDS": 0,
+  "UNCLAIMED_TRACKERS": 0
+ },
+ "content": {
+  "read": {
+   "NOT_READ": 2893,
+   "SCAN_READ_VIA_INDEX": 2387,
+   "TEXT_EXTRACTED": 1566
+  },
+  "type": {
+   "SECP_FILING": 418,
+   "CORPORATE": 277,
+   "STATUTORY_REGISTER": 93,
+   "AUDITOR_CONSENT": 20,
+   "AFFIDAVIT": 304,
+   "TAX_CERTIFICATE": 54,
+   "FINANCIAL_STATEMENTS": 161,
+   "RESOLUTION": 315,
+   "LOAN": 472,
+   "NDA": 72,
+   "AGREEMENT": 134,
+   "LEASE": 405,
+   "LITIGATION": 348,
+   "POA": 40,
+   "INCORPORATION": 3,
+   "SHARE_CERTIFICATE": 1,
+   "SERVICE": 97,
+   "LAND_RECORD": 209,
+   "NOTICE": 1,
+   "BANK_MANDATE": 2,
+   "APPROVAL": 17
+  },
+  "folderVsContent": {
+   "FOLDER_ONLY": 2747,
+   "AGREES": 1151,
+   "REFINES": 1342,
+   "CONFLICTS": 314,
+   "NO_CONTENT": 656,
+   "CONTENT_ONLY": 636
+  },
+  "note": "AGREES: same type. REFINES: content is more specific, same domain. CONFLICTS: content points at a different domain — worth a person's attention. Nothing is moved on the strength of any of these; a document is not refiled because a keyword disagreed with a folder."
+ }
+}

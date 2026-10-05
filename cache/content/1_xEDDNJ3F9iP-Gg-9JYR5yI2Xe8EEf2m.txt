@@ -1,0 +1,405 @@
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+A member firm of Ernst & Young Global Limited
+
+
+
+
+
+
+
+
+
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+ZAMEEN PLATINUM (PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+ASSETS
+NON-CURRENT ASSETS
+Long-term security deposit
+Long-term advance income tax
+
+5
+
+CURRENT ASSETS
+Development properties
+Contract cost
+Advances and other receivables
+Cash and bank balances
+
+6
+7
+8
+9
+
+1,208,880
+1,208,880
+
+1,208,880
+23,240,461
+24,449,341
+
+2,828,241,206
+453,652,936
+320,548,337
+255,109,026
+3,857,551,505
+
+1,658,542,080
+396,594,789
+177,267,020
+541,220,941
+2,773,624,830
+
+3,858,760,385
+
+2,798,074,171
+
+100,000
+
+100,000
+
+10
+
+2,000
+(9,751,877)
+(9,749,877)
+
+2,000
+(3,072,540)
+(3,070,540)
+
+11
+
+826,946,320
+
+776,946,320
+
+12
+
+2,580,000,771
+365,505,682
+95,291,405
+766,084
+3,041,563,942
+
+1,768,339,272
+225,061,179
+29,881,569
+916,371
+2,024,198,391
+
+3,858,760,385
+
+2,798,074,171
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+CAPITAL AND RESERVES
+Authorized share capital
+10,000 (2022: 10,000) ordinary shares of Rs. 10 each
+Issued, subscribed and paid-up share capital
+Accumulated losses
+
+NON-CURRENT LIABILITIES
+Loan from the Parent Company
+CURRENT LIABILITIES
+Contract liabilities
+Markup accrued on loan from Parent Company
+Trade and other payables
+Provision for taxation
+
+13
+
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+14
+
+The annexed notes from 1 to 23 form an integral part of these financial statements.
+
+______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 1 of 18
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+ZAMEEN PLATINUM (PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Note
+
+Administrative expenses
+
+15
+
+2023
+Rupees
+
+2022
+Rupees
+
+(675,675)
+
+(800,210)
+
+(5,821)
+
+(121,087)
+
+Operating loss
+
+(681,496)
+
+(921,297)
+
+Other income
+
+-
+
+-
+
+(681,496)
+
+(921,297)
+
+(5,997,841)
+
+(6,047,450)
+
+(6,679,337)
+
+(6,968,747)
+
+Other operating expenses
+
+Loss before taxation
+Taxation
+
+16
+
+Loss for the year
+Other comprehensive income
+
+-
+
+Total comprehensive loss for the year
+
+(6,679,337)
+
+(6,968,747)
+
+The annexed notes from 1 to 23 form an integral part of these financial statements.
+
+________________________
+CHIEF EXECUTIVE
+
+________________________
+DIRECTOR
+
+Page 2 of 18
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+ZAMEEN PLATINUM (PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+Capital reserve
+Revenue reserve
+Issued, subscribed
+Accumulated
+and paid up share
+Total
+profits / (losses)
+capital
+------------------------Rupees------------------------Balance as at 01 July 2021
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2022
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2023
+
+2,000
+
+3,896,207
+
+3,898,207
+
+-
+
+(6,968,747)
+(6,968,747)
+
+(6,968,747)
+(6,968,747)
+
+2,000
+
+(3,072,540)
+
+(3,070,540)
+
+-
+
+(6,679,337)
+(6,679,337)
+
+(6,679,337)
+(6,679,337)
+
+2,000
+
+(9,751,877)
+
+(9,749,877)
+
+The annexed notes from 1 to 23 form an integral part of these financial statements.
+
+____________________
+CHIEF EXECUTIVE
+
+____________________
+DIRECTOR
+
+Page 3 of 18
+
+DocuSign Envelope ID: 6A174C87-ABF0-4FA2-90A5-6950A37FF6E5
+
+ZAMEEN PLATINUM (PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+CASH FLOWS FROM OPERATING ACTIVITIES
+Loss before taxation
+
+(681,496)
+
+(921,297)
+
+Working capital adjustments:
+(Increase) / decrease in current assets:
+Development properties
+
+(1,056,998,405)
+
+(581,993,773)
+
+(57,058,147)
+
+(119,564,514)
+
+(111,446,132)
+(1,225,502,684)
+
+39,530,623
+(662,027,664)
+
+65,409,836
+811,661,499
+877,071,335
+
+(56,200,690)
+914,071,449
+857,870,759
+
+Cash (used in) / generated from operations
+
+(349,112,845)
+
+194,921,798
+
+Taxes paid
+
+(14,742,852)
+(14,742,852)
+
+(13,284,400)
+(13,284,400)
+
+Net cash (used in) / generated from operating activities
+
+(363,855,697)
+
+181,637,398
+
+27,743,782
+27,743,782
+
+31,645,445
+(1,208,880)
+30,436,565
+
+50,000,000
+50,000,000
+
+3,000,000
+3,000,000
+
+(286,111,915)
+541,220,941
+255,109,026
+
+215,073,963
+326,146,978
+541,220,941
+
+Contract cost
+Advances and other receivables
+Increase / (decrease) in current liabilities:
+Trade and other payables
+Contract liabilities
+
+INVESTING ACTIVITIES
+Interest income on savings account
+Long-term security deposit
+Net cash flow generated from investing activities
+FINANCING ACTIVITIES
+Proceeds of loan from Parent Company
+Net cash flow generated from financing activities
+
+11
+
+Net (decrease) / increase in cash and cash equivalents
+Cash and cash equivalents at the beginning of the year
+Cash and cash equivalents at the end of the year
+
+9
+
+The annexed notes from 1 to 23 form an integral part of these financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+_______________________
+DIRECTOR
+
+Page 4 of 18

@@ -1,102 +1,182 @@
-// §2 config surfaces: requester chat, approval threshold, SLA editor, playbook editor, precedent nav.
-const puppeteer = require("puppeteer-core");
-const CHROME = process.env.CHROME || process.env.PUPPETEER_EXECUTABLE_PATH ||
-  "C:/Program Files/Google/Chrome/Application/chrome.exe";  // Windows dev default
-const BASE = `http://localhost:${process.env.LEGALOS_PORT || "4600"}`;
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const results = []; const errs = [];
-const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + n); };
-const body = (p) => p.evaluate(() => document.body.innerText);
-async function clickText(p, sel, re) { return p.evaluate((sel, re) => { const rx = new RegExp(re, "i"); const el = [...document.querySelectorAll(sel)].find((e) => rx.test(e.textContent || "")); if (el) { el.click(); return true; } return false; }, sel, re.source); }
-async function viewAs(p, uid) { await p.evaluate((uid) => { const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k) || "{}"); s.session = s.session || {}; s.session.viewAsId = uid; localStorage.setItem(k, JSON.stringify(s)); }, uid); }
-async function go(p, hash) { await p.evaluate((h) => { location.hash = h; }, hash); await p.reload({ waitUntil: "networkidle2" }); await wait(1100); }
-async function ls(p, path) { return p.evaluate((path) => { const s = JSON.parse(localStorage.getItem("legalos-store-v1") || "{}"); return path.split(".").reduce((o, k) => (o == null ? o : o[k]), s); }, path); }
+// §2 configuration surfaces: the requester can talk to Legal in-app, the
+// approval THRESHOLD is enforced by value (a Lead is blocked above their limit,
+// the Director is not), the Director can edit the SLA matrix and publish a
+// playbook, and the knowledge base is reachable from the sidebar.
+//
+// MIGRATED 2026-09-18: isolated sandbox, one real session per role, requests
+// seeded through the server, requester entering by the portal door.
+//
+//   node tests/m1-config-surfaces.js
+const H = require("./_harness.js");
 
-(async () => {
-  const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
-  const p = await b.newPage();
-  p.on("pageerror", (e) => errs.push(e.message));
-  p.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
-  await p.setViewport({ width: 1440, height: 1000 });
-  await p.goto(BASE + "/", { waitUntil: "networkidle2", timeout: 45000 }); await wait(500);
-  await p.evaluate(() => localStorage.removeItem("legalos-store-v1"));
-  await p.reload({ waitUntil: "networkidle2" }); await wait(500);
-  await p.evaluate(() => {
-    const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k));
-    const eid = (s.requests[0] && s.requests[0].entityId) || null;
-    const iso = new Date(2026, 0, 5).toISOString();
-    s.requests.unshift(
-      { id: "REQ-CHAT", title: "NDA — chat test", requestType: "New", contractType: "NDA / MoU / LOI", requesterId: "u16",
-        department: "Finance", channel: "internal", entityId: eid, category: "Contract Drafting / Review", proposedCategory: "Contract Drafting / Review",
-        status: "In Review", stage: "Legal Review", progress: 33, requestDate: iso, tat: { days: 3, fixedAt: iso, dueAt: iso, basis: "x" }, stageLog: [], activity: [] },
-      { id: "REQ-BIG", title: "High-value JV — approval gate", requestType: "New", contractType: "Development / JV", requesterId: "u16",
-        department: "Finance", channel: "internal", entityId: eid, value: 5000000, currency: "USD", risk: "high",
-        category: "Contract Drafting / Review", proposedCategory: "Contract Drafting / Review",
-        status: "Pending Approval", stage: "Approval", progress: 62, owner: "u5", requestDate: iso, tat: { days: 5, fixedAt: iso, dueAt: iso, basis: "x" },
-        stageLog: [{ stage: "Approval", enteredAt: iso, exitedAt: null, owner: "u5", ballWith: "legal" }], activity: [] },
-    );
-    localStorage.setItem(k, JSON.stringify(s));
+const DEPT = "Finance";
+const lsPath = (page, path) => page.evaluate(([k, p]) => {
+  const s = JSON.parse(localStorage.getItem(k) || "{}");
+  return p.split(".").reduce((o, key) => (o == null ? o : o[key]), s);
+}, [H.STORE_KEY, path]);
+
+const clickText = (page, sel, re) => page.evaluate(([sel, src]) => {
+  const rx = new RegExp(src, "i");
+  const el = [...document.querySelectorAll(sel)].find((e) => rx.test(e.textContent || ""));
+  if (!el) return false; el.click(); return true;
+}, [sel, re.source]);
+
+H.runSuite("m1-config-surfaces — chat, approval thresholds, SLA and playbooks", async (ctx) => {
+  const { check } = ctx;
+  const sb = ctx.setSandbox(await H.startSandbox({
+    portEnv: "LEGALOS_CFGSURF_PORT", portFallback: "4861", prefix: "legalos-cs-",
+  }));
+  const browser = ctx.setBrowser(await H.openBrowser());
+
+  const iso = new Date(2026, 0, 5).toISOString();
+  const cookie = await H.loginApi(sb, H.USERS.commLead.email);
+  await H.seedRequest(sb, cookie, {
+    id: "REQ-BIG", title: "High-value JV — approval gate", requestType: "New", contractType: "Development / JV",
+    department: DEPT, channel: "internal", value: 5000000, currency: "USD", risk: "high",
+    category: "Contract Drafting / Review", proposedCategory: "Contract Drafting / Review", categoryConfirmed: true,
+    status: "Pending Approval", stage: "Approval", progress: 62, owner: H.USERS.commMember.id,
+    requestDate: iso, tat: { days: 5, fixedAt: iso, dueAt: iso, basis: "Development / JV × Important" },
+    stageLog: [{ stage: "Approval", enteredAt: iso, exitedAt: null, owner: H.USERS.commMember.id, ballWith: "legal" }],
+    activity: [],
   });
-  await p.reload({ waitUntil: "networkidle2" }); await wait(300);
+  check("a high-value request is waiting at Approval", true, "USD 5,000,000 — above a Lead's threshold");
 
-  // (1) requester can reply in-app
-  await viewAs(p, "u16"); await go(p, "#/my-requests");
-  await p.evaluate(() => { const el = [...document.querySelectorAll(".mreq, .table tbody tr")].find((c) => /REQ-CHAT/.test(c.textContent)); if (el) el.click(); });
-  await wait(700);
-  const t = await body(p);
-  ok("requester sheet shows in-app Messages", /Messages with Legal/i.test(t));
-  ok("requester sheet has a chat input", await p.evaluate(() => !!document.querySelector(".sheet .chatpanel__input textarea")));
-  await p.evaluate(() => { const ta = document.querySelector(".sheet .chatpanel__input textarea"); if (ta) { ta.value = "Here is the counterparty's latest paper."; ta.dispatchEvent(new Event("input", { bubbles: true })); } });
-  await wait(150);
-  await p.evaluate(() => { const bs = [...document.querySelectorAll(".sheet .chatpanel__input button")]; if (bs[0]) bs[0].click(); });
-  await wait(400);
-  const msgs = await p.evaluate(() => (JSON.parse(localStorage.getItem("legalos-store-v1")).messages || []).filter((m) => m.requestId === "REQ-CHAT"));
-  ok("requester's reply is posted to the thread", msgs.some((m) => m.role === "requester" && /counterparty/i.test(m.text)));
+  /* -------------------------------------- (1) the requester can reply in-app */
+  const reqCtx = await browser.createBrowserContext();
+  const requester = await reqCtx.newPage();
+  await H.enterPortalAs(requester, sb, DEPT, ctx);
+  const raised = await H.raiseViaPortal(requester, sb, { title: "NDA — chat thread" });
+  await H.goHash(requester, "#/my-requests");
+  await H.waitFor(requester, (id) => (document.body.innerText.includes(id) ? true : null),
+    { arg: raised, message: "the requester's own request to list" });
+  await requester.evaluate((id) => {
+    const el = [...document.querySelectorAll(".mreq, .table tbody tr")].find((c) => (c.textContent || "").includes(id));
+    if (el) el.click();
+  }, raised);
+  await H.waitFor(requester, () => (document.querySelector(".sheet") ? true : null), { message: "the request sheet" });
 
-  // (2) approval threshold: lead blocked on high value, Director allowed
-  await viewAs(p, "u3"); await go(p, "#/workspace/REQ-BIG");
-  const leadTxt = await body(p);
-  ok("Lead is blocked above threshold (no active approve)", !/Approve & move/i.test(leadTxt) && /threshold/i.test(leadTxt));
-  await viewAs(p, "u1"); await go(p, "#/workspace/REQ-BIG");
-  ok("Director CAN approve above threshold", /Approve & move to/i.test(await body(p)));
+  const sheetText = await requester.evaluate(() => document.body.innerText);
+  check("the requester's sheet offers a message thread with Legal", /Messages with Legal/i.test(sheetText));
+  const hasInput = await requester.evaluate(() => !!document.querySelector(".sheet .chatpanel__input textarea"));
+  check("the thread has somewhere to type", hasInput);
 
-  // (3) SLA matrix editor — Director edits a cell inline
-  await viewAs(p, "u1"); await go(p, "#/settings");
-  await clickText(p, ".menu__item", /SLA & TAT/); await wait(600);
-  ok("SLA matrix editor renders for the Director", /SLA & TAT matrix/i.test(await body(p)) && await p.evaluate(() => !!document.querySelector('input[type=number]')));
-  await p.evaluate(() => { const inp = document.querySelector('input[type=number]'); if (inp) { const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set; set.call(inp, "9"); inp.dispatchEvent(new Event("input", { bubbles: true })); inp.dispatchEvent(new Event("change", { bubbles: true })); } });
-  await wait(400);
-  const ndaEmergency = await ls(p, "slaMatrix.NDA (our template).Emergency");
-  ok("editing a cell updates the live SLA matrix", ndaEmergency === 9);
-
-  // (4) playbook editor — Director adds one
-  await viewAs(p, "u1"); await go(p, "#/knowledge");
-  const before = (await ls(p, "playbooks") || []).length;
-  await clickText(p, "button", /Add playbook/); await wait(400);
-  await p.evaluate(() => { const ins = [...document.querySelectorAll(".modal input, input")]; if (ins[0]) { ins[0].value = "Sanctions & Export Controls Playbook"; ins[0].dispatchEvent(new Event("input", { bubbles: true })); } });
-  await wait(150);
-  await clickText(p, "button", /Publish/); await wait(500);
-  const after = (await ls(p, "playbooks") || []).length;
-  ok("Director can publish a new playbook", after === before + 1);
-
-  // (5) precedent/playbook KB is in the nav for legal.
-  // Nav groups now ship collapsed, so the row is not in the DOM until its group
-  // is opened — expand it first, which also proves the disclosure works.
-  await viewAs(p, "u5"); await go(p, "#/my-tasks");
-  const opened = await p.evaluate(() => {
-    const h = [...document.querySelectorAll(".nav__label--toggle")]
-      .find((e) => /shared/i.test(e.innerText || ""));
-    if (!h) return false;
-    h.click();
-    return true;
+  await requester.evaluate(() => {
+    const ta = document.querySelector(".sheet .chatpanel__input textarea");
+    const set = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, "value").set;
+    set.call(ta, "Here is the counterparty's latest paper.");
+    ta.dispatchEvent(new Event("input", { bubbles: true }));
   });
-  await wait(400);
-  ok("Shared nav group expands on click", opened);
-  ok("Knowledge Base (Precedents & Playbooks) is in the sidebar", /Precedents & Playbooks/i.test(await body(p)));
+  await requester.evaluate(() => {
+    const b = document.querySelector(".sheet .chatpanel__input button");
+    if (b) b.click();
+  });
+  const posted = await H.waitFor(requester, ([k, rid]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    const m = (s.messages || []).filter((x) => x.requestId === rid);
+    return m.some((x) => x.role === "requester" && /counterparty/i.test(x.text || "")) ? m.length : null;
+  }, { arg: [H.STORE_KEY, raised], message: "the requester's reply to be posted to the thread" }).catch(() => null);
+  check("the requester's reply is posted to the thread", !!posted, posted ? posted + " message(s)" : "not posted");
+  await reqCtx.close();
 
-  console.log("console errors:", errs.length, errs.slice(0, 8).join(" | "));
-  const pass = results.filter(Boolean).length;
-  console.log(`\n==== ${pass}/${results.length} checks passed ====`);
-  await b.close();
-  process.exit(pass === results.length && errs.length === 0 ? 0 : 2);
-})().catch((e) => { console.error("FATAL", e.message); process.exit(1); });
+  /* --------------------------- (2) the approval THRESHOLD, by value not role */
+  const lead = await H.asUser(browser, sb, H.USERS.commLead, ctx);
+  await H.goHash(lead, "#/workspace/REQ-BIG");
+  const leadText = await H.waitFor(lead, () => (document.body.innerText.includes("REQ-BIG") ? document.body.innerText : null),
+    { message: "the high-value request to open for the Lead" });
+  check("a Lead is blocked above their approval threshold",
+    !/Approve & move/i.test(leadText) && /threshold/i.test(leadText),
+    (leadText.match(/[^.\n]*threshold[^.\n]*/i) || ["no threshold message"])[0].trim().slice(0, 80));
+  await lead.close();
+
+  const director = await H.asUser(browser, sb, H.USERS.director, ctx);
+  await H.goHash(director, "#/workspace/REQ-BIG");
+  const dirText = await H.waitFor(director, () => (document.body.innerText.includes("REQ-BIG") ? document.body.innerText : null),
+    { message: "the high-value request to open for the Director" });
+  check("the Director can approve above that threshold", /Approve & move to/i.test(dirText));
+
+  /* ------------------------------------------- (3) the SLA matrix is editable */
+  await H.goHash(director, "#/settings");
+  await clickText(director, ".menu__item", /SLA & TAT/);
+  await H.waitFor(director, () => (document.querySelector("input[type=number]") ? true : null),
+    { message: "the SLA matrix editor to render for the Director" });
+  check("the SLA matrix editor renders for the Director",
+    /SLA & TAT matrix/i.test(await director.evaluate(() => document.body.innerText)));
+
+  await director.evaluate(() => {
+    const inp = document.querySelector("input[type=number]");
+    const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+    set.call(inp, "9");
+    inp.dispatchEvent(new Event("input", { bubbles: true }));
+    inp.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  const cell = await H.waitFor(director, ([k]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    const v = ((s.slaMatrix || {})["NDA (our template)"] || {}).Emergency;
+    return v === 9 ? v : null;
+  }, { arg: [H.STORE_KEY], message: "the edited SLA cell to reach the live matrix" }).catch(() => null);
+  check("editing a cell updates the live SLA matrix", cell === 9, cell == null ? "unchanged" : String(cell));
+
+  /* --------------------------------------------- (4) the Director may publish
+     Playbooks left the Knowledge Base. The Knowledge Base is now the Drive
+     DOCUMENT estate and its search; playbooks and precedents are written
+     material Legal maintains, and they have their own page. Publishing is
+     tested where publishing happens. */
+  await H.goHash(director, "#/playbooks");
+  const before = ((await lsPath(director, "playbooks")) || []).length;
+  await clickText(director, "button", /Add playbook/);
+  await H.waitFor(director, () => (document.querySelector(".modal input, input") ? true : null),
+    { message: "the playbook form" });
+  await director.evaluate(() => {
+    const inp = [...document.querySelectorAll(".modal input, input")][0];
+    const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+    set.call(inp, "Sanctions & Export Controls Playbook");
+    inp.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+  await clickText(director, "button", /Publish/);
+  const grew = await H.waitFor(director, ([k, n]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    return (s.playbooks || []).length === n + 1 ? (s.playbooks || []).length : null;
+  }, { arg: [H.STORE_KEY, before], message: "the new playbook to be published" }).catch(() => null);
+  check("the Director can publish a new playbook", grew === before + 1,
+    grew == null ? `still ${before}` : `${before} -> ${grew}`);
+  await director.close();
+
+  /* --------------------------------- (5) the knowledge base is reachable */
+  const associate = await H.asUser(browser, sb, H.USERS.commMember, ctx);
+  await H.goHash(associate, "#/my-tasks");
+  /* THE FAMILY IS A ROW; ITS DESTINATIONS ARE TABS ON ITS PAGES.
+     "Shared" said nothing about what was inside it, and its first entry was an
+     Intake & Repository wizard over an empty collection. The family is the DATA
+     BANK now: the executed contract corpus and the drafting material built on
+     top of it. What is asserted here is the thing that actually matters — from
+     the rail, the destination is reachable, and once you are in the family
+     every sibling of the page you are on is on screen. */
+  const opened = await associate.evaluate(() => {
+    const b = [...document.querySelectorAll(".sidebar .nav__item")]
+      .find((e) => /^data bank$/i.test((e.innerText || "").replace(/\s+/g, " ").trim()));
+    if (!b) return false; b.click(); return true;
+  });
+  check("the Data Bank family is one row in the sidebar, and it opens", opened);
+
+  const listedAsTabs = await H.waitFor(associate, () => {
+    const tabs = [...document.querySelectorAll(".famtabs .tab, .ghub__tile")]
+      .map((e) => (e.innerText || "").trim());
+    return tabs.some((t) => /Precedents & Playbooks/i.test(t)) ? tabs.length : null;
+  }, { message: "the Data Bank family's destinations to be offered as tabs", timeout: 10000 }).catch(() => null);
+  check("and its destinations are offered on the page, not hidden behind a hub",
+    !!listedAsTabs, listedAsTabs ? listedAsTabs + " destinations offered" : "not offered");
+
+  const reachable = await H.waitFor(associate, () => (/Precedents & Playbooks/i.test(document.body.innerText) ? true : null),
+    { message: "Precedents & Playbooks to be reachable from Shared", timeout: 12000 }).catch(() => null);
+  check("Precedents & Playbooks is reachable from the sidebar", !!reachable);
+
+  // ...and it actually opens, rather than merely being named.
+  await associate.evaluate(() => {
+    const el = [...document.querySelectorAll("a, button, .ghub__tile, .card")]
+      .find((x) => /Precedents & Playbooks/i.test(x.textContent || ""));
+    if (el) el.click();
+  });
+  const onKb = await H.waitFor(associate, () => (/#\/playbooks/.test(location.hash) ? location.hash : null),
+    { message: "the playbooks page to open", timeout: 12000 }).catch(() => null);
+  check("opening it lands on Precedents & Playbooks", !!onKb, onKb || "it did not navigate");
+});

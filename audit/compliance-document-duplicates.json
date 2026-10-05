@@ -1,0 +1,3802 @@
+{
+ "builtAt": "2026-09-23T06:04:33.917Z",
+ "duplicateGroups": 223,
+ "extraPhysicalCopies": 224,
+ "groups": [
+  {
+   "key": "auditor_s consent letter_zameen nord_20210909.pdf|126422",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Nord_20210909.pdf",
+   "size": 126422,
+   "locations": [
+    {
+     "fileId": "1TRg_zWX5Y29W5-KIS7nFD1PUiyiTKPtB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "1a8GGZFM869GA7dhP6pUHnQJSFwjFaD3z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 3a_zameen nord_20210628.pdf|1557685",
+   "copies": 2,
+   "name": "Form 3A_Zameen Nord_20210628.pdf",
+   "size": 1557685,
+   "locations": [
+    {
+     "fileId": "1yQGWK96XwV4xeo9I6c1hZ8GeiJedUxgm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "19dNDeJTyDHfufHTzKxSP3kEHmucWWZBr",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [ceo changed, secretary appointed]_zameen nord_202010623.pdf|1645233",
+   "copies": 2,
+   "name": "Form 29 [CEO changed, secretary appointed]_Zameen Nord_202010623.pdf",
+   "size": 1645233,
+   "locations": [
+    {
+     "fileId": "1q7ENf_svlGoDCjVvvbv_L-D-pmZUxBWl",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "16DmNPYrRFpdgwZHlozm_XHYHtKx_dXZT",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 21 [dctc dated 12.05.2022]_zameen nord_20220406.pdf|180707",
+   "copies": 2,
+   "name": "Form 21 [DCTC dated 12.05.2022]_Zameen Nord_20220406.pdf",
+   "size": 180707,
+   "locations": [
+    {
+     "fileId": "1F6hRJsMq6R7R0ie2FxPjC-eWgYjm4d8q",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "151DTVWueVIUSS0I-nQIvB2qeUv0JML33",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen nord_20220421.pdf|140585",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Nord_20220421.pdf",
+   "size": 140585,
+   "locations": [
+    {
+     "fileId": "1MA2ZM8JoF65XZR1Kg7urGgHmsMJkQvOz",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1boenp5Lj3HcGzgyQ_k0KEa4t7ovCuF_5",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 21 [dctc dated 14.06.2022]_zameen nord_20220608.pdf|149374",
+   "copies": 2,
+   "name": "Form 21 [DCTC dated 14.06.2022]_Zameen Nord_20220608.pdf",
+   "size": 149374,
+   "locations": [
+    {
+     "fileId": "1_ZFEiPkp8tMsr3d9viYP045HvOxOYOtU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1qk8wEI6D59kaw50s7BpLWsZF7rDsh3kD",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "register of members_zameen nord_20220830.docx|19106",
+   "copies": 2,
+   "name": "Register of Members_Zameen Nord_20220830.docx",
+   "size": 19106,
+   "locations": [
+    {
+     "fileId": "1Ex8JBNf8DjOjyABmOCA0Ry5EOnUrxZLF",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / Register of Members"
+    },
+    {
+     "fileId": "1qFdHGHfHceIz1vYMzRCZbDw5srYhp9k8",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / Register of Members"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 [appointment of auditors]-zameen nord_20260228.pdf|23395",
+   "copies": 2,
+   "name": "Form 9 [Appointment of Auditors]-Zameen Nord_20260228.pdf",
+   "size": 23395,
+   "locations": [
+    {
+     "fileId": "18qdqEZfbhBuzCQp0SB3oCAKqzzCKI8f4",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1PmFY_VU-nmd3-BQzGgXsUMvX_CYLv-lT",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [made up to 31.12.2026]_zameen nord_20260228.pdf|55803",
+   "copies": 2,
+   "name": "Form A [made up to 31.12.2026]_Zameen Nord_20260228.pdf",
+   "size": 55803,
+   "locations": [
+    {
+     "fileId": "1KRhHFw6GFuCbeZGdF6LDHEb3JP8Cqgx0",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1VkrLNtz1HP-PY1Xjuh57DHYF8Ns_NJ-y",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 19 [ubo declaration fy 2025]_zameen nord_20260228.pdf|24153",
+   "copies": 2,
+   "name": "Form 19 [UBO Declaration fy 2025]_Zameen Nord_20260228.pdf",
+   "size": 24153,
+   "locations": [
+    {
+     "fileId": "1mBAJEiDUvQMY2BKZp3oycGYWcGylsf-A",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "13rkc1UemENBgkQlwx8BPEZPtU6pLAbI8",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financial statement_fy 2025_zameen nord_20260406.pdf|425663",
+   "copies": 2,
+   "name": "Audited Financial Statement_FY 2025_Zameen Nord_20260406.pdf",
+   "size": 425663,
+   "locations": [
+    {
+     "fileId": "1eUFLaewovKlNQnmIQohW-PXLx23TOx14",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1gvCWYQOtEnNWji_SzDq_mkmKUwkidZwm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "zameen nord consent letter fy 2026.pdf|117228",
+   "copies": 2,
+   "name": "Zameen Nord Consent Letter FY 2026.pdf",
+   "size": 117228,
+   "locations": [
+    {
+     "fileId": "1ZjuhmB7U1YMTQasKFWrOesivyY1-82Gh",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1Y3vZ1KYGmkWu82hNJFK5tkXZVgywHZ7r",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [appointment of director]_zameen nord_20231122.pdf|368276",
+   "copies": 2,
+   "name": "Form 29 [appointment of director]_Zameen Nord_20231122.pdf",
+   "size": 368276,
+   "locations": [
+    {
+     "fileId": "18IInh-MhZqylLBnY5irTDIdBwvcLA192",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1IdkgHtwlhmEV62zv2PK6l4WBxT-fzByL",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financials fy 2023_zameen nord_20240801pdf.pdf|3787534",
+   "copies": 2,
+   "name": "Audited Financials FY 2023_Zameen Nord_20240801pdf.pdf",
+   "size": 3787534,
+   "locations": [
+    {
+     "fileId": "1ebdOF5RVTNwxLBUFCes7Q0Yq0oG7xMTY",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1DHyOZ_YUHVWGkbl_B33yZs1Th1PG_00d",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen nord_20240304.pdf|292664",
+   "copies": 2,
+   "name": "Auditor_s consent Letter_Zameen Nord_20240304.pdf",
+   "size": 292664,
+   "locations": [
+    {
+     "fileId": "1a6l-cNKhspV0D9XhCCMQNiNNNprhHzao",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1xeNuW_w6B4a58NZMBzJBfILvHbYnWSGt",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "register of directors_zameen nord (smc-private) limited_20230419.docx|20857",
+   "copies": 2,
+   "name": "Register of Directors_Zameen Nord (SMC-Private) Limited_20230419.docx",
+   "size": 20857,
+   "locations": [
+    {
+     "fileId": "1kifHLXmtKYfv_ZthoBcG1BgtK1mSJCb5",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / Register of Directors"
+    },
+    {
+     "fileId": "1LBctzjwLg6tiDJ8FP4DI9Qf2tl8dHvax",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / Register of Directors"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "incorporation certificate_zameen nord_20201126.pdf|603179",
+   "copies": 2,
+   "name": "Incorporation Certificate_Zameen Nord_20201126.pdf",
+   "size": 603179,
+   "locations": [
+    {
+     "fileId": "15_x9dtZu3I14MX-3wKduU2ry7osXZ6c3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1NZL5HJPqkR8iAo0rxb2_lxT3ztFeA8jN",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "acknowledgment of filing_zameen nord_20201126.pdf|207006",
+   "copies": 2,
+   "name": "Acknowledgment of filing_Zameen Nord_20201126.pdf",
+   "size": 207006,
+   "locations": [
+    {
+     "fileId": "176fGTmxZTYW9KRh3c-26MMk6CbWL7CLw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "15CczH5epQGz3eyVyjL0cwZKp1D366HmE",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "incorporation certificate [ctc dated 20201126]_zameen nord_20201126.pdf|443923",
+   "copies": 2,
+   "name": "Incorporation Certificate [CTC dated 20201126]_Zameen Nord_20201126.pdf",
+   "size": 443923,
+   "locations": [
+    {
+     "fileId": "10uFJn-Acr0yYScM1dLREL3sjT1JqIQmW",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1kR0zYB1pi033GjGgCIdMZ5IDtooB-0HF",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "tax certificate_zameen nord_20201126.pdf|1008222",
+   "copies": 2,
+   "name": "Tax Certificate_Zameen Nord_20201126.pdf",
+   "size": 1008222,
+   "locations": [
+    {
+     "fileId": "1wJQSbp9NTrPiZdcKWG4Kf-QRCojmbU_C",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1cmcI7thPjujAcf5Re_0fd-2iKXA0niGL",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "memorandum of association_zameen nord_20201123.pdf|603082",
+   "copies": 2,
+   "name": "Memorandum of Association_Zameen Nord_20201123.pdf",
+   "size": 603082,
+   "locations": [
+    {
+     "fileId": "16Lk2pGgm-LJcq-PWFs1vgYJ1gDh3kXap",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1GpN4iZGLv_Cj5-MbV2UP1NLoz99yIMmU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "articles of association_zameen nord_20201123.pdf|406018",
+   "copies": 2,
+   "name": "Articles of Association_Zameen Nord_20201123.pdf",
+   "size": 406018,
+   "locations": [
+    {
+     "fileId": "1BfcldjJvR6GpCIWskFQiMwL8fv6LoO7q",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1aaBZoF8vBmImHzJdB6E2PeDXR6wHzdxf",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "inc. form ii_zameen nord_20201126.pdf|724344",
+   "copies": 2,
+   "name": "Inc. Form II_Zameen Nord_20201126.pdf",
+   "size": 724344,
+   "locations": [
+    {
+     "fileId": "1PV1BaiQ0Bhg8W08arRX_OggtY7V9NBZa",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1HY950CxCHONiCAKiDOmh-rt0UWKU3YyE",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a_(made upto 20241231)_zameen nord_20250728.pdf|55909",
+   "copies": 2,
+   "name": "Form A_(Made upto 20241231)_Zameen Nord_20250728.pdf",
+   "size": 55909,
+   "locations": [
+    {
+     "fileId": "1CDVdmlsmOW1Bax0r8pvmufRtyL9UsK73",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1m5LeXGNGvDoM88flZzDmAbkycJntOgSq",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9_[appointment of auditor]_zameen nord_20250728.pdf|23384",
+   "copies": 2,
+   "name": "Form 9_[Appointment of Auditor]_Zameen Nord_20250728.pdf",
+   "size": 23384,
+   "locations": [
+    {
+     "fileId": "1pvF8F6DteO2ohZCCXmabK6MOx_vHtxwQ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1biIUQyRHOovL98SI9kJbhwEkBJCCGkMZ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financial statements fy 2024_zameen nord_20240630.pdf|293174",
+   "copies": 2,
+   "name": "Audited Financial Statements FY 2024_Zameen Nord_20240630.pdf",
+   "size": 293174,
+   "locations": [
+    {
+     "fileId": "1U4HKpOQOY-nh1G87mWUUtUx4CsfKVZWK",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1I4Ezk0DuC4RrkgA7obj545K0DlZDx-gm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_ zameen nord (smc-private) limited_20250108.pdf|85427",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_ Zameen NORD (Smc-Private) Limited_20250108.pdf",
+   "size": 85427,
+   "locations": [
+    {
+     "fileId": "1Ai1UNXQug7ynVjFen-SxYL_9F96TQ6aa",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1zOo35Zseop4vx6cD73yMe9gxKmq67m_e",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 1_shahzad masih [transferred to zvo]_20201126.pdf|746233",
+   "copies": 2,
+   "name": "Share Certificate No. 1_Shahzad Masih [transferred to ZVO]_20201126.pdf",
+   "size": 746233,
+   "locations": [
+    {
+     "fileId": "19gZqo7C7vWBDYM8kLzF24Z7zMzGWLIwm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "1ykxazgZPsJYNAjfssO4LQEOuU5IJFNJg",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [change of ceo]_zameen nord_20230601.pdf|333294",
+   "copies": 2,
+   "name": "Form 29 [change of CEO]_Zameen Nord_20230601.pdf",
+   "size": 333294,
+   "locations": [
+    {
+     "fileId": "1UrjW97E4HTAGJRe9kipdrMMDWWcVNapk",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1FySOiUXCwXgfq9glQ0ruqNARXqGj-uxn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen nord_20230626.pdf|108658",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Nord_20230626.pdf",
+   "size": 108658,
+   "locations": [
+    {
+     "fileId": "1rdz3uEjNOb2Kgj_rHF6HCJtWChJBnQwy",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1RZdKa_qus9n7ngktXAh8dARRSHtytf0y",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a made upto 31.12.2022_zameen nord_20230802.pdf|510435",
+   "copies": 2,
+   "name": "Form A made upto 31.12.2022_Zameen Nord_20230802.pdf",
+   "size": 510435,
+   "locations": [
+    {
+     "fileId": "11d6W7HCu06n7Wh1mbcDxwaB8NiTn-g9-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1TeLvvgF7cuqjz7_NnIrP2-HLlRURyjdR",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [change of directors and ceo]_zameen nord_20221220.pdf|388621",
+   "copies": 2,
+   "name": "Form 29 [change of directors and ceo]_Zameen Nord_20221220.pdf",
+   "size": 388621,
+   "locations": [
+    {
+     "fileId": "1r0rPmX7_6IPqSwR2rz6PkxmPTEUL03qS",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1qmSvmfJ1LEGK4_DiruemuK-ISBVCsiHE",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [appointment of auditor]_zameen nord_20230602.pdf|308088",
+   "copies": 3,
+   "name": "Form 29 [appointment of auditor]_Zameen Nord_20230602.pdf",
+   "size": 308088,
+   "locations": [
+    {
+     "fileId": "1VKiri5dYcW3cr5pnClSKjpOGU3wANmuY",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1f62bgAOMu33sf8yb5oZK-ySmT_aIl2Os",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Pavilion (SMC-Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1X1MZ8huBOqimf-PWlxVRTO9z-XS2leib",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 3
+  },
+  {
+   "key": "incorporation certificate_zameen delta_20190218.pdf|555651",
+   "copies": 2,
+   "name": "Incorporation Certificate_Zameen Delta_20190218.pdf",
+   "size": 555651,
+   "locations": [
+    {
+     "fileId": "1BJzRQ98FFHPaLMx_Whrb5XKXIigI4JC6",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1ud4CA2-ziUb0NFtJkuZ7H3GuphZ3ZZxs",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 3a [change in shareholders]_zameen delta_20190405.pdf|520265",
+   "copies": 2,
+   "name": "Form 3A [Change in Shareholders]_Zameen Delta_20190405.pdf",
+   "size": 520265,
+   "locations": [
+    {
+     "fileId": "1UpthNqH87lg7lmxIW9sxtjsk3vKnJDPL",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "12pX4EP_kx3uqTqE-jD08MxyUtQ05-8Ss",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form1 [receipt of subscription money]_zameen delta_20190424.pdf|512297",
+   "copies": 2,
+   "name": "Form1 [Receipt of Subscription Money]_Zameen Delta_20190424.pdf",
+   "size": 512297,
+   "locations": [
+    {
+     "fileId": "10lbtb7FB3Wuv7J1ildP0gPRfnIx2Phui",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "17sJPGTD7nWw1MKqk6d2v1wS0PrRiOhvX",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "inc. form ii_zameen delta_20190218.pdf|1187517",
+   "copies": 2,
+   "name": "Inc. Form II_Zameen Delta_20190218.pdf",
+   "size": 1187517,
+   "locations": [
+    {
+     "fileId": "1rOsk_FPxX6Zevw0Dh8sWMCVGd0G1wX3p",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1EU8lIuWKh20IYlq9ywRPkEvYAVA0omgD",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "acknowledgement of filing_zameen delta_20190218.pdf|539617",
+   "copies": 2,
+   "name": "Acknowledgement of Filing_Zameen Delta_20190218.pdf",
+   "size": 539617,
+   "locations": [
+    {
+     "fileId": "1hUqMc-tQigLF-e-_LLDI5y82-Uk67PL3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1no4nvh9zo4x2v3NlOwrPNbr0X9PbQuNu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "tax certificate_zameen delta_20190219.pdf|1007033",
+   "copies": 2,
+   "name": "Tax Certificate_Zameen Delta_20190219.pdf",
+   "size": 1007033,
+   "locations": [
+    {
+     "fileId": "18FnFlOCeNlYSm5OJljrMWOkwJ_hZlJu1",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1F-9yI91kgHcmmYCWFjKXwS_Ng4Xyanbp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "memorandum of association_zameen delta_20190218.pdf|764764",
+   "copies": 2,
+   "name": "Memorandum of Association_Zameen Delta_20190218.pdf",
+   "size": 764764,
+   "locations": [
+    {
+     "fileId": "1_NY8CIaUmgDpD0uTqE6KA8AV1ZQH3WPb",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1JGZ2cXzFnIJS0Pr2uNHdkKZJj4PT_GhP",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "certificate of subscription money_zameen delta_20190424.pdf|243448",
+   "copies": 2,
+   "name": "Certificate of Subscription Money_Zameen Delta_20190424.pdf",
+   "size": 243448,
+   "locations": [
+    {
+     "fileId": "17wlbG23D8j5G78lbLWt-HupjLy1-Geph",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "14DaKzSxLSGLZcCZHlFOwSgmYbVXmeGi2",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "articles of association_zameen delta_20190218.pdf|718464",
+   "copies": 2,
+   "name": "Articles of Association_Zameen Delta_20190218.pdf",
+   "size": 718464,
+   "locations": [
+    {
+     "fileId": "17upooavyAeq6-64k4E1O26uf5-uT63Hd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1VOadMXD38dpxTberl5Gtq57i0wuFV84R",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "bank account statement_zameen delta_20190423.pdf|162692",
+   "copies": 2,
+   "name": "Bank Account Statement_Zameen Delta_20190423.pdf",
+   "size": 162692,
+   "locations": [
+    {
+     "fileId": "1nv7XHnaaMnATJiBTbasu4t5zGHIIXub7",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1ZrakoawVmSCzUlXdc-f6gmlsVI4Ck4Qp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [auditor]_zameen delta_20190524.pdf|313911",
+   "copies": 2,
+   "name": "Form 29 [Auditor]_Zameen Delta_20190524.pdf",
+   "size": 313911,
+   "locations": [
+    {
+     "fileId": "1IrQAamJNBAjKj_oPD4xU0-Lraile_hJ9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1eiYoNB0VgaQbBeEYcYWJd4Mc7p9rhiy-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a (madeupto 01.09.2023)_zameen delta_20231122.pdf|557548",
+   "copies": 2,
+   "name": "Form A (madeupto 01.09.2023)_Zameen Delta_20231122.pdf",
+   "size": 557548,
+   "locations": [
+    {
+     "fileId": "1K63-D7cORRmLC5Fy5aG4mZys42ZaY219",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1Qc0bAWC7fdaEmhkc5Bd-8vucTuoOkTcU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 45 [declaration of ubo complinace]_zameen delta_20230912.pdf|258804",
+   "copies": 2,
+   "name": "Form 45 [declaration of UBO complinace]_Zameen Delta_20230912.pdf",
+   "size": 258804,
+   "locations": [
+    {
+     "fileId": "1MU8DHaBYLNd1vN1GSSNMaxDy7VEMqzu5",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1g23j0E5C2Lw5ZhEKDp1z1o-z3RtitQ93",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited accounts fy 2022_zameen delta_20221010.pdf|16236405",
+   "copies": 2,
+   "name": "Audited Accounts FY 2022_Zameen Delta_20221010.pdf",
+   "size": 16236405,
+   "locations": [
+    {
+     "fileId": "10iWy6QSNKsd8kmD6uUXD-dlhEZ4Yl8_N",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1yY4GXPmUfuaq1cCCwn9tmNPMYld1Vvrq",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen delta_20230626.pdf|108271",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Delta_20230626.pdf",
+   "size": 108271,
+   "locations": [
+    {
+     "fileId": "1iRkv5lxCGwHCeugxgsut2wCC3n4GO26S",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1nEQi3jl1Rrdg9tinTEmOd-9SRHgOpB7L",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [appointment of auditor]_zameen delta_20231122.pdf|313433",
+   "copies": 2,
+   "name": "Form 29 [appointment of auditor]_Zameen Delta_20231122.pdf",
+   "size": 313433,
+   "locations": [
+    {
+     "fileId": "1PfTH3UreDe6EhDIUnymyzyZcN4GbKjKV",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023"
+    },
+    {
+     "fileId": "1oWklJDRbWkxYDWIQqpVrKVHa2XzAfhSI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "register of directors_zameen delta (private) limited_20230419.docx|20302",
+   "copies": 2,
+   "name": "Register of Directors_Zameen Delta (Private) Limited_20230419.docx",
+   "size": 20302,
+   "locations": [
+    {
+     "fileId": "1M-ae8o0y8xYIOj1HuYNynMbSPQLnWkLJ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Register of Directors"
+    },
+    {
+     "fileId": "1KS7XzBMCNG35pjoLBh_BXtBNwmy-uhVx",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Register of Directors"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9_[election of directors]_zameen delta_20260701.pdf|27482",
+   "copies": 2,
+   "name": "Form 9_[Election of Directors]_Zameen Delta_20260701.pdf",
+   "size": 27482,
+   "locations": [
+    {
+     "fileId": "1jfmrTL7DuKLHTsVR2e6dHZBGNoPI9LGC",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1sPyJSCQh7e7Z4QpzgsYs_KZIXPPhHP6d",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financial statement_fy 2025_zameen delta_20260406.pdf|519898",
+   "copies": 2,
+   "name": "Audited Financial Statement_FY 2025_Zameen Delta_20260406.pdf",
+   "size": 519898,
+   "locations": [
+    {
+     "fileId": "1eTQyI5euqIuxKp_BuV6v-TAi5dhENesu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1sGOXZnZvO9PUfwiTVr2XVTfeBtO7rJmF",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "zameen delta consent letter fy 2026.pdf|117188",
+   "copies": 2,
+   "name": "Zameen Delta Consent Letter FY 2026.pdf",
+   "size": 117188,
+   "locations": [
+    {
+     "fileId": "1diWOJUhnmtVU-USWyRjOErOxske9SVhs",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026"
+    },
+    {
+     "fileId": "1bgh9WhGdvi-w_CjL-29XXNzYWpa6Fbc_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 21 [dctc dated 12.05.2022]_zameen delta_20220406.pdf|172724",
+   "copies": 2,
+   "name": "Form 21 [DCTC dated 12.05.2022]_Zameen Delta_20220406.pdf",
+   "size": 172724,
+   "locations": [
+    {
+     "fileId": "1K0Sjb2yNy3VTRDcIod6-4SZ6leGvShBI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "190yhVJigfTBCoIOPVNcP4d_GplM1jZlj",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen delta_20220421.pdf|129828",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Delta_20220421.pdf",
+   "size": 129828,
+   "locations": [
+    {
+     "fileId": "1uP9eVXa_-NACbqYoqUKQqbVm0UnbV7Tk",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "19z1vtVt0J9CY3LPcru9JztgKZzc4ez1N",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 21 [dctc dated 14.06.2022]_zameen delta_20220608.pdf|149101",
+   "copies": 2,
+   "name": "Form 21 [DCTC dated 14.06.2022]_Zameen Delta_20220608.pdf",
+   "size": 149101,
+   "locations": [
+    {
+     "fileId": "1MIv292Dg0X8i0_s--5eopVHhyDg7qLtT",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1AdrZJrx10RowJbjiHqClh7Ura2M4c4hv",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [auditor] [dctc dated 28.07.2022]_zameen delta_20220621.pdf|333846",
+   "copies": 2,
+   "name": "Form 29 [auditor] [DCTC dated 28.07.2022]_Zameen Delta_20220621.pdf",
+   "size": 333846,
+   "locations": [
+    {
+     "fileId": "12qq5XLZkFnP3GPrSa0QpY0_R2tqw5Ssf",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1GJxXn9tjFzyCl8y-4kXaPmwTFpSZv3WN",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited accounts_zameen delta_20220430.pdf|834652",
+   "copies": 2,
+   "name": "Audited Accounts_Zameen Delta_20220430.pdf",
+   "size": 834652,
+   "locations": [
+    {
+     "fileId": "12gR4Gxs7xMebAwOE-js6arSGXhiby9IB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1HBPcHAzNWsJHlGu9uHLMb8sXZ23Xgv71",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [annual returns upto 08.06.2022] [dctc dated 28.07.2022]_zameen delta_20220621.pdf|483676",
+   "copies": 2,
+   "name": "Form A [annual returns upto 08.06.2022] [DCTC dated 28.07.2022]_Zameen Delta_20220621.pdf",
+   "size": 483676,
+   "locations": [
+    {
+     "fileId": "1Eg093-758tw3BQ1qYmekR80PQS62y0Ic",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1SR1qbhA_hm1jUOsR_gdgnX-kMfyRsgUp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [change of directors]_zameen delta.pdf|403815",
+   "copies": 2,
+   "name": "Form 29 [Change of Directors]_Zameen Delta.pdf",
+   "size": 403815,
+   "locations": [
+    {
+     "fileId": "1zto-_OeFlG1gfIegnwQR6esr2Bm8H-kw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1h7aWU2xBI4y8g38szdB-ftvSzTXQQ-Pj",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 45 [dctc dated 28.07.2022]_zameen delta_20220608.pdf|285561",
+   "copies": 2,
+   "name": "Form 45 [DCTC dated 28.07.2022]_Zameen Delta_20220608.pdf",
+   "size": 285561,
+   "locations": [
+    {
+     "fileId": "198e6fea59FL7ViLqXfuPh03piFj86joU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022"
+    },
+    {
+     "fileId": "1j37R-Lk7D1J5XOOs1YnM9J6JZ5-qMltI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 for (appointment of auditors fy 2024)_zameen delta_20251127.pdf|23484",
+   "copies": 2,
+   "name": "Form 9 for (Appointment of Auditors FY 2024)_Zameen Delta_20251127.pdf",
+   "size": 23484,
+   "locations": [
+    {
+     "fileId": "1xr-dQLpK3K0j0QdlQVLHzMTRx2Co-0v_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1RVUBW_Lwa6KxZkcchveNxUg0_0A6xGDL",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a-( for fy 24_made up to 2025.09.10)_zameen delta_ 20251127_4387660 - 4173048 (1).pdf|57117",
+   "copies": 2,
+   "name": "Form A-( for FY 24_made up to 2025.09.10)_Zameen Delta_ 20251127_4387660 - 4173048 (1).pdf",
+   "size": 57117,
+   "locations": [
+    {
+     "fileId": "1nFMmeYnKl-dqDsf0NUfPF9Nt6uWOEvSg",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1xbefKAqET517aK70shuy8c4V-SApI6t-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 19 -[ubo declaration for fy 2024]_zameen delta_20251127_4387660.pdf|24150",
+   "copies": 2,
+   "name": "Form 19 -[UBO Declaration for FY 2024]_Zameen Delta_20251127_4387660.pdf",
+   "size": 24150,
+   "locations": [
+    {
+     "fileId": "1wZ1lt2MCJEp8_xlw5wMIqQvYpBr__CZB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1ZWtKXlwO1go-d_v4E424OdmK6LnVRheu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financial statements fy 2024_zameen delta _20240630.pdf|234769",
+   "copies": 2,
+   "name": "Audited Financial Statements FY 2024_Zameen Delta _20240630.pdf",
+   "size": 234769,
+   "locations": [
+    {
+     "fileId": "1-6mrTfL7GcX0WnpPE6uCRUIt_6nl_OZW",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "105u0Det_5HsUKS2cZX1dDo4FvBbevaGY",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financials_zameen delta_20210504.pdf|5261589",
+   "copies": 2,
+   "name": "Audited Financials_Zameen Delta_20210504.pdf",
+   "size": 5261589,
+   "locations": [
+    {
+     "fileId": "1fRJoeS5eD5QKbUX9i2ltonn3ph0EeZsJ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "1DyDzLVxzjFi_e6Ue_Pbzk_9VmJSWKKUE",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [annual returns upto 25.06.2021]_zameen delta_20210701.pdf|1704991",
+   "copies": 2,
+   "name": "Form A [annual returns upto 25.06.2021]_Zameen Delta_20210701.pdf",
+   "size": 1704991,
+   "locations": [
+    {
+     "fileId": "10ldzSxavmi16h_ny2eOS0ZEPA6Y92xfk",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "1HTkviDT18u2AmNWWUdmx6X4rDWhKQvEh",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [auditor, directors & ceo]_zameen delta_20210701.pdf|581725",
+   "copies": 2,
+   "name": "Form 29 [auditor, directors & CEO]_Zameen Delta_20210701.pdf",
+   "size": 581725,
+   "locations": [
+    {
+     "fileId": "1DoszjdX3WsFtbFM9LF-sLiy6GWINCE0E",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "19Syo_z_78_1NdpUPU1u_rysmXyt4Z9Tw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen delta_20210607.pdf|135468",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Delta_20210607.pdf",
+   "size": 135468,
+   "locations": [
+    {
+     "fileId": "1F7eJnYgqmTrSALAQx4gYkF4TxPLDUnNe",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "1xjCu90a4QpfZDjhXEuagKHOGWCjkvzVn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 45_zameen delta_20210727.pdf|544834",
+   "copies": 2,
+   "name": "Form 45_Zameen Delta_20210727.pdf",
+   "size": 544834,
+   "locations": [
+    {
+     "fileId": "1MCjlFnzUQhKiuWnBldvkAEI_wgPpYNj4",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021"
+    },
+    {
+     "fileId": "1s8s3xTzvODqrcZFbFCC4_xOWMGdUY0W_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financials fty 2019_zameen delta (private) limited)_20200423.pdf|2258402",
+   "copies": 2,
+   "name": "Audited Financials FTY 2019_Zameen Delta (Private) Limited)_20200423.pdf",
+   "size": 2258402,
+   "locations": [
+    {
+     "fileId": "1sdxh6W9NbBrMvuZHgvrnmfVVhquNnUjR",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1Szl0NInhL0ShVHSV4BEP9ErcHJblIUdt",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter _zameen delta_20200412.pdf|11818",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter _Zameen Delta_20200412.pdf",
+   "size": 11818,
+   "locations": [
+    {
+     "fileId": "1LOsrgMUdSs7L_vSB4jGF8CQApNHvWqOq",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "18bBoVj5pwQ9AyLa9w-O2_EREB6aclE78",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [annual returns upto 15.06.2020]_zameen delta_20200902.pdf|759173",
+   "copies": 2,
+   "name": "Form A [annual returns upto 15.06.2020]_Zameen Delta_20200902.pdf",
+   "size": 759173,
+   "locations": [
+    {
+     "fileId": "1w0Ms_WaC4mCvzKkJ1r10Tl4yqNCihTVt",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1eBbuslGewkW3InPdsa5USIuQ7TLcorso",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [auditor, directors & ceo]_zameen delta_20200902.pdf|526347",
+   "copies": 2,
+   "name": "Form 29 [auditor, directors & CEO]_Zameen Delta_20200902.pdf",
+   "size": 526347,
+   "locations": [
+    {
+     "fileId": "124dYT2ouAy3TFZzEbWKUZo1EDmIVbUT5",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1ydXXPfnHUQyveTugzu3uCG70Pc3G7vZH",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 [fy 2023] [appointment of auditor]_zameen delta_20240812.pdf|10036",
+   "copies": 2,
+   "name": "Form 9 [FY 2023] [appointment of auditor]_Zameen Delta_20240812.pdf",
+   "size": 10036,
+   "locations": [
+    {
+     "fileId": "1k0Cl493VjsGiM8TW7wBlgmGUWREOfmp5",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "100fR5mYRcep9827pL8Ti3gH_UzazU99A",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 19 [fy 2023][declaration with respect to ubo]_zameen delta_20240812.pdf|10420",
+   "copies": 2,
+   "name": "Form 19 [FY 2023][declaration with respect to UBO]_Zameen Delta_20240812.pdf",
+   "size": 10420,
+   "locations": [
+    {
+     "fileId": "1vEtBEiUAYTlfi8vxMf1zLNusbWVasNTG",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1LoOInkcW0B_LIeYhVtcxtsyk4MO44VFU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 [fy 2023][election of directors]_zameen delta_20240517.pdf|13444",
+   "copies": 2,
+   "name": "Form 9 [FY 2023][Election of Directors]_Zameen Delta_20240517.pdf",
+   "size": 13444,
+   "locations": [
+    {
+     "fileId": "1yy78r0wPQdz091205W3Vq8WWIomaWfg8",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "12cbstHDkYTuPvEZ4W-bg5mW6JdKLK93a",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [made upto 29.07.2024}_zameen delta_20240812.pdf|43296",
+   "copies": 2,
+   "name": "Form A [made upto 29.07.2024}_Zameen Delta_20240812.pdf",
+   "size": 43296,
+   "locations": [
+    {
+     "fileId": "1sua-N4QodQ-DemMYPo-BK2Ci6Q4Y4mKJ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1KGkYyUKKOjO1J7mT44GX_m9xCFcPrg7x",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financials fy 2023_zameen delta_20240514.pdf|2946209",
+   "copies": 2,
+   "name": "Audited Financials FY 2023_Zameen Delta_20240514.pdf",
+   "size": 2946209,
+   "locations": [
+    {
+     "fileId": "1EaK9BWnbyWJpqlwkhWCzubCbxQmO8iqO",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1a9gGRoK1JnhY-Bh1N7wXazWExJenp0Gj",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen delta_20240304.pdf|290645",
+   "copies": 2,
+   "name": "Auditor_s consent Letter_Zameen Delta_20240304.pdf",
+   "size": 290645,
+   "locations": [
+    {
+     "fileId": "16wgBUBpcQQedTO0ilyj0iwK37L3MfxGA",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1Dx_0IWkPSdQjH1E9EbuIAaWZr2Hq93n5",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 6_maraim saleem akbar_20221129.pdf|45228",
+   "copies": 2,
+   "name": "Share Certificate No. 6_Maraim Saleem Akbar_20221129.pdf",
+   "size": 45228,
+   "locations": [
+    {
+     "fileId": "1aOOvgPIV6b36r9rByHGK1v7VhYwPS3j_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "1SccGuUEWSp1aarNCnnwXOBh2XsTUgSw0",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 1_zameen venture one_20190218.pdf|401649",
+   "copies": 2,
+   "name": "Share certificate No. 1_Zameen Venture One_20190218.pdf",
+   "size": 401649,
+   "locations": [
+    {
+     "fileId": "15c6pRsm9sz-LDWOjb6FYwAWZdZJY4lgb",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "14WAY8WfiF30WkXfgvH09E2RLGV0Lz5YZ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 4_zameen developments_20190405.pdf|401396",
+   "copies": 2,
+   "name": "Share certificate No. 4_Zameen Developments_20190405.pdf",
+   "size": 401396,
+   "locations": [
+    {
+     "fileId": "1iodflJqgFCVTYDpJD93cTICTOBdIXs0R",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "14W4FqGt3z6vFXnonYQ-Nc9VXKdOimTJA",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 2_imran ali khan_20190218.pdf|394346",
+   "copies": 2,
+   "name": "Share certificate No. 2_Imran Ali Khan_20190218.pdf",
+   "size": 394346,
+   "locations": [
+    {
+     "fileId": "1i5B_ZFzu9sUb776Ark5AdDQVkq7Wj2kp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "1aMykJTRs46106rhdS3eXKEPJgPLXuBLe",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 5_adil ahmad kamal_20221129 (2).pdf|48570",
+   "copies": 2,
+   "name": "Share Certificate No. 5_Adil Ahmad Kamal_20221129 (2).pdf",
+   "size": 48570,
+   "locations": [
+    {
+     "fileId": "1FfT5yP8KRYGxJM7deGwm6N_pQCneAhm1",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "1RxrM_oHuMeME0lMwgpRArvwWmZtDIyx9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "share certificate no. 3_zeeshan ali khan_20190218.pdf|398609",
+   "copies": 2,
+   "name": "Share certificate No. 3_Zeeshan Ali Khan_20190218.pdf",
+   "size": 398609,
+   "locations": [
+    {
+     "fileId": "1Ic1fmYNkNFNV-4hkZIVkNsIyR041KsXO",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Share Certificates"
+    },
+    {
+     "fileId": "1y26KIBrQRgYkQeK0wDGg9rkPiZdkH8S9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Share Certificates"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "register of members_zameen delta_20220830.docx|39541",
+   "copies": 2,
+   "name": "Register of Members_Zameen Delta_20220830.DOCX",
+   "size": 39541,
+   "locations": [
+    {
+     "fileId": "1pc3GnKAcQvNm9tIUg1JsTfS9ok73Dh4s",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / Register of Members"
+    },
+    {
+     "fileId": "1QBeRaVyJ4D6N7vd26HdyJqjVFKw7Y7wd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / Register of Members"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financial statement_fy 2025_ztech_20260406.pdf|444441",
+   "copies": 2,
+   "name": "Audited Financial Statement_FY 2025_Ztech_20260406.pdf",
+   "size": 444441,
+   "locations": [
+    {
+     "fileId": "1zWNjxFDAX3HDXaQQZxI04fJgGiQQknLq",
+     "folderPath": "Entities data for secp filing / Group Entities / ZTech Management and IP Services (SMC-Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1ocFk1D9_s8C9E-vfaTFMj6PJ2Pprq1r6",
+     "folderPath": "Entities data for secp filing / Group Entities / ZTech Management and IP Services (SMC-Private) Limited / CY 2026"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 [appointment of auditor]_zameen media_20260512.pdf|24816",
+   "copies": 2,
+   "name": "Form 9 [Appointment of Auditor]_Zameen Media_20260512.pdf",
+   "size": 24816,
+   "locations": [
+    {
+     "fileId": "1QSVAPoMp87X1l10ahvnvCJFOyU3zuOnu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "131hiUK9aO8w9R5yb8ayvrYMGKrJqUS6Q",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a_zameen media_20260512.pdf|58612",
+   "copies": 2,
+   "name": "Form A_Zameen Media_20260512.pdf",
+   "size": 58612,
+   "locations": [
+    {
+     "fileId": "1NN0bQ0e69rV_jbY0gvmmhVuK_XG8-xqV",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "151icbfbXlfsTf3EvPn1mIGcoArhNCVB7",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "complete set of annual financial statements 20260512_4771440 - 4759649.pdf|575781",
+   "copies": 2,
+   "name": "Complete set of Annual Financial Statements 20260512_4771440 - 4759649.pdf",
+   "size": 575781,
+   "locations": [
+    {
+     "fileId": "1N0tUgit0WrzY6sSyuhJSL8hcvq6qwa4X",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1jyBmMYed-culA8X8AnyMD5Ab9DDCIzZC",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "unconsolidated audited accounts fy 2024_zmpl_20250404.pdf|971709",
+   "copies": 2,
+   "name": "Unconsolidated Audited Accounts FY 2024_ZMPL_20250404.pdf",
+   "size": 971709,
+   "locations": [
+    {
+     "fileId": "1Viq5vcHVkzFZuWbKP2uz6P_7zSFSO4EG",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1a9NLakcKJi0K6WYyQweBUVX42l_fLxyL",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "consolidated financial statements fy 2024_zmpl_20250819.pdf|576894",
+   "copies": 2,
+   "name": "Consolidated Financial Statements FY 2024_ZMPL_20250819.pdf",
+   "size": 576894,
+   "locations": [
+    {
+     "fileId": "1ZEYTwX9pnAAX8lVhDD-tfymMK8S8E_Mp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "10Es_wn4JvN3X7JbtTsoWocnDPzRC3tkB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen media_20250108.pdf|18262",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Media_20250108.pdf",
+   "size": 18262,
+   "locations": [
+    {
+     "fileId": "1pQLX_YNx_JYw87xL6uRX_4xjcZzjN_4a",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025"
+    },
+    {
+     "fileId": "1JUH-a6iMX-QpsfCgjkAX-44YhEEoY_Dp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "consolidated financial statements fy 2023 [ctc]_zmpl_20241212.pdf|3729379",
+   "copies": 2,
+   "name": "Consolidated Financial Statements FY 2023 [CTC]_ZMPL_20241212.pdf",
+   "size": 3729379,
+   "locations": [
+    {
+     "fileId": "1EjBTl3XrHEn8a81B4qXZ09m-Tjmbdqaw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1Xd3rwXnHSM2sIlBWhOUlPM2Q62EAvYt8",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 [appointment of auditor and election of directors]_zmpl_20241212.pdf|15595",
+   "copies": 2,
+   "name": "Form 9 [appointment of auditor and Election of Directors]_ZMPL_20241212.pdf",
+   "size": 15595,
+   "locations": [
+    {
+     "fileId": "1Kpu7_AoI_conOJSqEzKPsp1KS3-ISuMk",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1BhoZBExqTsdN6OoEX2U3AWdJoWj_PPGo",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 19 [ubo declaration fy 2023]_zmpl_20241212.pdf|10442",
+   "copies": 2,
+   "name": "Form 19 [UBO Declaration FY 2023]_ZMPL_20241212.pdf",
+   "size": 10442,
+   "locations": [
+    {
+     "fileId": "1HRz2OuVwwEHur2H4vdma77og9uINPy4i",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1raFtZciT7_kQz8ZKCTfrq5mH8hcNDuFR",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a fy 2023 [made upto 28.11.2024]_zmpl_20241212.pdf|43463",
+   "copies": 2,
+   "name": "Form A FY 2023 [made upto 28.11.2024]_ZMPL_20241212.pdf",
+   "size": 43463,
+   "locations": [
+    {
+     "fileId": "1ql0lqMzaSjCnaAFRuTCumXOyUIQ5euvX",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1uDs5KUwYJIBd7jMQyBudBhomR6Klybgo",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "consolidated financial statements fy 2023_zmpl_20241106.pdf|13741687",
+   "copies": 2,
+   "name": "Consolidated Financial Statements FY 2023_ZMPL_20241106.pdf",
+   "size": 13741687,
+   "locations": [
+    {
+     "fileId": "1Udfxs0np0jniMgbYn1AirmlQRx-IZgB9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1BQJlU-eNnPjbTzWIXz56dlImboOEDZVG",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "retainership confirmation [clm]_zameen media_20240824.pdf|257557",
+   "copies": 2,
+   "name": "Retainership Confirmation [CLM]_Zameen Media_20240824.pdf",
+   "size": 257557,
+   "locations": [
+    {
+     "fileId": "1B4Qa_OAwqvwDx55A8zg0TxeaMpOzG9Xk",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1FyjNDT4Wq9SzUOpVOQ8hX2YcG3r5lm0n",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "registration certificate [survey of pakistan]_zameen media_20240607.pdf|945366",
+   "copies": 2,
+   "name": "Registration Certificate [Survey of Pakistan]_Zameen Media_20240607.pdf",
+   "size": 945366,
+   "locations": [
+    {
+     "fileId": "1Pr6kpvqrfMakIfsUnpfuBt_0fxD3rp0i",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1aH0CdHgjQK0F_X7zSYxJVR2_Nk-KzwuY",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen media_20240105.pdf|377265",
+   "copies": 2,
+   "name": "Auditor_s consent Letter_Zameen Media_20240105.pdf",
+   "size": 377265,
+   "locations": [
+    {
+     "fileId": "1OBMpxorGA849Z27sh0JdjdBxEi2WQ6db",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1SUIOhB-l6SqRAsYK2pSoPWNGEfMNntTc",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "unconsolidated audited financials fy 2023_zameen media_20240318.pdf|16102593",
+   "copies": 2,
+   "name": "Unconsolidated Audited Financials FY 2023_Zameen Media_20240318.pdf",
+   "size": 16102593,
+   "locations": [
+    {
+     "fileId": "11asFyp2-3plZq8DRDd21pwakgsBQFRhp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024"
+    },
+    {
+     "fileId": "1Aj1M8HbVtgpjXTgq_9-aAuZGaQ3yhyA1",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [annual returns upto 25.06.2020]_ zameen medallion_20200918.pdf|882459",
+   "copies": 2,
+   "name": "Form A [annual returns upto 25.06.2020]_ Zameen Medallion_20200918.pdf",
+   "size": 882459,
+   "locations": [
+    {
+     "fileId": "1U7U7NRezQH1o9adOfqj5UqqbFlGzSIhS",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1ePZ-5H4qH0ivsDfXpKUEAydlmOr2kKFQ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financials fy 2019_zameen medallion (private) limited_20200423.pdf|2248349",
+   "copies": 2,
+   "name": "Audited Financials FY 2019_Zameen Medallion (Private) Limited_20200423.pdf",
+   "size": 2248349,
+   "locations": [
+    {
+     "fileId": "1CEAcH9nyWEOZaMxNTPFHpqjGLwMxtJca",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1ULONOtm3JPzrscp7w81PgjVDzhX2N8RP",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "auditor_s consent letter_zameen medallion_20200412.pdf|11823",
+   "copies": 2,
+   "name": "Auditor_s Consent Letter_Zameen Medallion_20200412.pdf",
+   "size": 11823,
+   "locations": [
+    {
+     "fileId": "1ETpoEtd22RP6t0QdjIIDModz3uLHfmIs",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1akgFtWN7Cvl7FFeRgOVp9gz2Tf449yVj",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [auditor, directors & ceo]_zameen medallion_20200918.pdf|505769",
+   "copies": 2,
+   "name": "Form 29 [Auditor, Directors & CEO]_Zameen Medallion_20200918.pdf",
+   "size": 505769,
+   "locations": [
+    {
+     "fileId": "1q_Hn182c9L2fM0Ym63jtLM-eQOoQ-OP_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020"
+    },
+    {
+     "fileId": "1tJ5VTgO2A-cwkC-UcBOz7IoGX9v2ZwVH",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "inc. form ii [dctc dated 20211025]_delta centauri developments_20211018.pdf|924695",
+   "copies": 2,
+   "name": "Inc. Form II [DCTC dated 20211025]_Delta Centauri Developments_20211018.pdf",
+   "size": 924695,
+   "locations": [
+    {
+     "fileId": "1xP-pFddsPsR4tHIFqzfJ63MtKNqEm5fx",
+     "folderPath": "Entities data for secp filing / Group Entities / Downtown Rise Developments (Private) Limited [formerly Delta Centauri Developments] / CY 2021"
+    },
+    {
+     "fileId": "1BKauwNGCuXc-8TeL6r2HPvFFJ-t8Asd7",
+     "folderPath": "Entities data for secp filing / Group Entities / Dubizzle Labs (SMC-Private) Limited / Employees_ PF Trust / PF Deed (Pending for registration) / Pakistan DD Q&A / Question 326"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 29 [zak as nominee of zi universal] [dctc dated 28.02.2022]_delta centauri developments_20220205.pdf|338842",
+   "copies": 2,
+   "name": "Form 29 [ZAK as nominee of ZI Universal] [DCTC dated 28.02.2022]_Delta Centauri Developments_20220205.pdf",
+   "size": 338842,
+   "locations": [
+    {
+     "fileId": "1ZBHDM09JC8661OFBgwFoc84fDi-daDHf",
+     "folderPath": "Entities data for secp filing / Group Entities / Downtown Rise Developments (Private) Limited [formerly Delta Centauri Developments] / CY 2022"
+    },
+    {
+     "fileId": "1Q4rI8JZa-wHdBYIbxmdevtrrUEadB0c4",
+     "folderPath": "Entities data for secp filing / Group Entities / Dubizzle Labs (SMC-Private) Limited / Employees_ PF Trust / PF Deed (Pending for registration) / Pakistan DD Q&A / Question 326"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "audited financials_deevar developers_20200423.pdf|3922911",
+   "copies": 2,
+   "name": "Audited Financials_Deevar Developers_20200423.pdf",
+   "size": 3922911,
+   "locations": [
+    {
+     "fileId": "1UZznwTShxQXlVLOqkVzR5qIKDma-7c9R",
+     "folderPath": "Entities data for secp filing / Group Entities / Deevar Developers (Private) Limited / CY 2019"
+    },
+    {
+     "fileId": "1Crj-2NmS_hgZ5teuQ_mjaV-lDiGjyOD2",
+     "folderPath": "Entities data for secp filing / Group Entities / Deevar Developers (Private) Limited / CY 2020 / Annual General Meeting FTY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "010_form 28_zameen nord_20210609.pdf|476341",
+   "copies": 2,
+   "name": "010_Form 28_Zameen Nord_20210609.pdf",
+   "size": 476341,
+   "locations": [
+    {
+     "fileId": "1BjsP8YpkbWeOJEeGKQmEjEfFcHl_Ikzi",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1tO5nHtT8xY7FHzlj45tdStIF_NQCRz7z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "008_affidavit by iak_filing of form 29_20210614.pdf|1262995",
+   "copies": 2,
+   "name": "008_Affidavit by IAK_Filing of Form 29_20210614.pdf",
+   "size": 1262995,
+   "locations": [
+    {
+     "fileId": "1ca-XZapgINW6F5mTXGUNGg1CIw98WpGs",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1wzrmaLGwtux5dVwgv41POOW3MbPHTxEn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "011_form 29_zameen nord_20210609.pdf|648954",
+   "copies": 2,
+   "name": "011_Form 29_Zameen Nord_20210609.pdf",
+   "size": 648954,
+   "locations": [
+    {
+     "fileId": "1k5AdGL6iRMbUmqFHOZdf-NlxpK83a4Oz",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1v4zc1v2Hj-TfauVs6jCejRxtWcNBC-8_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "002_intimation letter by shahzad masih to sell zameen nord_s share_20210608.pdf|179198",
+   "copies": 2,
+   "name": "002_Intimation Letter by Shahzad Masih to sell Zameen Nord_s share_20210608.pdf",
+   "size": 179198,
+   "locations": [
+    {
+     "fileId": "11wtE4k5c4qbRdBJIH4N8fSxjazpUPPd3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1uvU1teFsH-84Pa5IebNbdOLBT_Wg94gx",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "003_meeting minutes [purchase of zameen nord_s share]_zameen venture one_20210609.pdf|258809",
+   "copies": 2,
+   "name": "003_Meeting Minutes [purchase of Zameen Nord_s share]_Zameen Venture One_20210609.pdf",
+   "size": 258809,
+   "locations": [
+    {
+     "fileId": "1HPqDdAPGViic543acRPbjrQUvj_W7ghM",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1DcawzqQKAZyJYV9qtCs9jcLW3RJiIlmI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "001_resolution [change of secp authorized representative]_zameen nord_20210607.pdf|267949",
+   "copies": 2,
+   "name": "001_Resolution [change of SECP authorized representative]_Zameen Nord_20210607.pdf",
+   "size": 267949,
+   "locations": [
+    {
+     "fileId": "19OznLJdQh5YCsp1-FiZqTim8yIvSmVZN",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1iNNx1j3IcRFBDbNlGhF1zyNlIqy8U4qd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "009_cover letter [filing of form 28, form 29]_zameen nord_20210615.pdf|207128",
+   "copies": 2,
+   "name": "009_Cover Letter [Filing of form 28, form 29]_Zameen Nord_20210615.pdf",
+   "size": 207128,
+   "locations": [
+    {
+     "fileId": "1jNdFMeCONunSCDRojFOEz3SVWHD3uM5G",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1F-x1qfwKwuVlD8WLZYGWZjJzgNY9Ml55",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "007_form for transfer of shares [shahzad masih to zameen venture one]_zameen nord_20210609.pdf|1646527",
+   "copies": 2,
+   "name": "007_Form for Transfer of Shares [Shahzad Masih to Zameen Venture One]_Zameen Nord_20210609.pdf",
+   "size": 1646527,
+   "locations": [
+    {
+     "fileId": "1rp_DgMP1aRDl5otL_AXizCdz_-YMItqy",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "166J73SWGDeVletLn2jrrbWNG4Gd1KfWx",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "006_appointment letter [iak as nominee director]_20210609.pdf|327088",
+   "copies": 2,
+   "name": "006_Appointment Letter [IAK as nominee director]_20210609.pdf",
+   "size": 327088,
+   "locations": [
+    {
+     "fileId": "1tbjI7oBs8G0PNUiTVk5YcP4QK9iFRnTS",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1UNdBnB0EUNfwUN9DqvwZKXS6_TbtOvgA",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "005_resignation letter [shahzad masih].pdf|191906",
+   "copies": 2,
+   "name": "005_Resignation Letter [Shahzad Masih].pdf",
+   "size": 191906,
+   "locations": [
+    {
+     "fileId": "1rafwFk6eKs7_d0TpiMAjfz7hcjOOwnXv",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1vdjQWyq4V1YNsn1V_2RMyQNCEa-LuW9B",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "004_resolution [sale of shahzad masih_s share]_zameen nord_20210609.pdf|281569",
+   "copies": 2,
+   "name": "004_Resolution [sale of Shahzad Masih_s share]_Zameen Nord_20210609.pdf",
+   "size": 281569,
+   "locations": [
+    {
+     "fileId": "1bUla3j8Jq-hHehwuSvek9cZclkFNswQ-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    },
+    {
+     "fileId": "1iE8Co5ufNOyTjeWugbNbdPjIoB-e7BJs",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2021 / Share Transfer [Shahzad Masih to Zameen Venture One]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "6a_affidavit of adil ahmad kamal_zameen nord.pdf|1037155",
+   "copies": 2,
+   "name": "6A_Affidavit of Adil Ahmad Kamal_Zameen Nord.pdf",
+   "size": 1037155,
+   "locations": [
+    {
+     "fileId": "1OxAacf_V8cPGjpMB4CMhlQ5H4AMHAHTD",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1HsrM5rsiFikYl2x2Sm2nfh8F1krsivTx",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "7b_resignation of luqman muhammad rafiq_zameen nord.pdf|412651",
+   "copies": 2,
+   "name": "7B_Resignation of Luqman Muhammad Rafiq_Zameen Nord.pdf",
+   "size": 412651,
+   "locations": [
+    {
+     "fileId": "1pSvtCqrvJHE-mVwVxgXBN-Kx9clF758_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1uPOeNCK6iFVPdMEYMjmbjVSahs7MP2JC",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5b_appointement as zameen venture one_luqman muhammad rafiq_20221129.pdf|617704",
+   "copies": 2,
+   "name": "5B_Appointement as Zameen Venture One_Luqman Muhammad Rafiq_20221129.pdf",
+   "size": 617704,
+   "locations": [
+    {
+     "fileId": "1E0DFmQUg4bjb_FEhsSaD7PHgJE5IWkea",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1AZA1CO3RWfIKcSKbsZilpjPmkCWVWjk8",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2_resignation of imran ali khan_zameen nord_20221123.pdf|402484",
+   "copies": 2,
+   "name": "2_Resignation of Imran Ali Khan_Zameen Nord_20221123.pdf",
+   "size": 402484,
+   "locations": [
+    {
+     "fileId": "1gusx-9EZHq105KQuWe4BG_vNVdE8yRJC",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1zt7HDYawciynacC-iK0vMEXOeMr8B4uf",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4_minutes of the resolution_sole director_zameen nord_20221129.pdf|678689",
+   "copies": 2,
+   "name": "4_Minutes of the Resolution_Sole Director_Zameen Nord_20221129.pdf",
+   "size": 678689,
+   "locations": [
+    {
+     "fileId": "1wbrf3kN3ZasFJsW9qCKOb279D9lU6tHu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1qYIh7iPX9jkJQg2GMY2B2pLlmNLVEhFW",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1_minutes of the resolution_sole director_zameen nord_20221121.pdf|444432",
+   "copies": 2,
+   "name": "1_Minutes of the Resolution_Sole Director_Zameen Nord_20221121.pdf",
+   "size": 444432,
+   "locations": [
+    {
+     "fileId": "1CghsQWXAVuOAzEbJYbmainsuxZUr8Nwm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1sLoD0uS7tdjN9IpGpcKz6qMIzzAgH552",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "7a_resignation of adil ahmad kamal_zameen nord.pdf|413403",
+   "copies": 2,
+   "name": "7A_Resignation of Adil Ahmad Kamal_Zameen Nord.pdf",
+   "size": 413403,
+   "locations": [
+    {
+     "fileId": "14bUhLeGd6E6YHXoylsWw-KDnIaN8u4cX",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1WQ4ODZJH_kQZNculRJhyHEUOqBcEmSnl",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "9_filing form 29_affidavit of imran ali khan_zameen nord.pdf|1364156",
+   "copies": 2,
+   "name": "9_Filing Form 29_Affidavit of Imran Ali Khan_Zameen Nord.pdf",
+   "size": 1364156,
+   "locations": [
+    {
+     "fileId": "1nC4dffkufSUT9kkqO-wT1eyJYcGozVE9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1PvBGpOoE9E19gzhIqbeZzjkCC4h5W_Dl",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3_minutes of meeting board director_zameen nord_20221125.pdf|568603",
+   "copies": 2,
+   "name": "3_Minutes of Meeting Board Director_Zameen Nord_20221125.pdf",
+   "size": 568603,
+   "locations": [
+    {
+     "fileId": "1_sTPWSYoiCOsy3TpRzWeQZPjEMNsiOQ0",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1FlDlYdLZ6VgQUR_Pxyblc0nE86Jh0fhh",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "6b_affidavit of luqman muhammad rafiq_ zameen nord.pdf|1118567",
+   "copies": 2,
+   "name": "6B_Affidavit of Luqman Muhammad Rafiq_ Zameen Nord.pdf",
+   "size": 1118567,
+   "locations": [
+    {
+     "fileId": "17Nq6735t_Q1rqoS-23NX_S91Y3F6hQEb",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1FyZaOBvok2ESiXaAgW1kdvyc2iGG7yft",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "8_form 28_zameen nord.pdf|620723",
+   "copies": 2,
+   "name": "8_Form 28_Zameen Nord.pdf",
+   "size": 620723,
+   "locations": [
+    {
+     "fileId": "1pyL5QUVP04tmeHVlVjCjRvQhYEcM0E9-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1jX59GYZoZi7TGfdb9xro5h25q7JioRAM",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5a_appointement as zameen venture one_adil ahmad kamal_20221130.pdf|637557",
+   "copies": 2,
+   "name": "5A_Appointement as Zameen Venture One_Adil Ahmad kamal_20221130.pdf",
+   "size": 637557,
+   "locations": [
+    {
+     "fileId": "1ADBWMMwPqEh4nwxFqC_lTYv8ICB9lclI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1gUl19d5fUPeaUsJIKJKRLQ5uzZ0t5tpP",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "10_deputy registrar of companies.pdf|417435",
+   "copies": 2,
+   "name": "10_Deputy Registrar of Companies.pdf",
+   "size": 417435,
+   "locations": [
+    {
+     "fileId": "1XOQ8hY_b_i9eX9kZ4ez2xKpRsNHzuVYd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    },
+    {
+     "fileId": "1ZGEm5r46EnrQ0DSYeLDZjeiAZx5NvGuO",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2022 / Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3_meeting minutes [appointment of ceo and director]_zameen nord_20230731.pdf|345616",
+   "copies": 2,
+   "name": "3_Meeting Minutes [appointment of CEO and Director]_Zameen Nord_20230731.pdf",
+   "size": 345616,
+   "locations": [
+    {
+     "fileId": "1mzu7gFxrb503lMoeqLMPp1KRwwx-B1L9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1b6RmPjhAjCAEINsCqEMjP2M687XQ-ok_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "6_resignation letter [tanzain shafqat].pdf|215683",
+   "copies": 2,
+   "name": "6_Resignation Letter [Tanzain Shafqat].pdf",
+   "size": 215683,
+   "locations": [
+    {
+     "fileId": "1uKCHf4P9CoR7jP6QA4rBu1ZGK0OQ0GJb",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1CXyfl5OQRuVJXl_Qz7k65A7ZpxHGwbRp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1_meeting minutes [denominate luqman and nominate tanzain]_ zameen venture one_20230725.pdf|324633",
+   "copies": 2,
+   "name": "1_Meeting Minutes [denominate luqman and nominate Tanzain]_ Zameen Venture One_20230725.pdf",
+   "size": 324633,
+   "locations": [
+    {
+     "fileId": "1XGjod6rA6SCskQEe68nwbnIdeBrPVFcT",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1-sF_j_JSpwSL1j7mQBvNkqofiwuLHU9Z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "7_affidavit [filing of form 29 adil ahmed kamal]_zameen nord _20231122.pdf|687339",
+   "copies": 2,
+   "name": "7_Affidavit [filing of Form 29 Adil Ahmed Kamal]_Zameen Nord _20231122.pdf",
+   "size": 687339,
+   "locations": [
+    {
+     "fileId": "1Yp7bcgh2Hy7nXVGynLgGOOT-xNIc1r7T",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1ejb-9IS9O3xwg_xkqGvyS8moOEmkEBvu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2_resignation letter [luqman muhammad rafiq]_20230731.pdf|208021",
+   "copies": 2,
+   "name": "2_Resignation Letter [Luqman Muhammad Rafiq]_20230731.pdf",
+   "size": 208021,
+   "locations": [
+    {
+     "fileId": "16q6yr9QF51xFrTDr6LCACWfX1bA1ppAV",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1C1n54iWvqA3aLHESopi5E8gZXVJint58",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "8_form 28 zameen nord_20231122.pdf|287264",
+   "copies": 2,
+   "name": "8_Form 28 Zameen Nord_20231122.pdf",
+   "size": 287264,
+   "locations": [
+    {
+     "fileId": "1kxASY_6c0_iEL6H3N3tO82YwxP-AqlTs",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1Tc8VbcTotuKNAPYgFz-L5WV_a4WRVzWY",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5_affidavit of tanzain shafqat_zameen nord.pdf|563842",
+   "copies": 2,
+   "name": "5_Affidavit of Tanzain shafqat_Zameen Nord.pdf",
+   "size": 563842,
+   "locations": [
+    {
+     "fileId": "1VB4TbzB9N7GuafV0G-5KnpiB0Ox3cUU-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1ejerWc_yLUj0Ijm1H5PatE9aE0NOTrfE",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4_appointement letter [tanzain shafqat]_zameen nord_20230731.pdf|320387",
+   "copies": 2,
+   "name": "4_Appointement Letter [Tanzain Shafqat]_Zameen Nord_20230731.pdf",
+   "size": 320387,
+   "locations": [
+    {
+     "fileId": "1BHdGR5eenSNBzUGzUnUQCFDnkSGPL4I4",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    },
+    {
+     "fileId": "1Jb0gByFtxvRpEOkF2XoneFR6Ao9q4Ez9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO and Director Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5_form 28_zameen nord_20230601.pdf|301921",
+   "copies": 2,
+   "name": "5_Form 28_Zameen Nord_20230601.pdf",
+   "size": 301921,
+   "locations": [
+    {
+     "fileId": "1BlYeNIfnT7XI6RR3rNF9fG926RG5ZJch",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    },
+    {
+     "fileId": "1gImxxubJKDCvXLc1SYHYXs8I1KWcKEJt",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4_resignation letter [luqman muhammad rafiq]_zameen nord.pdf|225289",
+   "copies": 2,
+   "name": "4_Resignation Letter [Luqman Muhammad Rafiq]_Zameen Nord.pdf",
+   "size": 225289,
+   "locations": [
+    {
+     "fileId": "16F6Xgm7_iXgVKS7Nz4S2DAituhJUWfEX",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    },
+    {
+     "fileId": "1OT6lvYzoXUfmkU038HuyPCv4ENO_vDrW",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3_appointment letter [luqman muhammad rafiq]zameen nord_20230524.pdf|316572",
+   "copies": 2,
+   "name": "3_Appointment Letter [Luqman Muhammad Rafiq]Zameen Nord_20230524.pdf",
+   "size": 316572,
+   "locations": [
+    {
+     "fileId": "1IpuUmvLHJ3WVO-d9Ar1O9gffgpVhcPM6",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    },
+    {
+     "fileId": "10JQWYmBHPf5S28sTXleYOV1v22rDdk_Z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2_meeting minutes [appointment of ceo]_zameen nord_20230524.pdf|333837",
+   "copies": 2,
+   "name": "2_Meeting Minutes [appointment of CEO]_Zameen Nord_20230524.pdf",
+   "size": 333837,
+   "locations": [
+    {
+     "fileId": "1PeXSHOHgrnuiJ8abXQVJNGv9BJ785URm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    },
+    {
+     "fileId": "1DyQPnMAn4UVfuMWJ0TCtRpaIHep9PldS",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1_resignation letter [adil ahmed kamal]_zameen nord_20230524.pdf|233950",
+   "copies": 2,
+   "name": "1_Resignation Letter [Adil Ahmed Kamal]_Zameen Nord_20230524.pdf",
+   "size": 233950,
+   "locations": [
+    {
+     "fileId": "12qaLmenrN9QlEPdx8ZiUnFrnxbOm-DhA",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    },
+    {
+     "fileId": "1gMeqaMZNd44FjdY2sMkAraQLxdq_MIwU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "6_affidavit [for filing form 29]_luqman muhammad rafiq_20230601.pdf|639802",
+   "copies": 2,
+   "name": "6_Affidavit [for filing Form 29]_Luqman Muhammad Rafiq_20230601.pdf",
+   "size": 639802,
+   "locations": [
+    {
+     "fileId": "1iefTwk3u3v39heF9240BFTEaRvSfyWuq",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    },
+    {
+     "fileId": "10xYRTccb27_ovmjMfEI54lJbnZJPCYxh",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / Zameen Nord (SMC-Private) Limited / CY 2023 / CEO Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "005_form for transfer of shares [198 shares to zameen developments]_zameen venture one_20190406.pdf|269108",
+   "copies": 2,
+   "name": "005_Form for transfer of shares [198 shares to Zameen Developments]_Zameen Venture One_20190406.pdf",
+   "size": 269108,
+   "locations": [
+    {
+     "fileId": "11b72TCl8VdRXRgQtOUzg4lvWVHlJqgqr",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    },
+    {
+     "fileId": "1Sx8hj01AXztfVPYcLKA6ZF4EySVLQ3bd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "002_letter of nominee to director [zak]_zameen venture one_20190404.pdf|189042",
+   "copies": 2,
+   "name": "002_Letter of nominee to Director [ZAK]_Zameen Venture One_20190404.pdf",
+   "size": 189042,
+   "locations": [
+    {
+     "fileId": "1qC8fI_87yElsCBxYUiOI3Kn6EMs7fC_r",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    },
+    {
+     "fileId": "19L5bizBjaCkvqM70lncwWFS-FlkW7pn7",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "004_board meeting minutes [approve transfer of 198 shares]_zameen venture one_20190405.pdf|281593",
+   "copies": 2,
+   "name": "004_Board meeting minutes [approve transfer of 198 shares]_Zameen Venture One_20190405.pdf",
+   "size": 281593,
+   "locations": [
+    {
+     "fileId": "1H-HVUg86UNMsaxa5PHAhyxQWQmAFtkgd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    },
+    {
+     "fileId": "1HywWSpFFvealLBs1GikCocL4VaJaHG9c",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "001_board meeting notice_zameen venture one_20190311.pdf|169818",
+   "copies": 2,
+   "name": "001_Board meeting notice_Zameen Venture One_20190311.pdf",
+   "size": 169818,
+   "locations": [
+    {
+     "fileId": "1o53EOTPl-cc5GhY-InA4YpEjKOVG8Qhw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    },
+    {
+     "fileId": "1wrRe0EUIBZN3yU5KOJcHpEYDLm2E25ZI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "003_letter of nominee to director [iak]_zameen venture one_20190404.pdf|189370",
+   "copies": 2,
+   "name": "003_Letter of nominee to Director [IAK]_Zameen Venture One_20190404.pdf",
+   "size": 189370,
+   "locations": [
+    {
+     "fileId": "1IbHyBkipqT17mvD-ha1bb5cmXhb2w94r",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    },
+    {
+     "fileId": "1-qZfFUL7ZBrUFRKVWUZpXkEXhXRfMlS0",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2019 / Share Transfer to Zameen Developments"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "request for direction [letter & affidavit]_20230616.pdf|979012",
+   "copies": 2,
+   "name": "Request for Direction [letter & Affidavit]_20230616.pdf",
+   "size": 979012,
+   "locations": [
+    {
+     "fileId": "1LBS6wVGn4F979f1gpqy-QKyfQP5qg-nM",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    },
+    {
+     "fileId": "18SWl0BSy4gI0aBpOPwqrGK1SYahLL8l-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "secp direction for agm_zameen delta_20230719.pdf|367845",
+   "copies": 2,
+   "name": "SECP Direction for AGM_Zameen Delta_20230719.pdf",
+   "size": 367845,
+   "locations": [
+    {
+     "fileId": "1uqZ14Hnv5_u62zWPWQnJQ03_uiwSpzLD",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    },
+    {
+     "fileId": "1HXE90kL_rMeNQk4jolWiJipGOxIGuL1x",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3_agm minutes_zameen delta_20230901.pdf|532008",
+   "copies": 2,
+   "name": "3_AGM Minutes_Zameen Delta_20230901.pdf",
+   "size": 532008,
+   "locations": [
+    {
+     "fileId": "1qWkZg4UVQ2qFXUv-OzB7UjOrgJKj8Egf",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    },
+    {
+     "fileId": "1vEXoAFZ7R3QGUhppaOaTA_r6hxdlapX3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2_notice for holding agm_zameen delta_20230901.pdf|468263",
+   "copies": 2,
+   "name": "2_Notice for holding AGM_Zameen Delta_20230901.pdf",
+   "size": 468263,
+   "locations": [
+    {
+     "fileId": "1ADyUaSsmsNETJF3Vi-W8zCoCmtKJljVB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    },
+    {
+     "fileId": "1U6ZAzWb-yiDkdJtqYD97K6p6es5qYka6",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1_pre-agm minutes_zameen delta_20230803.pdf|557153",
+   "copies": 2,
+   "name": "1_Pre-AGM Minutes_Zameen Delta_20230803.pdf",
+   "size": 557153,
+   "locations": [
+    {
+     "fileId": "1-CYr1tx1Bmg2g_q0FN8qcTPXRkIpQqTp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    },
+    {
+     "fileId": "19RYUlO2Aqjh2C2W1ksFxpXL6Y5md-MaY",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2023 / Annual General Meeting FY 2022"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1.notice to directors_board meeting_zameen delta_20260504.pdf|228918",
+   "copies": 2,
+   "name": "1.Notice to Directors_Board Meeting_Zameen Delta_20260504.pdf",
+   "size": 228918,
+   "locations": [
+    {
+     "fileId": "17glswd_FedGgDgkB0tFcm33a8T2NNdv6",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    },
+    {
+     "fileId": "16xA5PgLbZNBgNGGQsZb8OOvzhZOxkQnn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5.post eogm meeting minutes_(appointment of ceo)_zameen delta_20260615_0001.pdf|275936",
+   "copies": 2,
+   "name": "5.Post EOGM Meeting Minutes_(appointment of CEO)_Zameen Delta_20260615_0001.pdf",
+   "size": 275936,
+   "locations": [
+    {
+     "fileId": "1kR-AihtlDepDK1O0FjVPPvcrYj3hfkTF",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    },
+    {
+     "fileId": "1Q3vOmC6d8rinFGB91dcjeC84G4_myHPt",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4.minutes of eogm_zameen delta_20260615_0001.pdf|384037",
+   "copies": 2,
+   "name": "4.Minutes of EOGM_Zameen Delta_20260615_0001.pdf",
+   "size": 384037,
+   "locations": [
+    {
+     "fileId": "1ITByJoh9KN_bbe1ECR-MHtS4i41ZODcH",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    },
+    {
+     "fileId": "1tRz3JaOSVRxUqgVeVsY9SN4aokQc8K8G",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3.notice to convene eogm_zameen delta_20260511_0001.pdf|262336",
+   "copies": 2,
+   "name": "3.Notice to Convene EOGM_Zameen Delta_20260511_0001.pdf",
+   "size": 262336,
+   "locations": [
+    {
+     "fileId": "1gDi2sNWHQy3eqmq2-hsSFYMJWkgsQ0Vm",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    },
+    {
+     "fileId": "1N155jc4G0PUXb8sTBxT2CDCiTefOB-7M",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2.meeting minutes (convene eogm and election of director)_zameen delta_20260511_0001.pdf|386184",
+   "copies": 2,
+   "name": "2.Meeting Minutes (Convene EOGM and Election of Director)_Zameen Delta_20260511_0001.pdf",
+   "size": 386184,
+   "locations": [
+    {
+     "fileId": "1UfpoCMEebEYojfnfzaxe9alOFZjW84pZ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    },
+    {
+     "fileId": "1M3aQlAIE1N1myKcOdK7CC_3yYVBR3kX3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2026 / EOGM_Directors Election"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "003_agm minutes_zameen delta_20220608.pdf|537939",
+   "copies": 2,
+   "name": "003_AGM Minutes_Zameen Delta_20220608.pdf",
+   "size": 537939,
+   "locations": [
+    {
+     "fileId": "1cOYiUrHmbVpYVOdeafV5z90uoRxQjIRa",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    },
+    {
+     "fileId": "1AMyCu823ySfnEZISvFpUtTu3FiQnfK_v",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "001_pre-agm minutes_zameen delta_20220518.pdf|611141",
+   "copies": 2,
+   "name": "001_Pre-AGM minutes_Zameen Delta_20220518.pdf",
+   "size": 611141,
+   "locations": [
+    {
+     "fileId": "1fGXkp-SPnfmpUR0zMUCLwO0GRn5exWiX",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    },
+    {
+     "fileId": "1sy-u6D-E9MZj785O-4TdqJRutthurjH_",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "request to secp for s. 147 direction [letter & affidavit]_zameen delta_20220511.pdf|841116",
+   "copies": 2,
+   "name": "Request to SECP for S. 147 direction [letter & affidavit]_Zameen Delta_20220511.pdf",
+   "size": 841116,
+   "locations": [
+    {
+     "fileId": "1dQG_D79URNNju69TMSfycQ5uXFQ1_6Wg",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    },
+    {
+     "fileId": "1Cs5RossURnf1TLriuf5qdM8UEsVwNzbU",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "002_notice for agm_zameen delta_20220518.pdf|447070",
+   "copies": 2,
+   "name": "002_Notice for AGM_Zameen Delta_20220518.pdf",
+   "size": 447070,
+   "locations": [
+    {
+     "fileId": "1sfhKAYif1r0LOEze2JnOz6fp7jPInuVd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    },
+    {
+     "fileId": "1zfwqHAhRKhUBZHvre13YhU6PMikzubAd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "secp_s direction [agm direction]_zameen delta_20220517.pdf|512314",
+   "copies": 2,
+   "name": "SECP_s direction [AGM direction]_Zameen Delta_20220517.pdf",
+   "size": 512314,
+   "locations": [
+    {
+     "fileId": "1GqIxZX49t7wSiq5h3PU-UiPwemWctwyo",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    },
+    {
+     "fileId": "1SuoVQZ_NYjDznS09q83szHnc2T0NlljN",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Annual General Meeting FY 2021"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1a_intimation to sell zameen delta_s shares_imran ali khan_20221110.pdf|223153",
+   "copies": 2,
+   "name": "1A_Intimation to Sell Zameen Delta_s Shares_Imran Ali Khan_20221110.pdf",
+   "size": 223153,
+   "locations": [
+    {
+     "fileId": "1Itn0iL4UDtBqvVXJ1V8gVBbm0eWs7PoD",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1ybVvbce_z-vg5xZLXncrFhAZoISZmQLZ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "10b_resignation letter [adil ahmad kamal].pdf|171047",
+   "copies": 2,
+   "name": "10B_Resignation Letter [Adil Ahmad Kamal].pdf",
+   "size": 171047,
+   "locations": [
+    {
+     "fileId": "1vUNmLLdiGvISDFkD6dnmT3NVqQ4MJf6C",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "15rL2HeXF-uTboJdmqdcPZjtsO2gbXSbe",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3a_offer letter [imran ali khan]_20221118.pdf|286632",
+   "copies": 2,
+   "name": "3A_Offer Letter [Imran Ali Khan]_20221118.pdf",
+   "size": 286632,
+   "locations": [
+    {
+     "fileId": "1Dmggd46UtExjzuQRHWe_D9BjS6vNg4jr",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1tEILkevzp2Bhg44tZvIsq0AT4T9ym3sO",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "7a_appointment letter [mariam saleem akbar]_20221129.pdf|256612",
+   "copies": 2,
+   "name": "7A_Appointment Letter [Mariam Saleem Akbar]_20221129.pdf",
+   "size": 256612,
+   "locations": [
+    {
+     "fileId": "1zipHUIRxMj8gHGUna6oLzRP1HTK1FKp0",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1P3dXdRLVU318NS3OVzzMY4bSLYBa7f9h",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "9b_affidavit [adil ahmad kamal]_20221129.pdf|1097030",
+   "copies": 2,
+   "name": "9B_Affidavit [Adil Ahmad Kamal]_20221129.pdf",
+   "size": 1097030,
+   "locations": [
+    {
+     "fileId": "1m0K4VjKhM4v_1TmCNWuxJ1_5iGzgM0qf",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1VpnE44DFLklZREV53SxpWENibiWk3fRE",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5a_decline letter [imran ali khan]_20221121.pdf|168741",
+   "copies": 2,
+   "name": "5A_Decline Letter [Imran Ali Khan]_20221121.pdf",
+   "size": 168741,
+   "locations": [
+    {
+     "fileId": "1fZN7yJOalHnhbQFvlmjBTpsG33yeSn8y",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1mvuKHyhx1gF7RremFKVr2ZhYS6nE522v",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2_meeting minutes [offer shares to existing members]_zameen delta_20221118.pdf|364474",
+   "copies": 2,
+   "name": "2_Meeting Minutes [offer shares to existing members]_Zameen Delta_20221118.pdf",
+   "size": 364474,
+   "locations": [
+    {
+     "fileId": "1EO3Um46k6MRVXFV4Y91-rjWAU6vTptyL",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "14TAhep2B_K0vVw7sygFmLe2XdnZ4vhS2",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4a_resignation letter [zeeshan ali khan]_20221118.pdf|183635",
+   "copies": 2,
+   "name": "4A_Resignation Letter [Zeeshan Ali Khan]_20221118.pdf",
+   "size": 183635,
+   "locations": [
+    {
+     "fileId": "1HVFLQkoTRJaguaNdOHO6NsbRVtCdlLZd",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1sM2jLyo0P6CT9koduj3oh88bEiKhipFR",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "11_form 28 _zameen delta_20221220.pdf|287441",
+   "copies": 2,
+   "name": "11_Form 28 _Zameen Delta_20221220.pdf",
+   "size": 287441,
+   "locations": [
+    {
+     "fileId": "1WPLKfdWEXdenzFK_PDNsJ-JbNj55gzFH",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "17HrGD3Bxd5MorzEoMHqG_RTIHYRnE7SB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "6b_meeting minutes [sale of shares by iak and zak, chang of directors]_zameen delta_20221129.pdf|848713",
+   "copies": 2,
+   "name": "6B_Meeting Minutes [sale of shares by IAK and ZAK, chang of directors]_Zameen Delta_20221129.pdf",
+   "size": 848713,
+   "locations": [
+    {
+     "fileId": "1_tCmOpCxsr5LFn_CkR7YFgb1x3XIWSMI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1_EabJunr6HHTQxO4XxZHubd49nbDfD_1",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "7b_appointment letter [adil ahmad kamal]_20221129.pdf|249545",
+   "copies": 2,
+   "name": "7B_Appointment Letter [Adil Ahmad Kamal]_20221129.pdf",
+   "size": 249545,
+   "locations": [
+    {
+     "fileId": "1_iT3fg-9czLROzArS0LVXL-Lje9_jVGy",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1nA-1KJ-4wAKN-Wr6DCLKfkbTOYlP0h_q",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4b_resignation letter [imran ali khan]_20221118.pdf|169290",
+   "copies": 2,
+   "name": "4B_Resignation Letter [Imran Ali Khan]_20221118.pdf",
+   "size": 169290,
+   "locations": [
+    {
+     "fileId": "1D95LTv8Yu3bbE6J8Ov3t3HDSI9y3xHgp",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1txFvpqch22SE9uCXdzYgYYun2_85UHsc",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1b_intimation to sell zameen delta_s shares_zeeshan ali khan_20221110.pdf|212508",
+   "copies": 2,
+   "name": "1B_Intimation to Sell Zameen Delta_s Shares_Zeeshan Ali Khan_20221110.pdf",
+   "size": 212508,
+   "locations": [
+    {
+     "fileId": "10T6__Hssyh5vUleqJZ9YRlYZq4DTRAfx",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1vNfqZP9Qlho0rVPt6BjA0n-Ix6qKUuAe",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "10a_resignation letter [mariam saleem akbar].pdf|179537",
+   "copies": 2,
+   "name": "10A_Resignation Letter [Mariam Saleem Akbar].pdf",
+   "size": 179537,
+   "locations": [
+    {
+     "fileId": "1ll6OU1Oc8EF1dsYo4HQebr-ktRjKZCx1",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1lEIi5QnSZGLcKVJsmVl7IcG2bRNovwd1",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5b_decline letter [zeeshan ali khan]_20221121.pdf|172856",
+   "copies": 2,
+   "name": "5B_Decline Letter [Zeeshan Ali Khan]_20221121.pdf",
+   "size": 172856,
+   "locations": [
+    {
+     "fileId": "16KDIq1rcNJqZ_oW2nyKZqKqOjbF8i7Pi",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1OuqhjNl0g7Cz4g7kSW394kqduUqHAUvi",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "13_affidavit [incoming director mariam saleem akbar]_20230228.pdf|1414716",
+   "copies": 2,
+   "name": "13_Affidavit [Incoming Director Mariam Saleem Akbar]_20230228.pdf",
+   "size": 1414716,
+   "locations": [
+    {
+     "fileId": "19_fTf_GIeu_c3hbsKtx03pEtjJQqan1O",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1CZAxRFmXwCVNFdhkCH8XXzKsRWhaLvon",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "12_affidavit [for filing of form 29]_zeeshan ali khan_20230222 (1).pdf|1376258",
+   "copies": 2,
+   "name": "12_Affidavit [for filing of Form 29]_Zeeshan Ali Khan_20230222 (1).pdf",
+   "size": 1376258,
+   "locations": [
+    {
+     "fileId": "1kqsa-zH5yP60YTSkfmFa5AckCkdZg8CI",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "185NlqtY1yY1OET97pMJsjw389qDKh_Dw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3c_offer letter [zeeshan ali khan]_20221118.pdf|285013",
+   "copies": 2,
+   "name": "3C_Offer Letter [Zeeshan Ali Khan]_20221118.pdf",
+   "size": 285013,
+   "locations": [
+    {
+     "fileId": "1Xspb6H91Psay_TpEPwK8n-cYUp4kGQQn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1LG5cGm7m_z11mk70SoSbexKPgteCGOco",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "9a_affidavit [mariam saleem akbar]_20221130.pdf|1072756",
+   "copies": 2,
+   "name": "9A_Affidavit [Mariam Saleem Akbar]_20221130.pdf",
+   "size": 1072756,
+   "locations": [
+    {
+     "fileId": "1kL5-YTxDVOmy0E-V7tqyMqt9B8NjMoqP",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1Twj2-DUisRXfolY3-fFKmBk8k-R3pHQ4",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "8a_form of transfer of shares [zeeshan ali khan to mariam saleem akbar]_20221129.pdf|696876",
+   "copies": 2,
+   "name": "8A_Form of Transfer of Shares [Zeeshan Ali Khan to Mariam Saleem Akbar]_20221129.pdf",
+   "size": 696876,
+   "locations": [
+    {
+     "fileId": "1iRKU9dBteQ7tERERnGhW9bEzkBr68k7g",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "13TCiWGA6Nf5TlrN0CCY2EvLgBsqHQRUu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3b_offer letter [zameen developments]_20221118.pdf|298053",
+   "copies": 2,
+   "name": "3B_Offer Letter [Zameen Developments]_20221118.pdf",
+   "size": 298053,
+   "locations": [
+    {
+     "fileId": "18XhKc2_l7aCgaqqVOq2hCxP46a1anAN6",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1p34gn89iCv2DVSvy9LFmRbDfRNQQwaEg",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "6a_attendance sheet [board meeting zameen delta]_20221129.pdf|621079",
+   "copies": 2,
+   "name": "6A_Attendance Sheet [Board Meeting Zameen Delta]_20221129.pdf",
+   "size": 621079,
+   "locations": [
+    {
+     "fileId": "12pc7sqqyeLz97yaJ8nLguWxwJvKDPA51",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1a9zUBWQRmRxm_zKDf1KDguE3nc4vA1xh",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "5c_decline letter [zameen developments]_20221121.pdf|207299",
+   "copies": 2,
+   "name": "5C_Decline Letter [Zameen Developments]_20221121.pdf",
+   "size": 207299,
+   "locations": [
+    {
+     "fileId": "1U8Vq3HCan8B9hfNkuRvJFzEQJFfREtyz",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1R3gs1UVVmlEgj4838TRqbdU5zKDaBtNP",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "8b_form of transfer of shares [imran ali khan to adil ahmd kamal_20221129.pdf|696251",
+   "copies": 2,
+   "name": "8B_Form of Transfer of Shares [Imran Ali Khan to Adil Ahmd Kamal_20221129.pdf",
+   "size": 696251,
+   "locations": [
+    {
+     "fileId": "1kxf1knhoOv7UGxPD4awPINcohbxusKaR",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    },
+    {
+     "fileId": "1a2bcB42EFlUlzqSFbyeVx4q1P1gS016G",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2022 / Share Transfer and Driector Change"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3.agm minutes_zameen delta_20250910_0001.pdf|574083",
+   "copies": 2,
+   "name": "3.AGM Minutes_Zameen Delta_20250910_0001.pdf",
+   "size": 574083,
+   "locations": [
+    {
+     "fileId": "1Y-DkW3bycmh6nu9teKZ7RFQ8A2p9jzDM",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025 / AGM FY 2024"
+    },
+    {
+     "fileId": "1VfTDtlH0devbMwAaqopgrrSHiUHY34g9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025 / AGM FY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2.pre agm minutes_zameen delta _0250820_0001.pdf|606313",
+   "copies": 2,
+   "name": "2.Pre AGM Minutes_Zameen Delta _0250820_0001.pdf",
+   "size": 606313,
+   "locations": [
+    {
+     "fileId": "1_ohSGOhzSIqcnvpPNlk7ZbTyK6bfjWw-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025 / AGM FY 2024"
+    },
+    {
+     "fileId": "115lrHWYrE8mBTNd8wvF2s_LbPDWL_Woo",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025 / AGM FY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1.notice to the shareholders for the annual general meeting of zameen dalta 20250910_0001.pdf|471505",
+   "copies": 2,
+   "name": "1.Notice to the Shareholders for the Annual General Meeting of Zameen Dalta 20250910_0001.pdf",
+   "size": 471505,
+   "locations": [
+    {
+     "fileId": "1GVfaCP8QIm5YVuSWFGvZ54bMNnWmwjpF",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2025 / AGM FY 2024"
+    },
+    {
+     "fileId": "1rEy99jdyG0f-KNE8kCjVP6zyZoT0bkWB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2025 / AGM FY 2024"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "notice to shareholders_zameen delta_20210603.pdf|773432",
+   "copies": 2,
+   "name": "Notice to Shareholders_Zameen Delta_20210603.pdf",
+   "size": 773432,
+   "locations": [
+    {
+     "fileId": "1x9XxIW04ANAlXTPkNnLvyQ0jpnHlbDFe",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    },
+    {
+     "fileId": "15t3hGsF2Gn2nlYaOG2rafHJAMAJXlyhy",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "secp direction re. agm 2020_zameen delta_20210603.pdf|619108",
+   "copies": 2,
+   "name": "SECP Direction re. AGM 2020_Zameen Delta_20210603.pdf",
+   "size": 619108,
+   "locations": [
+    {
+     "fileId": "1-gRVnlz31DAl1qfTaxZEhN8B5WjP05-3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    },
+    {
+     "fileId": "1UxfqicSHhUKSb1vkhUaUBX1iSbujlGES",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "agm minutes_zameeen delta_20210603.pdf|977243",
+   "copies": 2,
+   "name": "AGM Minutes_Zameeen Delta_20210603.pdf",
+   "size": 977243,
+   "locations": [
+    {
+     "fileId": "1RdxsIXyzAOvDMby_C02HcLoNWF-4wcQn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    },
+    {
+     "fileId": "1q0w6WzuXPJtCrh_6-qaAen9t5YDwHH7z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "extension request [letter & affidavit]_zameen delta_20210311.pdf|1102761",
+   "copies": 2,
+   "name": "Extension Request [Letter & Affidavit]_Zameen Delta_20210311.pdf",
+   "size": 1102761,
+   "locations": [
+    {
+     "fileId": "19h8JxEAkcp1lHOrQOuVDcORLQ4_vBYn3",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    },
+    {
+     "fileId": "188AhrXtuis6DGAPLCC7tGDD_xHDXVFWB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "pre-agm minutes_zameen delta_20210603.pdf|957785",
+   "copies": 2,
+   "name": "Pre-AGM Minutes_Zameen Delta_20210603.pdf",
+   "size": 957785,
+   "locations": [
+    {
+     "fileId": "14BqGVrWzvbvLKwPSrzUYUv9vNASqBg0U",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    },
+    {
+     "fileId": "11nGrC4faP1RJU68YhpMjPrQIDD5oNGWt",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2021 / Annual General Meeting FY 2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "pre-agm meeting minutes_zameen delta_20200511.pdf|726648",
+   "copies": 2,
+   "name": "Pre-AGM meeting minutes_Zameen Delta_20200511.pdf",
+   "size": 726648,
+   "locations": [
+    {
+     "fileId": "1FnO_ePva_VC8EmW5rO08x9sZBAY2KpX-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1XTcC4K6nE6fhB6GRTSFlOvvQcTlQ1F-P",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "post-agm meeting minutes_zameen delta_20200615.pdf|342066",
+   "copies": 2,
+   "name": "Post-AGM meeting minutes_Zameen Delta_20200615.pdf",
+   "size": 342066,
+   "locations": [
+    {
+     "fileId": "1CH_XUGGPXSXOCMNRdPBk_275SUPXS__z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1de4oFKzaFJLiI_ZnwsQNSN1FRBRkpZME",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "agm minutes_zameen delta_20200615.pdf|682020",
+   "copies": 2,
+   "name": "AGM minutes_Zameen Delta_20200615.pdf",
+   "size": 682020,
+   "locations": [
+    {
+     "fileId": "153OSSoGKqnFUWpaDVKN0TTkoSor50-Uj",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1cXRN9XljjB3qNQf3uHam3fMqLrhI-I4Z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "notice to shareholders_zameen delta_20200511.pdf|507538",
+   "copies": 2,
+   "name": "Notice to Shareholders_Zameen Delta_20200511.pdf",
+   "size": 507538,
+   "locations": [
+    {
+     "fileId": "1pb3AtZm9DoFvmgnQMI53mNWBrucQhQJv",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "16VQDcDNovY9TadHuQ7vR82yN7d-m68Eh",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3_ agm minutes_zameen delta_20240729.pdf|548503",
+   "copies": 2,
+   "name": "3_ AGM Minutes_Zameen Delta_20240729.pdf",
+   "size": 548503,
+   "locations": [
+    {
+     "fileId": "11c2Chh5v9gwEzeBPD07YCHWet1afyjGl",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024 / Annual General Meeting FY 23"
+    },
+    {
+     "fileId": "15WG3Hx2ARi1oiMt79xMMqLx8Jsa46KzJ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024 / Annual General Meeting FY 23"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2_notice for holding agm_zameen delta_20240729.pdf|461935",
+   "copies": 2,
+   "name": "2_Notice for holding AGM_Zameen Delta_20240729.pdf",
+   "size": 461935,
+   "locations": [
+    {
+     "fileId": "18EEdx170R_43GJ1cDZYhfuKwlOtqK1bw",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024 / Annual General Meeting FY 23"
+    },
+    {
+     "fileId": "1R0F6tyYFCFeGrxosN798TGvG0ZRo9q4l",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024 / Annual General Meeting FY 23"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1_pre agm_zameen delta_20240708.pdf|593118",
+   "copies": 2,
+   "name": "1_Pre AGM_Zameen Delta_20240708.pdf",
+   "size": 593118,
+   "locations": [
+    {
+     "fileId": "1Ae85hZtO2muwZ8bBwT3t26CdHO-qBDeS",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Delta (Private) Limited / CY 2024 / Annual General Meeting FY 23"
+    },
+    {
+     "fileId": "1Ufae5yqRVMIV9vrPciZJskdzMpbFrz1e",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024 / Zameen Delta (Private) Limited / CY 2024 / Annual General Meeting FY 23"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3.agm minutes_ zameen media 20260504_0001.pdf|716092",
+   "copies": 2,
+   "name": "3.AGM Minutes_ Zameen Media 20260504_0001.pdf",
+   "size": 716092,
+   "locations": [
+    {
+     "fileId": "1n915LQWN_aieydbfW8fYvgTXh2ncFcif",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025 / AGM FY 24"
+    },
+    {
+     "fileId": "1DR4x5RzlPYhMopM_G95ZUVajPVBuR6_R",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025 / AGM FY 24"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2. pre-agm minutes_bod of zameen media pvt ltd 20260413_0001.pdf|733349",
+   "copies": 2,
+   "name": "2. Pre-AGM Minutes_BOD of Zameen Media Pvt Ltd 20260413_0001.pdf",
+   "size": 733349,
+   "locations": [
+    {
+     "fileId": "1EGtRw8pfp2xtIB7GfqafC1q_5bpgtN7d",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025 / AGM FY 24"
+    },
+    {
+     "fileId": "16Bb3v37l4_lOdBZNpPl3DORqPFtR5j-b",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025 / AGM FY 24"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1.notice to the shareholders for the annual general meeting of zameen media pvt ltd. 20260413_0001.pdf|519773",
+   "copies": 2,
+   "name": "1.Notice to the Shareholders for the Annual General Meeting of Zameen Media Pvt Ltd. 20260413_0001.pdf",
+   "size": 519773,
+   "locations": [
+    {
+     "fileId": "1hNAPROMNV29zZ-_3WtIloS3Y4D8Kp_Fg",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025 / AGM FY 24"
+    },
+    {
+     "fileId": "1XkkrRKLZZRlim83_ODjM1XHnuVAxXM7m",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025 / AGM FY 24"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form 9 _[demise of gm sikander]_ zmpl_ 20251113.pdf|23061",
+   "copies": 2,
+   "name": "Form 9 _[demise of GM Sikander]_ ZMPL_ 20251113.pdf",
+   "size": 23061,
+   "locations": [
+    {
+     "fileId": "1WvWeLWM2TMpLlkgAjyUh_9lcAUiVYPg-",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025 / G.M Sikander Demise [Filing]"
+    },
+    {
+     "fileId": "1P7IAekDUgnxyoWTA9Fujthvv_UHo9XvQ",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025 / G.M Sikander Demise [Filing]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "affidavit [filing of form 9]_zameen media_20251126.pdf|751351",
+   "copies": 2,
+   "name": "Affidavit [filing of Form 9]_Zameen Media_20251126.pdf",
+   "size": 751351,
+   "locations": [
+    {
+     "fileId": "1MBBJBlAM3pPYvKmNaPUsrHPNBF2dt5BD",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2025 / G.M Sikander Demise [Filing]"
+    },
+    {
+     "fileId": "1CIlIMEjpzO52KVCSeJS7xIERrttdAKH9",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2025 / G.M Sikander Demise [Filing]"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "4.agm minutes of zameen media fy 2023_ 20241128.pdf|632860",
+   "copies": 2,
+   "name": "4.AGM Minutes of Zameen Media fy 2023_ 20241128.pdf",
+   "size": 632860,
+   "locations": [
+    {
+     "fileId": "140dgNqtw8IReKsyRa7t1ndiOg30uPcOj",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024 / AGM FY 2023"
+    },
+    {
+     "fileId": "1eD49RexqNY9HdEMkXDpkoRdnnCzest7U",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024 / AGM FY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "3.post agm minutes _zameen media_fy 2023_20241128.pdf|309711",
+   "copies": 2,
+   "name": "3.Post AGM Minutes _Zameen Media_Fy 2023_20241128.pdf",
+   "size": 309711,
+   "locations": [
+    {
+     "fileId": "1Jm-wt2VIFuYItMYw8dPNsNPStA6tJD2O",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024 / AGM FY 2023"
+    },
+    {
+     "fileId": "1HokSId_yg98lPPfxjRtqnw6N_MSZ3szf",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024 / AGM FY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "2.notice to shareholders for agm fy 2023_ 20241128.pdf|313023",
+   "copies": 2,
+   "name": "2.Notice to Shareholders for AGM FY 2023_ 20241128.pdf",
+   "size": 313023,
+   "locations": [
+    {
+     "fileId": "12dI7qnOCnxE-_Qt_M_1gRjpUO6qXgo4v",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024 / AGM FY 2023"
+    },
+    {
+     "fileId": "1K44ILkRSaUlAnbrJgv9AD-0a9v_F0tsl",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024 / AGM FY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "1.pre agm minutes of zameen media  fy 2023_20241107_.pdf|717889",
+   "copies": 2,
+   "name": "1.Pre AGM Minutes of Zameen Media  FY 2023_20241107_.pdf",
+   "size": 717889,
+   "locations": [
+    {
+     "fileId": "1g_69KhKJgCXPCFH6ZCr8SsvhjrbagHHT",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2024 / AGM FY 2023"
+    },
+    {
+     "fileId": "17jbWbzQ0a4ZqqG4r01Uc0IFS95ybnDcn",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2023 / CY 2024 / AGM FY 2023"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "post-agm meeting minutes_zameen medallion_20200625.pdf|352104",
+   "copies": 2,
+   "name": "Post-AGM meeting minutes_Zameen Medallion_20200625.pdf",
+   "size": 352104,
+   "locations": [
+    {
+     "fileId": "1uSwLNKjo3RSA8eBkG23DhXk2dIPR0c8z",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1upd_EeT90KopRUr5yM0hXu3tQdVR8Xt2",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "pre-agm meeting minutes_zameen medallion_20200521.pdf|844161",
+   "copies": 2,
+   "name": "Pre-AGM meeting minutes_Zameen Medallion_20200521.pdf",
+   "size": 844161,
+   "locations": [
+    {
+     "fileId": "1mHP7kJFcB1zPYGxf3Rt83JL9Pq1C5l2d",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1ZV8KLBIfOfMUPgYEEauNkRtQYGCqH_mu",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "agm minutes_zameen medallion_20200625.pdf|795741",
+   "copies": 2,
+   "name": "AGM minutes_Zameen Medallion_20200625.pdf",
+   "size": 795741,
+   "locations": [
+    {
+     "fileId": "15Qn-lZ7vgI7DRLO3q2zy5KJ82CAx_vN7",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1s5nwhLcTvPQYmGjLCIvv7aqnHWt0DzkB",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "notice to shareholders_zameen medallion_20200521.pdf|641325",
+   "copies": 2,
+   "name": "Notice to Shareholders_Zameen Medallion_20200521.pdf",
+   "size": 641325,
+   "locations": [
+    {
+     "fileId": "1q77Wydq8e7ppXL2ABwjf-AkUrSR-TP-A",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Media (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    },
+    {
+     "fileId": "1mQCO5lkSSeFyQZFf3OoVbW1HwdEbvE-t",
+     "folderPath": "Entities data for secp filing / Group Entities / Zameen Medallion (Private) Limited / CY 2020 / Annual General Meeting FY 2019"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "form a [annual returns upto 24.02.2020]_zameen media_20200511.pdf|786841",
+   "copies": 2,
+   "name": "Form A [annual returns upto 24.02.2020]_Zameen Media_20200511.pdf",
+   "size": 786841,
+   "locations": [
+    {
+     "fileId": "1DnQrC0pPVBxiUobxBbv6bltm2g_tKXxJ",
+     "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 01. Response Letter - email dated 09.09.2020"
+    },
+    {
+     "fileId": "1BXdSypiV6og4D2-Llvy_6NzEosYoQhor",
+     "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 03. Response Letter - email dated 18.09.2020"
+    }
+   ],
+   "bothMapped": 2
+  },
+  {
+   "key": "non disclosure agreement between_dubai islamic bank pakistan ltd_zameen platinum_20250131.pdf|2026897",
+   "copies": 2,
+   "name": "Non Disclosure agreement between_Dubai Islamic Bank Pakistan Ltd_Zameen Platinum_20250131.pdf",
+   "size": 2026897,
+   "locations": [
+    {
+     "fileId": "1FzL98gxqMTbJOBlqvHh_nJ79YKp2PWfC",
+     "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Platinum (Private) Limited / General Agreements"
+    },
+    {
+     "fileId": "1EmQGrB4GLU7lvkERr7XCCBgjYT9e5z9b",
+     "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Platinum (Private) Limited (1) / General Agreements (1)"
+    }
+   ],
+   "bothMapped": 0
+  },
+  {
+   "key": "contract for security guards services_zameen platinum and zims security_20210215.pdf|4865935",
+   "copies": 2,
+   "name": "Contract for Security Guards Services_Zameen Platinum and ZIMS Security_20210215.pdf",
+   "size": 4865935,
+   "locations": [
+    {
+     "fileId": "1TI_sV5S7UosQAzYWw64YWC-PI5wEbMrw",
+     "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Platinum (Private) Limited / General Agreements"
+    },
+    {
+     "fileId": "1HxBw-yF5sxbAzvK9S3A3d2hJzw2r4sIf",
+     "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Platinum (Private) Limited (1) / General Agreements (1)"
+    }
+   ],
+   "bothMapped": 2
+  }
+ ]
+}

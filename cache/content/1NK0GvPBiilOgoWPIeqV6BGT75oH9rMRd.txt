@@ -1,0 +1,253 @@
+ESCROW AGREEMENT 
+ 
+ This ESCROW AGREEMENT (this “ Escrow Agreement ”) is entered into at Lahore on this [•DATE] day of [•MONTH] , 2023 (the “ Signing Date ”) by and between: 
+ 
+ ZAMEEN MEDIA (PRIVATE) LIMITED , trading as Zameen.com, a company incorporated under the laws of Pakistan, with its registered office at Pearl One, 94 B/I, M . M . Alam Road, Gulberg III, Lahore, acting through its duly authorised representative Mr. Adil Ahmad Kamal (“ Party A ”, which expression shall, where the context so admits, mean and include successors-in-interest and permitted assigns). 
+ 
+ AND 
+ 
+ ZAMEEN CORE (SMC-PRIVATE) LIMITED , a company incorporated under the laws of Pakistan, with its registered office at [• ADDRESS ] , acting through its duly authorised representative [• NAME ] (“ Party B ” which expression shall, where the context so admits, mean and include its successors-in-interest and permitted assigns). 
+ 
+ AND 
+ 
+ [•CUSTOMER] , a company incorporated under the laws of Pakistan, with its registered office at [• ADDRESS ] , acting through its duly authorised representative [• NAME ] (“ Party C ” which expression shall, where the context so admits, mean and include its successors-in-interest and permitted assigns). 
+ 
+ AND 
+ 
+ MEEZAN BANK LIMITED , a banking company incorporated and existing under the laws of Pakistan and having its registered office at _____________ and an office in Lahore at ____________________________ , Lahore (the " Escrow Agent ") . 
+ 
+ (Party A, Party B , Party C and the Escrow Agent shall hereinafter collectively be referred to as the “ Parties ” and each individually as a “ Party ”). 
+ 
+ WHEREAS : 
+ 
+ (a) Party A , Party B and Party C (hereinafter collectively referred to as the “ Contracting Parties ”) have, entered into a business arrangement in [•DATE] (the “ Business Agreement ”). 
+ 
+ (b) Pursuant to the aforementioned Business Arrangement , the Contracting Parties have agreed that all the proceeds collected during the course of th is Business Arrangement shall be deposited in an e scrow a ccount and shall be released, from time to time, upon the written instructions of the Contracting Parties as provided in Clause 3, 4, 5, 6, 7 and 15 ( the “ Proceeds ”) . 
+ 
+ (c) Upon the request and based upon the representations of the Contracting Parties, the Escrow Agent has agreed to act as escrow agent for the Contracting Parties, in accordance with the terms of this Escrow Agreement. 
+ 
+ (d) The Parties now desire to enter into this Escrow Agreement to record the terms and conditions for the operation of the Escrow Account. 
+ 
+ DEFINITIONS AND INTERPRETATIONS 
+ 
+ Definitions 
+ 
+ In this Escrow Agreement (including the recitals hereof), unless otherwise defined herein, all capitalized terms and expressions shall have the meanings assigned to them as under: 
+ 
+ " Escrow Agreement " means this Escrow Agreement; 
+ 
+ " Authority " means any government, quasi-government, administrative, regulatory or supervisory body or authority, court or tribunal and includes but is not restricted to the State Bank of Pakistan; 
+ 
+ " Authorised Signatory " means, in relation to each of Party A , Party B and Party C ; each person set out in Schedule 2 (Authorised Signatories) as the authorised signatory for that Party duly authorised by the board of the relevant Party; or any other person who is notified to the Escrow Agent in accordance with this Escrow Agreement ; 
+ 
+ " Banking Day " means a day (other than a Saturday or a Sunday) on which banks are open for general business in Islamabad, Pakistan; 
+ 
+ " Effective Date " means the date on which the notification referred to in Clause 2.1 (Appointment) is issued by the Escrow Agent; 
+ 
+ " Enforceable Order " means a final non-appealable order, judgment, decree, ruling, award or decision of the court ordering the release of the Proceeds or any part thereof; 
+ 
+ " Escrow Account " means the account referred to in Clause 4 (Escrow Account); 
+ 
+ " Escrow Agent ” shall have the meaning set forth in the preamble to this Escrow Agreement ; 
+ 
+ “ Fees ” means the Escrow Fee, which is NIL. 
+ 
+ “ Holding Company ” means, in relation to a person, any other person in respect of which the first named person is a s ubsidiary; 
+ 
+ " Proceeds " shall have the meaning as set forth in the preamble to this Escrow Agreement ; 
+ 
+ “ PKR ” or “ Pakistani Rupees ” means the lawful currency of the Islamic Republic of Pakistan ; 
+ 
+ “ Party ” means a party to this Escrow Agreement; 
+ 
+ “ Party A ” shall have the meaning as set forth in the preamble to this Escrow Agreement; 
+ 
+ " Party B ” shall have the meaning as set forth in the preamble to this Escrow Agreement; 
+ 
+ " Party C ” shall have the meaning as set forth in the preamble to this Escrow Agreement; 
+ 
+ " Party C Bank Account ” means any bank account opened and maintained by Party C with the Escrow Agent , other than the Escrow Account ; 
+ 
+ " Rules " shall have the meaning set forth in Clause 8.7 (Force Majeure) ; 
+ 
+ " Signing Date " means the date on which this Escrow Agreement is duly executed; 
+ 
+ " Tax " or " Taxes " means: (a) taxes on income, profits and gains; and (b) all other direct and indirect taxes, impositions, duties, charges, withholdings, contributions and levies in the nature of taxation including any excise, octroi, property, value added, sales, stamp, transfer, franchise and payroll taxes and any national insurance or social security contributions, together with all penalties, charges, costs and interest relating to any of the foregoing or to late or incorrect return in respect of any of these; 
+ 
+ " Term " shall have the meaning set forth in Clause 3.1 (a) of this Escrow Agreement ; 
+ 
+ " Transfer Instruction(s) " means a transfer instruction substantially in the form of Schedule 1 (Form of Transfer Instruction) and signed by an Authorised Signatory of Party A and Party C or by an Authorised Signatory of Party B and Party C, as the case may be. 
+ 
+ Interpretation 
+ 
+ Any reference in this Escrow Agreement to: 
+ 
+ “ Law ” or “ law ” shall be construed as meaning any law (including statutory and common law), statute, constitution, decree, judgment, treaty, regulation, rule, by-law, order, other legislative measure, directive, requirement, request or guideline (whether or not having the force of law) of any governmental, intergovernmental or supranational body, agency, local government, court or, statutory, regulatory or self-regulatory (or similar) body or Government Authority; 
+ 
+ an “ amendment ” includes a supplement, variation, novation, restatement or re-enactment and "amended" will be construed accordingly; 
+ 
+ an “ authorisation ” includes an authorisation, consent, approval, resolution, licence, exemption, filing, registration or notarisation; 
+ 
+ “ Know your customer requirements ” are the identification checks requested by the Escrow Agent to meet its obligations under applicable law for identification of its customers; 
+ 
+ a “ regulation ” includes any regulation, rule, official directive, request or guideline (whether or not having the force of law but, if not having the force of law, being of a type with which any person to which it applies is accustomed to comply) of any governmental, inter-governmental or supranational body, agency, department or regulatory, self-regulatory or other Authority or organisation; 
+ 
+ any “ statute ” or any section of any statute will be deemed to include reference to any statutory modification or re-enactment of it for the time being in force; 
+ 
+ a “ person ” includes any individual, company, corporation, unincorporated association or body (including a partnership, trust, joint venture or consortium), government, state, agency, organisation or other entity whether or not having separate legal personality; and 
+ 
+ a reference to currency is a reference to the lawful currency for the time being of the relevant country. 
+ 
+ A reference in this Escrow Agreement to this Escrow Agreement or any other document is a reference to this Escrow Agreement or document as amended, novated, supplemented, extended, replaced or restated. 
+ 
+ The headings and sub-headings in this Escrow Agreement do not affect its interpretation or construction. 
+ 
+ Unless the context otherwise requires, a gender includes all other genders and words denoting the singular will include the plural and vice versa. 
+ 
+ General words will not be given a restrictive meaning by reason of the fact that they are followed by particular examples intended to be embraced by the general words. 
+ 
+ Unless a contrary indication appears, a reference to a party or a person will be construed as including its and any subsequent successors in title, permitted transferees and permitted assigns, in each case in accordance with their respective interests. 
+ 
+ Save where the contrary is indicated, any reference in this Escrow Agreement to: 
+ 
+ words importing the singular shall include the plural or vice versa; 
+ 
+ where any payment is required to be made under this Escrow Agreement , the same shall be made in immediately available funds; 
+ 
+ any Party shall be construed so as to include their respective legal heirs, successors and assigns from time to time; 
+ 
+ an Article, Section, Clause, Preamble, Recital or Schedule shall be construed as a reference to an article, section, clause, preamble, recital or schedule to this Escrow Agreement ; and 
+ 
+ a Schedule, the recitals and the preamble to this Escrow Agreement shall be integral part this Escrow Agreement . Capitalized terms used in any Schedule but not otherwise defined therein will have the respective meanings assigned to such terms in this Escrow Agreement . 
+ 
+ APPOINTMENT 
+ 
+ Appointment 
+ 
+ Each of the Contracting Parties hereby designate and appoint the Escrow Agent as its escrow agent under and on the terms of this Escrow Agreement and the provisions of this Escrow Agreement shall take effect on and from the date on which the Escrow Agent notifies the Contracting Parties that: 
+ 
+ the Escrow Agent has received all the documents and other evidence in form and substance satisfactory to the Escrow Agent; 
+ 
+ the Escrow Account titled ‘[XYZ]’ has been opened in the name of Party A , Party B and Party C , jointly; and 
+ 
+ the Escrow Fee has been paid by Party C in accordance with Clause 3.1 (Fees) and the Escrow Agent has received the same. 
+ 
+ Acceptance 
+ 
+ The Escrow Agent confirms its appointment as the escrow agent on the terms and subject to the conditions of this Escrow Agreement . 
+ 
+ Joint and Several Obligations 
+ 
+ The obligations of each of the Contracting Parties to the Escrow Agent under this Escrow Agreement are joint and several except as otherwise explicitly provided herein. 
+ 
+ ESCROW AGENCY FEES AND CHARGES 
+ 
+ Fees 
+ 
+ Party C shall pay to the Escrow Agent the Fee as a fee for acting as the Escrow Agent for the period starting from the Effective Date. 
+ 
+ The Fee stated herein is exclusive of all taxes (other than taxes on the corporate income of the Escrow Agent) and shall be paid to the Escrow Agent without withholding, deducting or adjusting any amounts on account of taxes (including sales tax or sales tax on services) except for the amounts payable towards the corporate income tax of the Escrow Agent. 
+ 
+ Other charges 
+ 
+ Party C hereby agrees and undertakes to pay to the Escrow Agent all such amounts, charges, fees, costs and expenses that may be incurred by and / or payable to the Escrow Agent, in addition to and / or in excess to the Fees, as a consequence of the Escrow Agent providing its services in terms of this Escrow Agreement and acting as the escrow agent for the Contracting Parties, and all other transaction costs, charges and fees that may be incurred by the Escrow Agent in the normal course of operations of the Escrow Account, including but not restricted to any amounts that may be required to be reimbursed to the Escrow Agent due to the payments made or costs incurred by the Escrow Agent in fulfilling its obligations hereunder. 
+ 
+ Liability &amp; Set-Off 
+ 
+ Notwithstanding anything contained herein and / or in any other document entered into between the Parties, the Escrow Agent has the right to debit all amounts due and payable to the Escrow Agent by Party C and / or any one of them in respect of the operation of the Escrow Account. The Escrow Agent shall be entitled to retain the proportion of the Proceeds equal to any unpaid fees and other charges due to the Escrow Agent under this Escrow Agreement until all such fees and charges have been paid in full to the Escrow Agent by Party C . 
+ 
+ ESCROW ACCOUNT 
+ 
+ Escrow Account 
+ 
+ Party A , Party B and Party C request and the Escrow Agent confirms that it shall open a “C urrent A ccount ” (as detailed below), in the names of Party A , Party B and Party C and hold the same for the benefit of Party A , Party B and Party C (“ Escrow Account ”), within a reasonable time from the receipt of the documents and other relevant evidence: 
+ 
+ Escrow Account details: 
+ 
+ Bank: _________ Bank Limited 
+ Account number: [•] 
+ Account title: [•] 
+ Branch Name: ___________ – ________________________ 
+ IBAN: [•] 
+ 
+ Operation 
+ 
+ The Escrow Account shall be under the exclusive and sole control of the Escrow Agent and the Parties agree that the Escrow Agent shall operate the Escrow Account in accordance with the terms of this Escrow Agreement on the joint instructions of the Contracting Parties. 
+ 
+ Credit Balance 
+ 
+ The Escrow Account shall in no circumstances be overdrawn . 
+ 
+ PROCEEDS IN ESCROW 
+ 
+ Escrow Amount 
+ 
+ Party A , Party B and Party C (on behalf of Party C ) shall procure and ensure that all Proceeds to be received under the Business Agreement are directly credited into the Escrow Account from the Effective Date onwards. The Escrow Agent shall confirm receipt of the Proceeds by written notice to the Contracting Parties at the close of business on every Banking Day. 
+ 
+ Proceeds in Escrow 
+ 
+ All amounts deposited and held in the Escrow Account will form part of the Proceeds. The Contracting Parties agree and acknowledge that the Escrow Agent is only responsible for ensuring that all amounts comprising the Proceeds are held and managed in accordance with the terms of this Escrow Agreement and that the Escrow Agent has no further responsibility whatsoever. 
+ 
+ RELEASE OF PROCEEDS 
+ 
+ Authorisation to Release 
+ 
+ The Contracting Parties hereby authorise the Escrow Agent to release the Proceeds or any part thereof, on the exclusive Transfer Instructions of the Contracting Parties in writing to the specified payee, from time to time. For the avoidance of doubt, only the Contracting Parties may be the specified payee as stipulated by the Transfer Instructions from time to time. 
+ 
+ The Parties agree that in accordance with the standing authorizations of the Contracting Parties provided above in this Clause 6.1, the Escrow Agent shall immediately release the Procee ds upon receipt of: 
+ 
+ Transfer Instructions issued by the Contracting Parties, directing the Escrow Agent to release the Proceeds in the amounts as specified; or 
+ 
+ an Enforceable Order . 
+ 
+ Provided however, that in the event, the funds available in the Escrow Account are less than the amount specified in the Transfer Instruction, the Escrow Agent shall promptly notify the Contracting Parties of the same. 
+ 
+ Provided however, in the event, the funds available in the Escrow Account are less than the amount specified in the Enforceable Order then the Escrow Agent shall notify the relevant authority issuing any such Enforceable Order and the Contracting Parties that sufficient funds are not available in the Escrow Account and seek further instructions in relation to the balance funds required, that are in excess of the funds available in the Escrow Account. Party C hereby undertakes to provide immediately upon a notification issued by the Escrow Agent, the funds necessary for compliance with the instructions contained in the Enforceable Order. The Parties confirm that nothing contained herein shall be construed to require the Escrow Agent to release / transfer funds in excess of the funds available in the Escrow Account, notwithstanding the instructions received in the Enforceable Order. 
+ 
+ The Party C hereby indemnify and agree to hold the Escrow Agent harmless against any costs, charges, expenses and / or damages incurred by the Escrow Agent as a direct consequence of effecting payment in accordance with this Clause 6.1, including any legal costs incurred by the Escrow Agent in the matter. 
+ 
+ Conditions to Release 
+ 
+ A T ransfer Instruction must comply with the terms of Clause 7 (Instructions) and be given to the Escrow Agent at least one ( 1 ) Banking Days before the date on which the payment is to be made . 
+ 
+ Currency 
+ 
+ The Transfer Instructions shall always be in the currency of the Escrow Account , which shall be PKR / Pakistani Rupees . 
+ 
+ INSTRUCTIONS 
+ 
+ Payments 
+ 
+ (a) A request to make a Transfer Instruction by Party A , Party B and Party C must be: 
+ 
+ (i) sent by electronic mail or hard copy delivered personally or by courier; 
+ 
+ (ii) in accordance with Schedule 1 (Form of Transfer Instruction); and 
+ 
+ (iii) signed by Authorised Signatory (ies) of Party A , Party B and Party C , as per the board resolutions provided in Schedule 2 . 
+ 
+ (b) The Escrow Agent shall incur no liability to either Party A or Party B or Party C as a consequence of making or not making the payments to be made under a Transfer Instruction. 
+ 
+ Change of Authorised Signatories 
+ 
+ (a) Each of Party A , Party B and Party C may at any time replace one or more of its Authorised Signatories and will duly notify the Escrow Agent. 
+ 
+ (b) No change under paragraph (a) above shall take effect until the Escrow Agent actually receives: 
+ 
+ (i) a written notice from the relevant Party providing, in relation to each replacement Authorised Signatory, the details specified in the Recitals ; 
+ 
+ (ii) a board resolution (or extract thereof) of the relevant Party conferring the necessary authority on the replacement Authorised Signatory signed by at least two (2) directors which must be provided in accordance with the terms of this Escrow Agreement ; and 
+ 
+ (iii) any documentation or other evidence which is reasonably requested by the Escrow Agent to enable the Escrow Agent to carry out and be satisfied with the results of all applicable know your customer requirements. 
+ 
+ RESPONSIBILITY OF ESCROW AGENT 
+ 
+ Responsibility 
+ 
+ The Escrow Agent shall be oblig ated to perform only such duties as are set out in this Escrow Agreement and no implied duties or obligations shall be read into this Escrow Agreement against the Escrow Agent. 
+ 
+ The Escrow Agent is only required to release / transfer the funds forming part of the Proceeds and nothing contained herein shall place and / or be construed to place an obligation on the Escrow Agent to provide funds from its own sources for meeting its release obligations under this Escrow Agreement . 
+ 
+ The Escrow Agent is not bound by (and be deemed not to have notice of) the provisions of any agreement between Party A , Party B and Party C or any other document or agreement entered into by Party A , Party B or Party C except this Escrow Agreement and any Transfer Instruction, and in the event of an inconsistency between any other documentation and this Escrow Agreement , Part ies agree that this Escrow Agreement will prevail and any implied duties or obligations of the Escrow Agent are excluded to the fullest extent permitted by law , only to the extent of the transaction contemplated in this Escrow Agreement . 
+ 
+ The Escrow Agent shall not be under any duty or obligation to exercise any greater degree of care in respect of funds standing to the credit of the Escrow Account than it gives to its own similar property. For the avoidance of doubt, credit is deposited with, and held by, the Escrow Agent as a banker.

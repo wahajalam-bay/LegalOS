@@ -1,0 +1,366 @@
+_____________________________________________________________ 
+ 
+ EMPLOYMENT AGREEMENT 
+ 
+ ____________________________________________________________ 
+ 
+ 
+ 
+ 
+ 
+ BETWEEN 
+ 
+ 
+ O nline Classifieds Pakistan (SMC-Private) Limited 
+ 
+ 
+ AND 
+ 
+ 
+ FULL NAME IN CAPITAL LETTERS 
+ _____________________________________________________________ 
+ 
+ In relation t o the employment by O nline Classifieds Pakistan (SMC-Private) Limited of 
+ 
+ Full Name 
+ ____________________________________________________________ 
+ 
+ 
+ 
+ 
+ 
+ 
+ EMPLOYMENT AGREEMENT 
+ 
+ THIS EMPLOYMENT AGREEMENT (the “ Agreement ”) is made as of [● ] (the “ Effective Date ”) by and between: 
+ 
+ Online Clas sifieds Pakistan (SMC-Private) Limited , a private limited company, registered under the laws of Pakistan, having its registered place of business located at 2 nd floor of E-E Gulberg III, Lahore, Pakistan (hereinaf ter referred to as the “ Company ” which expression shall mean and include its successors in interest and permitted assigns) ; 
+ 
+ AND 
+ 
+ [● Employee Name ] , holding CNIC No. [●] resident of [●] (hereinafter referred to as the “ Employee ” which expression shall mean and include his/her successors in interest and permitted assign s ) , 
+ 
+ (The Company and the Employee shall hereinafter collectively be referred to as the “ Parties ” and individually as the “ Party ”). 
+ 
+ WHEREAS 
+ 
+ The Company intends to engage the Employee on an exclusive and full-time basis for the purposes of carrying out the duties assigned under this Agreement . 
+ 
+ The Employee represents that the Employee has the relevant skill sets, qualification and experience required for the purposes of discharging t he duties to be assigned by the Company . 
+ 
+ The Parties have agreed to enter into this Agreement to reduce into writing, the terms and conditions t hat shall govern their relationship inter se as an employer and employee . 
+ 
+ 
+ NOW THEREFORE in consideration of the mutual covenants and agreements hereinafter set forth, the receipt and sufficiency of which is hereby acknowledged, each of the P arties hereto hereby agrees as follows: 
+ 
+ ARTICLE 1 – DEFINITIONS AND INTERPRETATION 
+ 
+ 1.1 Definitions: The following terms (except as otherwise expressly provided or unless the context otherwise requires) for all purposes of this Agreement shall have the respective meanings hereinafter specified: 
+ 
+ “ Affiliate ” means, with respect to any Person, any other Person directly or indirectly controlling, controlled by, or under common control with such Person. For purposes of this definition, “control” shall mean the direct or indirect ownership of a majority shareholding or other ownership interests in such Person and the ability to elect or appoint a majority of the board of directors (if a corporation) and otherwise to direct the management, policies and business affairs of such Person. 
+ 
+ “ Agreement” means this Employment Agreement incorporating any schedules attached hereto as originally executed by the parties hereto and any amendments, modifications or supplements thereof from time to time introduced and duly signed by the parties hereto. 
+ 
+ " Applicable Laws " means the Laws of Pakistan. 
+ 
+ “Confidential Information” means, without limitation, any and all: 
+ 
+ Software : All information relating to existing software products, whether owned and/or licensed and/or developed by the Company, and software programs and products in various stages of research and such other development which is not generally known to the public or within the computer industry or trade in which the Company competes (such as know-how, design specifications, algorithms, technical formulas, engineering data, benchmark test results, methodologies, procedures, techniques, and information processing processes) including, but not limited to, models, consumer behavior insights, mathematical expressions, algorithms and proprietary marketing concepts, and the physical embodiments of such information (such as drawings, specification sheets, design notes, source code, object code, load modules, schematics, flow charts, logic diagrams, procedural diagrams, coding sheets, work sheets, documentation, annotations, printouts, studies, manuals, proposals and any other written or machine-readable manuals, proposals and any other written or machine readable expressions of such information as are fixed in any tangible media). 
+ 
+ Other Products and Services : All information relating to consulting, training and other proprietary products or services, whether existing or in various stages of research and development, which are not generally known to the public or within the computer industry or trade in which the Company competes (such as know-how, specifications, technical data, engineering data, processes, techniques, methodologies, and strategies), including, but not limited to, models, consumer behavior insights, mathematical expressions, algorithms and proprietary marketing concepts, and the physical embodiments of such information (such as drawings, schematics, specification sheets, instructor manuals, course materials, training aids, video cassettes, transparencies, slides, taped recordings of presentations, proposals, printouts, studies, contracts, maintenance manuals, documentation, and any other written or machine-readable expressions of such information as are fixed in any tangible media). 
+ 
+ Business Procedures : All information concerning or relating to the way the Company conducts its business which is not generally known to the public (such as internal business procedures, controls, plans, licensing techniques and practices, supplier, subcontractor and prime contractor names and contracts and other vendor information, computer system passwords and other computer security controls, financial information, distributor information, information supplied by clients and customers of Company and employee data) and the physical embodiments of such information (such as check lists, samples, services and operational manuals, contracts, proposals, print-outs, correspondence, forms, listings, ledgers, financial statements, financial reports, financial and operational analyses, financial and operational studies, management reports of every kind, databases, employment records, and any other written or machine-readable expressions of such information as are fixed in any tangible media). 
+ 
+ Marketing Plans and Customer Lists : All information pertaining to Company’s marketing plans and strategies; forecasts and projections; marketing practices, procedures and policies; financial data; discounts; margins; costs; credit terms; pricing practices, procedures and policies; goals and objectives; quoting practices, procedures and policies; and customer data including customer lists, contracts, representatives, requirements and needs, specifications, data provided by or about prospective existing or past customers and contract terms applicable to such customers, and the physical embodiments of such information (such as license agreements, customer lists, print-outs, databases, marketing plans, marketing reports, strategic business plans, marketing analyses and management reports, seminar and class attendee rosters, trade show or exhibit attendee listings, listings of potential customers and leads, and any other written or machine-readable expressions of such information as are fixed in any tangible media). 
+ 
+ Not Generally Known : Any information in addition to the foregoing which is not generally known to the public or within the industry or trade in which the Company competes which gives the Company any advantage over its competitors, and the physical embodiments of such information in any tangible form, whether written or machine-readable in nature. 
+ 
+ P roprietary information and Inventions : Any information that the Company or any Affiliate develops, possesses, owns or develops or that the Company or Affiliate receives under conditions of confidentiality including 
+ 
+ information and Inventions, in whatever form, tangible or intangible, disclosed by the Company or any Affiliate (including their respective employees, agents and independent contractors) to Employee in the course of his employment hereunder; 
+ 
+ information and Inventions, in whatever form, tangible or intangible, developed, created or learned by Employee during the course of his employment hereunder; 
+ 
+ information, in whatever form, tangible or intangible, that has or could have commercial value in the business in which the Company and any Affiliate or their respective clients are engaged or in which they contemplate engaging; 
+ 
+ information, in whatever form, tangible or intangible, that, if disclosed without authorization, could be detrimental to the interest of the Company or any Affiliate whether or not such information is identified as confidential information by the Company or any Affiliate; 
+ 
+ all information, in whatever form, tangible or intangible, on Inventions, hardware configuration information, technology, drawings, engineering, know-how, product information and plans, products, services, research, formats, practices and techniques, marketing plans, business and financial information and plans, strategies, forecasts, unpublished financial statements, budgets, projections, employee lists and information, customer and supplier identities (including, but not limited to, customers and suppliers of the Company or Affiliate with whom Employee becomes acquainted in the course of his employment hereunder) and other business information and agreements disclosed to Employee by the Company or any Affiliate. 
+ 
+ Confidential Information does not include any portions of such information which are now, or which have become publicly known and made generally available through no wrongful act of Employee or others who are under confidentiality obligations as to the item or items involved. 
+ 
+ “ Employment Manual ” means such rules and policies of employment , available at all times on the Company’s HR portal accessible to all employees, as are notified by the Company from time to time. 
+ 
+ “Inventions” means, without limitation, any and all original works of authorship, ideas, concepts, designs, discoveries, inventions, intellectual property rights, databases, mask works, trade secrets, computer software programs and applications, developments, improvements, processes, systems, source codes, formulas, specifications, compositions of matter, experimental and developmental techniques, data, know-how and/or technical information made, learned, conceived, devised, invented, created, or developed by Employee (either solely or under Employee’s direction or jointly with others) during the term of Employee’s employment hereunder, whether or not during the normal working hours or on the premises of the Company and whether or not patentable, copyrightable or protectable as trade secrets . 
+ 
+ “Person” means, without limitation, any individual, firm, corporation, partnership, joint venture, trust, association, joint-stock company, limited liability company, committee, institution, business, organization, authority, government entity or any other entity or body, corporate or incorporate, whether or not having distinct legal personality. 
+ 
+ “ Effective Date” means [● ] . 
+ 
+ 1.2 Interpretation: In this Agreement, unless the context otherwise requires: 
+ 
+ (a) all of the provisions of this Agreement (other than where expressly stated to be representations or warranties), where the context requires, are to be construed as covenants as though the words importing such covenants were used in each separate Article hereof : 
+ (b) references to Recitals, Articles, Sub-articles, Schedules, and Appendices are to recitals, clauses, sub-clauses and schedules of, and appendices to, this Agreement. Any reference to a paragraph is to a paragraph of the Article or Sub-article in which such reference appears : 
+ 
+ (c) headings are inserted for ease of reference only and are not to be used to define, interpret or limit any of the provisions of this Agreement : 
+ 
+ (d) references to the singular number shall include references to the plural number and vice versa : 
+ 
+ (e) words denoting one gender include both genders : 
+ 
+ (f) any reference in this Agreement to a statutory provision includes that provision and any regulations made in pursuance thereof, as from time to time modified or re-enacted, whether before or after the date of this Agreement, and (so far as liability thereunder may exist or can arise) shall also include any past statutory provisions or regulations (as from time to time modified or re-enacted) which such provisions or regulations have directly or indirectly replaced : 
+ 
+ (g) any reference to a time limit in this Agreement means the time limit set out in the relevant Article or Sub-article or such other time limit which may be mutually agreed by the Parties in writing; 
+ 
+ (h) the English language shall be deemed the language chosen by the P arties hereto to express their mutual intent : and 
+ (i) The Employment Manual shall form an integral part of this Agreement. Provided that if there is any conflict between the Agreement and the Employment Manual, the terms of the Employment Manual shall prevail if expressly stated therein . 
+ ARTICLE 2 – EMPLOYMENT 
+ 
+ 2.1 Commencement of Employment and Term : Effective from and after the Effective Date, the Company hereby employs the Employee to serve in the capacity set forth in Article 3.1, and Employee hereby accepts such employment by Company, upon the terms and subject to the conditions of this Agreement until such time as Employee or the Company may terminate the Agreement in accordance with the terms and conditions hereof. 
+ 
+ 2. 3 Representation and Warranty: Employee represents and warrants to the Company that : 
+ 
+ The Employee has the relevant skill sets, qualification and experience required for the purposes of discharging the duties to be assigned by the Company. 
+ 
+ The Employee is not subject to any restraint, limitation or restrictions by virtue of any law, contract or otherwise which would impair his right or ability to enter into employment with the Company or to perform fully his duties and responsibilities hereunder. 
+ 
+ N o conflicti ng obligations exist between the Employee ’ s obligat ion under this Agreement and any other Person . The Employee undertakes to inform the Company of any apparent conflicts between employment for the Company and (a) any obligations he may have to preserve t he confidentiality of any Person’s proprietary information or materials or (b) any rights he claims to any inventions or ideas before using the sam e on Company’s behalf. In the event that the Employee delays or fails in informing the Company of existence of such conflict , the Company may conclude that no such conflict exists, and the Employee agrees thereafter to make no such claim against the Company. The Company shall receive such disclosures in confidence and consistent with the objectives of avoiding any conflict of obligations and rights or the appearance of any conflict of interest . 
+ 
+ ARTICLE 3 – DUTIES AND RESPONSIBILITES 
+ 
+ 3.1 Designation: During the term of this Agreement , the Employee shall serve on a f ull-time and exclusive basis for the Company as [● Designation ] and shall report to the [● Designati on] . 
+ 
+ 3.2 Duties and Responsibilities: T he Employee shall perform all duties and responsibilities provided in Annexure [●] of this Agreement. The Employee acknowledges that the duties and responsibilities provided in this Agre ement are not exhaustive and the Employee shall be required to undertake all tasks that are associated wit h the position of [● Designation ] . The Employee sha ll perform all other duties and responsibilities that are assigned to Employee by the Company from time to time. T he tasks or assignments may be subject to changes pending on marketing activities or project plans. The role may vary, and the Employee shall be called upon to support and collaborate with other department members. In such case, the Employee undertakes to extend the required support and collaborate with relevant department members without any objection or delay. 
+ 
+ 3.3 Standard of Performance: In the performance of all of his duties and responsibilities hereunder, the Employee shall be subject to, and shall fully comply with, all of the Company’s policies, rules and regulations as are from time to time in effect and applicable to its employees. So long as Employee is employed under this Agreement, except for statutory holidays, vacations and absences due to temporary illness, Employee shall serve the Company faithfully and to the best of his ability, devoting his full business time, attention, knowledge, energy, skill and effort exclusively on behalf of the Company and for the benefit of the Company and any Affiliates and shall competently and diligently discharge his duties and responsibilities hereunder to the complete satisfaction of the Company. 
+ 
+ 3.4 Reservation of Right: The Company reserves the right, in its sole discretion, to change the designation of the Employee at any time and to modify, delete, add or otherwise change Employee’s duties and responsibilities hereunder. 
+ 
+ ARTICLE 4 – PLACE OF EMPLOYMENT AND OFFICE WORKING HOURS 
+ 
+ 4.1 Place of Employment: The Employee’s duties and responsibilities shall require Employee’s regular presence at the Company’s principal office at [●] or such other place or places as the Company shall designate . The Employee, in course of his employment, may be required to travel for the business of the Company or any Affiliate, within or outside Pakistan. 
+ 
+ 4.2 Regular Working Hours: T he Company’s working hours shall be from [● ] AM to [● ] PM , [● start day ] to [● end day ] , both inclusive. Employee shall be entitled to one (1) hour lunch break . 
+ 
+ 4.2 Additional Working Hours: Whe n work requirements dictate, the Em ployee ma y be requested by the Company to , and Employee shall , perform reasonable hours in excess of the normal working hours specified in Article 4.1. Such excess hours worked shall not entitle Employee to any extra remuneration. 
+ 
+ ARTICLE 5– COMPENSATION AND BENEFITS 
+ 
+ 5.1 (a ) Salary: The Employee’s salary shall be PKR [● ] per month (the “Salary”). The S alary , subject to such deductions, if any, as specified under the terms of this Agreement including withholding and/or any other applicable tax es , shall be payable on monthly basis in accordance with the Company’s normal payroll schedule. Unless the P arties hereto otherwise agree in writing, the Company shall pay the S alary by a direct deposit to Employee’s bank account, details of which are to be provided by Employee. 
+ 
+ (b) Allowances : In addition to the Salary, the Employee shall be entitl ed to only such allowances, as permissible under the Employment Manual. The Company shall, by way of reimbursement and/or direct payment, pay or procure to be paid to the Employee all reasonable and pre-approved allowances wholly, exclusively and necessarily incurred by him in the performance of hi s duties under the Agreement. 
+ 
+ (c) Confidentiality of Compensation : The Employee acknowledges that compensation provided under this Agreement is confidential and must be maintained in strict secrecy and must not be disclosed to any third party. If improperly used or disclosed such action shall be subject to disciplinary action, including termination of employment and legal action. 
+ 
+ 5. 2 Annual Bonus : The Employee shall be entitled to annual bonus as per the policies of Company/ Employment Manual. 
+ 
+ 5.3 Health Insurance: The Employee shall be entitled to health insurance as per the policies of the Company/Employment Manual. 
+ 
+ 5. 4 Total Remuneration: Subject to Applicable Law, th e S alary and allowances specified in Articles 5.1 represent the Employee’s full entitlement to remuneration of any sort. Any other payment provided to Employee by the Company is voluntary and at the sole and absolute discretion of the Company. 
+ 
+ 5. 5 Office property: Any items provided by the Company for the use of the Employee during their employment such as, and laptops and mobile phone devices , shall remain the property of the C ompany and shall be returned to the Company on cessation of employment. Failure to do so will result in the cost of the items being charged to the Emplo yee. Such items are purely for business use and abuse of these benefits may result in disciplinary action. 
+ 
+ ARTICLE 6 – LEAVES 
+ 
+ 6.1 
+ The Employee shall be entitled to leaves as permitted under the Employment Manual. 
+ 
+ 
+ 
+ ARTICLE 7 – TERMINATION 
+ 
+ 7.1 Without Notice: The Company may, at any time, in its sole discretion, terminate this Agreement and Employee’s employment hereunder without notice in the event of: 
+ 
+ Breach of any of the terms and conditions of this Agreement; 
+ 
+ Theft, fraud or dishonesty in connection with the Company’s business or property or the business or property be longing to an Affiliate ; 
+ 
+ Wilful damage to or loss of Company’s property or property belonging to an Associated Company; 
+ 
+ Habitual absence without leave or absence without leave for more than five (5) days; 
+ 
+ Habitual late attendance; 
+ 
+ Disorderly behaviour during working hours; 
+ 
+ Habitual negligence or neglect of work ; 
+ 
+ Breach of any Applicable Laws ; 
+ 
+ Any act or omission of the Employee , including misconduct , that interferes with the Company’s ability to fulfill it s obligations under this Agreement ; 
+ 
+ Any act or omission of the Employee, including misconduct that interferes with or prejudices the proper conduct of the business of the Company or any Affiliate or which may reasonably result in harm to the reputation of the Company or any Affiliate; or 
+ 
+ Employee’s death or total and permanent disability. 
+ 
+ 7.2 With Notice : Except as otherwise contemplated in Article 7.1 , either party may terminate this Agreement for any reason, or no reason, by providing not less than thirty (3 0) days’ prior written notice of such termination to the other party. Upon the giving of such notice, this Agreement and Employee’s employment hereunder will terminate as of the c lose of business on the thirtieth ( 30 th ) day after such notice is deemed to have been given or such later date as is specified in such notice. 
+ 
+ 7.3 End of Service Gratuity : Employee’s entitlement to receive an end of service gratuity shall be determined in accordance with the Applicable Law. 
+ 
+ 7.4 Release: Upon termination of this Agreement and Employee’s employment hereunder, Employee shall execute all documents reasonably requested by the Company to make such termination effective . Upon termination of Employee’s employment hereunder, the Company shal l not have any further obligations under this Agreement and no further payments of the Salary , allowances or other benefits sha ll be payable by the Company to Employee, except: (a) as set forth in this Article 7; (b) as required by the express terms of any written arrangements between the Company and Employee at the time of termination of the employment hereunder; or (c) as required by the Applicable Law . 
+ 
+ 7.5 Survival of Certain Obligations: Notwithstanding anything to the contrary contained herein, any termination of this Agreement and Employee’s employment hereunder will not be effective as to Articles 8, 9 and 10 or any other portions or provisions of this Agreement which, by their express terms, require performance by either party following termination of this Agreement. 
+ 
+ ARTICLE 8 – INVENTIONS 
+ 
+ 8.1 Purpose of Agreement: The Employee hereby acknowledges and understands that the Company and any Affiliate is or will be engaged in a continuous program of research, development, production and marketing in connection with their respective businesses and that it is critical for the Company and any Affiliate to preserve and protect its Confidential Information and its rights in Inventions and in all related intellectual property rights. 
+ 
+ 8.2 Disclosure of Inventions: The Employee hereby agrees to promptly disclose in confidence to the Company (for the benefit of the Company and Affiliates) any and all Inventions. The Employee hereby agrees to keep and maintain adequate and current records of all Inventions. The records will be available to the Company and Affiliates and remain the sole property of the Company at all times. 
+ 
+ 8.3 Acknowledgement of Ownership: Employee hereby acknowledges and agrees that any and all Inventions created by Employee in his capacity as employee of the Company are for the benefit of the Company and Affiliates. The Employee further hereby acknowledges and agrees that any and all Inventions shall be the exclusive property of the Company and that the Company shall be the sole author and owner of such Inventions. The Employee shall not claim any right, title or interest of any nature, either directly or indirectly in any Inventions. Notwithstanding the foregoing, if any Invention is deemed not be the property of the Company pursuant to this Agreement, the Employee sha ll cooperate with the Company or its designees to secure, maintain and defend for the benefit of the Company, copyrights and any extensions and renewals thereof on such Invention. 
+ 
+ 8.4 Transfer and Assignment: The Employee hereby unconditionally and irrevocably transfers and assigns by way of present assignment of future rights to the Com pa ny all of his rights, title, and interest in: 
+ 
+ (a) any and all Inventions; and 
+ 
+ (b) any and all patent rights, copyrights, mask works, trade secrets and other intellectual property rights in any and all Inventions; and 
+ 
+ (c) all applications and registrations in any and all Inventions; and 
+ 
+ (d) any and all moral rights that Employee may have in, or with respect to, any and all Inventions. Employee hereby forever waives and agrees never to assert any and all moral rights he may have in, or with respect to, any Invention, even after termination of Employee’s employment hereunder. For the purposes of this Article 8.4, “moral rights” mean any rights to claim authorship of an Invention, to object to, or prevent, the modification of any Invention, or to withdraw from circulation or control the publication or distribution of any Invention, and any similar right, existing under judicial or statutory law of any country in the world, or under any treaty, regardless of whether or not such right is denominated or generally referred to as a “moral right”. 
+ 
+ 8.5 Assistance: The Employee hereby agrees and undertakes to assist the Company or its designees in every proper way to give effect to the legal assignment contemplated in Article 8.4 and obtain and secure the Company’s rights in the Inventions and enforce patents, copyrights, mask work rights, trade secret rights and other legal protections for the Inventions in any and all countries. To this effect, Employee hereby undertakes to comply with such procedures as may be necessary or desirable or requested by the Company or its designee and execute any and all documents (which shall include without limitation, conveyances, assignments, applications, specifications and all other instruments) as may be necessary or desirable or requested by the Company or its designee to effect the legal assignment contemplated in Article 8.4 and obtain and secure the Company’s rights in the Inventions and enforce patents, copyrights, mask work rights, trade secret rights or other legal protections for the Inventions. Employee further agrees that his obligations under this Article 8.5 will continue beyond the termination of this Agreement and Employee’s employment hereunder. If the Company or its designee is unable for any reason whatsoever to secure Employee’s execution of any documents pursuant to this Article 8.5, Employee hereby irrevocably designates and appoints the Managing Partners of the Company as his agent and attorney in fact to act for and in Employee’s behalf and stead to execute and file any such documents and to do all other lawfully permitted acts in connection with this Article 8 in respect of any and all Inventions with the same legal force and effect as if executed by Employee. The Company hereby acknowledges and agrees that Employee may disclose any pertinent Confidential Information to relevant Persons in order to fulfil his obligations under this Article 8; provided that Employee receives from the intended recipient of such Confidential Information a confidentiality undertaking in substantially the same terms as Article 9.2 in favour of the Company prior to any disclosure. Employee shall provide the Company with such confidentiality undertaking prior to any disclosure of Confidential Information as contemplated in this Article 8. 
+ 
+ ARTICLE 9 – CONFIDENTIAL INFORMATION 
+ 
+ 9.1 Background and Relationship of Parties: The P arties hereto acknowledge (for all purposes including, without limiting Article 8 and 9) that the Company and any Affiliate have been and will be engaged in a continuous program of acquisition and development respecting their businesses, present and future, and that in connection with the Employee’s employment by the Company, the Company may make available to Employee Confidential Information and that Employee’s employment hereunder creates a relationship of confidence and trust between Employee, the Company and any Affiliate with respect to all Confidential Information. 
+ 
+ 9.2 Obligations: The Employee recognizes that during his employment with the Company he may gain access to Confidential Information which is of substantial value to the Company and which gives the Company an advantage over its competitors. The Employee hereby agrees, at all times during his employment hereunder after the termination of such employment, to take the following steps to preserve the confidential and proprietary nature of Confidential Information: 
+ 
+ (a) The Employee sha ll hold in strictest confidence and shal l not use any Confidential Information or disclose any Confidential Information to any Person without the prior written authorization of the Company or as may be required by A pplicable L aw or the order of any competent court or governmental entity. The Employee hereby acknowledges and understands that he is not allowed to sell, license or otherwise exploit, in whole or in part, any Confidential Information; 
+ 
+ (b) The Employee sha ll take reasonable precautions to prevent the inadvertent or accidental disclosure of Confidential Information; 
+ 
+ (c) The Employee sha ll not remove any Confidential Information from Company’s premises or make copies of such materials except as may be necessary to perform his duties and responsibilities hereunder and subject to approval of the Company ; 
+ 
+ The Employee sha ll promptly return to Company, in proper condition, all Confidential Information and copies thereof, any records, documents, notes, memoranda, manuals, drawings, computer programs, diskettes, computer tapes and software that contains any Confidential Information and other materials and property of any nature belonging to the Company or any Affiliate at any time upon the request of the Company, in any event and without such request, prior to the last day of Employee’s employment hereunder. The Employee shal l not retain , make copies of or remove any Confidential Information or any copies thereof, any records, documents, notes, memoranda, manuals, drawings, computer programs, diskettes, computer tapes, and software that contains any Confidential Information or other materials and property of any nature belonging to the Company or any Affiliate on or after the last day of Employee’s employment hereunder for any reason whatsoever . 
+ 
+ The Employee hereby gives consent to the Company to monitor and record the exchange of any communications, information or data through the Company's electronic systems. The Employee understands and acknowledges that the aforesaid consent is necessary for the purpose of ensuring compliance with Company policies, as may be amended from time to time, misuse of Company facilities, breach of confidentiality or any other term of this Agreement . 
+ 
+ The Employee shall be advised from time to time in writing of the extent and scope of her/his authority in dealing with third parties and shall work within the scope of such authority. In the absence of any specific express written authority, the Employee shall not make any binding commitment on behalf of the Company. 
+ 
+ 9.3 Third party Proprietary Information: The Employee hereby agrees that, for so long as the Employee is employed by the Company, he shal l not improperly use or disclose any proprietary information or trade secrets of any third party including a former employer or other Person and sha ll not bring onto the Company’s premises any unpublished document or proprietary information belonging to such employer or Person unless consented to in writing by such employer or Person. The Employee shall hold the Company and its Affiliate indemnified against any claims that arise as a result of unauthorized use of propriety information of a third party. 
+ 
+ ARTICLE 10 – NON-SOLICITATION; NON-COMPETITION 
+ 
+ 10.1 Non-Solicitation: The Employee agrees that, during the term of his employment hereunder and for a period of one ( 1 ) year after the last day of Employee’s employment, the Employee sha ll not, singly, jointly, or as a partner, member, contractor, employee or agent of any partnership or as an officer, director, employee, agent, contractor, shareholder or investor in any other Person or in any other capacity, directly or indirectly: 
+ 
+ (a) recruit, solicit, entice, persuade or induce any employee, consultant, agent, independent contractor of the Company or any Affiliate or any other Person to terminate his or her employment or relationship with the Company or hire any such employee, consultant, agent or independent contractor or Person or authorize or assist in the taking of any such actions by any third party; 
+ 
+ solicit or influence or attempt to influence any client, customer or other Person to direct his or its business (as conducted during the term of Employee’s employment hereunder) to any Person in competition with the business of the Company or any Affiliate ; 
+ 
+ give advice or supply or provide any goods, services or information to any p erson, client, customer, contractor, agent, consultant of the Company or any Affiliates, including any prospective supplier, customer contractor or client of the Company or A ffiliates of which the Employee has knowledge, idea or awareness due to his employment; or 
+ 
+ take any action which is prejudicial to the name, business and/or trading position of the Company or A ffiliates which would or could cause harm or damage to the Company or any employee of the Company. 
+ 
+ 
+ 10.2 Non-Competition: During the period of Employee’s employment hereunder and for one ( 1 ) year after the last day of Employee’s employment, Employee shall not in [ ● geographic area ] : 
+ 
+ carry on any business or activity, whether as principal, officer, director, partner, employee, consultant, adviser, in any Person that is engaged in any business which is in competition with the Company or any Affiliate; or 
+ 
+ engage in, or own or control any interest in (except as a passive investor in less than one percent (1%) of the shareholding in a company) any Person that is engaged in Pakistan or any geographic area in any business which is in competition with the Company or any Affiliate. 
+ 
+ In this regard, the Employee specifically acknowledges and agrees that the aforementioned restrictive covenants shall apply in respect of the entities listed in the Employment Manual (including the subsidiaries, associates, affiliates and any entities in which the same have any direct or indirect legal or beneficial interest or with which the listed entities have any strategic business relationships). 
+ 
+ 
+ 10.3 Injunctive Relief and Other Remedies: The Employee hereby acknowledges that the restrictions contained in Articles 9 and 10 of this Agreement are necessary for the protection of the business and goodwill of the Company and Affiliate and are reasonable for such purpose. The Employee hereby agrees that any breach of Articles 9 and/or 10 by Employee will cause irreparable damage to the Company and Affiliate and that in the event of such breach, the Company and Affiliate shall be entitled, in addition to the Indemnity in Article 10.4, to any other remedies available to the Company and Affiliate under this Agreement and at law, to equitable relief, including injunctive relief, and to payment by him of all costs (including, without limitation, reasonable legal costs) incurred by the Company and Affiliate in enforcing the provisions of this Agreement. 
+ 
+ Indemnity : 
+ 
+ In the event of breach or violation of Articles 10.1 and 10.2 of the Agreement, the Employee undertakes and hereby agrees to indemnify the Company, for a minimum amount of PKR [●] (Rupees [●]) (the “Indemnity Amount”) . For payment of the Indemnity Amount, the Employee shall execute a suitable instrument(s) in favor of the Company. 
+ 
+ 
+ The provision(s) of the aforesaid instrument(s) and indemnification by the Employee is without prejudice to the rights of the Company under any other provisions of this Agreement. Further, the Indemnity Amount is not by way of a cap and in case of any losses , damages and costs incurred or suffered by the Company in excess of the Indemnity Amount , t he Employee shall remain liable for any such losses , damages and/or costs and the Company shall be entitled to recover the same through all available means available under the law . 
+ 
+ The Company shall also be entitled, and the Employee authorizes the Company, to recover and set off the Indemnity Amount from any amounts due to the Employee including end of service benefits. 
+ 
+ 
+ ARTICLE 11 – ENFORCEMENT 
+ 
+ 11.1 The Employee acknowledges and agrees that all restrictions contained in this Agreement are reasonable and necessary to protect the business and interests of the Company and that any violation of any of these restrictions shall cause the Company substantial irreparable loss and injury. 
+ 
+ 11.2 The Employee agrees that a remedy at law for any breach of the covenants or other obligations under this Agreement would be inadequate and that the Company, in addition to any other remedies available, shall be entitled to obtain preliminary and permanent injunctive relief to secure specific performance of such covenants and to prevent a breach or contemplated or threatened breach of this Agreement without the necessity of proving actual damage and without the necessity of posting bond or security, which the Employee expressly waives. 
+ 
+ 11.3 The Employee shall provide the Company complete accounting of all proceeds and profits received by him as a result of or in connection with any breach of the terms of this Agreement and unless prohibited by law, the Company shall have the right to retain any amounts otherwise payable by the Company to him to satisfy any of his obligations as a result of a breach of this Agreement. 
+ 
+ 11.4 The Employee hereby agrees to indemnify and hold harmless the Company from and against any damages incurred by the Company as assessed by a court of competent jurisdiction and/or an arbitrator as a result of any breach of this Agreement by the Employee. 
+ 
+ 
+ ARTICLE 12- CONTINUING OBLIGATIONS 
+ 
+ 12.1 Notice to New Employer: In the event that the Employee leaves the Company, voluntarily or involuntarily, he shall inform any subsequent employer of his rights and obligations under this Agreement. The Employee further hereby authorizes the Company to notify his new employer of his rights and obligations under this Agreement. The foregoing consent shall be limited to the delivery by the Company to his new employer of a signed copy of this Agreement, and any written modifications to such Agreement. 
+ 
+ ARTICLE 13- INDEMNIFICATION AND LIMITED LIABILITY 
+ 
+ 13.1 Indemnity: Notwithstanding anything contained elsewhere in this Agreement, t he Employee agrees to protect, indemnify and hold the Company and its employees, representatives , assigns and Affiliates (collectively the “Indemnified Parties”) harmless and unaffected from and against all liabilities, damages, claims, demands, losses, costs, expenses, suits, actions or proceedings (including reasonable fees and disbursements of counsel) arising out of any act, error, omission, negligence or wilful misconduct of the Employee. 
+ 
+ 13.2 Limitation of Liability : In no event shall the Company be liable for any incidental, indirect, special, punitive, and consequential or other damages of any kind whatsoever under this Agreement. 
+ 
+ 14- ARTICLE MISCELLANEOUS 
+ 
+ 1 4 .1 Third-Party Beneficiary: The P arties hereto agree that the Company and any Affiliate are third-party beneficiaries as to the obligations imposed upon Employee under this Agreement and as to the rights and privileges to which the Company is entitled pursuant to this Agreement and that the Company and any Affiliate are entitled to all of the rights and privileges associated with such third-party-beneficiary status. 
+ 
+ 1 4 .2 Entire Agreement : This Agreement constitutes the entire agreement between the Company and Employee concerning the subject matter hereof and supersedes all previous offers, proposals, agreements and other written and oral communications in relation thereto. 
+ 
+ 1 4 .3 Amendment: This Agreement may be amended or modified only by the written mutual agreement of the parties hereto. No supplement, amendment or modification of this Agreement will be binding unless it is in writing and signed by both Employee and a duly authorized officer of the Company. 
+ 
+ 1 4 .4 No Waiver: The failure of either party or any third-party beneficiary to enforce any rights hereunder or to insist upon strict compliance with any of the terms, covenants or conditions hereof shall not be deemed a waiver of such rights, terms, covenants and conditions, unless such waiver is an express written waiver which has been signed by the waiving party. Waiver of one breach shall not be deemed a waiver of any other breach of the same or any other provision hereof. 
+ 
+ 1 4 .5 Binding Effect: This Agreement is binding upon Employee and the heirs, executors, assigns and administrators of Employee or Employee’s estate and property and will inure to the benefit of the Company and any Affiliate and their respective successors and assigns in accordance with the terms hereof. 
+ 
+ 1 4 .6 Right of Offset: To the extent not prohibited by applicable law and in addition to any other remedy, the Company has the right but not the obligation to offset any amount that Employee owes the Company under this Agreement against any amounts due to Employee by the Company. 
+ 
+ 1 4 .7 Notices: Any notice, consent, or other communication required or permitted hereunder shall be in writing and to be given by personal delivery with receipt evidenced in writing, or by facsimile or electronic mail, or by courier at the addresses of the Parties given in the preamble of the Agreement . 
+ . 
+ 1 4 .8 Severability: In case any one or more of the provisions contained in this Agreement shall for any reason be held to be invalid, illegal or unenforceable in any respect, such invalidity, illegality or unenforceability shall not affect any other provision of this Agreement, but this Agreement shall be construed as if such invalid, illegal or unenforceable provision had never been contained herein and there shall be deemed substituted for such invalid, illegal or unenforceable provision such other provision as will most nearly accomplish the intent of the parties to the extent permitted by the applicable law. 
+ 
+ 1 4 .9 Counterparts: This Agreement may be signed in two or more counterparts, each of which shall be deemed an original but all of which shall together constitute one in the same Agreement. 
+ 
+ 1 4 .10 Governing Law: This Agreement, including all matters of construction, validity and performance shall be governed by and construed in accordance with the laws of Pakistan . Any dispute that arises under or relates to this Agreement shall be resolved in the courts of Pakistan and the P arties expressly waive any right they may otherwise have to cause any such action or proceeding to be brought elsewhere. 
+ 
+ 1 4 .11 Employee’s Acknowledgment: The Employee hereby acknowledges and agrees that he has read this Agreement carefully and understands its terms and conditions and hereby confirms that his signature of this Agreement is an acknowledgment and acceptance of, and agreement with, such terms and conditions. 
+ 
+ 14.12 Publication: The Employee agrees to not submit any writing for publication or deliver any speech that contains any information relating to the business of the Company, unless he receives advance written clearance from an authorized representative of the Company. 
+ 
+ 14.13 Employment Manual : The Company reserves the right, on an on-going basis, to make rules and policies regarding conditions of employment and/or to amend them. Such rules and policies shall be notified in the Employment Manual maintained by the Company and shall be made accessible to all employees. The Employment Manual shall form an integral part of this Agreement and any revisions and/or updates therein shall apply to this Agreement. 
+ 
+ 
+ IN WITNESS WHEREOF , the Company (by its duly authorized officer) and Employee , having fully understood the conditions set therein, of their own free will, have each caused this Agreement to be duly executed as of the day and year first above written. 
+ 
+ ONLINE CLASSIFIEDS PAKISTAN (SMC-PRIVATE) LIMITED 
+ 
+ 
+ 
+ 
+ through : ___________________________ 
+ Name: 
+ Title: 
+ 
+ 
+ 
+ EMPLOYEE NAME IN CAPITAL 
+ 
+ 
+ 
+ By : _ _______________________ 
+ Date : ________________________ 
+ 
+ 
+ 
+ 
+ Witnesses: 
+ 1. ________________________________ 
+ 
+ Name: ____________________________ 
+ 
+ Address:___________________________ 
+ 
+ __________________________________ 
+ 
+ 2. ________________________________ 
+ 
+ Name: ____________________________ 
+ 
+ Address:___________________________ 
+ 
+ __________________________________

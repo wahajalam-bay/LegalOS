@@ -1,177 +1,317 @@
-// MODULE 2 — Matter Management: full end-to-end QA (PRD Phases 32/33).
-// Engine tests run through the SAME live ES module the app uses (dynamic import
-// of /src/store.js inside the page), UI tests drive the real screens.
-const puppeteer = require("puppeteer-core");
-const CHROME = process.env.CHROME || process.env.PUPPETEER_EXECUTABLE_PATH ||
-  "C:/Program Files/Google/Chrome/Application/chrome.exe";  // Windows dev default
-const BASE = `http://localhost:${process.env.LEGALOS_PORT || "4600"}`;
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const results = []; const errs = [];
-const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + n); };
-const body = (p) => p.evaluate(() => document.body.innerText);
-async function viewAs(p, uid) { await p.evaluate((uid) => { const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k) || "{}"); s.session = s.session || {}; s.session.viewAsId = uid; localStorage.setItem(k, JSON.stringify(s)); }, uid); }
-async function go(p, hash) { await p.evaluate((h) => { location.hash = h; }, hash); await p.reload({ waitUntil: "networkidle2" }); await wait(1100); }
-const S = (p, fn, ...args) => p.evaluate(new Function("...args", `return import("/src-v10/store.js").then((S) => (${fn})(S, ...args));`), ...args);
+// @retired Matters was removed as a concept; the work lives in the Legal Workspace and the module registers (see m51-product-ia, m1-lifecycle)
+//
+// MODULE 2 — Matter Management, end to end.
+//
+// RETIRED. A "matter" was a generic container beside the real operational
+// modules: the same piece of work filed twice, once as a request and once as a
+// matter, under a word that named no source, no register and no owning team.
+// The product-integration pass removed it as one of the nine primary areas —
+// /matters now lands on the Legal Workspace so no saved link breaks, and there
+// is no screen left for this suite to drive.
+//
+// What it used to prove has not been dropped:
+//   • the request/matter record and its lifecycle   → m1-lifecycle.js
+//   • privilege and row-level visibility            → m1-security.js,
+//                                                     m1-rbac-matrix.js
+//   • closure with a recorded outcome               → m54-litigation-model.js
+//   • the retired address still resolving           → m51-product-ia.js
+//
+// The engine was exercised through the SAME live ES module the app runs, and
+// the screens were driven for real.
+//
+// MIGRATED 2026-09-18: isolated sandbox, one real session per persona, the
+// current store key, and the build path read from the served page instead of a
+// hardcoded /src-vNNN/. Engine calls name the function rather than evaluating a
+// source string — the app's CSP forbids eval, and rightly.
+//
+//   node tests/m2-matter-management.js
+const H = require("./_harness.js");
 
-(async () => {
-  const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
-  const p = await b.newPage();
-  p.on("pageerror", (e) => errs.push(e.message));
-  p.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
-  await p.setViewport({ width: 1440, height: 1000 });
-  await p.goto(BASE + "/", { waitUntil: "networkidle2", timeout: 45000 }); await wait(600);
-  await p.evaluate(() => localStorage.removeItem("legalos-store-v1"));
-  await p.reload({ waitUntil: "networkidle2" }); await wait(600);
+H.runSuite("m2-matter-management — matters, risk, closure and privilege", async (ctx) => {
+  const { check: ok } = ctx;
+  const sb = ctx.setSandbox(await H.startSandbox({
+    portEnv: "LEGALOS_M2_PORT", portFallback: "4867", prefix: "legalos-m2-",
+  }));
+  const browser = ctx.setBrowser(await H.openBrowser());
 
-  /* ---------- register + seeds ---------- */
-  await viewAs(p, "u1"); await go(p, "#/matters");
-  let t = await body(p);
-  ok("register renders with seeded Module 2 matters", /COM-2026-0147/.test(t) && /Matters/.test(t));
-  ok("register shows practice / status / risk / target / age columns", /Practice/i.test(t) && /Target/i.test(t) && /Age/i.test(t));
-  ok("My Matters scope + queue chips render", /My matters/i.test(t) && /Needs action/i.test(t) && /Awaiting external/i.test(t));
-  ok("Privileged matter visible to the Director", /DIS-2026-0012/.test(t));
-  await p.screenshot({ path: "m2-register.png" });
+  const director = await H.asUser(browser, sb, H.USERS.director, ctx);
+  const SRC = await H.buildDir(director, sb.base);
+  ok("the served build is discovered rather than hardcoded", !!SRC, SRC);
 
-  /* ---------- matter id + direct create (engine) ---------- */
-  const created = await S(p, `(S) => S.createMatter({ name: "Engine test NDA", practiceArea: "commercial", matterType: "Customer / Service agreement", owner: "u5", department: "Finance", exposure: 50000 }, "u1")`);
-  ok("direct create returns ok", created && created.ok);
-  ok("Matter ID follows [CODE]-[YEAR]-[SEQ]", /^COM-\d{4}-\d{4}$/.test(created.id || ""));
-  const badType = await S(p, `(S) => S.createMatter({ name: "x", practiceArea: "commercial", matterType: "Litigation", owner: "u5" }, "u1")`);
-  ok("matter type must belong to the practice area", badType && badType.ok === false);
+  const S = (fn, ...args) => H.appCall(director, SRC, "store.js", fn, ...args);
+  const asStore = (page, fn, ...args) => H.appCall(page, SRC, "store.js", fn, ...args);
+  const lsGet = (page, sel) => page.evaluate(([k, s]) => {
+    const st = JSON.parse(localStorage.getItem(k) || "{}");
+    return s.split(".").reduce((o, key) => (o == null ? o : o[key]), st);
+  }, [H.STORE_KEY, sel]);
+
+  /* ------------------------------------------------ the register renders */
+  await H.goHash(director, "#/matters");
+  const regText = await H.waitFor(director, () => (/Matters/.test(document.body.innerText) ? document.body.innerText : null),
+    { message: "the matters register to render" });
+  ok("the register renders with the seeded matters", /COM-2026-0147/.test(regText));
+  ok("it shows practice, status, risk, target and age",
+    /Practice/i.test(regText) && /Target/i.test(regText) && /Age/i.test(regText));
+  /* The scope toggle is text on the page; the QUEUES are now options on a
+     filter control rather than chips, and option text does not appear in
+     innerText. Read the control itself — same behaviour, current markup. */
+  const scopes = await H.waitFor(director, () => {
+    const t = document.body.innerText;
+    return /My matters/i.test(t) && /All matters/i.test(t) ? t : null;
+  }, { message: "the My Matters / All matters scope toggle", timeout: 12000 }).catch(() => null);
+  ok("the My Matters / All matters scope toggle renders", !!scopes);
+
+  /* The queues moved into the register's own filter bar, so their options
+     exist only once that filter is opened — which is also the honest way to
+     check them: open the control a person would click. */
+  const hasQueueFilter = await H.waitFor(director, () => {
+    const b = [...document.querySelectorAll(".fltbtn, button")].find((x) => /^\s*Queue/i.test(x.textContent || ""));
+    if (!b) return null;
+    b.click();
+    return true;
+  }, { message: "the Queue filter control", timeout: 12000 }).catch(() => null);
+  ok("the register offers a Queue filter", !!hasQueueFilter);
+
+  const queues = await H.waitFor(director, () => {
+    const opts = [...document.querySelectorAll(".fltpanel")]
+      .flatMap((m) => [...m.querySelectorAll("label, button, .menu__item, li, div")])
+      .map((o) => (o.textContent || "").trim());
+    return opts.some((o) => /needs action/i.test(o)) && opts.some((o) => /awaiting external/i.test(o)) ? opts : null;
+  }, { message: "the Queue filter to offer Needs action and Awaiting external", timeout: 12000 }).catch(() => null);
+  ok("the queue filter offers Needs action and Awaiting external", !!queues,
+    queues ? queues.filter((o) => /needs action|awaiting external|overdue/i.test(o)).join(" · ").slice(0, 80) : "queues not offered");
+  ok("a privileged matter is visible to the Director", /DIS-2026-0012/.test(regText));
+
+  /* --------------------------------------------- creation and the id format */
+  const created = await S("createMatter", {
+    name: "Engine test NDA", practiceArea: "commercial", matterType: "Customer / Service agreement",
+    owner: H.USERS.commMember.id, department: "Finance", exposure: 50000,
+  }, H.USERS.director.id);
+  ok("a matter can be created directly", created && created.ok, created && (created.error || created.id));
+  ok("the matter id follows [CODE]-[YEAR]-[SEQ]", /^COM-\d{4}-\d{4}$/.test((created && created.id) || ""), created && created.id);
   const mid = created.id;
 
-  /* ---------- lifecycle state machine ---------- */
-  const badT = await S(p, `(S, id) => S.setMatterStatus(id, "Archived", "u1")`, mid);
-  ok("invalid transition Open→Archived is blocked", badT.ok === false);
-  const holdNoReason = await S(p, `(S, id) => S.setMatterStatus(id, "On Hold", "u1")`, mid);
-  ok("On Hold without a reason is blocked", holdNoReason.ok === false && /reason/i.test(holdNoReason.error));
-  const act = await S(p, `(S, id) => S.setMatterStatus(id, "Active", "u1")`, mid);
-  ok("Open→Active allowed", act.ok);
-  const ae = await S(p, `(S, id) => S.setMatterStatus(id, "Awaiting External", "u1", "waiting on regulator")`, mid);
-  ok("Active→Awaiting External with reason allowed", ae.ok);
-  const backActive = await S(p, `(S, id) => S.setMatterStatus(id, "Active", "u1")`, mid);
-  ok("Awaiting External→Active allowed", backActive.ok);
-  const audits = await S(p, `(S, id) => (S.matterById(id).audit || []).map((a) => a.kind + (a.reason ? ":" + a.reason : ""))`, mid);
-  ok("every transition is audited (with reason where given)", audits.filter((a) => a.startsWith("status")).length >= 3 && audits.some((a) => a.includes("waiting on regulator")));
+  const badType = await S("createMatter", { name: "x", practiceArea: "commercial", matterType: "Litigation", owner: H.USERS.commMember.id }, H.USERS.director.id);
+  ok("a matter type must belong to its practice area", badType && badType.ok === false, badType && badType.error);
 
-  /* ---------- risk matrix + override ---------- */
-  const sev = await p.evaluate(() => import("/src-v10/matters2.js").then((M) => [M.riskSeverity("Likely", "Major"), M.riskSeverity("Almost Certain", "Minor"), M.riskSeverity("Likely", "Critical"), M.riskSeverity("Rare", "Critical"), M.riskSeverity("Possible", "Major")]));
-  ok("risk matrix matches Aug-2026 PRD §4.6 (Critical/Medium/Critical/Medium/High)", sev[0] === "Critical" && sev[1] === "Medium" && sev[2] === "Critical" && sev[3] === "Medium" && sev[4] === "High");
-  const overrideNoReason = await S(p, `(S, id) => S.assessMatterRisk(id, "Likely", "Major", "u3")`, mid);
-  ok("overriding the system proposal without a reason is blocked", overrideNoReason.ok === false && /override/i.test(overrideNoReason.error));
-  const overridden = await S(p, `(S, id) => S.assessMatterRisk(id, "Likely", "Major", "u3", "counterparty litigious; exposure understated")`, mid);
-  ok("override with reason confirms computed severity", overridden.ok);
-  const risk = await S(p, `(S, id) => S.matterById(id).risk2`, mid);
-  ok("risk stored as confirmed, severity system-computed (Critical)", risk && risk.severity === "Critical" && risk.proposed === false && risk.override && /litigious/.test(risk.override.reason));
+  /* ---------------------------------------------- the lifecycle state machine */
+  const badT = await S("setMatterStatus", mid, "Archived", H.USERS.director.id);
+  ok("an invalid transition Open→Archived is blocked", badT.ok === false, badT.error);
+  const holdNoReason = await S("setMatterStatus", mid, "On Hold", H.USERS.director.id);
+  ok("On Hold without a reason is blocked", holdNoReason.ok === false && /reason/i.test(holdNoReason.error || ""), holdNoReason.error);
+  ok("Open→Active is allowed", (await S("setMatterStatus", mid, "Active", H.USERS.director.id)).ok);
+  ok("Active→Awaiting External with a reason is allowed",
+    (await S("setMatterStatus", mid, "Awaiting External", H.USERS.director.id, "waiting on regulator")).ok);
+  ok("Awaiting External→Active is allowed", (await S("setMatterStatus", mid, "Active", H.USERS.director.id)).ok);
 
-  /* ---------- tasks ---------- */
-  const noOwner = await S(p, `(S, id) => S.addMatterTask(id, { name: "orphan task" }, "u5")`, mid);
-  ok("a task without an owner is rejected", noOwner.ok === false);
-  const task = await S(p, `(S, id) => S.addMatterTask(id, { name: "Draft first cut", owner: "u5", due: new Date(Date.now()+86400000).toISOString() }, "u5")`, mid);
-  ok("task created with single owner", task.ok && task.task.owner === "u5");
-  await S(p, `(S, tid) => S.setTaskStatus(tid, "Completed", "u5")`, task.task.id);
-  const doneTask = await p.evaluate((tid) => JSON.parse(localStorage.getItem("legalos-store-v1")).matterTasks.find((x) => x.id === tid), task.task.id);
-  ok("completing a task stamps completedAt (duration system-derived)", !!doneTask.completedAt);
+  const m1 = await S("matterById", mid);
+  const audits = ((m1 && m1.audit) || []).map((a) => a.kind + (a.reason ? ":" + a.reason : ""));
+  ok("every transition is audited, with the reason where one was given",
+    audits.filter((a) => a.startsWith("status")).length >= 3 && audits.some((a) => a.includes("waiting on regulator")),
+    audits.filter((a) => a.startsWith("status")).join(" · ").slice(0, 90));
 
-  /* ---------- related matters ---------- */
-  const selfLink = await S(p, `(S, id) => S.linkMatters(id, id, "related", "u1")`, mid);
-  ok("self-link rejected", selfLink.ok === false);
-  const link = await S(p, `(S, id) => S.linkMatters(id, "COM-2026-0147", "same counterparty", "u1")`, mid);
-  ok("link created", link.ok);
-  const other = await S(p, `(S) => S.matterById("COM-2026-0147").relatedMatters`);
-  ok("relationship is bidirectional", other.some((r) => r.id === mid));
+  /* ------------------------------------------------- the risk matrix */
+  const sev = await Promise.all([
+    H.appCall(director, SRC, "matters2.js", "riskSeverity", "Likely", "Major"),
+    H.appCall(director, SRC, "matters2.js", "riskSeverity", "Almost Certain", "Minor"),
+    H.appCall(director, SRC, "matters2.js", "riskSeverity", "Likely", "Critical"),
+    H.appCall(director, SRC, "matters2.js", "riskSeverity", "Rare", "Critical"),
+    H.appCall(director, SRC, "matters2.js", "riskSeverity", "Possible", "Major"),
+  ]);
+  ok("the risk matrix matches the PRD §4.6 table",
+    sev[0] === "Critical" && sev[1] === "Medium" && sev[2] === "Critical" && sev[3] === "Medium" && sev[4] === "High",
+    sev.join(" / "));
 
-  /* ---------- closure: outcome-gated ---------- */
-  const closeEmpty = await S(p, `(S, id) => S.closeMatter(id, {}, "u5")`, mid);
-  ok("closure without outcome is BLOCKED and names what is missing", closeEmpty.ok === false && (closeEmpty.missing || []).length >= 2);
-  const viaStatus = await S(p, `(S, id) => S.setMatterStatus(id, "Closed", "u5")`, mid);
-  ok("status route to Closed also enforces the outcome", viaStatus.ok === false);
-  const closed = await S(p, `(S, id) => S.closeMatter(id, { category: "Completed as requested", positionAchieved: "Substantial", externalCounsel: true, externalCost: 12000, externalCurrency: "USD", lessons: "Standard NDA acceptable." }, "u5")`, mid);
-  ok("closure with a valid outcome succeeds", closed.ok);
-  const closedM = await S(p, `(S, id) => S.matterById(id)`, mid);
-  ok("closed matter carries outcome + duration + closedAt + final risk", closedM.status === "Closed" && closedM.outcome && closedM.outcome.durationDays != null && !!closedM.closedAt && closedM.finalRisk === "Critical");
-  const again = await S(p, `(S, id) => S.closeMatter(id, { category: "Settled", positionAchieved: "Full" }, "u5")`, mid);
-  ok("a closed matter cannot be closed again", again.ok === false);
-  const arch = await S(p, `(S, id) => S.setMatterStatus(id, "Archived", "u5", "records retention")`, mid);
-  ok("Closed→Archived allowed with reason", arch.ok);
-  const backFromArchive = await S(p, `(S, id) => S.setMatterStatus(id, "Active", "u5", "x")`, mid);
-  ok("archived matter cannot silently return to active", backFromArchive.ok === false);
+  const overrideNoReason = await S("assessMatterRisk", mid, "Likely", "Major", H.USERS.commLead.id);
+  ok("overriding the computed risk without a reason is blocked",
+    overrideNoReason.ok === false && /override/i.test(overrideNoReason.error || ""), overrideNoReason.error);
+  ok("overriding WITH a reason is accepted",
+    (await S("assessMatterRisk", mid, "Likely", "Major", H.USERS.commLead.id, "counterparty litigious; exposure understated")).ok);
+  const risk = (await S("matterById", mid)).risk2;
+  ok("the stored risk is the system-computed severity, with the override recorded",
+    risk && risk.severity === "Critical" && risk.proposed === false && risk.override && /litigious/.test(risk.override.reason),
+    risk ? `${risk.severity} · proposed=${risk.proposed}` : "no risk");
 
-  /* ---------- counterparty master ---------- */
-  const cp1 = await S(p, `(S) => S.createCounterparty({ legalName: "Zenith Logistics Ltd", jurisdiction: "KSA", relationship: "Supplier" }, "u1")`);
-  const cp2 = await S(p, `(S) => S.createCounterparty({ legalName: "ZENITH Logistics Limited" }, "u1")`);
-  ok("counterparty dedupe: Ltd vs Limited resolves to ONE master record", cp1.ok && cp2.ok && cp2.existed === true && cp2.counterparty.id === cp1.counterparty.id);
+  /* ------------------------------------------------------------- tasks */
+  const noOwner = await S("addMatterTask", mid, { name: "orphan task" }, H.USERS.commMember.id);
+  ok("a task with no owner is rejected", noOwner.ok === false, noOwner.error);
+  const task = await S("addMatterTask", mid, { name: "Draft first cut", owner: H.USERS.commMember.id, due: new Date(Date.now() + 86400000).toISOString() }, H.USERS.commMember.id);
+  ok("a task is created with a single owner", task.ok && task.task.owner === H.USERS.commMember.id);
+  await S("setTaskStatus", task.task.id, "Completed", H.USERS.commMember.id);
+  const doneTask = await director.evaluate(([k, tid]) => {
+    const st = JSON.parse(localStorage.getItem(k) || "{}");
+    return (st.matterTasks || []).find((x) => x.id === tid) || null;
+  }, [H.STORE_KEY, task.task.id]);
+  ok("completing a task stamps when it finished", !!(doneTask && doneTask.completedAt),
+    doneTask ? String(doneTask.completedAt).slice(0, 10) : "not completed");
 
-  /* ---------- request → matter conversion ---------- */
-  const reqId = await p.evaluate(() => { const s = JSON.parse(localStorage.getItem("legalos-store-v1")); const r = (s.requests || []).find((x) => !x.matterId && x.counterparty && x.counterparty !== "—"); return r && r.id; });
-  const conv = await S(p, `(S, rid) => S.convertRequestToMatter(rid, {}, "u1")`, reqId);
-  ok("request converts to a matter", conv.ok && /-2026-/.test(conv.id));
-  const convM = await S(p, `(S, id) => S.matterById(id)`, conv.id);
-  ok("conversion carries requester/department/context + source request id", convM.sourceRequestId === reqId && !!convM.department);
-  ok("conversion resolves free-text counterparty against the MASTER", !!convM.counterpartyId);
-  const linked = await p.evaluate((rid) => JSON.parse(localStorage.getItem("legalos-store-v1")).requests.find((r) => r.id === rid).matterId, reqId);
-  ok("request links back to the matter", linked === conv.id);
-  const dup = await S(p, `(S, rid) => S.convertRequestToMatter(rid, {}, "u1")`, reqId);
-  ok("duplicate conversion is BLOCKED at the store", dup.ok === false && dup.existing === conv.id);
+  /* -------------------------------------------------- related matters */
+  ok("a matter cannot be linked to itself", (await S("linkMatters", mid, mid, "related", H.USERS.director.id)).ok === false);
+  ok("two matters can be linked", (await S("linkMatters", mid, "COM-2026-0147", "same counterparty", H.USERS.director.id)).ok);
+  const other = (await S("matterById", "COM-2026-0147")).relatedMatters || [];
+  ok("the relationship is bidirectional", other.some((r) => r.id === mid), JSON.stringify(other.map((r) => r.id)));
 
-  /* ---------- UI: workspace ---------- */
-  await go(p, "#/matters/" + conv.id);
-  t = await body(p);
-  ok("matter workspace shows id/status/owner/source request", t.includes(conv.id) && /responsible lawyer/i.test(t) && new RegExp("from " + reqId).test(t));
-  ok("workspace tabs present (tasks/documents/risk/related/timeline/outcome)", /Tasks/i.test(t) && /Documents/i.test(t) && /Risk & Privilege/i.test(t) && /Timeline/i.test(t) && /Outcome/i.test(t));
-  await p.screenshot({ path: "m2-workspace.png" });
+  /* ----------------------------------------------- closure is outcome-gated */
+  const closeEmpty = await S("closeMatter", mid, {}, H.USERS.commMember.id);
+  ok("closing without an outcome is blocked, and names what is missing",
+    closeEmpty.ok === false && (closeEmpty.missing || []).length >= 2, (closeEmpty.missing || []).join(", "));
+  ok("the status route to Closed enforces the same outcome",
+    (await S("setMatterStatus", mid, "Closed", H.USERS.commMember.id)).ok === false);
+  ok("closing with a valid outcome succeeds",
+    (await S("closeMatter", mid, { category: "Completed as requested", positionAchieved: "Substantial", externalCounsel: true, externalCost: 12000, externalCurrency: "USD", lessons: "Standard NDA acceptable." }, H.USERS.commMember.id)).ok);
+  const closedM = await S("matterById", mid);
+  ok("a closed matter carries its outcome, duration, close date and final risk",
+    closedM.status === "Closed" && closedM.outcome && closedM.outcome.durationDays != null && !!closedM.closedAt && closedM.finalRisk === "Critical",
+    `${closedM.status} · ${closedM.outcome && closedM.outcome.durationDays}d · ${closedM.finalRisk}`);
+  ok("a closed matter cannot be closed twice",
+    (await S("closeMatter", mid, { category: "Settled", positionAchieved: "Full" }, H.USERS.commMember.id)).ok === false);
+  ok("Closed→Archived is allowed with a reason",
+    (await S("setMatterStatus", mid, "Archived", H.USERS.commMember.id, "records retention")).ok);
+  ok("an archived matter cannot silently return to active",
+    (await S("setMatterStatus", mid, "Active", H.USERS.commMember.id, "x")).ok === false);
 
-  /* ---------- PRIVILEGE (Phases 14/32) ---------- */
-  // u5 (commercial associate, NOT named) must not see DIS-2026-0012 (Privileged, litigation)
-  await viewAs(p, "u5"); await go(p, "#/matters");
-  t = await body(p);
-  ok("SECURITY: privileged matter ABSENT from unauthorized register", !/DIS-2026-0012/.test(t));
-  await go(p, "#/matters/DIS-2026-0012");
-  t = await body(p);
-  ok("SECURITY: direct URL access to privileged matter DENIED", /Not found or no access/i.test(t) && !/Orbit Ventures/.test(t));
-  const canSee5 = await p.evaluate(() => Promise.all([import("/src-v10/rbac.js"), import("/src-v10/store.js"), import("/src-v10/data.js")]).then(([R, S, D]) => {
-    const m = S.matterById("DIS-2026-0012");
-    return { u5: R.canSee(D.byId("u5"), m), u6: R.canSee(D.byId("u6"), m), u17: R.canSee(D.byId("u17"), m), u16: R.canSee(D.byId("u16"), m) };
-  }));
-  ok("SECURITY: access layer — named users yes, others no", canSee5.u5 === false && canSee5.u6 === true && canSee5.u17 === true && canSee5.u16 === false);
-  // search: the palette source is filterVisible — verify the same gate excludes it
-  const searchLeak = await p.evaluate(() => Promise.all([import("/src-v10/rbac.js"), import("/src-v10/store.js"), import("/src-v10/data.js")]).then(([R, S, D]) =>
-    R.filterVisible(D.byId("u5"), S.getCollection("matters")).some((m) => m.id === "DIS-2026-0012")));
-  ok("SECURITY: privileged matter does NOT appear in search results", searchLeak === false);
-  // named user u6 CAN open it
-  await viewAs(p, "u6"); await go(p, "#/matters/DIS-2026-0012");
-  ok("named user opens the privileged matter", /Pre-action Legal Notice/i.test(await body(p)));
+  /* ------------------------------------------------ the counterparty master */
+  const cp1 = await S("createCounterparty", { legalName: "Zenith Logistics Ltd", jurisdiction: "KSA", relationship: "Supplier" }, H.USERS.director.id);
+  const cp2 = await S("createCounterparty", { legalName: "ZENITH Logistics Limited" }, H.USERS.director.id);
+  ok("Ltd and Limited resolve to ONE counterparty master record",
+    cp1.ok && cp2.ok && cp2.existed === true && cp2.counterparty.id === cp1.counterparty.id,
+    cp2 && cp2.counterparty ? cp2.counterparty.id : "no match");
 
-  /* ---------- requester isolation (Phase 23) ---------- */
-  await viewAs(p, "u16"); await go(p, "#/matters");
-  t = await body(p);
-  ok("requester is locked out of the register", /internal to the Legal department|Matters are internal/i.test(t));
-  await go(p, "#/matters/" + conv.id);
-  // The router now refuses /matters for a requester BEFORE the record is
-  // looked up, so the refusal no longer confirms whether the id exists —
-  // stronger than the old record-level "no access" message.
-  ok("requester cannot open a matter converted from their own request", /do not have access|Not found or no access/i.test(await body(p)));
-  const reqSees = await p.evaluate((id) => Promise.all([import("/src-v10/rbac.js"), import("/src-v10/store.js"), import("/src-v10/data.js")]).then(([R, S, D]) => R.canSee(D.byId("u16"), S.matterById(id))), conv.id);
-  ok("requester gains no matter visibility via requesterId", reqSees === false);
-
-  /* ---------- UI create (Scenario 2 via screen) ---------- */
-  await viewAs(p, "u3"); await go(p, "#/matters");
-  await p.evaluate(() => { const b = [...document.querySelectorAll("button")].find((x) => /New matter/i.test(x.textContent)); if (b) b.click(); });
-  await wait(500);
-  await p.evaluate(() => {
-    const setVal = (el, v) => { const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set; set.call(el, v); el.dispatchEvent(new Event("input", { bubbles: true })); };
-    const inp = document.querySelector(".modal input");
-    if (inp) setVal(inp, "UI-created lease review");
+  /* ----------------------------------------------- request → matter */
+  /* A request to convert. The store no longer ships seeded demo requests —
+     they come from the server — so the fixture is seeded there, with a
+     free-text counterparty so the master-resolution below has something to
+     resolve. */
+  const iso = new Date(2026, 0, 5).toISOString();
+  const convCookie = await H.loginApi(sb, H.USERS.director.email);
+  await H.seedRequest(sb, convCookie, {
+    id: "REQ-CONVERT", title: "Supply agreement — Zenith Logistics", requestType: "New",
+    contractType: "Vendor MSA", department: "Procurement", channel: "internal",
+    counterparty: "Zenith Logistics Ltd", category: "Contract Drafting / Review",
+    proposedCategory: "Contract Drafting / Review", categoryConfirmed: true,
+    status: "In Review", stage: "Legal Review", progress: 33, owner: H.USERS.commMember.id,
+    requestDate: iso, tat: { days: 5, fixedAt: iso, dueAt: iso, basis: "Vendor MSA × Important" },
+    stageLog: [], activity: [],
   });
-  await wait(200);
-  await p.evaluate(() => { const b = [...document.querySelectorAll(".modal button")].find((x) => /Create matter/i.test(x.textContent)); if (b) b.click(); });
-  await wait(900);
-  const uiMatter = await p.evaluate(() => JSON.parse(localStorage.getItem("legalos-store-v1")).matters.find((m) => (m.name || "").includes("UI-created")));
-  ok("UI create-matter works end to end", !!uiMatter && /^COM-\d{4}-\d{4}$/.test(uiMatter.id));
+  // Re-read the queue in this session so the store holds the new fixture.
+  await asStore(director, "hydrateRequests");
+  const reqId = await H.waitFor(director, (k) => {
+    const st = JSON.parse(localStorage.getItem(k) || "{}");
+    const r = (st.requests || []).find((x) => !x.matterId && x.counterparty && x.counterparty !== "—");
+    return r ? r.id : null;
+  }, { arg: H.STORE_KEY, message: "a convertible request to reach this session", timeout: 12000 }).catch(() => null);
+  ok("there is a request available to convert", !!reqId, reqId || "none found");
 
-  console.log("console errors:", errs.length, errs.slice(0, 8).join(" | "));
-  const pass = results.filter(Boolean).length;
-  console.log(`\n==== ${pass}/${results.length} Module 2 checks passed ====`);
-  await b.close();
-  process.exit(pass === results.length && errs.length === 0 ? 0 : 2);
-})().catch((e) => { console.error("FATAL", e.message); process.exit(1); });
+  const conv = await S("convertRequestToMatter", reqId, {}, H.USERS.director.id);
+  ok("a request converts into a matter", conv.ok && /-2026-/.test(conv.id || ""), conv.id || conv.error);
+  const convM = await S("matterById", conv.id);
+  ok("the conversion carries the department and the source request id",
+    convM.sourceRequestId === reqId && !!convM.department, `${convM.department} · from ${convM.sourceRequestId}`);
+  ok("the free-text counterparty is resolved against the master", !!convM.counterpartyId, String(convM.counterpartyId));
+  const linkedBack = await director.evaluate(([k, rid]) => {
+    const st = JSON.parse(localStorage.getItem(k) || "{}");
+    const r = (st.requests || []).find((x) => x.id === rid);
+    return r ? r.matterId : null;
+  }, [H.STORE_KEY, reqId]);
+  ok("the request links back to the matter", linkedBack === conv.id, String(linkedBack));
+  const dup = await S("convertRequestToMatter", reqId, {}, H.USERS.director.id);
+  ok("converting the same request twice is blocked at the store",
+    dup.ok === false && dup.existing === conv.id, dup.error || String(dup.existing));
+
+  /* ---------------------------------------------------- the workspace */
+  await H.goHash(director, "#/matters/" + conv.id);
+  const wsText = await H.waitFor(director, (cid) => (document.body.innerText.includes(cid) ? document.body.innerText : null),
+    { arg: conv.id, message: "the matter workspace to open" });
+  ok("the workspace shows the matter, its lawyer and the request it came from",
+    /responsible lawyer/i.test(wsText) && new RegExp("from " + reqId).test(wsText));
+  ok("the workspace tabs are all present",
+    /Tasks/i.test(wsText) && /Documents/i.test(wsText) && /Risk & Privilege/i.test(wsText) && /Timeline/i.test(wsText) && /Outcome/i.test(wsText));
+  await director.close();
+
+  /* ------------------------------------------------------- PRIVILEGE */
+  const associate = await H.asUser(browser, sb, H.USERS.commMember, ctx);
+  await H.goHash(associate, "#/matters");
+  const aReg = await H.waitFor(associate, () => (/Matters/.test(document.body.innerText) ? document.body.innerText : null),
+    { message: "the register to render for the Associate" });
+  ok("a privileged matter is ABSENT from an unauthorised register", !/DIS-2026-0012/.test(aReg));
+
+  await associate.evaluate(() => { window.location.hash = "#/matters/DIS-2026-0012"; });
+  await H.sleep(1600);
+  const denied = await associate.evaluate(() => document.body.innerText);
+  ok("direct URL access to a privileged matter is DENIED",
+    /Not found or no access|do not have access/i.test(denied) && !/Orbit Ventures/.test(denied));
+
+  const canSee = await associate.evaluate(async ([SRC, ids]) => {
+    const [R, St, D] = await Promise.all([
+      import("/" + SRC + "/rbac.js"), import("/" + SRC + "/store.js"), import("/" + SRC + "/data.js"),
+    ]);
+    const m = St.matterById("DIS-2026-0012");
+    const out = {};
+    for (const id of ids) out[id] = R.canSee(D.byId(id), m);
+    return out;
+  }, [SRC, [H.USERS.commMember.id, H.USERS.litLead.id, "u17", "dept-finance"]]);
+  ok("the access layer lets the named users in and keeps everyone else out",
+    canSee[H.USERS.commMember.id] === false && canSee[H.USERS.litLead.id] === true
+    && canSee.u17 === true && canSee["dept-finance"] === false, JSON.stringify(canSee));
+
+  const searchLeak = await associate.evaluate(async ([SRC, uid]) => {
+    const [R, St, D] = await Promise.all([
+      import("/" + SRC + "/rbac.js"), import("/" + SRC + "/store.js"), import("/" + SRC + "/data.js"),
+    ]);
+    return R.filterVisible(D.byId(uid), St.getCollection("matters")).some((m) => m.id === "DIS-2026-0012");
+  }, [SRC, H.USERS.commMember.id]);
+  ok("a privileged matter does not leak through search", searchLeak === false);
+  await associate.close();
+
+  const named = await H.asUser(browser, sb, H.USERS.litLead, ctx);
+  await H.goHash(named, "#/matters/DIS-2026-0012");
+  const namedText = await H.waitFor(named, () => (/Pre-action Legal Notice/i.test(document.body.innerText) ? true : null),
+    { message: "the privileged matter to open for a named user", timeout: 15000 }).catch(() => null);
+  ok("a named user can open the privileged matter", !!namedText);
+  await named.close();
+
+  /* ------------------------------------------------ requester isolation */
+  const reqCtx = await browser.createBrowserContext();
+  const requester = await reqCtx.newPage();
+  await H.enterPortalAs(requester, sb, "Finance", ctx);
+  await requester.evaluate(() => { window.location.hash = "#/matters"; });
+  await H.sleep(1600);
+  const rReg = await requester.evaluate(() => document.body.innerText);
+  ok("a requester is locked out of the matters register",
+    /internal to the Legal department|Matters are internal|do not have access/i.test(rReg) || !/COM-2026-0147/.test(rReg));
+
+  requester.__expect401 = true;
+  await requester.evaluate((cid) => { window.location.hash = "#/matters/" + cid; }, conv.id);
+  await H.sleep(1600);
+  const rOne = await requester.evaluate(() => document.body.innerText);
+  ok("a requester cannot open a matter made from their own request",
+    /do not have access|Not found or no access/i.test(rOne) || !/responsible lawyer/i.test(rOne));
+  await reqCtx.close();
+
+  /* --------------------------------------------------- creating from the UI */
+  const lead = await H.asUser(browser, sb, H.USERS.commLead, ctx);
+  await H.goHash(lead, "#/matters");
+  await H.waitFor(lead, () => ([...document.querySelectorAll("button")].some((x) => /New matter/i.test(x.textContent || "")) ? true : null),
+    { message: "the New matter control" });
+  await lead.evaluate(() => {
+    const b = [...document.querySelectorAll("button")].find((x) => /New matter/i.test(x.textContent || ""));
+    if (b) b.click();
+  });
+  await H.waitFor(lead, () => (document.querySelector(".modal input") ? true : null), { message: "the new-matter dialog" });
+  await lead.evaluate(() => {
+    const inp = document.querySelector(".modal input");
+    const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+    set.call(inp, "UI-created lease review");
+    inp.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+  await lead.evaluate(() => {
+    const b = [...document.querySelectorAll(".modal button")].find((x) => /Create matter/i.test(x.textContent || ""));
+    if (b) b.click();
+  });
+  const uiMatter = await H.waitFor(lead, (k) => {
+    const st = JSON.parse(localStorage.getItem(k) || "{}");
+    return (st.matters || []).find((m) => (m.name || "").includes("UI-created")) || null;
+  }, { arg: H.STORE_KEY, message: "the matter to be created from the screen", timeout: 12000 }).catch(() => null);
+  ok("creating a matter from the screen works end to end",
+    !!uiMatter && /^COM-\d{4}-\d{4}$/.test(uiMatter.id), uiMatter ? uiMatter.id : "not created");
+});

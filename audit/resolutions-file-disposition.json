@@ -1,0 +1,20 @@
+{
+  "documentFiles": 837,
+  "disposed": 837,
+  "withoutDisposition": 0,
+  "undisposed": [],
+  "claimedByAnotherFamily": [
+    {
+      "fileId": "1KOQSk25NdAQQe6k7IBCaL1L-KchCrSEw",
+      "name": "Novation & Renewal of NN 25 to 27_1 (3).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Medallion (Private) Limited_Resolutions & Authorizations (1)",
+      "claims": [
+        {
+          "family": "contracts",
+          "recordId": "CTR-0T5MGEA",
+          "via": "filename"
+        }
+      ]
+    }
+  ]
+}

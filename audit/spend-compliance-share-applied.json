@@ -1,0 +1,45 @@
+{
+ "policyId": "SPEND-COMPLIANCE-SHARE-V1",
+ "reason": "Operational Spend agreement used by both Commercial and Compliance",
+ "approvedAt": "2026-09-22T18:35:37.934Z",
+ "approvedByUserId": "u1",
+ "approvedBy": "maryam.haq@zameen.com",
+ "approvedByDisplay": "Maryam Haq",
+ "approvedByRole": "superAdmin",
+ "approvedLinks": 297,
+ "approvedDocuments": 295,
+ "shared": 295,
+ "alreadyShared": 0,
+ "denyConflict": 0,
+ "notScoped": 0,
+ "denyConflicts": [],
+ "missing": [],
+ "diff": {
+  "widened": {
+   "commercial": 0,
+   "compliance": 295,
+   "litigation": 0,
+   "requester": 0
+  },
+  "narrowed": {
+   "commercial": 0,
+   "compliance": 0,
+   "litigation": 0,
+   "requester": 0
+  },
+  "unscopedAfter": 0,
+  "matchesPolicy": true
+ },
+ "applied": true,
+ "effectiveDocumentsShared": 295,
+ "reruns": [
+  {
+   "at": "2026-09-22T18:35:47.754Z",
+   "by": "maryam.haq@zameen.com",
+   "shared": 0,
+   "alreadyShared": 295,
+   "denyConflict": 0,
+   "note": "idempotency check"
+  }
+ ]
+}

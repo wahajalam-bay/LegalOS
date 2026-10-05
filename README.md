@@ -455,6 +455,36 @@ the audience watches two separate applications talk to each other.
 Request Form → Contract-type matrix. Untick a cell, reload the portal's step 3, and
 the option is gone. No code, no deploy.
 
+## Live connections — Google Drive + email (Sprint 6)
+
+Up to this point LegalOS held everything in the browser's `localStorage`. It now
+has a server-side layer (`api/`) so it can read the legal department's real
+document library and send mail as `legal.os@zameen.com` — neither of which a
+browser can do, because neither a Google key nor a mailbox password can safely
+be shipped to one.
+
+- **Knowledge base = the Drive folders shared with LegalOS, read-only.**
+  `api/drive.js` discovers every folder shared with the service account and
+  mirrors them all — sharing a folder is the whole act of adding it. Live since
+  2026-09-13: 3,476 documents, 856 folders, 11 GB across commercial, compliance,
+  litigation and projects. Search goes through Drive's own full-text index,
+  which already covers the text *inside* PDFs — so a query matches document
+  contents, not just filenames, with no PDF parser in this codebase. The service
+  account holds `drive.readonly`, so nothing here can alter a legal document.
+- **Email is send-only, and off by default.** `api/mail.js` is a small SMTP
+  client (SMTP is a line protocol; it needs no library). While `mail.enabled` is
+  false the send path runs end to end but stops before the wire.
+- **Identity is now real.** `api/access.js` verifies the Cloudflare Access signed
+  assertion — signature, audience, issuer, expiry — and maps the verified email
+  onto the roster in `src/data.js`. Every `/api` answer is scoped to that person
+  regardless of which persona the UI is displaying.
+
+Still zero npm dependencies: Node 18 built-ins provide `fetch`, RSA signing and
+verification via `crypto`, and TLS sockets.
+
+Commissioning it — the three credentials, and why identity comes from a
+signature rather than a header — is in **`deploy/CONNECTIONS.md`**.
+
 ## Tech
 
 - React 18 (via ESM import map — no build step)
@@ -468,9 +498,18 @@ the option is gone. No code, no deploy.
 
 ```
 legalos/
-  server.js            zero-dep static server
+  server.js            zero-dep static server + /api mount
   index.html           import map + boot
   assets/styles.css    design system
+  api/                 the server-side layer (zero-dep, Node built-ins only)
+    router.js          the /api surface; authenticated on every route but health
+    access.js          verifies the Cloudflare Access signed assertion
+    identity.js        verified email -> the roster in src/data.js -> role
+    google.js          service-account JWT -> Drive access token
+    drive.js           read-only mirror + search of the Drive knowledge folder
+    mail.js            SMTP client for legal.os@zameen.com
+    config.js          reads config/ (gitignored, never served)
+  config/              SECRETS — service-account key, mailbox password (gitignored)
   portal/
     index.html         the Requester Portal's own entry point (separate app)
   src/
@@ -483,6 +522,7 @@ legalos/
     execviz.js         exec chart primitives (validated palette, table twins)
     tour.js            the nine-step guided tour
     core.js            React/htm bootstrap, formatters
+    api.js             browser client for /api (knowledge base, mail, identity)
     icons.js  ui.js  charts.js  parts.js
     data.js            seed data + registers (entities, contract types, TAT matrix,
                        lifecycle paths, stage meta, LegalRequest schema)

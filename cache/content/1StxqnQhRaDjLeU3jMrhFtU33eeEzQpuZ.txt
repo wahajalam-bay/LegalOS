@@ -1,0 +1,665 @@
+FORM-3
+Return of allotments of shares & change of
+more than twenty five percent in shareholding
+or membership or voting rights
+
+OP
+Y
+
+[Pursuant to Section 70 & 465(4) of the Companies Act, 2017 read with Regulation
+30, 39 & 41 of the Companies Regulations, 2024]
+
+(Please complete in typescript or in bold block capitals.)
+
+1. 1. CUIN (Corporate Unique Identification
+Number)
+
+1. 2. Name of the Company
+
+2
+
+4
+
+2
+
+9
+
+6
+
+ED
+
+ZAMEEN REIT MANAGEMENT COMPANY
+LIMITED
+
+Fee Payment Details 1.3.1 Challan No
+
+26663540
+
+1.3.2 Challan Amount
+
+2420
+
+IFI
+
+1.3
+
+2
+
+TR
+U
+
+0
+
+EC
+
+PART-I
+
+PART-II
+
+2.
+
+Share Capital
+
+CE
+RT
+
+(Applicable in case of allotment of shares)
+
+Number of Shares
+
+Amount (Rs.)
+
+2. 1. Authorized capital
+
+10,000,000
+
+100,000,000
+
+2. 2. Paid up capital
+
+5,000,003
+
+50,000,030
+
+(Inclusive of present allotment)
+2. 3. Kind of shares
+(Check relevant checkbox)
+
+✓ Ordinary
+
+Preference
+
+2. 4. Classes of shares (if applicable)
+
+Class A
+
+(Check relevant checkbox)
+
+Class B
+Preferred: Participatory:Redemable at
+companys option
+
+OP
+Y
+
+Preferred : Participatory:Redemable at
+Shareholders option
+Preferred : Non Participatory: Non
+Redemable
+Preferred : Non Participatory: Redemable at
+compans option
+
+EC
+
+Preferred : Non Participatory : Redemable at
+Shareholders option
+Any other Class, (please specify)
+
+TR
+U
+
+DD
+
+2. 5. Date(s) of allotment*
+
+2
+
+2
+
+MM
+
+0
+
+YYYY
+
+7
+
+2
+
+0
+
+2
+
+5
+
+(*If shares were allotted on different dates, then date of first allotment shall be mentioned)
+MM
+
+YYYY
+
+ED
+
+DD
+
+2. 6. Date of Passing of Special Resolution**
+
+IFI
+
+(** where allotment of shares is subject to passing of special resolution)
+
+CE
+RT
+
+2. 7. SECTION A- SHARES ALLOTTED AGAINST CASH CONSIDERATION
+No of Shares
+
+indicating class,if any
+
+1
+
+Ordinary
+
+Per share (Rs)
+
+Total Amount (Rs)
+
+10
+
+10
+
+2. 7. 3. Premium
+
+0
+
+0
+
+2. 7. 4. Discount
+
+(0)
+
+(0)
+
+2. 7. 1.
+
+2. 7. 2. Nominal amount
+
+10
+
+10
+
+Specify currency
+
+Total Amount of foreign
+currency
+
+2. 7. 5. Total (Amount paid
+on each share 2.7.2
+to 2.7.4)
+
+EC
+
+OP
+Y
+
+2. 7. 6. Consideration
+received against
+allotment in
+foreign currency
+(equivalent
+amount in PKR
+included in total
+amount
+mentioned at
+2.7.5)
+
+2. 8. SECTION B- SHARES ALLOTTED FOR CONSIDERATION OTHERWISE THAN
+IN CASH
+No of Shares
+
+TR
+U
+
+2. 8. 1.
+
+indicating class,if any
+
+0
+
+Per share (Rs)
+
+ED
+
+2. 8. 2. Nominal amount
+
+2. 8. 4. Discount
+
+IFI
+
+2. 8. 3. Premium
+
+CE
+RT
+
+2. 8. 5. Total (2.8.2 to
+2.8.4)
+
+Total Amount (Rs)
+0
+
+0
+
+0
+
+(0)
+
+(0)
+
+0
+
+0
+
+2. 8. 6. The consideration for which shares have been allotted is as follow:
+
+a. Property and assets
+acquired (give
+description)
+
+b. Good will
+c. Services (give nature of
+services)
+d. Other items (to be
+
+Amount (Rs.)
+
+specified)
+e. Total (a to d)
+2. 9. SECTION C- ALLOTMENT OF BONUS SHARES
+No of Shares
+
+indicating class,if any
+
+2. 9. 1. Details of Bonus Shares
+
+OP
+Y
+
+0
+
+DD
+
+MM
+
+0
+YYYY
+
+TR
+U
+
+Resolution number
+
+Total Amount (Rs.)
+
+ED
+
+2. 9. 2. Particulars
+of
+resolution
+of Board
+of
+directors
+/
+shareholders
+
+EC
+
+Allotment Ratio
+(Existing shares/bonus
+shares)
+
+2.10. SECTION D- NAME, ADDRESSES AND OTHER PARTICULARS OF THE
+ALLOTTEES
+
+(a)
+DD MM YYYY
+
+22-07-2025
+
+IFI
+
+CE
+RT
+
+Date of
+allotment
+
+Countr
+CNIC
+y of
+Kind(s) No./NICOP/Passport
+Address Number
+Name of
+origin
+&
+No. of allottee/
+Nationa
+of the
+of
+allottee(
+in case
+class(es) Registration Number,
+lity
+allottee( shares
+s) in full
+of
+of
+if any (in case of allotee
+s)
+allotted
+foreign
+shares
+other than natural
+national
+person)
+(b)
+
+Irfan
+Ilyas
+Sheikh
+
+(c)
+
+Pakistan
+
+(d)
+
+(e)
+
+(f)
+
+(g)
+
+(h)
+Please enter CNIC No. without (-)
+
+House
+No.
+65/G,
+Model
+Town,
+Lahore,
+Lahore,
+Lahore,
+Punjab,
+Pakistan
+
+1
+
+Ordinar
+y and
+Ordinar
+y
+
+3520225595683
+
+PART-III
+(Applicable in case of change of more than twenty five percent in shareholding or membership or
+voting rights)
+
+3. 1. 1. Total Number of paid up
+shares
+
+EC
+
+3. 1. 2. Particulars of change in shareholding
+
+OP
+Y
+
+3. 1. Change in shareholding
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+(e)
+
+(f)
+
+Kind/
+Class of
+Shares
+
+Date of
+transfer
+
+(g)
+
+(h)
+
+IFI
+
+Use separate sheet, if necessary.
+
+ED
+
+TR
+U
+
+CNIC
+CNIC
+No./Passport
+No./Passport
+No./
+No./
+No. of
+Name of Registration Name of Registration Address of
+shares
+Transferor
+No. of
+Transferee(s) No. of
+Transferee
+transferred
+Transferor,
+Transferee,
+as
+as
+applicable
+applicable
+
+CE
+RT
+
+3. 2. Change in voting right
+
+3. 2. 1. Reason & details
+of change in voting
+rights
+
+3. 2. 2. Effective date of
+change in voting
+right
+
+3. 3. Change in membership
+
+3. 3. 1. Total Number of
+
+DD
+
+MM
+
+YYYY
+
+members prior to
+change
+
+3. 3. 2. Particulars of change in
+members
+
+Particulars of New Member(s)
+
+Date of
+cessation
+
+Name
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+CNIC/ NICOP/
+Passport No./
+Registration
+No , as
+applicable
+
+Date of
+Admission
+
+(e)
+
+(f)
+
+EC
+
+Name
+
+CNIC/ NICOP/
+Passport No./
+Registration
+No , as
+applicable
+
+OP
+Y
+
+Particulars of Outgoing Member(s),if any
+
+Use separate sheet, if necessary.
+
+TR
+U
+
+PART-IV
+
+ED
+
+4. 1. Declaration
+
+I do hereby solemnly and sincerely declare that the information provided in the form is:
+
+IFI
+
+(i) true and correct to the best of my knowledge, in consonance with the record as
+maintained by the Company and nothing has been concealed; and
+
+CE
+RT
+
+(ii) hereby reported after complying with and fulfilling all requirements under the relevant
+provisions of law, rules, regulations, directives, circulars and notifications whichever is
+applicable
+4. 2. Name of Authorized Officer with
+designation/Authorized Intermediary
+(if appointed)
+
+Zeeshan Ali Khan
+
+4. 3. Signatures
+
+This is an electronically generated document and
+doesnt require a physical signature
+
+"Director"
+
+4. 4. Registration No of Authorized
+Intermediary, if applicable
+4. 5. Date
+
+DD
+
+MM
+
+YYYY
+
+1
+
+2
+
+0
+
+2
+
+2
+
+0
+
+2
+
+6
+
+Enclosures:
+
+CE
+RT
+
+IFI
+
+ED
+
+TR
+U
+
+EC
+
+OP
+Y
+
+1. In case shares are allotted against cash consideration, a report from Auditor of the Company in terms
+of section 70(1)(b) of the Act as per Appendix attached herewith, to the effect that the amount of
+consideration has been received in full.
+2. In case shares are allotted against consideration otherwise than in cash, a copy of the document
+evidencing the transfer of non-cash asset to the company, or a copy of the contract for technical and
+other services, intellectual property or other consideration, along with copy of the valuation report
+(verified in the specified manner) for registration in respect of which that allotment was made;
+3. In case bonus shares are issued, copies of the resolution of Board of Directors authorizing the issue
+of such shares.
+4. In case the shares are issued at discount, a copy of the special resolution passed by the members
+authorizing such issue along-with copy of the order of the Commission permitting the issue at
+discount as required under section 82(1)(d).
+5. In case of allotment of shares in consequence of the exercise of the option for conversion in terms of
+an agreement for participation term certificates, term finance certificates, redeemable capital,
+musharika or hire-purchase shall be reported in Section-B of Part-II and copies of the relevant
+documents submitted with the return.
+6. In case of allotment of shares other than right, attach evidence of filing of Form-26 (special
+resolution) and in case of public companies also copy of the approval of the Commission.
+7. In case the allottee/transferee is a foreign company or a foreign body corporate, the profile of the
+foreign company, detail of its directors, their nationality and country of origin, certified copy of its
+charter, statute or memorandum and articles, copy of the certificate of incorporation, Board
+resolution by the foreign company for authorization to acquire shares in the company as well
+appointment of nominee/authorized person and an undertaking on stamp paper of requisite value
+duly signed, notarized and witnessed;
+8. In case the allottee/transferee is an individual of foreign nationality, five sets of copies of bio data,
+copies of valid passport and an undertaking on stamp paper of requisite value duly signed, notarized
+and witnessed;
+9. Any other document, certificate, report etc. required under any regulation pertaining to issuance of
+shares.
+10. Original challan or other evidence of payment of fee specified in Seventh Schedule of the Act will
+be submitted with this form (not applicable in case of online filing)

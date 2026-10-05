@@ -1,0 +1,40 @@
+{
+  "records": [
+    {
+      "id": "NTN-5D066687",
+      "module": "notices",
+      "origin": "LEGALOS",
+      "fields": {
+        "direction": "Received",
+        "sender": "vmlksdcvmjokl",
+        "recipient": "kcvndskljnclkj",
+        "entity": "cdlkncmslkdmndlkvcn",
+        "noticeDate": "2026-01-30",
+        "receiptDate": "2026-01-02",
+        "category": "Citizen Portal Complaint",
+        "details": "fdfddf",
+        "responseRequired": "Yes",
+        "replyDeadline": "2026-03-04",
+        "status": "Pending",
+        "owner": "dfdv",
+        "comments": "fdefeedfefe"
+      },
+      "createdBy": {
+        "id": null,
+        "name": "Reporting",
+        "email": "reporting@zameen.com"
+      },
+      "createdAt": "2026-09-24T08:41:08.559Z",
+      "updatedBy": null,
+      "updatedAt": null,
+      "deletedAt": null,
+      "audit": [
+        {
+          "at": "2026-09-24T08:41:08.559Z",
+          "action": "created",
+          "by": "Reporting"
+        }
+      ]
+    }
+  ]
+}

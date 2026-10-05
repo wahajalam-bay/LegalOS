@@ -1,0 +1,514 @@
+Software License Agreement
+This Software License Agreement shall be effective from 1 October 2025 (the “Agreement”)
+Parties
+
+(1)
+
+IT Consulting and Services, a company incorporated and registered in Pakistan with
+company registration number 2010-11/0775 whose registered office is at 6/K, Block 2,
+P.E.C.H.S, Karachi, Pakistan, through its authorized representative Mr. Taimur Khan
+(Supplier); and
+
+(2)
+
+Zameen Media Pvt Limited, with CUIN: 0078950 whose registered office is at Pearl One,
+94-B/I, MM Alam Road, Gulberg III, Phase III DHA, Lahore, Pakistan, through its authorized
+representative Mr. Adeel Sarwar Alvi, holding CNIC No. 35202-2314699-9 (Customer).
+
+Background
+(A)
+
+The Supplier is an official reseller and support service provider of the Software (as defined
+in Clause 1.1 below).
+
+(B)
+
+The Customer wishes to obtain and the Supplier has agreed to provide the Software to
+the Customer.
+
+Agreed terms
+
+1.
+
+Interpretation
+
+1.1
+
+The definitions and rules of interpretation in this clause apply in this Agreement.
+Affiliate: in relation to the Customer, any business entity from time to time controlling,
+controlled by, or under common control with, the Customer.
+Business Day a day other than a Saturday, Sunday or public holiday in Pakistan.
+Business Hours: the period from 9.00 am to 6.00 pm on any Business Day.
+Control: a business entity shall be deemed to "control" another business entity if it owns,
+directly or indirectly, in excess of 50% of the outstanding voting securities or capital stock
+of such business entity.
+Intellectual Property Rights: patents, utility models, rights to inventions, copyright and
+related rights, trade marks and service marks, trade names and domain names, rights in
+get-up, goodwill and the right to sue for passing off or unfair competition, rights in designs,
+rights in computer software, database rights, rights to preserve the confidentiality of
+information (including know-how and trade secrets) and any other intellectual property
+1
+
+rights, including all applications for (and rights to apply for and be granted), renewals or
+extensions of, and rights to claim priority from, such rights and all similar or equivalent
+rights or forms of protection which subsist or will subsist, now or in the future, in any part
+of the world.
+Maintenance Release: a release of the Software which corrects faults, adds functionality
+or otherwise amends or upgrades the Software, but which does not constitute a New
+Version.
+Modification: any Maintenance Release or New Version.
+New Version: any new version of the Software which from time to time is publicly
+marketed and offered for purchase by the Software Provider in the course of its normal
+business, being a version, which contains such significant differences from the previous
+versions as to be generally accepted in the marketplace as constituting a new product.
+Software: the software provided by the Service Provider licensed to the Client through
+the Supplier as set out in Schedule 1 and all user documentation in respect of such
+Software and any Modification which is acquired by the Customer during the subsistence
+of this Agreement.
+Software Provider means Microsoft Corporation.
+Vulnerability: a weakness in the computational logic (for example, code) found in
+software and hardware components that, when exploited, results in a negative impact to
+confidentiality, integrity, or availability, and the term Vulnerabilities shall be interpreted
+accordingly.
+2.
+
+Access
+
+2.1
+
+The Supplier shall make available to the Customer the Software as set out in Schedule 1.
+
+2.2
+
+For a period of thirty (30) days from the date of this Agreement, the Customer may
+discontinue the use of the Software if it does not perform to the Customer's satisfaction.
+If the Customer does so, the Supplier shall immediately refund all monies paid by the
+Customer under this Agreement and, on receipt of that refund, this Agreement shall
+terminate.
+
+2.3
+
+The Customer shall have no right to copy, adapt, reverse engineer, decompile, disassemble
+or modify the Software in whole or in part except:
+(a)
+
+as permitted by law; or
+
+(b)
+
+to the extent that such action is legitimately required for the purposes of
+integrating the operation of the Software with the operation of other software or
+systems used by the Customer or any Affiliate.
+
+2
+
+2.4
+
+The Customer shall be permitted to assign or novate the benefit and burden of the license
+to the Software granted under this Agreement as a whole to any company which at the
+time in question is an Affiliate. All references in this Agreement to the Customer shall be
+construed as including any such company. The Supplier shall continue to comply with the
+provisions of this Agreement after any such assignment or novation.
+
+3.
+
+Term and Payments
+
+3.1
+
+In consideration of the Customer's obligation to pay the License Fee, the Supplier grants
+to the Customer and its Affiliates a worldwide, sub-licensable, non-exclusive license to use
+the Software for a term of twelve (12) months commencing on 1st October 2025 and any
+extensions thereto (“Term”). The Customer may extend the Term by providing written
+intimation of such intention to the Supplier at least fifteen (15) days prior to the conclusion
+of the current Term.
+
+3.2
+
+The fee for each license of the Software for the Term shall be fixed at USD 149.226
+(Inclusive of 5% Punjab Sales Tax on Services). The support services shall be provided by
+the Supplier at no additional cost. The Customer shall bear any deductions such as bank
+charges, taxes or any other deductions.
+
+3.3
+
+The Supplier shall issue an invoice for the number of licenses used by the Customer on
+Annual basis. The payment of any undisputed invoices due shall be made within thirty (30)
+days from the date of receipt of invoice.
+
+3.4
+
+All invoices shall be issued in United States Dollars (USD); however, payment shall be made
+in Pakistani Rupees (PKR) at the Open Market TT Selling Rate. The conversion rate
+applicable shall be the rate prevailing on the invoice date, provided that payment is made
+within fifteen (15) days from the invoice receipt date; otherwise, the conversion rate
+prevailing on the actual date of payment shall apply. All payments shall be subject to
+deduction of applicable withholding taxes, including both Federal and Provincial taxes, in
+accordance with the laws of Pakistan, and any such deductions duly deposited with the
+relevant authorities shall constitute a valid discharge of the payer’s tax obligations against
+the corresponding amount.
+
+3.5
+
+If any dispute arises in relation to the invoice, the Customer shall, within thirty (30) days
+of the receipt of the invoice submit a written notice to the Service Provider informing the
+Supplier of such dispute. The parties shall negotiate in good faith to attempt to resolve
+any such disputes within thirty (30) days of the receipt of the notice of dispute. In the
+event the parties fail to resolve the matter within the time period stated herein, the
+dispute shall be resolved as per the dispute resolution mechanism provided in clause 21.
+
+3
+
+4.
+
+Support Services
+
+4.1
+
+The Supplier shall provide such information and support services as may be reasonably
+requested by the Customer to enable the Supplier to properly and efficiently to discharge
+its duties under this Agreement.
+
+4.2
+
+The Supplier shall provide the Customer support services via multiple paths including
+phone, email and an online support helpdesk as set out in Schedule 1.
+
+4.3
+
+The Supplier shall maintain records of all support incidences during the Term. Copies of
+such records shall be readily available to the Customer as and when requested by the
+Customer, provided a prior notice of two (02) days is given to the Supplier by the
+Customer.
+
+5.
+
+New Versions and Maintenance Releases
+
+5.1
+
+The Supplier shall promptly inform the Customer of any New Version and shall offer to
+provide such New Version to the Customer on the terms on which they are generally made
+available to the Software Provider’s customers by the Software Provider.
+
+5.2
+
+The Supplier will provide the Customer with all Maintenance Releases no later than when
+these are generally made available to the Software Provider’s other customers.
+
+6.
+
+Confidentiality and publicity
+
+6.1
+
+Each party undertakes that it shall not at any time during this Agreement, and for a period
+of two (2) years after termination or expiry of this Agreement, disclose to any person any
+confidential information concerning the business, assets, affairs, customers, clients or
+suppliers of the other party or of any member of the group of companies to which the
+other party belongs, except as permitted by clause 6.2.
+
+6.2
+
+Each party may disclose the other party's confidential information:
+(a)
+
+to its employees, officers, representatives, contractors, subcontractors or
+advisers who need to know such information for the purposes of exercising the
+party's rights or carrying out its obligations under or in connection with this
+agreement. Each party shall ensure that its employees, officers, representatives,
+contractors, subcontractors or advisers to whom it discloses the other party's
+confidential information comply with this clause 5; and
+
+(b)
+
+as may be required by law, a court of competent jurisdiction or any governmental
+or regulatory authority.
+
+4
+
+6.3
+
+No party shall use any other party's confidential information for any purpose other than
+to exercise its rights and perform its obligations under or in connection with this
+Agreement.
+
+6.4
+
+The Supplier may not refer to the Customer or this Agreement in any publicity or
+advertising material without first obtaining the Customer's written consent.
+
+7.
+
+Supplier's warranties
+
+7.1
+
+The Supplier acknowledges that the Customer has entered into this Agreement in reliance
+upon the Supplier's entitlement and expertise in supplying the Software as an official
+reseller for the Software.
+
+7.2
+
+The Supplier warrants that:
+(a)
+
+it has the right to enter into this Agreement and to resell or grant to the Customer
+a license to use the Software and provide support services as contemplated by
+this Agreement;
+
+(b)
+
+the Software is free from Vulnerabilities, viruses and other malicious code;
+
+7.3
+
+If, within the Term, the Customer notifies the Supplier of any defect or fault in the Software
+in consequence of which it fails to conform to any of the warranties in clause 7.2, the
+Supplier shall, at the Supplier's option, promptly get the Software repaired or replaced.
+
+7.4
+
+The warranties in clause 7.2 shall apply to any Modification that is acquired by the
+Customer during the course of this Agreement as though the references to the date of this
+Agreement were references to the date on which such Modification was acquired.
+
+8.
+
+Liability and Limitations
+
+8.1
+
+The Supplier shall be and remain primarily responsible and liable to the Customer for any
+defaults and/or failures of any third party or the Software Provider to honour any of its
+terms, undertakings, assurances and policies including warranty, support, repair,
+replacement and return.
+
+8.2
+
+Subject to clause 8.4, neither party shall in any circumstances have any liability for any
+losses or damages which may be suffered by the other or any Affiliate of the other (or any
+person claiming under or through the same), whether the same are suffered directly or
+indirectly, which fall within any of the following categories:
+(a)
+
+special damage even though that party was aware of the circumstances in which
+such special damage could arise;
+
+(b)
+
+loss of anticipated profits;
+
+(c)
+
+loss of anticipated savings;
+5
+
+(d)
+
+loss of business opportunity and management time;
+
+(e)
+
+loss of goodwill,
+
+provided that this clause 8.2 shall not prevent claims for direct financial loss that are not
+excluded by any of categories (a) to (e) inclusive of this clause 8.2.
+8.3
+
+Subject to clause 8.4, the total liability of the Customer, whether in contract, tort
+(including negligence) or otherwise and whether in connection with this agreement or any
+collateral contract, shall in no circumstances exceed a sum equal to the Fee.
+
+8.4
+
+The exclusions in clause 8.2 shall apply to the fullest extent permissible at law but neither
+party excludes any liability for death or personal injury caused by its negligence, or the
+negligence of its employees or agents, or for fraud or fraudulent misrepresentation or the
+deliberate default or wilful misconduct of that party, its employees or agents or
+subcontractors.
+
+9.
+
+Intellectual Property Rights indemnity
+
+9.1
+
+All Intellectual Property Rights in the Software and any Modification belong, and shall
+belong, to the Software Provider.
+
+9.2
+
+The Supplier undertakes to defend the Customer from and against any claim or action that
+the possession, use, development, modification or maintenance of the Software (or any
+part thereof) infringes the Intellectual Property Rights of a third party or from any claims
+or actions arising between the Supplier and the Software Provider in relation to the use,
+sale, resale, licensing or sublicensing of the Software (Claim) and shall fully indemnify and
+hold harmless the Customer from and against any losses, damages, costs (including all
+legal fees) and expenses incurred by or awarded against the Customer as a result of, or in
+connection with, any such Claim.
+
+9.3
+
+If any third party makes a Claim, or notifies an intention to make a Claim against the
+Customer, the Customer shall:
+(a)
+
+as soon as reasonably practicable, give written notice of the Claim to the Supplier,
+specifying the nature of the Claim in reasonable detail; and
+
+(b)
+
+not make any admission of liability, agreement or compromise in relation to the
+Claim without the prior written consent of the Supplier (such consent not to be
+unreasonably conditioned, withheld or delayed).
+
+10.
+
+Termination
+
+10.1
+
+In relation to termination:
+(a)
+
+this Agreement may be terminated only:
+6
+
+10.2
+
+(i)
+
+by the Customer at any time by ten (10) days written notice to the
+Supplier;
+
+(ii)
+
+by the Supplier within fifteen (15) of serving a written notice for default
+of payment to the Customer if the Customer fails to pay the fee in
+accordance with clause 3.1
+
+(iii)
+
+immediately by either party upon termination or suspension of the
+agreement between the Supplier and the Software Provider.
+
+If this Agreement is terminated pursuant to clause 10.1(a)(iii) above, the Service Provider
+will either:
+(a)
+
+provide written notice to the Customer, as soon as possible, of any circumstances
+that may cause termination or suspension of the Agreement between the
+Supplier and the Software Provider; or
+
+(b)
+
+Provide compensation to the Customer with respect to any loss / damage
+suffered on account of the suspension of the Agreement between the Supplier
+and the Software Provider.
+
+10.3
+
+The termination of this Agreement by either party in accordance with the rights contained
+in clause 10.1(a) shall not affect the accrued rights, remedies, obligations or liabilities of
+the parties existing at termination.
+
+10.4
+
+Without affecting any other right or remedy available to it, the Customer may terminate
+this Agreement with immediate effect by giving written notice to the Supplier if the
+Supplier commits a material breach of its obligations under the Agreement.
+
+10.5
+
+On termination or expiry of this Agreement, the following clauses shall continue in force:
+clause 6, clause 7, clause 8 and this clause 9.
+
+10.6
+
+Termination or expiry of this Agreement shall not affect any rights, remedies, obligations
+or liabilities of the parties that have accrued up to the date of termination or expiry,
+including the right to claim damages in respect of any breach of the agreement which
+existed at or before the date of termination or expiry.
+
+11.
+
+Waiver
+
+11.1
+
+A waiver of any right or remedy is only effective if given in writing and shall not be deemed
+a waiver of any subsequent right or remedy.
+
+11.2
+
+A delay or failure to exercise, or the single or partial exercise of, any right or remedy shall
+not waive that or any other right or remedy, nor shall it prevent or restrict the further
+exercise of that or any other right or remedy.
+
+7
+
+12.
+
+Rights and remedies
+Except as expressly provided in this Agreement, the rights and remedies provided under
+this Agreement are in addition to, and not exclusive of, any rights or remedies provided
+by law.
+
+13.
+
+Entire agreement
+
+13.1
+
+This Agreement, the schedules and the documents annexed as appendices to this
+Agreement, or otherwise referred to herein, contain the whole agreement between the
+parties relating to the subject matter hereof and supersede all previous and
+contemporaneous agreements, promises, assurances and understandings between the
+parties relating to that subject matter.
+
+13.2
+
+Each party acknowledges that in entering into this Agreement it does not rely on, and shall
+have no remedies in respect of, any statement, representation, assurance or warranty
+(whether made innocently or negligently) that is not set out in this Agreement.
+
+13.3
+
+Each party agrees that it shall have no claim for innocent or negligent misrepresentation
+or negligent misstatement based on any statement in this Agreement.
+
+13.4
+
+Nothing in this clause shall limit or exclude any liability for fraud.
+
+14.
+
+Variation
+No variation of this Agreement shall be effective unless it is in writing and signed by the
+parties (or their authorised representatives).
+
+15.
+
+Severance
+
+15.1
+
+If any provision or part-provision of this Agreement is or becomes invalid, illegal or
+unenforceable, it shall be deemed deleted, but that shall not affect the validity and
+enforceability of the rest of this Agreement.
+
+15.2
+
+If any provision or part-provision of this Agreement is deemed deleted under clause 14.1
+the parties shall negotiate in good faith to agree a replacement provision that, to the
+greatest extent possible, achieves the intended commercial result of the original
+provision.
+
+16.
+
+Counterparts
+This Agreement may be executed in any number of counterparts, each of which shall
+constitute a duplicate original, but all the counterparts shall together constitute the one
+Agreement.
+8

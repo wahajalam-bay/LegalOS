@@ -1,0 +1,426 @@
+A member firm of Ernst & Young Global Limited
+
+
+
+
+
+
+
+
+
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN SIGMA (PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+ASSETS
+CURRENT ASSET
+Balance with bank
+
+5
+
+5,218
+
+5,218
+
+5,218
+
+5,218
+
+100,000
+
+100,000
+
+2,000
+
+2,000
+
+Accumulated losses
+
+(2,698,895)
+
+(2,213,745)
+
+TOTAL EQUITY
+
+(2,696,895)
+
+(2,211,745)
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+Share Capital and reserves
+Authorized share capital
+10,000 (2022: 10,000) ordinary shares of Rs. 10 each
+Issued, subscribed and paid up share capital
+
+6
+
+NON-CURRENT LIABILITIES
+Loan from the Parent Company- unsecured
+
+7
+
+144,793
+
+144,793
+
+CURRENT LIABILITIES
+Accrued markup on loan from the Parent Company
+Other payables
+
+8
+
+1,010,079
+1,547,241
+2,557,320
+
+984,692
+1,087,478
+2,072,170
+
+5,218
+
+5,218
+
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+9
+
+The annexed notes form 1 to 20 form an integral part of these financial statements.
+
+____________________
+CHIEF EXECUTIVE
+
+____________________
+DIRECTOR
+
+Page 1 of 17
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN SIGMA (PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+2022
+Rupees
+
+2023
+Rupees
+
+Administrative expenses
+
+10
+
+(459,763)
+
+(464,788)
+
+Finance cost
+
+11
+
+(25,387)
+
+(344,691)
+
+(485,150)
+
+(809,479)
+
+-
+
+-
+
+(485,150)
+
+(809,479)
+
+-
+
+-
+
+(485,150)
+
+(809,479)
+
+Loss before taxation
+Taxation
+
+12
+
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+The annexed notes form 1 to 20 form an integral part of these financial statements.
+
+____________________
+CHIEF EXECUTIVE
+
+____________________
+DIRECTOR
+
+Page 2 of 17
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN SIGMA (PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Capital Reserve
+
+Revenue reserve
+
+Issued, subscribed
+and paid up share
+capital
+
+Accumulated
+losses
+
+Total
+
+------------------------------------ Rupees ------------------------------------Balance as at 01 July 2021
+
+2,000
+
+(1,404,266)
+
+(1,402,266)
+
+-
+
+(809,479)
+(809,479)
+
+(809,479)
+(809,479)
+
+2,000
+
+(2,213,745)
+
+(2,211,745)
+
+-
+
+(485,150)
+(485,150)
+
+(485,150)
+(485,150)
+
+2,000
+
+(2,698,895)
+
+(2,696,895)
+
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2022
+Loss for the year
+Other comprehensive income
+Total comprehensive loss for the year
+Balance as at 30 June 2023
+
+The annexed notes form 1 to 20 form an integral part of these financial statements.
+
+____________________
+CHIEF EXECUTIVE
+
+____________________
+DIRECTOR
+
+Page 3 of 17
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN SIGMA (PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+OPERATING ACTIVITIES
+Loss before taxation
+
+(485,150)
+
+(809,479)
+
+25,387
+
+344,691
+
+(459,763)
+
+(464,788)
+
+459,763
+
+470,006
+
+Net cash flows generated from operating activities
+
+-
+
+5,218
+
+INVESTING ACTIVITIES
+
+-
+
+-
+
+FINANCING ACTIVITIES
+Loan repaid to Parent Company
+
+-
+
+(24,955,207)
+
+Net decrease in Cash and Cash equivalents
+
+-
+
+(24,949,989)
+
+5,218
+5,218
+
+24,955,207
+5,218
+
+Adjustments to reconcile loss before taxation to net cash flows:
+Markup on loan from the Parent Company
+
+11
+
+Operating loss before working capital changes
+Working capital adjustments:
+Increase in current liabilities:
+Increase in other payables
+
+Cash and cash equivalents at beginning of the year
+Cash and cash equivalents at the end of the year
+
+5
+
+The annexed notes form 1 to 20 form an integral part of these financial statements.
+
+____________________
+CHIEF EXECUTIVE
+
+____________________
+DIRECTOR
+
+Page 4 of 17
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN SIGMA (PRIVATE) LIMITED
+NOTES TO THE FINANCIAL STATEMENTS
+FOR THE YEAR ENDED 30 JUNE 2023
+1
+
+COMPANY AND ITS OPERATIONS
+
+1.1
+
+Corporate and general information
+Zameen Sigma (Private) Limited ("the Company") was incorporated on 23 May 2019 as a Private Limited Company
+under the Companies Ordinance, 1984 (repealed with the enactment of the Companies Act, 2017, (the Act)). The
+Company's principal activity is to engage in the business of development of all types of real estate including
+commercial markets and multi-storey buildings, shopping centers etc. The registered office of the Company is
+situated at Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore. The Company is a subsidiary of Zameen Venture
+One (Private) Limited ("the Parent Company"), a Company incorporated in Pakistan. The ultimate Parent of the
+Company is Dubizzle Group Holdings Limited (formerly known as EMPG Holdings Limited), a Company incorporated
+in United Arab Emirates (UAE).
+
+1.2
+
+The Company's plan is to invest in property and start working on a construction project. As at 30 June 2023, the
+Company did not purchase any property for construction purposes but is in the process of negotiations with the
+landowners in this respect.
+The Company is in startup phase, and it is yet to start construction in the project. The Company has incurred loss of
+Rs. 485,150 (2022: Rs. 809,479) and its accumulated losses as at the reporting date amounts to Rs. 2,698,895
+(2022: Rs. 2,213,745) resulting in a negative equity of Rs. 2,696,895 (2022: Rs. 2,211,745) as at that date. The
+Parent Company has committed to provide financial support to the Company, enabling the Company to continue its
+operations as going concern and fulfil all of its financial obligation. Based on which the financial statements of the
+Company are prepared on going concern basis.
+
+2
+
+BASIS OF PREPARATION
+
+2.1
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting standards as
+applicable in Pakistan. The accounting and reporting standards applicable in Pakistan comprise of:
+-
+
+International Financial Reporting Standards (IFRSs) issued by the International Accounting Standards Board
+(IASB) as notified under the Companies Act, 2017 (the Act); and
+Provisions of and directives issued under the Act.
+
+Where provisions of and directives issued under the Act differ from the IFRSs, the provisions of and directives issued
+under the Act have been followed.
+2.2
+
+Basis of measurement
+These financial statements have been prepared under the historical cost convention unless otherwise stated.
+
+2.3
+
+Functional and presentation currency
+These financial statements are presented in Pakistani Rupees which is also the Company’s functional currency. All
+financial information presented in Pakistani Rupees has been rounded to the nearest rupee.
+
+2.4
+
+Standards, interpretations and amendments to published accounting standards
+The following are new and amended standards and interpretations effective for annual period beginning on July 01,
+2022, as listed below:
+
+2.4.1 New Standards, Interpretations and Amendments effective in the reporting period
+The accounting policies adopted in the preparation of these financial statements are consistent with those of the
+previous financial year, except for following amendments to accounting standards which are effective for annual
+periods beginning on or after July 01, 2022 (unless otherwise stated).
+IFRS 3 Business Combinations – The amendment updates a reference in IFRS 3 to the Conceptual Framework for
+Financial Reporting without changing the accounting requirements for business combinations.
+The amendments add an exception to the recognition principle of IFRS 3 Business Combinations to avoid
+the issue of potential ‘day 2’ gains or losses arising for liabilities and contingent liabilities that would be within
+the scope of IAS 37 Provisions, Contingent Liabilities and Contingent Assets or IFRIC 21 Levies, if incurred
+separately. The exception requires entities to apply the criteria in IAS 37 or IFRIC 21, respectively, instead of
+the Conceptual Framework, to determine whether a present obligation exists at the acquisition date. The
+amendments also add a new paragraph to IFRS 3 to clarify that contingent assets do not qualify for
+recognition at the acquisition date. In accordance with the transitional provisions, the Company applies the
+amendments prospectively, i.e., to business combinations occurring after the beginning of the annual
+reporting period in which it first applies the amendments (the date of initial application).
+
+Page 5 of 17

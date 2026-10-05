@@ -1,0 +1,19 @@
+{
+  "id": "ATT-2omgufhJ2hDp",
+  "requestId": "REQ-000010022",
+  "name": "Feedback-compliance.docx",
+  "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "ext": "docx",
+  "size": 22184,
+  "sha256": "5920ad8a187ca4214507bc4d09efa0480c2bb200bae29596f8914a8c83c5589e",
+  "uploadedAt": "2026-09-24T10:43:19.471Z",
+  "uploadedBy": "reporting@zameen.com",
+  "uploadedByName": {
+    "name": "Reporting",
+    "email": "reporting@zameen.com",
+    "designation": "System administrator"
+  },
+  "storedBy": "legalos",
+  "sourceType": "LEGALOS_UPLOAD",
+  "storedAt": "var/request-uploads/REQ-000010022/ATT-2omgufhJ2hDp.docx"
+}

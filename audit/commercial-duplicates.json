@@ -1,0 +1,1755 @@
+{
+ "summary": {
+  "commercialFiles": 1303,
+  "sizeCollisionGroups": 90,
+  "filesChecksummed": 222,
+  "checksumUnavailable": 0,
+  "duplicateGroups": 87,
+  "redundantCopies": 122,
+  "distinctDocuments": 1181,
+  "crossProjectGroups": 22
+ },
+ "groups": [
+  {
+   "md5": "8387a104eda4e23630f799f8dfb6e17b",
+   "size": 17320,
+   "count": 13,
+   "canonical": {
+    "fileId": "1Jd2m2Bus5TZ0EjrSPhSsmmQfITlLjOWV",
+    "filename": "250411-Appendix B-Purchased Unit Floor Plan.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250325-With and Without Rental Promo (Service Apartments with Furnishing) / Final Versions with Annexures"
+   },
+   "duplicates": [
+    {
+     "fileId": "1rn2dvyUCyPuP6ylQFnZAdpxgRMrcXD7U",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "1gYP8ztJAlQ8dealwV0nUP3jPAgS-pOaK",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Without Rental / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "1i5ToQrXZgTWFiZn3KjkUxHxR4Cxmf5iV",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore / 24-11-27-ATS WITH RENTAL ZAMEEN NEO - 15 UNITS ONLY / 241127-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "11oaCYsFYuocTTL-d0-CW2mMNgRkV7g_5",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR"
+    },
+    {
+     "fileId": "1FQgso_jKxJ5L_hC75LCdXKzENwzjMX4e",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / 241218-Latest Draft"
+    },
+    {
+     "fileId": "1aIpO6SF911rydbemCV85DQpFpklAEyJ4",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft"
+    },
+    {
+     "fileId": "1jYoFxSaKCjajy2tjR9dUuytVh57jUs6_",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Grande Palladium-Rawalpindi / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "1kctAWSuoPxejkuqbkN1pIY886mb8uiAc",
+     "filename": "250715-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 250715-New SPA Cashback and Non-Cashback"
+    },
+    {
+     "fileId": "1BPUVwkKcHF4O1zBXni74kyvisaAMbegb",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR"
+    },
+    {
+     "fileId": "11VP4eh0EaaL3V1HBEBuoEJX_qe-XFtmS",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA without GR"
+    },
+    {
+     "fileId": "1ABuz_64j6CMcDXYmXgRBXvCKsQ1s7DfV",
+     "filename": "250129-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / 250129- New Agreement to Sell (without) GR"
+    },
+    {
+     "fileId": "1bM2FtaNsOtnIZarDuHOkm5BkgB9SCERV",
+     "filename": "241127-Appendix B-Purchased Unit Floor Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "17415479bc2ad6b9b0485b95345e5270",
+   "size": 17258,
+   "count": 13,
+   "canonical": {
+    "fileId": "1ckwG9DDt2TGcke8LSF-owircfhq3l8Ix",
+    "filename": "250411-Appendix A-Payment Plan.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250325-With and Without Rental Promo (Service Apartments with Furnishing) / Final Versions with Annexures"
+   },
+   "duplicates": [
+    {
+     "fileId": "1RmnkcvJ_hCwoubQ0RXMuz_M0Q71Eotv2",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "1vimFKiWCTgbKd3SZYwukwe0uApfDTjSk",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Without Rental / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "17uiiNKG00K0fZ3s6NfZ9H7MekdywI4_k",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore / 24-11-27-ATS WITH RENTAL ZAMEEN NEO - 15 UNITS ONLY / 241127-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "1GJqMUHQrAfmxxnk-KcbqW2O64chspgp8",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR"
+    },
+    {
+     "fileId": "1ndHkM6DkqOhp8Q_F_nEw9DGv44cdHqMv",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / 241218-Latest Draft"
+    },
+    {
+     "fileId": "1n1feJNd_-BO-p8SKC6NInK3q2qZLo77R",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft"
+    },
+    {
+     "fileId": "1-i65Maat29_RQc8wUO5CzoWVwSzETBts",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Grande Palladium-Rawalpindi / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "17Bu0F7tfPedr4jnfd53U2YxbEDSosWrY",
+     "filename": "250715-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 250715-New SPA Cashback and Non-Cashback"
+    },
+    {
+     "fileId": "1Uem8rpktdQFiFMuDw9l6-YGK0VYK1x06",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR"
+    },
+    {
+     "fileId": "1hCtUb1Hj4EDn47WrI-4vTd3OxXuSVWNA",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA without GR"
+    },
+    {
+     "fileId": "1RnJZJbQNSPAOsSyGjE0BrIb90lWI7Xng",
+     "filename": "250129-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / 250129- New Agreement to Sell (without) GR"
+    },
+    {
+     "fileId": "1sZeaK8MbGGESN0RUeh-uVXA6V6tLjgTB",
+     "filename": "241127-Appendix A-Payment Plan.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "bd6ba9117ee738df2179f2d2851ee4e8",
+   "size": 24744,
+   "count": 9,
+   "canonical": {
+    "fileId": "1xb74i7q6FoTLwXElgGCmwd6P8taCsvPT",
+    "filename": "241127-Appendix C-List of Materials.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Qy3H6zt9RtikZtYqzs1zBuAybW6T_nAN",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Without Rental / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "11vUtigerOc0qRUtJlv7oldaUzGtLukUa",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR"
+    },
+    {
+     "fileId": "1E10zEGtZ6ALNOjuRG1lUFc-idkl5zVzm",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / 241218-Latest Draft"
+    },
+    {
+     "fileId": "1-YMGfmKxXVFS8_yhr1tiKH2N33RPZPsf",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft"
+    },
+    {
+     "fileId": "1k88EL-6TVnkVluNbqO8JV1R40Y9bK2UT",
+     "filename": "250715-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 250715-New SPA Cashback and Non-Cashback"
+    },
+    {
+     "fileId": "12tZApPi36_skDYhJqge81MVaGikIFLWf",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR"
+    },
+    {
+     "fileId": "1roYiX-ZFp9NzWFpFzRvGC1b5NRLBAxnI",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA without GR"
+    },
+    {
+     "fileId": "124JVrQ0tYOVWkMVGe4BnpxFFHb_2IhQJ",
+     "filename": "241127-Appendix C-List of Materials.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "add45dac5bd15c870c1a0413cad183cb",
+   "size": 14509,
+   "count": 4,
+   "canonical": {
+    "fileId": "1NErHS25zK9zK8WWMRAk-bP0cI1-zTRcu",
+    "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Commercial Units (with GR) / 241812-Latest Version Commercial Units - DTR with GR"
+   },
+   "duplicates": [
+    {
+     "fileId": "1bIHaBXLSN_wQlEzMUe1WUJPqsT0Kdhih",
+     "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model / Latest Draft"
+    },
+    {
+     "fileId": "1UVxbBcQffpZ_0ULZEritg5itQ6U7Min6",
+     "filename": "241127-Appendix D-Monthly Payment Schedule (Only for GR SPA).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen - Grande Palladium-Rawalpindi / 241211-Annexures to the Agreement to Sell"
+    },
+    {
+     "fileId": "19HGtccinNVebnRwnIuJt9bV3QwbJmbPs",
+     "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "eca2ac544bde8e1d57905d15aee1e062",
+   "size": 28150411,
+   "count": 3,
+   "canonical": {
+    "fileId": "1AA3anUH1LJrMbmuFpAVy8vWse4dW0XAn",
+    "filename": "ThirdAmendmentofGrandOrchard_20230208.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+   },
+   "duplicates": [
+    {
+     "fileId": "1yhrF5EJtjtm1VRp3_dQuPjzFtq5MTYQb",
+     "filename": "Copy of ThirdAmendmentofGrandOrchard_20230208.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North / Grand Orchard"
+    },
+    {
+     "fileId": "1HntdzVQ8Lq3E0EhpkF8D9F_akWCVE3eK",
+     "filename": "Copy of ThirdAmendmentofGrandOrchard_20230208.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "c51cbcb3ef6d431aba0fbd504d7b742c",
+   "size": 115715,
+   "count": 3,
+   "canonical": {
+    "fileId": "1Fm-6zVWwfN90kDib5zv26Vr0_md9G2sw",
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Working and Finalised draft with Furnishing Clause"
+   },
+   "duplicates": [
+    {
+     "fileId": "1CuB20ZlMtPfA_QVjRlsOBWMRiJZ1KqVR",
+     "filename": "230830 - Agreement to Sell (Base Draft - Jade).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore"
+    },
+    {
+     "fileId": "1PXD26m46A6rA-KiLHFCnVJFSOCW3trMR",
+     "filename": "Base Draft.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Neo - Lahore"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "8db693ecd64410ee89ae56cec19e286d",
+   "size": 763541,
+   "count": 3,
+   "canonical": {
+    "fileId": "16em3kpZHGq0722jMoNXfpJo31JLwtzFH",
+    "filename": "REVISED SUBMISSION MAP.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Maps_"
+   },
+   "duplicates": [
+    {
+     "fileId": "1l7lU3t22Lj15H76kQ2BtxxJVvD2CKSKF",
+     "filename": "Final Map IV2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Maps_"
+    },
+    {
+     "fileId": "1m1c-p9GhgpfR_lwFJo7wqUpi5gwFUVmm",
+     "filename": "Final Map IV2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Maps"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "3b1f1c704d7003c3279978c99350bf1e",
+   "size": 134410,
+   "count": 3,
+   "canonical": {
+    "fileId": "1072CD7yPdXToWDxHy5fpgZpC7WnXQBf4",
+    "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / GR at 15 Percent"
+   },
+   "duplicates": [
+    {
+     "fileId": "1H2m5EM7KpeTyTd92V1-hhaH9QAZRw1Qh",
+     "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR"
+    },
+    {
+     "fileId": "1Ea9PJX_to73v-jQdVeyljbArDlYRnpTh",
+     "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "443e1da094bd922dd1b781262116b8ff",
+   "size": 902342,
+   "count": 2,
+   "canonical": {
+    "fileId": "1nejdvRSVhh8uSYfIDjjsthGfmBSRqu2J",
+    "filename": "Letter for allotment of 25 plots_ZAH_20190521 (in favour of V4 Capital).pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Homes (ZAH) / Land Agreements, Allotment and Possession Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1ZzSzi8ptGK5iNlLKAeH4WcOdVSmhAtwg",
+     "filename": "ZAH - DHA-IR_s reply to LOI - purchase of 25 plots 20190521.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Homes (ZAH) / Supporting Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "1f159d72ec0c2cc66db152c19615eebb",
+   "size": 1988088,
+   "count": 2,
+   "canonical": {
+    "fileId": "1nDhb7l85cp3LELMeRKYoIq900etSJOuG",
+    "filename": "6 Allotment letter of ZAH.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+   },
+   "duplicates": [
+    {
+     "fileId": "18J2JWwkgNfcyYraBku0Y0loTK2Aosthl",
+     "filename": "6 Allotment letter of ZAH.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Homes (ZAH) / Land Agreements, Allotment and Possession Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "ff5dbfe309a668e6001f790cf5bada50",
+   "size": 3028363,
+   "count": 2,
+   "canonical": {
+    "fileId": "11_7v9-or_IenCtGtI_DhRxzz79nfm5f-",
+    "filename": "11 Plot Allotment letter of DHA 3.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+   },
+   "duplicates": [
+    {
+     "fileId": "1zJe61aSNNqnY0kqf84xbUH0W-lf5Z8tF",
+     "filename": "11 Plot Allotment letter of DHA 3.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Homes (ZAH) / Land Agreements, Allotment and Possession Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "2dbaa9420b66ae24064f92b99c99a903",
+   "size": 8937246,
+   "count": 2,
+   "canonical": {
+    "fileId": "1NH8kpTtNXDaf-7VBBRTP-6AqiwafyR-i",
+    "filename": "Lease Deed.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Mall 35 / Land Documents / Supporting Documents_"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Ai_N0ZUJHoV6zixGnSoPRRJBwKGTOgbH",
+     "filename": "Lease Deed.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Mall 35 / Supporting Documents"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "763aa52dfbb80870c606355e1ff09d28",
+   "size": 52811168,
+   "count": 2,
+   "canonical": {
+    "fileId": "12xEQ1n7xlMVZFPlMnqc8RVeNi4VjNSg8",
+    "filename": "Mall 35 Grey Structure Contract Tameer Construction 20201027_0001.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Mall 35 / Construction Agreements"
+   },
+   "duplicates": [
+    {
+     "fileId": "1OYfbxzIJRMVnQRPG_YDrhE47i3PjadNE",
+     "filename": "Mall35GreyStructureContractTameerConstruction20201027_0001.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "b2371220e22f152ca67765a75ff75c35",
+   "size": 12408610,
+   "count": 2,
+   "canonical": {
+    "fileId": "1CxfrqX8xbemkzrr5rZMmIaGtrfOqwDg0",
+    "filename": "Franchise Agreement_Mall 35 & Hotel One_20200225.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Mall 35 / Franchise Agreement"
+   },
+   "duplicates": [
+    {
+     "fileId": "1YLuzvyKp1ayOMvz-biKd0G_Lyoxi-I22",
+     "filename": "FranchiseAgreement_Mall35HotelOne_20200225.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "784f9861852cb8151395a3cfc68ab544",
+   "size": 100213,
+   "count": 2,
+   "canonical": {
+    "fileId": "1bxusfdTeSQIlhUR4rqB8r6zrcQ21GYXo",
+    "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Reference Drafts"
+   },
+   "duplicates": [
+    {
+     "fileId": "17oCyWvpPPG8z_aO7Wq5DOhMRBJGN0UDi",
+     "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Downtown Rumanza / Leaseback Agreements"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "f1f9bcd0e02ce0e54574e3bff784820f",
+   "size": 3104338,
+   "count": 2,
+   "canonical": {
+    "fileId": "1dzjNSgdxBd2IFD_SO5krGLJebOEwyT7C",
+    "filename": "1st Amendment to Sale of Land Agreement_DHAM & DCD_20221226.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Downtown Rumanza / Amendments"
+   },
+   "duplicates": [
+    {
+     "fileId": "1fZEbQYp7geGne1u0CQ58LVo_GJAZ27E1",
+     "filename": "Executed 1st Amendment of DTR_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Downtown Rumanza / Amendments"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "3ec29c619c72f764e65e4f3a6bb6f637",
+   "size": 9479831,
+   "count": 2,
+   "canonical": {
+    "fileId": "1ZtHsyZLoiJTR2ydMD68kNsu7ANUu0mWR",
+    "filename": "General Power of Attorney.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Neo_ / Land Documents_ / Supporting Documents"
+   },
+   "duplicates": [
+    {
+     "fileId": "1dHen-sm5uHnKKyd1kaMbcOUALz5vvzab",
+     "filename": "General Power of Attorney.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Neo / Supporting Documents"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "2d1b5d8d585c7a7041a231dee30884f1",
+   "size": 6449671,
+   "count": 2,
+   "canonical": {
+    "fileId": "13NqVHERzENRf2TCSdMJ8T74kb_Gv_56u",
+    "filename": "Chain Documents.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Neo_ / Land Documents_ / Supporting Documents"
+   },
+   "duplicates": [
+    {
+     "fileId": "1wJVOx7KN22Nz4qSE-FcdlwmduVJ6GZQm",
+     "filename": "Chain Documents.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Neo / Supporting Documents"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "d26468adb2f0ad6547c3b8b65573f956",
+   "size": 592155,
+   "count": 2,
+   "canonical": {
+    "fileId": "11KLq1ca_QUh8djaBgFiEPdsTNu7Ehhxm",
+    "filename": "Form P.T.1_Zameen Platinum_20210121.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1OGKWXozoBolERm-OXzVWZus-w7U2uj_z",
+     "filename": "Form P.T.1_Zameen Platinum_20210121.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "5e3e9c21663fbe4a73c738d9b45e9d85",
+   "size": 2915763,
+   "count": 2,
+   "canonical": {
+    "fileId": "1bb7SyagzfsMZV1-MzuIqbz-6POd-REPH",
+    "filename": "LDA_s Clearance Certificate - 15 A L Gulberg_0001.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "19lfpacifvMUts2oXKLKZeG9fMffg4tU6",
+     "filename": "LDA_s Clearance Certificate - 15 A L Gulberg_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "c49c5f7d928f4a009dd0679564afdd47",
+   "size": 654258,
+   "count": 2,
+   "canonical": {
+    "fileId": "18FD7njDPVSbLLf1hih5h3ZSaMj3Uo7_h",
+    "filename": "Zameen Aurum - Property Tax (1).pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Ycyur4V56X9rYmqpgfp-rKMNLocSQnFp",
+     "filename": "Zameen Aurum - Property Tax (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "711b4de92b22011e243a54c913da2ca4",
+   "size": 402026,
+   "count": 2,
+   "canonical": {
+    "fileId": "1yhhoX-Lykf3DvfhdkYp-wT94ALTj6uEW",
+    "filename": "Zameen Aurum - CVT (1).pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1N1uCb_ukxPrD_mKcjede7ziYwsKaTJUz",
+     "filename": "Zameen Aurum - CVT (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "510416e51df5d72cff93e38ba842e151",
+   "size": 586766,
+   "count": 2,
+   "canonical": {
+    "fileId": "1IidK8KjDeG6LElgKFNd4dfPJ-ReUVduk",
+    "filename": "15 A Property Tax Challan_1.PDF",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1AH_a0hhcyZaYNdi7F7_6Ice4sODLd-zW",
+     "filename": "15 A Property Tax Challan_1.PDF",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "11e83e1ebec5bde1d2981fc398482399",
+   "size": 68179,
+   "count": 2,
+   "canonical": {
+    "fileId": "1KnSxa-YLu6sd8SjssRyjuSoz4drbHIdt",
+    "filename": "iii - Aurum - Site Plan.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1UpMldzsOGr_GopHdEA8GmENDvojG_Y60",
+     "filename": "iii - Aurum - Site Plan.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "f47b22236187e042669e61ef5390b38c",
+   "size": 370792,
+   "count": 2,
+   "canonical": {
+    "fileId": "1j9lbB7hsEIsR4rGcY8NwCU-EF3wxrkdQ",
+    "filename": "Zameen Aurum - 236K (1).pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Supporting Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1hL2C1_t3F2gWx_xEiqjdBElQgAXgxENt",
+     "filename": "Zameen Aurum - 236K (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Supporting Docs"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "b1acd5d7b52daaa53aa5fb9515057ede",
+   "size": 123182717,
+   "count": 2,
+   "canonical": {
+    "fileId": "1ITr-ii91ZJML0mbmoswEuMa3iYAeXRWJ",
+    "filename": "133 Shadman Documents_.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Phoenix_ / Land Documents_ / Primary Documents"
+   },
+   "duplicates": [
+    {
+     "fileId": "1PwQmRjEpByCPo45vQ6ONgtbu_VAoDmDv",
+     "filename": "133 Shadman Documents_.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Phoenix / Supporting Documents"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "507b58a76823aea3178b9ffcb7c9754c",
+   "size": 9399011,
+   "count": 2,
+   "canonical": {
+    "fileId": "1l2CdTJy-TbUCtnI89nZ8dh06utdiSjnb",
+    "filename": "Zameen Quadrangle NOCs and approvals.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Approvals"
+   },
+   "duplicates": [
+    {
+     "fileId": "1lGrwjEPcE52t_sj-1RvtsMnUa-MkHFgo",
+     "filename": "NOCs (1).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Supporting Documents"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "c4e6584aaa5198e97446956b5ffb8731",
+   "size": 31075939,
+   "count": 2,
+   "canonical": {
+    "fileId": "1oVrguey8z-0t368_4oMabJxgiZygNCGU",
+    "filename": "221011 Contract Agreement with PEMS (MEP Works)_Zameen Opal.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / PEMS-MEP Agreement"
+   },
+   "duplicates": [
+    {
+     "fileId": "1DEC7SRkdMMFOk1gGOoK35xkcXCcGapAp",
+     "filename": "221011 Contract Agreement with PEMS (MEP Works)_Zameen Opal.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal_ / Constructions Agreement_ / PEMS-MEP Agreement_"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "9c5263cfafd435b9039cd90662edaef9",
+   "size": 10297394,
+   "count": 2,
+   "canonical": {
+    "fileId": "1_QxahaHqxzEpbNW95TWCNlnigB6TPOPV",
+    "filename": "Excavation Agreement & Tech Specs (Zameen Opal).pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Excavation"
+   },
+   "duplicates": [
+    {
+     "fileId": "1nprK3-tS3AhsKjE9a3dlQYs_nTwkIhnB",
+     "filename": "Excavation Agreement_Zameen Opal 03102019.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Excavation"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "bd7f7fa778193953083356cd9b9d57c3",
+   "size": 47633377,
+   "count": 2,
+   "canonical": {
+    "fileId": "13kYQnTJJHNh_LOfxtEfpm_hCnk4sWMRi",
+    "filename": "ContractAgreement_DeevarDevelopersandSinacoEngineers_20201124.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Grey Structure SINACO"
+   },
+   "duplicates": [
+    {
+     "fileId": "1aETZwCgCsSGC_H1wfVGbwwXD04TIoIKX",
+     "filename": "Contract Agreement_Deevar Developers and Sinaco Engineers_20201124.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Grey Structure SINACO"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "2d69ce72e68ddc2896aee768fd3dd388",
+   "size": 147044023,
+   "count": 2,
+   "canonical": {
+    "fileId": "1AW4XpGTxI1tluuXTix4-7CntKZXLbeKA",
+    "filename": "Piling Agreement_ Zameen Opal (Tender).pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal / Constructions Agreement / Piling Agreement"
+   },
+   "duplicates": [
+    {
+     "fileId": "1dsv4-kwAmpsdIf2YpHEE5vd9lA33C2xn",
+     "filename": "Piling Agreement_ Zameen Opal (Tender).pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Opal_ / Constructions Agreement_ / Piling Agreement_"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "f4a824d814daf9cbd3e56a87bed23925",
+   "size": 13778919,
+   "count": 2,
+   "canonical": {
+    "fileId": "1s9yZaLQfQ5edWTWyvDAf5oIUpTIyKkvK",
+    "filename": "250818-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest"
+   },
+   "duplicates": [
+    {
+     "fileId": "1lK913ILEA-Z_fL_ohsPIL2M-oWEvWPtj",
+     "filename": "250813-Agreement to Sell with CBD of Plot No. B-24-01 ( Zameen Crest)_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Vault_ / Land Documents / Primary Documents"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "f9d5a2df115405bad48445e084bc5677",
+   "size": 29264751,
+   "count": 2,
+   "canonical": {
+    "fileId": "1KcUhMqWCo6KU-klv8-k9186yGCyWrlPe",
+    "filename": "Zameen Aurum Zameen Platinum AJK Piling Agreement.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Construction Contracts / Piling Agreement AJK"
+   },
+   "duplicates": [
+    {
+     "fileId": "1D8M3G-f2pE7a8tdr5Rh7Rpzm9XSiywCJ",
+     "filename": "Zameen Aurum Zameen Platinum AJK Piling Agreement.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum_ / Construction Contracts_ / Piling Agreement AJK_"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "8992012cf39893e41becd220908b59bb",
+   "size": 26186352,
+   "count": 2,
+   "canonical": {
+    "fileId": "11vw2ZEz0ZmqwDw6t3nPycSsT0JbHSWdT",
+    "filename": "Zameen Aurum MEP Works Agreement_Zameen Platinum_World Engineering Services_20221121.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum / Construction Contracts / MEP Works Agreement- World Engineering Services"
+   },
+   "duplicates": [
+    {
+     "fileId": "1x-DGZai1UXSMDlERTXbxD2ExPy5nHkJk",
+     "filename": "Zameen Aurum MEP Works Agreement_Zameen Platinum_World Engineering Services_20221121.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Aurum_ / Construction Contracts_ / MEP Works Agreement- World Engineering Services_"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "b3939b713f07ba820ef2b466a1221f09",
+   "size": 27462058,
+   "count": 2,
+   "canonical": {
+    "fileId": "1SA00O-2l76JtVev_itX12J1TQQ8hPV-7",
+    "filename": "Deepwell Piling ZAM 20200821_0001.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall / Construction Agreement / Piling Agreement Deepwell"
+   },
+   "duplicates": [
+    {
+     "fileId": "1soX2-b6jrYHV8W--buRRd7w1MUhohfF0",
+     "filename": "Deepwell Piling ZAM 20200821_0001.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Ace Mall_ / Construction Documents / Piling Agreement Deepwell_"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "19aa31e818d2022105dad465a920d1a8",
+   "size": 9612729,
+   "count": 2,
+   "canonical": {
+    "fileId": "1_cdzTiXrQuXKuL9tE27ljCnKXHktdLo_",
+    "filename": "Agreement for Supply of Ready-Mix Concrete_20210705 Tetra.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Construction Agreements / Ready Mix Concrete Supply Agreements"
+   },
+   "duplicates": [
+    {
+     "fileId": "19fdUYnIUT558pelKe8WkWnSxTFJwE4Wa",
+     "filename": "Agreement for Supply of Ready-Mix Concrete_20210705 Tetra.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous"
+    }
+   ],
+   "crossProject": true
+  },
+  {
+   "md5": "d6cfca1d6e618006fbb49d0527be724c",
+   "size": 2813388,
+   "count": 2,
+   "canonical": {
+    "fileId": "1K86SeJDpKfz_oh8BupjJqIzVmI9mPeJ2",
+    "filename": "Quadrangle_Kingcrete.pdf",
+    "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Construction Agreements / Grey Structure Agreement_ Zameen Platinium_Kingcrete / Guarantees"
+   },
+   "duplicates": [
+    {
+     "fileId": "1erPYwKQ_lteKIcHL8mgLH5zsgV_ta8w5",
+     "filename": "CAR Policy.pdf",
+     "folderPath": "Commercial_ZD Projects Master Data and Tracker / Zameen Quadrangle / Construction Agreements / Grey Structure Agreement_ Zameen Platinium_Kingcrete / Guarantees"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "8690a36b0f0465ef6ada4c490e56a333",
+   "size": 11273708,
+   "count": 2,
+   "canonical": {
+    "fileId": "1KDn86Uu1VfJOj_duRVRNcTT9OwFzUdV7",
+    "filename": "River Hills IV_(Rawalpindi)_PPA_20200221.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+   },
+   "duplicates": [
+    {
+     "fileId": "19eFnBBBcsR0iFrySBq7706zkRP8dS7zE",
+     "filename": "RiverHillsIV_Rawalpindi_PPA_20200221.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "b06aec32caa587d03a67b3357cd740c2",
+   "size": 1016868,
+   "count": 2,
+   "canonical": {
+    "fileId": "1CiZJwfkht7VOHEv7I0lBitce-LrvaIfm",
+    "filename": "SecondAmendmentSpringArch_20220411.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North / Spring Arch (Rawalpindi)"
+   },
+   "duplicates": [
+    {
+     "fileId": "1mumMCXfoUaqDlakzohBRvGtfM9Lc0Okv",
+     "filename": "Second Amendment Spring Arch_20220411.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "2f07601d3fc288fd7bd3d91c6c95decf",
+   "size": 14503813,
+   "count": 2,
+   "canonical": {
+    "fileId": "1aRehJtE8b3JzyQv28ExttNduuC6f2lTY",
+    "filename": "Rockland Villas - PPA.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+   },
+   "duplicates": [
+    {
+     "fileId": "1jVHBtLiG4JjxOB85RoSERqw13u0fzJSV",
+     "filename": "TomorrowLandCountryClubResortVillas_20211230.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "11422f361499fc5f498c73f0e0f4c2e9",
+   "size": 46643558,
+   "count": 2,
+   "canonical": {
+    "fileId": "1WbKC8AepluuEbZIGOj1NL1uDUWT1EnFk",
+    "filename": "MallofGujrat_PPA_20210630.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / North"
+   },
+   "duplicates": [
+    {
+     "fileId": "1lw45t03Obk6G-MnF_AI6nvn-nBQFLLvp",
+     "filename": "MallofGujrat_PPA_20210630.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "a287514b0473f4c2e1a4e9ebb7d30480",
+   "size": 37451631,
+   "count": 2,
+   "canonical": {
+    "fileId": "1o4mLHTUdrYQjuVGDkVMLdiB-WcU_3twk",
+    "filename": "Down Town Rumanza_Executed_Project Sales Agr_Scan.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central / Downtown Rumanza IT & Project Sales"
+   },
+   "duplicates": [
+    {
+     "fileId": "1MFkM2byigtkweCxwh1LlZHJIdgpjHhWf",
+     "filename": "Down Town Rumanza_Executed_Project Sales Agr_Scan.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "4ffe7394857f1d99b26788220f92d07e",
+   "size": 35936060,
+   "count": 2,
+   "canonical": {
+    "fileId": "1A9fa9VyJYVtclFL5zLil7uF7A5MyAcM6",
+    "filename": "Down Town Rumanza_Executed_IT Service Agr_Scan.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central / Downtown Rumanza IT & Project Sales"
+   },
+   "duplicates": [
+    {
+     "fileId": "1dSWbqhR6K8cx6cU8xumaOEbtz28AUPb4",
+     "filename": "Down Town Rumanza_Executed_IT Service Agr_Scan.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "f539d9959a026b4523e18a323a2c3e25",
+   "size": 31793817,
+   "count": 2,
+   "canonical": {
+    "fileId": "1BmNFGxIwAqa32XR-lDt5inmcrrrgqQcf",
+    "filename": "GolfViewRumanza_20220204.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Central"
+   },
+   "duplicates": [
+    {
+     "fileId": "1u6Fjo3YSO2TOS6KLSnccIJFoLXImRvLA",
+     "filename": "GolfViewRumanza_20220204.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "7ab57bdf394f7a160c8d4f3f14eea9e4",
+   "size": 125114,
+   "count": 2,
+   "canonical": {
+    "fileId": "1MlBgD4WEoJGr_fzJf2u9fYQpT74EY7L9",
+    "filename": "Agreement to Sell for residencial apartments_ZAM_20190624_FIDIC escalation.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Residential Apartment"
+   },
+   "duplicates": [
+    {
+     "fileId": "1qlqpI3gcPYnAkTXoRvSYVzDisuGlCFAx",
+     "filename": "Agreement to Sell  [20190624].docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "9e7c1679d4cbaf0c306e86ae64817886",
+   "size": 2112106,
+   "count": 2,
+   "canonical": {
+    "fileId": "1cgrm1Isi20vpsc8tTPOA3UMkJkSSwP2n",
+    "filename": "Second Addendum Broadway Heights no. 15_0001.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway Heights"
+   },
+   "duplicates": [
+    {
+     "fileId": "1TRM2ut0JQZ9ATRmNzQJL2hnVUU4CTjod",
+     "filename": "Copy of Second Addendum Broadway Heights no. 15_0001.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway Heights"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "7ecb3bacc43cdc8894ac78c13f467178",
+   "size": 379461,
+   "count": 2,
+   "canonical": {
+    "fileId": "1WuntTRSBXI8gw4cFK8FkkXsKWOnwzpmQ",
+    "filename": "Fixed-Term Employment Contract_Online Classifieds Pakistan.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited"
+   },
+   "duplicates": [
+    {
+     "fileId": "1dUAWh3eA_lDgcoL1nHmx-6j69a_DeLll",
+     "filename": "Fixed-Term Employment Contract_Online Classifieds Pakistan (1).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Employment Agreement / Online Classifieds Pakistan (SMC-Private) Limited"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "2b7bbe7f476a43b9fea3f936697f3d3c",
+   "size": 109480,
+   "count": 2,
+   "canonical": {
+    "fileId": "1dXf9K5LFxHjALBqfYLiQvzzQ_9ouiS_f",
+    "filename": "230920 - Agreement to Sell (Zameen Phoenix) - v1.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Phoenix - Lahore / Final Version"
+   },
+   "duplicates": [
+    {
+     "fileId": "16A2M_8k6pcYb9TYAoZsTbMg2hJtXJDEn",
+     "filename": "Base Draft.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "d60f32bda1868f9c940e3d044709a291",
+   "size": 108286,
+   "count": 2,
+   "canonical": {
+    "fileId": "1nQQ9K9U95HcNYQPhRrK-_-cHGYIoCek9",
+    "filename": "230606 - Agreement to Sell for Zameen Jade (New).docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Preliminary and Working Drafts"
+   },
+   "duplicates": [
+    {
+     "fileId": "1eT-l43LeawY1H_p-s8wFLrrLdeRVsG_6",
+     "filename": "230606 - Agreement to Sell (Zameen Jade) without Furnishing Clause.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "4f71c6640747c235a809c9e2240d7bc2",
+   "size": 135900,
+   "count": 2,
+   "canonical": {
+    "fileId": "1YumFtM6YlsHUMMNxkhH9amldDbjoqEa6",
+    "filename": "Quadrangle Agreement to Sell v2.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Quadrangle - Lahore"
+   },
+   "duplicates": [
+    {
+     "fileId": "1bnh5g5ISfD31-HjG5_yGDJ99WqsnBhH6",
+     "filename": "Quadrangle Agreement to Sell (1).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Quadrangle - Lahore / 231011- Quad V3 New"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "e6aff914bfd1dc5a2beb4b62ad95feea",
+   "size": 69482,
+   "count": 2,
+   "canonical": {
+    "fileId": "1eVDew1Y0Lg-2y9ScxnGRXTGSgyGAPcdl",
+    "filename": "Option 1 .jpg",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore"
+   },
+   "duplicates": [
+    {
+     "fileId": "1-P8sINxnvJDLrHL4-K26wnGTB_Qr574h",
+     "filename": "Option 3.jpg",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Vault-NSIT-Lahore"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "82d8a17fbea92a29f414d3705b58484d",
+   "size": 113679,
+   "count": 2,
+   "canonical": {
+    "fileId": "1ezp5TzfGut7IQ4zw0cfoPjBWpEKPh0pa",
+    "filename": "231025 - Agreement to Sell - Golf View Rumanza - Revised Draft.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan"
+   },
+   "duplicates": [
+    {
+     "fileId": "1FyFQiRLcHmdPi662khGX9Jw6-jVra7QW",
+     "filename": "Base Draft (1).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Golf View Rumanza - Multan / Guaranteed Rental Model"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "23e9595f8836985aafff14a393abb3d7",
+   "size": 104126,
+   "count": 2,
+   "canonical": {
+    "fileId": "1WK9UrjxHa4_VrvTCB6RSI8VfMSE8k7mS",
+    "filename": "LDA Submission .jpg",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / LDA Submission Slip_"
+   },
+   "duplicates": [
+    {
+     "fileId": "1ArDAuSanMPD4t0dnfAifPLnQpHMmbpkt",
+     "filename": "WhatsApp Image 2026-07-13 at 11.39.43 (1).jpeg",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Approvals"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "c61b83fff1c5b8e068dcd86ed620433b",
+   "size": 5793498,
+   "count": 2,
+   "canonical": {
+    "fileId": "1s4uvv7JfeQIHfyJx4XpitP1W5krgGu-9",
+    "filename": "Registry Inteqal 290 Rakh Rai.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1EKQ_y3bKwTSdAcG81E6TPWrKHQTWsIdT",
+     "filename": "Registry Inteqal 290 Rakh Rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "e1269aa7db5625b62335e3d92f445147",
+   "size": 5108265,
+   "count": 2,
+   "canonical": {
+    "fileId": "1aOYsFiyF-rvPl7P0nCtDfh0iBxx2np5H",
+    "filename": "Registry & Inteqal khasra 286 & 290.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+   },
+   "duplicates": [
+    {
+     "fileId": "1fiMibH6f6MsyJwT2cOmX3ol1bTDKZg9t",
+     "filename": "Registry & Inteqal khasra 286 & 290 (1).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "7a47d09a33b0ff32040190f42232dbc2",
+   "size": 4685238,
+   "count": 2,
+   "canonical": {
+    "fileId": "1eJfnaWuGEjgcYGiH2dPHeI9kTkKKF1ls",
+    "filename": "Registry 57k khasra 295 rakh rai.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1yHZoTak3ZlA7pWxDW4yRubLTfrFlF8Lz",
+     "filename": "Registry 57k khasra 295 rakh rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "3dd11d5215f74f23b354ed66e31d611b",
+   "size": 4964341,
+   "count": 2,
+   "canonical": {
+    "fileId": "1zewhLjCs_C6JqL0il3SczWpiOQwxkNb5",
+    "filename": "Registry 57k khasra 285 Rakh Rai.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1SNCb-F-6XoHM4GiBsq_X1P9kBeFGIVG6",
+     "filename": "Registry 57k khasra 285 Rakh Rai.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "8b52f66fdfbdb30f85727cbed67a697d",
+   "size": 4810720,
+   "count": 2,
+   "canonical": {
+    "fileId": "1gVX-vmLkJupl6YldLqfr_pS4QMPAc5FB",
+    "filename": "Registry Inteqal khasra 290 & 291.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1nu5nzOXpWnBkXWMB5jY1Ot4cTZdvhigI",
+     "filename": "Registry Inteqal khasra 290 & 291.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "61c89c494d2bc9c42c1790056eb7e468",
+   "size": 4026202,
+   "count": 2,
+   "canonical": {
+    "fileId": "1DhCA9EwGKeFTgc4UNgTK3vBTfEhivaJQ",
+    "filename": "Registry & NEC 18-9-0 rakh rai.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1S_N6m6YyDhNAEd2GlTMOxkQhMbYUXhug",
+     "filename": "Registry & NEC 18-9-0 rakh rai in favor of Mr Zia.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "c380cc60fb200f4ff1bebc12cc78c426",
+   "size": 2596597,
+   "count": 2,
+   "canonical": {
+    "fileId": "1VIzcIGcgHfrjm6yVYy5GdaGYwSHUjMRV",
+    "filename": "Registry 69-4-0 rakh rai (tariq saeed).pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1i2Ee5nfWsiYW8ZBDhG_QxuMjCnmo77T3",
+     "filename": "Registry & Inteqal 69-4-0 rakh rai in Favour of ZIa Mohi Ud Din.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "bc0c53e20ced13b17b0de436c88e6d28",
+   "size": 1996956,
+   "count": 2,
+   "canonical": {
+    "fileId": "1I5SlCPCZzQJ4FfACpcwhuFRXnPqYX1P3",
+    "filename": "Fards record LDA for revise plan ph-2.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Fards"
+   },
+   "duplicates": [
+    {
+     "fileId": "1134FDEyJfEcR7ZWNxvbb2NsQOqWCnbn6",
+     "filename": "Fards record LDA for revise plan ph-2.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Broadway - ICON / Land Docs"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "0c958f68a829e3a73fd54027023c0001",
+   "size": 67160987,
+   "count": 2,
+   "canonical": {
+    "fileId": "1aGyJW0yrX4g7ld35dsEaZEjXe1oY7xhA",
+    "filename": "Verified copies for revised plan phase l.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Ph 1 (Town Houses)_ / Land Documents_"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Re49AHvmQinZprMLJF7vnzMgmofvvqgk",
+     "filename": "Verified copies for revised plan phase l.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "863d1b58d544d2c44b4e60b7eb0ef840",
+   "size": 22179933,
+   "count": 2,
+   "canonical": {
+    "fileId": "1PpB0fyqp7hqZYw1cMIS-DAS1c5lMIDez",
+    "filename": "AC Raiwind Report for NOC ADCR Phase1.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Ph 1 (Town Houses)_ / NOC"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Qnzot9aaZcrWFKCyHbERHlyaVTgL7hY4",
+     "filename": "AC Raiwind Report for NOC ADCR Phase1.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "d444d08a9f82d257b1b5882b094ed5ce",
+   "size": 604175,
+   "count": 2,
+   "canonical": {
+    "fileId": "1R_oEfDK3elu-OCQw_hNYeL0hWqav2Olp",
+    "filename": "ZAMEEN UNDERTAKING.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Madison Square (Tipu Block) / Undertaking Madison Square_"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Z-KhVzMK6K5-m5pn-eZH0Lv2tRamuRps",
+     "filename": "UNDERTAKING MADISON SQUARE TIPU BLOCK.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Madison Square (Tipu Block) / Undertaking Madison Square_"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "8409a327dbfae4832c911b2756a88cf1",
+   "size": 12926935,
+   "count": 2,
+   "canonical": {
+    "fileId": "1FEJjBhu35TYk4G7VrtM4pypqP-rA8e-p",
+    "filename": "Zameen EON IT Services Agreement_0001.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Eon / IT Services Agreement"
+   },
+   "duplicates": [
+    {
+     "fileId": "1U1nwQQbHoYzUuNvirZexl982i0Dl4J3N",
+     "filename": "Zameen EON IT Services Agreement_0001(1).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Eon / IT Services Agreement"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "7a14f39379f3003843332ebeca2e645f",
+   "size": 14810943,
+   "count": 2,
+   "canonical": {
+    "fileId": "1pEp1Ji3gPwBO4PJ6wqzzCcJM_6ef_FK_",
+    "filename": "Zameen EON Project Sales Agreement_0001.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Eon / Project Sales Agreement_"
+   },
+   "duplicates": [
+    {
+     "fileId": "1GP7ZGs4OK3mxmjFAegPJvcHTu0CBS3rI",
+     "filename": "Zameen EON Project Sales Agreement_0001(1).pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Zameen Eon / Project Sales Agreement_"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "07cf4725461b61753fa829ac349d5101",
+   "size": 120727,
+   "count": 2,
+   "canonical": {
+    "fileId": "1_OmhyWKE6nyUSYJRGqRRzvXQip3i1caw",
+    "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / 241220-New Version of SPA with GR"
+   },
+   "duplicates": [
+    {
+     "fileId": "1_EDGNWlb5fR40hHbCuTkare2yfiDQSRt",
+     "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (with GR).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "ba5099c6fc91005437c094b2e749198c",
+   "size": 114309,
+   "count": 2,
+   "canonical": {
+    "fileId": "1T8PdalS64ubmlRQGXCZINeGmLFjN7rDa",
+    "filename": "250225-Zameen Developments-Agreement to Sell-Zameen Arx (without Cashback).docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250225-With and Without Rental Promo"
+   },
+   "duplicates": [
+    {
+     "fileId": "1ZpVqvw6BeL_CaFg7jlPgRBxF7JNcTjem",
+     "filename": "250721-Zameen Developments-Agreement to Sell-Zameen Arx (without Cashback).docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / 250721- Revised version (without cashback)"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "118573c8a3074eb8f08da831ad253f77",
+   "size": 41984,
+   "count": 2,
+   "canonical": {
+    "fileId": "16vo2k2LvvUw-d6JEu52qb558eSqkmQqy",
+    "filename": "Agreement-to-Sell-Plot-[3rd Step].doc",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set / Final Submission"
+   },
+   "duplicates": [
+    {
+     "fileId": "1dka_GvQT69QCnbEKRZO5k8uwXRENHU0F",
+     "filename": "Agreement-to-Sell-Plot-[3rd Step].doc",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "bc975b6ffc95973630f5a16f81ee60a5",
+   "size": 37888,
+   "count": 2,
+   "canonical": {
+    "fileId": "1QIc-oZLNlaVCOtfeYsgjVkzCp6VSrHqs",
+    "filename": "Undertaking-by-Purchaser [2nd Step].doc",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set / Final Submission"
+   },
+   "duplicates": [
+    {
+     "fileId": "1vJ9Ci9LdQCzfXdO0ubA9yaqFIXdTG5Le",
+     "filename": "Undertaking-by-Purchaser [2nd Step].doc",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "a26d9a7fca5d1ad243e2faa03260f188",
+   "size": 36864,
+   "count": 2,
+   "canonical": {
+    "fileId": "1O_ItEmkuJ3wY68PwUl-eO_1hS5eJJDjF",
+    "filename": "Affidavit-by-Seller [1st Step].doc",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set / Final Submission"
+   },
+   "duplicates": [
+    {
+     "fileId": "1yHFFquhzBCwqoStibmEhYmP2rFduat88",
+     "filename": "Affidavit-by-Seller [1st Step].doc",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "9bec830913c113288f623c1d53da3a3e",
+   "size": 331009,
+   "count": 2,
+   "canonical": {
+    "fileId": "1XVYP3WeMOcxkP2oxgwAKmYHHsIbL96f0",
+    "filename": "Application-Form-for-Transfer-of-Plot [5th Step].pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set / Final Submission"
+   },
+   "duplicates": [
+    {
+     "fileId": "1UeK3uCuypM5tIhybBUIVBPXVmVo9jzmm",
+     "filename": "Application-Form-for-Transfer-of-Plot [5th Step].pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "51f17b273ee673521d92718db7979cbf",
+   "size": 33792,
+   "count": 2,
+   "canonical": {
+    "fileId": "1DlWgQyAdeQdKUKU3tqCZFeUJSLrFM0-n",
+    "filename": "Authority Letter Collection of NDC [4th Step].doc",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set / Final Submission"
+   },
+   "duplicates": [
+    {
+     "fileId": "1Eyar0frojexp4PB7rgtYJYIyXJutlBZL",
+     "filename": "Authority Letter Collection of NDC [4th Step].doc",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Homes - Islamabad (V4 Capital - Unit No. RT6956 - Plot 9) / Final Set"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "b7dbca3e7bef28a7510d9f1d90ab3cd0",
+   "size": 109440,
+   "count": 2,
+   "canonical": {
+    "fileId": "1jpSw6zdK6SsA78cdJdPSRrjIye1loGrQ",
+    "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / Final Version"
+   },
+   "duplicates": [
+    {
+     "fileId": "1-w8djeYZZuPWhIWdCgxYahdIkciKRvTy",
+     "filename": "230830 - Agreement to Sell (Zameen Jade) - v1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Jade - Lahore / New Version with GR Model"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "9a9aa77b8b1c8509da19b8126c508ea1",
+   "size": 104683,
+   "count": 2,
+   "canonical": {
+    "fileId": "1n7EG4ZRgUGcSmTldIzKd1YTXmIaS09Uv",
+    "filename": "Title Document - Old OPAL SPA.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Lahore (SPA Amendment and License Model) / First Addendum - Possession Prior to Completion of Payment Plan"
+   },
+   "duplicates": [
+    {
+     "fileId": "1wUJ1IGbJEIy5HdmMgzrmiSOvkNrEE89f",
+     "filename": "Title Document - Old OPAL SPA.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Lahore (SPA Amendment and License Model) / SPA - New Customers - Post Completion of Project"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "76e3f520bb509864e949751e0aed33c0",
+   "size": 39432,
+   "count": 2,
+   "canonical": {
+    "fileId": "14jO9zL4HvtYQJsX0cb8aDSPm4lWFO4yn",
+    "filename": "240124-License Agreement-Zameen Opal-v2.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Completed Units / Final Drafts Sent to PM Team_s Review"
+   },
+   "duplicates": [
+    {
+     "fileId": "1z6g3wO9ksbtSlEQNTjLf0LMre06JpUrQ",
+     "filename": "240124-License Agreement-Zameen Opal-v2.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Completed Units / Final Drafts for MH Review"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "64dade5582fb32523c21a5d5f6cf52b6",
+   "size": 593159,
+   "count": 2,
+   "canonical": {
+    "fileId": "1y-D3YeQkhHrmXvL2EXi21U04S_6TJGB8",
+    "filename": "240124-Allotment Letter-Zameen Opal-v2.doc",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Completed Units / Final Drafts Sent to PM Team_s Review"
+   },
+   "duplicates": [
+    {
+     "fileId": "1qif8Zbz395hkhSSvU4WTngFL8iTvprUq",
+     "filename": "240124-Allotment Letter-Zameen Opal-v2.doc",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Completed Units / Final Drafts for MH Review"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "e6a694961c6588fbcd6f788ddd4879e1",
+   "size": 14497,
+   "count": 2,
+   "canonical": {
+    "fileId": "11YXYMKjNoIjWbieP6knTVEwnEchnsRtM",
+    "filename": "240124-Agreement to Sell-Zameen Opal-Appendix E.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Completed Units / Final Drafts for MH Review / For Review / Final Post MH Review"
+   },
+   "duplicates": [
+    {
+     "fileId": "19n8xSTxZU8qRMOIZwQRieT-jWXeqgNNm",
+     "filename": "240124-Agreement to Sell-Zameen Opal-Appendix E.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Opal - Completed Units / FINAL APPROVED DRAFT"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "943482a638924fac7d386096d1f6cfaf",
+   "size": 140555,
+   "count": 2,
+   "canonical": {
+    "fileId": "1iW1uRCXfChUt4qUMC_7EGKfc0jFCPqeI",
+    "filename": "250423-Zameen Developments-Agreement to Sell-(Standard Draft) (Without GR) v1.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / 250129- New Agreement to Sell (without) GR"
+   },
+   "duplicates": [
+    {
+     "fileId": "1cNBbOIwwyhls-U1nfG7WhByvI_-R9S5l",
+     "filename": "250414-Zameen Developments-Agreement to Sell-(Standard Draft) (Without GR) v1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / 250129- New Agreement to Sell (without) GR"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "92bb56b1a180c4cd3e0ff77c4ff79789",
+   "size": 101707,
+   "count": 2,
+   "canonical": {
+    "fileId": "1zD9uIWrfesGKqeIOGVLHXj0Aal7Kg0Nt",
+    "filename": "231019-Downtown Rumanza-Agreement to Sell-v2.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing) / Final Draft (Residential and  Commercial Units)"
+   },
+   "duplicates": [
+    {
+     "fileId": "13wwj0k_tLybQ-L_MJc38v5CGniy2UlZF",
+     "filename": "231019-Downtown Rumanza-Agreement to Sell-v2.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / ZD - Downtown Rumanza - Multan / Agreement to Sell - Residential Units (with Furnishing)"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "863569fae91aaa51754c3060554ef092",
+   "size": 5885553,
+   "count": 2,
+   "canonical": {
+    "fileId": "1tdd6iUBkOZMATvObYp8HqXXy2Z8FhIbu",
+    "filename": "Fard bay ADP 2-15-121 Shumaila Kiran.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Mall of Icon_ / Land Docs / Fards"
+   },
+   "duplicates": [
+    {
+     "fileId": "1voF--IBdlrCiXUdOqXQ-2sy_lvoYG1Pv",
+     "filename": "Fard bay ADP 2-15-121 Shumaila Kiran.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Miscellenaous"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "1c4b711f3a66fa6c94d35c7e5e8be75e",
+   "size": 1677095,
+   "count": 2,
+   "canonical": {
+    "fileId": "1xMfyb-te39UhRR9GE2AHnRtEYBYTpMRA",
+    "filename": "Fard Bay ADP 6-15-180 Maqsood Ahmed.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley- Mall of Icon_ / Land Docs / Fards"
+   },
+   "duplicates": [
+    {
+     "fileId": "1rsG-YUhzp6LCEJISkiXVbxJPd7h_tNOW",
+     "filename": "Fard Bay ADP 6-15-180 Maqsood Ahmed.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Fards"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "26fed6aeb6f9adb57f9317ecf43fa8ae",
+   "size": 2244805,
+   "count": 2,
+   "canonical": {
+    "fileId": "1yGe7C3_hCEZWposSObeOGoXySmNraupG",
+    "filename": "Registry khasra 826 front 4-8-0.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+   },
+   "duplicates": [
+    {
+     "fileId": "1fuBIIeCMiq5Xwreq_ATvG7nE5GZwgqE6",
+     "filename": "Copy of Registry khasra 826 front 4-8-0.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Icon Valley Phase II- New Extension_ / Land Docs / Registries and Khasra Plans"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "0595c590c6aeb40c89b606f359ab4cb4",
+   "size": 1574360,
+   "count": 2,
+   "canonical": {
+    "fileId": "1iJsQ7orSbt2gzYe0N2qP3tD5m7EvdxEq",
+    "filename": "Inter Office MEMO_Madison Square II Tipu Block.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / ITE and PPA for Various Projects / Madison Square Tipu Final / Final Final / Sabse Final / Final Final / Undertaking / Approval"
+   },
+   "duplicates": [
+    {
+     "fileId": "1TzemAe1K7en9sRTyeCFQt_I0Z_3ZkqpE",
+     "filename": "Inter Office MEMO_Madison Square II Tipu Block.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Lahore / Madison Square (Tipu Block) / Approvals_ / Approval (MEMO)"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "1930bcf0470599631b0849e0d183c056",
+   "size": 14613,
+   "count": 2,
+   "canonical": {
+    "fileId": "1zJ_8py0zGLnN0FLHs7otibU-O4J1pHrb",
+    "filename": "250423-Appendix D-Monthly Payment Schedule-(Cashback).docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell"
+   },
+   "duplicates": [
+    {
+     "fileId": "1w978YJmEB-a5xYbstiTVw6pv0CWoqg5W",
+     "filename": "241127-Appendix D-Monthly Payment Schedule.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Arx - Lahore / Rental / 241211-Annexures to the Agreement to Sell"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "a3bb9ab8f036748390be3b03402ce9a3",
+   "size": 121054,
+   "count": 2,
+   "canonical": {
+    "fileId": "1tUhktzHbyGjJtqG3W788PtIiOSI1Na_y",
+    "filename": "231025 - Agreement to Sell - ZAM - Commercial Shops - v1.docx",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / Final Drafts"
+   },
+   "duplicates": [
+    {
+     "fileId": "1weOw1IXPWaQxkpON6P1Z5KOAOzAPS5iZ",
+     "filename": "231025 - Agreement to Sell - ZAM - Commercial Shops - v1.docx",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen - Pakistan Contract Templates / Agreement to Sell & Sale Deeds / Zameen Ace Mall - ZAM / Commercial Shops / GR at 15 Percent"
+    }
+   ],
+   "crossProject": false
+  },
+  {
+   "md5": "c3612ab1e7cc1b396a2083327fa425e3",
+   "size": 23960985,
+   "count": 2,
+   "canonical": {
+    "fileId": "1uqDgHSZ506e-cHGRbwnh1i6cBtLDjWWf",
+    "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+    "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Deeds / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest"
+   },
+   "duplicates": [
+    {
+     "fileId": "1i40dEge7tmlnmDzBDtdBx4SC_Mln1992",
+     "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+     "folderPath": "Commercial_Zameen Media Contracts / Zameen Media PPA's / Other PPA's / PPA_s / Zameen Media etc / Amendment to be uploaded / Air Table Ones / Latest / Sabse latest"
+    }
+   ],
+   "crossProject": false
+  }
+ ]
+}

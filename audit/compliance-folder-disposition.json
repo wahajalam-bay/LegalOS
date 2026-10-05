@@ -1,0 +1,1539 @@
+{
+ "builtAt": "2026-09-23T12:16:34.184Z",
+ "total": 190,
+ "counts": {
+  "MODULE_ROOT": 5,
+  "ENTITY_FOLDER": 25,
+  "LICENCE_ENTITY_FOLDER": 8,
+  "RESOLUTION_ENTITY_FOLDER": 42,
+  "LOAN_FOLDER": 56,
+  "LEASE_FOLDER": 8,
+  "SERVICE_FOLDER": 10,
+  "APPLICATION_FOLDER": 1,
+  "LICENCE_FOLDER": 1,
+  "DOCUMENT_FOLDER": 34
+ },
+ "unknown": 0,
+ "folders": [
+  {
+   "id": "1MmNdxDMVISCi5HMW1b2CaOoCIiV7ESsT",
+   "name": "Zameen Group_Loan Agreements",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements",
+   "depth": 2,
+   "family": "LOANAGR",
+   "disposition": "MODULE_ROOT"
+  },
+  {
+   "id": "1wIRMHB28GtRKfIHYmhEb4Nixx_SogT9J",
+   "name": "Zameen Group _PK Intercompany Loans ",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans ",
+   "depth": 2,
+   "family": "INTERCOMPANY",
+   "disposition": "MODULE_ROOT"
+  },
+  {
+   "id": "145nd-bQklxacKUW2G2Cz3RFE_Y32Eu6Z",
+   "name": "Licenses & Approvals _ Pakistan Entities ",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities ",
+   "depth": 2,
+   "family": "LICENCES",
+   "disposition": "MODULE_ROOT"
+  },
+  {
+   "id": "1VuP7hOWDLZDqoPoU5nws4ZtCaITUgJmx",
+   "name": "Resolutions ",
+   "path": "Compliance Data _LegalOS / Resolutions ",
+   "depth": 2,
+   "family": "RESOLUTIONS",
+   "disposition": "MODULE_ROOT"
+  },
+  {
+   "id": "1WRj47zLjMaZp1QaM7oSmnLwuDexYXiPs",
+   "name": "Spend Contracts (Lease and Service Agreements)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements)",
+   "depth": 2,
+   "family": "SPEND",
+   "disposition": "MODULE_ROOT"
+  },
+  {
+   "id": "16fo37bmeI5U-me7A1pNUXhk_ieuXwEcr",
+   "name": "Zameen Venture One (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited",
+   "depth": 3,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1ZLlMIdsLzskdfvg94Vp8_alxBxfH4fIR",
+   "name": "Zameen Media (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited",
+   "depth": 3,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1gj0DFKZNLOOSMo06EuzYxs5nWMg1XfUQ",
+   "name": "Zameen Developments (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Developments (Private) Limited",
+   "depth": 3,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1i8DQoctPWej0m2EFTvLbDme0tbWTi0Q1",
+   "name": "Online Classifieds Pakistan (SMC-Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited",
+   "depth": 3,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1T2rpJCLCezrxnUzOUX81D2lN1MlpAeRp",
+   "name": "Deevar Developers (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Deevar Developers (Private) Limited",
+   "depth": 3,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1pYmVoSqVFoZmQfF5fTTtjjfDzwdBBvB7",
+   "name": "Daftarkhwan (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Daftarkhwan (Private) Limited",
+   "depth": 3,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1LdptI9bhN2xRkNGxMGiA_tQ7O-7hwww1",
+   "name": "Zameen Venture One (Private) Limited & subsidiaries",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries",
+   "depth": 3,
+   "family": "INTERCOMPANY",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "15q2blFxTW5vCW2h9tanhcjV3qc71aiTv",
+   "name": "Zameen Developments (Private) Limited & subsidiaries",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Developments (Private) Limited & subsidiaries",
+   "depth": 3,
+   "family": "INTERCOMPANY",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1lxBro-z0XLL5DcJg9nLy8Q-iCxwDpX1x",
+   "name": "Dubizzle Labs (SMC-Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited",
+   "depth": 3,
+   "family": "INTERCOMPANY",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "19UdHBs_ZPHQk_6soQKaQX6ccWXHAiomf",
+   "name": "Daftarkhwan (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Daftarkhwan (Private) Limited",
+   "depth": 3,
+   "family": "INTERCOMPANY",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1L31Gio1z0wUo_DiprbHAT8K4IzKPBfaJ",
+   "name": "LCCI - Zameen Developments (Pvt) Ltd (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / LCCI - Zameen Developments (Pvt) Ltd (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1jVS-DREfH3rh1w31gQyYT4nUwb_BeGcZ",
+   "name": "PEC - ZD Engineering Solutions (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / PEC - ZD Engineering Solutions (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1HEU9G58RSnUqWvuE4YwNSlggbHKAUya-",
+   "name": "LCCI - Zameen Media (Pvt) Ltd (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / LCCI - Zameen Media (Pvt) Ltd (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1C5jCJ5SK5duo5M8KkX95-jx7DPnlIuDu",
+   "name": "PSEB -Dubizzle Labs (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / PSEB -Dubizzle Labs (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1hYRzTfNsCZQE0dZEZPVFrdoW1iTUJ4LN",
+   "name": "PCATP-ZD Design Consultants (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / PCATP-ZD Design Consultants (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1Hu9Xcq2Sxd98B__t_5Gp4tQjdM52CKzl",
+   "name": "ABAD- Zameen Developments (Pvt) Ltd (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / ABAD- Zameen Developments (Pvt) Ltd (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1KwLUEifL5dTMuVn5lGTa8691tMnCJbGM",
+   "name": "PEC- Deevar Developers (Pvt) Ltd_ (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / PEC- Deevar Developers (Pvt) Ltd_ (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1i3ro2YOfgJ9Y2Ptp-AQ2o8UzWfRT6a8X",
+   "name": "RMC_Zameen REIT Management Company (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / RMC_Zameen REIT Management Company (1)",
+   "depth": 3,
+   "family": "LICENCES",
+   "disposition": "LICENCE_ENTITY_FOLDER"
+  },
+  {
+   "id": "1Mjknhyl-sBX0e-uBR7e3g-BuDFPoxip7",
+   "name": "Downtownrise Developments(Pvt) Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Downtownrise Developments(Pvt) Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1-xHGUHpSHGhqNeWqOaK24OYwZk1kDhn3",
+   "name": "Deevar Developers(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Deevar Developers(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1cqES_RiAaQYtodX6pE7EqAfQJW5CxiWp",
+   "name": "Mall 35_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Mall 35_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1jwuoaD3Zmh-xcxZ2fCTfx1FXPYTl-XIg",
+   "name": "Dynamic Zameen Solutions(smc-pvt)Ltd_Resolutions and Authorizations_ (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Dynamic Zameen Solutions(smc-pvt)Ltd_Resolutions and Authorizations_ (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1IXbElKRC0OIYc9Q1eFJ1Tt1p9nLSWBWO",
+   "name": "Dubizzle Labs(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Dubizzle Labs(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1KgEgGqTblshdjUaKtw-WvmJlaLEoXicn",
+   "name": "Online Classifieds Pakistan (SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Online Classifieds Pakistan (SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1RDAzfpGVnc4kBOMRjp3VlcZrYcImFkWA",
+   "name": "EDZD_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / EDZD_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1dUaF3LsEZ6VSd2iyrotNUSacz84CvJ8V",
+   "name": "Zameen Alpha(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Alpha(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1DVmxge8S5NQnpP9btfg50sX4GWwC4pD_",
+   "name": "V4 Capital_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / V4 Capital_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "15i5l_ALevbD5FKb1KxHdqLJWPlzJJIUO",
+   "name": "Online Goods Store(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Online Goods Store(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "143LfGolywcqw6dXQ-2jLT9gobbs9_pRo",
+   "name": "TFZD_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / TFZD_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "18sSCiTRW_sETimJz_O_mzFdc_nmJHbN7",
+   "name": "MyZameen(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / MyZameen(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "17yiVYSBUkGoJZyafkrY-IFwYcF1a1cLQ",
+   "name": "Zameen Arcs(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Arcs(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1Aurzb9CSvSBsaI683fvSLZ9pvd7VRvv4",
+   "name": "Zameen Apex(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Apex(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1SWu89MF0cdtzsVJW8xo3YcDOyUFIFem6",
+   "name": "Zameen Delta(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Delta(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1rOThnUNjN5tkr1e6bC8tlt04ay7eZvt-",
+   "name": "Zameen Centre(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Centre(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "11kTSvP4jxd7OoSD7t-I1xLbtU_7WLUjV",
+   "name": "Zameen Crest(SMC-Pvt)ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Crest(SMC-Pvt)ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1lpnb0aaqP3Bs8y2pAAidv834kwzT3jk-",
+   "name": "Zameen Axis(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Axis(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1o6bMO5WUpj7_uDYoJ4uYtWF15Aw-bWHJ",
+   "name": "Zameen Forte(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Forte(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1KJJgUdSGk-W0ess10dSJ0Zg2e9no41X2",
+   "name": "Zameen Luxe(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Luxe(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1GdKGR1qr5Ksgf5wK7jAfJxbpA7gQBXyG",
+   "name": "Zameen Developments(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Developments(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1To3nXJ0YkHpAyPzHds4v3AXMMzg2tsS-",
+   "name": "Zameen Habitat(SMC-Pvt)Ltd-Resolutions and Authorisations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Habitat(SMC-Pvt)Ltd-Resolutions and Authorisations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1fH7o-JVqUHono72fhMqcXQCOcdvEeWVV",
+   "name": "Zameen Magnus(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Magnus(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1suA2VpTNfGQn08Gn9nY4YHeMIgCUsNDq",
+   "name": "Zameen Nord(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Nord(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1NxaD1kRYtfiIhkUt3xrjJ-REGGQklNLl",
+   "name": "Zameen Medallion (Private) Limited_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Medallion (Private) Limited_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1hqhhwL-lRqdqs_bMDLhEjqGiW8H2JiKS",
+   "name": "Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1EZ-qU1vQ1xZ1nHQJb31pTMpckjrLr3mG",
+   "name": "Zameen Omega(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Omega(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1kPMfbnnT2uu18pqPX9pxORrVKwFGYZtH",
+   "name": "Zameen Pavilion(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Pavilion(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1tdYPBLD5hhGY8rUzt6JSKUI53xN25qjI",
+   "name": "Zameen Platinum(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Platinum(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1lxOKCiyuC4dLuVzCVTV6QZMNZVPoJdHT",
+   "name": "Zameen Venture One(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Venture One(Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "16rpG2vuZ3I3nidkoaNd1oxMinlmcuNIX",
+   "name": "Zameen Prime(SMC-Pvt)Ltd_Resolutions and Authorisations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Prime(SMC-Pvt)Ltd_Resolutions and Authorisations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1EMfvnM-uAUMUONfWKWAkWBC5-CSj4QOi",
+   "name": "Zameen Properties(SMC-Pvt)Ltd_Resolutions and Authorisations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Properties(SMC-Pvt)Ltd_Resolutions and Authorisations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "12eAISvFUgs-BKGC_IO_ZqK68qzI476nH",
+   "name": "Zameen REIT Management Company_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen REIT Management Company_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "16gQFOmy-YWnKb6I8_W4KhO03wOJIbfY7",
+   "name": "Zameen Residences(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Residences(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1FlV7nhC50bMZ07Km1f0Gbl3ntI2pd9Z2",
+   "name": "Zameen Sigma(Private)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Sigma(Private)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1Wg_ec52mjUDs7wBhXZBQ5z7heXOkqCvX",
+   "name": "Zameen South(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen South(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1OXail6vXgP_g05G9cCiO1F2wiS_nmqwN",
+   "name": "Ztech Management and IP Services(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Ztech Management and IP Services(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "18D4TC1inxgUf8SHbyexMFr2YOkLkvd83",
+   "name": "Zameen Terra (SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Terra (SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1WZ-IJz_sOgz92idcggz8iGVkp7p_rDxe",
+   "name": "ZMZD_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / ZMZD_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1t8lHemMeVfBLBiDDEjnvFHHZzKhDUKAK",
+   "name": "Zameen Vistas(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Vistas(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1WlE8yhfUyto2LJiwLbfYd5H-8XDxotgj",
+   "name": "Zameen Zeta (SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / Zameen Zeta (SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "11XyORfb2g-aLRs7oi-wUcyfZLITv_ZfU",
+   "name": "ZUI Investments_Resolutions & Authorizations (1)",
+   "path": "Compliance Data _LegalOS / Resolutions  / ZUI Investments_Resolutions & Authorizations (1)",
+   "depth": 3,
+   "family": "RESOLUTIONS",
+   "disposition": "RESOLUTION_ENTITY_FOLDER"
+  },
+  {
+   "id": "1vFfGWvS0s12ZCst18whX71sN7lAva_6B",
+   "name": "Dubizzle Labs (SMC-Private) Limited_Spend Contracts",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts",
+   "depth": 3,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1-8b4fjsZbe7f_NNKGIxcjseSk2XUUXWf",
+   "name": "Zameen Venture One (Private) Limited_Spend Contracts (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1)",
+   "depth": 3,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1lXH9wGt0faXhZG61ki8kDqgooezBcoa5",
+   "name": "Zameen Developments_ Spend Contracts (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Developments_ Spend Contracts (1)",
+   "depth": 3,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "19hZKCgAvI7lIsa4UAZBpXEOc3aWbEEo4",
+   "name": "Zameen Media_Spend Contracts (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1)",
+   "depth": 3,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1uMgtOo42yhpePCrJOoOhbxjlb6PHdeVy",
+   "name": "Zameen Venture One_s Spend Contracts",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Spend Contracts",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "12H-6X_sKXKS1KLL5K95OgKaz98n87FMF",
+   "name": "Zameen Venture One_s Subsidiaries Contracts",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1d29S8JEKDiUzhBF4QznwylXv9QMTX0kM",
+   "name": "3. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 07.01.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / 3. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 07.01.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1jwcwKAB8fob0_5Hixv-09RXyKdu5QavE",
+   "name": "5. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 18.03.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / 5. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 18.03.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "18rubvStlrqQIIAgDPCS1kR_CuXFspb_3",
+   "name": "1. ZVO - EMPG Projects - Loan AED 3.6mil. [Loan Agreement dated 02.09.2020]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / 1. ZVO - EMPG Projects - Loan AED 3.6mil. [Loan Agreement dated 02.09.2020]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1VkVmx7BC9dF4fZeRxAagdXmBPfzrWrT2",
+   "name": "4. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 25.01.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / 4. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 25.01.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1atqUwhbYx2O8kFG9Wc8LoWV3QQIay3tn",
+   "name": "2. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 23.12.2020] [Repaid]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / 2. ZVO - EMPG Projects - Loan AED 3.6 mil. [Loan Agreement dated 23.12.2020] [Repaid]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1U_kdJypYe7tZ6HQwuSb_GaV2ChownFLU",
+   "name": "4. Loan [AED 3,600,000]_20200825 [WITHDRAWN]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1cmFBlaMrMCRgj-MfiSilf-_G96Xo2avK",
+   "name": "1. Zameen Media & Zameen UK_Loan PKR 6.5 bil_20131015 [not filed]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 1. Zameen Media & Zameen UK_Loan PKR 6.5 bil_20131015 [not filed]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1ZTI_lZL6bTDfBo-57aeJrWTX-adX4BPj",
+   "name": "3. Zameen Media & Zameen UK_ Loan AED 3.6 m_20200515 [filed with JS] [Loan Repaid]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 3. Zameen Media & Zameen UK_ Loan AED 3.6 m_20200515 [filed with JS] [Loan Repaid]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1W-lxbPAzFj19kXDrva8bt-FbSBbHyaFJ",
+   "name": "2. Zameen Media & Zameen UK_Loan AED 3.3 m_20190823 [filed with HBL]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 2. Zameen Media & Zameen UK_Loan AED 3.3 m_20190823 [filed with HBL]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1_Pd6XvJtn5QKg1jnEUH7N6lp_TODAy5w",
+   "name": "1. Loan [AED 3,000,000]_Zameen Developments & EMPG Holdings_20181114",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Developments (Private) Limited / 1. Loan [AED 3,000,000]_Zameen Developments & EMPG Holdings_20181114",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1J07XEc4DyrQGZpncw1HfU7k401IUL8Qe",
+   "name": "2. Loan [USD 1,000,000 reduced to 250,000]_Zameen Developments and EMPG Holdings_20210903",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Developments (Private) Limited / 2. Loan [USD 1,000,000 reduced to 250,000]_Zameen Developments and EMPG Holdings_20210903",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1us5Xytp6uOUU0Liwd4r__YBo1Axi7spk",
+   "name": "2. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 18.05.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited / 2. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 18.05.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1fwKI-tHdqcd7cbo37hwkDT_dMNFux3yf",
+   "name": "5. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 22.12.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited / 5. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 22.12.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1sORf5FwJ_Y-heqH79j5-JHSqWka_2ASZ",
+   "name": "1. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 24.11.2020]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited / 1. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 24.11.2020]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1VFYA7n6qb2iFeGfnwlGDIGJcphDhsUPe",
+   "name": "6. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [WITHDRAWN]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited / 6. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [WITHDRAWN]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1zd07arSwqAIVdKTFZ0qx7LGG3XudX7BG",
+   "name": "4. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 03.11.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited / 4. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 03.11.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1aAXcalVYgLtDm-9rmUEeDoOsEeiX-Ij0",
+   "name": "3. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 28.07.2021]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Online Classifieds Pakistan (SMC-Private) Limited / 3. Online Classifieds PK - EMPG Holdings - Loan USD 1 mil. [loan agreement dated 28.07.2021]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1fdUAOtN4M8I0AbjL4nqqTfNPeMW02Ull",
+   "name": "Deevar - EMPG Holdings [USD 150,000]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Deevar Developers (Private) Limited / Deevar - EMPG Holdings [USD 150,000]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1CXKSO2Fjxt1emKioMamrIcAsjgRXiujX",
+   "name": "Deevar - Bayut loan [AED 5,324,000]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Deevar Developers (Private) Limited / Deevar - Bayut loan [AED 5,324,000]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1rlV-TaUAJTw1yEWSEF3ZAGEADLFgWuNi",
+   "name": "DK PK & DK ADGM - Loan [USD 1 mil.]",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Daftarkhwan (Private) Limited / DK PK & DK ADGM - Loan [USD 1 mil.]",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1WyxDv655Z9aVkVb20l0XuefOJzoVugZ9",
+   "name": "DK & OLX PK [USD 250,000] - Convertible Loan",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Daftarkhwan (Private) Limited / DK & OLX PK [USD 250,000] - Convertible Loan",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1j6c--52Doymxstohb-bdAYOQdqSSkOTR",
+   "name": "DK & EMPG Labs [USD 250,000] - Convertible Loan",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Daftarkhwan (Private) Limited / DK & EMPG Labs [USD 250,000] - Convertible Loan",
+   "depth": 4,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1hAhVVt3hbNPxeSAL31DxviPt44YsxB-f",
+   "name": "10.Loan Agreement_Zameen Platinum & Zameen Venture One [Rs. 760 mil.]_20190404",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 10.Loan Agreement_Zameen Platinum & Zameen Venture One [Rs. 760 mil.]_20190404",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1g1O7VEV-Yeqx4wH3n658nGyTa1D6TvlW",
+   "name": "12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1qvdPwzx9NZa1QNHcadmwwffPeVnbELbF",
+   "name": "1.Loan Agreement [Rs. 52 mil.]_Zameen Alpha & Mall 35_20221101",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 1.Loan Agreement [Rs. 52 mil.]_Zameen Alpha & Mall 35_20221101",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1ED3XJEb67w9WcS6O4_hMV6cS94IOUmBA",
+   "name": "13.Loan Agreement_Zameen Venture One & EDZD Developers [Rs. 4 Million]",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 13.Loan Agreement_Zameen Venture One & EDZD Developers [Rs. 4 Million]",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1LT8PO5q56XeJKNK9lb-Z_X1Yotx5Aqo-",
+   "name": "11.Loan Agreement_Zameen Sigma & Zameen Venture One [Rs. 25.1 million]_20210224",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 11.Loan Agreement_Zameen Sigma & Zameen Venture One [Rs. 25.1 million]_20210224",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "10PHpXfMVJdR4Qz6wxOkncs1nmtWwqBaH",
+   "name": "2Loan Agreement [Rs. 128 mil.]_Zameen Venture One & Mall 35_20221101",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 2Loan Agreement [Rs. 128 mil.]_Zameen Venture One & Mall 35_20221101",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "18QukRvFWM92c6_cSAB2Fg8dNfzRPNcVX",
+   "name": "5.Loan Agreement_Zameen Axis & Zameen Venture One [Rs. 100 mil.]_20200220",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 5.Loan Agreement_Zameen Axis & Zameen Venture One [Rs. 100 mil.]_20200220",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1aPG1dMRGpkLXtFgPgX-SpDDUgmZZwh5w",
+   "name": "6.Loan Agreement_Zameen Centre & Zameen Venture One [Rs. 81 ml.]_20211018",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 6.Loan Agreement_Zameen Centre & Zameen Venture One [Rs. 81 ml.]_20211018",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1_9BoPSkMWoV8nxnpIAdEpPEdQuL9EOfw",
+   "name": "3.Loan Agreement_Zameen Alpha & Zameen Venture One [Rs. 260 mil.]_20190513",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 3.Loan Agreement_Zameen Alpha & Zameen Venture One [Rs. 260 mil.]_20190513",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1Rny1L5j2QJlCTHIgYSqSTcakKtVjOuil",
+   "name": "14.Loan Agreement_Zameen Venture One & EMPG Labs [Rs. 42.375 mil.]_20211001",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 14.Loan Agreement_Zameen Venture One & EMPG Labs [Rs. 42.375 mil.]_20211001",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1jX9HIDx0P06ri4sfCEQdK1JaHXI9aclQ",
+   "name": "7.Loan Agreement_Zameen Forte & Zameen Venture One [Rs. 100 ml.]_20210816",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 7.Loan Agreement_Zameen Forte & Zameen Venture One [Rs. 100 ml.]_20210816",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1ZbCbWwIBcXdIbMZdko8AECh3nNiJe64a",
+   "name": "8.Loan Agreement_Zameen Nord & Zameen Venture One [Rs. 240 ml.]_20210820",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 8.Loan Agreement_Zameen Nord & Zameen Venture One [Rs. 240 ml.]_20210820",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1D0VMaB_i6iL2_Y-hsn2fAGERL-4OJ1HL",
+   "name": "9.Loan Agreement_Zameen Omega & Zameen Venture One [Rs. 95 ml.]_20211018",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 9.Loan Agreement_Zameen Omega & Zameen Venture One [Rs. 95 ml.]_20211018",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1lWHThj1mt0Jfy2_BcjaWJm61HHf9Iu8O",
+   "name": "4.Loan Agreement_Zameen Arcs & Zameen Venture One [Rs. 30 mil.]_20190404",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 4.Loan Agreement_Zameen Arcs & Zameen Venture One [Rs. 30 mil.]_20190404",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1Or5xih7qIPJllIguMbga1bxZkUqDBmwt",
+   "name": "Loan Agreement_Zameen Delta & Zameen Developments [Rs. 5,720,804]_20200504 (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Developments (Private) Limited & subsidiaries / Loan Agreement_Zameen Delta & Zameen Developments [Rs. 5,720,804]_20200504 (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1VDcDoVVjrSl5SYxz9N1541pqyUij7pM7",
+   "name": "Loan Agreement [PKR 4 billion] - Dubizzle Labs & DG Holdings (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Loan Agreement [PKR 4 billion] - Dubizzle Labs & DG Holdings (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1gg8JFqAfgJJXmyybBMmLKckM3iEUSqGh",
+   "name": "Lease Agreements (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "10Uh4tyGuMWPmxcIdOSCab1JZxkUsH6aY",
+   "name": "General Agreements (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / General Agreements (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1ulsrEnw-7pcSVvnjrPr6lpf_fPy1sLjg",
+   "name": "Loan [PKR 100 mil.] - Dubizzle Labs & DK PK (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Daftarkhwan (Private) Limited / Loan [PKR 100 mil.] - Dubizzle Labs & DK PK (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1EaVZ3-rb2gNIf5mh_OQfpNkncYX2ao_C",
+   "name": "Convertible Loan [USD 250,000] - DK & OLX PK (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Daftarkhwan (Private) Limited / Convertible Loan [USD 250,000] - DK & OLX PK (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1Il0SP4zd93rjrjmBy4u63TDDWBq2VQvK",
+   "name": "Loan [USD 1 mil.] - DK PK & DK ADGM (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Daftarkhwan (Private) Limited / Loan [USD 1 mil.] - DK PK & DK ADGM (1)",
+   "depth": 4,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1PmRiCRAG13QCV-ROoy4MTsra8RDdiefG",
+   "name": "Applications (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / PEC - ZD Engineering Solutions (1) / Applications (1)",
+   "depth": 4,
+   "family": "LICENCES",
+   "disposition": "APPLICATION_FOLDER"
+  },
+  {
+   "id": "1P1BWA28axCwRObVsYXSX26attfqMkBgs",
+   "name": "PEC-License (1)",
+   "path": "Compliance Data _LegalOS / Licenses & Approvals _ Pakistan Entities  / PEC - ZD Engineering Solutions (1) / PEC-License (1)",
+   "depth": 4,
+   "family": "LICENCES",
+   "disposition": "LICENCE_FOLDER"
+  },
+  {
+   "id": "17F7zqwOAqqkmCxzpvSXuKH1xL3_TgDJ4",
+   "name": "General Agreements",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / General Agreements",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1KJPPcz2zDYmpafBN4RCHSBYlgrGpTcy5",
+   "name": "Lease Agreements",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / Lease Agreements",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "1T08pDak6z3MKJ8zsNiSAHBtW2hTAa4Ml",
+   "name": "Zameen Venture One_s Spend Contracts (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Spend Contracts (1)",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1qPpNbbhoOMh9Vcyz6N85aoz5WF90Fe4c",
+   "name": "Zameen Venture One_s Subsidiaries Contracts (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1)",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1hInQu56-_XzkIx-oz3B3I7dzFXTSqDxO",
+   "name": "Lease Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Developments_ Spend Contracts (1) / Lease Agreements (1)",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "1I_IHIAyugyMJGI9NOryMs4PcmFFuMyU5",
+   "name": "General Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Developments_ Spend Contracts (1) / General Agreements (1)",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1Mjd7ZpIKsGs5GgGB5MjOUuXSlDXasFBC",
+   "name": "General Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / General Agreements (1)",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1YquTjVSodl-lFaMLqpq8KBox8vsPe1FJ",
+   "name": "Zameen Media_s Subsidiaries Contracts",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / Zameen Media_s Subsidiaries Contracts",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1dJ4khSvYhBUx7e_6r7Ntv3LymM4cWUAa",
+   "name": "Lease Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / Lease Agreements (1)",
+   "depth": 4,
+   "family": "SPEND",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "1KIiY5NKFE5AZA2OnSliqtLUYYupgItBy",
+   "name": "General Agreements",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Spend Contracts / General Agreements",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1SfzYHpG45A4W-gGayP_FFrG_bv7P3BXO",
+   "name": "Mall 35",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Mall 35",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1mtMBD9EfJzZrZPytedYCHO8s4_BpBLvC",
+   "name": "Zameen Omega (SMC-Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Omega (SMC-Private) Limited",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1_XYGERso_IdsM0Sy1kxHTaGO2GfiKoJT",
+   "name": "Zameen Platinum (Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Platinum (Private) Limited",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "175iYjEhazH8Qdo5TdJ7hdt2To-Tk9k0S",
+   "name": "EDZD Developers",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / EDZD Developers",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1DEF2Q0bi1LKnWfocfOM_-cN_Gz9CO86A",
+   "name": "Zameen Crest (SMC-Private) Limited",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Crest (SMC-Private) Limited",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "10Otgp8Ie3a6DyKssqP6t87PGUuKb_oPv",
+   "name": "00. Original Request",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 00. Original Request",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1uhqPj_tMXNnSMrcBfS_at5Gn6vYhpDy6",
+   "name": "01. Response Letter - email dated 09.09.2020",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 01. Response Letter - email dated 09.09.2020",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1PNQqx8rSnBpzsdObHQ9W28TLUrgl8l2q",
+   "name": "04. Response Letter - email dated 30.09.2020",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 04. Response Letter - email dated 30.09.2020",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1bnBMrCcSYnk7PZEOEkHjaNtbgxUX7z2p",
+   "name": "03. Response Letter - email dated 18.09.2020",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 03. Response Letter - email dated 18.09.2020",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "16Q_GoLyVM8nQ4u6JxZM7LvrKrFUArPdy",
+   "name": "05. Withdrawal Request",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 05. Withdrawal Request",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1YKFICmRBnibWiSVB2s3KN2KuiPDg149m",
+   "name": "02. Response Letter - email dated 14.09.2020",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 4. Loan [AED 3,600,000]_20200825 [WITHDRAWN] / 02. Response Letter - email dated 14.09.2020",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1WAtxjIk8n8xkCl7H1T2kA3_3jovawZDT",
+   "name": "DRAFTS",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Developments (Private) Limited / 1. Loan [AED 3,000,000]_Zameen Developments & EMPG Holdings_20181114 / DRAFTS",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1rN8NafGLNcuWv8FbLWqSaWmE7wed2S4C",
+   "name": "01. Response to email dated 1 August 2022",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Daftarkhwan (Private) Limited / DK PK & DK ADGM - Loan [USD 1 mil.] / 01. Response to email dated 1 August 2022",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1aezzklJKt2_aL2qy4O3wb2PZwPPgFiGb",
+   "name": "00. Original Request",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Daftarkhwan (Private) Limited / DK PK & DK ADGM - Loan [USD 1 mil.] / 00. Original Request",
+   "depth": 5,
+   "family": "LOANAGR",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1ZpZwuymmsdNd7bhCc2wyicrydfg877kq",
+   "name": "Second Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 10.Loan Agreement_Zameen Platinum & Zameen Venture One [Rs. 760 mil.]_20190404 / Second Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1SvqtvdINCSHXwjKzEsVG_fcD9ZhzSZ3t",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 10.Loan Agreement_Zameen Platinum & Zameen Venture One [Rs. 760 mil.]_20190404 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1tmymh-Smc-q6q8XOljvDr8RymtvcW0GF",
+   "name": "First Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 10.Loan Agreement_Zameen Platinum & Zameen Venture One [Rs. 760 mil.]_20190404 / First Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1lfJ9DxBGWP9KNPt3ScHF-eEEIi5Rbirb",
+   "name": "Third Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 10.Loan Agreement_Zameen Platinum & Zameen Venture One [Rs. 760 mil.]_20190404 / Third Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1HyEtHMJKIvm6KF28wzmQYTC9q3B2AoRs",
+   "name": "1. Loan [Rs. 35 mil.]",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 1. Loan [Rs. 35 mil.]",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1_QzGZgp3ouHugLIDmzlG10uKQ04FPDhc",
+   "name": "2. Loan [Rs. 20 mil.]",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 2. Loan [Rs. 20 mil.]",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1ZRXtnNdzXNJbVl8idelOngBBwlltKS1L",
+   "name": "3. Loan [Rs. 15 mil.]",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 3. Loan [Rs. 15 mil.]",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "LOAN_FOLDER"
+  },
+  {
+   "id": "1J2tCIyTD2itX_08HhvZrphktHagmMm8A",
+   "name": "Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 11.Loan Agreement_Zameen Sigma & Zameen Venture One [Rs. 25.1 million]_20210224 / Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1xaOQpT_reAJqeIfmMQWoclQOwXjq6WoL",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 11.Loan Agreement_Zameen Sigma & Zameen Venture One [Rs. 25.1 million]_20210224 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1C9SRyj5Kzms3BvGOoaGVj2OFslkuXBd0",
+   "name": "Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 5.Loan Agreement_Zameen Axis & Zameen Venture One [Rs. 100 mil.]_20200220 / Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1dqTsxzfDdU7LY84NTUmFizelyBnIySLf",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 5.Loan Agreement_Zameen Axis & Zameen Venture One [Rs. 100 mil.]_20200220 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1QH0dA8VNLu7nbQOJLyBsMAG_OYoIazZx",
+   "name": "Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 6.Loan Agreement_Zameen Centre & Zameen Venture One [Rs. 81 ml.]_20211018 / Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1MTSLmhhCXW5mHw3zoizW_cfbo_WdLaJb",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 6.Loan Agreement_Zameen Centre & Zameen Venture One [Rs. 81 ml.]_20211018 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1AwzPpc-A1-ITuePotXXKGOEzq2Das9J7",
+   "name": "Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 3.Loan Agreement_Zameen Alpha & Zameen Venture One [Rs. 260 mil.]_20190513 / Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1QH-jcot85zGwAcIcZbbh6F_TPmJzJmy7",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 3.Loan Agreement_Zameen Alpha & Zameen Venture One [Rs. 260 mil.]_20190513 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "17c2JA_Nq4FTPAtF42JOnhDqObs3nX6jo",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 7.Loan Agreement_Zameen Forte & Zameen Venture One [Rs. 100 ml.]_20210816 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "15OXsHUuabvMZBSHzZpC8jLOZUyMRPhaU",
+   "name": "Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 7.Loan Agreement_Zameen Forte & Zameen Venture One [Rs. 100 ml.]_20210816 / Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1ONfCCbCwJ9vGyc6PHehWjxSP0yqNhnJO",
+   "name": "Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 8.Loan Agreement_Zameen Nord & Zameen Venture One [Rs. 240 ml.]_20210820 / Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1KKx6PlHl5d6_twA3kBnwK1qpWFXEQk7B",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 8.Loan Agreement_Zameen Nord & Zameen Venture One [Rs. 240 ml.]_20210820 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1MSTrvuAAR3CDAl6yyxeK1epE6JWqa6wq",
+   "name": "First Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 9.Loan Agreement_Zameen Omega & Zameen Venture One [Rs. 95 ml.]_20211018 / First Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1egaBp1enzzLTFC0MvaxWkRKZI9u6IueO",
+   "name": "Second Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 9.Loan Agreement_Zameen Omega & Zameen Venture One [Rs. 95 ml.]_20211018 / Second Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1-YL2aPQ83h6BjakkHLK-T8KGMgQ8jWqM",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 9.Loan Agreement_Zameen Omega & Zameen Venture One [Rs. 95 ml.]_20211018 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1DMHzzNtU-_Z-YM_CIp4r4zGMKHkheSx6",
+   "name": "First Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 4.Loan Agreement_Zameen Arcs & Zameen Venture One [Rs. 30 mil.]_20190404 / First Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1dyhsLXdzp7PeINXTS8jg9FqXbYTtAabs",
+   "name": "Third Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 4.Loan Agreement_Zameen Arcs & Zameen Venture One [Rs. 30 mil.]_20190404 / Third Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "17bD8RsxLgTLSaa0yaeOt7pDl4FWU5JTY",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 4.Loan Agreement_Zameen Arcs & Zameen Venture One [Rs. 30 mil.]_20190404 / Loan Agreement",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1OPzHv8Z4phgE5aDV8aUzMFSCtbYbuXPc",
+   "name": "Second Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 4.Loan Agreement_Zameen Arcs & Zameen Venture One [Rs. 30 mil.]_20190404 / Second Amendment",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "19xjkuO_VKqOedNZsl_gFNF2iH0kv5wa0",
+   "name": "Loan Agreement (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Developments (Private) Limited & subsidiaries / Loan Agreement_Zameen Delta & Zameen Developments [Rs. 5,720,804]_20200504 (1) / Loan Agreement (1)",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1z8Oz3BwibS6RlQM-3SkC4Zne5UnXBLEh",
+   "name": "Amendments (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Daftarkhwan (Private) Limited / Loan [PKR 100 mil.] - Dubizzle Labs & DK PK (1) / Amendments (1)",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "19YWY8KkOSElNLnJurrm6CTSVu3__y082",
+   "name": "00. Original Request (1)",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Daftarkhwan (Private) Limited / Loan [USD 1 mil.] - DK PK & DK ADGM (1) / 00. Original Request (1)",
+   "depth": 5,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1hvfBy4DbFcaL3A2z8riEja3PhyW_1LPg",
+   "name": "General Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Spend Contracts (1) / General Agreements (1)",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1gbZmsLMemEpS04GEVnOTepVzAOn2ROZa",
+   "name": "EDZD Developers (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / EDZD Developers (1)",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1XLFanUI2F2K61X9Bz8o1HFTUGfZomh6I",
+   "name": "Mall 35 (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Mall 35 (1)",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1pnLmy3IaWPf7b6VgO5F5O9ogcrH6WDa7",
+   "name": "Zameen Omega (SMC-Private) Limited (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Omega (SMC-Private) Limited (1)",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1iHZlE92VcCwiXCAj14YwYASaDVIr0jh4",
+   "name": "Zameen Platinum (Private) Limited (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Platinum (Private) Limited (1)",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1swcQOD1Mo_w_L7zpOqj92mJQzEp8Zm-l",
+   "name": "Zameen Crest (SMC-Private) Limited (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Crest (SMC-Private) Limited (1)",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1gkdvQh8lNKVL5JB73l0mthDhR-veBMab",
+   "name": "Zameen Medallion (Private) Limited",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / Zameen Media_s Subsidiaries Contracts / Zameen Medallion (Private) Limited",
+   "depth": 5,
+   "family": "SPEND",
+   "disposition": "ENTITY_FOLDER"
+  },
+  {
+   "id": "1mIjfIX_qkMU-GvGAvZgFzMrguFZeLmpw",
+   "name": "General Agreements",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Mall 35 / General Agreements",
+   "depth": 6,
+   "family": "LOANAGR",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1n2GhY6by3JayI0hBVTSKh0P-Eb6eKizk",
+   "name": "Lease Agreements",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Platinum (Private) Limited / Lease Agreements",
+   "depth": 6,
+   "family": "LOANAGR",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "1GrDFTUKAd4Rx1kthO2NVMMjb2BMOxhRc",
+   "name": "General Agreements",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Platinum (Private) Limited / General Agreements",
+   "depth": 6,
+   "family": "LOANAGR",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "18anWiV1Prpzeo7r-WRwkRvYmC1RMZKlc",
+   "name": "Lease Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Crest (SMC-Private) Limited / Lease Agreement",
+   "depth": 6,
+   "family": "LOANAGR",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "1A8kL5qf2XyllK-fbUKkrRXm6zkDET2mo",
+   "name": "First Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 1. Loan [Rs. 35 mil.] / First Amendment",
+   "depth": 6,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1s4k73UfHTWO8EIjzo0W_pvVfCv2XTT8-",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 1. Loan [Rs. 35 mil.] / Loan Agreement",
+   "depth": 6,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "13vUe1-0t1dwAXy5bvYXZlbXEJ9W6Fuxv",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 2. Loan [Rs. 20 mil.] / Loan Agreement",
+   "depth": 6,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1espXD77tHAGguwyIrok2CSjzyxlaoKV2",
+   "name": "First Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 2. Loan [Rs. 20 mil.] / First Amendment",
+   "depth": 6,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1gqj6UTP2taR2l5LySTfhYotVD8pLw1Ai",
+   "name": "First Amendment",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 3. Loan [Rs. 15 mil.] / First Amendment",
+   "depth": 6,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1MO7LQsdO8o1aNhHsnU5dVy936uj9uOVL",
+   "name": "Loan Agreement",
+   "path": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Zameen Venture One (Private) Limited & subsidiaries / 12.Loan Agreement_Zameen Venture One & Delta Centauri Developments [Rs. 15, 20 & 35 mil.]_20230530 / 3. Loan [Rs. 15 mil.] / Loan Agreement",
+   "depth": 6,
+   "family": "INTERCOMPANY",
+   "disposition": "DOCUMENT_FOLDER"
+  },
+  {
+   "id": "1eHSat_NhuadyERPWcRgK6YZ60NHlABL7",
+   "name": "General Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Mall 35 (1) / General Agreements (1)",
+   "depth": 6,
+   "family": "SPEND",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1kQur6Sdl_zF4FUgvXELn2rNfnL-YQgmy",
+   "name": "General Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Platinum (Private) Limited (1) / General Agreements (1)",
+   "depth": 6,
+   "family": "SPEND",
+   "disposition": "SERVICE_FOLDER"
+  },
+  {
+   "id": "1gCkpqgzGvVnT8yJ9pGVi1l8EfOqcbIKr",
+   "name": "Lease Agreements (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Platinum (Private) Limited (1) / Lease Agreements (1)",
+   "depth": 6,
+   "family": "SPEND",
+   "disposition": "LEASE_FOLDER"
+  },
+  {
+   "id": "1U_-Q_Z27k7FPzMUCmNx_9diMYUASg-NG",
+   "name": "Lease Agreement (1)",
+   "path": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Crest (SMC-Private) Limited (1) / Lease Agreement (1)",
+   "depth": 6,
+   "family": "SPEND",
+   "disposition": "LEASE_FOLDER"
+  }
+ ]
+}

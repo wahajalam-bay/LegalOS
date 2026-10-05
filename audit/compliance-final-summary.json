@@ -1,0 +1,85 @@
+{
+ "builtAt": "2026-09-22T17:39:20.198Z",
+ "root": "Compliance Data _LegalOS",
+ "sourceRows": {},
+ "loans": {
+  "sourceRows": 192,
+  "logicalLoans": 69,
+  "fromTracker": 60,
+  "driveOnly": 9,
+  "historyRows": 117,
+  "headerArtifacts": 15,
+  "balances": true,
+  "arithmetic": "192 = 192",
+  "cacheHoldsRawSourceRows": 192,
+  "servedByRegisterApi": "reconciled on read -- see registers.get()"
+ },
+ "spend": {
+  "total": 199,
+  "leases": 102,
+  "services": 83,
+  "other": 14,
+  "arithmetic": "102 + 83 + 14 = 199"
+ },
+ "licences": {
+  "model": 8,
+  "tracker": 7,
+  "driveOnly": 1,
+  "cacheHoldsRawTrackerRows": 7,
+  "servedByRegisterApi": "reconciled on read -- see registers.get()"
+ },
+ "resolutions": {
+  "register": 933,
+  "sourceRows": 0
+ },
+ "summary": {
+  "loans": {
+   "records": 69,
+   "lineageProven": 69,
+   "lineageMissing": 0,
+   "documents": 841,
+   "recordsWithNoDocument": 0,
+   "documentsOutsideRoot": 0
+  },
+  "leases": {
+   "records": 102,
+   "lineageProven": 102,
+   "lineageMissing": 0,
+   "documents": 212,
+   "recordsWithNoDocument": 3,
+   "documentsOutsideRoot": 2
+  },
+  "services": {
+   "records": 83,
+   "lineageProven": 83,
+   "lineageMissing": 0,
+   "documents": 100,
+   "recordsWithNoDocument": 16,
+   "documentsOutsideRoot": 3
+  },
+  "other-spend": {
+   "records": 14,
+   "lineageProven": 14,
+   "lineageMissing": 0,
+   "documents": 11,
+   "recordsWithNoDocument": 6,
+   "documentsOutsideRoot": 0
+  },
+  "licences": {
+   "records": 8,
+   "lineageProven": 8,
+   "lineageMissing": 0,
+   "documents": 14,
+   "recordsWithNoDocument": 0,
+   "documentsOutsideRoot": 0
+  },
+  "resolutions": {
+   "records": 933,
+   "lineageProven": 933,
+   "lineageMissing": 0,
+   "documents": 913,
+   "recordsWithNoDocument": 20,
+   "documentsOutsideRoot": 0
+  }
+ }
+}

@@ -1,0 +1,163 @@
+NON-DISCLOSURE AGREEMENT 
+ 
+ 
+ This non-disclosure agreement ( “ Agreement ” ) is made on [●] (“Effective Date”) . 
+ 
+ BY AND BETWEEN 
+ 
+ [●] , a company incorporated under the laws of Pakistan, with its registered office at [●] acting through its duly authorized representative [●] (hereinafter referred to as “ [●] ” which expression shall mean and include, where the context so requires or admits, its successors-in-interest and permitted assigns) of the First Part; 
+ 
+ AND 
+ 
+ [●] , with its registered office at [●] acting through its duly authorized representative [●] (hereinafter referred to as “ [●] ” which expression shall mean and include, where the context so requires or admits, its successors-in-interest and permitted assigns) of the Second Part. 
+ 
+ Each a “ Party ” and, collectively, “ Parties ”. 
+ 
+ RECITALS: 
+ 
+ WHEREAS, in connection with the Proposed Transaction ( as defined below ), the Parties recognize that it may be necessary or desirable for each Party to disclose to the other certain Confidential Information (as defined below ), where each Party when disclosing such information shall be the “ Disclosing Party ” and when receiving such information shall be the “ Recipient ”; 
+ 
+ AND WHEREAS, the Parties wish to ensure that such Confidential Information, disclosed by Disclosing Party to the Recipient in the course of the negotiations regarding the Proposed Transaction, remains confidential and is not used by Recipient for any purpose other than the Permitted Purpose ( as defined below ); and 
+ 
+ AND WHEREAS, this Agreement sets out the terms upon which the Disclosing Party agrees to provide Recipient with such Confidential Information. 
+ 
+ 
+ THE PARTIES agree as follows: 
+ 
+ INTERPRETATION 
+ 
+ In this Agreement: 
+ 
+ Authorised Recipient(s) means each member of the Recipient and its respective directors, employees, officers, agents, representatives, consultants, professional advisers, bankers, potential investors and lenders of debt finance, as the case may be, and any third party who reasonably require access to the Confidential Information for the Permitted Purpose and for whom the Recipient has received consent to disclose Confidential Information pursuant to Clause 3.1(b) below . 
+ 
+ Confidential Information means any information relating to the Proposed Transaction supplied by the Disclosing Party to the Recipient, either in writing or orally, and shall not include any Excluded Information. Without limiting the generality of the foregoing, Confidential Information shall include inter alia proprietary, business, technical, financial or legal information of the Disclosing Party, including but not limited to: (a) information in tangible or intangible form relating to released or unreleased products or services or the marketing or promotion thereof (including pricing), business policies or practices, financial condition, operations, facilities, equipment, software, procurement and/or purchasing requirements, customers (former, current, or potential), investors, employees, business and contractual relationships, business forecasts, sales and merchandising data, or marketing methods and plans; (b) patents and patent applications; (c) techniques, sketches, drawings, works of authorship, models, inventions, processes, equipment, algorithms, and formulae related to current, future and/or proposed products and services, including information concerning research, development, design details and specifications; and (d) information received from third parties that the Disclosing Party is obligated to treat as confidential; 
+ 
+ Disclosing Party means the Party disclosing the Confidential Information; 
+ 
+ Excluded Information means any information that (a) is now or becomes generally known to the public otherwise than as a breach of the terms of this Agreement by the Recipient; (b) is independently developed by the Recipient or Authorised Recipients without use or reference to any Confidential Information; (c) Recipient or Authorised Recipient lawfully obtains from any third party, provided that the Recipient or Authorised Recipient had no reason to believe that such third party was under any obligation of confidentiality in relation thereto; (d) is published or generally disclosed to the public by the Disclosing Party; (e) is already known or available to the Recipient or Authorised Recipient; (f) is required to be disclosed pursuant to any applicable statute, law, rule or regulation of any governmental authority or pursuant to any order of any court of competent jurisdiction; or (g) has been approved in writing for release by the Disclosing Party; 
+ 
+ Permitted Purpose means: 
+ 
+ considering and evaluating whether to enter into the Proposed Transaction; 
+ entering into the Proposed Transaction; and 
+ performing obligations in accordance with the terms of any and all definitive agreements entered into in connection with the Proposed Transaction; 
+ 
+ Proposed Transaction means the evaluation of potential business opportunity ( ies ) and provision of financial advisory, fund raising and corporate consulting services by [●] to [●] under the Engagement Letter to be entered into by and between the Parties ; and 
+ 
+ Recipient means the Party receiving the Confidential Information; 
+ 
+ Secondary Information means reports, interpretations, forecasts, analyses, compilations, memoranda or other documents prepared by the Recipient or by any of the Authorised Recipients on the Recipient’s or any member of the Recipient Group’s behalf which contain or otherwise reflect in whole or in part any of the Confidential Information. 
+ 
+ In this Agreement, a reference to: 
+ 
+ a person includes a reference to that person's legal personal representatives, successors and permitted assigns; and 
+ 
+ the singular includes the plural and vice versa (unless the context otherwise requires). 
+ 
+ CONFIDENTIALITY OBLIGATIONS 
+ 
+ In consideration for the Disclosing Party making available to the Recipient the Confidential Information, and subject to Clause 3, the Recipient undertakes: 
+ 
+ to keep the Confidential Information and Secondary Information confidential and not to disclose it to any person; and 
+ 
+ not to make use of the Confidential Information and Secondary Information for any purpose other than for the Permitted Purpose. 
+ 
+ Each Party also undertakes to keep confidential and not disclose to any person the existence of, and any facts pertaining to, the Proposed Transaction (including the existence and contents of this Agreement), without the Disclosing Party’s prior written consent. 
+ 
+ The Recipient shall take all reasonable measures to ensure that all Authorised Recipients are at the least subject to the requirements of confidentiality as contained in this Agreement and shall, if required by the Disclosing Party, direct them to execute and deliver in the form of this Agreement an acknowledgement of the confidentiality of the Confidential Information. 
+ 
+ PERMITTED DISCLOSURE 
+ 
+ The Disclosing Party agrees that Recipient may disclose the Confidential Information and Secondary Information: 
+ 
+ to the Authorised Recipients; 
+ 
+ to any person with the Disclosing Party's prior written consent; 
+ 
+ where the Recipient is required to disclose the Confidential Information by any court of competent jurisdiction or any competent judicial, governmental, supervisory or regulatory body provided that the Recipient shall cooperate with the Disclosing Party to minimize the extent of any such disclosure, including but not limited to giving the Disclosing Party’s advance written notice of the anticipated disclosure; or 
+ 
+ where the Recipient is required to disclose the Confidential Information under any law or regulation with which the Recipient is required to comply, 
+ 
+ always provided that the Recipient shall be responsible for any breach by an Authorised Recipient of the terms of this Agreement, and that the Recipient shall notify the Disclosing Party immediately upon discovery of any unauthorised use or disclosure of Confidential Information or any other breach of this Agreement by the Recipient or Authorised Recipients, and the Recipient shall cooperate with the Disclosing Party in every reasonable way to help the Disclosing Party regain possession of the Confidential Information and prevent its further unauthorised use or disclosure. 
+ 
+ Prior to any disclosure under Clause 3.1, the Recipient shall inform the Authorised Recipients, and any person referred to in Clause 3.1(b) , (c) and (d) of the confidential nature of the Confidential Information and obligations of confidentiality in relation thereto. 
+ 
+ RETURN OR DESTRUCTION OF CONFIDENTIAL INFORMATION 
+ 
+ If the Disclosing Party so requests in writing, Recipient shall either return or destroy all Confidential Information supplied by the Disclosing Party to it (other than any Secondary Information), save to the extent that it or any of its Authorised Recipients is required to retain any Confidential Information by any (a) law; (b) rule or regulation; or (c) competent judicial, governmental, supervisory or regulatory body. This obligation to destroy or erase any Confidential Information will not prevent Recipient or any of the Authorised Recipients or any person referred to in Clause 3.1(b) (as the case may be) from ( i ) retaining one copy-set of documents for its own internal audit purposes and (ii) retaining computer records or files containing Confidential Information which have been created or stored pursuant to an automatic, routine, electronic archiving and back-up procedure. 
+ 
+ For the avoidance of doubt, any Confidential Information retained under this provision shall be retained subject to the terms of this Agreement. 
+ 
+ TERM OF AGREEMENT 
+ 
+ This Agreement shall be effective from the Effective Date . 
+ 
+ The obligations in this Agreement shall continue unless agreed otherwise , in writing , between the Parties. 
+ 
+ OWNERSHIP OF CONFIDENTIAL INFORMATION 
+ 
+ The Parties agrees that no right or licence is granted to Recipient in relation to the Confidential Information. 
+ 
+ GENERAL 
+ 
+ No Representations and Warranties: The Confidential Information is being provided to the Recipient “as is” and without any representation or warranty of any kind, either express or implied. The Recipient understands and agrees that neither the Disclosing Party nor any of its Representatives makes any representation or warranty, express or implied, as to the accuracy or completeness of the Confidential Information, nor will it have any liability to the Recipient, its Authorized Recipients, or any other person, in relation to or resulting from the use of the Confidential Information, or any errors therein or omissions therefrom. 
+ 
+ No Liability: The Recipient understands and agrees that any Confidential Information prepared by the Disclosing Party was prepared for their internal purposes only, and thus may not be suitable for the Recipient’s purpose. The Recipient acknowledges and agrees that the Recipient will make its own independent evaluation of the Proposed Transaction and will not be relying on the Disclosing Party in connection with the Proposed Transaction, and that the Disclosing Party is not acting as the Recipients’ broker or advisor in connection with the Proposed Transaction. 
+ 
+ Indemnity: Each Party agrees to indemnify and hold harmless the other Party from and against all sums of money, actions, proceedings, suits, claims, demands, costs, expenses and any other amounts whatsoever incurred as a result of the unauthorised and unlawful disclosure of Confidential Information to any third party by a wrongful act, error, omission or negligence of the Recipient or any of its Authorised Recipients. This clause shall survive termination of this Agreement. 
+ 
+ No Waiver: A Party's failure or delay in exercising any right, power or privilege under this Agreement will not operate as a waiver thereof nor will any single or partial exercise of any right, power or privilege by that Party preclude any further exercise thereof or the exercise of any other right, power or privilege hereunder. 
+ 
+ Amendments: The terms of this Agreement and a Party's obligation hereunder may only be amended or modified by written agreement between the Parties. 
+ 
+ Validity; Enforceability: If any provision of this Agreement is held to be invalid or unenforceable, that provision shall (so far as it is invalid or unenforceable) be given no effect and shall be deemed not to be included in this Agreement, but shall not invalidate any other provision in this Agreement. 
+ 
+ Entire Agreement: This Agreement constitutes the whole agreement between the Parties as of the date of this Agreement and there are no terms or conditions of such Agreement other than those contained in this Agreement. No variation of this Agreement shall be valid unless it is in writing and signed on behalf of each of the Parties. 
+ 
+ Notices: Any notice herein referred to shall be in writing and shall be sufficiently given to or served on the Party to whom it is addressed via registered post or email. Notice shall be deemed to have been delivered, four (4) working days after posting, if sent by registered post; or if sent by email, twenty-four (24) hours after sending the email . 
+ 
+ No Obligation: Nothing in this Agreement shall create an obligation upon either Party to provide the other Party with access to any information or to enter into the Proposed Transaction. 
+ Counterparts: This Agreement may be entered into in any number of counterparts, all of which taken together shall constitute one and the same agreement. Any Party may enter into this Agreement by signing any such counterpart. 
+ 
+ NO ASSIGNMENT 
+ 
+ This Agreement or any interest therein shall not be assigned in whole or in part without the prior written consent of the other Party. 
+ 
+ GOVERNING LAW AND DISPUTE RESOLUTION 
+ 
+ This Agreement and any disputes or claims arising out of, or in connection with, its subject matter are to be governed by and construed in accordance with the laws of Pakistan. 
+ 
+ Any dispute under or arising out of this Agreement shall be referred in accordance with the Arbitration Act, 1940 and the decision of the arbitrator shall be final and binding on the Parties . 
+ 
+ 
+ 
+ 
+ [REMAINDER OF PAGE INTENTIONALLY LEFT BLANK WITH SIGNATURES ON FOLLOWING PAGE] 
+ 
+ 
+ SIGNATORIES 
+ 
+ NON-DISCLOSURE AGREEMENT 
+ 
+ 
+ AS WITNESS this Agreement has been signed by the pa rties (or their duly authorized representatives) on the date stated at the beginning of this Agreement. 
+ 
+ 
+ EXECUTANTS 
+ 
+ 
+ 
+ 
+ ________________________ _____________________________ 
+ For and on behalf of [●] For and on behalf of [●] 
+ [● authorized representative ] [● authorized representative] 
+ 
+ 
+ WITNESSES 
+ 
+ 
+ 
+ 
+ _____________________________ ______________________________ 
+ Name: Name: 
+ CNIC No. : CNIC No.:

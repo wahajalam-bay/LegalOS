@@ -1,0 +1,38 @@
+{
+ "root": "Compliance Data _LegalOS",
+ "builtAt": "2026-09-23T12:16:34.179Z",
+ "folders": 190,
+ "files": 1772,
+ "firstLevel": {
+  "Zameen Group_Loan Agreements": {
+   "folders": 50,
+   "files": 380,
+   "known": true
+  },
+  "Zameen Group _PK Intercompany Loans": {
+   "folders": 61,
+   "files": 152,
+   "known": true
+  },
+  "Licenses & Approvals _ Pakistan Entities": {
+   "folders": 11,
+   "files": 18,
+   "known": true
+  },
+  "Resolutions": {
+   "folders": 43,
+   "files": 850,
+   "known": true
+  },
+  "Spend Contracts (Lease and Service Agreements)": {
+   "folders": 25,
+   "files": 372,
+   "known": true
+  }
+ },
+ "unknownRootChildren": [],
+ "crawl": {
+  "depthCap": "none reached",
+  "maxDepthObserved": 7
+ }
+}

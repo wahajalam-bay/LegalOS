@@ -1,0 +1,328 @@
+{
+  "mappings": 4683,
+  "brokenLinks": 0,
+  "broken": [],
+  "filesInAnotherEntitysFolder": 268,
+  "misfiledSample": [
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1sGOXZnZvO9PUfwiTVr2XVTfeBtO7rJmF",
+      "name": "Audited Financial Statement_FY 2025_Zameen Delta_20260406.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1sPyJSCQh7e7Z4QpzgsYs_KZIXPPhHP6d",
+      "name": "Form 9_[Election of Directors]_Zameen Delta_20260701.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "16xA5PgLbZNBgNGGQsZb8OOvzhZOxkQnn",
+      "name": "1.Notice to Directors_Board Meeting_Zameen Delta_20260504.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1M3aQlAIE1N1myKcOdK7CC_3yYVBR3kX3",
+      "name": "2.Meeting Minutes (Convene EOGM and Election of Director)_Zameen Delta_20260511_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1N155jc4G0PUXb8sTBxT2CDCiTefOB-7M",
+      "name": "3.Notice to Convene EOGM_Zameen Delta_20260511_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1tRz3JaOSVRxUqgVeVsY9SN4aokQc8K8G",
+      "name": "4.Minutes of EOGM_Zameen Delta_20260615_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1Q3vOmC6d8rinFGB91dcjeC84G4_myHPt",
+      "name": "5.Post EOGM Meeting Minutes_(appointment of CEO)_Zameen Delta_20260615_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2026",
+      "fileId": "1bgh9WhGdvi-w_CjL-29XXNzYWpa6Fbc_",
+      "name": "Zameen Delta Consent Letter FY 2026.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "105u0Det_5HsUKS2cZX1dDo4FvBbevaGY",
+      "name": "Audited Financial Statements FY 2024_Zameen Delta _20240630.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "1rEy99jdyG0f-KNE8kCjVP6zyZoT0bkWB",
+      "name": "1.Notice to the Shareholders for the Annual General Meeting of Zameen Dalta 20250910_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "1VfTDtlH0devbMwAaqopgrrSHiUHY34g9",
+      "name": "3.AGM Minutes_Zameen Delta_20250910_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "115lrHWYrE8mBTNd8wvF2s_LbPDWL_Woo",
+      "name": "2.Pre AGM Minutes_Zameen Delta _0250820_0001.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "1ZWtKXlwO1go-d_v4E424OdmK6LnVRheu",
+      "name": "Form 19 -[UBO Declaration for FY 2024]_Zameen Delta_20251127_4387660.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "1RVUBW_Lwa6KxZkcchveNxUg0_0A6xGDL",
+      "name": "Form 9 for (Appointment of Auditors FY 2024)_Zameen Delta_20251127.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2025",
+      "fileId": "1xbefKAqET517aK70shuy8c4V-SApI6t-",
+      "name": "Form A-( for FY 24_made up to 2025.09.10)_Zameen Delta_ 20251127_4387660 - 4173048 (1).pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "1a9gGRoK1JnhY-Bh1N7wXazWExJenp0Gj",
+      "name": "Audited Financials FY 2023_Zameen Delta_20240514.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "1Ufae5yqRVMIV9vrPciZJskdzMpbFrz1e",
+      "name": "1_Pre AGM_Zameen Delta_20240708.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "1R0F6tyYFCFeGrxosN798TGvG0ZRo9q4l",
+      "name": "2_Notice for holding AGM_Zameen Delta_20240729.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "15WG3Hx2ARi1oiMt79xMMqLx8Jsa46KzJ",
+      "name": "3_ AGM Minutes_Zameen Delta_20240729.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "12cbstHDkYTuPvEZ4W-bg5mW6JdKLK93a",
+      "name": "Form 9 [FY 2023][Election of Directors]_Zameen Delta_20240517.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "1LoOInkcW0B_LIeYhVtcxtsyk4MO44VFU",
+      "name": "Form 19 [FY 2023][declaration with respect to UBO]_Zameen Delta_20240812.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "100fR5mYRcep9827pL8Ti3gH_UzazU99A",
+      "name": "Form 9 [FY 2023] [appointment of auditor]_Zameen Delta_20240812.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "1KGkYyUKKOjO1J7mT44GX_m9xCFcPrg7x",
+      "name": "Form A [made upto 29.07.2024}_Zameen Delta_20240812.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2024",
+      "fileId": "1Dx_0IWkPSdQjH1E9EbuIAaWZr2Hq93n5",
+      "name": "Auditor_s consent Letter_Zameen Delta_20240304.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1yY4GXPmUfuaq1cCCwn9tmNPMYld1Vvrq",
+      "name": "Audited Accounts FY 2022_Zameen Delta_20221010.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "18SWl0BSy4gI0aBpOPwqrGK1SYahLL8l-",
+      "name": "Request for Direction [letter & Affidavit]_20230616.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1HXE90kL_rMeNQk4jolWiJipGOxIGuL1x",
+      "name": "SECP Direction for AGM_Zameen Delta_20230719.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "19RYUlO2Aqjh2C2W1ksFxpXL6Y5md-MaY",
+      "name": "1_Pre-AGM Minutes_Zameen Delta_20230803.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1U6ZAzWb-yiDkdJtqYD97K6p6es5qYka6",
+      "name": "2_Notice for holding AGM_Zameen Delta_20230901.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1vEXoAFZ7R3QGUhppaOaTA_r6hxdlapX3",
+      "name": "3_AGM Minutes_Zameen Delta_20230901.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1g23j0E5C2Lw5ZhEKDp1z1o-z3RtitQ93",
+      "name": "Form 45 [declaration of UBO complinace]_Zameen Delta_20230912.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1oWklJDRbWkxYDWIQqpVrKVHa2XzAfhSI",
+      "name": "Form 29 [appointment of auditor]_Zameen Delta_20231122.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1Qc0bAWC7fdaEmhkc5Bd-8vucTuoOkTcU",
+      "name": "Form A (madeupto 01.09.2023)_Zameen Delta_20231122.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2023",
+      "fileId": "1nEQi3jl1Rrdg9tinTEmOd-9SRHgOpB7L",
+      "name": "Auditor_s Consent Letter_Zameen Delta_20230626.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2022",
+      "fileId": "1HBPcHAzNWsJHlGu9uHLMb8sXZ23Xgv71",
+      "name": "Audited Accounts_Zameen Delta_20220430.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2022",
+      "fileId": "1Cs5RossURnf1TLriuf5qdM8UEsVwNzbU",
+      "name": "Request to SECP for S. 147 direction [letter & affidavit]_Zameen Delta_20220511.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2022",
+      "fileId": "1SuoVQZ_NYjDznS09q83szHnc2T0NlljN",
+      "name": "SECP_s direction [AGM direction]_Zameen Delta_20220517.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2022",
+      "fileId": "1sy-u6D-E9MZj785O-4TdqJRutthurjH_",
+      "name": "001_Pre-AGM minutes_Zameen Delta_20220518.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2022",
+      "fileId": "1zfwqHAhRKhUBZHvre13YhU6PMikzubAd",
+      "name": "002_Notice for AGM_Zameen Delta_20220518.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    },
+    {
+      "register": "annual-compliance",
+      "recordId": "SECPY-zameen-delta-CY2022",
+      "fileId": "1AMyCu823ySfnEZISvFpUtTu3FiQnfK_v",
+      "name": "003_AGM Minutes_Zameen Delta_20220608.pdf",
+      "filedUnder": "Entities data for secp filing / Group Entities / Zameen Crest (SMC-Private) Limited / CY 2024",
+      "belongsTo": "Zameen Delta (Private) Limited"
+    }
+  ]
+}

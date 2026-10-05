@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LegalOS — demo exports (pseudonymised)</title>
+<link rel="stylesheet" href="../legalos-design-tokens.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* Nothing but the exported token sheet is loaded here. If this page looks
+     like LegalOS, the tokens are carrying the design. */
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font); }
+  .wrap { max-width:1020px; margin:0 auto; padding:var(--sp-10) var(--sp-6) var(--sp-12); }
+  h1 { font-size:26px; letter-spacing:-.02em; margin:0 0 var(--sp-2); }
+  .lead { color:var(--text-2); font-size:14px; line-height:1.65; margin:0 0 var(--sp-6); max-width:70ch; }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-3);
+       margin:var(--sp-8) 0 var(--sp-3); font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(236px,1fr)); gap:var(--sp-3); }
+  a.card { display:block; padding:var(--sp-4); background:var(--surface); border:1px solid var(--border);
+           border-radius:var(--card-r); text-decoration:none; color:inherit; box-shadow:var(--shadow-xs); }
+  a.card:hover { border-color:var(--brand); box-shadow:var(--shadow-md); }
+  .card__t { font-weight:600; font-size:13.5px; margin-bottom:3px; }
+  .card__s { font-size:12px; color:var(--text-3); line-height:1.5; }
+  .card__m { font:400 10.5px var(--mono); color:var(--text-3); margin-top:6px; opacity:.8; }
+  .hero { display:block; padding:var(--sp-5); background:var(--brand-600); color:#fff;
+          border-radius:var(--card-r); text-decoration:none; box-shadow:var(--shadow-md); }
+  .hero__t { font-weight:700; font-size:16px; margin-bottom:4px; }
+  .hero__s { font-size:12.5px; line-height:1.6; opacity:.86; }
+  .note { border-left:3px solid var(--success);
+          background:var(--success-bg); color:var(--text);
+          padding:var(--sp-3) var(--sp-4); border-radius:var(--r-sm); font-size:13px;
+          line-height:1.65; margin:var(--sp-4) 0 0; }
+  .tag { font:600 10.5px var(--mono); color:var(--brand); border:1px solid var(--brand);
+         padding:3px 9px; border-radius:var(--r-full); vertical-align:middle; margin-left:9px; }
+  code { font-family:var(--mono); font-size:12px; background:var(--surface-2); padding:1px 5px; border-radius:var(--r-xs); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>LegalOS — demo exports <span class="tag">PSEUDONYMISED</span></h1>
+  <p class="lead">Each file is one screen of the running product, frozen to standalone HTML with the
+  stylesheet and images folded in and the scripts taken out. Open any of them directly in a browser —
+  no server, no build. Nothing is interactive: they are what the screen looks like, not a working copy.</p>
+
+  <a class="hero" href="legalos-all-views.html">
+    <div class="hero__t">▸ All 17 views in one file</div>
+    <div class="hero__s">Every screen below, switchable from a bar along the bottom. The stylesheet is
+    included once rather than 17 times, so it is 3.3 MB instead of 7 MB. Deep-linkable:
+    <code style="background:rgba(255,255,255,.14);color:#fff">#litigation-platform</code>.</div></a>
+
+  <h2>Legal department · <code>/legalos/</code></h2>
+  <div class="grid"><a class="card" href="legalos-platform-dashboard.html"><div class="card__t">Executive dashboard</div><div class="card__s">KPI strip, contracts portfolio, case book, outcomes donut</div><div class="card__m">388 KB</div></a><a class="card" href="legalos-platform-workspace.html"><div class="card__t">Legal workspace</div><div class="card__s">The queue the department works out of</div><div class="card__m">377 KB</div></a><a class="card" href="legalos-platform-calendar.html"><div class="card__t">Calendar</div><div class="card__s">Hearings, renewals and notice windows</div><div class="card__m">372 KB</div></a><a class="card" href="legalos-platform-contract-requests.html"><div class="card__t">Contract requests</div><div class="card__s">The intake queue, and the drafting panel</div><div class="card__m">359 KB</div></a><a class="card" href="legalos-platform-tracker.html"><div class="card__t">Contract tracker</div><div class="card__s">Commercial contracts, filtered and drilled</div><div class="card__m">564 KB</div></a><a class="card" href="legalos-platform-contracts.html"><div class="card__t">Contracts repository</div><div class="card__s">The executed book</div><div class="card__m">532 KB</div></a><a class="card" href="legalos-platform-templates.html"><div class="card__t">Template library</div><div class="card__s">413 approved templates from Drive</div><div class="card__m">714 KB</div></a><a class="card" href="legalos-platform-clauses.html"><div class="card__t">Clause library</div><div class="card__s">Approved positions by topic</div><div class="card__m">370 KB</div></a><a class="card" href="legalos-platform-litigation.html"><div class="card__t">Litigation register</div><div class="card__s">The register shell — filters, drill cells, 338 cases</div><div class="card__m">537 KB</div></a><a class="card" href="legalos-platform-causelist.html"><div class="card__t">Cause list</div><div class="card__s">What is listed, and when</div><div class="card__m">382 KB</div></a><a class="card" href="legalos-platform-notices.html"><div class="card__t">Notices register</div><div class="card__s">Served and received</div><div class="card__m">491 KB</div></a><a class="card" href="legalos-platform-spend.html"><div class="card__t">Invoices &amp; spend</div><div class="card__s">Outside counsel cost</div><div class="card__m">364 KB</div></a><a class="card" href="legalos-platform-compliance.html"><div class="card__t">Compliance &amp; licences</div><div class="card__s">Module overview and licence position</div><div class="card__m">378 KB</div></a><a class="card" href="legalos-platform-companies.html"><div class="card__t">Companies</div><div class="card__s">43 entities and their statutory position</div><div class="card__m">477 KB</div></a><a class="card" href="legalos-platform-reports.html"><div class="card__t">Reports</div><div class="card__s">Standing reports across the department</div><div class="card__m">385 KB</div></a></div>
+
+  <h2>Requester portal · <code>/legalos/portal/</code></h2>
+  <div class="grid"><a class="card" href="legalos-requester-raise.html"><div class="card__t">Raise a legal request</div><div class="card__s">Three-step wizard, plus the contract-request door</div><div class="card__m">350 KB</div></a><a class="card" href="legalos-requester-requests.html"><div class="card__t">My requests</div><div class="card__s">What the requester can follow end to end</div><div class="card__m">349 KB</div></a></div>
+  
+
+  <h2>Design system and styles</h2>
+  <div class="grid">
+    <a class="card" href="../legalos-design-system.html"><div class="card__t">Design system</div><div class="card__s">Tokens, every component specimen, light and dark — rendered by the product's own stylesheet</div></a>
+    <a class="card" href="../legalos-design-tokens.css"><div class="card__t">Design tokens</div><div class="card__s">124 declarations — structure, light theme, dark theme</div></a>
+    <a class="card" href="../legalos-stylesheet.css"><div class="card__t">Full stylesheet</div><div class="card__s">The product's complete CSS, 4,269 lines, verbatim</div></a>
+  </div>
+
+  <h2>What is changed in this set</h2>
+  <p class="note"><strong>Case titles, case numbers and counsel names are pseudonyms.</strong>
+  Everything else is the product exactly as it renders — stages, dates, counts, filters, layout, every
+  token. Court names are kept, because a court is not personal data and the column reads as nonsense
+  without one. The mapping is deterministic, so the same case is the same pseudonym on every screen.</p>
+
+  <p class="lead" style="margin-top:var(--sp-6);font-size:12.5px;color:var(--text-3)">
+  Rebuild any of this: <code>node tools/demo-export.js [--redact]</code> ·
+  <code>node tools/combine-views.js</code> · <code>node tools/design-system.js</code> ·
+  <code>node tools/export-index.js</code></p>
+</div>
+</body>
+</html>

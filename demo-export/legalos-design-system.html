@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LegalOS — design system</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!-- The product's own stylesheet, whole and unmodified. Nothing on this page
+     restyles a component: if a specimen looks right, it IS right. -->
+<link rel="stylesheet" href="legalos-stylesheet.css" />
+<style>
+  /* Page furniture only — never component styling. */
+  body { background:var(--bg); color:var(--text); font-family:var(--font); margin:0; }
+  .ds-wrap { max-width:1080px; margin:0 auto; padding:40px 28px 90px; }
+  .ds-head { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  h1 { font-size:28px; letter-spacing:-.02em; margin:0 0 6px; }
+  .ds-sub { color:var(--text-2); font-size:14px; line-height:1.65; max-width:70ch; margin:0 0 6px; }
+  /* Scoped to the section heading itself. Unscoped, this rule reached INTO a
+     specimen -- the empty state's own <h2> came out uppercase with a rule under
+     it, which is page furniture pretending to be a component. */
+  .ds-wrap > section > h2 { font-size:12px; text-transform:uppercase; letter-spacing:.07em;
+       color:var(--text-3); font-weight:600; margin:46px 0 10px; padding-bottom:8px;
+       border-bottom:1px solid var(--border); }
+  .ds-wrap > section > h3 { font-size:14px; margin:24px 0 8px; }
+  .ds-lead { color:var(--text-2); font-size:13px; line-height:1.65; max-width:72ch; margin:0 0 14px; }
+  .ds-row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:10px; }
+  .ds-grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .ds-grid4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; }
+  .ds-sw { display:grid; grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); gap:10px; }
+  .ds-sw__i { border:1px solid var(--border); border-radius:var(--r-sm); overflow:hidden; background:var(--surface); }
+  .ds-sw__c { height:52px; }
+  .ds-sw__n { padding:6px 8px 0; font:500 10.5px var(--mono); color:var(--text); }
+  .ds-sw__v { padding:0 8px 7px; font:400 10px var(--mono); color:var(--text-3); }
+  .ds-tbl { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .ds-tbl td { padding:6px 10px; border-bottom:1px solid var(--border); }
+  .ds-tbl__v { font-family:var(--mono); color:var(--text-2); font-size:11.5px; }
+  .ds-scale__r { display:flex; align-items:center; gap:12px; padding:4px 0; font-size:12px; }
+  .ds-scale__r code { min-width:116px; }
+  .ds-scale__b { height:12px; background:var(--brand); border-radius:3px; }
+  code { font-family:var(--mono); font-size:11.5px; background:var(--surface-2); padding:1px 5px; border-radius:var(--r-xs); }
+  .ds-spec { background:var(--surface); border:1px solid var(--border); border-radius:var(--card-r);
+             padding:20px; margin-bottom:14px; }
+  .ds-toggle { display:flex; gap:8px; }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <div class="ds-head">
+    <div>
+      <h1>LegalOS — design system</h1>
+      <p class="ds-sub">Every specimen below is rendered by the product's own stylesheet
+      (<code>legalos-stylesheet.css</code>, 4,270 lines) using the
+      real class names from <code>src/ui.js</code>. The tokens and icons are read out of the source at
+      build time, so this page cannot drift from the product the way a hand-kept catalogue does.</p>
+    </div>
+    <div class="ds-toggle">
+      <button class="btn btn--ghost btn--sm" onclick="document.documentElement.setAttribute('data-theme','light')"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>Light</button>
+      <button class="btn btn--ghost btn--sm" onclick="document.documentElement.setAttribute('data-theme','dark')"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>Dark</button>
+    </div>
+  </div>
+
+  <section id="brand"><h2>Colour · brand and status</h2><p class="ds-lead">The brand ramp and the status hues. These are theme-independent: they mean the same thing in
+     light and dark, and only the surfaces around them change.</p><div class="ds-sw"><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0d7a3f"></div><div class="ds-sw__n">--brand-500</div><div class="ds-sw__v">#0d7a3f</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#063d24"></div><div class="ds-sw__n">--brand-600</div><div class="ds-sw__v">#063d24</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#27a96d"></div><div class="ds-sw__n">--brand-400</div><div class="ds-sw__v">#27a96d</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0891b2"></div><div class="ds-sw__n">--accent-500</div><div class="ds-sw__v">#0891b2</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0e7490"></div><div class="ds-sw__n">--accent-600</div><div class="ds-sw__v">#0e7490</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#16a34a"></div><div class="ds-sw__n">--success</div><div class="ds-sw__v">#16a34a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#dcfce7"></div><div class="ds-sw__n">--success-bg</div><div class="ds-sw__v">#dcfce7</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#d97706"></div><div class="ds-sw__n">--warning</div><div class="ds-sw__v">#d97706</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#fef3c7"></div><div class="ds-sw__n">--warning-bg</div><div class="ds-sw__v">#fef3c7</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#dc2626"></div><div class="ds-sw__n">--danger</div><div class="ds-sw__v">#dc2626</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#fee2e2"></div><div class="ds-sw__n">--danger-bg</div><div class="ds-sw__v">#fee2e2</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#1d6cb0"></div><div class="ds-sw__n">--info</div><div class="ds-sw__v">#1d6cb0</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e3f0fb"></div><div class="ds-sw__n">--info-bg</div><div class="ds-sw__v">#e3f0fb</div></div></div></section>
+
+  <section id="surfaces"><h2>Colour · surfaces, text and borders</h2><p class="ds-lead">The theme layer. A component never hard-codes a colour — it reads <code>--surface</code>,
+     <code>--text</code>, <code>--border</code>, and the theme decides. That is why switching themes
+     needs no component to change, and why one raw hex in a component breaks dark mode silently.</p><div class="ds-sw"><div class="ds-sw__i"><div class="ds-sw__c" style="background:#f4f8f5"></div><div class="ds-sw__n">--bg</div><div class="ds-sw__v">#f4f8f5</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#ffffff"></div><div class="ds-sw__n">--bg-elev</div><div class="ds-sw__v">#ffffff</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#ffffff"></div><div class="ds-sw__n">--surface</div><div class="ds-sw__v">#ffffff</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#edf5ef"></div><div class="ds-sw__n">--surface-2</div><div class="ds-sw__v">#edf5ef</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e3efe7"></div><div class="ds-sw__n">--surface-3</div><div class="ds-sw__v">#e3efe7</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#063d24"></div><div class="ds-sw__n">--sidebar-bg</div><div class="ds-sw__v">#063d24</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#c6ddd2"></div><div class="ds-sw__n">--sidebar-fg</div><div class="ds-sw__v">#c6ddd2</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#b4cbbf"></div><div class="ds-sw__n">--sidebar-fg-dim</div><div class="ds-sw__v">#b4cbbf</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0c5836"></div><div class="ds-sw__n">--sidebar-active</div><div class="ds-sw__v">#0c5836</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#d3e3d8"></div><div class="ds-sw__n">--border</div><div class="ds-sw__v">#d3e3d8</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#bfd6c6"></div><div class="ds-sw__n">--border-strong</div><div class="ds-sw__v">#bfd6c6</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#14261c"></div><div class="ds-sw__n">--text</div><div class="ds-sw__v">#14261c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#4c655a"></div><div class="ds-sw__n">--text-2</div><div class="ds-sw__v">#4c655a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#5b6d64"></div><div class="ds-sw__n">--text-3</div><div class="ds-sw__v">#5b6d64</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#c92323"></div><div class="ds-sw__n">--danger-text</div><div class="ds-sw__v">#c92323</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#a55a05"></div><div class="ds-sw__n">--warning-text</div><div class="ds-sw__v">#a55a05</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#11803a"></div><div class="ds-sw__n">--success-text</div><div class="ds-sw__v">#11803a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#c92323"></div><div class="ds-sw__n">--risk-critical-text</div><div class="ds-sw__v">#c92323</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#bd470a"></div><div class="ds-sw__n">--risk-high-text</div><div class="ds-sw__v">#bd470a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#956603"></div><div class="ds-sw__n">--risk-medium-text</div><div class="ds-sw__v">#956603</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#11803a"></div><div class="ds-sw__n">--risk-low-text</div><div class="ds-sw__v">#11803a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:var(--brand-500)"></div><div class="ds-sw__n">--brand</div><div class="ds-sw__v">var(--brand-500)</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e7f3ec"></div><div class="ds-sw__n">--brand-soft</div><div class="ds-sw__v">#e7f3ec</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#d3ecdd"></div><div class="ds-sw__n">--brand-soft-2</div><div class="ds-sw__v">#d3ecdd</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e0f1f5"></div><div class="ds-sw__n">--accent-soft</div><div class="ds-sw__v">#e0f1f5</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:rgba(255, 255, 255, 0.74)"></div><div class="ds-sw__n">--glass</div><div class="ds-sw__v">rgba(255, 255, 255, 0.74)</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0d7a3f"></div><div class="ds-sw__n">--viz-1</div><div class="ds-sw__v">#0d7a3f</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#1d6cb0"></div><div class="ds-sw__n">--viz-2</div><div class="ds-sw__v">#1d6cb0</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#ea580c"></div><div class="ds-sw__n">--viz-3</div><div class="ds-sw__v">#ea580c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#6d28d9"></div><div class="ds-sw__n">--viz-4</div><div class="ds-sw__v">#6d28d9</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#db2777"></div><div class="ds-sw__n">--viz-5</div><div class="ds-sw__v">#db2777</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#8a9a91"></div><div class="ds-sw__n">--viz-other</div><div class="ds-sw__v">#8a9a91</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e6efe9"></div><div class="ds-sw__n">--viz-grid</div><div class="ds-sw__v">#e6efe9</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#cfe0d5"></div><div class="ds-sw__n">--viz-axis</div><div class="ds-sw__v">#cfe0d5</div></div></div></section>
+
+  <section id="dark"><h2>Colour · dark theme</h2><p class="ds-lead">The same names, re-pointed. Use the toggle at the top of this page to see every specimen switch.</p><div class="ds-sw"><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0d1613"></div><div class="ds-sw__n">--bg</div><div class="ds-sw__v">#0d1613</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#121d18"></div><div class="ds-sw__n">--bg-elev</div><div class="ds-sw__v">#121d18</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#16221c"></div><div class="ds-sw__n">--surface</div><div class="ds-sw__v">#16221c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#1b2a23"></div><div class="ds-sw__n">--surface-2</div><div class="ds-sw__v">#1b2a23</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#223029"></div><div class="ds-sw__n">--surface-3</div><div class="ds-sw__v">#223029</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#08130e"></div><div class="ds-sw__n">--sidebar-bg</div><div class="ds-sw__v">#08130e</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#a6c2b3"></div><div class="ds-sw__n">--sidebar-fg</div><div class="ds-sw__v">#a6c2b3</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#93ac9f"></div><div class="ds-sw__n">--sidebar-fg-dim</div><div class="ds-sw__v">#93ac9f</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#123a28"></div><div class="ds-sw__n">--sidebar-active</div><div class="ds-sw__v">#123a28</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#263a30"></div><div class="ds-sw__n">--border</div><div class="ds-sw__v">#263a30</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#33473c"></div><div class="ds-sw__n">--border-strong</div><div class="ds-sw__v">#33473c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e4ece7"></div><div class="ds-sw__n">--text</div><div class="ds-sw__v">#e4ece7</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#93a89d"></div><div class="ds-sw__n">--text-2</div><div class="ds-sw__v">#93a89d</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#86988e"></div><div class="ds-sw__n">--text-3</div><div class="ds-sw__v">#86988e</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e55c5c"></div><div class="ds-sw__n">--danger-text</div><div class="ds-sw__v">#e55c5c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#d97706"></div><div class="ds-sw__n">--warning-text</div><div class="ds-sw__v">#d97706</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#1fa751"></div><div class="ds-sw__n">--success-text</div><div class="ds-sw__v">#1fa751</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e55c5c"></div><div class="ds-sw__n">--risk-critical-text</div><div class="ds-sw__v">#e55c5c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#f08040"></div><div class="ds-sw__n">--risk-high-text</div><div class="ds-sw__v">#f08040</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#d8b23a"></div><div class="ds-sw__n">--risk-medium-text</div><div class="ds-sw__v">#d8b23a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#1fa751"></div><div class="ds-sw__n">--risk-low-text</div><div class="ds-sw__v">#1fa751</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#2fae72"></div><div class="ds-sw__n">--brand</div><div class="ds-sw__v">#2fae72</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#10271b"></div><div class="ds-sw__n">--brand-soft</div><div class="ds-sw__v">#10271b</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#16351f"></div><div class="ds-sw__n">--brand-soft-2</div><div class="ds-sw__v">#16351f</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0c2a31"></div><div class="ds-sw__n">--accent-soft</div><div class="ds-sw__v">#0c2a31</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0f2e1c"></div><div class="ds-sw__n">--success-bg</div><div class="ds-sw__v">#0f2e1c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#33260a"></div><div class="ds-sw__n">--warning-bg</div><div class="ds-sw__v">#33260a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#37161a"></div><div class="ds-sw__n">--danger-bg</div><div class="ds-sw__v">#37161a</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0b2437"></div><div class="ds-sw__n">--info-bg</div><div class="ds-sw__v">#0b2437</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:rgba(18, 29, 24, 0.72)"></div><div class="ds-sw__n">--glass</div><div class="ds-sw__v">rgba(18, 29, 24, 0.72)</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#2fae72"></div><div class="ds-sw__n">--viz-1</div><div class="ds-sw__v">#2fae72</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#4f9ae0"></div><div class="ds-sw__n">--viz-2</div><div class="ds-sw__v">#4f9ae0</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e26a12"></div><div class="ds-sw__n">--viz-3</div><div class="ds-sw__v">#e26a12</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#8b6ef0"></div><div class="ds-sw__n">--viz-4</div><div class="ds-sw__v">#8b6ef0</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e04a8c"></div><div class="ds-sw__n">--viz-5</div><div class="ds-sw__v">#e04a8c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#7d8f85"></div><div class="ds-sw__n">--viz-other</div><div class="ds-sw__v">#7d8f85</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#223029"></div><div class="ds-sw__n">--viz-grid</div><div class="ds-sw__v">#223029</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#33473c"></div><div class="ds-sw__n">--viz-axis</div><div class="ds-sw__v">#33473c</div></div></div></section>
+
+  <section id="viz"><h2>Colour · data visualisation</h2><p class="ds-lead">The categorical ramp, in order. The <strong>order is the colourblind-safety mechanism</strong>:
+     validated for adjacent-pair separation under normal vision and the common CVD types. Never
+     reorder it and never add a sixth hue — the tail folds into <code>--viz-other</code>.</p><div class="ds-sw"><div class="ds-sw__i"><div class="ds-sw__c" style="background:#0d7a3f"></div><div class="ds-sw__n">--viz-1</div><div class="ds-sw__v">#0d7a3f</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#1d6cb0"></div><div class="ds-sw__n">--viz-2</div><div class="ds-sw__v">#1d6cb0</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#ea580c"></div><div class="ds-sw__n">--viz-3</div><div class="ds-sw__v">#ea580c</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#6d28d9"></div><div class="ds-sw__n">--viz-4</div><div class="ds-sw__v">#6d28d9</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#db2777"></div><div class="ds-sw__n">--viz-5</div><div class="ds-sw__v">#db2777</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#8a9a91"></div><div class="ds-sw__n">--viz-other</div><div class="ds-sw__v">#8a9a91</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#e6efe9"></div><div class="ds-sw__n">--viz-grid</div><div class="ds-sw__v">#e6efe9</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="background:#cfe0d5"></div><div class="ds-sw__n">--viz-axis</div><div class="ds-sw__v">#cfe0d5</div></div></div></section>
+
+  <section id="type"><h2>Typography</h2><p class="ds-lead">Inter for the interface, JetBrains Mono for anything a reader may need to compare character by
+     character — references, identifiers and money.</p>
+    <div class="ds-spec">
+      <div style="font:800 28px/1.2 var(--font);letter-spacing:-.02em">Good morning, Imran</div>
+      <div style="font:600 18px/1.3 var(--font);margin-top:10px">The case book</div>
+      <div style="font:600 13.5px/1.4 var(--font);margin-top:10px">Active and decided, and what is being claimed</div>
+      <div style="font:400 13px/1.65 var(--font);color:var(--text-2);margin-top:10px;max-width:60ch">Body copy. Inter at 13–14px is the workhorse size across registers and forms.</div>
+      <div style="font:400 11.5px/1.5 var(--font);color:var(--text-3);margin-top:10px">Tiny / muted — hints, sub-labels and the second line of a table cell.</div>
+      <div style="font:500 13px var(--mono);margin-top:10px">LIT-1RGPUJ0 · PKR 446.2M · 35201-1111111-1</div>
+    </div><table class="ds-tbl"><tbody><tr><td><code>--font</code></td><td class="ds-tbl__v">"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif</td></tr><tr><td><code>--mono</code></td><td class="ds-tbl__v">"JetBrains Mono", "SF Mono", ui-monospace, monospace</td></tr></tbody></table></section>
+
+  <section id="space"><h2>Spacing and layout rhythm</h2><p class="ds-lead">One spacing scale and one page rhythm, so two screens built by two people a month apart still
+     line up.</p><div class="ds-scale"><div class="ds-scale__r"><code>--sp-1</code><span class="ds-scale__b" style="width:4px"></span><span class="ds-tbl__v">4px</span></div><div class="ds-scale__r"><code>--sp-2</code><span class="ds-scale__b" style="width:8px"></span><span class="ds-tbl__v">8px</span></div><div class="ds-scale__r"><code>--sp-3</code><span class="ds-scale__b" style="width:12px"></span><span class="ds-tbl__v">12px</span></div><div class="ds-scale__r"><code>--sp-4</code><span class="ds-scale__b" style="width:16px"></span><span class="ds-tbl__v">16px</span></div><div class="ds-scale__r"><code>--sp-5</code><span class="ds-scale__b" style="width:20px"></span><span class="ds-tbl__v">20px</span></div><div class="ds-scale__r"><code>--sp-6</code><span class="ds-scale__b" style="width:24px"></span><span class="ds-tbl__v">24px</span></div><div class="ds-scale__r"><code>--sp-8</code><span class="ds-scale__b" style="width:32px"></span><span class="ds-tbl__v">32px</span></div><div class="ds-scale__r"><code>--sp-10</code><span class="ds-scale__b" style="width:40px"></span><span class="ds-tbl__v">40px</span></div><div class="ds-scale__r"><code>--sp-12</code><span class="ds-scale__b" style="width:48px"></span><span class="ds-tbl__v">48px</span></div></div><h3>Layout scale</h3><table class="ds-tbl"><tbody><tr><td><code>--r-xs</code></td><td class="ds-tbl__v">6px</td></tr><tr><td><code>--r-sm</code></td><td class="ds-tbl__v">8px</td></tr><tr><td><code>--r-md</code></td><td class="ds-tbl__v">12px</td></tr><tr><td><code>--r-lg</code></td><td class="ds-tbl__v">14px</td></tr><tr><td><code>--r-xl</code></td><td class="ds-tbl__v">20px</td></tr><tr><td><code>--r-full</code></td><td class="ds-tbl__v">999px</td></tr><tr><td><code>--sidebar-w</code></td><td class="ds-tbl__v">268px</td></tr><tr><td><code>--topbar-h</code></td><td class="ds-tbl__v">60px</td></tr><tr><td><code>--page-pad-x</code></td><td class="ds-tbl__v">30px</td></tr><tr><td><code>--page-pad-t</code></td><td class="ds-tbl__v">26px</td></tr><tr><td><code>--page-pad-b</code></td><td class="ds-tbl__v">60px</td></tr><tr><td><code>--section-gap</code></td><td class="ds-tbl__v">22px</td></tr><tr><td><code>--card-pad</code></td><td class="ds-tbl__v">18px</td></tr><tr><td><code>--row-h</code></td><td class="ds-tbl__v">54px</td></tr><tr><td><code>--head-h</code></td><td class="ds-tbl__v">40px</td></tr><tr><td><code>--field-h</code></td><td class="ds-tbl__v">36px</td></tr><tr><td><code>--btn-h</code></td><td class="ds-tbl__v">36px</td></tr><tr><td><code>--badge-h</code></td><td class="ds-tbl__v">22px</td></tr><tr><td><code>--kpi-h</code></td><td class="ds-tbl__v">112px</td></tr></tbody></table></section>
+
+  <section id="radii"><h2>Radii and elevation</h2><div class="ds-row"><div style="text-align:center"><div style="width:76px;height:52px;background:var(--brand-soft);border:1px solid var(--brand-400);border-radius:6px"></div><div class="ds-sw__n" style="padding:6px 0 0">--r-xs</div></div><div style="text-align:center"><div style="width:76px;height:52px;background:var(--brand-soft);border:1px solid var(--brand-400);border-radius:8px"></div><div class="ds-sw__n" style="padding:6px 0 0">--r-sm</div></div><div style="text-align:center"><div style="width:76px;height:52px;background:var(--brand-soft);border:1px solid var(--brand-400);border-radius:12px"></div><div class="ds-sw__n" style="padding:6px 0 0">--r-md</div></div><div style="text-align:center"><div style="width:76px;height:52px;background:var(--brand-soft);border:1px solid var(--brand-400);border-radius:14px"></div><div class="ds-sw__n" style="padding:6px 0 0">--r-lg</div></div><div style="text-align:center"><div style="width:76px;height:52px;background:var(--brand-soft);border:1px solid var(--brand-400);border-radius:20px"></div><div class="ds-sw__n" style="padding:6px 0 0">--r-xl</div></div><div style="text-align:center"><div style="width:76px;height:52px;background:var(--brand-soft);border:1px solid var(--brand-400);border-radius:999px"></div><div class="ds-sw__n" style="padding:6px 0 0">--r-full</div></div></div><h3>Shadows</h3><div class="ds-sw"><div class="ds-sw__i"><div class="ds-sw__c" style="box-shadow:0 1px 2px rgba(6, 61, 36, 0.05);background:var(--surface);margin:10px"></div><div class="ds-sw__n">--shadow-xs</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="box-shadow:0 1px 3px rgba(6, 61, 36, 0.08), 0 1px 2px rgba(6, 61, 36, 0.04);background:var(--surface);margin:10px"></div><div class="ds-sw__n">--shadow-sm</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="box-shadow:0 4px 12px -2px rgba(6, 61, 36, 0.10), 0 2px 6px -2px rgba(6, 61, 36, 0.06);background:var(--surface);margin:10px"></div><div class="ds-sw__n">--shadow-md</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="box-shadow:0 16px 40px -8px rgba(6, 61, 36, 0.16), 0 6px 14px -6px rgba(6, 61, 36, 0.10);background:var(--surface);margin:10px"></div><div class="ds-sw__n">--shadow-lg</div></div><div class="ds-sw__i"><div class="ds-sw__c" style="box-shadow:0 24px 60px -12px rgba(6, 61, 36, 0.24);background:var(--surface);margin:10px"></div><div class="ds-sw__n">--shadow-pop</div></div></div></section>
+
+  <section id="misc"><h2>Z-index and other tokens</h2><p class="ds-lead">The stacking order is a token, not a number typed into a component. A sidebar that outranks a
+     modal is a bug nobody can find by reading one file.</p><table class="ds-tbl"><tbody><tr><td><code>--font</code></td><td class="ds-tbl__v">"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif</td></tr><tr><td><code>--mono</code></td><td class="ds-tbl__v">"JetBrains Mono", "SF Mono", ui-monospace, monospace</td></tr><tr><td><code>--z-topbar</code></td><td class="ds-tbl__v">40</td></tr><tr><td><code>--z-sidebar</code></td><td class="ds-tbl__v">30</td></tr><tr><td><code>--z-overlay</code></td><td class="ds-tbl__v">90</td></tr><tr><td><code>--z-modal</code></td><td class="ds-tbl__v">100</td></tr><tr><td><code>--z-toast</code></td><td class="ds-tbl__v">120</td></tr><tr><td><code>--card-r</code></td><td class="ds-tbl__v">var(--r-lg)</td></tr></tbody></table></section>
+
+  <section id="c0"><h2>Component · Buttons</h2><p class="ds-lead">The variants carry meaning, not decoration: <code>primary</code> is the one action a
+    screen is for, <code>danger</code> is destructive and never the default, <code>ghost</code> is
+    everything else. <code>btn--sm</code> is for table rows and toolbars.</p><div class="ds-spec"><div class="ds-row"><button class="btn btn--primary"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Approve</button><button class="btn btn--accent"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 14.34a1 1 0 0 0-.66-.66l-3.94-1.26a.5.5 0 0 1 0-.94l3.94-1.26a1 1 0 0 0 .66-.66l1.26-3.94a.5.5 0 0 1 .94 0l1.26 3.94a1 1 0 0 0 .66.66l3.94 1.26a.5.5 0 0 1 0 .94l-3.94 1.26a1 1 0 0 0-.66.66l-1.26 3.94a.5.5 0 0 1-.94 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></svg>Generate draft</button>
+      <button class="btn btn--soft"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export</button><button class="btn btn--ghost">Cancel</button><button class="btn btn--danger"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Remove</button></div>
+     <div class="ds-row"><button class="btn btn--primary btn--sm"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Save</button><button class="btn btn--ghost btn--sm"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Filter</button>
+      <button class="btn btn--ghost btn--sm"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button><button class="btn btn--primary btn--lg"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg>New request</button></div></div></section>
+<section id="c1"><h2>Component · Status, risk and priority</h2><p class="ds-lead"><code>Status</code> maps a vocabulary — roughly forty stage names —
+    onto eight pill tones, so the same stage is the same colour on every screen. It is a map, not a
+    choice made per table.</p><div class="ds-spec"><div class="ds-row"><span class="pill pill--green">green</span><span class="pill pill--amber">amber</span><span class="pill pill--red">red</span><span class="pill pill--blue">blue</span><span class="pill pill--purple">purple</span><span class="pill pill--indigo">indigo</span><span class="pill pill--orange">orange</span><span class="pill pill--gray">gray</span></div>
+     <div class="ds-row"><span class="pill pill--green"><span class="pill__dot"></span>Active</span><span class="pill pill--amber"><span class="pill__dot"></span>In Review</span><span class="pill pill--red"><span class="pill__dot"></span>Overdue</span>
+      <span class="pill pill--blue"><span class="pill__dot"></span>Open</span><span class="pill pill--indigo"><span class="pill__dot"></span>Awaiting Signature</span><span class="pill pill--gray"><span class="pill__dot"></span>Draft</span></div>
+     <div class="ds-row"><span class="risk risk--critical"><span class="risk__bar"></span>Critical</span><span class="risk risk--high"><span class="risk__bar"></span>High</span><span class="risk risk--medium"><span class="risk__bar"></span>Medium</span><span class="risk risk--low"><span class="risk__bar"></span>Low</span></div>
+     <div class="ds-row"><span class="prio prio--urgent"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7M12 19V5"/></svg>Urgent</span><span class="prio prio--high"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7M12 19V5"/></svg>High</span><span class="prio prio--med"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>Medium</span><span class="prio prio--low"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>Low</span></div></div></section>
+<section id="c2"><h2>Component · Avatars</h2><p class="ds-lead">Initials on a colour derived from the name, so the same person is the same colour
+    everywhere without anyone storing a swatch.</p><div class="ds-spec"><div class="ds-row"><span class="avatar avatar--lg" style="background:#0d7a3f">IT</span><span class="avatar avatar--md" style="background:#1d6cb0">MH</span><span class="avatar avatar--sm" style="background:#c2410c">ZS</span>
+      <div class="avatar-stack"><span class="avatar avatar--sm" style="background:#7c3aed">AK</span><span class="avatar avatar--sm" style="background:#0891b2">SR</span><span class="avatar avatar--sm" style="background:#be185d">FM</span>
+      <span class="avatar avatar--sm" style="background:var(--surface-3);color:var(--text-2)">+3</span></div></div></div></section>
+<section id="c3"><h2>Component · Metrics</h2><p class="ds-lead">The KPI tile. A metric with an <code>onClick</code> renders as a
+    <code>&lt;button&gt;</code> and one without stays a <code>&lt;div&gt;</code> — so a screen reader
+    is never told there is an action that does not exist.</p><div class="ds-spec"><div class="ds-grid4">
+      
+  <div class="card card--pad metric">
+    <div class="metric__top">
+      <div class="metric__icon" style="background:var(--brand-soft);color:var(--brand)"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/><path d="M3 21h9"/></svg></div>
+      <div class="metric__label">Active cases</div>
+      
+    </div>
+    <div class="metric__value">188</div>
+    
+  </div>
+      
+  <div class="card card--pad metric">
+    <div class="metric__top">
+      <div class="metric__icon" style="background:var(--success-bg);color:var(--success)"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+      <div class="metric__label">Active notices</div>
+      <div class="spacer"></div><div class="trend trend--up"><svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>+12%</div>
+    </div>
+    <div class="metric__value">209</div>
+    
+  </div>
+      
+  <div class="card card--pad metric">
+    <div class="metric__top">
+      <div class="metric__icon" style="background:var(--warning-bg);color:var(--warning)"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div class="metric__label">Licences needing attention</div>
+      
+    </div>
+    <div class="metric__value">3</div>
+    <div class="metric__foot">expiring in 90 days</div>
+  </div>
+      
+  <div class="card card--pad metric">
+    <div class="metric__top">
+      <div class="metric__icon" style="background:var(--danger-bg);color:var(--danger)"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+      <div class="metric__label">Delayed</div>
+      <div class="spacer"></div><div class="trend trend--down"><svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17 13.5 8.5 8.5 13.5 2 7"/><path d="M16 17h6v-6"/></svg>-4%</div>
+    </div>
+    <div class="metric__value">8</div>
+    
+  </div>
+     </div></div></section>
+<section id="c4"><h2>Component · Cards and sections</h2><p class="ds-lead">A <code>Section</code> is a card with a head: icon, title, optional
+    subtitle, optional actions. It is the only container in the product — there is no second kind of
+    panel.</p><div class="ds-spec"><div class="ds-grid2">
+      
+  <div class="card">
+    <div class="card__head">
+      <div class="cmdk__ico" style="width:28px;height:28px;border-radius:8px"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8"/><path d="m16 16 6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/><path d="M3 21h9"/></svg></div>
+      <div style="min-width:0"><div class="card__title">The case book</div><div class="card__sub">Active and decided, and what is being claimed.</div></div>
+      <div class="card__actions"><button class="btn btn--ghost btn--sm"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/><line x1="3" x2="21" y1="20" y2="20"/></svg>Full analytics</button></div>
+    </div>
+    <div class="card__body"><div class="ds-row">
+  <div class="card card--pad metric">
+    <div class="metric__top">
+      <div class="metric__icon" style="background:var(--brand-soft);color:var(--brand)"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2z"/></svg></div>
+      <div class="metric__label">Active</div>
+      
+    </div>
+    <div class="metric__value">188</div>
+    
+  </div>
+  <div class="card card--pad metric">
+    <div class="metric__top">
+      <div class="metric__icon" style="background:var(--success-bg);color:var(--success)"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div>
+      <div class="metric__label">Decided</div>
+      
+    </div>
+    <div class="metric__value">150</div>
+    
+  </div></div></div>
+  </div>
+      
+  <div class="card">
+    <div class="card__head">
+      <div class="cmdk__ico" style="width:28px;height:28px;border-radius:8px"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326z"/></svg></div>
+      <div style="min-width:0"><div class="card__title">Renewals & notice windows</div><div class="card__sub">What lands next across contracts and licences.</div></div>
+      <div class="card__actions"><button class="btn btn--ghost btn--sm"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button></div>
+    </div>
+    <div class="card__body"><div class="tiny muted">Nothing falls due in the next 30 days.</div></div>
+  </div>
+     </div></div></section>
+<section id="c5"><h2>Component · Tabs and segmented</h2><p class="ds-lead">Tabs switch a view; segmented controls pick a value. Both are keyboard
+    navigable — arrow keys, Home and End — because a tablist that only responds to a mouse is not a
+    tablist.</p><div class="ds-spec"><div class="tabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true" class="tab active"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span class="tab__label">Overall</span></button>
+      <button type="button" role="tab" aria-selected="false" class="tab"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span class="tab__label">Spend</span></button>
+      <button type="button" role="tab" aria-selected="false" class="tab"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="tab__label">Team Analytics</span><span class="count">4</span></button>
+     </div>
+     <div class="segmented" style="margin-top:14px;max-width:520px">
+      <button>Week</button><button>Month</button><button>Quarter</button>
+      <button>Half-year</button><button class="active">Annual</button><button>All time</button>
+     </div></div></section>
+<section id="c6"><h2>Component · Forms</h2><p class="ds-lead">Every field is a <code>&lt;label&gt;</code> wrapping its control, so the hit area is the
+    whole field and no <code>for</code>/<code>id</code> pair can come apart.</p><div class="ds-spec"><div class="ds-grid2">
+      <label class="field"><span class="field__label">Request type</span>
+        <select class="input"><option>New</option><option>Renewal</option><option>Amendment</option></select>
+        <span class="field__hint">Decides which commercial terms the form asks for.</span></label>
+      <label class="field"><span class="field__label">Required-by date</span>
+        <input class="input" value="20/10/2026" />
+        <span class="field__hint">Written and read as DD/MM/YYYY, whatever the browser's locale.</span></label>
+      <label class="field" style="grid-column:1/-1"><span class="field__label">A bit more context</span>
+        <textarea class="textarea" rows="3" placeholder="Describe the situation in your own words…"></textarea></label>
+     </div>
+     <div class="ds-row" style="margin-top:12px">
+      <span class="chip active"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Active</span><span class="chip">Decided</span><span class="chip">On appeal</span>
+      <button type="button" class="toggle on" aria-pressed="true" aria-label="On"></button>
+      <button type="button" class="toggle" aria-pressed="false" aria-label="Off"></button>
+     </div></div></section>
+<section id="c7"><h2>Component · Progress, steps and timeline</h2><p class="ds-lead">Where a thing is, and how it got there. The class names here are
+    <code>progress__fill</code>, <code>step__dot</code>/<code>step__label</code> and
+    <code>tl__item</code> — worth saying because the first draft of this page invented
+    <code>progress__bar</code>, <code>step__n</code> and <code>tl__i</code>, and all three rendered as
+    unstyled text. A specimen that does not match the stylesheet is worse than no specimen.</p><div class="ds-spec"><div class="progress" style="max-width:360px"><div class="progress__fill" style="width:63%"></div></div>
+     <div class="stepper" style="margin:20px 0">
+      <div class="step step--done"><div class="step__dot"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div class="step__label">What you need</div></div>
+      <div class="step__line done" style="background:var(--success)"></div>
+      <div class="step step--active"><div class="step__dot">2</div><div class="step__label">About it</div></div>
+      <div class="step__line"></div>
+      <div class="step"><div class="step__dot">3</div><div class="step__label">Review</div></div>
+     </div>
+     <div class="timeline">
+      <div class="tl__item"><div class="tl__dot"></div><div class="tl__title">Submitted</div><div class="tl__meta">Ayesha Khan · 2 Oct</div></div>
+      <div class="tl__item"><div class="tl__dot"></div><div class="tl__title">Approved by HOD</div><div class="tl__meta">Imran Tariq · 3 Oct</div></div>
+      <div class="tl__item"><div class="tl__dot"></div><div class="tl__title">Accepted by Legal</div><div class="tl__meta">Modassar Ali · 4 Oct</div></div>
+     </div></div></section>
+<section id="c8"><h2>Component · Banners and empty states</h2><p class="ds-lead">A banner explains a condition. An empty state says what is missing and
+    what to do — never just "no data".</p><div class="ds-spec"><div class="banner banner--info" style="margin-bottom:10px"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      <div class="tiny">The draft is the approved template itself, with the blanks its drafters left filled from this request.</div></div>
+     <div class="banner banner--warn" style="margin-bottom:16px"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <div class="tiny">Three licences expire inside 90 days.</div></div>
+     <div class="empty"><svg aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+      <h2 class="strong empty__title" style="color:var(--text-2);font-size:15px;margin:0 0 4px">You have not raised a contract request yet</h2>
+      <div>Raise one and it will appear here.</div>
+      <div style="margin-top:16px"><button class="btn btn--primary"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg>New contract request</button></div></div></div></section>
+<section id="c9"><h2>Component · Registers</h2><p class="ds-lead">One table shell serves every register in the product. Header cells that filter are
+    buttons; a row is a link. The register is the single most repeated surface here, which is why it
+    is one component and not fifteen.</p><div class="ds-spec"><div class="card"><table class="table"><thead><tr>
+      <th>Reference</th><th>Matter</th><th>Type</th><th>Side</th><th>Counsel</th><th>Stage</th></tr></thead>
+      <tbody>
+       <tr class="rowlink"><td class="cell-mono">LIT-00001</td>
+        <td><div class="cell-strong">Northfield Holdings (Pvt) Limited vs Rehman Traders</div><div class="tiny muted">167378637 · Civil Court, Lahore</div></td>
+        <td><span class="pill pill--gray">Non-Compete</span></td><td><span class="pill pill--gray">Not stated</span></td>
+        <td><span class="tiny">Harbourview Chambers</span></td><td><span class="pill pill--green"><span class="pill__dot"></span>Active</span></td></tr>
+       <tr class="rowlink"><td class="cell-mono">LIT-1RGPUJ0</td>
+        <td><div class="cell-strong">Orchard Lane Enterprises vs Clearwater Estates</div><div class="tiny muted">Lahore High Court, Lahore</div></td>
+        <td><span class="pill pill--gray">Writ Petition</span></td><td><span class="pill pill--blue">For</span></td>
+        <td><span class="tiny">Stonebridge Advocates</span></td><td><span class="pill pill--green"><span class="pill__dot"></span>Active</span></td></tr>
+       <tr class="rowlink"><td class="cell-mono">LIT-14ZZKSH</td>
+        <td><div class="cell-strong">Silverline Developers (Pvt) Ltd vs Meridian Properties</div><div class="tiny muted">Civil Court, Rawalpindi</div></td>
+        <td><span class="pill pill--gray">Civil Dispute</span></td><td><span class="pill pill--amber">Against</span></td>
+        <td><span class="tiny muted">Not engaged yet</span></td><td><span class="pill pill--gray"><span class="pill__dot"></span>Decided</span></td></tr>
+      </tbody></table></div></div></section>
+
+  <section id="shells"><h2>Patterns · the two shells</h2><p class="ds-lead">One codebase, one design system, one store — two doors. What differs is what each identity is
+     allowed to open, and that is enforced in the engine, not by hiding nav items.</p>
+    <div class="ds-grid2">
+      
+  <div class="card">
+    <div class="card__head">
+      <div class="cmdk__ico" style="width:28px;height:28px;border-radius:8px"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
+      <div style="min-width:0"><div class="card__title">Legal department</div><div class="card__sub">/legalos/</div></div>
+      
+    </div>
+    <div class="card__body"><div class="tiny" style="line-height:1.7">Full sidebar — Dashboard, Legal Workspace, Calendar, Commercial &amp; Risk,
+       Compliance, Litigation, Data Bank, Insight &amp; Governance, Administration. Registers, analytics and every
+       approval surface. Signed in with credentials.</div></div>
+  </div>
+      
+  <div class="card">
+    <div class="card__head">
+      <div class="cmdk__ico" style="width:28px;height:28px;border-radius:8px"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+      <div style="min-width:0"><div class="card__title">Requester portal</div><div class="card__sub">/legalos/portal/</div></div>
+      
+    </div>
+    <div class="card__body"><div class="tiny" style="line-height:1.7">Two entries — Legal Requests and Raise Request. No registers, no queues,
+       no analytics. A requester who asks for a legal address is redirected, not shown an error: the portal is
+       <strong>one-directional by design</strong>, and that is the security boundary, not a navigation choice.</div></div>
+  </div>
+    </div></section>
+</div>
+</body>
+</html>

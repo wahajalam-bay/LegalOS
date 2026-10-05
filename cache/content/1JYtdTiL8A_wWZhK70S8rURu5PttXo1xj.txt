@@ -1,0 +1,195 @@
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED AND ITS SUBSIDIARIES
+NOTES TO THE FINANCIAL STATEMENTS
+FOR THE YEAR ENDED 30 JUNE 2022
+1
+
+THE GROUP AND ITS OPERATIONS
+The group consists of:
+Holding Company:
+Zameen Venture One (Private) Limited (''the Holding Company") was incorporated on 11 December
+2018 as a Private Limited Company under the Companies Act, 2017 ("the Act"). The Holding
+Company's principal activity is marketing and development of all type of real estate business in
+Pakistan including developed or undeveloped land, housing or commercial projects including
+commercial markets or multistore building( for commercial or residential purposes), shopping centres,
+restaurants, hotels, recreational facilities, sell and purchase of land and building etc. The Holding
+Company is a subsidiary of EMPG Projects Holding Limited ("the ultimate Parent Company"),
+incorporated in United Arab Emirates (UAE) and EMPG Holdings Limited is the ultimate parent
+company.
+Subsidiaries:
+- Zameen Nord (SMC-Private) Limited
+- Zameen Alpha (Private) Limited
+- Zameen Arcs (Private) Limited
+- Zameen Axis (Private) Limited
+- Zameen Centre (SMC-Private) Limited
+- Zameen Core (SMC-Private) Limited
+- Zameen Crest (SMC-Private) Limited
+- Zameen Forte (SMC-Private) Limited
+- Zameen Luxe (SMC-Private) Limited
+- Zameen Omega (SMC-Private) Limited
+- Zameen Pavilion (SMC-Private) Limited
+- Zameen Platinum (Private) Limited
+- Zameen Residences (SMC-Private) Limited
+- Zameen Sigma (Private) Limited
+- Zameen South (SMC-Private) Limited
+- Zameen Vistas (SMC-Private) Limited
+- Zameen Zeta (SMC-Private) Limited
+
+1.1
+
+The geographical locations and addresses of the holding Company and subsidiary's business units are
+as under:
+-
+
+2
+
+Head office and registered office: Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore.
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting
+standards as applicable in Pakistan. The accounting and reporting standards applicable in Pakistan
+comprise of:
+- International Financial Reporting Standards (IFRS Standards) issued by the International Accounting
+Standards Board (IASB) as notified under the Companies Act, 2017; and
+- Provisions of and directives issued under the Companies Act, 2017.
+Where provisions of and directives issued under the Companies Act, 2017 differ from the IFRS
+standards, the provisions of and directives of the Companies Act, 2017 have been followed.
+
+Page 5 of 26
+
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED AND ITS SUBSIDIARIES
+3
+
+BASIS OF PREPARATION
+These consolidated financial statements have been prepared under the historical cost convention
+unless otherwise stated.
+
+3.1
+
+Functional and presentation currency
+These consolidated financial statements are presented in Pakistani Rupees, which is the Group’s
+functional currency. All figures have been rounded off to the nearest Rupee, unless otherwise stated.
+
+3.2
+
+Principles of consolidation
+
+3.2.1 Subsidiary
+A subsidiary is an entity controlled by the Holding company. The Holding company controls an
+investee when the Holding company is exposed, or has rights, to variable returns from its involvement
+with the investee and has the ability to affect those returns through its power over the investee.
+The purchase method of accounting is used to account for the acquisition of subsidiaries by the
+Group. The cost of an acquisition is measured as the fair value of the assets given, equity instruments
+issued and liabilities incurred or assumed at the date of exchange, plus costs directly attributable to
+the acquisition. Identifiable assets acquired and liabilities and contingent liabilities assumed in a
+business combination are measured initially at their fair values at the acquisition date, irrespective of
+the extent of any non-controlling interest. The excess of the cost of acquisition over the fair value of
+the Group's share of the identifiable net assets acquired is recorded as goodwill. If the cost of
+acquisition is less than the fair value of the net assets of the subsidiary acquired, the difference is
+recognized directly in the consolidated statement of profit or loss. The assets, liabilities, income and
+expenses of subsidiaries are consolidated on a line by line basis and the carrying amount of
+investments held by the Holding company is eliminated against the subsidiaries' shareholders' equity
+in the consolidated financial statements. Inter-group transactions, balances and unrealized gains on
+transactions between Group companies are eliminated. Unrealized losses are also eliminated but
+considered an impairment indicator of the asset transferred. The accounting policies used in
+preparation of consolidated financial statements of the Holding company are consistent with
+accounting policies of its subsidiaries. When necessary, adjustments are made to bring the
+accounting policies in line with that of the Holding company.
+All significant intra-group transactions and balances between Group enterprises, and unrealized
+profits are eliminated on consolidation.
+3.2.2 Non-controlling interest
+The Group applies a policy of treating transactions with non-controlling interests as transactions with
+parties external to the Group. Disposals to non-controlling interests result in gains and losses for the
+Group that are recorded in the consolidated statement of profit or loss. Group elected to measures the
+non-controlling interest in the acquiree at the proportionate share of its interest in the acquiree's
+identifiable net assets on fair value.
+3.2.3 Business combinations under Common control
+The predecessor method is used to account for the acquisition of companies carried out under
+businesses under common control. The cost of an acquisition is measured as the carrying amounts of
+the assets and liabilities assumed at the date of exchange and nominal value of the shares issued
+plus costs directly attributable to the acquisition. Identifiable assets acquired and liabilities assumed in
+a business combination are measured initially at their carrying amounts at the acquisition date,
+irrespective of the extent of any non-controlling interest. The difference between the cost of acquisition
+and the carrying value of the identifiable net assets acquired is recorded within its equity. The assets,
+liabilities, income and expenses of subsidiaries are consolidated on a line by line basis and the
+carrying amount of investments held by the Holding company is eliminated against the subsidiaries'
+shareholders' equity in the consolidated financial statements. Inter-group transactions, balances and
+unrealized gains on transactions between Group companies are eliminated. Unrealized losses are
+also eliminated but considered an impairment indicator of the asset transferred.
+
+Page 6 of 26
+
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED AND ITS SUBSIDIARIES
+3.2.4 Business combinations
+Assets acquired and liabilities assumed
+The carrying values of the identifiable assets and liabilities of Zameen South (SMC-Private) Limited as
+at 01-Feburary-2022 (the date of acquisition) were:
+Carrying value on
+acquisition
+Rupees
+Assets
+Cash and bank balances
+Advance income tax
+
+2,077
+14
+2,091
+
+Liabilities
+Other payables
+
+202,933
+
+Total identifiable net assets at carrying value [A]
+
+(200,842)
+10
+
+Purchase consideration transferred [B]
+Loss on acquisition [C=A-B]
+3.3
+
+(200,852)
+
+Standards, interpretations and amendments to published accounting standards
+The Group has adopted the following accounting standards, interpretation and amendments of IFRS
+which became effective for the current year:
+New and amended standard or Interpretation
+-
+
+Covid-19-Related Rent Concessions beyond 30 June 2021 – Amendment to IFRS 16
+The amendment to IFRS 16 will provide relief to lessees for accounting for rent concessions
+from lessors specifically arising from the covid-19 pandemic. While lessees that elect to apply
+the practical expedient do not need to assess whether a concession constitutes a modification,
+lessees still need to evaluate the appropriate accounting for each concession as the terms of
+the concession granted may vary.
+The Group have not received any Covid-19-related rent concessions, therefore has no impact
+on the financial statements of the Group.
+
+-
+
+Interest Rate Benchmark Reform – Phase 2: Amendments to IFRS 9, IAS 39, IFRS 7,
+IFRS 4 and IFRS 16
+The amendments provide temporary reliefs which address the financial reporting effects when
+an interbank the following practical expedients:
+-
+
+To require contractual changes, or changes to cash flows that are directly
+required by the reform, to be treated as changes to a floating interest rate,
+equivalent to a movement in a market rate of interest. practical expedients in
+future periods if they become applicable.
+
+-
+
+To permit changes required by KIBOR reform to be made to hedge designations
+and hedge.
+
+-
+
+To provide temporary relief to entities from having to meet the separately
+identifiable requirement when an RFR instrument is designated as a hedge of a
+risk component.
+
+These amendments had no impact on the financial statements of the Group. The Group
+intends to use the practical expedients in future periods if they become applicable.
+
+Page 7 of 26

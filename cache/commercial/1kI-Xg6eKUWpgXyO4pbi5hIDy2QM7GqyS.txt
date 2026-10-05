@@ -1,0 +1,140 @@
+INCOME TAX PAYMENT CHALLAN
+PSID # : 33607376
+Corporate RTO Lahore
+
+5
+
+Name of LTU/MTU/RTO
+Nature of Tax
+Payment
+
+7
+
+2020
+
+LTU/MTU/RTO Code
+
+Tax Year
+
+Admitted Income Tax
+
+Misc.
+
+CVT
+
+Demanded Income Tax
+
+Advance Income Tax
+
+Withheld Income Tax (Final)
+
+236K
+
+Purchase / Transfer of Immovable Property
+u/s 236K
+
+(Section)
+
+(Description of Payment Section)
+
+Taxpayer's Particulars
+
+07
+
+19
+
+(only for payment u/s 149)
+
+WPPF/WWF
+
+Withheld Income Tax (Adjustible)
+
+Payment Section
+
+Month/Year
+
+Payment Section Code
+
+Account Head (NAM)
+
+(To be filled for payments other than Withholding Taxes)
+
+NTN
+
+64151101
+B01105
+
+(To be filled in by the bank)
+
+CNIC/Reg./Inc. No.
+
+Taxpayer's Name
+
+Status
+
+Business Name
+Address
+FOR WITHHOLDING TAXES ONLY
+NTN/FTN of Withholding agent 9020205-8
+Name of withholding agent
+
+LAHORE DEVELOPMENT AUTHORITY UD WING LAHORE - LDA LAHORE
+
+Total no. of Taxpayers
+
+Amount of tax in words:
+
+CNIC/Reg./Inc. No.
+
+1
+
+Total Tax Deducted
+
+One Hundred Twelve Thousand One Hundred Rupees And No
+Paisas Only
+
+112,100
+
+Rs.
+
+112,100
+
+Modes & particulars of payment
+Sr.
+
+Type
+
+1
+
+Cash
+
+No.
+
+Amount
+
+Date
+
+Bank
+
+City
+
+Branch Name & Address
+
+112,100
+
+DECLARATION
+I hereby declare that the particulars mentioned in this challan are correct.
+CNIC of Depositor
+Name of Depositor
+
+LAHORE DEVELOPMENT AUTHORITY UD WING LAHORE
+
+Date
+
+Stamp & Signature
+PSID-IT-000082682565-072020
+Prepared By : guest_user - Guest_User Date: 24-Jul-2019 12:09 PM
+Note:
+
+This is an input form and should not be signed/stamped by the Bank. However, a CPR should be issued after receipt of payment by
+the Bank.

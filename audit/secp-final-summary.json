@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-09-24T04:32:35.494Z",
+  "source": {
+    "root": "Entities data for secp filing",
+    "files": 3367,
+    "rootChildren": [
+      "Group Entities",
+      "Non-Group Entities"
+    ]
+  },
+  "entities": {
+    "total": 43,
+    "group": 38,
+    "nonGroup": 5
+  },
+  "complianceYears": {
+    "entityYearRecords": 250,
+    "distinctCalendarYears": 15,
+    "range": "2012-2026"
+  },
+  "eventFilings": {
+    "records": 790,
+    "dated": 699
+  },
+  "statutoryRegisters": {
+    "records": 130
+  },
+  "filings": {
+    "provenSubmitted": 44,
+    "acknowledgementsReceived": 29
+  },
+  "gates": {
+    "UNKNOWN_ROOT_CHILDREN": 0,
+    "FILES_WITHOUT_DISPOSITION": 0,
+    "ENTITY_YEAR_FOLDERS_WITHOUT_RECORD": 0,
+    "RECORDS_WITHOUT_FOLDER": 0,
+    "BROKEN_DRIVE_LINKS": 0,
+    "DOCUMENT_COUNT_MISMATCH": 0,
+    "DUPLICATE_RECORD_IDS": 0
+  }
+}

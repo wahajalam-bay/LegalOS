@@ -1,0 +1,1023 @@
+{
+ "builtAt": "2026-09-23T06:03:16.298Z",
+ "recordsWithNothingLinked": 21,
+ "unclaimedDocumentPool": 97,
+ "recordsRecovered": 0,
+ "documentsRecovered": 0,
+ "stillWithoutASource": 21,
+ "recovered": [],
+ "unresolved": [
+  {
+   "recordId": "CTR-0T5MGEB",
+   "family": "lease",
+   "title": "Lease Agreement Nazimabad Office, Karachi",
+   "entity": "Zameen Medallion (Private) \nLimited",
+   "counterparty": "Shaikh Mohammad \nJawad",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "shaikh",
+     "mohammad",
+     "jawad"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 1,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1ydMn-8jMOVHCY2mU9QcarCynDsDEpU16",
+      "name": "Mohammad Nadeem Mansha_20210820 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / Lease Agreements (1)",
+      "matchedTokens": [
+       "mohammad"
+      ],
+      "heldBy": "CTR-1QZ6TJA"
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "1 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-1CRU46G",
+   "family": "lease",
+   "title": "Lease Agreement",
+   "entity": null,
+   "counterparty": "Zameen Crest",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "crest"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-1C2LCUF",
+   "family": "service",
+   "title": "Maintenance Services agreement Mega -Tower 8th Floor -Naveed Shah",
+   "entity": "Dubizzle Labs (SMC-Private) Limited",
+   "counterparty": "Naveed Shah",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "naveed",
+     "shah"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 32,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "13_GgDi35aGWTwl8UWJjDkj105fVsRrb-",
+      "name": "118_Meeting Minutes [authorize Salman Rashid sheikh for Appeal Naveed Ahmed Vs. ZMPL]_Zameen Media_20230123 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "naveed"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1E37BESvLjfGroQLhdtekbo4wjy68o0Bd",
+      "name": "065_Meeting Minutes_Zameen Platinumj_BOD Authorised_Salman Rashid to file Written Statements_Hassan Naveed vs Zameen Platinum_20260609 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Platinum(Pvt)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "naveed"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1UXVxTEwGMDWMvYgtE4479KujZ5rHZ6rR",
+      "name": "040_Meeting Minutes_[Fariha Naveed Irrevocable resignation from the company secretary]_ZRMC_20250326 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen REIT Management Company_Resolutions and Authorizations (1)",
+      "matchedTokens": [
+       "naveed"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1wKX31eA3fbI37yGDFk4SxeL9SnX6OcQb",
+      "name": "047_Minutes of meeting board directors_Fariha Naveed Irrevocable resignation from the company secretary_ZRMC_20250326 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen REIT Management Company_Resolutions and Authorizations (1)",
+      "matchedTokens": [
+       "naveed"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1b4sB-7bTXMhhHh99mIECABqGWJt5bzii",
+      "name": "Lease Agreement_Dubizzle_Labs Second floor Naveed Shah_0001 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+      "matchedTokens": [
+       "naveed",
+       "shah"
+      ],
+      "heldBy": "CTR-1FYJTOU"
+     },
+     {
+      "fileId": "1oA-KwSbZahdU1iIRXJLzU_AJ3BN5BL1K",
+      "name": "LeaseAgreementMegaTowerGroundFloor_NaveedShah_EMPGLABS_20211016_ (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+      "matchedTokens": [
+       "naveed",
+       "shah"
+      ],
+      "heldBy": "CTR-1FYJTOU"
+     },
+     {
+      "fileId": "1ZD9Ipv9_uUNwk8IAOTTQv8HQIKHZJZlF",
+      "name": "LeaseAgreementMegaTower8thfloor_Naveedshah_EMPGLabs_20210908_ (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+      "matchedTokens": [
+       "naveed",
+       "shah"
+      ],
+      "heldBy": "CTR-1FYJTOU"
+     },
+     {
+      "fileId": "1OAII8dvZE9Kh4V7Q5Iax0xgR0q4NeAEP",
+      "name": "LeaseAgreementMegatower3rdfloor_NaveedShah_EMPGLabs_20211016_ (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+      "matchedTokens": [
+       "naveed",
+       "shah"
+      ],
+      "heldBy": "CTR-1FYJTOU"
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "32 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-1AVF7HF",
+   "family": "service",
+   "title": "Services Agreement",
+   "entity": "Zameen Developments (Private) Limited",
+   "counterparty": "Axiom World (Pvt) Limited",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "axiom",
+     "world"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-1QZ6TIG",
+   "family": "service",
+   "title": "iTecknologi Vehicle Tracking Services",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "iTecknologi",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "itecknologi"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-1QZ6TK8",
+   "family": "service",
+   "title": "Services Agreement",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Bank Alfalah",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "bank",
+     "alfalah"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 1,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1MYkBeNHIiGwiCR_a5klKOVmJ690c-23m",
+      "name": "Loan PRCs Alfalah-GBP.pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Media (Private) Limited / 1. Zameen Media & Zameen UK_Loan PKR 6.5 bil_20131015 [not filed]",
+      "matchedTokens": [
+       "alfalah"
+      ],
+      "heldBy": null
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "1 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-1QZ6TK9",
+   "family": "service",
+   "title": "Services Agreement",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "INFOBIP PVT LTD",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "infobip"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-1QZ6TL4",
+   "family": "service",
+   "title": "Services Agreement for Vehicle Rental Mystic Tours",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Ayaz Hussain",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "ayaz",
+     "hussain"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 19,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1pkPpUkrhOByc43dLyI60mGPNh1v0eKxL",
+      "name": "170_Minutes of Meeting_Authority Letter to depose evidence_ZMPL vs Tassadaq Hussain_Civil Court Islamabad_20251217 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1TMYwlRvpnO124Gi5-WfgXwizBVyt6t2L",
+      "name": "Third Amendment_Second Floor_4000 sq ft_Munawar Hussain _20260601 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-1FYJTOT"
+     },
+     {
+      "fileId": "1rx1aiWtHEaGUxu8xz7xqMRG2MqKaq0Zv",
+      "name": "First Amendment Tenancy Agreement 2nd Floor Pearl One_Munawar Hussain_EMPG Labs_ 20220830 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / Lease Agreements (1)",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-1FYJTOT"
+     },
+     {
+      "fileId": "1wCAyFdIqE81v5h_-H_kWRnJSCH-MwIYB",
+      "name": "Maintenance Services Agreement _Pearl One_Munawar Hussain_20260601 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group _PK Intercompany Loans  / Dubizzle Labs (SMC-Private) Limited / General Agreements (1)",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-1FYJTOT"
+     },
+     {
+      "fileId": "1ZtRip7TutQjHUVDtHgYf4NZOjsaU8Q35",
+      "name": "Maintenance Services Agreement _Pearl One_Munawar Hussain_20260601.pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / General Agreements",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-1FYJTOT"
+     },
+     {
+      "fileId": "1X5CM21HIuDknyVZAGobPJSRqVVSbKeFC",
+      "name": "Third Amendment_Second Floor_4000 sq ft_Munawar Hussain _20260601.pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / Lease Agreements",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-1FYJTOT"
+     },
+     {
+      "fileId": "1LMGQ8Cg1_cOiqjeAyveWi7dwt1malZbk",
+      "name": "First Amendment Tenancy Agreement 2nd Floor Pearl One_Munawar Hussain_EMPG Labs_ 20220830.pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Dubizzle Labs (SMC-Private) Limited_Spend Contracts / Lease Agreements",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-1FYJTOT"
+     },
+     {
+      "fileId": "1VPXrLxREQLJ24h-kftUo_lBg5oSXTBf3",
+      "name": "ConsultancyAgreement_AbidHussain_ZameenDevelopments_20221216 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Developments_ Spend Contracts (1) / General Agreements (1)",
+      "matchedTokens": [
+       "hussain"
+      ],
+      "heldBy": "CTR-0WFUCFO"
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "19 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-0YGTVD4",
+   "family": "service",
+   "title": "Messaging services agreement",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Rehan Safdar Malik",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "rehan",
+     "safdar",
+     "malik"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-0YGTVDZ",
+   "family": "service",
+   "title": "Service agreement TCS Pvt. Ltd (International)",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "TCS Pvt. Ltd.",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-0YGTVET",
+   "family": "service",
+   "title": "Security Services Agreement with Askari guards",
+   "entity": "Zameen Media (Private) Limited, Zameen Medallion (Private) Limited",
+   "counterparty": "Askari Guards Pvt. Ltd through Major Fayyaz Ahmad Jamil",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "askari",
+     "guards",
+     "major",
+     "fayyaz",
+     "ahmad",
+     "jamil"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 14,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1XRU64U9hlMDGojErTZXLm-86IZyzWAtD",
+      "name": "Contract for Security Guards_Zameen Development and ZIMS Security_20201214 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Developments_ Spend Contracts (1) / General Agreements (1)",
+      "matchedTokens": [
+       "guards"
+      ],
+      "heldBy": "CTR-1AVF7HE"
+     },
+     {
+      "fileId": "1y_QpM30CpLI2ACJlpg5qq5z1AsGXA1Mu",
+      "name": "1911_028.00CTL-SS-AskariGuardsPrivateLimited (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / General Agreements (1)",
+      "matchedTokens": [
+       "askari",
+       "guards"
+      ],
+      "heldBy": "CTR-1QZ6TGU"
+     },
+     {
+      "fileId": "1NnLnCZyNM4eimMqU4TVE2sLN327IElX1",
+      "name": "First Amendment of Askari guards Agreement_Zameen Media_20191126 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / General Agreements (1)",
+      "matchedTokens": [
+       "askari",
+       "guards"
+      ],
+      "heldBy": "CTR-1QZ6TIK"
+     },
+     {
+      "fileId": "1EWmsuzuNT5kk6yQbm_dvXHmOjaYM8gwU",
+      "name": "First Amendment_Contract for Security Guards Services_Zameen Media and ZIMS Security (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1) / General Agreements (1)",
+      "matchedTokens": [
+       "guards"
+      ],
+      "heldBy": "CTR-1QZ6TL5"
+     },
+     {
+      "fileId": "1bIEHaiqpofSl0jOdN5pWS0wjSwtIK8_A",
+      "name": "SecurityGuardServicesAgreement_ZIMSSecurity_ZameenOmega_20220518.pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / Zameen Omega (SMC-Private) Limited",
+      "matchedTokens": [
+       "guards"
+      ],
+      "heldBy": "CTR-1C2LCUJ"
+     },
+     {
+      "fileId": "1Z0H8KH02msqi0H567kqDDeyOmQIx2bVV",
+      "name": "SecurityGuardServicesAgreement_ZIMSSecurity_EDZDDevelopers_20220208.pdf",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts / EDZD Developers",
+      "matchedTokens": [
+       "guards"
+      ],
+      "heldBy": "CTR-1CRU46F"
+     },
+     {
+      "fileId": "1S2a7AhpPBggvKHIC4Sb6KhZQlo6BmG7l",
+      "name": "SecurityGuardServicesAgreement_ZIMSSecurity_EDZDDevelopers_20220208 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / EDZD Developers (1)",
+      "matchedTokens": [
+       "guards"
+      ],
+      "heldBy": "CTR-1CRU46F"
+     },
+     {
+      "fileId": "1LrQq1toisfW8WdpoSGTqmL4hXyR0bC9q",
+      "name": "SecurityGuardServicesAgreement_ZIMSSecurity_ZameenOmega_20220518 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1) / Zameen Omega (SMC-Private) Limited (1)",
+      "matchedTokens": [
+       "guards"
+      ],
+      "heldBy": "CTR-1C2LCUJ"
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "14 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-0YGTVFO",
+   "family": "service",
+   "title": "Contract for Security Guards Services",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Security 2000 through Malik Sher ",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "malik",
+     "sher"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-0YGTVGJ",
+   "family": "service",
+   "title": "Service agreement FOR VEHICLE TRACKING AND FLEET MANAGEMEN",
+   "entity": "Zameen Media Pvt Ltd",
+   "counterparty": "Track and Snap (Private) Limited",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "track",
+     "snap"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-0YGTVGN",
+   "family": "service",
+   "title": "SERVICE AGREEMENT FOR REPAIR AND MAINTENANCE OF VEHICLES ",
+   "entity": "Zameen Media Pvt Ltd",
+   "counterparty": "Toyota Garden Motors",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "toyota",
+     "garden",
+     "motors"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-0YGTVHE",
+   "family": "service",
+   "title": "Toyota Walton Motors",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Sheikh Waqar Ahmed",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "sheikh",
+     "waqar",
+     "ahmed"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 8,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1FcI0qbcKBVRmcevy3P_6r4UbXlFDBoNx",
+      "name": "0012_ Minutes of meeting of Partners_Authorized (Syed Hasan Ali shah)_Suit titled Sheikh Muhammad Wahab & others vs. Mall35_20250120 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Mall 35_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1MsGoI-TwdUAOaoF27TxHeteh6qFbch25",
+      "name": "004_Authorizing firm representative [Naseehuddin Sheikh]_Mall 35_20190711 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Mall 35_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1wb-l16EX9hPQXcIzYpwqJY43vvokzk6D",
+      "name": "003_Authorizing firm representative [Naseehuddin Sheikh]_Mall 35_20190711 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Mall 35_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1_QnHuDat8l6g_LoWnwW2TmbCohz5f6pi",
+      "name": "05 _Exctract Minutes of meeting board directors_Authorized this (Salman Rashid Sheikh)_Writ Petition in FBR_20250703 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Dubizzle Labs(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "17vekmveumDnWBWxFNIbgfPNnrwcDiSd8",
+      "name": "045_Meeting Minutes [authorize Salman Rashid Sheikh for civil appeal]_ZD_20230123 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Developments(Pvt)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "13_GgDi35aGWTwl8UWJjDkj105fVsRrb-",
+      "name": "118_Meeting Minutes [authorize Salman Rashid sheikh for Appeal Naveed Ahmed Vs. ZMPL]_Zameen Media_20230123 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "sheikh",
+       "ahmed"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1vw2M53GcQIp9okjF7l176K8X-Q8QERfl",
+      "name": "049_Minutes of Meeting Authorize (Salman Rashid Sheikh)_Any ancillary documents suit titled_Huma Sheikh Vs. Zameen Platinum_20241011 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Platinum(Pvt)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1LfSGYsy5GtgnfcggrB1OjnG0_xrq8aN6",
+      "name": "056_Minutes of meeting of the Board of Directors of Zameen RMC_Appointment of Ilyas Sheikh _20250723 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen REIT Management Company_Resolutions and Authorizations (1)",
+      "matchedTokens": [
+       "sheikh"
+      ],
+      "heldBy": null
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "8 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-0T5MGE8",
+   "family": "other",
+   "title": "Cash Management \nAgreement Habib Bank\n limited",
+   "entity": "Zameen Medallion (Private) Limited",
+   "counterparty": "S.M Abdul Qadir,\nnaved Inayat",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "abdul",
+     "qadir",
+     "naved",
+     "inayat"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-1QZ6TK7",
+   "family": "other",
+   "title": "Non-Disclosure Agreement",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Muhammad Hayat Khan",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "muhammad",
+     "hayat",
+     "khan"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 19,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1FcI0qbcKBVRmcevy3P_6r4UbXlFDBoNx",
+      "name": "0012_ Minutes of meeting of Partners_Authorized (Syed Hasan Ali shah)_Suit titled Sheikh Muhammad Wahab & others vs. Mall35_20250120 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Mall 35_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1o1b4UdCOsmaGJjA1NqphK0Sc0O7Xm8bY",
+      "name": "07_ Extracts minutes of meeting board directors_Authorized this (Muhammad Afzal)_Waseem Raja_20250905_0001_0001 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Dubizzle Labs(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1uT9MpXwoHSjZPEfXbLLcVKpWuXfmMwMj",
+      "name": "007_Meeting Minutes of meeting board directors_Authorized this (Muhammad Mehtab Akram)_Receive the payment instruments _ZMZD developers_20250117 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Forte(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1VFGg-H_wwr0M0xo1CF9I0TJYTrlW3SAW",
+      "name": "116_Meeting Minutes [Authorized Luqman Muhammad Rafiq and M. Usman Sohail for tax audit FBR]_Zameen Media_20230112 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1Ajrhh_ZtuGEV9c3wchLfFpo_US-ZNeYO",
+      "name": "067_Authorize company representative [Maryam Haq for Civil Suit against Muhammad Saleem Akhtar]_Zameen Media_20211115 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "17UgFAjdMhm4z9xw21lrZtjnFq77ZAbXj",
+      "name": "046_Authorize company representative [Muhammad Farid for Civil Suit against Sharjeel Khan]_Zameen Media_20201203 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad",
+       "khan"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1B_YsLwYHxf-DONK0GQDLIcfmWEuzKk0I",
+      "name": "045_Authorize company representative [Muhammad Farid for Civil Suit against M. Asif Sahi]_Zameen Media_20201203 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1fVOjhHQRejwSCBFoFNUrOhod-ZqNljk_",
+      "name": "030_Authorize company representative [Muhammad Danish for FIR against Sikandar Khan]_Zameen Media_20200826 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad",
+       "khan"
+      ],
+      "heldBy": null
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "19 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-1QZ6TKB",
+   "family": "other",
+   "title": "Non-Disclosure Agreement",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Quaid Soft through Muhammad Mustafa",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "quaid",
+     "soft",
+     "muhammad",
+     "mustafa"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 19,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1FcI0qbcKBVRmcevy3P_6r4UbXlFDBoNx",
+      "name": "0012_ Minutes of meeting of Partners_Authorized (Syed Hasan Ali shah)_Suit titled Sheikh Muhammad Wahab & others vs. Mall35_20250120 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Mall 35_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1o1b4UdCOsmaGJjA1NqphK0Sc0O7Xm8bY",
+      "name": "07_ Extracts minutes of meeting board directors_Authorized this (Muhammad Afzal)_Waseem Raja_20250905_0001_0001 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Dubizzle Labs(SMC-Pvt)Ltd_Resolutions and Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1uT9MpXwoHSjZPEfXbLLcVKpWuXfmMwMj",
+      "name": "007_Meeting Minutes of meeting board directors_Authorized this (Muhammad Mehtab Akram)_Receive the payment instruments _ZMZD developers_20250117 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Forte(SMC-Pvt)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1VFGg-H_wwr0M0xo1CF9I0TJYTrlW3SAW",
+      "name": "116_Meeting Minutes [Authorized Luqman Muhammad Rafiq and M. Usman Sohail for tax audit FBR]_Zameen Media_20230112 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1Ajrhh_ZtuGEV9c3wchLfFpo_US-ZNeYO",
+      "name": "067_Authorize company representative [Maryam Haq for Civil Suit against Muhammad Saleem Akhtar]_Zameen Media_20211115 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "17UgFAjdMhm4z9xw21lrZtjnFq77ZAbXj",
+      "name": "046_Authorize company representative [Muhammad Farid for Civil Suit against Sharjeel Khan]_Zameen Media_20201203 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1B_YsLwYHxf-DONK0GQDLIcfmWEuzKk0I",
+      "name": "045_Authorize company representative [Muhammad Farid for Civil Suit against M. Asif Sahi]_Zameen Media_20201203 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1fVOjhHQRejwSCBFoFNUrOhod-ZqNljk_",
+      "name": "030_Authorize company representative [Muhammad Danish for FIR against Sikandar Khan]_Zameen Media_20200826 (1).pdf",
+      "folderPath": "Compliance Data _LegalOS / Resolutions  / Zameen Media(PVT)Ltd_Resolutions & Authorizations (1)",
+      "matchedTokens": [
+       "muhammad"
+      ],
+      "heldBy": null
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "19 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-1QZ6TL8",
+   "family": "other",
+   "title": "Memorandum of Understanding",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Atif Bajwa",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "atif",
+     "bajwa"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  },
+  {
+   "recordId": "CTR-1QZ6TM0",
+   "family": "other",
+   "title": "Memorandum of Understanding Furnishia Pakistan",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Master Affliliate",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "master",
+     "affliliate"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 6,
+    "candidatesHeldByOtherRecords": [
+     {
+      "fileId": "1y-xwWQT9-AoFEEaTIDuOGTMqdfwtV5SJ",
+      "name": "Master Tracker - Spend Contracts - Zameen Devleopments_ (1).xlsx",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Developments_ Spend Contracts (1)",
+      "matchedTokens": [
+       "master"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1y3TTfW9E_KjF8381HrTgJn65sYHC3J4w",
+      "name": "00_Master Tracker - Spend Contracts - Zameen Media (1).xlsx",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Media_Spend Contracts (1)",
+      "matchedTokens": [
+       "master"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "15LLO4aoP_Zg6taA6IiClgpWYVGNzFxPN",
+      "name": "Master Tracker - ZVO_s Spend Contracts_.xlsx",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Spend Contracts",
+      "matchedTokens": [
+       "master"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1DMt_lyxpJNw_G-FTofkkmsNVDF_pknMT",
+      "name": "Master Tracker - ZVO_s Subsidiaries Contracts_.xlsx",
+      "folderPath": "Compliance Data _LegalOS / Zameen Group_Loan Agreements / Zameen Venture One (Private) Limited / Zameen Venture One_s Subsidiaries Contracts",
+      "matchedTokens": [
+       "master"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1KxMedZOAhExi1AigpBmaJOgs6sTkfRRN",
+      "name": "Master Tracker - ZVO_s Spend Contracts_ (1).xlsx",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Spend Contracts (1)",
+      "matchedTokens": [
+       "master"
+      ],
+      "heldBy": null
+     },
+     {
+      "fileId": "1k0Uy_mWTVl_iZP0o1luULsA8n_RzRlI8",
+      "name": "Master Tracker - ZVO_s Subsidiaries Contracts_ (1).xlsx",
+      "folderPath": "Compliance Data _LegalOS / Spend Contracts (Lease and Service Agreements) / Zameen Venture One (Private) Limited_Spend Contracts (1) / Zameen Venture One_s Subsidiaries Contracts (1)",
+      "matchedTokens": [
+       "master"
+      ],
+      "heldBy": null
+     }
+    ]
+   },
+   "status": "DOCUMENT_EXISTS_BUT_BELONGS_TO_ANOTHER_RECORD",
+   "reason": "6 file(s) name this counterparty, each already attached to the record its own evidence points to"
+  },
+  {
+   "recordId": "CTR-0YGTVF0",
+   "family": "other",
+   "title": "International Hotel Licensing",
+   "entity": "Zameen Media (Private) Limited",
+   "counterparty": "Ziad Ali Road",
+   "evidence": {
+    "rootsSearched": [
+     "Compliance Data _LegalOS"
+    ],
+    "complianceFilesScanned": 1772,
+    "unclaimedPoolScanned": 97,
+    "tokensTried": [
+     "ziad",
+     "road"
+    ],
+    "documentTextSearched": true,
+    "filesMentioningThisCounterpartyAnywhere": 0,
+    "candidatesHeldByOtherRecords": []
+   },
+   "status": "NO_SOURCE_DOCUMENT_IN_DRIVE",
+   "reason": "no file anywhere under the Compliance root names this counterparty; the instrument is not in Drive"
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+// Let the LegalOS owners restart their own service — with no sudo and no password.
+//
+// polkit authorises the D-Bus call behind `systemctl`, so `systemctl restart
+// legalos` simply works for this user. That is the point: a dashboard owner
+// should never type `sudo` nor wait on an administrator to restart their own
+// service.
+//
+// Install as root:
+//   install -o root -g root -m 0644 \
+//     /var/www/zameen_bse_reports/LegalOS/legalos/deploy/49-m_ashhad-dashboards.rules \
+//     /etc/polkit-1/rules.d/49-m_ashhad-dashboards.rules
+//   systemctl restart polkit
+//   journalctl -u polkit -n 5 --no-pager   # expect "Finished loading ... N rules", no parse error
+//
+// Verify (the HARDER case — no logind session, like a deploy script):
+//   sudo -u m_ashhad -H systemctl restart legalos
+//
+// Three deliberate choices, each of which has bitten before:
+//
+//  1. manage-units ONLY, never manage-unit-files. The latter is
+//     enable/disable/mask, and `systemctl enable /abs/path.service` links an
+//     arbitrary unit into the tree — the workspace is group-writable by
+//     `ubuntu`, so that would be a privilege-escalation path.
+//
+//  2. Return YES, not AUTH_SELF/AUTH_ADMIN. An SSH session is not an "active"
+//     polkit seat, so anything asking for interactive auth dies with
+//     "Interactive authentication required" inside a non-tty script.
+//
+//  3. An explicit unit allowlist and an explicit verb allowlist. No wildcards.
+
+// The two people who own LegalOS. Keep this list and the `legalos` group
+// (see deploy/restrict-access.sh) in step with each other.
+var OWNERS = ["m_ashhad", "wahaj_alam"];
+
+polkit.addRule(function (action, subject) {
+  if (action.id !== "org.freedesktop.systemd1.manage-units") return;
+  if (OWNERS.indexOf(subject.user) === -1) return;
+
+  var unit = action.lookup("unit");
+  var verb = action.lookup("verb");
+
+  // Units m_ashhad owns and may cycle.
+  var UNITS = [
+    "legalos.service",
+  ];
+
+  // Lifecycle verbs only. Nothing here can install, enable or mask a unit.
+  var VERBS = ["start", "stop", "restart", "try-restart", "reload", "reload-or-restart"];
+
+  if (UNITS.indexOf(unit) !== -1 && VERBS.indexOf(verb) !== -1) {
+    return polkit.Result.YES;
+  }
+});
+
+// nginx may be RELOADED but never stopped or restarted. A reload with a broken
+// config is rejected by nginx and the running config keeps serving; a restart
+// would take every dashboard on the box down.
+polkit.addRule(function (action, subject) {
+  if (action.id !== "org.freedesktop.systemd1.manage-units") return;
+  if (OWNERS.indexOf(subject.user) === -1) return;
+  if (action.lookup("unit") === "nginx.service" && action.lookup("verb") === "reload") {
+    return polkit.Result.YES;
+  }
+});

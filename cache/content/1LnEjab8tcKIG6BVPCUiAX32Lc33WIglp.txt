@@ -1,0 +1,476 @@
+DocuSign Envelope ID: 141FBA87-1091-4C99-AB86-AA2592CA54EB
+
+A member firm of Ernst & Young Global Limited
+
+
+
+
+
+
+
+
+
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: 141FBA87-1091-4C99-AB86-AA2592CA54EB
+
+DUBIZZLE LABS (SMC-PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+6
+7
+8
+9
+
+262,834,709
+47,674,790
+12,171,964
+17,584,217
+340,265,680
+
+72,838,425
+94,466,401
+12,681,217
+179,986,043
+
+10
+11
+
+821,119,703
+72,244,378
+516,757
+4,681,677
+1,098,963,886
+1,997,526,401
+2,337,792,081
+
+54,824,521
+1,430,439
+54,844,361
+8,993,320
+10,566,397
+130,659,038
+310,645,081
+
+100,000
+
+100,000
+
+1,000
+1,630,000,000
+
+1,000
+-
+
+11,035,193
+1,641,036,193
+
+1,000
+
+16
+17
+
+13,961,469
+-
+
+37,770,041
+42,375,000
+
+16
+18
+
+33,937,182
+142,518,250
+5,666,632
+498,593,281
+2,079,074
+682,794,419
+696,755,888
+
+54,367,088
+47,055,053
+3,811,466
+125,265,433
+230,499,040
+310,644,081
+
+2,337,792,081
+
+310,645,081
+
+ASSETS
+NON-CURRENT ASSETS
+Property and equipment
+Right-of-use assets
+Long-term deposits
+Deferred tax asset
+CURRENT ASSETS
+Trade receivables
+Advances and other receivables
+Prepayments
+Short-term loan
+Tax refunds due from the Government
+Cash and bank balances
+
+12
+13
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+SHARE CAPITAL AND RESERVES
+Authorized share capital
+10,000 ordinary shares of Rs. 10 each
+Capital reserve
+Issued, subscribed and paid-up share capital
+Loan from the Parent Company
+
+14
+15
+
+Revenue reserve
+Accumulated Profits
+TOTAL EQUITY
+NON-CURRENT LIABILITIES
+Lease liabilities
+Long-term loan
+CURRENT LIABILITIES
+Current portion of lease liabilities
+Creditors, accrued and other payables
+Accrued mark-up on loans
+Contract liabilities
+Provision for taxation
+TOTAL LIABILITIES
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+20
+
+The annexed notes from 1 to 30 form an integral part of these financial statements.
+
+____________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 1 of 28
+
+DocuSign Envelope ID: 141FBA87-1091-4C99-AB86-AA2592CA54EB
+
+DUBIZZLE LABS (SMC-PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+From 11 March 2021
+to 30 June 2022
+Rupees
+
+Note
+
+2023
+Rupees
+
+Revenue from contracts with customers
+Cost of sales
+Gross profit
+
+21
+22
+
+1,264,785,091
+(930,332,904)
+334,452,187
+
+946,354,878
+(834,883,955)
+111,470,923
+
+Administrative expenses
+Other operating expenses
+Operating loss
+
+23
+24
+
+(298,088,595)
+(85,265,408)
+(48,901,816)
+
+(119,335,337)
+(7,864,414)
+
+Finance costs
+Other income
+Profit before taxation
+
+25
+26
+
+(9,160,619)
+76,214,168
+18,151,733
+
+(12,047,714)
+19,912,128
+-
+
+Taxation
+Profit for the year / period
+
+27
+
+(7,116,540)
+11,035,193
+
+Other comprehensive income for the year / period
+
+-
+
+Total comprehensive income for the year / period
+
+11,035,193
+
+The annexed notes from 1 to 30 form an integral part of these financial statements.
+
+_____________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 2 of 28
+
+-
+
+DocuSign Envelope ID: 141FBA87-1091-4C99-AB86-AA2592CA54EB
+
+DUBIZZLE LABS (SMC-PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+Capital reserve
+
+Revenue reserve
+
+Issued, subscribed and
+paid up share capital
+
+Accumulated
+profits
+
+Total
+
+--------------------------------------------- Rupees --------------------------------------------Balance as at 11 March 2021
+
+-
+
+-
+
+-
+
+Issue of share capital (Note 14)
+
+1,000
+
+-
+
+1,000
+
+-
+
+-
+
+-
+
+1,000
+
+-
+
+1,000
+
+Profit for the period
+Other comprehensive income for the period
+Total comprehensive income for the period
+Balance as at 30 June 2022
+
+-
+
+11,035,193
+11,035,193
+
+11,035,193
+11,035,193
+
+1,000
+
+11,035,193
+
+11,036,193
+
+Profit for the year
+Other comprehensive income for the year
+Total comprehensive income for the year
+Balance as at 30 June 2023
+
+The annexed notes from 1 to 30 form an integral part of these financial statements.
+
+_____________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 3 of 28
+
+DocuSign Envelope ID: 141FBA87-1091-4C99-AB86-AA2592CA54EB
+
+DUBIZZLE LABS (SMC-PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Note
+OPERATING ACTIVITIES
+
+2023
+Rupees
+18,151,733
+
+Profit before taxation
+Adjustments to reconcile profit before taxation to net cash flows:
+Depreciation of property and equipment
+Depreciation of right-of-use assets
+Interest on lease liability
+Interest on short-term loan
+Interest income on short-term loan
+Loss on disposal of right of use assets
+Unwinding of security deposits
+Unrealised exchange loss / (gain)
+
+6.1
+7.1
+25
+25
+26
+24
+26
+26
+
+From 11 March 2021
+to 30 June 2022
+Rupees
+-
+
+41,394,706
+51,206,634
+6,727,427
+1,855,166
+(1,221,307)
+1,957,969
+(1,282,611)
+83,307,439
+183,945,423
+202,097,156
+
+12,543,681
+41,542,418
+7,179,439
+3,811,466
+(3,460,370)
+(721,600)
+(9,008,991)
+51,886,043
+51,886,043
+
+(821,119,703)
+(17,419,857)
+913,682
+
+(54,824,521)
+(1,430,439)
+
+Cash (used in) / generated from operations
+
+95,463,197
+290,020,409
+(452,142,272)
+(250,045,116)
+
+47,055,053
+125,265,433
+116,065,526
+167,951,569
+
+Income tax paid
+Long-term deposits received / (paid)
+Net cash (used in) / generated from operating activities
+
+(13,628,363)
+1,295,538
+(262,377,941)
+
+(8,993,320)
+(14,761,343)
+144,196,906
+
+INVESTING ACTIVITIES
+Payment for acquisition of property and equipment
+Short-term loan disbursed
+Short-term loan received
+Net cash used in investing activities
+
+(231,390,990)
+51,383,991
+(180,006,999)
+
+(85,382,106)
+(42,375,000)
+(127,757,106)
+
+FINANCING ACTIVITIES
+Proceeds from issuance of shares
+Loans received during the year / period
+Short-term loan repaid
+Markup repaid
+Lease rentals paid
+Net cash generated / (used in) from financing activities
+
+1,630,000,000
+(42,375,000)
+(56,842,571)
+1,530,782,429
+
+1,000
+102,375,000
+(60,000,000)
+(48,249,403)
+(5,873,403)
+
+Net increase in cash and cash equivalents
+Cash and bank balance at the beginning of the year / period
+Cash and bank balance at the end of the year / period
+
+1,088,397,489
+10,566,397
+1,098,963,886
+
+10,566,397
+10,566,397
+
+Profit before working capital changes
+Working capital adjustments:
+(Increase) / decrease in current assets:
+Trade receivables
+Advances and other receivables
+Prepayments
+Increase / (decrease) in current liabilities:
+Creditors, accrued and other payables
+Contract liabilities
+
+13
+
+The annexed notes from 1 to 30 form an integral part of these financial statements.
+
+_____________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 4 of 28

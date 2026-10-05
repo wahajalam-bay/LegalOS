@@ -1,0 +1,405 @@
+A member firm of Ernst & Young Global Limited
+
+
+
+
+
+
+
+
+
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN ZETA (SMC-PRIVATE) LIMITED
+STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+ASSETS
+CURRENT ASSETS
+Advance income tax
+Cash and Bank balance
+
+67
+3,381
+3,448
+
+16
+3,093
+3,109
+
+3,448
+
+3,109
+
+100,000
+
+100,000
+
+6
+
+1,000
+(545,477)
+(544,477)
+
+1,000
+(170,591)
+(169,591)
+
+7
+
+547,925
+
+172,700
+
+3,448
+
+3,109
+
+5
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+SHARE CAPITAL AND RESERVES
+Authorized share capital
+10,000 ordinary shares of Rs. 10 each
+Issued, subscribed and paid up share capital
+Accumulated losses
+
+CURRENT LIABILTIES
+Other payables
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+8
+
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+________________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 1 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN ZETA (SMC-PRIVATE) LIMITED
+STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Note
+
+From 29 March 2021
+to 30 June 2022
+Rupees
+
+2023
+Rupees
+
+Administrative expenses
+
+9
+
+(375,225)
+
+(170,700)
+
+Other Income
+
+10
+
+339
+
+109
+
+(374,886)
+
+(170,591)
+
+-
+
+-
+
+(374,886)
+
+(170,591)
+
+Other comprehensive loss for the year / period
+
+-
+
+-
+
+Total comprehensive loss for the year / period
+
+(374,886)
+
+(170,591)
+
+Loss before taxation
+Taxation
+
+11
+
+Loss for the year / period
+
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+________________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 2 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN ZETA (SMC-PRIVATE) LIMITED
+STATEMENT OF CHANGES IN EQUITY
+FOR THE YEAR ENDED 30 JUNE 2023
+Issued, subscribed
+Accumulated losses
+Total
+and paid up share
+capital
+------------------------Rupees-------------------------
+
+Issuance of shares of Rs 10 each
+Loss before taxation
+Other comprehensive loss
+Total comprehensive loss for the period
+Balance as at 30 June 2022
+
+Loss before taxation
+Other comprehensive loss
+Total comprehensive loss for the year
+Balance as at 30 June 2022
+
+1,000
+
+-
+
+1,000
+
+-
+
+(170,591)
+(170,591)
+
+(170,591)
+(170,591)
+
+1,000
+
+(170,591)
+
+(169,591)
+
+-
+
+(374,886)
+(374,886)
+
+(374,886)
+(374,886)
+
+1,000
+
+(545,477)
+
+(544,477)
+
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+________________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 3 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN ZETA (SMC-PRIVATE) LIMITED
+STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+
+Note
+
+From 29 March
+2021 to 30 June
+2022
+Rupees
+
+2023
+Rupees
+
+OPERATING ACTIVITIES
+(374,886)
+
+(170,591)
+
+(339)
+
+(109)
+
+(375,225)
+
+(170,700)
+
+375,225
+-
+
+172,700
+2,000
+
+Taxes paid
+
+(51)
+
+(16)
+
+Cash (used in) / generated from operations
+
+(51)
+
+1,984
+
+Interest income on deposits
+
+339
+
+109
+
+Net cash generated from investing activities
+
+339
+
+109
+
+Subscription money received
+
+-
+
+1,000
+
+Net cash flows from financing activities
+
+-
+
+1,000
+
+288
+3,093
+3,381
+
+3,093
+3,093
+
+Loss before taxation
+Adjustments to reconcile loss before tax
+to net cash flows:
+Other Income
+
+10
+
+Loss before working capital changes
+Working capital changes:
+Increase in current liabilities
+Cash generated from operations
+
+INVESTING ACTIVITIES
+
+FINANCING ACTIVITIES
+
+Net Increase In Cash And Cash Balances
+Cash and bank balances at the beginning of year / period
+Cash and and bank balances at the end of year / period
+The annexed notes from 1 to 17 form an integral part of these financial statements.
+
+________________________________
+DIRECTOR / CHIEF EXECUTIVE
+
+Page 4 of 15
+
+DocuSign Envelope ID: 595CE76A-8125-40D4-9045-3CEB564E60BB
+
+ZAMEEN ZETA (SMC-PRIVATE) LIMITED
+NOTES TO THE FINANCIAL STATEMENTS
+FOR THE YEAR ENDED 30 JUNE 2023
+1
+
+COMPANY AND ITS OPERATIONS
+
+1.1
+
+Corporate and General Information
+Zameen Zeta (SMC-Private) Limited ("the Company") was incorporated on 29 March 2021 as a Single
+member Company under the Companies Act (The Act). The Company's principal activity is to engage in the
+business of development of all types of real estate including commercial markets and multi-storey buildings,
+shopping centers etc. The registered office of the Company is situated at Pearl One, 94-B/I, M.M. Alam Road
+Gulberg III, Lahore. The Company is a subsidiary of Zameen Venture One (Private) Limited ("the Parent
+Company"), a Company incorporated in Pakistan. The ultimate parent of the Company is Dubizzle Group
+Holdings Limited (formerly known as EMPG Holdings Limited), a Company incorporated in United Arab
+Emirates (UAE).
+
+1.2
+
+The Company is in startup phase, and it is yet to start construction in the project. The Company has incurred
+loss of Rs. 374,886 (2022: Rs. 170,591) and its accumulated losses as at the reporting date amounts to Rs.
+545,477 (2022: Rs.170,591) resulting in a negative equity of Rs. 544,477 (2022: Rs. 169,591) as at that date.
+The Parent Company has committed to provide financial support to the Company, enabling the Company to
+continue its operations as going concern and fulfil all of its financial obligation. Based on which the financial
+statements of the Company are prepared on going concern basis.
+
+2
+
+BASIS OF PREPARATION
+
+2.1
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting standards
+as applicable in Pakistan. The accounting and reporting standards applicable in Pakistan comprise of:
+- International Financial Reporting Standards (IFRS Standards) issued by the International Accounting
+Standards Board (IASB) as notified under the Companies Act, 2017; and
+- Provisions of and directives issued under the Companies Act, 2017.
+Where provisions of and directives issued under the Companies Act, 2017 differ from the IFRS standards, the
+provisions of and directives of the Companies Act, 2017 have been followed.
+
+2.2
+
+Basis of measurement
+These financial statements have been prepared under the historical cost convention unless otherwise stated.
+In these financial statements, except for the amounts reflected in the statement of cash flows, all transactions
+have been accounted for on accrual basis.
+
+2.3
+
+Functional and presentation currency
+These financial statements are presented in Pak Rupees, which is the Company’s functional currency. All
+figures have been rounded off to the nearest Rupee, unless otherwise stated.
+
+2.4
+
+Standards, interpretations and amendments to published accounting standards
+The following are new and amended standards and interpretations effective for annual period beginning on
+July 01, 2022, as listed below:
+
+2.4.1 New Standards, Interpretations and Amendments effective in the reporting period
+The accounting policies adopted in the preparation of these financial statements are consistent with those of
+the previous financial year, except for following amendments to accounting standards which are effective for
+annual periods beginning on or after July 01, 2022 (unless otherwise stated).
+IFRS 3
+
+Business Combinations – The amendment updates a reference in IFRS 3 to the Conceptual
+Framework for Financial Reporting without changing the accounting requirements for business
+combinations.
+
+Page 5 of 15

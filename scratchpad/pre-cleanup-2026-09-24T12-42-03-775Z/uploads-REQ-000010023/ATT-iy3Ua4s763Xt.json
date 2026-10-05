@@ -1,0 +1,19 @@
+{
+  "id": "ATT-iy3Ua4s763Xt",
+  "requestId": "REQ-000010023",
+  "name": "Final draft_Litigation feedback (1).docx",
+  "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "ext": "docx",
+  "size": 38656,
+  "sha256": "430856d9630d89eb3bdd46912235c37b4c8594343598a482a1410a2f509cf0e3",
+  "uploadedAt": "2026-09-24T11:44:25.403Z",
+  "uploadedBy": "reporting@zameen.com",
+  "uploadedByName": {
+    "name": "Reporting",
+    "email": "reporting@zameen.com",
+    "designation": "System administrator"
+  },
+  "storedBy": "legalos",
+  "sourceType": "LEGALOS_UPLOAD",
+  "storedAt": "var/request-uploads/REQ-000010023/ATT-iy3Ua4s763Xt.docx"
+}

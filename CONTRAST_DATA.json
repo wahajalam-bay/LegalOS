@@ -1,0 +1,3285 @@
+{
+  "generatedAt": "2026-09-28T18:26:30.655Z",
+  "method": "WCAG 2.1 relative-luminance ratio, computed colour vs first painted ancestor background, on the rendered page",
+  "thresholds": {
+    "normalText": 4.5,
+    "largeText": 3,
+    "note": "large = >=24px, or >=18.66px at weight >=700"
+  },
+  "routes": 29,
+  "measured": 197,
+  "failing": 0,
+  "samples": [
+    {
+      "component": "strong.tiny",
+      "tag": "div",
+      "sample": "record s are past their fixed turnaround",
+      "color": "rgb(180, 83, 9)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.51,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "tiny",
+      "tag": "div",
+      "sample": "ADM-2026-0042 — 7d over, blocked at Lega",
+      "color": "rgb(180, 83, 9)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.51,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/settings"
+      ]
+    },
+    {
+      "component": "pill.pill--amber",
+      "tag": "span",
+      "sample": "Compliance",
+      "color": "rgb(180, 83, 9)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.51,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "pill.pill--amber",
+      "tag": "span",
+      "sample": "Signed agreement",
+      "color": "rgb(180, 83, 9)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.51,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates"
+      ]
+    },
+    {
+      "component": "avatar.avatar--sm",
+      "tag": "span",
+      "sample": "IM",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 10,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.55,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/access",
+        "/clauses"
+      ]
+    },
+    {
+      "component": "pill.pill--green",
+      "tag": "span",
+      "sample": "Labour Matters",
+      "color": "rgb(21, 128, 61)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.57,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/compliance/loans",
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "pill.pill--green",
+      "tag": "span",
+      "sample": "In force",
+      "color": "rgb(21, 128, 61)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.57,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/settings"
+      ]
+    },
+    {
+      "component": "risk.risk--low",
+      "tag": "span",
+      "sample": "Low",
+      "color": "rgb(17, 128, 58)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.58,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/contracts",
+        "/repository"
+      ]
+    },
+    {
+      "component": "hstate__n",
+      "tag": "span",
+      "sample": "39",
+      "color": "rgb(17, 128, 58)",
+      "fontSize": 16,
+      "fontWeight": 750,
+      "large": false,
+      "ratio": 4.58,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hstate__l",
+      "tag": "span",
+      "sample": "On time",
+      "color": "rgb(17, 128, 58)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.58,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "tatpill.tatpill--red",
+      "tag": "span",
+      "sample": "Delayed +7d",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.59,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "tiny.strong.risk--critical",
+      "tag": "div",
+      "sample": "Sep 22",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 10.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.59,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "cmod__chip.cmod__chip--red",
+      "tag": "span",
+      "sample": "17 repayments overdue",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 4.59,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hstate__n",
+      "tag": "span",
+      "sample": "17",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 16,
+      "fontWeight": 750,
+      "large": false,
+      "ratio": 4.59,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hstate__l",
+      "tag": "span",
+      "sample": "Expired / not renewed",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.59,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hcard__chip.hcard__chip--red",
+      "tag": "button",
+      "sample": "17 repayment passed",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 4.59,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "ai-badge",
+      "tag": "span",
+      "sample": "AI Insight",
+      "color": "rgb(14, 116, 144)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 4.61,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "pill.pill--purple",
+      "tag": "span",
+      "sample": "Full",
+      "color": "rgb(14, 116, 144)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.61,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/settings"
+      ]
+    },
+    {
+      "component": "pill.pill--purple",
+      "tag": "span",
+      "sample": "Assisted",
+      "color": "rgb(14, 116, 144)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.61,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "tiny.strong.risk--high",
+      "tag": "span",
+      "sample": "Nov 7",
+      "color": "rgb(189, 71, 10)",
+      "fontSize": 10.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.63,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/loans",
+        "/compliance/leases",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "tiny",
+      "tag": "span",
+      "sample": "overdue",
+      "color": "rgb(189, 71, 10)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.63,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/loans",
+        "/compliance/leases",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "tatpill.tatpill--amber",
+      "tag": "span",
+      "sample": "Due Today",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "cmod__chip",
+      "tag": "span",
+      "sample": "expiring ≤ 90 days",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hstate__n",
+      "tag": "span",
+      "sample": "13",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 16,
+      "fontWeight": 750,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hstate__l",
+      "tag": "span",
+      "sample": "Delayed",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hcard__chip.hcard__chip--amber",
+      "tag": "button",
+      "sample": "13 SBP pending",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "agebkt__cap",
+      "tag": "span",
+      "sample": "≤30 days",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 10,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "tflag.tflag--amber",
+      "tag": "div",
+      "sample": "Counterparty already has open work — REQ",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 12.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.64,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "kbd",
+      "tag": "kbd",
+      "sample": "⌘K",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.66,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "muted",
+      "tag": "div",
+      "sample": "Looks inside PDFs and scanned documents,",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.73,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/knowledge"
+      ]
+    },
+    {
+      "component": "pill.pill--blue",
+      "tag": "span",
+      "sample": "Commercial",
+      "color": "rgb(29, 108, 176)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.74,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/litigation",
+        "/m/notices",
+        "/settings",
+        "/clauses"
+      ]
+    },
+    {
+      "component": "hstate__l",
+      "tag": "span",
+      "sample": "Rectified",
+      "color": "rgb(29, 108, 176)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.74,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "pill.pill--blue",
+      "tag": "span",
+      "sample": "Important",
+      "color": "rgb(29, 108, 176)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.74,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "calnav__b.calnav__b--wide.calnav__b--on",
+      "tag": "button",
+      "sample": "Annual",
+      "color": "rgb(13, 122, 63)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.76,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "nav__badge.nav__badge--alert",
+      "tag": "span",
+      "sample": "18",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.83,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "tiny",
+      "tag": "span",
+      "sample": "blocked at Legal Review · Modassar",
+      "color": "rgb(220, 38, 38)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.83,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "callegend__n",
+      "tag": "span",
+      "sample": "255",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 4.83,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "tprop__k",
+      "tag": "div",
+      "sample": "Legal category",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 4.83,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "row",
+      "tag": "span",
+      "sample": "System suggestion",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.83,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Raise a legal request in the requester p",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.95,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Search matters, contracts, clauses…",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.95,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "tiny.muted",
+      "tag": "div",
+      "sample": "5d ago",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.95,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "tiny",
+      "tag": "span",
+      "sample": "· outcome not recorded",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 4.95,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/litigation"
+      ]
+    },
+    {
+      "component": "workspace__type",
+      "tag": "div",
+      "sample": "All entities · Pakistan",
+      "color": "rgb(180, 203, 191)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "dashtab.on",
+      "tag": "button",
+      "sample": "Overall",
+      "color": "rgb(13, 122, 63)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.06,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec"
+      ]
+    },
+    {
+      "component": "tiny.muted",
+      "tag": "span",
+      "sample": "Dated figures cover annual — since Sep 2",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.13,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/licenses",
+        "/compliance/sec-filings"
+      ]
+    },
+    {
+      "component": "dashband__t",
+      "tag": "span",
+      "sample": "Contracts portfolio",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 750,
+      "large": false,
+      "ratio": 5.13,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec"
+      ]
+    },
+    {
+      "component": "cov__hdsub",
+      "tag": "span",
+      "sample": "Each row opens the register filtered to ",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.13,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "mono",
+      "tag": "span",
+      "sample": "pages/repository.js#simulateOcr",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.13,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "cov__n",
+      "tag": "span",
+      "sample": "13",
+      "color": "rgb(165, 90, 5)",
+      "fontSize": 12.5,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.17,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "pill.pill--red",
+      "tag": "span",
+      "sample": "34606d past",
+      "color": "rgb(185, 28, 28)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.3,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec"
+      ]
+    },
+    {
+      "component": "pill.pill--red",
+      "tag": "span",
+      "sample": "Expired",
+      "color": "rgb(185, 28, 28)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.3,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/contracts",
+        "/tracker",
+        "/repository"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "First load needs internet (React loads f",
+      "color": "rgb(92, 98, 110)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.34,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login",
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation"
+      ]
+    },
+    {
+      "component": "pill.pill--gray",
+      "tag": "span",
+      "sample": "Contract Drafting / Review",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.36,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "button",
+      "tag": "button",
+      "sample": "Builder",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.36,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates",
+        "/reports",
+        "/costs",
+        "/clauses"
+      ]
+    },
+    {
+      "component": "pill.pill--gray",
+      "tag": "span",
+      "sample": "Work in progress",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.36,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates",
+        "/settings"
+      ]
+    },
+    {
+      "component": "count",
+      "tag": "span",
+      "sample": "131",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.36,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "login__hero-name",
+      "tag": "div",
+      "sample": "LegalOS",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 21,
+      "fontWeight": 800,
+      "large": true,
+      "ratio": 5.4,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__hero-sub",
+      "tag": "div",
+      "sample": "Zameen Group",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.4,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__hero-head",
+      "tag": "h1",
+      "sample": "Run the legal function on one system.",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 30,
+      "fontWeight": 800,
+      "large": true,
+      "ratio": 5.4,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__feat-t",
+      "tag": "div",
+      "sample": "Contracts & lifecycle",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 14,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.4,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__feat-d",
+      "tag": "div",
+      "sample": "The live register, renewals and expiry, ",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.4,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__hero-foot",
+      "tag": "div",
+      "sample": "Secured by Cloudflare Access · 2026 Zame",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.4,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "crumbbtn.clickable.hoverline",
+      "tag": "button",
+      "sample": "ZM",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 13,
+      "fontWeight": 500,
+      "large": false,
+      "ratio": 5.41,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "btn.btn--primary.login__submit",
+      "tag": "button",
+      "sample": "Sign in",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 13.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "New",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 13,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "wshub__tab.on",
+      "tag": "button",
+      "sample": "Current Work",
+      "color": "rgb(13, 122, 63)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "btn.btn--primary",
+      "tag": "button",
+      "sample": "New request",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 13,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/repository"
+      ]
+    },
+    {
+      "component": "tab__label",
+      "tag": "span",
+      "sample": "Contracts Repository",
+      "color": "rgb(13, 122, 63)",
+      "fontSize": 13.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance",
+        "/compliance/licenses",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "linkbtn.tiny",
+      "tag": "button",
+      "sample": "View all 25 case types",
+      "color": "rgb(13, 122, 63)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/litigation"
+      ]
+    },
+    {
+      "component": "btn.btn--primary.btn--sm",
+      "tag": "button",
+      "sample": "+ New filing",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/sec-filings",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "tab__label",
+      "tag": "span",
+      "sample": "Requests",
+      "color": "rgb(13, 122, 63)",
+      "fontSize": 14,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/approvals",
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "avatar.avatar--md",
+      "tag": "span",
+      "sample": "MH",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 12,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.49,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "avatar.avatar--md",
+      "tag": "span",
+      "sample": "MH",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 10,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.49,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/organization",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "login__flabel",
+      "tag": "span",
+      "sample": "Email",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 10.5,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__pwtoggle",
+      "tag": "button",
+      "sample": "Show",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__policy",
+      "tag": "div",
+      "sample": "Sessions are verified server-side and ex",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "metric__foot",
+      "tag": "div",
+      "sample": "837 concluded or expired",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/tracker",
+        "/reports"
+      ]
+    },
+    {
+      "component": "card__sub",
+      "tag": "div",
+      "sample": "Active and decided, and what is being cl",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/knowledge",
+        "/reports",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "muted.tiny",
+      "tag": "div",
+      "sample": "decided",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/reports"
+      ]
+    },
+    {
+      "component": "staterow__s",
+      "tag": "span",
+      "sample": "valid beyond 90 days",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec"
+      ]
+    },
+    {
+      "component": "sr-only",
+      "tag": "label",
+      "sample": "Search titles, counterparties, deed refs",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "cmod__u",
+      "tag": "span",
+      "sample": "loan agreements",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "cmod__s",
+      "tag": "div",
+      "sample": "25 FDI · 0 FCY · 44 Intercompany PK",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 12,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hcard__calm",
+      "tag": "span",
+      "sample": "0 statutory years evidenced · 0 filings ",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "tiny.muted.cov__when",
+      "tag": "span",
+      "sample": "10d ago",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "cov__insb",
+      "tag": "div",
+      "sample": "17 of 69 loan agreements carry a repayme",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "regsum__l",
+      "tag": "span",
+      "sample": "Loan agreements",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/loans",
+        "/compliance/leases",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "tiny.muted",
+      "tag": "span",
+      "sample": "USD 1,000,000",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 10.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/loans",
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "muted",
+      "tag": "span",
+      "sample": "· upcoming",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/leases",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "agetile__sub",
+      "tag": "div",
+      "sample": "PKR 2.9M at risk within 90 days",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "card.card--pad.tiny",
+      "tag": "div",
+      "sample": "No invoice and no retainer is recorded a",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/costs"
+      ]
+    },
+    {
+      "component": "modkpi__l",
+      "tag": "div",
+      "sample": "Costs recorded on requests this quarter",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/costs",
+        "/triage"
+      ]
+    },
+    {
+      "component": "div",
+      "tag": "div",
+      "sample": "Nothing in this window.",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/costs",
+        "/approvals",
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "mono.tiny.muted",
+      "tag": "div",
+      "sample": "REQ-1001-YB9N · via requester portal",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "tsec",
+      "tag": "div",
+      "sample": "As submitted",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "trow__l",
+      "tag": "div",
+      "sample": "Best described as",
+      "color": "rgb(91, 109, 100)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.5,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "strong",
+      "tag": "strong",
+      "sample": "LegalOS hit an error while starting.",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.52,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login",
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation"
+      ]
+    },
+    {
+      "component": "sidebar__brand-sub",
+      "tag": "div",
+      "sample": "Enterprise",
+      "color": "rgb(180, 203, 191)",
+      "fontSize": 10.5,
+      "fontWeight": 500,
+      "large": false,
+      "ratio": 5.56,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "sidebar__user-role",
+      "tag": "div",
+      "sample": "Director Legal",
+      "color": "rgb(180, 203, 191)",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.56,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "cov__n",
+      "tag": "span",
+      "sample": "17",
+      "color": "rgb(201, 35, 35)",
+      "fontSize": 12.5,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 5.6,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "th__sortbtn",
+      "tag": "button",
+      "sample": "Request Date",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "th",
+      "tag": "th",
+      "sample": "Request / Matter",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/tracker",
+        "/repository",
+        "/costs"
+      ]
+    },
+    {
+      "component": "cell-mono.strong",
+      "tag": "div",
+      "sample": "REQ-1001",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "cell-mono",
+      "tag": "span",
+      "sample": "LON-0RRG5T3",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "agebkt__cap",
+      "tag": "span",
+      "sample": "61–90",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 10,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "tagchip",
+      "tag": "button",
+      "sample": "doc",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "tctx",
+      "tag": "div",
+      "sample": "JV Agreement for a Project in Lahore",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "cell-mono.tiny",
+      "tag": "span",
+      "sample": "Consult/2765",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.7,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/licenses"
+      ]
+    },
+    {
+      "component": "pagehead__sub",
+      "tag": "div",
+      "sample": "The legal function at a glance — what is",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "btn.btn--ghost",
+      "tag": "button",
+      "sample": "Calendar",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "dashtab",
+      "tag": "button",
+      "sample": "Revenue",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec"
+      ]
+    },
+    {
+      "component": "regcount",
+      "tag": "span",
+      "sample": "6 records",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "page__sub",
+      "tag": "div",
+      "sample": "Spend per module and per department, nor",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/costs",
+        "/triage"
+      ]
+    },
+    {
+      "component": "tab__label",
+      "tag": "span",
+      "sample": "Access Matrix",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/access",
+        "/organization",
+        "/approvals",
+        "/pipelines",
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "tab__label",
+      "tag": "span",
+      "sample": "Team Pipelines",
+      "color": "rgb(40, 113, 74)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 5.91,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "tab__label",
+      "tag": "span",
+      "sample": "Data Analyzer",
+      "color": "rgb(49, 110, 79)",
+      "fontSize": 13.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 6.05,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "workspace__logo",
+      "tag": "div",
+      "sample": "ZM",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 11,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 6.11,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "login__sub",
+      "tag": "div",
+      "sample": "Enterprise Legal Operations · Zameen Gro",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__lead",
+      "tag": "div",
+      "sample": "Sign in with your LegalOS account. Every",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "calnav__b.calnav__b--wide",
+      "tag": "button",
+      "sample": "Week",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "statkpi__l",
+      "tag": "div",
+      "sample": "Active cases",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "metric__label",
+      "tag": "div",
+      "sample": "Live contracts",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/tracker",
+        "/reports"
+      ]
+    },
+    {
+      "component": "btn.btn--ghost.btn--sm",
+      "tag": "button",
+      "sample": "Full analytics",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/m/notices",
+        "/compliance",
+        "/compliance/licenses",
+        "/compliance/loans",
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "fltbtn",
+      "tag": "button",
+      "sample": "Full cause list",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/m/notices",
+        "/compliance/sec-filings"
+      ]
+    },
+    {
+      "component": "wshub__tab",
+      "tag": "button",
+      "sample": "Project Wise",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Status",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "chip",
+      "tag": "button",
+      "sample": "Include completed",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/templates",
+        "/companies"
+      ]
+    },
+    {
+      "component": "tab__label",
+      "tag": "span",
+      "sample": "Contract Intelligence",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance",
+        "/compliance/licenses",
+        "/compliance/loans"
+      ]
+    },
+    {
+      "component": "cell-mono",
+      "tag": "td",
+      "sample": "CTR-1FYJTOS",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/leases",
+        "/repository",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "cmod__t",
+      "tag": "span",
+      "sample": "Loans",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hcard__t",
+      "tag": "span",
+      "sample": "Loans",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "hcard__v.hcard__v--none",
+      "tag": "div",
+      "sample": "Not started",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 15,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "cov__subj",
+      "tag": "span",
+      "sample": "Zameen Residences (SMC-Private) Limited",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 12.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "tiny.strong",
+      "tag": "div",
+      "sample": "523",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/reports"
+      ]
+    },
+    {
+      "component": "strong.empty__title",
+      "tag": "h2",
+      "sample": "No cost lines",
+      "color": "rgb(76, 101, 90)",
+      "fontSize": 15,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 6.33,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/costs",
+        "/approvals",
+        "/analyzer"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Dashboard",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 14,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 6.57,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Legal Workspace",
+      "color": "rgb(198, 221, 210)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 6.66,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "pill.pill--indigo",
+      "tag": "span",
+      "sample": "40",
+      "color": "rgb(67, 56, 202)",
+      "fontSize": 10.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 7.07,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/litigation",
+        "/compliance/loans",
+        "/companies"
+      ]
+    },
+    {
+      "component": "workspace__name",
+      "tag": "div",
+      "sample": "Zameen Group",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 8.58,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "sidebar__brand-name",
+      "tag": "div",
+      "sample": "LegalOS",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 15,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 9.54,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "sidebar__user-name",
+      "tag": "div",
+      "sample": "Maryam Haq",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 9.54,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "tourbtn__t",
+      "tag": "span",
+      "sample": "Tour",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 12,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "fltbtn.fltbtn--on",
+      "tag": "button",
+      "sample": "Overview",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/sec-filings"
+      ]
+    },
+    {
+      "component": "agebkt__cap",
+      "tag": "span",
+      "sample": "31–60",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 10,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "chip.active",
+      "tag": "button",
+      "sample": "All",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates",
+        "/companies"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Security & Access",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 14,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/settings"
+      ]
+    },
+    {
+      "component": "count",
+      "tag": "span",
+      "sample": "12",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 11,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/organization"
+      ]
+    },
+    {
+      "component": "statkpi__l",
+      "tag": "div",
+      "sample": "Clause types covered",
+      "color": "rgb(6, 61, 36)",
+      "fontSize": 11.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 10.84,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/clauses"
+      ]
+    },
+    {
+      "component": "btn.btn--soft.btn--sm",
+      "tag": "button",
+      "sample": "Show only delayed",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 13.42,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters"
+      ]
+    },
+    {
+      "component": "div",
+      "tag": "div",
+      "sample": "Search the knowledge base",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 20,
+      "fontWeight": 750,
+      "large": true,
+      "ratio": 13.65,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/knowledge"
+      ]
+    },
+    {
+      "component": "sr-only",
+      "tag": "label",
+      "sample": "Search the knowledge base",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 13.65,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/knowledge"
+      ]
+    },
+    {
+      "component": "tprop__v",
+      "tag": "div",
+      "sample": "Contract Drafting / Review",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 14,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 13.92,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "b",
+      "tag": "b",
+      "sample": "Not in the Legal team?",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 14.28,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "tiny.strong",
+      "tag": "div",
+      "sample": "Sep 23",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 10.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 14.28,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/repository",
+        "/access"
+      ]
+    },
+    {
+      "component": "cell-strong",
+      "tag": "div",
+      "sample": "JV Agreement",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 14.28,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/workspace",
+        "/matters",
+        "/clauses"
+      ]
+    },
+    {
+      "component": "tiny",
+      "tag": "span",
+      "sample": "Faisal Taimoor Tarar",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 14.28,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans",
+        "/compliance/leases",
+        "/tracker",
+        "/access"
+      ]
+    },
+    {
+      "component": "tiny.clip",
+      "tag": "span",
+      "sample": "Zameen Media (Private) Limited",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 14.28,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "mono.tiny",
+      "tag": "span",
+      "sample": "1063",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 10.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 14.28,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "pagehead__title",
+      "tag": "h1",
+      "sample": "Good evening, Maryam",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 24,
+      "fontWeight": 700,
+      "large": true,
+      "ratio": 14.8,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "panel__title",
+      "tag": "span",
+      "sample": "Needs attention",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13.5,
+      "fontWeight": 750,
+      "large": false,
+      "ratio": 14.8,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance",
+        "/costs",
+        "/settings"
+      ]
+    },
+    {
+      "component": "page__title",
+      "tag": "h2",
+      "sample": "Cost Analysis",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 24,
+      "fontWeight": 780,
+      "large": true,
+      "ratio": 14.8,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/costs",
+        "/triage"
+      ]
+    },
+    {
+      "component": "tiny",
+      "tag": "div",
+      "sample": "No cost line has been recorded against a",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 11.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 14.8,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/costs",
+        "/triage"
+      ]
+    },
+    {
+      "component": "b",
+      "tag": "b",
+      "sample": "Dashboard",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 15.58,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/workspace",
+        "/matters",
+        "/contracts",
+        "/litigation",
+        "/m/notices"
+      ]
+    },
+    {
+      "component": "login__name",
+      "tag": "div",
+      "sample": "LegalOS",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 22,
+      "fontWeight": 800,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "login__welcome",
+      "tag": "div",
+      "sample": "Welcome back",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 22,
+      "fontWeight": 800,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/login"
+      ]
+    },
+    {
+      "component": "statkpi__n",
+      "tag": "div",
+      "sample": "202",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 21,
+      "fontWeight": 750,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans",
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "metric__value",
+      "tag": "div",
+      "sample": "415",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 28,
+      "fontWeight": 750,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/tracker",
+        "/reports"
+      ]
+    },
+    {
+      "component": "card__title",
+      "tag": "div",
+      "sample": "The case book",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 14,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/knowledge",
+        "/reports",
+        "/settings",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "[object.SVGAnimatedString]",
+      "tag": "title",
+      "sample": "Withdrawn 46 29 %)",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/reports"
+      ]
+    },
+    {
+      "component": "div",
+      "tag": "div",
+      "sample": "156",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 26,
+      "fontWeight": 750,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/reports"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "Withdrawn",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 500,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/reports",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "strong",
+      "tag": "span",
+      "sample": "46",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/contracts",
+        "/litigation",
+        "/compliance",
+        "/compliance/loans",
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "staterow__l",
+      "tag": "span",
+      "sample": "On time",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec"
+      ]
+    },
+    {
+      "component": "tiny.strong",
+      "tag": "div",
+      "sample": "Lease Agreement — expired on Dec 31, 193",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/templates",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "strong.tiny",
+      "tag": "span",
+      "sample": "94 matters",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/exec",
+        "/litigation",
+        "/reports",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "cell-strong",
+      "tag": "div",
+      "sample": "Agreement supply of Vey bottle",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/contracts",
+        "/litigation",
+        "/m/notices",
+        "/compliance/loans",
+        "/compliance/leases",
+        "/tracker"
+      ]
+    },
+    {
+      "component": "cmod__v",
+      "tag": "div",
+      "sample": "69",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 28,
+      "fontWeight": 700,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "cov__lbl",
+      "tag": "span",
+      "sample": "loan repayment dates have passed",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "cov__act",
+      "tag": "span",
+      "sample": "created",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "cov__inst",
+      "tag": "div",
+      "sample": "17 loan repayment dates have passed",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance"
+      ]
+    },
+    {
+      "component": "regsum__v",
+      "tag": "span",
+      "sample": "69",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 16,
+      "fontWeight": 700,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/loans",
+        "/compliance/leases"
+      ]
+    },
+    {
+      "component": "tiny.strong.risk--med",
+      "tag": "span",
+      "sample": "Expires in 42 day",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 10.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/compliance/leases",
+        "/licenses"
+      ]
+    },
+    {
+      "component": "agetile__label",
+      "tag": "div",
+      "sample": "Contract aging",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/tracker"
+      ]
+    },
+    {
+      "component": "active",
+      "tag": "button",
+      "sample": "Library",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates",
+        "/reports",
+        "/costs",
+        "/clauses"
+      ]
+    },
+    {
+      "component": "chip",
+      "tag": "button",
+      "sample": "Leaseback Agreement (1)",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 550,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates"
+      ]
+    },
+    {
+      "component": "strong",
+      "tag": "div",
+      "sample": "Affiliate agreement- Propforce- Last upd",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/templates"
+      ]
+    },
+    {
+      "component": "strong",
+      "tag": "div",
+      "sample": "Commercial_Zameen Media Contracts",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 14,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/knowledge",
+        "/pipelines"
+      ]
+    },
+    {
+      "component": "modkpi__n",
+      "tag": "div",
+      "sample": "$0",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 27,
+      "fontWeight": 800,
+      "large": true,
+      "ratio": 15.86,
+      "required": 3,
+      "pass": true,
+      "routes": [
+        "/costs"
+      ]
+    },
+    {
+      "component": "span",
+      "tag": "span",
+      "sample": "General",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/settings"
+      ]
+    },
+    {
+      "component": "td",
+      "tag": "td",
+      "sample": "10",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/settings",
+        "/organization"
+      ]
+    },
+    {
+      "component": "mono.tiny.strong",
+      "tag": "span",
+      "sample": "REQ-1001-YB9N",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 11.5,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "tqrow__title",
+      "tag": "div",
+      "sample": "JV Agreement",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13,
+      "fontWeight": 600,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "strong",
+      "tag": "div",
+      "sample": "JV Agreement",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 16,
+      "fontWeight": 650,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "trow__v",
+      "tag": "div",
+      "sample": "We're entering into an agreement with so",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage"
+      ]
+    },
+    {
+      "component": "option",
+      "tag": "option",
+      "sample": "Salman Rashid — Lead",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12.5,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/triage",
+        "/clauses"
+      ]
+    },
+    {
+      "component": "td",
+      "tag": "td",
+      "sample": "Any",
+      "color": "rgb(20, 38, 28)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "large": false,
+      "ratio": 15.86,
+      "required": 4.5,
+      "pass": true,
+      "routes": [
+        "/clauses"
+      ]
+    }
+  ]
+}

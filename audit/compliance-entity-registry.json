@@ -1,0 +1,391 @@
+{
+ "builtAt": "2026-09-22T17:39:20.198Z",
+ "canonicalEntities": 72,
+ "entitiesUsedInCompliance": 34,
+ "notInCanonicalRegistry": [
+  {
+   "key": "zameen venture one subsidiaries",
+   "spellings": [
+    "Zameen Venture One (Private) Limited & subsidiaries"
+   ]
+  },
+  {
+   "key": "zameen media zameen medallion",
+   "spellings": [
+    "Zameen Media (Private) Limited, Zameen Medallion (Private) Limited"
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "key": "zameen venture one",
+   "canonical": "Zameen Venture One (Private) Limited",
+   "spellings": [
+    "Zameen Venture One (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "online classifieds pakistan",
+   "canonical": "Online Classifieds Pakistan (SMC-Private) Limited",
+   "spellings": [
+    "Online Classifieds Pakistan (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen media",
+   "canonical": "Zameen Media ( Private) Limited",
+   "spellings": [
+    "Zameen Media (Private) Limited",
+    "Zameen Media Pvt Ltd",
+    "Zameen Media (Pvt) Limited",
+    "Zameen Media (Pvt) Ltd",
+    "Zameen Media (PVT) Limited"
+   ],
+   "families": [
+    "loans",
+    "leases",
+    "services",
+    "other-spend",
+    "licences"
+   ]
+  },
+  {
+   "key": "zameen developments",
+   "canonical": "Zameen Developments (Private) Limited",
+   "spellings": [
+    "Zameen Developments (Private) Limited",
+    "Zameen Developments Private Limited"
+   ],
+   "families": [
+    "loans",
+    "leases",
+    "services",
+    "other-spend",
+    "licences"
+   ]
+  },
+  {
+   "key": "deevar developers",
+   "canonical": "Deevar Developers (Private) Limited",
+   "spellings": [
+    "Deevar Developers (Private) Limited",
+    "Deevar Developers (Pvt) Ltd"
+   ],
+   "families": [
+    "loans",
+    "licences"
+   ]
+  },
+  {
+   "key": "daftarkhwan",
+   "canonical": "Daftarkhwan (Private) Limited",
+   "spellings": [
+    "Daftarkhwan (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "daftarkhwan holdings",
+   "canonical": "Daftarkhwan Holdings Limited (borrower)",
+   "spellings": [
+    "Daftarkhwan Holdings Limited (borrower)"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen delta",
+   "canonical": "Zameen Delta (Private) Limited",
+   "spellings": [
+    "Zameen Delta (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "empg labs",
+   "canonical": "EMPG Labs ( SMC- Private) LImited",
+   "spellings": [
+    "EMPG Labs (SMC-Private) Limited",
+    "EMPG Labs ( SMC- Private) LImited"
+   ],
+   "families": [
+    "loans",
+    "services"
+   ]
+  },
+  {
+   "key": "zameen apex",
+   "canonical": "Zameen Apex (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Apex (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zaeem habitat",
+   "canonical": "Zaeem Habitat (SMC-Private) Limited",
+   "spellings": [
+    "Zaeem Habitat (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen prime",
+   "canonical": "Zameen Prime (SMC -Private) Limited",
+   "spellings": [
+    "Zameen Prime (SMC -Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen properties",
+   "canonical": "Zameen Properties (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Properties (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen reit managment",
+   "canonical": "Zameen REIT Managment Company",
+   "spellings": [
+    "Zameen REIT Managment Company"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen medallion",
+   "canonical": "Zameen Medallion (Private) Limited",
+   "spellings": [
+    "Zameen Medallion(Private) Limited",
+    "Zameen Medallion (Private) \nLimited",
+    "Zameen Medallion (Private) Limited"
+   ],
+   "families": [
+    "loans",
+    "leases",
+    "services",
+    "other-spend"
+   ]
+  },
+  {
+   "key": "zameen development",
+   "canonical": "Zameen Development (Private) Limited",
+   "spellings": [
+    "Zameen Development (Private) Limited",
+    "Zameen Development"
+   ],
+   "families": [
+    "loans",
+    "services"
+   ]
+  },
+  {
+   "key": "zameen residences",
+   "canonical": "Zameen Residences (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Residences (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen crest",
+   "canonical": "Zameen Crest (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Crest (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen alpha",
+   "canonical": "Zameen Alpha (Private) Limited",
+   "spellings": [
+    "Zameen Alpha (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen arcs",
+   "canonical": "Zameen Arcs (Private) Limited",
+   "spellings": [
+    "Zameen Arcs (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen axis",
+   "canonical": "Zameen Axis (Private) Limited",
+   "spellings": [
+    "Zameen Axis (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen centre",
+   "canonical": "Zameen Centre (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Centre (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen forte",
+   "canonical": "Zameen Forte (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Forte (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen nord",
+   "canonical": "Zameen NORD (SMC- Private) Limited",
+   "spellings": [
+    "Zameen NORD (SMC- Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen omega",
+   "canonical": "Zameen Omega (SMC-Private) Limited",
+   "spellings": [
+    "Zameen Omega (SMC-Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen platinum",
+   "canonical": "Zameen Platinum (Private) Limited",
+   "spellings": [
+    "Zameen Platinum (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "delta centauri developments",
+   "canonical": "Delta Centauri Developments (Private) Limited",
+   "spellings": [
+    "Delta Centauri Developments (Private) Limited"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "edzd developers",
+   "canonical": "EDZD Developers",
+   "spellings": [
+    "EDZD Developers"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "dubizzle labs",
+   "canonical": "Dubizzle Labs ( SMC-Private) Limited",
+   "spellings": [
+    "Dubizzle Labs ( SMC-Private) Limited",
+    "Dubizzle Labs (SMC-Private) Limited",
+    "Dubizzle Labs (Private) Limited"
+   ],
+   "families": [
+    "loans",
+    "leases",
+    "services",
+    "licences"
+   ]
+  },
+  {
+   "key": "zameen venture one subsidiaries",
+   "canonical": null,
+   "spellings": [
+    "Zameen Venture One (Private) Limited & subsidiaries"
+   ],
+   "families": [
+    "loans"
+   ]
+  },
+  {
+   "key": "zameen media zameen medallion",
+   "canonical": null,
+   "spellings": [
+    "Zameen Media (Private) Limited, Zameen Medallion (Private) Limited"
+   ],
+   "families": [
+    "leases",
+    "services"
+   ]
+  },
+  {
+   "key": "zd design consultants",
+   "canonical": "ZD Design Consultants (Registered Partnership)",
+   "spellings": [
+    "ZD Design Consultants (Registered Partnership)"
+   ],
+   "families": [
+    "licences"
+   ]
+  },
+  {
+   "key": "zd engineering solutions",
+   "canonical": "ZD Engineering Solutions",
+   "spellings": [
+    "ZD Engineering Solutions"
+   ],
+   "families": [
+    "licences"
+   ]
+  },
+  {
+   "key": "zameen reit management",
+   "canonical": "Zameen REIT Management Company Limited",
+   "spellings": [
+    "Zameen REIT Management Company"
+   ],
+   "families": [
+    "licences"
+   ]
+  }
+ ]
+}

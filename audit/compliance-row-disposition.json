@@ -1,0 +1,125 @@
+{
+ "builtAt": "2026-09-23T12:20:02.052Z",
+ "root": "Compliance Data _LegalOS",
+ "ledgerEntries": 2868,
+ "complianceEntries": 145,
+ "totals": {
+  "INGESTED_RECORD": 1227,
+  "INCOMPLETE_SOURCE_RECORD": 132,
+  "PADDING_ROW": 50,
+  "NOT_A_REGISTER_SHEET": 368,
+  "MERGED_DUPLICATE": 47
+ },
+ "bySourceFamily": {
+  "Zameen Group_Loan Agreements": {
+   "rowsRead": 548,
+   "ingested": 30,
+   "notIngested": 518,
+   "breakdown": {
+    "INGESTED_RECORD": 30,
+    "INCOMPLETE_SOURCE_RECORD": 132,
+    "PADDING_ROW": 23,
+    "NOT_A_REGISTER_SHEET": 361,
+    "MERGED_DUPLICATE": 2
+   },
+   "balances": true
+  },
+  "Zameen Group _PK Intercompany Loans": {
+   "rowsRead": 86,
+   "ingested": 60,
+   "notIngested": 26,
+   "breakdown": {
+    "INGESTED_RECORD": 60,
+    "PADDING_ROW": 26
+   },
+   "balances": true
+  },
+  "Licenses & Approvals _ Pakistan Entities": {
+   "rowsRead": 7,
+   "ingested": 7,
+   "notIngested": 0,
+   "breakdown": {
+    "INGESTED_RECORD": 7
+   },
+   "balances": true
+  },
+  "Resolutions": {
+   "rowsRead": 923,
+   "ingested": 918,
+   "notIngested": 5,
+   "breakdown": {
+    "INGESTED_RECORD": 918,
+    "NOT_A_REGISTER_SHEET": 4,
+    "PADDING_ROW": 1
+   },
+   "balances": true
+  },
+  "Spend Contracts (Lease and Service Agreements)": {
+   "rowsRead": 260,
+   "ingested": 212,
+   "notIngested": 48,
+   "breakdown": {
+    "INGESTED_RECORD": 212,
+    "NOT_A_REGISTER_SHEET": 3,
+    "MERGED_DUPLICATE": 45
+   },
+   "balances": true
+  }
+ },
+ "byRegisterFamily": {
+  "loans": {
+   "INGESTED_RECORD": 60,
+   "INCOMPLETE_SOURCE_RECORD": 132,
+   "PADDING_ROW": 49,
+   "NOT_A_REGISTER_SHEET": 359
+  },
+  "licences": {
+   "INGESTED_RECORD": 7
+  },
+  "contracts": {
+   "INGESTED_RECORD": 246,
+   "NOT_A_REGISTER_SHEET": 5,
+   "MERGED_DUPLICATE": 47
+  },
+  "resolutions": {
+   "INGESTED_RECORD": 914,
+   "NOT_A_REGISTER_SHEET": 4,
+   "PADDING_ROW": 1
+  }
+ },
+ "unknownDrop": 0,
+ "fromOtherRoots": [
+  {
+   "file": "000 Summary - Property Transaction Services Private Limited.xlsx",
+   "sheet": "Board Resolutions",
+   "root": "Entities data for secp filing",
+   "register": "resolutions",
+   "disposition": "INGESTED_RECORD",
+   "count": 7
+  },
+  {
+   "file": "000 Summary - TAAD Property Consultants.xlsx",
+   "sheet": "Board Resolutions",
+   "root": "Entities data for secp filing",
+   "register": "resolutions",
+   "disposition": "INGESTED_RECORD",
+   "count": 8
+  },
+  {
+   "file": "00_Tracker.xlsx",
+   "sheet": "Sheet1",
+   "root": "Entities data for secp filing",
+   "register": "resolutions",
+   "disposition": "INGESTED_RECORD",
+   "count": 1
+  },
+  {
+   "file": "00_Summary.xlsx",
+   "sheet": "Sheet1",
+   "root": "Entities data for secp filing",
+   "register": "resolutions",
+   "disposition": "INGESTED_RECORD",
+   "count": 3
+  }
+ ]
+}

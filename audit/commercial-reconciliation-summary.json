@@ -1,0 +1,88 @@
+{
+ "generatedAt": "2026-09-21T12:41:46.914Z",
+ "scope": "Commercial roots only",
+ "roots": [
+  "Commercial_ZD Projects Master Data and Tracker",
+  "Commercial_Zameen Media Contracts"
+ ],
+ "totals": {
+  "folders": 481,
+  "files": 1303,
+  "documents": 1286,
+  "trackerRows": 1409,
+  "contracts": 1371,
+  "projects": 17
+ },
+ "contentStates": {
+  "CONTENT_DRIVE_OCR": 595,
+  "CONTENT_LOCAL_EXTRACT": 104,
+  "CONTENT_VISION_READ": 234,
+  "CONTENT_NATIVE_TEXT": 337,
+  "CONTENT_NOT_REQUIRED": 21,
+  "CONTENT_UNREADABLE": 8,
+  "CONTENT_PARTIAL": 4
+ },
+ "documentTypes": {
+  "CONSTRUCTION": 124,
+  "CERTIFICATE": 19,
+  "PPA": 151,
+  "JV": 35,
+  "SALE_DEED": 416,
+  "NOTICE": 6,
+  "RECEIPT": 22,
+  "TERMINATION": 11,
+  "NOVATION": 4,
+  "POA": 4,
+  "APPROVAL": 23,
+  "LAND_RECORD": 89,
+  "LEASE": 6,
+  "AGREEMENT": 6,
+  "ADDENDUM": 71,
+  "PLAN": 5,
+  "RESOLUTION": 3,
+  "MOU": 4,
+  "SERVICE": 23,
+  "TEMPLATE": 1,
+  "NDA": 4
+ },
+ "lifecycle": {
+  "UNKNOWN": 858,
+  "ORIGINAL": 171,
+  "ADDENDUM": 28,
+  "AMENDMENT": 229,
+  "NOVATION": 8,
+  "TERMINATION": 3,
+  "ANNEXURE": 4,
+  "EXTENSION": 1,
+  "SUPPLEMENT": 1
+ },
+ "dispositions": {
+  "SOURCE_TRACKER": 10,
+  "PROJECT_DOCUMENT": 154,
+  "MULTI_RECORD_DOCUMENT": 577,
+  "RECORD_DOCUMENT": 426,
+  "EMPTY_SOURCE_FILE": 7,
+  "TEMPLATE": 30,
+  "UNRESOLVED_REQUIRES_HUMAN": 26,
+  "PROJECT_ONLY_SOURCE_DOCUMENT": 62,
+  "REFERENCE": 4,
+  "SYSTEM_FILE": 7
+ },
+ "conflicts": 55,
+ "humanReview": 26,
+ "projectsNotInTracker": 3,
+ "unattachedAudited": 129,
+ "templatesChecked": 89,
+ "templatesConfirmed": 32,
+ "templatesLookExecuted": 24,
+ "ppaUnattachedInvestigated": 55,
+ "ppaOutcomes": {
+  "H_HUMAN_REVIEW_REQUIRED": 16,
+  "D_PROJECT_FOLDER_WITHOUT_TRACKER_ROW": 37,
+  "A_EXISTING_PROJECT_EXACT_NAME": 1,
+  "F_PROJECT_ONLY_SOURCE_BACKED": 1
+ },
+ "projectOnlyRecords": 3,
+ "validationsPassed": 3,
+ "validationsTotal": 3
+}

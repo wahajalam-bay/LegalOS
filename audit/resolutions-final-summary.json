@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-09-23T19:28:03.851Z",
+  "source": {
+    "roots": [
+      "Entities data for secp filing",
+      "Compliance Data _LegalOS"
+    ],
+    "resolutionEntityFolders": 47,
+    "sourceFiles": 886,
+    "documentFiles": 837,
+    "trackerFiles": 49
+  },
+  "records": {
+    "individualResolutions": 965,
+    "fromTracker": 933,
+    "fromFolderOnly": 32,
+    "entitiesRepresented": 47,
+    "documentsOnRecords": 977,
+    "recordsWithMoreThanOneDocument": 12,
+    "recordsWithNoDocument": 1
+  },
+  "gates": {
+    "FILES_WITHOUT_DISPOSITION": 0,
+    "RECORDS_WITHOUT_SOURCE_LINEAGE": 0,
+    "BROKEN_DRIVE_LINKS": 0
+  }
+}

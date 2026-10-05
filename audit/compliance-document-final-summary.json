@@ -1,0 +1,69 @@
+{
+ "builtAt": "2026-09-23T06:04:33.919Z",
+ "byFamily": {
+  "loans": {
+   "records": 69,
+   "documents": 967,
+   "withNone": 0,
+   "undated": 248
+  },
+  "leases": {
+   "records": 102,
+   "documents": 315,
+   "withNone": 2,
+   "undated": 116
+  },
+  "services": {
+   "records": 83,
+   "documents": 172,
+   "withNone": 13,
+   "undated": 70
+  },
+  "other-spend": {
+   "records": 14,
+   "documents": 12,
+   "withNone": 6,
+   "undated": 4
+  },
+  "resolutions": {
+   "records": 933,
+   "documents": 913,
+   "withNone": 20,
+   "undated": 9
+  },
+  "licences": {
+   "records": 8,
+   "documents": 17,
+   "withNone": 0,
+   "undated": 3
+  },
+  "secp": {
+   "records": 43,
+   "documents": 3361,
+   "withNone": 0,
+   "undated": 322
+  }
+ },
+ "complianceFiles": 5139,
+ "mapped": 4969,
+ "unmapped": 170,
+ "atEntityLevel": 155,
+ "notRecordDocs": 15,
+ "unexplained": 0,
+ "orderingErrors": 0,
+ "lineageGaps": 18,
+ "brokenLinks": 0,
+ "strayDocuments": 0,
+ "duplicateGroups": 223,
+ "security": {
+  "documents": 4974,
+  "byGroup": {
+   "commercial": 317,
+   "compliance": 4952,
+   "litigation": 0,
+   "requester": 0
+  },
+  "unscoped": 0,
+  "crossFamily": []
+ }
+}

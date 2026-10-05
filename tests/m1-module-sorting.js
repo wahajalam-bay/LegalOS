@@ -1,85 +1,114 @@
-// (1) triaged requests appear on their category's module register.
-// (2) approval round-trip: whoever sent it to Approval is notified on the decision.
-const puppeteer = require("puppeteer-core");
-const CHROME = process.env.CHROME || process.env.PUPPETEER_EXECUTABLE_PATH ||
-  "C:/Program Files/Google/Chrome/Application/chrome.exe";  // Windows dev default
-const BASE = `http://localhost:${process.env.LEGALOS_PORT || "4600"}`;
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const results = []; const errs = [];
-const ok = (n, c) => { results.push(!!c); console.log((c ? "PASS " : "FAIL ") + n); };
-const body = (p) => p.evaluate(() => document.body.innerText);
-async function clickByText(p, sel, text) { return p.evaluate((sel, text) => { const el = [...document.querySelectorAll(sel)].find((e) => (e.textContent || "").toLowerCase().includes(text.toLowerCase())); if (el) { el.click(); return true; } return false; }, sel, text); }
-async function viewAs(p, uid) { await p.evaluate((uid) => { const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k) || "{}"); s.session = s.session || {}; s.session.viewAsId = uid; localStorage.setItem(k, JSON.stringify(s)); }, uid); }
-async function go(p, hash) { await p.evaluate((h) => { location.hash = h; }, hash); await p.reload({ waitUntil: "networkidle2" }); await wait(1100); }
-async function rec(p, id) { return p.evaluate((id) => { const s = JSON.parse(localStorage.getItem("legalos-store-v1") || "{}"); return (s.requests || []).find((r) => r.id === id) || null; }, id); }
-async function notifs(p, uid) { return p.evaluate((u) => { const s = JSON.parse(localStorage.getItem("legalos-store-v1") || "{}"); return (s.notifs || []).filter((n) => n.forUserId === u); }, uid); }
+// Two things a triaged request must do:
+//   (1) appear on the module register for its category — the desk that owns it;
+//   (2) close the approval loop — whoever sent it up for sign-off is told the
+//       decision, rather than having to go and look.
+//
+// MIGRATED 2026-09-18: isolated sandbox, real sign-in per persona, fixtures
+// seeded through the server. The original switched user by writing viewAsId
+// into localStorage, so its "the Lead sees it / the Associate does not" claims
+// were never tested against a real session.
+//
+//   node tests/m1-module-sorting.js
+const H = require("./_harness.js");
 
-(async () => {
-  const b = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
-  const p = await b.newPage();
-  p.on("pageerror", (e) => errs.push(e.message));
-  p.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
-  await p.setViewport({ width: 1440, height: 1000 });
-  await p.goto(BASE + "/", { waitUntil: "networkidle2", timeout: 45000 }); await wait(500);
-  await p.evaluate(() => localStorage.removeItem("legalos-store-v1"));
-  await p.reload({ waitUntil: "networkidle2" }); await wait(500);
-  await p.evaluate(() => {
-    const k = "legalos-store-v1"; const s = JSON.parse(localStorage.getItem(k));
-    const eid = (s.requests[0] && s.requests[0].entityId) || null;
-    const iso = new Date(2026, 0, 5).toISOString();
-    const mk = (id, cat, owner, extra) => Object.assign({
-      id, title: cat + " item " + id, requestType: "New", contractType: "NDA / MoU / LOI",
-      requesterId: "u16", department: "Finance", channel: "internal", entityId: eid, risk: "medium", priority: "Medium",
-      category: cat, proposedCategory: cat, categoryConfirmed: true, owner,
-      status: "In Review", stage: "Legal Review", progress: 33,
-      requestDate: iso, tat: { days: 3, fixedAt: iso, dueAt: iso, basis: cat + " × Important" }, stageLog: [], activity: [],
-    }, extra);
-    s.requests.unshift(
-      mk("REQ-CON", "Contract Drafting / Review", "u5"),
-      mk("REQ-DIS", "Dispute / Litigation", "u17"),
-      mk("REQ-IPX", "IP", "u19"),
-      // approval round-trip case: owned by an associate, sitting at Negotiation
-      mk("REQ-APR", "Contract Drafting / Review", "u5", { status: "Negotiation", stage: "Negotiation", progress: 55,
-        stageLog: [{ stage: "Negotiation", enteredAt: iso, exitedAt: null, owner: "u5", ballWith: "counterparty" }] }),
-    );
-    s.notifs = [];
-    localStorage.setItem(k, JSON.stringify(s));
+const notifsFor = (page, uid) => page.evaluate(([k, u]) => {
+  const s = JSON.parse(localStorage.getItem(k) || "{}");
+  return (s.notifs || []).filter((n) => n.forUserId === u).map((n) => n.title);
+}, [H.STORE_KEY, uid]);
+
+const readReq = (page, id) => page.evaluate(([k, rid]) => {
+  const s = JSON.parse(localStorage.getItem(k) || "{}");
+  return (s.requests || []).find((r) => r.id === rid) || null;
+}, [H.STORE_KEY, id]);
+
+H.runSuite("m1-module-sorting — triaged work reaches its desk, decisions come back", async (ctx) => {
+  const { check } = ctx;
+  const sb = ctx.setSandbox(await H.startSandbox({
+    portEnv: "LEGALOS_MODSORT_PORT", portFallback: "4852", prefix: "legalos-ms-",
+  }));
+  const browser = ctx.setBrowser(await H.openBrowser());
+
+  const iso = new Date(2026, 0, 5).toISOString();
+  const mk = (id, cat, owner, extra) => Object.assign({
+    id, title: cat + " item " + id, requestType: "New", contractType: "NDA / MoU / LOI",
+    department: "Finance", channel: "internal", risk: "medium", priority: "Medium",
+    category: cat, proposedCategory: cat, categoryConfirmed: true, owner,
+    status: "In Review", stage: "Legal Review", progress: 33,
+    requestDate: iso, tat: { days: 3, fixedAt: iso, dueAt: iso, basis: cat + " × Important" },
+    stageLog: [], activity: [],
+  }, extra || {});
+
+  const seed = await H.loginApi(sb, H.USERS.director.email);
+  await H.seedRequest(sb, seed, mk("REQ-CON", "Contract Drafting / Review", H.USERS.commMember.id));
+  await H.seedRequest(sb, seed, mk("REQ-DIS", "Dispute / Litigation", H.USERS.litLead.id));
+  await H.seedRequest(sb, seed, mk("REQ-IPX", "IP", H.USERS.litMember.id));
+  await H.seedRequest(sb, seed, mk("REQ-APR", "Contract Drafting / Review", H.USERS.commMember.id, {
+    status: "Negotiation", stage: "Negotiation", progress: 55,
+    stageLog: [{ stage: "Negotiation", enteredAt: iso, exitedAt: null, owner: H.USERS.commMember.id, ballWith: "counterparty" }],
+  }));
+  check("four triaged requests are seeded across three desks", true, "contracts · dispute · IP · one for approval");
+
+  const seeModule = async (page, hash, want) => {
+    await H.goHash(page, hash);
+    return H.waitFor(page, (id) => (document.body.innerText.includes(id) ? document.body.innerText : null),
+      { arg: want, message: `${want} to appear on ${hash}`, timeout: 15000 }).catch(async () =>
+      page.evaluate(() => document.body.innerText));
+  };
+
+  /* --------------------------------------- (1) each request reaches its desk */
+  const lead = await H.asUser(browser, sb, H.USERS.commLead, ctx);
+  const cText = await seeModule(lead, "#/m/contracts", "REQ-CON");
+  check("the Contracts desk shows its intake section",
+    /From intake — assigned to this desk/i.test(cText));
+  check("the contract request appears on the Contracts register", /REQ-CON/.test(cText));
+  await lead.close();
+
+  const litLead = await H.asUser(browser, sb, H.USERS.litLead, ctx);
+  const dText = await seeModule(litLead, "#/m/cases", "REQ-DIS");
+  check("the dispute appears on the Case Handling register", /REQ-DIS/.test(dText));
+  const iText = await seeModule(litLead, "#/m/ip", "REQ-IPX");
+  check("the IP request appears on the IP Portfolio register", /REQ-IPX/.test(iText));
+  await litLead.close();
+
+  /* -------------------------------------------- (2) the approval round-trip */
+  const associate = await H.asUser(browser, sb, H.USERS.commMember, ctx);
+  await H.goHash(associate, "#/workspace/REQ-APR");
+  await H.waitFor(associate, () => (document.body.innerText.includes("REQ-APR") ? true : null),
+    { message: "the request to open for its owner" });
+  await associate.evaluate(() => {
+    const b = [...document.querySelectorAll("button")].find((x) => /advance to/i.test(x.textContent || ""));
+    if (b) b.click();
   });
-  await p.reload({ waitUntil: "networkidle2" }); await wait(300);
+  const sent = await H.waitFor(associate, ([k]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    const r = (s.requests || []).find((x) => x.id === "REQ-APR");
+    return r && r.stage === "Approval" ? r : null;
+  }, { arg: [H.STORE_KEY], message: "the request to reach Approval", timeout: 12000 }).catch(() => null);
+  check("the Associate can send their own work up for approval",
+    !!sent && sent.stage === "Approval", sent ? sent.stage : "it never advanced");
+  check("who asked for approval is recorded on the request",
+    !!sent && sent.approvalRequestedBy === H.USERS.commMember.id,
+    sent ? String(sent.approvalRequestedBy) : "not recorded");
+  await associate.close();
 
-  // (1) module registers show the triaged requests
-  await viewAs(p, "u3"); await go(p, "#/m/contracts");
-  let t = await body(p);
-  ok("Contracts desk shows the intake section", /From intake — assigned to this desk/i.test(t));
-  ok("the contract request appears on the Contracts register", /REQ-CON/.test(t));
-  await p.screenshot({ path: "proto15-contracts.png" });
+  const approver = await H.asUser(browser, sb, H.USERS.commLead, ctx);
+  await H.goHash(approver, "#/workspace/REQ-APR");
+  const aText = await H.waitFor(approver, () => (document.body.innerText.includes("REQ-APR") ? document.body.innerText : null),
+    { message: "the request to open for the Lead" });
+  check("the Lead is offered the approve action", /Approve & move to/i.test(aText));
+  await approver.evaluate(() => {
+    const b = [...document.querySelectorAll("button")].find((x) => /approve & move/i.test(x.textContent || ""));
+    if (b) b.click();
+  });
+  const approved = await H.waitFor(approver, ([k]) => {
+    const s = JSON.parse(localStorage.getItem(k) || "{}");
+    const r = (s.requests || []).find((x) => x.id === "REQ-APR");
+    return r && r.stage === "Signature" ? r : null;
+  }, { arg: [H.STORE_KEY], message: "the approval to move it to Signature", timeout: 12000 }).catch(() => null);
+  check("approval moves it to Signature", !!approved, approved ? approved.stage : "it did not move");
 
-  await viewAs(p, "u6"); await go(p, "#/m/cases");
-  t = await body(p);
-  ok("the dispute appears on the Case Handling register", /REQ-DIS/.test(t));
-
-  await viewAs(p, "u6"); await go(p, "#/m/ip");
-  t = await body(p);
-  ok("the IP request appears on the IP Portfolio register", /REQ-IPX/.test(t));
-
-  // (2) approval round-trip
-  await viewAs(p, "u5"); await go(p, "#/workspace/REQ-APR");
-  await clickByText(p, ".spine button", "Advance to"); await wait(700); // Negotiation → Approval
-  let r = await rec(p, "REQ-APR");
-  ok("associate sent it to Approval (approvalRequestedBy recorded)", r && r.stage === "Approval" && r.approvalRequestedBy === "u5");
-  // now the lead approves it
-  await viewAs(p, "u3"); await go(p, "#/workspace/REQ-APR");
-  ok("lead sees the approve action", /Approve & move to/i.test(await body(p)));
-  await clickByText(p, ".spine button", "Approve & move"); await wait(700);
-  r = await rec(p, "REQ-APR");
-  ok("approval moved it to Signature", r && r.stage === "Signature");
-  const n5 = await notifs(p, "u5");
-  ok("the approval decision goes BACK to whoever asked (u5 notified)", n5.some((x) => /approved/i.test(x.title)));
-  console.log("   u5 notifs:", n5.map((x) => x.title).join(" | "));
-
-  console.log("console errors:", errs.length, errs.slice(0, 8).join(" | "));
-  const pass = results.filter(Boolean).length;
-  console.log(`\n==== ${pass}/${results.length} checks passed ====`);
-  await b.close();
-  process.exit(pass === results.length && errs.length === 0 ? 0 : 2);
-})().catch((e) => { console.error("FATAL", e.message); process.exit(1); });
+  const backToAsker = await notifsFor(approver, H.USERS.commMember.id);
+  check("the decision goes BACK to whoever asked for it",
+    backToAsker.some((t) => /approved/i.test(t || "")),
+    backToAsker.length ? backToAsker.join(" | ").slice(0, 90) : "nobody was told");
+});

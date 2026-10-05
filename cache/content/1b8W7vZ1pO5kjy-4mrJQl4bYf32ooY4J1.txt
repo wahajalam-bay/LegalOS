@@ -1,0 +1,443 @@
+A member firm of Ernst & Young Global Limited
+
+
+
+
+
+
+
+
+
+
+A member firm of Ernst & Young Global Limited
+
+A member firm of Ernst & Young Global Limited
+
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED
+UNCONSOLIDATED STATEMENT OF FINANCIAL POSITION
+AS AT 30 JUNE 2023
+ASSETS
+
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+NON-CURRENT ASSETS
+Investment in subsidiaries
+Long-term loans - unsecured
+
+5
+6
+
+18,930
+1,721,898,780
+1,721,917,710
+
+18,930
+1,693,030,626
+1,693,049,556
+
+CURRENT ASSETS
+Advanced taxation
+Interest receivable on long term loans
+Advances and other receivables
+Cash and bank balances
+
+6
+7
+8
+
+14,883,493
+733,462,355
+132,385,509
+545,793,042
+1,426,524,399
+
+3,718,059
+435,963,758
+15,728,221
+512,613,430
+968,023,468
+
+3,148,442,109
+
+2,661,073,024
+
+1,500,000,000
+
+1,500,000,000
+
+1,370,216,454
+44,614,284
+25,000,060
+
+1,370,073,750
+44,614,284
+142,704
+137,944,358
+
+1,439,830,798
+
+1,552,775,096
+
+TOTAL ASSETS
+EQUITY AND LIABILITIES
+SHARE CAPITAL AND RESERVES
+Authorized share capital
+150,000,000 (2022: 150,000,000) ordinary shares
+of Rs. 10/- each
+Issued, subscribed and paid up share capital
+Share premium
+Share deposit money
+Accumulated profits
+
+9
+10
+11
+
+TOTAL EQUITY
+NON-CURRENT LIABILITIES
+Deferred taxation
+
+12
+
+23,181,270
+
+60,855,274
+
+CURRENT LIABILITIES
+Loan from the Parent Company
+Short-term loan
+Accrued markup on loan from the Parent Company
+Other payables and accrued liabilities
+
+13
+14
+13
+15
+
+1,401,769,911
+128,000,000
+151,505,714
+4,154,416
+1,685,430,041
+
+1,002,749,758
+40,731,144
+3,961,752
+1,047,442,654
+
+3,148,442,109
+
+2,661,073,024
+
+TOTAL EQUITY AND LIABILITIES
+CONTINGENCIES AND COMMITMENTS
+
+16
+
+The annexed notes from 1 to 27 form an integral part of these unconsolidated financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 1 of 24
+
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED
+UNCONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME
+FOR THE YEAR ENDED 30 JUNE 2023
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+Administrative expenses
+
+17
+
+(1,932,314)
+
+(2,732,562)
+
+Other operating expenses
+
+18
+
+(426,135,940)
+
+(221,493,903)
+
+(428,068,254)
+
+(224,226,465)
+
+Loss from operations
+Finance costs
+
+19
+
+(83,708,444)
+
+(28,530,473)
+
+Other income
+
+20
+
+359,256,673
+
+236,870,187
+
+(152,520,025)
+
+(15,886,751)
+
+39,575,727
+
+(25,937,019)
+
+(112,944,298)
+
+(41,823,770)
+
+Loss before taxation
+Taxation
+
+21
+
+Loss for the year
+Other comprehensive income
+
+-
+
+Total comprehensive loss for the year
+
+(112,944,298)
+
+(41,823,770)
+
+The annexed notes from 1 to 27 form an integral part of these unconsolidated financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 2 of 24
+
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED
+UNCONSOLIDATED STATEMENT OF CASH FLOWS
+FOR THE YEAR ENDED 30 JUNE 2023
+OPERATING ACTIVITIES
+
+Note
+
+2023
+Rupees
+
+2022
+Rupees
+
+Loss before taxation
+
+(152,520,025)
+
+(15,886,751)
+
+(359,256,673)
+83,708,444
+426,086,279
+150,538,050
+
+(190,172,291)
+(36,353)
+(46,661,543)
+28,530,473
+221,417,421
+13,077,707
+
+(1,981,975)
+
+(2,809,044)
+
+(116,657,276)
+
+(10,138,824)
+
+Cash generated from / (used in) operations
+
+192,664
+(116,464,612)
+(118,446,587)
+
+2,570,310
+(7,568,514)
+(10,377,558)
+
+Income tax paid
+Net cash flows generated from / (used in) operating activities
+
+(9,263,719)
+(127,710,306)
+
+(4,181,877)
+(14,559,435)
+
+(106,500,000)
+77,631,846
+61,758,072
+32,889,918
+
+(3,010)
+(434,841,290)
+275,955,207
+27,879,143
+(131,009,950)
+
+128,000,000
+128,000,000
+
+165,600,000
+165,600,000
+
+33,179,612
+512,613,430
+545,793,042
+
+20,030,615
+492,582,815
+512,613,430
+
+Adjustments to reconcile loss before tax to net cash flows:
+Interest income
+Payables written back
+Reversal for discounting adjustment for recognition of loan at fair value
+Finance costs
+Unrealized foreign exchange loss
+
+20
+
+19
+18
+
+Operating loss before working capital changes
+Working capital changes:
+Increase in current assets:
+Advances and other receivables
+Increase in current liabilities:
+Other payables and accrued liabilities
+
+INVESTING ACTIVITIES
+Investment in subsidiaries
+Long-term loans given during the year
+Long-term loans realized during the year
+Interest income received
+Net cash generated from / (used in) investing activities
+FINANCING ACTIVITIES
+Proceeds from loan received from associated entity
+Proceeds from loan received from Parent Company
+Net cash flows generated from financing activities
+Net increase in cash and cash equivalents
+Cash and cash equivalents at beginning of the year
+Cash and cash equivalents at the end of the year
+
+13
+
+8
+
+The annexed notes from 1 to 27 form an integral part of these unconsolidated financial statements.
+
+_______________________
+CHIEF EXECUTIVE
+
+______________________
+DIRECTOR
+
+Page 4 of 24
+
+ZAMEEN VENTURE ONE (PRIVATE) LIMITED
+NOTES TO THE FINANCIAL STATEMENTS
+FOR THE YEAR ENDED 30 JUNE 2023
+1
+
+COMPANY AND ITS OPERATIONS
+
+1.1
+
+Corporate and General Information
+Zameen Venture One (Private) Limited (''the Company") was incorporated on 11 December 2018 as a Private Limited
+Company under the Companies Act, 2017. The Company's principal activity is marketing and development of all type of
+real estate business in Pakistan including developed or undeveloped land, housing or commercial projects including
+commercial markets or multistore building (for commercial or residential purposes), shopping centres, restaurants,
+hotels, recreational facilities, sell and purchase of land and building etc. The registered office of the Company is
+situated at Pearl One, 94-B/I, M.M. Alam road Gulberg III, Lahore. The Company is a subsidiary of Dubizzle Project
+Holdings Limited (formerly known as EMPG Projects Holding Limited) ("the Parent Company"), a Company
+incorporated in United Arab Emirates (UAE) and Dubizzle Group Holdings Limited (formerly known as EMPG Holdings
+Limited), the ultimate parent company.
+These unconsolidated financials statements are the separate financial statements of the Company in which investment
+in the subsidiaries as disclosed in Note 5 have been accounted for at cost less accumulated impairment losses, if any.
+Consolidated financial statements are presented separately.
+
+2
+
+BASIS OF PREPARATION
+
+2.1
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting standards as
+applicable in Pakistan. The accounting and reporting standards applicable in Pakistan comprise of:
+- International Financial Reporting Standards (IFRS Standards) issued by the International Accounting
+Board (IASB) as notified under the Companies Act, 2017; and
+- Provisions of and directives issued under the Companies Act, 2017.
+
+Standards
+
+Where provisions of and directives issued under the Companies Act, 2017 differ from the IFRS standards, the
+provisions of and directives of the Companies Act, 2017 have been followed.
+2.2
+
+Basis of measurement
+These financial statements have been prepared under the historical cost convention unless otherwise stated.
+
+2.3
+
+Functional and presentation currency
+These financial statements are presented in Pak Rupees, which is the Company’s functional currency. All figures have
+been rounded off to the nearest Rupee, unless otherwise stated.
+
+2.4
+
+STANDARDS, INTERPRETATIONS AND AMENDMENTS TO PUBLISHED APPROVED ACCOUNTING STANDARDS
+
+2.4.1 Standards, amendments to published standards and interpretations that are effective in the current year
+The accounting policies adopted in the preparation of these financial statements are consistent with those of the
+previous financial year, except for following amendments to accounting standards which are effective for annual
+periods beginning on or after July 01, 2022 (unless otherwise stated).
+IFRS 3
+
+Business Combinations – The amendment updates a reference in IFRS 3 to the Conceptual Framework
+for Financial Reporting without changing the accounting requirements for business combinations.
+The amendments add an exception to the recognition principle of IFRS 3 Business Combinations to avoid
+the issue of potential ‘day 2’ gains or losses arising for liabilities and contingent liabilities that would be
+within the scope of IAS 37 Provisions, Contingent Liabilities and Contingent Assets or IFRIC 21 Levies, if
+incurred separately. The exception requires entities to apply the criteria in IAS 37 or IFRIC 21, respectively,
+instead of the Conceptual Framework, to determine whether a present obligation exists at the acquisition
+date. The amendments also add a new paragraph to IFRS 3 to clarify that contingent assets do not qualify
+for recognition at the acquisition date. In accordance with the transitional provisions, the Company applies
+the amendments prospectively, i.e., to business combinations occurring after the beginning of the annual
+reporting period in which it first applies the amendments (the date of initial application).
+These amendments had no impact on the separate financial statements of the Company.
+
+Page 5 of 24

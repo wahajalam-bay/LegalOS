@@ -1,0 +1,321 @@
+{
+ "families": {
+  "contracts": {
+   "canonical": 1302,
+   "native": 0,
+   "absorbedSourceRows": 2632,
+   "keptApart": 72,
+   "qualityStates": {
+    "COMPLETE": 1220,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 63,
+    "COMPLETE_WITH_SOURCE_GAP": 0,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 18,
+    "SOURCE_VALUE_NOT_EVIDENCED": 1,
+    "LEGALOS_NATIVE": 0
+   },
+   "conflicts": {
+    "groups": 81,
+    "fieldConflicts": 229,
+    "openFields": 28,
+    "byState": {
+     "RESOLVED_BY_SOURCE_PRECEDENCE": 61,
+     "RESOLVED_LATEST_AMENDMENT": 1,
+     "RESOLVED_SUCCESSIVE_TERM": 1,
+     "UNRESOLVED": 18
+    }
+   }
+  },
+  "litigation": {
+   "canonical": 359,
+   "native": 1,
+   "absorbedSourceRows": 53,
+   "keptApart": 0,
+   "qualityStates": {
+    "COMPLETE": 296,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 34,
+    "COMPLETE_WITH_SOURCE_GAP": 18,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 8,
+    "SOURCE_VALUE_NOT_EVIDENCED": 2,
+    "LEGALOS_NATIVE": 1
+   },
+   "conflicts": {
+    "groups": 40,
+    "fieldConflicts": 101,
+    "openFields": 18,
+    "byState": {
+     "RESOLVED_BY_SOURCE_PRECEDENCE": 34,
+     "UNRESOLVED": 6
+    }
+   }
+  },
+  "notices": {
+   "canonical": 255,
+   "native": 0,
+   "absorbedSourceRows": 5,
+   "keptApart": 0,
+   "qualityStates": {
+    "COMPLETE": 219,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 0,
+    "COMPLETE_WITH_SOURCE_GAP": 35,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 0,
+    "SOURCE_VALUE_NOT_EVIDENCED": 1,
+    "LEGALOS_NATIVE": 0
+   }
+  },
+  "licences": {
+   "canonical": 7,
+   "native": 0,
+   "absorbedSourceRows": 0,
+   "keptApart": 0,
+   "qualityStates": {
+    "COMPLETE": 7,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 0,
+    "COMPLETE_WITH_SOURCE_GAP": 0,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 0,
+    "SOURCE_VALUE_NOT_EVIDENCED": 0,
+    "LEGALOS_NATIVE": 0
+   }
+  },
+  "loans": {
+   "canonical": 192,
+   "native": 0,
+   "absorbedSourceRows": 0,
+   "keptApart": 0,
+   "qualityStates": {
+    "COMPLETE": 192,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 0,
+    "COMPLETE_WITH_SOURCE_GAP": 0,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 0,
+    "SOURCE_VALUE_NOT_EVIDENCED": 0,
+    "LEGALOS_NATIVE": 0
+   }
+  },
+  "resolutions": {
+   "canonical": 954,
+   "native": 0,
+   "absorbedSourceRows": 11,
+   "keptApart": 0,
+   "qualityStates": {
+    "COMPLETE": 953,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 0,
+    "COMPLETE_WITH_SOURCE_GAP": 1,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 0,
+    "SOURCE_VALUE_NOT_EVIDENCED": 0,
+    "LEGALOS_NATIVE": 0
+   }
+  },
+  "properties": {
+   "canonical": 38,
+   "native": 0,
+   "absorbedSourceRows": 0,
+   "keptApart": 0,
+   "qualityStates": {
+    "COMPLETE": 38,
+    "RESOLVED_BY_SOURCE_PRECEDENCE": 0,
+    "COMPLETE_WITH_SOURCE_GAP": 0,
+    "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 0,
+    "SOURCE_VALUE_NOT_EVIDENCED": 0,
+    "LEGALOS_NATIVE": 0
+   }
+  }
+ },
+ "estate": {
+  "canonical": 3107,
+  "qualityStates": {
+   "COMPLETE": 2925,
+   "RESOLVED_BY_SOURCE_PRECEDENCE": 97,
+   "COMPLETE_WITH_SOURCE_GAP": 54,
+   "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION": 26,
+   "SOURCE_VALUE_NOT_EVIDENCED": 4,
+   "LEGALOS_NATIVE": 1
+  },
+  "humanQueue": [
+   {
+    "family": "contracts",
+    "id": "CTR-1F59VNN",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on start, end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59VQ5",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on department"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59WEC",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59X3B",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on firstParty"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59XQI",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59XQL",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on department"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59XTY",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on firstParty"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59XUT",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on firstParty, value, firstParty"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59XY6",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59XYC",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on city"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59YNA",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on title"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59YO8",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on value"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F59ZD2",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on city, city"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F5A020",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F5A03U",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on end, firstParty, end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1F5A0QZ",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on start, end, firstParty"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-0MV0AJQ",
+    "state": "SOURCE_VALUE_NOT_EVIDENCED",
+    "reason": "value not evidenced in source: title"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1QZ6TG2",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on end"
+   },
+   {
+    "family": "contracts",
+    "id": "CTR-1CRU46G",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on start, end, counterParty"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-1RGPUFN",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on proceedings, lastHearing, outcome"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-1RGPUGG",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on proceedings, lastHearing, outcome"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-1RGPUKQ",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on proceedings, lastHearing, nextHearing, outcome"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-1RGPUML",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on caseNo"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-1RGPV6E",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "5 candidate identities in the estate"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-036981C",
+    "state": "SOURCE_VALUE_NOT_EVIDENCED",
+    "reason": "identity not evidenced in source"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-036981F",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on caseNo, counterparty, project, claimAmount, status, entity"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-0RCTV5Y",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "3 candidate identities in the estate"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-0RCTV6S",
+    "state": "SOURCE_VALUE_NOT_EVIDENCED",
+    "reason": "identity not evidenced in source"
+   },
+   {
+    "family": "litigation",
+    "id": "LIT-1SWLLDQ",
+    "state": "SOURCE_AMBIGUITY_REQUIRES_HUMAN_CONFIRMATION",
+    "reason": "conflicting values on caseNo"
+   },
+   {
+    "family": "notices",
+    "id": "NTC-0NG4SRW",
+    "state": "SOURCE_VALUE_NOT_EVIDENCED",
+    "reason": "value not evidenced in source: recipient"
+   }
+  ],
+  "documentStates": {
+   "DOCUMENTS_LINKED": 2094,
+   "DOCUMENT_CITED_NOT_IN_ESTATE": 712,
+   "NO_DOCUMENT_CITED_IN_SOURCE": 300,
+   "NATIVE_NO_DOCUMENT_EXPECTED": 1
+  }
+ }
+}

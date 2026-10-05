@@ -1,0 +1,204 @@
+ZAMEEN DEVELOPMENTS (PRIVATE) LIMITED AND ITS SUBSIDIARIES
+NOTES TO THE FINANCIAL STATEMENTS
+FOR THE YEAR ENDED 30 JUNE 2022
+1
+
+THE GROUP AND ITS OPERATIONS
+The group consists of:
+Holding Company:
+Zameen Developments (Private) Limited (''the Holding Company") was incorporated on 31 May 2018 as a Private
+Limited Company under the Companies Act, 2017 ("the Act"). The Company's principal activity is to provide
+consultancy services including project management, architectural and design and support services on construction
+projects. The registered office of the Company is situated at 63-B, Main Boulevard, Gulberg II, Lahore. The
+Company is a subsidiary of EMPG Property Holdings Limited ("the ultimate Parent Company") incorporated in
+Pakistan. The ultimate parent of the company is EMPG Holdings Limited, a Company incorporated in United Arab
+Emirates.
+Subsidiaries:
+Deevar Developers (Private) Limited (''the Subsidary Company") was incorporated on 18 April 2017 as a Private
+Limited Company under the Companies Act, 2017. The Company's principal activity is to engage in the business of
+development of all types of real estate including commercial markets and multi stories building, shopping centers
+etc. The registered office of the Company is situated at Pearl 1, 94-B/I, M.M. Alam road Gulberg III, Lahore. The
+Company is wholly owned subsidiary of Zameen Developments (Private) Limited (''the Holding Company"), a
+Company incorporated in Pakistan.
+Zameen Delta (Private) Limited Company (''the Subsidary Company") was incorporated on 18 February 2019 as a
+Private Limited Company under ("the Act"). The Company's principal activity is to engage in the business of
+development of all types of real estate including commercial markets and multi stories building, shopping centers
+etc. The registered office of the Company is situated at Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore.
+The Company is a subsidiary of Zameen Developments (Private) Limited (''the Holding Company"), a Company
+incorporated in Pakistan.
+Zameen Medallion (Private) Limited Company ("the Company") was incorporated on 25 March 2019 as a Private
+Limited Company under the Companies Act, 2017. The Company's principal activity is to provide IT and IT enabled
+business process outsourcing services to various businesses in Pakistan. The registered office of the Company is
+situated at Pearl One, 94-B/I, M.M. Alam Road Gulberg III, Lahore. The holding company has disposed of its
+investment on 08 November 2021 (Equity interest : 0% (2022), 100% (2021).
+EMPG Labs (SMC-Private) Limited (''the Company") was incorporated on 11 March 2021 as a private limited
+company under the Companies Act, 2017. The principal activities of the Company is to establish and run data
+processing centres, computer centres, software development centres, offices and to provide consultancy and data
+processing software development services and to impart training of electronic data processing computer software
+and hardware to customer and others to buy, sell, export, import of software, hardware and establishment of
+incidental infrastructure facilities (IT services). The holding company has disposed of its investment on 21 February
+2022 (Equity interest : 0% (2022), 100% (2021).
+
+2
+
+BASIS OF PREPARATION
+
+2.1
+
+Basis of consolidation
+Subsidiaries are all entities over which the Group has control. The Group controls an entity when the group is
+exposed to, or has rights to, variable returns from its involvement with the entity and has the ability to affect those
+returns through its power to direct the activities of the entity. Subsidiaries are fully consolidated from the date on
+which control is transferred to the Group. The Group ceases consolidation from the date when control is lost.
+Intercompany transactions, balances and unrealised gains on transactions between group companies are
+eliminated. Unrealised losses are also eliminated unless the transaction provides evidence of an impairment of the
+transferred asset. Accounting policies of subsidiaries have been changed where necessary to ensure consistency
+with the policies adopted by the Group.
+
+Page 5 of 33
+
+ZAMEEN DEVELOPMENTS (PRIVATE) LIMITED AND ITS SUBSIDIARIES
+2.2
+
+Statement of compliance
+These financial statements have been prepared in accordance with the accounting and reporting standards as applicable
+in Pakistan. The accounting and reporting standards applicable in Pakistan comprise of:
+- International Financial Reporting Standards (IFRS Standards) issued by the International Accounting Standards Board
+(IASB) as notified under the Companies Act, 2017; and
+- Provisions of and directives issued under the Companies Act, 2017.
+Where provisions of and directives issued under the Companies Act, 2017 differ from the IFRS standards, the provisions
+of and directives of the Companies Act, 2017 have been followed.
+
+2.3
+
+Basis of measurement
+These financial statements have been prepared under the historical cost convention unless otherwise stated. In these
+financial statements, except for the amounts reflected in the statement of cash flows, all transactions have been
+accounted for on accrual basis.
+
+2.4
+
+Functional and presentation currency
+These consolidated financial statements are presented in Pakistani Rupees, which is the Group’s functional currency. All
+figures have been rounded off to the nearest Rupee, unless otherwise stated.
+
+2.5
+
+Standards, interpretations and amendments to published accounting standards
+The accounting policies adopted are consistent with those of the previous financial period, except for the following new
+and amended standards and interpretations effective for annual period beginning on January 01, 2021, as listed below:
+
+2.5.1
+
+New Standards, Interpretations and Amendments effective in the reporting period
+Standard or Interpretation
+-
+
+Covid-19-Related Rent Concessions beyond 30 June 2021 – Amendment to IFRS 16
+The amendment to IFRS 16 will provide relief to lessees for accounting for rent concessions from lessors
+specifically arising from the covid-19 pandemic. While lessees that elect to apply the practical expedient do not
+need to assess whether a concession constitutes a modification, lessees still need to evaluate the appropriate
+accounting for each concession as the terms of the concession granted may vary.
+The Group has not received any Covid-19-related rent concessions, therefore has no impact on the financial
+statements of the Group.
+
+-
+
+Interest Rate Benchmark Reform – Phase 2: Amendments to IFRS 9, IAS 39, IFRS 7, IFRS 4 and IFRS 16
+
+The amendments provide temporary reliefs which address the financial reporting effects when an interbank the
+following practical expedients:
+-
+
+To require contractual changes, or changes to cash flows that are directly required by the reform, to
+be treated as changes to a floating interest rate, equivalent to a movement in a market rate of interest.
+
+-
+
+To permit changes required by KIBOR reform to be made to hedge designations and hedge.
+
+-
+
+To provide temporary relief to entities from having to meet the separately identifiable requirement
+when an RFR instrument is designated as a hedge of a risk component.
+These amendments had no impact on the financial statements of the Group. The Group intends to
+use the practical expedients in future periods if they become applicable.
+
+2.4.2
+
+Standards, interpretations and amendments to published approved accounting standards that are not yet
+effective:
+The standards and interpretations with respect to the accounting and reporting standards as applicable in Pakistan that
+are issued, but not yet effective, up to the date of issuance of the Group consolidated financial statements are disclosed
+below. The Group intends to adopt these standards, if applicable, when they become effective.
+
+Page 6 of 33
+
+ZAMEEN DEVELOPMENTS (PRIVATE) LIMITED AND ITS SUBSIDIARIES
+Standard or Interpretation
+-
+
+Classification of Liabilities as Current or Non-current - Amendments to IAS 1
+In January 2020, the IASB issued amendments to paragraphs 69 to 76 of IAS 1 to specify the requirements for
+classifying liabilities as current or non-current. The amendments clarify:
+
+-
+
+What is meant by a right to defer settlement.
+
+-
+
+That classification is unaffected by the likelihood that an entity will exercise its deferral right.
+
+-
+
+That only if an embedded derivative in a convertible liability is itself an equity instrument would the
+terms of a liability not impact its classification.
+The amendments are effective for annual reporting periods beginning on or after 1 January 2023 and
+must be applied retrospectively. The Group expects that these amendments will have no impact on
+financial statements as their current practice is already in line with the proposed amendments.
+
+-
+
+Reference to the Conceptual Framework - Amendments to IFRS 3
+In May 2020, the IASB issued Amendments to IFRS 3 Business Combinations - Reference to the Conceptual
+Framework. The amendments are intended to replace a reference to the Framework for the Preparation and
+Presentation of Financial Statements, issued in 1989, with a reference to the Conceptual Framework for
+Financial Reporting issued in March 2018 without significantly changing its requirements.
+The Board also added an exception to the recognition principle of IFRS 3 to avoid the issue of potential ‘day 2’
+gains or losses arising for liabilities and contingent liabilities that would be within the scope of IAS 37 or IFRIC 21
+Levies, if incurred separately.
+At the same time, the Board decided to clarify existing guidance in IFRS 3 for contingent assets that would not
+be affected by replacing the reference to the framework for the preparation and presentation of Financial
+Statements.
+The amendments are effective for annual reporting periods beginning on or after 1 January 2022 and are applied
+prospectively. The amendments are not expected to have a material impact on the financial statements of the
+Group.
+
+-
+
+Property, Plant and Equipment: Proceeds before Intended Use - Amendments to IAS 16
+In May 2020, the IASB issued Property, Plant and Equipment — Proceeds before Intended Use, which prohibits
+entities from deducting from the cost of an item of property, plant and equipment, any proceeds from selling
+items produced while bringing that asset to the location and condition necessary for it to be capable of operating
+in the manner intended by management. Instead, an entity recognizes the proceeds from selling such items, and
+the costs of producing those items, in the statement of profit or loss.
+The amendment is effective for annual reporting periods beginning on or after 1 January 2022 and must be
+applied retrospectively to items of property, plant and equipment made available for use on or after the beginning
+of the earliest period presented when the entity first applies the amendment. The amendments are not expected
+to have a material impact on the financial statements of the Group.
+
+-
+
+Onerous Contracts – Costs of Fulfilling a Contract – Amendments to IAS 37
+In May 2020, the IASB issued amendments to IAS 37 to specify which costs an entity needs to include when
+assessing whether a contract is onerous or loss-making.
+The amendments apply a “directly related cost approach”. The costs that relate directly to a contract to provide
+goods or services include both incremental costs and an allocation of costs directly related to contract activities.
+General and administrative costs do not relate directly to a contract and are excluded unless they are explicitly
+chargeable to the counterparty under the contract.
+The amendments are effective for annual reporting periods beginning on or after 1 January 2022. Considering
+the nature of operation of the Group, these amendments are not expected to have a material impact on the
+financial statements of the Group.
+
+Page 7 of 33

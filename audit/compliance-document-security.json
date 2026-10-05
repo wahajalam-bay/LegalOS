@@ -1,0 +1,12 @@
+{
+ "builtAt": "2026-09-23T06:04:33.919Z",
+ "documents": 4974,
+ "byGroup": {
+  "commercial": 317,
+  "compliance": 4952,
+  "litigation": 0,
+  "requester": 0
+ },
+ "unscoped": 0,
+ "crossFamily": []
+}

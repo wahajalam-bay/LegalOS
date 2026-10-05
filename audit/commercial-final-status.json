@@ -1,0 +1,474 @@
+{
+ "generatedAt": "2026-09-21T12:42:57.033Z",
+ "totals": {
+  "files": 1303
+ },
+ "buckets": {
+  "AUTO-RESOLVED": 1072,
+  "UNREADABLE BUT SAFELY CLASSIFIED": 145,
+  "TEMPLATE": 36,
+  "PROJECT-ONLY / HISTORICAL": 37,
+  "REFERENCE": 11,
+  "NON-COMMERCIAL CONTAMINATION": 2
+ },
+ "gates": {
+  "WRONG_PROJECT_ATTACHMENTS": 0,
+  "PROJECTS_WITH_NO_DOCUMENTS": 0,
+  "PROJECT_ONLY_RECORDS_MALFORMED": 0,
+  "PROJECT_ONLY_DOCS_UNPLACED": 0,
+  "ARITHMETIC_RECONCILES": 0,
+  "FILES_WITHOUT_DISPOSITION": 0,
+  "EXECUTED_DOCS_LEFT_AS_TEMPLATE": 0,
+  "WEAK_MULTI_RECORD_LINKS": 0,
+  "HUMAN_REVIEW_ITEMS_WITHOUT_EVIDENCE": 0,
+  "HUMAN_REVIEW_ITEMS_WITHOUT_DRIVE_PATH": 0
+ },
+ "movedAttachments": [
+  {
+   "fileId": "1KJWHX7cTOr7gYonOCXR81Y8APcO2qH6J",
+   "filename": "20220118 PRIV Downtown Rumanza_Agreement to Sell for Hotel Apartments.docx",
+   "from": "Zameen Ace Mall",
+   "to": "Downtown Rumanza",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Downtown Rumanza"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1bxusfdTeSQIlhUR4rqB8r6zrcQ21GYXo",
+   "filename": "20220118 PRIV Downtown Rumanza_Leaseback Agreement for Hotel Apartments.docx",
+   "from": "Zameen Ace Mall",
+   "to": "Downtown Rumanza",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Downtown Rumanza"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1072CD7yPdXToWDxHy5fpgZpC7WnXQBf4",
+   "filename": "240912-Agreement to Sell-Zameen Jade-Guaranteed Rental.v.1.docx",
+   "from": "Zameen Ace Mall",
+   "to": "Zameen Jade",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Jade"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1Wp6dWr0vkNCYm2MDFniv7-FNXvWFRvth",
+   "filename": "241216-Zameen Developments-Agreement to Sell-Zameen Jade (without GR).pdf",
+   "from": "Zameen Arx",
+   "to": "Zameen Jade",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Jade"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1N1uCb_ukxPrD_mKcjede7ziYwsKaTJUz",
+   "filename": "Zameen Aurum - CVT (1).pdf",
+   "from": "Zameen Ace Mall",
+   "to": "Zameen Aurum",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Aurum",
+    "Zameen Aurum",
+    "Zameen Aurum"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1hL2C1_t3F2gWx_xEiqjdBElQgAXgxENt",
+   "filename": "Zameen Aurum - 236K (1).pdf",
+   "from": "Zameen Ace Mall",
+   "to": "Zameen Aurum",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Aurum",
+    "Zameen Aurum",
+    "Zameen Aurum"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1Ycyur4V56X9rYmqpgfp-rKMNLocSQnFp",
+   "filename": "Zameen Aurum - Property Tax (1).pdf",
+   "from": "Zameen Ace Mall",
+   "to": "Zameen Aurum",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Aurum",
+    "Zameen Aurum",
+    "Zameen Aurum"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1cND7s8xDAPFksmX4jx33q0IrDP-cWuMr",
+   "filename": "Zameen Aurum - TMA Tax.jfif",
+   "from": "Zameen Ace Mall",
+   "to": "Zameen Aurum",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Aurum",
+    "Zameen Aurum",
+    "Zameen Aurum"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1Cly-DzwGrzmThw9gdNCkOPCa861oi2EI",
+   "filename": "Aurum Area Summary.pdf",
+   "from": "Zameen Quadrangle",
+   "to": "Zameen Aurum",
+   "filenameEvidence": false,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Aurum",
+    "Zameen Aurum",
+    "Zameen Aurum"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1adnJBO8HZ24yvRl29I-_EhHSbgeieohD",
+   "filename": "AgreementforSupplyofReady-MixConcrete_ZameenQuadrangle_20210616.pdf",
+   "from": "PPA_s",
+   "to": "Zameen Quadrangle",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Agreement for supply of Ready-Mix Concrete",
+    "Zameen Quadrangle",
+    "Zameen Quadrangle",
+    "Zameen Quadrangle"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1i40dEge7tmlnmDzBDtdBx4SC_Mln1992",
+   "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+   "from": "PPA_s",
+   "to": "Zameen Vault",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Vault",
+    "Zameen Vault",
+    "Zameen Vault"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1sR1dyfzkpOT6MXlb3dDdILRsY-aVlHWB",
+   "filename": "Project Sales agreement Zameen Vault_20250508.pdf",
+   "from": "PPA_s",
+   "to": "Zameen Vault",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Vault",
+    "Zameen Vault",
+    "Zameen Vault"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  },
+  {
+   "fileId": "1uqDgHSZ506e-cHGRbwnh1i6cBtLDjWWf",
+   "filename": "IT Services agreement Zameen Vault_20250508.pdf",
+   "from": "PPA_s",
+   "to": "Zameen Vault",
+   "filenameEvidence": true,
+   "contentEvidence": true,
+   "nowHeldBy": [
+    "Zameen Vault"
+   ],
+   "onTarget": true,
+   "stillOnSource": false,
+   "landedRight": true,
+   "driveFolderUnchanged": true,
+   "pageEvidence": true,
+   "ok": true
+  }
+ ],
+ "projectAudit": [
+  {
+   "project": "Zameen Opal",
+   "rows": 6,
+   "documents": 96,
+   "strong": 96,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Jade",
+   "rows": 1,
+   "documents": 53,
+   "strong": 52,
+   "weak": 1,
+   "templatesPresent": 0,
+   "crossProject": 3,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Quadrangle",
+   "rows": 3,
+   "documents": 49,
+   "strong": 49,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Downtown Rumanza",
+   "rows": 1,
+   "documents": 42,
+   "strong": 42,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 1,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Ace Homes",
+   "rows": 2,
+   "documents": 41,
+   "strong": 41,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Ace Mall",
+   "rows": 4,
+   "documents": 41,
+   "strong": 39,
+   "weak": 2,
+   "templatesPresent": 1,
+   "crossProject": 1,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Vault",
+   "rows": 1,
+   "documents": 41,
+   "strong": 24,
+   "weak": 17,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Mall 35",
+   "rows": 6,
+   "documents": 39,
+   "strong": 27,
+   "weak": 12,
+   "templatesPresent": 2,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Golf View Rumanza",
+   "rows": 4,
+   "documents": 36,
+   "strong": 35,
+   "weak": 1,
+   "templatesPresent": 0,
+   "crossProject": 2,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Aurum",
+   "rows": 3,
+   "documents": 35,
+   "strong": 33,
+   "weak": 2,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Neo",
+   "rows": 1,
+   "documents": 35,
+   "strong": 35,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 1,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Arx",
+   "rows": 1,
+   "documents": 31,
+   "strong": 31,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Grande Palladium",
+   "rows": 1,
+   "documents": 18,
+   "strong": 14,
+   "weak": 4,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Zameen Pheonix",
+   "rows": 1,
+   "documents": 16,
+   "strong": 16,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Bahria Garden City",
+   "rows": 1,
+   "documents": 9,
+   "strong": 9,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Boulevard Heights",
+   "rows": 1,
+   "documents": 7,
+   "strong": 6,
+   "weak": 1,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  },
+  {
+   "project": "Verde Residencies",
+   "rows": 1,
+   "documents": 6,
+   "strong": 6,
+   "weak": 0,
+   "templatesPresent": 0,
+   "crossProject": 0,
+   "inReview": 0
+  }
+ ],
+ "projectOnly": [
+  {
+   "id": "PRJ-SRC-ZAMEENEON",
+   "displayName": "Zameen Eon",
+   "sourceFolder": "Zameen Eon",
+   "hasStableId": true,
+   "documentsInDrive": 11,
+   "documentsRecorded": 11,
+   "entity": null,
+   "quality": "SOURCE_NOT_IN_TRACKER",
+   "countsAgree": true
+  },
+  {
+   "id": "PRJ-SRC-ZAMEENHIVE",
+   "displayName": "Zameen Hive",
+   "sourceFolder": "Zameen Hive",
+   "hasStableId": true,
+   "documentsInDrive": 4,
+   "documentsRecorded": 4,
+   "entity": null,
+   "quality": "SOURCE_NOT_IN_TRACKER",
+   "countsAgree": true
+  },
+  {
+   "id": "PRJ-SRC-ZAMEENIVORYBYEDZD",
+   "displayName": "Zameen- Ivory by EDZD (Ex Grande Palladium))",
+   "sourceFolder": "Zameen- Ivory by EDZD (Ex Grande Palladium))",
+   "hasStableId": true,
+   "documentsInDrive": 2,
+   "documentsRecorded": 2,
+   "entity": null,
+   "quality": "SOURCE_NOT_IN_TRACKER",
+   "countsAgree": true
+  }
+ ],
+ "reviewQueue": 0
+}

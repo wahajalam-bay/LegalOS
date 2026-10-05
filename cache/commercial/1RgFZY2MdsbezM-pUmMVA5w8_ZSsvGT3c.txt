@@ -1,0 +1,150 @@
+AUTOMATED TELLER MACHINES INSTALLATION AGREEMENT 
+ 
+ THIS AGREEMENT (“Agreement”) IS MADE AT LAHORE ON THE 2 nd DAY OF SEPTEMBER , 20 20 (“Effective Date”) ; 
+ 
+ BY AND BETWEEN 
+ 
+ Zameen Media (Private) Limited having its registered office at Third Floor, 94-B/1 M.M. Alam Road, Gulberg III, Lahore Lahore , through its authorized representative Tanzain Shafqat , hol d ing CNIC No. 35202-5530192-1 (hereinafter referred to as the “ First P arty” which expression shall where the context admits, include its successors in interest and permitted assigns) of the first part; 
+ 
+ 
+ AND 
+ 
+ 
+ Bank Alfalah Limited , a banking company incorporated under the laws of Pakistan and having its registered office at B.A. Building , I.I. Chundrigar Road, Karachi through its duly authorized representative hereinafter referred to as the “ S econd Party ” which expression shall wherever the context so admits shall be deemed to mean and include its authorized agents, representatives administrators and assigns of the second part ; 
+ 
+ 
+ 
+ 
+ 
+ Whereas: 
+ 
+ The First Party is desirous of placing and installing an Automated Teller Machine ( ATM ) at its office located at Third Floor, Lahore Center, Main Boulevard, Gulberg Lahore Pakistan (hereinafter referred to as the “ Site ”) and the Second Party has agreed to plac ing , install ing and operat ing the ATM at the Site on such terms and conditions as contained in this Agreement. 
+ 
+ NOW, THEREFORE , in consideration of the mutual covenants and promises contained herein, the First Party and the Second Party hereby enter into this Agreement and agree as follows: 
+ 
+ 
+ THE PARTIES 
+ 
+ The Second Party and its authorized agent, sub agents, contractors, sub - contractors, and authorized representatives, and the First Party and its authorized representatives constitute, as “ Parties ” w h ere the reference so warrants. 
+ 
+ Purpose of the Agreement 
+ 
+ That Parties agree to the installation, placement , operation , repair and maintenance of the ATM at the Site in accordance with the terms and conditions of this Agreement. 
+ 
+ For the purpose of Clause 2.1, the First Party will permit the Second Party to enter and access the Site subject to the conditions contained in this Agreement. 
+ 
+ ACCESSING FOR MAINTENANCE 
+ 
+ The First Party shall ensure that, during the agreed a ccess h ours which by-default are the regular operational hours of the office of the First Party , the Second Party and their respective a uthorized a gents shall have access to that ATM at the Site in order to provide the servicing and to perform all such functions/operations as may be required on the ATM. The First Party agrees that it shall not restrict the mo bility of the authorized agent of the Second Party to perform any repair and maintenance activity on the ATM provided that the authorized a gent has a valid work order and/or produces appropriate evidence of identity. 
+ 
+ FIRST PARTY’S OBLIGATIONS AND ACKNOWLEDGEMENTS 
+ 
+ The First Party shall provide “No Objection Cer tificate” and necessary assistance to the Second Party for applying for and obtaining any utilities at the Site for the installation and operation of the ATM as and when requested by the Second Party. 
+ 
+ The First Party acknowledges and agrees to provide a space measuring 5 ft in width, 5 ft in depth and 8 ft in height (5’x5’x8’) for placing the ATM at Site (“ ATM Location ”) . The First Party shall not shift the ATM from its location. If shifting o f ATM is required, the First Party shall give written notice to the Second Party and upon such notice the Second Party shall make proper arrangements for shifting/relocation in the given notice period, provided that the subsequent location meets the aforementioned specifications of the Second Party. 
+ 
+ The First Party shall make all reasonable effort to ensure that the electricity and backup power supply is available for the purpose of running the ATM and its allied devices such as wires, antenna or camera installed by the Second Party as far as reasonably practicable . E lectricity and backup power supply will be free of any charge/cost, all cost of electricity/ generator(s) will be responsibility of the First Party . 
+ 
+ The First Party acknowledges and agrees that no fee or rent or payment of any kind whatsoever shall be payable by the Second Party for installation , placement or operation of the ATM during the T erm . 
+ 
+ The First Party acknowledges and agrees that; it shall not fit any accessories to the ATM through a third Party or alter, deface or remove or permit any other person to alter, deface or remove any part, panel of the ATM . The First Party shall take all reasonable precautionary measures for security/safety of ATM Machine installed at the Site . 
+ 
+ The First Party will facilitate the Second Party to install all fixtures and fittings, equipment, antenna/tower (for radio/satellite link, lights ) at the cost and account of the Second Party at places to be mutually agreed by both the P arties. The Second Party shall be responsible for obtaining all necessary permissions for such link from the concerned authorities at its own risk and expense. The Second Party represents and confirms that the use of antenna and the tower thereof shall only be limited to the Second Party’s ATM at the Site . The Second Party shall remove from the Site all such fitting, fixtures, equipment etc. upon the expiry or termination of this Agreement. 
+ 
+ SECOND PARTY OBLIGATIONS 
+ 
+ That the Second Party shall be responsible for the installation , operation, repair and maintenance of the ATM at the Site of the First Party . 
+ 
+ The Second Party shall in its name install dedicated telephone and fiber link lines for connectivity with its servers/ routers to obtain network access; the cost of installation, maintenance and payment of its monthly bill shall be the sole responsibility of the Second Party . 
+ 
+ For security reasons, the Second Party shall install security camera ( s ) at the ATM Location at its own cost and expense, and shall be fully responsible for the operation, repair and maintenance of such security cameras. The camera (s) so installed will be exclusively for the purpose of monitoring the ATM and not for monitoring the facilit ies /visitors of the First Party. However, considering the range of camera or its lens if any footage of facilities/visitors is captured by default, which cannot be avoided, th e n it will not be considered violation of any clause of this Agreement. The Second Party will be solely responsible for recording and retaining the security footage from the security cameras installed by the Second Party for a period of ninety (90) days, and the First Party shall not be responsible for any reason whatsoever for the surveillance of the ATM or lack thereof. The Second Party acknowledges that the security camera footage may contain confidential and sensitive information and shall be dealt with as per Clause 11 of the Agreement. 
+ 
+ Insurance duties, levies, and all applicable taxes relating to the ATM shall be the absolute responsibility of the Second Party . 
+ 
+ The Second Party shall be completely responsible for all the cash pertaining to the ATM machine , its replenishment and any or all the transaction s made from the ATM in all respects and the First Party, in any manner whatsoever shall not be held responsible in this respect. 
+ 
+ The First Party shall not be held responsible for any loss , damages , pledges or act or omission by the representative of the Second Party. This will be sole responsibility of the Second Party. 
+ 
+ The Second Party shall be solely responsible to deal with any complaints, claims or grievance s of the users of the ATM in accordance with its customer/company policies. 
+ 
+ 
+ TERM OF THE AGREEMENT 
+ 
+ This A greement shall be effective for a period of three (3) years from the Effective Date to 2 nd September, 2020 (“ Term ”) , with the option to renew the Agreement at the terms mutually agreed by both the Parties in writing . 
+ 
+ E ither P arty may terminate this A greement at any time by giving the other Part y fifteen (15) days ’ prior written notice in writing at th e address specified under this A greement. 
+ 
+ 
+ REPRESENTATIONS AND WARRANTIES 
+ 
+ The Second Party warrants and represents that: 
+ 
+ It is a company validly existing and carrying on its business under the Laws of Pakistan and has the legal right and capacity to enter into this Agreement , 
+ 
+ It has obtained and during the Term of this Agreement will maintain the necessary and requisite consents, permissions, authorizations and regulatory approvals from all competent authorities to operate and install ATM Machines (including the ATM under this Agreement), along with any other devices/equipment in relation thereto including inter alia antenna/tower (for radio/satellite link, lights ) and perform its obligations under this Agreement, 
+ 
+ The services and products provided under this Agreement shall be of good quality and in conformity with the highest standards of the profession and in dustry, and 
+ 
+ It shall be responsible for the service, maintenance and replenishment of the ATM and shall replace any faulty equipment or ATM Machine within a reasonable time of being notified of such fault. 
+ 
+ AMENDEMENT 
+ 
+ This Agreement may be varied or amended at any time by agreement recorded in writing and signed on behalf of each of the parties in the manner provided herein before. 
+ 
+ This formation, construction and performance of this agreement shall be governed in all respect by the laws of Pakistan . 
+ 
+ PROMOTION 
+ 
+ The Second Pa rty shall be entitled to display on Site its logos and trade mark signs on the ATM without payment of any extra charges . 
+ 
+ In addition to the aforementioned , the First Party may provide to the Second Party, at the First Party’s sole discretion, in space in addition to the ATM Location , if available, for promotional/advertising around the ATM , should the Second Party so request . 
+ 
+ 
+ ARBITRATION 
+ 
+ I n the event of a dispute arising out of or in connection with this Agreement, b oth P arties shall have the right to appoint a representative who shall collectively appoint one (1) referee to resolve the matter and the provision s of the A rbitration A ct of 1940 shall be applicable. The p lace of arbitration shall be at Lahore . 
+ 
+ CONFIDENTIALITY 
+ 
+ The P arties hereto agree that all the information, whether written or oral, including but not limited to the security camera footage capt ured by the security cameras installed by the Second Party at the ATM Location , pricing, instruction, procedures, notes or methods of business or such confidential or proprietary information which the P arties may disclose to each other pursuant to the terms of this A greement, or, if any, supplementary agreements and/or amendments thereto (“ Confidential Information ”) shall be received and held by them on strictly confidential basis and to be used solely for the performance of obligations under this A greement. Unless otherwise stated in this A greement or a supplemental agreement between the P arties, any confidential information shall not be disclosed to any person or business entity whatsoever. Within twenty-four (24) hours of the written request of the First Party, the Second Party shall return or destroy the Confidential Information under this Agreement. 
+ 
+ LAW AND JURISDICTION 
+ 
+ This Agreement shall be governed by the laws of the Islamic Republic of Pakistan, and subject to this agreement, any court of competent jurisdiction situated at Lahore shall have the jurisdiction to entertain all suits/proceedings that arise out of or under this Agreement. 
+ 
+ INDEMNITY 
+ 
+ T he Second Party shall indemnify and shall keep indemnified the First Party, and their employees , affiliates, executives, directors and agents against any claims, proceedings, costs, damages, expenses and losses arising out of any use, operation, installation or placement of ATM including inter alia any loss caused in the event of theft, damage, destruction or malfunction of the ATM , any breach of the representations or warranties given under the Agreement or such representations or warranties being untrue or any breach, non-observance or non-performance of its obligations under this Agreement . 
+ 
+ 13 . G ENERAL 
+ 
+ This Agreement or any interest herein shall not be assigned in whole or in part without the prior written consent of the other P arty. 
+ 
+ Any notice or other communication required or permitted hereunder shall be in writing and shall be sufficiently given to or served on the Party to whom it is addressed via registered post or email. Notices should be addressed to the Parties at the addresses first written above, or to such other address as a Party shall specify in writing. Notices shall be deemed delivered within four (4) working days if sent by registered post or within twenty-four (24) hours if sent by email. 
+ The Parties intend that the relationship created between them by this Agreement shall be as independent contractors. This Agreement is not to be construed in any way as creating any partnership, principal-agent, master-servant, joint venture or other similar relationship between the Parties. 
+ 
+ If any provision of this Agreement is found to be invalid, illegal or unenforceable under the laws of any relevant jurisdiction, the invalid or unenforceable provision shall be given no effect but the remaining provisions of this Agreement shall remain in full force and effect. The Parties shall forthwith enter into good faith negotiations to amend the Agreement so that the invalid, illegal or unenforceable provision is replaced by a valid, legal, and enforceable provision, which conforms to the extent possible to the intended purpose of the former provision 
+ 
+ This Agreement may be executed in two or more counterparts, each of which shall be deemed an original, but all of which together shall constitute one and same instrument. 
+ 
+ 
+ IN WITNESS WHEREOF the parties hereto have executed these presents on the day, month and year as above mentioned. 
+ 
+ 
+ 
+ 
+ ________________________ _______________________ __ _ 
+ For &amp; On Behalf of First Party For &amp; On Behalf of Second Party 
+ Tanzain Shafqat Nabila Sattar 
+ 
+ 
+ WITNSSES: 
+ 
+ 
+ 
+ 
+ 
+ 
+ ________________________ ________________________ 
+ Name: Name: 
+ Address: Address

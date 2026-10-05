@@ -1,0 +1,43 @@
+{
+ "base": {
+  "name": "00 Zameen Media-PPAs and Finder's Fee Tracker.xlsx",
+  "bytes": 138844,
+  "md5": "646be0aedd3312a54a86a4a0f5eb546b",
+  "sheets": 1,
+  "rows": 810,
+  "modified": "2026-09-09T06:59:57.000Z"
+ },
+ "other": {
+  "name": "00 Zameen Media-PPAs and Finder's Fee Tracker (1).xlsx",
+  "bytes": 157928,
+  "md5": "9aa1ca9495b3a10a42be0cb4d7146f77",
+  "sheets": 2,
+  "rows": 1604,
+  "modified": "2026-09-09T07:00:00.000Z"
+ },
+ "identicalFile": false,
+ "overallVerdict": "DIVERGENT — both hold rows the other does not",
+ "perSheet": [
+  {
+   "sheet": "Zameen Media-PPA & Contracts Tr",
+   "verdict": "DIVERGENT",
+   "rowsBase": 810,
+   "rows1": 810,
+   "sharedRows": 806,
+   "onlyInBase": 4,
+   "onlyIn1": 4,
+   "headersMatch": true,
+   "headersBase": [],
+   "headers1": []
+  },
+  {
+   "sheet": "_LinkExport",
+   "verdict": "ONLY_IN_(1)",
+   "rowsOnlyInB": 794
+  }
+ ],
+ "verdicts": {
+  "DIVERGENT": 1,
+  "ONLY_IN_(1)": 1
+ }
+}

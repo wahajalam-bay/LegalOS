@@ -1,0 +1,488 @@
+LOGISTIC S SERVICE S AGREEMENT 
+ 
+ This Logistic s Service s Agreement (“ Agreement ”) is entered into on this 14 day of April 2021 (“ Effective Date ”) by and between: 
+ 
+ Online Classifieds Pakistan (SMC-Private) Limited , with its registered office at 29-Q, Gulberg II, M.M. Alam Extension Road, Lahore, Pakistan, acting through its authorized representative, Mr. Umair Munir (hereinafter referred to as “OLX” which expression shall, where the context so permits, be deemed to mean and includes its successors-in-interest, administrators and assigns) of the First Part 
+ 
+ AND 
+ 
+ Shaheen Cargo Services (AOP - Associate of Person) , with its registered office at Main Australia Chowk, Opp osite, PSO Petrol Pump, Near Railway Station Lahore , acting through its authorized representative Muhammad Zunnurain (hereinafter referred to as the “ Service Provider ” which expression shall, where the context so permits, be deemed to mean and includes its successors-in-interest, administrators and assigns) of the Second Part 
+ 
+ (Each a “Party” and collectively “Parties” ). 
+ 
+ WHEREAS : 
+ 
+ The Service Provider has expertise and experience in providing logistics and related services (as described below in detail ) ; and 
+ 
+ The Service Provider intends to provide and OLX intends to utilize the services offered by the Service Provider and the Parties are entering into this Agreement for the provision of such services to OLX subject to the terms and conditions hereof. 
+ 
+ DEFINITIONS AND INTERPRETATIONS 
+ 
+ Unless inconsistent with the context, the following words shall have the meaning assigned below:  
+ 
+ “Agreement” means the Logistics Service s Agreement executed by and between the Service Provider and OLX along with all annexures, amendments and revisions; 
+ 
+ “Applicable Law” means any law, proclamation, decree, ministerial decision, statute, statutory instrument, order, regulation, resolution, notice, legal precedent, by-law, directive, treaty or other instrument or requirement having the force of law within Pakistan and issued, declared, passed or given effect in any manner by any government authority; 
+ 
+ “Business Day” means every day of the week except Sundays and public holidays in Pakistan on which banks in which the Parties have account(s) are open for general banking business; 
+ 
+ “Cash on Delivery (COD)” means the payment method under which the Consignee makes payment of the invoice value of the Consignment , through cash, upon delivery of the Consignment ; 
+ 
+ “Claim” shall mean any and all foreseeable or unforeseeable, known and unknown, suspected and unsuspected, disclosed and undisclosed, alleged or actual and consequential action of whatsoever nature, cause of action (whether in tort, agreement or strict liability, and whether in law, equity, statutory or otherwise), claim, demand, lawsuit, legal proceeding, administrative or other proceedings or litigation; 
+ 
+ “Confidential Information” means any information disclosed, supplied, available or accessible to the Service Provider , either directly or indirectly, either in writing or orally, relating to or in connection with this Agreement. Without limiting the generality of the foregoing, Confidential Information shall include inter alia proprietary, business, technical, financial or legal information of OLX, including but not limited to: (a) information relating to the Consignment (including pricing), business policies or practices, customers (former, current, or potential), investors, employees, business and contractual relationships, business forecasts, sales and merchandising data, warehousing methods and marketing methods and plans; (b) information received from third parties that the Service Provider is obligated to treat as confidential; (c) all trade secrets; or any other information related thereto ; 
+ 
+ “Consignee” means the recipient of the Consignment; 
+ 
+ “Consignment” means the goods in respect of which the Service Provider shall provide the Services; 
+ 
+ “Effective Date” means the date set out at the top of this Agreement ; 
+ 
+ “Events of Default” has the meaning assigned to it in C lause 18 ; 
+ 
+ “Intellectual Property” means and includes any inventions, technological innovations, discoveries, designs, formulas, know-how, processes, business methods, patents, trademarks, service marks, copyrights, computer software, ideas, creations, writings, lectures, illustrations, photographs, motion pictures, scientific and mathematical models, improvements to all such intellectual property, and all recorded material defining, describing, or illustrating all such intellectual property, whether in hard copy or electronic form; 
+ 
+ “Losses” shall mean any and all damages (including, without limitation, direct, consequential, economic, exemplary, future, incidental, indirect, noneconomic, past, special and punitive), sanctions, settlement payments, disbursements, judgments, liability, losses (including lost income or profit), costs or expenses of any nature whatsoever, whether accrued, absolute, contingent or otherwise, including, without limitation, attorneys’ fees and costs (whether or not a proceeding is initiated); 
+ 
+ “OLX” means Online Classifieds Pakistan (SMC-Private) Limited; 
+ 
+ “Prohibited Products” means the goods that are prohibited from being transported in terms of this Agreement or under Applicable Laws; 
+ 
+ “Services” means the services, as set out in Annexure A and/or otherwise agreed between the Parties, which the Service Provider shall perform with respect to the handling, transportation, delivery and distribution of the Consignment as per the terms and conditions set out in this Agreement; 
+ 
+ “ Service Fee ” has the meaning assigned to it in C lause 5; 
+ 
+ “Taxes” means any direct and indirect federal, provincial or local taxes, duties, cess, fees, levies or charges of whatsoever nature payable with respect to the Services, as may be prescribed or levied from time to time under any Applicable Law; 
+ 
+ In this Agreement , unless the contrary intention appears: 
+ 
+ reference to a party is a reference to a party to the Agreement; 
+ 
+ reference to a paragraph , schedule or annexure is a reference to a paragraph or an annexure to the Agreement; 
+ 
+ reference to the Agreement or another instrument includes any amendment or replacement of either of them; 
+ 
+ reference to a statute, ordinance, code or other law includes regulations and other instruments under it and consolidations, amendments, re-enactment’s or replacements of any of them; 
+ 
+ all words used in the singular shall include the plural; the  present tense  shall include the future  tense ; and the masculine gender shall include the feminine; 
+ 
+ the word “person” includes a firm, a body corporate, an unincorporated association or an authority; 
+ 
+ reference to a person includes a reference to the person's successors, nominees and permitted assigns; 
+ 
+ if a period of time is specified and it is from a given day or the day of an act or event, it is to be calculated exclusive of that day; 
+ 
+ reference to a day is to be interpreted as the period of time commencing at midnight and ending twenty-four (24) hours later; 
+ 
+ reference to a month is a reference to a Gregorian calendar month; 
+ 
+ the table of contents and headings herein are for convenience of reference only, do not constitute parts of the Terms and Conditions and shall not be deemed to limit or otherwise affect any of the provisions hereof;  
+ where under or pursuant to the Terms and Conditions or anything done under the Terms and Conditions the day on or by which any act, matter or thing is to be done is a day that does not occur in a particular month, such act, matter or thing shall be done on the last day of that month; 
+ 
+ if any obligation under the Terms and Conditions is required to be performed on a day other than a Business Day, being a day (other than a Sunday or Public Holiday) on which banks are open for general banking business in Lahore, Pakistan that obligation is to be performed on the next Business Day; and 
+ 
+ reference to ‘written’ or ‘writing’ means any hand-written, typewritten, or printed communication, including telex, cable and facsimile transmission. 
+ 
+ SCOPE 
+ 
+ OLX hereby appoints the Service Provider to provide the S ervices and the Service Provider hereby accepts such appointment to perform the S ervices for the Service Fee stipulated in Clause 5 in accordance with the terms and conditions of this Agreement . 
+ 
+ PROVISION OF SERVICES 
+ 
+ The Service Provider shall provide the Services in such geographical locations as notified by OLX, in writing, from time to time. 
+ 
+ The Service Provider shall provide such other additional services as part of the Services as are required to be provided , from time to time, for the purposes of efficient delivery of Services. 
+ 
+ In furtherance to Clause 3.2 , the Parties shall agree , in writing, upon any extra remuneration / consideration for the additional services to be provided by the Service Provider . 
+ 
+ NON-EXCLUSIVITY 
+ 
+ The Parties agree that the Services are being provided on non- exclusive basis . The Service Provider may render similar services for others and OLX shall be free to engage other logistics service s providers to perform the services covered under this Agreement. 
+ 
+ SERVICE FEE 
+ 
+ As consideration for performance of the Services, the Service Provider shall be entitled to and OLX shall be liable to pay to the Service Provider , the Service Fee which shall be calculated in accordance with the rates mentioned in Annexure B (“ Service Fee ”) . 
+ 
+ Payment of Service Fee shall be subject to deduction and adjustments in accordance with the terms and conditions of the Agreement and any Taxes in accordance with the Applicable L aws . 
+ 
+ PAYMENT 
+ 
+ The Service Provider shall invoice OLX, on monthly basis, for the Service Fee. OLX shall pay and clear all such invoices, within fifteen (15) days of the date of such invoice . 
+ 
+ OLX shall notify, in writing, the Service Provider of any dispute , discrepancy or objection in respect of any invoice within five (5) working days from the receipt of such invoice . On being notified, t h e Service Provider shall issue revised invoice containing necessary changes / alterations . 
+ 
+ REIMBURSEMENT OF COD AMOUNT 
+ 
+ For all COD Consignments, COD amount shall be collected by the Service Provider. 
+ 
+ OLX shall invoice the Service Provider for the COD amount and the Service Provider shall, within three (3) working days of such invoice , reimburse the COD amount to OLX through bank transfer. 
+ 
+ PARTIES’ OBLIGATIONS 
+ 
+ The Service Provider shall be solely responsible and liable for the performance of the Services and for ensuring/procuring the performance of the Services as required by OLX. 
+ 
+ Except as otherwise expressly provided in this Agreement, the Service Provider shall be solely responsible for providing all facilities, personnel, and other resources necessary for the provision of the Services, and incurring all costs and expenses related or ancillary therewith. 
+ 
+ The Service Provider hereby agrees, undertakes and covenants that it shall be solely responsible for the Consignment from the time of i ts pick-up from the specified pick-up location till the time of its delivery to the stated destination . Any damage to the Consign ment or any part thereof, whether due to any act, error or omission of the Service Provider (including its personnel) or of any third party, shall be the sole responsibility of the Service Provider. The Service Provider hereby agrees to indemnify OLX, in full, for any Loss incurred by OLX as a consequence of any damage to the Consign ment . The Service Provider hereby grants OLX the right to deduct the amount of such Loss from the Service Fee prior to remittance of the Service Fee to the Service Provider. 
+ 
+ OLX shall be liable to provide true, accurate, current and complete details with respect to the products in the shipment / consignment note. 
+ 
+ OLX shall, at its sole responsibility, properly pack age and mark each Consignment to ensure its safe handling and delivery in accordance with the Applicable Laws. 
+ 
+ WARRANTIES AND REPRESENTATIONS 
+ 
+ Each Party hereby represents and warrants to the other Party as follows:- 
+ 
+ The Party is duly organized and validly existing under the Applicable Laws and the Party has full power and authority to perform its obligations hereunder. 
+ 
+ The Parties have the legal right, capacity, power and authority to enter into this Agreement and the Parties’ entry into and performance under the Agreement and the transactions contemplated by it do not constitute a breach of any Applicable Law, or any obligation or default of any contract or license by which they are so bound. 
+ 
+ In addition to the covenants, representations and warranties (express or implied) contained elsewhere in the Agreement , the Service Provider hereby warrants, represents, undertakes and acknowledges that :- 
+ The Service Provider has obtained and shall maintain and comply with the requirements of all requisite consents, permits, permissions, authorizations, approvals, NOCs, declarations, registrations, certifications, waivers, exemptions and/or licenses required under the Applicable Laws with respect to the provision of services of the nature and type contemplated under this Agreement . 
+ 
+ The Service Provider is in complete compliance with all laws, rules and regulations of federal, state or local entities which may have jurisdiction over Leopard Logistics such that any failure of compliance will not have an adverse effect on the Leopard Logistics’ ability to enter, execute, deliver or consummate this Agreement. 
+ 
+ The Service Provider shall provide and perform the Services promptly and in a proper and efficient manner and in the manner agreed to in this Agreement . 
+ 
+ The Service Provider has required professional expertise, organisation , skill, training, experience, technical know-how, sufficient capacity and resources including machinery, equipment, vehicles, personnel etc., necessary for the effective performance of its obligations under this Agreement to the satisfaction of OLX . 
+ 
+ The Service Provider shall employ able, skilled, efficient and experienced personnel to perform the Services in accordance with this Agreement . 
+ 
+ The Service Provider and its personnel shall ensure that the work is conducted in a cost-efficient manner, through inter alia effective deployment and use of resources. 
+ 
+ The Service Provider shall ensure that its personnel adhere to and abide by the guidelines, instructions and directions communicated to it by OLX from time to time . 
+ 
+ The Service Provider , its subcontractors, suppliers, vendors and agents involved in the provision of Services shall comply with the Applicable Laws with respect to the operation of their facilities and their business and labor practices, including without limitation working conditions, wages, hours and minimum age of workers. 
+ 
+ It is OLX’s policy to prohibit and actively pursue the prevention of money laundering and any activity that facilitates money laundering or the financing or of terrorist or criminal activities. OLX is committed to anti-money laundering compliance in accordance with Applicable Law and requires the Service Provider to adhere to these standards and prevent the use of its Products for money laundering purposes. The Service Provider warrants that the Service Provider is not, in any way, directly or indirectly involved in money laundering or financing of terrorist or criminal activities or any other illegal activity. OLX reserves the right to carry out necessary money laundering, terrorism financing, fraud or any other illegal activity check before authorizing payment of Service Fee. 
+ 
+ OLX may at any point require the Service Provider to provide any financial, business information related to the Services on a case-to-case basis and the Service Provider shall provide the same to OLX within seven (7) Business Days of such request being made. 
+ 
+ The Service Provider shall remain liable for the actions of and be responsible for the supervision of each of its executives, officers, directors, employees, agents, representatives, suppliers, vendors, agents and subcontractors. The Service Provider shall ensure and procure that each of its executives, directors, employees, consultants , agents, representatives, suppliers, vendors, agents and subcontractors are bound by this Agreement and Applicable Law including but not limited to with respect to Intellectual Property, Confidential Information, anti-money laundering, anti-bribery and anti-corruption. 
+ 
+ The Service Provider is solvent, able to pay its debts and is and shall remain a going business concern. 
+ 
+ No insolvency proceeding of any character, including, without limitation, bankruptcy, receivership, reorganization, composition or arrangement with creditors, voluntary or involuntary, affecting the Service Provider, is pending or, to the knowledge of the Service Provider, threatened. The Service Provider has not taken any action in contemplation of, or that would constitute the basis for, the institution of any such insolvency proceedings. 
+ 
+ The Service Provider is in material compliance with all Applicable Laws which may have any bearing on its ability to perform the Services and general obligations under this Agreement and it shall continue to comply with all Applicable Laws now or hereafter having jurisdiction over the Services and/or those performing the same. 
+ 
+ There are no proceedings against the Service Provider, pending or threatened, that could adversely affect the performance of the Service Provider’s obligations under the Agreement. 
+ 
+ To inform OLX immediately , in writing , of any change in the particulars of the Service Provider including but not limited to business name, brand name, address, temporary or permanent closure of its office and/or business activities. 
+ 
+ The Service Provider shall use reasonable skill, care and diligence in the performance of its obligations under this Agreement . 
+ 
+ The Service Provider shall not, during or after termination of the Agreement, engage in conduct or make any representation that injures, harms, corrupts, demeans, disparages, defames, destroys or diminishes, or would reasonably be expected so to do, in any way the reputation or goodwill of OLX, its directors, officers, employees or agents or any of its affiliated, subsidiary or holding companies. 
+ The Service Provider shall in performing its obligations under the Agreement, in accordance with : good industry practices, Applicable Laws and the terms and conditions of this Agreement . 
+ 
+ The Service Provider shall execute and deliver all such other instruments and take all such other actions as may reasonably be required from time to time in order to effectuate the terms and conditions set forth in this Agreement. 
+ 
+ PROHIBITED PRODUCTS 
+ 
+ The Service Provider shall not accept for delivery the Prohibited Products which shall include but no t limited to : Drugs, liquor, hazardous substance, stamps, antiques, works of art, animals, jewelry, precious metals, precious stones, arms &amp; ammunition, contraband, explosives, firearms, plants, kites, narcotics, hookah, sheesha, perishable goods and items, unregistered mobile phones, stolen or smuggled goods, obscene and pornographic material, giveaways, lotteries, raffles, or contests, negotiable instruments in bearer form, stocks, bonds, investment interest, and other securities, currency, bullion, ivory or other parts of any endangered species, birth certificate, national identity card, passport and/or visas, industrial carbons and diamonds, hazardous or combustible materials, and all other items/articles restricted by IATA (International Air Transport Association), ICAO (International Civil Aviation Organization) and any item whose distribution is regulated by law or by any statute of the provincial or federal government of Pakistan. 
+ 
+ LIEN 
+ 
+ The Service Provider shall have no lien on any Consignment or portion thereof including any documentation relating thereto . 
+ 
+ TAXES 
+ 
+ The Parties agree that any and/or all T axes with respect to the provision of the Services or any part thereof shall be the sole responsibility of the Service Provider. 
+ 
+ INSURANCE 
+ 
+ Upon receipt of written request from OLX, the Service Provider shall arrange to provide insurance of Consignment or any part thereof . For the avoidance of doubt, cost of insurance is not included in the rates provided in Annexure B . 
+ 
+ The insurance coverage shall be governed by the terms and conditions of the insurance policy issued by the insurance company. 
+ 
+ INTELLECTUAL PROPERTY 
+ 
+ Notwithstanding any provision of this Agreement, nothing herein shall be construed as a grant of license to use OLX’s Intellectual Property, which shall remain the exclusive property of OLX at all times. 
+ 
+ The Service Provider shall not pass off at any time, as its own, any Consignment or part thereof or any other material belonging to OLX , nor shall it represent any right in the same. 
+ 
+ CONFIDENTIAL INFORMATION 
+ 
+ The Service Provider shall : 
+ 
+ use the Confidential Information strictly for the purposes set out in the Agreement ; 
+ 
+ keep the Confidential Information confidential and not disclose it or allow it to be disclosed to any third party except with the prior written consent of OLX; and 
+ 
+ on termination of the Agreement, if required by OLX, return or destroy and certify destruction of the Confidential Information. 
+ 
+ The Service Provider shall abide by and maintain adequate data security measures, consistent with industry standards and technology best practices, to protect the Confidential Information from unauthorized disclosure or acquisition by an unauthorized person. 
+ 
+ The Service Provider shall not publicize, disclose, or discuss the existence, content, or scope, whether generalities or details, of the Agreement or make any reference to each other, the business of either to any third party by any means, and through any medium (including but not limited to advertising, web site references, photographs, articles, press releases or interviews, speeches or programs) without obtaining prior written consent except to the extent necessary for the performance of the obligations arising under the Agreement. 
+ 
+ The rights and obligations of the Parties set out in this Agreement with respect to Confidential Information shall survive termination of the Agreement. 
+ 
+ INDEMNITY 
+ 
+ The Service Provider shall indemnify and keep indemnified, defend and forever hold harmless OLX and each of its affiliates, directors, officers, employees, representatives, consultants, professional consultants and agents from and against any and all Claims and Losses whether or not involving a third party Claim, arising out of or in connection with:- 
+ 
+ the provision of Services. 
+ 
+ Any act, error or omission of the Service Provider , its affiliates, directors, officers, employees, representatives, consultants, professional consultants and agents of whatsoever nature or character (including, but without limitation, Claims for personal injury, death and damage to property, clean-up costs from commodity spills and damage to the environment) brought against OLX . 
+ 
+ Breach of any term, representation or warranty by the Service Provider as contained herein. 
+ 
+ The Service Provider ’s failure to fulfil, or breach of, its obligations hereunder or otherwise owed to OLX. 
+ 
+ In no event shall OLX or its affiliates, directors, officers, employees, authorized representatives, consultants, professional consultants or authorized agents be liable to the Service Provider or any third party under any theory of tort, contract, strict liability or other legal or equitable theory for Losses, cost of cover or recovery of any investment made by the Service Provider or its affiliates in connection with the Agreement, or for any loss of business, loss of data, any lost profits, lost revenue along with any exemplary, punitive, special, incidental, indirect or consequential damages or the like arising out of or relating to the Agreement, each of which is hereby excluded by the Agreement of the Parties regardless of whether such Losses were foreseeable or whether OLX has been advised of the possibility of such Losses. 
+ 
+ FORCE MAJEURE 
+ 
+ Force Majeure means an event beyond the control of the Parties , which prevents either Party from complying with any of its obligations under this Agreement, including but not limited to: 
+ 
+ an act of God (such as, but not limited to, fires, explosions, earthquakes, drought, tidal waves and floods); 
+ 
+ war, hostilities (whether war be declared or not), invasion, act of foreign enemies, mobilisation, requisition, or embargo; 
+ 
+ rebellion , revolution, insurrection, or military or usurped power, or civil war; or 
+ riot, commotion, strikes, go slows, acts or threats of terrorism, pandemic, epidemic , lockdowns, lock outs or disorder. 
+ 
+ In the event of Force Majeure, the periods mentioned in this Agreement shall be extended by a period of time equal to the period of interruption caused by an ev ent of Force Majeure . 
+ 
+ The Party claiming Force Majeure shall give notice to the other Party of any event of Force Majeure as soon as reasonably practicable, but not later than two (2) working days after the date on which such Party knew or should reasonably have known of such event of Force Majeure and that it would materially and adversely affect the performance of its obligations or the enjoyment by such Party of its rights under or pursuant to this Agreement. 
+ 
+ The Parties shall use reasonable endeavours to mitigate the effects of any event of Force Majeure . 
+ 
+ EVENTS OF DEFAULT 
+ 
+ Any material breach of the Agreement by the Service Provider shall be construed as an Event of Default ( “Event of Default” ) which inter alia includes: 
+ 
+ a breach of any terms or condition s of the Agreement or of any obligation arising therefrom; 
+ 
+ any representation becoming untrue, inaccurate or false; 
+ 
+ a breach of warranty; 
+ 
+ breach of confidentiality obligations; and/or 
+ 
+ the Service Provider committing a criminal offence. 
+ 
+ If, in the opinion of OLX, an Event of Default is anticipated or suspected of having occurred, OLX may, at its sole discretion, do any one or more of the following: 
+ 
+ terminate the Agreement with immediate effect; 
+ 
+ withhold the Service Fee and/or any other payments due to the Service Provider; 
+ 
+ suspend availing the Services ; and/or 
+ 
+ delist or blacklist the Service Provider . 
+ 
+ Upon occurrence of the consequences under Clause 18.2 , the Service Provider shall immediately : 
+ 
+ reimburse the COD amount to OLX as specified under Clause 7; and 
+ 
+ cease to use any Confidential Information in its possession in any manner whatsoever and shall return the said Confidential Information to OLX forthwith. 
+ 
+ 
+ 
+ TERM AND TERMINATION 
+ 
+ This Agreement shall come into effect on the Effective Date and shall continue to remain valid and in force for a period of one (1) year thereafter, unless otherwise terminated earlier in accordance with the terms and conditions hereof (“ Term ”). 
+ 
+ Either Party may terminate the Agreement for any reason by giving thirty (30) days’ prior written notice to the other Party. 
+ 
+ OLX may terminate the Agreement upon occurrence of an Event of Default, which termination shall be effective as on the date specified by OLX in the notice of termination . 
+ 
+ Termination of this Agreement shall not affect any rights or obligations accrued prior to such termination . The obligations of each Party set out in any Clause intended to survive termination or expiry shall continue in full force and effect notwithstanding termination or expiry of this Agreement. 
+ 
+ GENERAL PROVISIONS 
+ 
+ This Agreement shall be governed by and construed in accordance with the laws of the Islamic Republic of Pakistan and the Parties submit to the exclusive jurisdiction of the courts in Lahore, Pakistan. 
+ 
+ OLX is entitled to assign or subcontract any or all of its rights and obligations under this Agreement . The Service Provider shall not assign or otherwise transfer its rights, interests or obligations under this Agreement to any third party without the prior written consent of OLX. 
+ 
+ If any provision of this Agreement or part thereof shall be void for whatever reason, it shall be deemed deleted and the remaining provisions shall continue in full force and effect. 
+ 
+ Any typographical clerical or other error or omission in any acceptance, invoice or other document on the part of both Parties shall be subject to correction without any liability on the part of either Party. 
+ 
+ No waiver of any of the provisions of this Agreement shall constitute a continuing waiver unless otherwise expressly so provided in writing. The failure of either Party to enforce at any time any of the provisions of this Agreement , shall in no way be construed to be a present or future waiver of such provisions. 
+ 
+ The Service Provider agrees that the Service Provider’s employees and/or other representatives assigned to perform the Services shall be employees and/or representatives of the Service Provider and not employees or representatives of OLX for any purpose whatsoever. The Service Provider shall be exclusively responsible for filing the applicable tax returns, paying statutory payments, benefits and compensation with respect to the a fore mentioned personnel . 
+ 
+ The Parties agree that they are acting hereunder as independent parties. Nothing in this Agreement creates or shall be construed or deemed to create any association, partnership, joint venture, agency, franchise, sales representative , or employment relationship between the Service Provider and OLX. The Service Provider shall have no authority to make or accept any offers or representations on OLX’s behalf and the Service Provider shall not make any statement, whether on its website, social media or any other platform used by the Service Provider , contrary to the interests of OLX. The Service Provider ’s personnel shall not be considered employees of OLX, shall not be entitled to any benefits that OLX grants its employees and shall have no authority to act or purport to act on OLX’s behalf. 
+ 
+ The Service Provider i s not authorized to hold itself out as having any power or authority to enter into any arrangement binding or otherwise with any third party in the name of or on behalf of or at the behest of OLX , nor shall the Service Provider commit OLX in any way towards third parties or incur any obligation on behalf of OLX . 
+ 
+ Each Party acknowledges and agrees that the rights granted to the other Party in connection with the Service are non-exclusive and that, without limiting the generality of the foregoing , nothing in this Agreement shall be deemed or construed to prohibit either Party from participating in similar business arrangements as those described herein. 
+ 
+ The Service Provider shall neither solicit, entice away, discourage or influence in any way an existing or prospective supplier, vendor, contractor, customer or client of OLX, nor recruit, solicit, induce or attempt to induce for employment, any employee of OLX or its affiliates. 
+ 
+ Any dispute under or arising out of this Agreement shall, if not resolved within fifteen (15) days of so arising, shall be referred to arbitration, on the notice of either Party, by a panel of two ( 2 ) arbitrators: one appointed by each Party, and a third umpire appointed by the first two in case of disagreement . Arbitration shall be conducted in accordance with the Arbitration Act, 1940. The language of arbitration shall be English and the seat of arbitration shall be Lahore. The decision of the arbitrator shall be final and binding on the Parties. 
+ 
+ If this Agreement is translated into any other language and there is a discrepancy between the English text and the text of the other language, the English text version will prevail. 
+ 
+ Th is Agreement shall inure to the benefit of and be binding upon each Party's successors . 
+ 
+ The headings and titles contained in this Agreement are included for convenience only, and shall not limit or otherwise affect the provisions of this Agreement . 
+ 
+ Any notice given pursuant to this Agreement may be served personally or by email to the last known email address of the addressee. It is the responsibility of the Service Provider promptly to update OLX of any change of address or email address. Such notice shall be deemed to have been duly served upon and received by the addressee, when served personally, at the time of such service or when sent by email twenty-four (24) hours after the email has been sent. 
+ 
+ This Agreement may be entered into in any number of counterparts, all of which taken together shall constitute one and the same agreement. Any Party may enter into this Agreement by signing any such counterpart. 
+ 
+ 
+ 
+ [REMAINDER OF PAGE INTENTIONALLY LEFT BLANK WITH SIGNATURES ON FOLLOWING PAGE] 
+ 
+ SIGNATORIES 
+ 
+ Logistics Services Agreement 
+ 
+ 
+ For and on behalf of Online Classifieds Pakistan (SMC-Private) Limited 
+ 
+ 
+ 
+ ________________________________ 
+ 
+ 
+ ________________________________ Designation 
+ 
+ ________________________________ 
+ 
+ ________________________________ 
+ Designation 
+ 
+ 
+ For and on behalf of Shaheen Cargo Services (AOP - Associate of Person) 
+ 
+ 
+ 
+ ________________________________ 
+ 
+ 
+ ________________________________ 
+ 
+ 
+ WITNESSES 
+ 
+ 
+ ___________________________________ 
+ Signature 
+ 
+ ___________________________________ 
+ Signature 
+ 
+ 
+ ___________________________________ 
+ Name 
+ 
+ 
+ ___________________________________ 
+ Name 
+ 
+ 
+ ___________________________________ 
+ CNIC No. 
+ ___________________________________ 
+ CNIC No. 
+ 
+ ANNEXURE A 
+ 
+ Scope of Services 
+ 
+ The Service Provider shall be responsible for the performance of inter alia following services: 
+ 
+ H andling, delivery and distribution of Co nsignments, including but not limited to , provision of services with respect to collection, storage, prepar ation for shipment and invoicing etc . in an efficient, effective and professional manner which is consistent with industry standards and practices. 
+ 
+ Contact the Consignee prior to delivery of the Consignment through telephonic call. 
+ 
+ I n case of a failed delivery in the first attempt , make two (2) more attempts to deliver the Consignment. 
+ 
+ Collect COD amount from the Consignee in case of COD Consignment . 
+ 
+ 
+ 
+ ANNEXURE B 
+ 
+ Schedule of Rates 
+ 
+ Table 1: Rates for m ail b ag 
+ 
+ Destination 
+ Overnight 
+ (Next Day) 
+ Detained 
+ (2-3 Days) 
+ Karachi 
+ Rs. 80/- per kg 
+ Rs. 20/- per kg 
+ Lahore 
+ Rs. 80/- per kg 
+ Rs. 20/- per kg 
+ Islamabad 
+ Rs. 80/- per kg 
+ Rs. 25/- per kg 
+ Peshawar 
+ 
+ Rs. 25/- per kg 
+ Multan 
+ 
+ Rs. 20/- per kg 
+ Faisalabad 
+ 
+ Rs. 20/- per kg 
+ Hyderabad 
+ 
+ Rs. 20/- per kg 
+ Sukker 
+ 
+ Rs. 20/- per kg 
+ Rahim Y ar K han 
+ 
+ Rs. 20/- per kg 
+ 
+ Table 2: Rates for w arehouse to w arehouse K arachi - L ahore - K arachi 
+ 
+ Description 
+ 
+ Weight 
+ charge 
+ One Day Plus 
+ Delivery 
+ Warehouse To Warehouse 
+ Warehouse 
+ To 
+ Door Delivery 
+ Washing M achine 
+ 60 kg 
+ 
+ Rs. 15 /- per kg 
+ Rs. 20/- per kg 
+ A.C . 
+ 60 kg 
+ 
+ Rs. 15 /- per kg 
+ Rs. 20/- per kg 
+ R efrigerator 
+ 100 kg 
+ 
+ Rs. 15 /- per kg 
+ Rs. 20/- per kg 
+ Deepfridger 
+ 80 kg 
+ 
+ Rs. 15 /- per kg 
+ Rs. 20/- per kg 
+ T.V . 
+ 10 kg 
+ 
+ Rs. 15 /- per kg 
+ Rs. 20/- per kg 
+ Microwave 
+ 12 kg 
+ 
+ Rs. 15 /- per kg 
+ Rs. 20/- per kg 
+ 
+ Terms and Conditions 
+ 
+ The aforementioned rates are exclusive of applicable taxes. 
+ 
+ In the event the Consignment’s weight exceeds the aforementioned weight limits, the rate shall be calculated on the basis of volumetric or actual weight of the Consignment , whichever is higher . 
+ 
+ OLX shall be charged ten percent ( 10% ) of the total f uel cost incurred for delivery of the Consignment to the Consignee .

@@ -1,0 +1,212 @@
+/* LegalOS — design tokens
+ * ========================
+ * Extracted verbatim from assets/styles.css. These are the ONLY values the
+ * product's components reference; nothing below is a reconstruction.
+ *
+ * Three blocks, in cascade order:
+ *
+ *   1. :root                      structure — brand ramp, status hues, radii,
+ *                                 spacing, type, z-index, layout rhythm.
+ *                                 Theme-independent.
+ *   2. :root[data-theme="light"]  surfaces, text, borders, shadows, data-viz.
+ *                                 Also bare :root, so light is the default.
+ *   3. :root[data-theme="dark"]   the same names, re-pointed.
+ *
+ * A component never hard-codes a colour: it reads --surface, --text, --border,
+ * and the theme decides. That is why switching themes needs no component to
+ * change, and why adding a raw hex to a component breaks dark mode silently.
+ *
+ * Two things in here are load-bearing and documented in place rather than
+ * inferred: the TEXT variants of the status colours (the fills are fine as
+ * backgrounds under white text, but fell to 2.7-4.1:1 used as text on their own
+ * tinted chip, so they are the same hues darkened to clear 4.5:1 on both the
+ * chip and the page), and the --viz-N categorical ramp, whose ORDER is the
+ * colourblind-safety mechanism.
+ *
+ * Fonts: Inter (UI) and JetBrains Mono (figures, references, IDs), both with a
+ * system fallback stack in --font / --mono.
+ */
+
+/* ---------------------------------------------------------------------
+   1. STRUCTURE — theme-independent
+   --------------------------------------------------------------------- */
+:root {
+  /* Brand — Bayut green */
+  --brand-500: #0d7a3f;
+  --brand-600: #063d24;
+  --brand-400: #27a96d;
+  --accent-500: #0891b2;
+  --accent-600: #0e7490;
+
+  /* Semantic */
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --warning: #d97706;
+  --warning-bg: #fef3c7;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --info: #1d6cb0;
+  --info-bg: #e3f0fb;
+
+  /* Radius */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-full: 999px;
+
+  /* Spacing */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px;
+
+  /* Type */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  --z-topbar: 40;
+  --z-sidebar: 30;
+  --z-overlay: 90;
+  --z-modal: 100;
+  --z-toast: 120;
+
+  /* WIDE ENOUGH FOR THE LONGEST FAMILY NAME.
+     At 244px "Commercial & Risk Mitigation" lost its last word to an ellipsis
+     and "Compliance & Licences" lost its last letters — three of the six
+     families could not be read without hovering. The names are the product's
+     own and shortening them in the rail would mean the navigation and the page
+     header called the same thing two things, so the column takes the 24px. */
+  --sidebar-w: 268px;
+  --topbar-h: 60px;
+
+  /* ---------- Layout scale (one product, one rhythm) ----------
+     Every page used to set its own padding, every card its own inset and every
+     register its own row height, so two screens side by side read as two
+     products. These are the shared values; a component that needs a different
+     one is a decision, not an accident. */
+  --page-pad-x: 30px;     /* page gutter, desktop */
+  --page-pad-t: 26px;
+  --page-pad-b: 60px;
+  --section-gap: 22px;    /* vertical space between page sections */
+  --card-pad: 18px;       /* card inset */
+  --card-r: var(--r-lg);  /* card radius */
+  --row-h: 54px;          /* register row height */
+  --head-h: 40px;         /* register header row height */
+  --field-h: 36px;        /* input / select / filter control height */
+  --btn-h: 36px;          /* button height */
+  --badge-h: 22px;        /* pill / badge height */
+  --kpi-h: 112px;         /* compact KPI tile height */
+
+  color-scheme: light;
+}
+
+/* ---------------------------------------------------------------------
+   2. LIGHT THEME — the default
+   --------------------------------------------------------------------- */
+:root, :root[data-theme="light"] {
+  --bg: #f4f8f5;
+  --bg-elev: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #edf5ef;
+  --surface-3: #e3efe7;
+  --sidebar-bg: #063d24;
+  --sidebar-fg: #c6ddd2;   /* nav text; clears 4.5:1 on every sidebar surface including its hover and active washes */
+  --sidebar-fg-dim: #b4cbbf;   /* was #6f957f (2.8:1); also clears the .workspace and hover white washes */
+  --sidebar-active: #0c5836;
+  --border: #d3e3d8;
+  --border-strong: #bfd6c6;
+  --text: #14261c;
+  --text-2: #4c655a;
+  --text-3: #5b6d64;   /* was #7c9488 — 2.76:1 on the page background, below AA */
+  /* TEXT variants of the status colours.
+     The fill colours below stay as they are: they are the product's palette, and
+     as a background with white text they are already fine. But used as TEXT on
+     their own tinted chip they fell between 2.7:1 and 4.1:1. These are the same
+     hues darkened until they clear 4.5:1 on BOTH the chip and the page. */
+  --danger-text: #c92323;
+  --warning-text: #a55a05;
+  --success-text: #11803a;
+  --risk-critical-text: #c92323;
+  --risk-high-text: #bd470a;
+  --risk-medium-text: #956603;
+  --risk-low-text: #11803a;
+  --brand: var(--brand-500);
+  --brand-soft: #e7f3ec;
+  --brand-soft-2: #d3ecdd;
+  --accent-soft: #e0f1f5;
+  --shadow-xs: 0 1px 2px rgba(6, 61, 36, 0.05);
+  --shadow-sm: 0 1px 3px rgba(6, 61, 36, 0.08), 0 1px 2px rgba(6, 61, 36, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(6, 61, 36, 0.10), 0 2px 6px -2px rgba(6, 61, 36, 0.06);
+  --shadow-lg: 0 16px 40px -8px rgba(6, 61, 36, 0.16), 0 6px 14px -6px rgba(6, 61, 36, 0.10);
+  --shadow-pop: 0 24px 60px -12px rgba(6, 61, 36, 0.24);
+  --glass: rgba(255, 255, 255, 0.74);
+
+  /* Data-viz categorical slots — order green → blue → orange → violet → magenta.
+     Validated against this surface (#ffffff): worst adjacent CVD ΔE 17.3,
+     normal-vision ΔE 19.5, all in the lightness band, chroma floor and 3:1
+     contrast. The slot ORDER is the colourblind-safety mechanism: never reorder,
+     never add a sixth hue — the tail folds into --viz-other. */
+  --viz-1: #0d7a3f;
+  --viz-2: #1d6cb0;
+  --viz-3: #ea580c;
+  --viz-4: #6d28d9;
+  --viz-5: #db2777;
+  --viz-other: #8a9a91;
+  --viz-grid: #e6efe9;
+  --viz-axis: #cfe0d5;
+}
+
+/* ---------------------------------------------------------------------
+   3. DARK THEME
+   --------------------------------------------------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1613;
+  --bg-elev: #121d18;
+  --surface: #16221c;
+  --surface-2: #1b2a23;
+  --surface-3: #223029;
+  --sidebar-bg: #08130e;
+  --sidebar-fg: #a6c2b3;
+  --sidebar-fg-dim: #93ac9f;   /* dark theme, same reason */
+  --sidebar-active: #123a28;
+  --border: #263a30;
+  --border-strong: #33473c;
+  --text: #e4ece7;
+  --text-2: #93a89d;
+  --text-3: #86988e;   /* lightened for the dark surfaces, same reason */
+  --danger-text: #e55c5c;
+  --warning-text: #d97706;
+  --success-text: #1fa751;
+  --risk-critical-text: #e55c5c;
+  --risk-high-text: #f08040;
+  --risk-medium-text: #d8b23a;
+  --risk-low-text: #1fa751;
+  --brand: #2fae72;
+  --brand-soft: #10271b;
+  --brand-soft-2: #16351f;
+  --accent-soft: #0c2a31;
+  --success-bg: #0f2e1c;
+  --warning-bg: #33260a;
+  --danger-bg: #37161a;
+  --info-bg: #0b2437;
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 18px -4px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 48px -10px rgba(0, 0, 0, 0.7);
+  --shadow-pop: 0 24px 64px -12px rgba(0, 0, 0, 0.8);
+  --glass: rgba(18, 29, 24, 0.72);
+
+  /* Dark steps are SELECTED for the dark surface (#16221c), not a flip of the
+     light values: same five hues re-stepped into the dark lightness band
+     (L 0.48–0.67). Validated: worst adjacent CVD ΔE 15.9, normal-vision 19.3,
+     contrast ≥ 3:1. */
+  --viz-1: #2fae72;
+  --viz-2: #4f9ae0;
+  --viz-3: #e26a12;
+  --viz-4: #8b6ef0;
+  --viz-5: #e04a8c;
+  --viz-other: #7d8f85;
+  --viz-grid: #223029;
+  --viz-axis: #33473c;
+}

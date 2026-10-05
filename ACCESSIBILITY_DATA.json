@@ -1,0 +1,404 @@
+{
+  "generatedAt": "2026-09-28T18:23:54.992Z",
+  "routes": [
+    {
+      "route": "/exec",
+      "total": 78,
+      "native": 70,
+      "ariaFocusable": 8,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 4,
+        "button": 8
+      }
+    },
+    {
+      "route": "/workspace",
+      "total": 51,
+      "native": 41,
+      "ariaFocusable": 10,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 3,
+        "button": 4,
+        "link": 6
+      }
+    },
+    {
+      "route": "/requests?rv=list",
+      "total": 61,
+      "native": 57,
+      "ariaFocusable": 4,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 3,
+        "button": 1,
+        "link": 3
+      }
+    },
+    {
+      "route": "/matters",
+      "total": 51,
+      "native": 41,
+      "ariaFocusable": 10,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 3,
+        "button": 4,
+        "link": 6
+      }
+    },
+    {
+      "route": "/contracts",
+      "total": 760,
+      "native": 635,
+      "ariaFocusable": 125,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 6,
+        "button": 5,
+        "link": 120
+      }
+    },
+    {
+      "route": "/litigation",
+      "total": 774,
+      "native": 651,
+      "ariaFocusable": 123,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 10,
+        "button": 3,
+        "link": 120
+      }
+    },
+    {
+      "route": "/m/notices",
+      "total": 639,
+      "native": 514,
+      "ariaFocusable": 125,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 10,
+        "button": 5,
+        "link": 120
+      }
+    },
+    {
+      "route": "/compliance",
+      "total": 74,
+      "native": 70,
+      "ariaFocusable": 4,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "link": 4
+      }
+    },
+    {
+      "route": "/compliance/licenses",
+      "total": 96,
+      "native": 83,
+      "ariaFocusable": 13,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "button": 5,
+        "link": 8
+      }
+    },
+    {
+      "route": "/compliance/loans",
+      "total": 403,
+      "native": 327,
+      "ariaFocusable": 76,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "button": 7,
+        "link": 69
+      }
+    },
+    {
+      "route": "/compliance/resolutions?rview=all",
+      "total": 423,
+      "native": 301,
+      "ariaFocusable": 122,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "button": 2,
+        "link": 120
+      }
+    },
+    {
+      "route": "/compliance/leases",
+      "total": 559,
+      "native": 452,
+      "ariaFocusable": 107,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "button": 5,
+        "link": 102
+      }
+    },
+    {
+      "route": "/compliance/services",
+      "total": 444,
+      "native": 356,
+      "ariaFocusable": 88,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "button": 5,
+        "link": 83
+      }
+    },
+    {
+      "route": "/compliance/sec-filings",
+      "total": 36,
+      "native": 36,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7
+      }
+    },
+    {
+      "route": "/tracker",
+      "total": 927,
+      "native": 807,
+      "ariaFocusable": 120,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 5,
+        "link": 120
+      }
+    },
+    {
+      "route": "/projects",
+      "total": 44,
+      "native": 44,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 5
+      }
+    },
+    {
+      "route": "/knowledge",
+      "total": 34,
+      "native": 34,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 6
+      }
+    },
+    {
+      "route": "/repository",
+      "total": 760,
+      "native": 635,
+      "ariaFocusable": 125,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 6,
+        "button": 5,
+        "link": 120
+      }
+    },
+    {
+      "route": "/templates",
+      "total": 468,
+      "native": 468,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 6
+      }
+    },
+    {
+      "route": "/clauses",
+      "total": 85,
+      "native": 69,
+      "ariaFocusable": 16,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 6,
+        "link": 16
+      }
+    },
+    {
+      "route": "/reports",
+      "total": 52,
+      "native": 52,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 5
+      }
+    },
+    {
+      "route": "/costs",
+      "total": 30,
+      "native": 30,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 5
+      }
+    },
+    {
+      "route": "/access",
+      "total": 57,
+      "native": 45,
+      "ariaFocusable": 12,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 8,
+        "link": 12
+      }
+    },
+    {
+      "route": "/datahealth?tab=problems",
+      "total": 53,
+      "native": 53,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 17
+      }
+    },
+    {
+      "route": "/organization",
+      "total": 32,
+      "native": 32,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 10
+      }
+    },
+    {
+      "route": "/settings",
+      "total": 39,
+      "native": 39,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 5
+      }
+    },
+    {
+      "route": "/companies",
+      "total": 149,
+      "native": 50,
+      "ariaFocusable": 99,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 7,
+        "button": 5,
+        "link": 94
+      }
+    },
+    {
+      "route": "/triage",
+      "total": 37,
+      "native": 35,
+      "ariaFocusable": 2,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "link": 2
+      }
+    },
+    {
+      "route": "/approvals",
+      "total": 24,
+      "native": 24,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {
+        "tab": 5
+      }
+    },
+    {
+      "route": "/reviews",
+      "total": 20,
+      "native": 20,
+      "ariaFocusable": 0,
+      "containerWithChildActions": 0,
+      "mouseOnly": 0,
+      "unnamed": 0,
+      "roles": {}
+    }
+  ],
+  "totals": {
+    "total": 7260,
+    "native": 6071,
+    "aria": 1189,
+    "containers": 0,
+    "mouseOnly": 0,
+    "unnamed": 0
+  },
+  "mouseOnlyByComponent": [],
+  "unnamedByComponent": []
+}

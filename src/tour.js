@@ -60,13 +60,6 @@ function useTourState() {
 const STEPS = [
   /* ---------------- MODULE 1 — Request Intake & Management ---------------- */
   {
-    route: "/flow-map",
-    target: ".journey",
-    title: "Module 1 — every request travels this path",
-    caption: "The business raises a request in plain language — they never need to know if it is drafting, review or compliance. From there: triage, assignment, a fixed clock, and a tracked lifecycle all the way to Delivered. The counts are live.",
-    aside: "Requesters get their own simple front door (Raise Request + My Requests) with an in-app chat back to Legal — and they never see internal legal content.",
-  },
-  {
     route: "/triage",
     target: ".triage__panel",
     title: "Assisted triage, not automated",

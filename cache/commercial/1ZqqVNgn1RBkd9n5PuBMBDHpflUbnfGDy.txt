@@ -1,0 +1,1096 @@
+MALL 35 
+ Construction of Grey Structure 
+ PART I - GENERAL CONDITIONS 
+ 
+ Definitions and Interpretation 
+ 
+ Definitions 
+ 1.1 In the Contract (as hereinafter defined) the following words and expressions shall have the meanings hereby assigned to them, except where the context otherwise requires: 
+ (a) ( i ) “ Employer " means the person named in Part II of these Conditions and the legal successors in title to such person, but not (except with the consent of the Contractor) any assignee of such person. 
+ (ii) " Contractor " means the person whose tender has been accepted by the Employer and the legal successors in title to such person, but not (except with the consent of the Employer) any assignee of such person. 
+ (iii) " Subcontractor " means any person named in the Contract as a Subcontractor for a part of the Works or any person to whom a part of the Works has been subcontracted with the consent of the Engineer and the legal successors in title to such person, but not any assignee of any such person. 
+ (iv) “ Engineer ” means, for the purposes of the Contract, any competent person appointed by the Employer and notified to the Contractor to act as the Engineer. Provided always that except in cases of professional misconduct, the Employer shall provide a fair opportunity to the outgoing Engineer to formulate his certifications / recommendations in relation to all outstanding matters, disputes and claims relating to the execution of the Works during his tenure. 
+ (v) “ Engineer’s Representative ” means a person appointed from time to time by the Engineer under Sub-Clause 2.2. 
+ (vi) “ Bidder to Tenderer ” means any person or persons, company, corporation, firm or joint venture submitting a Tender. 
+ (b) ( i ) “ Contract ” means these Conditions (Parts I and II), the Specifications, the Drawings, the summary of costs / Bill of Quantities, the Tender, the Letter of Acceptance, the Contract Agreement (if completed) and such further documents as may be expressly incorporated in the letter of Acceptance or Contract Agreement (if completed). 
+ (ii) “ Specifications ” means the specification of the Works included in the Contract and any modification thereof or addition thereto made under Clause 51 or submitted by the Contractor and approved by the Engineer. 
+ (iii) " Drawings " means all drawings, calculations and technical information of a like nature provided by the Engineer to the Contractor under the Contract and all drawings, calculations, samples, patterns, models, operation and maintenance manuals and other technical information of a like nature submitted by the Contractor and approved by the Engineer. 
+ (iv) '' Summary of Cost " means the priced and completed summary of cost forming part of the Tender. 
+ (v) " Tender " means the Contractor's priced offer to the Employer for the execution and completion of the Works and the remedying of any defects therein in accordance with the provisions of the Contract, as accepted by the Letter of Acceptance. 
+ 
+ The word "Tender" is synonymous with ''Bid" and the words "Tender Documents" with "Bidding Documents". 
+ 
+ (vi) " Letter of Acceptance " means the formal acceptance by the Employer of the Tender. 
+ 
+ (vii) " Contract Agreement " means the contract agreement (if any) referred to in Sub-Clause 9.1. 
+ 
+ (viii) " Appendices to Tender " means the appendices comprised in the form of Tender annexed to these Conditions. 
+ 
+ (ix) " Programme " means the programme to be submitted by the Contractor in accordance with Sub-Clause 14.1, and any approved revisions thereto. 
+ 
+ (c)(1) " Commencement Date " means the date upon which the Contractor receives the notice to commence issued by the Engineer / Employer pursuant to Clause 41. 
+ 
+ (ii) “ Time for Completion ” means the time for completing the execution of and passing the Tests on Completion of the Works or any section or part thereof as stated in the Contract (or as extended under Clause 44) calculated from the Commencement Date. 
+ 
+ (d)( i ) “ Tests on Completion ” means the tests specified in the Contract or otherwise agreed by the Engineer and the Contractor which are to be made by the Contractor before the Works or any Section or part thereof are taken over by the Employer. 
+ 
+ (ii) “ Taking-Over Certificate ” means a certificate issued pursuant to Clause 48. 
+ 
+ (e)( i ) “ Contract Price ” means the sum stated in the Bill of Quantities/ Summary of Cost as payable to the Contractor for the execution and competition of the Works subject to such additions thereto or deductions therefrom as may be made and remedying of any defects therein in accordance with the provisions of the Contract. 
+ 
+ (ii) “ Retention Money ” means the aggregate of all monies retained by the Employer pursuance to Sub-Clause 60.2(a). 
+ 
+ (f)( i ) " Works " mean the Permanent Works and the Temporary Works or either of them as appropriate. 
+ 
+ (ii) " Permanent Works " means the permanent works to be executed (including Plant) in accordance with the Contract. 
+ 
+ (iii) " Temporary Works " means all temporary works of every kind (other than Contractor's Equipment) required in or about the execution and completion of the Works and the remedying of any defects therein. 
+ 
+ (iv) " Plant " means machinery, apparatus and the like intended to form or forming part of the Permanent Works. 
+ 
+ (v) " Contractor's Equipment " means all appliances and things of whatsoever nature (other than Temporary Works) required for the execution and completion of the Works and the remedying of any defects therein, but does not include Plant, materials or other things intended to form or forming part of the Permanent Works. 
+ 
+ (vi) " Section " means a part of the Works specifically identified in the Contract as a Section. 
+ 
+ (vii) " Site " means the places provided by the Employer where the Works are to be executed and any other places as may be specifically designated in the Contract as forming part of the Site. 
+ 
+ (g)( i ) " Cost " means all expenditure properly incurred or to be incurred, whether on or off the Site, including overhead and other charges properly allocable thereto but does not include any allowance for profit. 
+ 
+ (ii) " d ay " means calendar day. 
+ 
+ (iii) ' ' F oreign Currency " means a currency of a country other than that in which the Works are to be located. 
+ 
+ (vi) “ Writing ” means any hand-written, type-written or printed communications, including e-mail, telex, cable and facsimile transmission. 
+ 
+ Headings and Marginal Notes 
+ 1.2 The headings and marginal notes in these Conditions shall not be deemed part thereof or be taken into consideration in the interpretation or construction thereof or of the Contract. 
+ 
+ Interpretation. 
+ 1.3 Words importing persons or parties shall include firms and corporations and any organization having legal capacity. 
+ 
+ Singular and Plural 
+ 1.4 Words importing the singular only also include the p lural and vice versa , where the context requires. 
+ 
+ Notices, Consents, Approvals, Certificates and Determinations. 
+ 
+ 1.5 Wherever in the Contract provision is made for the giving or issue of any notice, consent, approval certificate or determination by any person, unless otherwise specified such notice, consent approval, certificate or determination shall be in writing and the words “notify”, “certify” or “determine” shall be construed accordingly. Any such consent, approval, certificate or determination shall not unreasonably be withheld or delayed. 
+ 
+ Engineer and Engineer’s Representative 
+ 
+ Engineer’s Duties and Authority 
+ 2.1 (a) The Engineer shall carry out the duties specified in the C on tract. 
+ 
+ (b) If , in the opinion of the Engineer , an emergency occurs affecting the safety of life or of the Works or of adjoining property, the Engineer may, without relieving the Contractor of any of his duties and responsibilities under the Contract, instruct the C ontractor to execute all such work or to do all such things as may, in the opinion of the Engineer, be necessary to abate or reduce the risk. The Contractor shall forthwith comply with any such instruction of the Engineer. The Engineer shall determine an addition to the Contract Price, in respect of such instruction, in accordance with Clause 52 and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ (c) Except as expressly stated in the Contract, the Engineer shall have no authority to relieve the Contractor of any of his obligations under the Contract. 
+ 
+ Engineer's Representative 
+ 2.2 The Engineer's Representative shall be appointed by and be responsible to the Engineer and shall carry out such duties and exercise such authority as may be delegated to him by the Engineer under Sub-Clause 2.3. 
+ 
+ The Employer shall ensure that the Engineer's Representative is a professional engineer as defined in the Pakistan Engineering Council Act 1975 (V of 1976). 
+ 
+ Engineer's Authority to Delegate 
+ 2.3 The Engineer may from time to time delegate to the Engineer's Representative any of the duties and authorities vested in the Engineer and he may at any time revoke such delegation . Any such delegation or revocation shall be in writing and shall not take effect until a copy thereof has been delivered to the Employer and the Contractor. 
+ 
+ Any communication given by the Engineer's Representative to the Contractor in accordance with such delegation shall have the same effect as though it had been given by the Engineer. Provided that: 
+ 
+ any failure of the Engineer's Representative to disapprove any work, materials or Plant shall not prejudice the authority of the Engineer to disapprove such work, materials or Plant and to give instructions for the rectification thereof; 
+ 
+ if the Contractor questions any communication of the Engineer’s Representative, he may refer the matter to the Engineer who shall confirm, reverse or vary the contents of such communication. 
+ 
+ Appointment 
+ of Assistants. 
+ 
+ 2.4 The Engineer or the Engineer’s Representative may appoint any number of persons to assist the Engineer’s Representative in the carrying out of his duties under Sub-Clause 2.2. He shall notify to the Contractor the names, duties and scope of authority of such persons. Such assistants shall have no authority to issue any instructions to the Contractor save in so far as such instructions may be necessary to enable them to carry out their duties and to secure their acceptance of materials, plant or workmanship as being in accordance with the Contract, and any instructions given by any of them for those purposes shall be deemed to have been given by the Engineer's Representative. 
+ 
+ Instructions 
+ in Writing 
+ 2.5 Instructions given by the Engineer shall be in writing, provided that if for any reason the Engineer considers it necessary to give any such instruction orally, the Contractor shall comply with such instruction. Confirmation in writing of such oral instructions given by the Engineer, whether before or after carrying out of the instructions, shall be deemed to be an instruction within the meaning of this Sub-Clause. Provided further that if the Contractor, within seven ( 7 ) days, confirms in writing to the Engineer any oral instruction of the Engineer and such confirmation is not contradicted in writing within seven ( 7 ) days by the Engineer it shall be deemed to be an instruction of the Engineer. 
+ 
+ The provisions of this Sub-Clause shall equally apply to instructions given by the Engineer's Representative and any assistants of the Engineer or the Engineer's Representative appointed pursuant to Sub-Clause 2.4. 
+ 
+ Engineer to Act 
+ Impartially 
+ 2.6 Wherever, under the Contract, the Engineer is required to exercise his discrereation bt discretion by: 
+ 
+ giving his decision, opinion or consent, or 
+ expressing his satisfaction or approval, or 
+ determining value, or 
+ otherwise taking action which may affect the rights and obligations of the Employer or the Contractor 
+ he shall exercise such discretion impartially within the terms of the Contract and having regard to all the circumstances. Any such decision, opinion, consent, expression of satisfaction, or approval, determination of value or action may be opened up, reviewed or revised as provided in Clause 67. 
+ Engineer not 
+ Liable 
+ 2.7 Approval, reviews and inspection by the Engineer of any part of the Works does not relieve the Contractor from his sole responsibility and liability for the supply of materials, plant and equipment for construction of the Works and their parts in accordance with the Contract and neither the Engineer’s authority to act nor any decision made by him in good faith as provided for under the Contract whether to exercise or not to exercise such authority shall give rise to any duty or responsibility of the Engineer to the Contractor, any Subcontractor, any of their representatives or employees or any other person performing any portion of the Works. 
+ 
+ 
+ Replacement of 
+ the Engineer 
+ 2.8. If the Employer intend s to replace the Engineer, the Employer shall, not less than fourteen ( 14 ) days before the intended date of replacement, give notice to the Contractor, of the name, address and relevant experience of the intended replacement Engineer. The Employer shall not replace the Engineer with a person against the Contractor raises reasonable objection by notice to the Employer, with supporting particulars. 
+ 
+ Assignment and Subcontracting 
+ 
+ Assignment of 
+ Contract 
+ 
+ 3.1 The Contractor shall not without the prior consent of the Employer (which consent, notwithstanding the provisions of Sub-Clause 1.5, shall be at the sole discretion of the Employer), assign the Contract or any part thereof, or any benefit or interest therein or thereunder, otherwise than by: 
+ 
+ a charge in favour of the Contractor’s bankers of any monies due or to become due under the contract, or 
+ 
+ assignment to contractor’s insurers (in cases where the insurers have discharged the Contractor’s loss or liability of the Contractor’s right to obtain relief against any other party liable. 
+ 
+ Subcontracting 
+ 4.1 The Contractor shall not subcontract the whole of the Works. Except where otherwise provided by the Contract, the Contractor shall not subcontract any part of the Works without the prior consent of the Engineer. Any such consent shall not relieve the Contractor from any liability or obligation under the Contract and he shall be responsible for the act, defaults and neglects of any Subcontractor, his agents, servants or workmen as fully as if they were the acts, defaults or neglects of the Contractor, his agents, servants and workmen. 
+ 
+ Provided that the Contractor shall not be required to obtain such consent for: 
+ 
+ the provision of labour , or 
+ 
+ the purchase of materials which are in accordance with the standards specified in the Contract, or 
+ 
+ the subcontracting of any part of the Works for which the Subcontractor is named in the Contract. 
+ 
+ Assignment of 
+ Subcontractors’ 
+ Obligations. 
+ 4.2 In the event of a s ubcontractor having undertaken towards the Contractor in respect of the W ork executed, or the goods, materials, Plant or services supplied by such s ubcontractor, any continuing obligation extending for a period exceeding that of the Defects Liability Period under the Contract, the Contractor shall at any time, after the expiration of such Period, assign to the Employer, at the Employer's request and cost, the benefit of such obligation for the unexpired duration thereof. 
+ 
+ Contract Documents 
+ 
+ Languages and 
+ Law 
+ 
+ (a) The Contract Documents shall be drawn up in the English language. 
+ 
+ (b) The Contract shall be subject to the Laws of Islamic Republic of Pakistan. 
+ 
+ Priority of 
+ Contract 
+ Documents 
+ 5.2 The several documents forming the C ontract are to be taken as mutually explanatory of one another, but in case of ambiguities or discrepancies the same shall be explained and adjusted by the Engineer who shall thereupon issue to the Contractor instructions thereon and in such event, unless otherwise provided in the Contract, the priority of the documents forming the Contract shall be as follows: 
+ 
+ The Contractor Agreement (if completed); 
+ 
+ The Letter of Acceptance; 
+ 
+ The Tender; 
+ 
+ The Conditions of Particular Application – Part II; 
+ 
+ The General Conditions – Part I; 
+ 
+ The Drawings; 
+ 
+ The Specifications; 
+ 
+ The Summary of Cost; 
+ 
+ Addenda &amp; Corrigenda Nos. 01 
+ 
+ ………………………………….. 
+ 
+ ………………………………….. 
+ 
+ In case of discrepancies between the D rawings, those of larger scale shall govern unless they are superseded by a D rawing of later date regardless of scale. All Drawings and Specifications shall be interpreted in conformity with the Contract and these Conditions. Addendum, if any, shall be deemed to have been incorporated at the appropriate places in the documents forming the Contract. 
+ 
+ Custody and 
+ Supply of 
+ Drawings and 
+ Documents 
+ 6.1 The Drawings shall remain in the sole custody of the Engineer, but two (2) copies thereof shall be provided to the Contractor free of charge. The Contractor shall make at his own cost any further copies required by him. Unless it is strictly necessary for the purposes of the Contract, the Drawings, Specification s and other documents provided by the Employer or the Engineer shall not, without the consent of the Engineer, be used or communicated to a third party by the Contractor. Upon issue of the Defects Liability Certificate, the Contractor shal l return to the Engineer al l Drawings, Specification s and other documents provided under the Contract. 
+ 
+ The Contractor shal l supply to the Engineer four (4) copies of all Drawings, Specification s and other documents submitted by the Contractor and approved by the Engineer in accordance with Clause 7, together with a reproducible copy of any material which cannot be reproduced to an equal standard by photocopying. In addition, the Contractor shall supply such further copies of such Drawings, Specification s and other documents as the Engineer may request in writing for the use of the Employer, who shall pay the cost thereof. 
+ 
+ One Copy of 
+ Drawings to be 
+ kept on Site. 
+ 6.2 One (1) copy of the Drawings, provided to or supplied by the Contractor as aforesaid, shall be kept by the Contractor on the Site and the same shall at all reasonable times be available for inspection and use by the Engineer and by any other person authorized by the Engineer in writing. 
+ 
+ Disruption of 
+ Progress 
+ 
+ 6.3 The Contractor shall give notice to the Engineer with a copy to the Employer, whenever planning or execution of the Works is likely to be delayed or disrupted unless an y further drawing or instruction is issued by the Engineer within a reasonable time. The notice shall include details of the drawing or instruction required and of why and by when it is required and of any delay or disruption likely to be suffered if it is late. 
+ 
+ Delays and Cost 
+ of Delay of 
+ Drawings 
+ 6.4 If, by reason of any failure or inability of the Engineer to issue, within a time reasonable in all the circumstances and drawing or instruction for which notice has been given by the Contractor in accordance with Sub-Clause 6.3, the Contractor suffers delay and / or incurs costs then the Engineer shall after due consultation with the Employer and the Contractor, determine: 
+ 
+ Any extension of time to which the Contractor is entitled under Clause 44, and 
+ 
+ The amount of such costs, which shall be added to the Contract Price, and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Failure by 
+ Contractor to 
+ Submit Drawings 
+ 
+ 6.5 I f the failure or inability of the Engineer to issue any drawings or instructions is caused in whole or in part by the failure of the Contractor to submit Drawings, Specifications or other documents which he is required to submit under the Contract, the Engineer shall take such failure by the Contractor into account when making his determination pursuant to Sub-Clause 6.4 . 
+ 
+ Shop Drawing 
+ 6.6 The Contractor shall submit to the Engineer for review three ( 3 ) copies of al l shop and erection drawings applicable to this Contract as per provision of relevant Sub-Clause of the Contract. 
+ Review and approval by the Engineer shal l not be construed as a complete check but will indicate only that the general method of construction and detailing is satisfactory and that the Engineer's review or approval shall not relieve the Contractor of any of his responsibilities under the Contract. 
+ 
+ As-Built 
+ Drawings 
+ 
+ 6.7 At the completion of the Works under the Contract, the Contractor shall furnish to the E ngineer six ( 6 ) copies and one (1) reproducible of all drawings amended to comply with the Works as built. The price of such Drawings shall be deemed to be included in the Contract Price. 
+ 
+ Supplementary 
+ Drawings and 
+ Instructions 
+ 7.1 The Engineer shall have authority to issue to the Contractor, from time to time, such supplementary Drawings and instructions as shall be necessary for the purpose of the proper and adequate execution and completion of the Works and the remedying of any defects therein. The Contractor shall carry out and be bound by the same. 
+ 
+ Permanent 
+ Works Designed 
+ by Contractor 
+ 
+ 7.2 Where the Contract expressly provides that part of the Permanent Works shall be designed by the Contractor, he shall submit to the Engineer, for approval: 
+ such drawings, specifications, calculations and other information as shall be necessary to satisfy the Engineer as to the suitability and adequacy of that design, and 
+ 
+ operation and maintenance manuals together with drawings of the Permanent Works as completed, in sufficient detail to enable the Employer to operate, maintain, dismantle, reassemble and adjust the Permanent Works incorporating that design. The Works shall not be considered to be completed for the purposes of taking over in accordance with Clause 48 until such operation and maintenance manuals, together with drawings on completion, have been submitted to and approved by the Engineer. 
+ 
+ Responsibility 
+ Unaffected by 
+ Approval 
+ 7.3 Approval by the Engineer, in accordance with Sub-Clause 7.2, shall not relieve the Contractor of any of his responsibilities under the Contract. 
+ 
+ 
+ General Obligations 
+ 
+ Contractor’s General Responsibilities 
+ 8.1 The Contractor shall, with due care and diligence, design (to the extent provided for by the Contract), execute and complete the works and remedy any defects therein in accordance with the provisions of the Contract. The Contractor shall provide all superintendence labour , materials (except supplied by Employer), Plant, Contactor’s Equipment and all other things, whether of a temporary or permanent nature, required in and for such design, execution, completion and remedying of any defects, so fa r as the necessity for providing the same is specified in or is reasonably to be inferred from the Contract. 
+ 
+ Site Operation and Methods of Construction 
+ 
+ 8.2 The Contractor shall take full responsibility for the adequacy, stability and safety of all Site operating and methods of construction. Provided that the Contractor shall not be responsible (except as stated hereunder or as may be otherwise agreed) for the design or specification of Permanent Works, or for the design or specification of any Temporary Works not prepared by the Contractor. Where the Contract expressly provides that part of the Permanent Works shall be designed by the Contractor, he shall be fully responsible for that part of such Works, notwithstanding any approval by the Engineer. 
+ 
+ Contract Agreement 
+ 9.1 The Contractor shall, if called upon so to do, enter into and execute the Contract Agreement, to be prepared and completed at the cost of the Employer, in the form annexed to these Conditions with such modifications as may be necessary. 
+ 
+ Performance Security 
+ 10.1 The Contractor shall provide Performance Security to the Employer in the prescribed form. The said Security shall be furnished or caused to be furnished by the Contractor within the time, of an amount and in the form stated in Appendix A to Tender. The cost of complying with the requirements of this Sub-Clause shal l be borne by the Contractor. 
+ Period of Validity of Performance Security 
+ 
+ 10.2 The P erformance S ecurity shall be valid until the Contractor has executed and completed the Works and remedied any defects therein in accordance with the Contract. No claim shall be made against such Performance S ecurity after the issue of the Defects Liability Certificate in accordance with Sub-Clause 62.1 and such Performance S ecurity shall be returned to the Contractor within fourteen ( 14 ) days of the issue of the said Defects Liability Certificate. 
+ 
+ Claims under Performance Security 
+ 10.3 Prior to making a claim under the performance security the Employer shall, in every case, notify the Contractor stating the nature of the default in respect of which the claim is to be made. 
+ 
+ 
+ Performance Security Binding on Variations and Changes 
+ 10.4 The Performance Security shall be binding irrespective of changes in the quantities of or variations in the Works or extensions in completion time of the Works which are granted or agreed upon under the provisions of the Contract. 
+ 
+ Inspection of Site 
+ 11.1 The Employer shall have made available to the Contractor before the submission by the Contractor of the Tender, such data on hydrological and sub-surface conditions as have be e n obtained by or on behalf of the Employer from investigations undertaken relevant to the Works but t he Contractor shall be responsible for his own interpretation thereof. 
+ 
+ The Contractor shall be deemed to have inspected and examined the Site and its surroundings and information available in conjunction therewith and to have satisfied himself (so far as is practicable having regarding to considerations of cost and time) before submitting his Tender; as to: 
+ 
+ the form and nature thereof including the sub-surface conditions, 
+ the hydrological and climatic conditions, 
+ the extent and nature of work and materials necessary for the execution and completion of the Works and the remedying of any defects therein, and 
+ the means of access to the Site and the accommodation that may be require d and in general, shall be deemed to have obtained all necessary information, subject as above mentioned as to risks, contingencies and all other circumstances which may influence or affect his Tender. 
+ 
+ The Contractor shall be deemed to have based his Tender on the data made available by the Employer and on his own inspection and examination, all as aforementioned. 
+ 
+ Sufficiency of Tender 
+ 12.1 The Contractor shall be deemed to have satisfied himself as to the correctness and sufficiency of the Tender and of the rates and prices stated in the Bill of Quantities, all of which shall, except insofar as it is otherwise provided in the Contract, cover all his obligations under the Contract (including those in respect of the supply of goods, materials, Plant or services or of contingencies for which there is a Provisional Sum) and all matters and things necessary for the proper execution and completion of the Works and the remedying of any defects therein. 
+ Adverse Physical Obstructions or Conditions 
+ 12.2 If , however, during the execution of the Works the Contractor encounters physical obstructions or physical conditions, other than climatic conditions on the Site, which obstructions or conditions were, in his opinion, not foreseeable by an experienced contractor, the Contractor shal l forthwith give notice thereof to the Engineer, with a copy to the Employer. On receipt of such notice, the Engineer shall, if in his opinion such obstructions or conditions could not have been reasonably foreseen by an experienced contractor, after due consultation with the Employer and the Contractor, determine: 
+ any extension of time to which the Contractor is entitled under Clause 44, and 
+ the amount of any costs which may have been incurred by the Contractor by reason of such constructions or conditions having been encountered, which shall be added to the Contract Price, 
+ and shall notify the Contactor accordingly, with a copy to the Employer. Such determination shall take account of any institution which the Engineer may issue to the Contractor in connection therewith, and any proper and reasonable measures acceptable to the Engineer which the Contractor may take in the absence of specific instructions from the Engineer. 
+ 
+ Work to be in Accordance with Contract 
+ 13.1 Unless it is legally or physically impossible , the Contractor shall execute and complete the Works and remedy and defects therein in strict accordance with the Contract to the satisfaction of the Engineer. The Contractor shall comply with and adhere strictly to the Engineer’s instructions on any matter, whether mentioned in the Contract or not, relating to or concerning the Works. The Contractor shall take instructions only from the Engineer or, subject to the provisions of Clause 2, from the Engineer’s Representative. 
+ Programme to be Submitted 
+ 14.1 The Contractor shall within the time stated in Appendix A to Tender, submit to the Engineer for his consent a programme , in such form and detail as the Engineer shall reasonably prescribed for the execution of the Works. The Contractor shall, whenever required by the Engineer, also provide in writing for his information a general description of the arrangements and methods which the Contractor proposes to adopt for the execution of the Works. 
+ 
+ Revised 
+ Programme 
+ 
+ 14.2 If at the time i t should appear to the Engineer that the actual progress of the Works does not conform to the programme to which consent has been given under Sub-Clause 14.1, the Contractor shall produce at the request of the Engineer, a revised programme showing the modifications to such programme necessary to ensure completion of the Works within the Time for Completion. 
+ 
+ Cash Flow Estimate to be Submitted 
+ 14.3 The Contractor shall, within the time stated in Appendix A to Tender, provide to the Engineer for his information a detailed cash flow estimate, in quarterly periods, of all payments to which the Contractor will be entitled under the Contract and the Contractor shall subsequently supply revised cash flow estimates at quarterly intervals, if required to do so by the Engineer. 
+ 
+ Contractor Not Relieved of Duties or Responsibilities 
+ 14.4 The submission to and consent by the Engineer of such programmes or the provision of such general descriptions or cash flow estimates shall not relieve the Contractor of any of his duties or responsibilities under the Contract. 
+ 
+ Detailed Programme and 
+ Monthl y Progress Report 
+ 
+ 14.5 (a) For purposes of Sub-Clause 14.1, the Contractor shall submit to the Engineer detailed programme for the following: 
+ Execution of Works; 
+ Labour Employment; 
+ Local Material Procurement; 
+ Material Imports, if any; and 
+ Other details as required by the Engineer 
+ (b) During the period of the Contract, the Contractor shall submit to the Engineer not later than the eighth (8 th ) day of the following month, four ( 4 ) copies each of monthly progress reports covering: 
+ A construction schedule indicating the monthly progress in percentage; 
+ Description of all W ork carried out since the last report; 
+ Description of the W ork planned for the next fifteen ( 15 ) days sufficiently detailed to enable the Engineer to determine his programme of inspection and testing; 
+ Monthly summary of daily job record; 
+ Photographs to illustrate progress; and 
+ Information about problems and difficulties encountered, if any, and proposals to overcome the same. 
+ 
+ (c) During the period of the Contract, the Contractor shall keep a daily record of the work progress, which shall be made available to the Engineer as and when requested. The daily record shall include particulars of weather conditions, conditions due to weather conditions, number of men working deliveries of materials, quantity, location and assignment of Contractor’s equipment. 
+ 
+ Contractor’s Superintendence 
+ 
+ 15.1 The Contractor shall provide all necessary superintendence during the execution of the Works and as l ong thereafter as the Engineer may consider necessary for the proper fulfilling of the Contractor's obligations under the Contract. The Contractor, or a competent and authorised representative approved by the Engineer, which approval may at any time be withdrawn, shall give his whole time to the superintendence of the Works. Such authorised representative shall receive, on behalf of the Contractor, instructions from the Engineer or, subject to the provisions of Clause 2, the Engineer's Representative. 
+ 
+ If approval of the representative is withdrawn by the Engineer, the Contractor shall, as soon as is practicable, having regard to the requirement of replacing him as hereinafter mentioned, after receiving notice of such withdrawal, remove the representative from the Works and shall not thereafter employ him again on the Works in any capacity and shall replace him by another representative approved by the Engineer. 
+ Language Ability of Contractor’s Representative 
+ 
+ 15.2 The Contractor’s authorized representative shall be fluent in the English language. 
+ 
+ Contractor's Representative 
+ 15.3 The Contractor's authorised representative and his other professional engineers working at Site shall register themselves with the Pakistan Engineering Council. The Contractor's authorised representative at Site shall be authorised to exercise adequate administrative and financial powers on behalf of the Contractor so as to achieve completion of the Works as per the Contract. 
+ 
+ Contractor's Employees 
+ 16.1 The Contractor shall provide on the Site in connection with the execution and completion of the Works and the remedying of any defects therein : 
+ 
+ only such technical assistants as are skilled and experienced in their respective callings and such foremen and leading hands as are competent to give proper superintendence of the Works, and 
+ such skilled, semi-skilled and unskilled l abour as is necessary for the proper and timely fulfilling of the Contractor's obligations under the Contract. 
+ 
+ Engineer at 
+ Liberty 
+ to Object. 
+ 
+ 16.2 The Engineer shall be at liberty to object to and require the Contractor to remove forthwith from the Works an y person provided by the Contractor who, in the opinion of the Engineer, misconducts himself or is incompetent or negligent in the proper performance of his duties or whose presence on Site is otherwise considered by the Engineer to be undesirable, and such person shall not be again allowed upon the Works without the consent of the Engineer. Any person so removed from the Works shall be replaced as soon as possible. 
+ 
+ Language Ability 
+ of Superintending Staff of Contractor 
+ 
+ 16.3 A reasonable proportion of the Contractor’s superintending staff shall have a working knowledge of the English language. 
+ 
+ Employment of Local 
+ Personnel 
+ 
+ 16.4 The Contractor is encouraged, to the extent practicable and reasonable, to employ staff and labour from sources within Pakistan. 
+ Setting-out 
+ 
+ 17.1 The Contractor shall be responsible for: 
+ The accurate setting-out of the Works in relation to original points, lines and levels of reference given by the Engineer in writing, 
+ 
+ The correctness, subject as above mentioned, of th e position, levels, dimensions and alignment of all parts of the Works, and 
+ 
+ the provision of all necessary instruments, appliances and labour in connection with the foregoing responsibilities. 
+ if, at any time during the execution of the Works, any error appears in the position, levels, dimensions or alignment of any part of the Works, the Contractor, on being required so to do by the Engineer, shall, at his own cost, rectify such error to the satisfaction of the Engineer, unless such error is based on incorrect data supplied in writing by the Engineer, in which case the Engineer shall determine an addition to the Contract Price in accordance with Clause 52 and shall notify the Contractor accordingly, with a copy to the Employer. 
+ The checking of any setting-out or of any line or level by the Engineer shall not in any way relieve the Contractor of his responsibility for the accuracy thereof and the Contractor shall carefully protect and preserve all bench-marks, slight-rails, pegs and other things used in setting-out the Works. 
+ 
+ Boreholes and Exploratory Excavation 
+ 18.1 If, at any time during the execution of the Works, the Engineer requires the Contractor to make boreholes or to carry out exploratory excavation, such requirement shall be the subject of an instruction in accordance with Clause 51, unless an item or a Provisional Sum in respect of such work is included in the Bill of Quantities. 
+ Safety, Security and Protection of the Environment 
+ 
+ 19.1 The Contractor shall, throughout the execution and completion of the Works and the remedying of any defects therein: 
+ 
+ have full regard for the safety of all persons entitled to be upon the Site and keep the Site (so far as the same is under his control) and the Works (so far as the same are not completed or occupied by the Employer) in an orderly state appropriate to the avoidance of danger to such persons, 
+ 
+ provide and maintain at his own cost all lights, guards, fencing, warning, signs and watch men, when and where necessary or required by the Engineer or by any duly constituted authority, for the protection of the Works or for the safety and convenience of the public or others, 
+ 
+ take all reasonable steps to protect the environment on and off the Site and to avoid damage or nuisance to persons or to property of the public or others resulting from pollution, noise or other causes arising as a consequence of his methods of operation , and 
+ 
+ The Contractor to be fully responsible to meet all requirements of e nvironmental p rotection Laws of Pakistan, during his W orks. 
+ 
+ Employer’s Responsibilities 
+ 19.2 If under Clause 31 , the Employer shall carry out W ork on the Site with his own workmen he shall, in respect of such W ork: 
+ 
+ have full regard to the safety of all persons entitled to be upon the Site, and 
+ 
+ keep the Site in as orderly state appropriate to the avoidance of danger to such persons. 
+ If under Clause 31 , the Employer shall employ other contractors on the Site the Employer shall require the other contractors to have the same regard for safety and avoidance of danger. 
+ 
+ Safety Precautions 
+ 19.3 In order to provide for the safety, health and welfare of persons, and for prevention of damage of any kind, all operations for the purposes of or in connection with the Contract shall be carried out in compliance with the s afety r equirements of the Government of Pakistan with such modifications thereto as the Engineer may authorise or direct and the Contractor shall take or cause to be taken such further measures and comply with such further requirements as the Engineer may determine to be reasonably necessary for such purpose. 
+ The Contractor shall make, maintain and submit reports to the Engineer concerning safety, health and welfare of persons and damage to property, as the Engineer may from time to time prescribe. 
+ 
+ Lighting Works at Night 
+ 19.4 In the event of W ork s being carried out at night, the Contractor shall, at his own cost, provide and maintain such good and sufficient light as will enable the W ork s to proceed satisfactorily and without danger. The approaches to the Site and the Works where the night work is being carried out shall be sufficiently lit . All arrangements adopted for such lighting shall be to the satisfaction of the Enginee r . 
+ 
+ Care of Works 
+ 20.1 The Contractor shall take full responsibility for the care of the Works and materials and Plant for incorporation therein from the Commencement Date until the date of issue of the Taking-Over Certificate for the whole of the Works, when th e responsibility for the said care shall pass to the Employer. Provided that: 
+ 
+ if the Engineer issues a Taking-Over Certificate for any Section or part of the Permanent Works the Contractor shall cease to be liable for the care of that Section or part from the date of issue of the Taking-Over Certificate, when the responsibility for the care of that Section or part shall pass to the Employer, and 
+ 
+ the Contractor shall take full responsibility for the care of any outstanding Works and materials and Plant for incorporation therein which he undertakes to finish during the Defects Liability Period until such outstanding Works have been completed pursuant to Clause 49. 
+ 
+ Responsibility to Rectify Loss or Damage 
+ 20.2 If any loss or damage happens to the Works, or any part thereof, or materials or Plant for incorporation therein, during the period for which the Contractor is responsible for the care thereof, from any cause whatsoever, other than the risks defined in Sub-Clause 20.4., the Contractor shall, at his own cost, rectify such loss or damage so that the Permanent Works conform in every respect with the provisions of the Contract to the satisfaction of the Engineer. The Contractor shall also be liable for any loss or damage to the Works occasioned by him in the course of any operations carried out by him for the purpose of complying with his obligations under Clauses 49 and 50. 
+ 
+ Loss or Damage Due to Employer's Risks 
+ 20.3 In the event of any such loss or damage happening from any of the risks defined in Sub-Clause 20.4, or in combination with other risks, the Contractor shall, if and to the extent required to the Engineer, rectify the loss or damage and the Engineer shall determine an addition to the Contract Price in accordance with Cause 52 and shall notify the Contractor accordingly, with a copy to the Employer. In the case of a combination of risks causing loss or damage any such determination shall take into account the proportional responsibility of the Contractor and the Employer. 
+ 
+ Employer's Risks 
+ 
+ 20.4 The Employer’s risks are: 
+ 
+ insofar as they directly affect the execution of the Works in Pakistan: 
+ 
+ war and hostilities (w hether war be declared or not), invasion, act of foreign enemies, 
+ rebellion, revolution, insurrection, or military or usurped power, or civil war, 
+ ionizing radiations , or contamination by radio a ctivity from any nuclear fuel, or from any nuclear waste from the combustion of nuclear fuel, radioactive toxic explosive or other hazardous properties of any explosive nuclear assembly or nuclear component thereof, 
+ pressure waves caused by aircraft or other aerial devices travelling at sonic or supersonic speeds, 
+ riot, commotion or disorder, unless solely restricted to the employees of the Contractor or of his Subcontractors and arising from the conduct of the Works; 
+ 
+ loss or damage due to the use or occupation by the Employer of any Section or part of the Permanent Works, except as may be provided for in the Contract; 
+ 
+ loss or damage to the extent that it is due to the design of the Works, other than any part of the design provided by the Contractor or for which the Contractor is responsible; and 
+ 
+ any operation of the forces of nature (in so far as it occurs on the Site) which an experienced contractor: 
+ 
+ could not have reasonably foreseen, or 
+ could reasonably have foreseen, but against which he could not reasonably have taken at least one of the following measures: 
+ prevent loss or damage to physical property from occurring by taking appropriate measures, or 
+ insure against. 
+ 
+ Insurance of Works and Contractor’s Equipment 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Scope of Cover 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Responsibility for Amounts not Recovered 
+ 
+ Exclusions 
+ 
+ 
+ 
+ Damage to Persons and Property 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 21.1 The Contractor shall, without limiting his or the Employer’s obligations and responsibilities under Clause 20, insure: 
+ the Works, together with materials and Plant for incorporation therein, to the full replacement cost ; 
+ and additional sum of fifteen per cent (15%) of such replacement cost, to cover any additional costs of and incidental to the rectification of loss or damage including professional fees and the costs of demolishing and removing any part of the Works and of removing debris of whatever nature ; and 
+ the Contractor’s Equipment and other things brought onto the Site by the Contractor, for a sum sufficient to provide for their replacement at the Site. 
+ 21.2 The insurance in paragraphs (a) and (b) of Sub-Clause 21.1 shall be in the joint names of the Contractor and the Employer shall cover: 
+ the Employer and the Contractor against all loss or damage from whatsoever cause arising, other than as provided in Sub-Clause 21.4, from the start of Work at the Site until the date of issue of the relevant Taking-Over Certificate in respect of the Works or any Section or part thereof as the case may be, and 
+ 
+ the Contractor for his liability: 
+ 
+ during the Defects Liability Period for loss or damage arising from a cause occurring prior to the commencement of the Defects Liability Period, and 
+ 
+ for loss and damage occ asioned by the Contractor in the course of any operations carried out by him for the purpose of complying with his obligations under Clauses 49 and 50. 
+ 
+ 21.3 Any amounts not insured or not recovered from the insurers shall be borne by the Employer or the Contractor in accordance with their responsibilities under Clause 20. 
+ 
+ 21.4 There shall be no obligation for the insurance in Sub-Clause 21.1 to include loss or damage caused by the risks listed under Sub-Clause 20.4 paras (a) ( i ) to (iv). 
+ 
+ 22.1 The Contractor shall, except if and so far as the Contract provides otherwise, indemnify the Employer against all losses and claims in respect of: 
+ 
+ death of or injury to any person, or 
+ loss of or damage to any person (other than the Works), 
+ 
+ which may arise out of or in consequence of the execution and completion of the Works and the remedying of any defects therein, and against all claims, proceedings, damages, costs, charges and expenses whatsoever in respect thereof or in relation there to, subject to the exceptions defined in Sub-Clause 22.2. 
+ Exceptions 
+ 22.2 The “exceptions ” referred to in Sub-Clause 22.1 are: 
+ (a) the permanent use or occupation of land by the Works or any part thereof, 
+ (b) the right of the Employer to execute the Works, any part thereof, on, over, under, in or through any land, 
+ (c) damage to property which is the unavoidable result of the execution and completion of Works, or the remedying or any defects therein, in accordance with the Contract, 
+ (d) death of injury to persons or loss of or damage to property resulting from any act or neglect of the Employer, his agents, servants or other contractors, not being employed by the Contractor, or in respect of any claims, proceedings, damages, costs, charges and expenses in respect thereof or in relation thereto or, where the injury or damage was contributed to by the Contractor, his servants or agents, such part of the said injury or damage as may be just and equitable having regard to the extent of the responsibility of the Employer , his servant or agents or other contractors for the injury or damage. 
+ Indemnity by the Employer 
+ 
+ 
+ 
+ 22.3 The Employer shall indemnify the Contractor against all claims, proceedings, damages, costs, charges and expenses in respect of the matters referred to in the exceptions defined in Clause 22.2. 
+ Third Party Insurance (including Employer’s Property) 
+ 23.1 The Contractor shall, without limiting his or the Employer’s obligations and responsibilities under Clause 22, insure, in the joint names of the Contractor and the Employer, against liabilities for death of or injury to any person (other than as provided in Clause 24) or loss of or damage to any property (other than the Works) arising out of the performance of the Contract, other than the exceptions defined in paragraph (a), (b) and (c) of Sub-Clause 22.2. 
+ Minimum Amount of Insurance 
+ 23.2 Such insurance shall be for at least the amount stated in Appendix A to Tender. 
+ Cross Liabilities 
+ 23.3 The insurance policy shall include a cross liability clause such that the insurance shall apply to the Contractor and to the Employer as separate insureds. 
+ 
+ Accident or Injury to Workmen 
+ 24.1 The Employer shall not be liable for or in respect of any damages or compensation payable to any workman or other person in the employment of the Contractor or any s ubcontractor . The Contractor shall indemnify and keep indemnified the Employer against all such damages and compensation, other than those for which the Employer is liable as aforesaid, and against all claims, proceedings, damages, costs, charges, and expenses whatsoever in respect thereof or in relation thereto. 
+ Insurance against Accident to Workmen 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Evidence and Terms of Insurances 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Adequacy of Insurances 
+ 24.2 The Contractor shall insure against such liability and shall continue such insurance during the whole of the time that any persons are employed by him on the works. Provided that, in respect of any persons employed by any Subcontractor, the Contractor’s obligations to insure as aforesaid under this Sub-Clause shall be satisfied if the Subcontractor shall have insured against the liability in respect of such persons in such manner that the Employer is indemnified under the policy, bu8 the Contractor shall require such Subcontractor to produce to the Employer, when required, such policy of insurance and the receipt for the payment of the current premium. 
+ 
+ 25.1 The Contractor shall provide evidence to the Employer prior to the start of Work at the Site that the insurances required under the Contract have been affected and shall, within the time stated in Appendix A to Tender, provide the insurance policies to the Employer. When providing such evidence and such policies to the Employer, the Contractor shall notify the Engineer of so doing. Such insurance policies shall be consistent with general terms agreed prior to the issue of Letter of Acceptance. The Contractor shall affect all insurances for which he is responsible with insurers and in terms approved by the Employer. 
+ 
+ 25.2 The Contractor shall notify the insurers of changes in the nature, extent or programme for the execution of the Works and ensure the adequacy of the insurances at all times in accordance with the terms of the Contract and shall, when required, produce to the Employer the insurance policies in force and the receipts for the payment of the current premium. 
+ 
+ Remedy on Contractor’s Failure to Insure 
+ 25.3 If the Contractor fails to effect and keep in force any of the insurances required under the Contract, or fails to provide the policies to the Employer within the period required by Sub-Clause 25.1, then and in any such case the Employer may effect and keep in force any such insurances and pay any premium as may be necessary for the purpose and from time to time deduct the amount so paid from any monies due or to become due to the Contractor, or recover the same as a debt due from the Contractor. 
+ 
+ Compliance with Policy Conditions 
+ 25.4 In the event that the Contractor or the Employer fails to comply with conditions imposed by the insurance policies effected pursuant to the Contract, each shal l indemnify the other against all losses and claims arising from such failure. 
+ 
+ Insurance with approved Insurance Co. 
+ 
+ 25.5 The Contractor shall be obliged to place all insurances relating to the Contract (including, but not limited to, the insurance referred to in Clauses 21, 23 and 24) with the Insurance Co. approved by the Employer. 
+ Compliance with Statutes, Regulations 
+ 
+ 26.1 The Contractor shall conform in all respects, including by the giving of all notices and the paying of all fees, with the provisions of: 
+ any National or State Statute, o rdinance, or other Law, or any regulation, or bye-law of any local or other duly constituted authority in relation to the execution and completion of the Works and the remedying of any defects therein, and 
+ 
+ The rules and regulations of all public bodies and companies whose property or rights are affected or may be affected in any way by the Works, and the Contractor shall keep the Employer indemnified against all penalties and liability of every kind for breach of any such provisions. Provided always that the Employer shall be responsible for obtaining any planning, zoning or other similar permission required for the Works to proceed and shall indemnify the Contractor in accordance with Sub-Clause 22.3. 
+ 
+ Fossils 
+ 
+ 27.1 All fossils, coins, articles of value or antiquity and structures and other remains or things of geological or archaeological interest, discovered on the Site shall, as between the Employer and the Contractor, be deemed to be the absolute property of the Employer. The Contractor shall take reasonable precautions to prevent his workmen or any other persons from removing or damaging any such article or thing and shall, immediately upon discovery thereof and before removal, acquaint the Engineer of such discovery and carry out the Engineer’s instructions for dealing with the same. If, by reason of such instructions, the Contractor suffers delay and/or incurs costs then the Engineer shall, after due consultation with the Employer and the Contractor, determine: 
+ any extension of time to which the Contractor is entitled under Clause 44, and 
+ the amount of such costs, which shall be added to the Contract Price, and shall notify the Contractor accordingly with a copy to the Employer. 
+ 
+ Patent Rights 
+ 28.1 The Contractor shall hold harmless and indemnify the Employer from and against all claims and proceedings for or on account of infringement of any patent rights, design trademark or name or other protected rights in respect of any Contactor’s Equipment, materials or plant used for or in connection with or for incorporation in the Works and from and against all damages, costs, charges and expenses whatsoever in respect thereof or in relation thereto, except where such infringement results from compliance with the design or Specification provided by the Engineer. 
+ 
+ Royalties 
+ 28.2 Except where otherwise stated, the Contractor shall pay all tonnage and other royalties, rent and other payments or compensation, if any, for getting stone, sand, gravel, clay or other materials required for the Works. 
+ 
+ Interference with Traffic and Adjoining Properties 
+ 
+ 29.1 All operations necessary for the execution and completion of the Works and the remedying of any defects therein shall, so far as compliance with the requirements of the Contract permits, be carried on so as not to interfere unnecessarily or improperly with: 
+ the convenience of the public, or 
+ 
+ the access to, use and occupation of public or private roads and footpaths to or of properties whether in the possession of the Employer or of any other person. The Contractor shall save harmless and indemnify the Employer in respect of all claims, proceedings, damages, costs, charges and expenses whatsoever arising out of, or in relation to, any such matters insofar as the Contractor is responsible therefore. 
+ 
+ Avoidance of Damage to Roads 
+ 
+ 30.1 The Contractor shall use every reasonable means to prevent any of the roads or bridges communicating with or on the routes to the Site from being damaged or injured by any traffic of the Contractor or any of his Subcontractors and, in particular, shall select routes, choose and use vehicles and restrict and distribute loads so that any such extraordinary traffic as will inevitably arise from the moving of materials, Plant, Contractor's Equipment or Temporary Works from and to the Site shall be limited, as far as reasonably possible, and so that no unnecessary damage or injury may be occasioned to such roads and bridges. 
+ 
+ Transport of Contractor’s Equipment or Temporary Works. 
+ 
+ 30.2 Save insofar as the Contract otherwise provides, the Contractor shall be responsible for and shall pay the cost of strengthening any bridges or altering or improving any road communicating with or on the routes to the Site to facilitate the movement of Contractor's Equipment or Temporary Works and the Contractor shall indemnify and keep indemnified the Employer against all claims for damage to any such road or bridge caused by such movement, including such claims as may be made directly against the Employer, and shall negotiate and pay all claims arising solely out of such damage. 
+ 
+ Transport of Materials or Plant 
+ 30.3 If, notwithstanding Sub-Clause 30.1, any damage occurs to any bridge or road communicating with or on the routes to the Site arising from the transport of materials or Plant, the Contractor shall notify the Engineer with a copy to the Employer, as soon as he becomes aware of such damage or as soon as he receives any claim from the authority entitled to make such claim. Where under any law or regulation the haulier of such materials or Plant is required to indemnify the road authority against damage the Employer shall not be liable for any costs, charges or expenses in respect thereof or in relation thereto. In other cases the Employer shall negotiate the settlement of and pay all sums in respect of such claim and shall indemnify the Contractor in respect thereof and in respect of all claims, proceedings, damages, costs, charges and expenses in relation thereto. Provided that if and so far as any such claim or part thereof is in the opinion of the Engineer, due to any failure on the part of the Contractor to observe and perform his obligation under Sub-Clause 30.1, then the amount, determined by the Engineer, after due consultation with the Employer and the Contractor to be due to such failure shall be recoverable from the Contractor by the Employer from any monies due or to become due to the Contractor and the Engineer shall notify the C ontractor accordingly, with a copy to the Employer. Provided also that the Employer shall notify the Contractor whenever a settlement is to be negotiated and, where any amount may be due from the Contractor, the Employer shall consult with t he Contractor before such settlement is agreed. 
+ 
+ Waterborne Traffic 
+ 
+ 30.4 Where the nature of the Works is such as to require the use by the Contractor of waterborne transport the foregoing provisions of this Clause shall be construed as though “road” included a lock, dock, sea wall or to her structure related to a waterway and “vehicle” included craft, and shall have effect accordingly. 
+ 
+ Opportunities for Other Contractors 
+ 
+ 
+ 31.1 The Contractor shall in accordance with the requirements of the Engineer, afford all reasonable opportunities for carrying out their work to: 
+ any other contractors employed by the Employer and their workmen. 
+ 
+ the workmen of the Employer, and 
+ 
+ the workmen of any duly constituted authorities who may be employed in the execution on or near the Site of any work not included in the Contract or of any contract which the Employer may enter into in connection with or ancillary to the Works. 
+ 
+ Facilities for Other Contractors 
+ 31.2 If, however, pursuant to Sub-Clause 31.1 the Contractor shall, on the written request of the Engineer: 
+ make available to any such other contractor, or to the Employer or any such authority, any roads or ways for the maintenance of which the Contractor is responsible, or 
+ 
+ permit the use, by any such, of Temporary Works or Contractor's Equipment on the Site, or 
+ 
+ provide any other service of whatsoever nature for any such, the Engineer shall determine an addition to the Contract Price in accordance with Clause 52 and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Co-operation with other Contractors 
+ 
+ 31.3 During the execution of the Works, the Contractor shall cooperate fully with other contractors working for the Employer at and in the vicinity of the Site and also shall provide adequate precautionary facilities not to make himself a nuisance to local residents and other contractors. 
+ Contractor to keep Site Clear 
+ 
+ 32.1 During the execution of the Works the Contractor shall keep the Site reasonably free from all unnecessary obstruction and shall store or dispose of any Contractor’s Equipment and surplus materials and clear away and remove from the Site any wreckage, rubbish or Temporary Works no longer required. 
+ 
+ Clearance of Site on Completion 
+ 33.1 Upon the issue of any Taking Over Certificate the Contractor shall clear away and remove from that part of the Site ( to which such Taking Over Certificate relate s) all Contractor’s Equipment, surplus materials, rubbish and Temporary Works of every kind, and leave such part of the S ite and Works clean and in a tidy condition to the satisfaction of the Engineer at no cost to Employer, provided that the Contractor shall be entitled to retain on Site the end of the Defects liability Period, such materials, Contractor’s Equipment and Temporary Works as are required by him for the purpose of fulfilling his obligations during the Defects Liability Period, which shall be completely cleared and Site left clean of the these too, again at no cost to the Employer and to the satisfaction of the Engineer. 
+ 
+ 
+ Labour 
+ 
+ Engagement of Staff and Labour 
+ 
+ 
+ 34.1 The Contractor shall unless otherwise provided in the Contract, make his own arrangements for the engagement of all staff and labour , local or other, and for their payment, housing, feeding and transport. 
+ 
+ Rates of Wages and Conditions of Labhour 
+ 
+ 
+ 34.2 The Contractor shall pay rates of wages and observe conditions of labour not less favourable than those established for the trade or industry where the W ork is carried out. In the absence of any rates of wages or conditions of labour so established, the Contractor shall pay rates of wages and observe conditions of labour which are not less favourable than the general level of wages and conditions observed by other employers whose general circumstances in the trade or industry in which the Contractor is engaged are similar. 
+ 
+ Employment o f Persons in the Service of Others 
+ 34.3 The Contractor shall not recruit his staff and labour from amongst the persons in the service of the Employer or the Engineer; except with the prior written consent of the Employer or the Engineer, as the case may be. 
+ 
+ Housing for Labour 
+ 
+ 34.4 Save insofar as the Contract otherwise provides, the Contractor shall provide and maintain such housing accommodation and amenities as he may consider necessary for all his supervisory staff and labour , employed for the purposes of or in connection with the Contract including all fencing, electricity supply, sanitation, cookhouse, fire prevention, water supply and other requirements in connection with such housing accommodation or amenities. On completion of the Contract, unless otherwise agreed with the Employer, the temporary camps or housing provided by the Contractor shall be removed and the Site reinstated to its original condition, all to the approval of the Engineer. 
+ 
+ Health and Safety 
+ 34.5 Due precautions shall be taken by the Contractor, and at his own cost, to ensure the safety of his staff and labour at all times throughout the period of the Contract. The Contractor shall further ensure that suitable arrangements are made for the prevention of epidemics and for all necessary welfare and hygiene requirements. 
+ 
+ Epidemics 
+ 34.6 In the event of any outbreak of illness of an epidemic nature, the Contractor shal l comply with and carry out such regulations, orders and requirements as may be made by the Government, or the local medical or sanitary authorities, for purpose of dealing with and overcoming the same. 
+ 
+ Supply of Water 
+ 34.7 The Contractor shall, so far as is reasonably practicable, having regard to local conditions, provide on the Site, to the satisfaction of the Engineer or his representative, adequate supply of drinking and other water for the use of his staff and labour . 
+ 
+ Alcoholic Liquor or Drugs 
+ 
+ 
+ 34.8 The Contractor shall not, otherwise than in accordance with the s tatutes , o rdinances and g overnment r egulations or o rders for the time being in force, import, sell, give, and barter or otherwise dispose of any alcoholic liquor or drugs, or permit or suffer any such importation, sale, gift, barter or disposal by his Subcontractors, agents, staff or labour . 
+ 
+ Arms and Ammunition 
+ 
+ 34.9 The Contractor shall not give barter, or otherwise dispose of to any person or persons, any arms or ammunition of any kind or permit or suffer the same as aforesaid. 
+ 
+ Festivals and Religious Customs 
+ 
+ 34.10 The Contractor shall in all dealings with his staff and labour have due regard to all recognized festivals days of rest and religious and other customs. 
+ 
+ Disorderly Conduct 
+ 
+ 34.11 The Contractor shall at all times take all reasonable precautions to prevent any unlawful or disorderly conduct by or amongst his staff and labour and for the preservation of peace and protection of persons and property in the neighborhood of the Works against the same. 
+ 
+ Compliance by Subcontractors 
+ 34.12 The Contractor shall be responsible for compliance by his Subcontractors of the provisions of this Clause. 
+ 
+ Returns of Labour and Contractor's Equipment 
+ 
+ 35.1 The Contractor shall, if required by the Engineer, deliver to the Engineer a return in detail, in such form and at such intervals as the Engineer may prescribe, showing the staff and the numbers of the several classes of labour from time to time employed by the Contractor on the Site and such information respecting Contractor's Equipment as the Engineer may require. 
+ 
+ Records of Safety and Health 
+ 35.2 The Contractor shall maintain such records and make such reports concerning safety, health and welfare of persons and damage to property as the Engineer may from time to time prescribe. 
+ 
+ Reporting of 
+ Accidents 
+ 35.3 The Contractor shall report to the Engineer details of any accident as soon as possible after its occurrence. In the case of any fatality or serious accident, the Contractor shall, in addition, notify the Engineer immediately by the quickest available means. 
+ 
+ 
+ Materials (provided by the Contractor), Plant and Workmanship 
+ 
+ Quality of Materials, Plant And Workmanship 
+ 
+ 36.1 All materials, Plant and workmanship shall be 
+ 
+ of the respective kinds described in the Contract and in accordance with the Engineer’s Instructions, and 
+ 
+ subject from time to time to such tests as the Engineer may require at the place of manufacture, fabrication or preparation, or on the Site or at such other place or places as may be approved by the Engineer or at all or any of such places. 
+ 
+ The Contractor shall provide such assistance, labour , electricity, fuels, stores, apparatus and instruments as are normally required for examining, measuring and testing any materials or Plant and shall supply samples of materials, before incorporation in the Works for testing as may be selected and required by the Engineer. 
+ 
+ Cost of Samples 
+ 
+ 36.2 All samples shall be supplied by the Contractor at his own cost if the supply thereof is clearly intended by or provided for in the Contract. 
+ Cost of Tests 
+ 
+ 36.3 The cost of making any test shall be borne by the Contractor if such test is : 
+ 
+ clearly intended by or provided for in the Contract, or 
+ 
+ particularized in the Contract (in cases only of a test under load or of a test to ascertain whether the design of any finished or partially finished work is appropriate for the purposes which it was intended to fulfil) in sufficient details to enable the Contractor to price or allow for the same in his Tender. 
+ Cost of Tests not Provided for 
+ 
+ If any test required by the Engineer which is : 
+ 
+ not so intended by or provided for, or 
+ 
+ (in the cases above mentioned) not so particularized , or 
+ 
+ (though so intended or provided for) required by the Engineer to be carried out at any place other than the Site or the place of manufacture, fabrication or preparation of the materials or Plant tested, shows the materials, Plant or workmanship not to be in accordance with the provisions of the Contract to the satisfaction of the Engineer, then the cost of such test shall be borne by the Contractor, but in any other case Sub-Clause 36.5 shall apply. 
+ 
+ Engineer’s Determination where Tests not Provided for 
+ 
+ 36.5 Where, pursuant to Sub-Clause 36.4, this Sub-Clause applies the Engineer shall, after due consultation with the Employer and the Contractor, determine: 
+ 
+ any extension of time to which the Contractor is entitled under Clause 44, and 
+ 
+ the amount of such costs, which shall be added to the Contractor Price, and shall notify the Contractor accordingly with a copy to the Employer. 
+ Use of Pakistani Materials and Services 
+ 36.6 The Contractor shall, so far as may be consistent with the Contract make the maximum use of materials, supplies, plant and equipment indigenous to or produced or fabricated in Pakistan and services available in Pakistan provided such materials, supplies, Plant, equipment and services shall be of required standard. 
+ 
+ Inspection of Operation 
+ 
+ 37.1 The Engineer, and any person authorised by him, shall at all reasonable times have access to the Site and to all workshops and places where materials or Plant are being manufactured, fabricated or prepared for the Works and the Contractor shall afford every facility for and every assistance in obtaining the right to such access. 
+ 
+ Inspection and Testing 
+ 37.2 The Engineer shall be entitled, during manufacture, fabrication or preparation to inspect and test the materials and Plant to be supplied under the Contract. If materials or Plant are being manufactured, fabricated or prepared in workshops or places other than those of the Contractor, the Contractor shall obtain permission for the Engineer to carry out such inspection and testing in those workshops or places. Such inspection or testing shall not release the Contractor from any obligation under the Contract. 
+ Dates for Inspection and Testing 
+ 
+ 37.3 The Contractor shall agree with the Engineer on the time and place for his inspection or testing of any materials or Plant as provided in the Contact. The Engineer shall give the Contractor not less than 24 hours’ notice of his intention to carry out the inspection or to attend the tests of the Engineer, or his duly authorized representative, does not attend on the date agreed, the Contractor may, unless otherwise instructed by the Engineers, proceed with tests, which shall be deemed to have been made in the presence of the Engineer. The Contractor shall forthwith forward to the Engineer duly verified copies of the test readings. If the E ngineer has not attended to tests, he shall accept the said readings as accurate. 
+ 
+ Rejection 
+ 
+ 37.4 If, at the time and place agreed in accordance with Sub-Clause 37.3, the materials or Plant are not ready for inspection or testing or, if, as a result of the inspection or testing referred to in the Clause, the Engineer determines that the materials or Plant are defective or otherwise not in accordance with the /Contract, he may reject the materials or Plant and shall notify the Contractor thereof immediately. The notice shall state the Engineer’s objections with reasons. The Contractor shall then promptly made good the defect or ensure that rejected materials or Plant comply with the Contract. If the Engineer so requests, the tests of rejected materials or Plant shall be made or repeated under the same terms and conditions. All costs incurred by the Employer by the repetition of the tests shall, after due consultation with the Employer and the Contractor, be determined by the Engineer and shall be recoverable from the Contractor by the Employer and may be deducted from any monies due or to become due to the Contractor and the Engineer shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Independent Inspection 
+ 
+ 37.5 The Engineer may delegate inspection and testing of materials or Plant to an independent inspector. Any such delegation shall be affected in accordance with Sub Clause 2.4 and for the purpose such independent inspector shall be considered as an assistant of the Engineer. Notice of such appointment (not being less than fourteen ( 14 ) days shall be given by the Engineer to the Contractor. 
+ 
+ Examination of Work before Covering up 
+ 38.1 No part of the Works shall be covered up or put out of view without the approval of the Engineer and the Contractor shal l afford full opportunity for the Engineer to examine and measure any such part of the Works which is about to be covered up or put out of view and to examine foundations before any part of the Works is placed thereon. The Contractor shall give notice to the Engineer whenever any such part of the Works or foundations is or are ready or about to be ready for examination and the Engineer shall, without unreasonable delay, unless he considers it unnecessary and advises the Contractor accordingly, attend for the purpose of examining and measuring such part of the Works or of examining such foundations. 
+ 
+ Uncovering and Making Openings 
+ 38.2 The Contractor shall uncover any part of the Works or make openings in or through the same as the Engineer may from time to time instruct and shall reinstate and make good such part. If any such part has been covered up or put out of view after compliance with the requirement of Sub-Clause 38.1 and is found to be executed in accordance with the Contract, the Engineer shall, after due consultation with the Employer and the Contractor, determine the amount of the Contractor's costs in respect of such of uncovering, making openings in or through, reinstating and making good the same, which shall be added to the Contract Price, and shall notify the Contractor accordingly, with a copy to the Employer. In any other case all costs shall be borne by the Contractor. 
+ 
+ Removal of Improper Work, Materials or Plant 
+ 
+ 39.1 The Engineer shall have authority to issue instructions from time to time, for: 
+ 
+ the removal from the Site, within such time or times as may be specified in the instruction, of any materials or Plant which, in the opinion of the Engineer, are not in accordance with the Contract, 
+ 
+ the substitution of proper and suitable materials or Plant, and 
+ 
+ the removal and proper re-execution, notwithstanding any previous test thereof or interim payment therefor, of any W ork which, in respect of 
+ 
+ materials, Plant or workmanship, or 
+ 
+ Design by the Contractor or for which he is responsible, is not, in the opinion of the Engineer, in accordance with the Contract. 
+ 
+ Default of Contractor in Compliance 
+ 39.2 In case of default on the part of the Contractor in carrying out such instruction within the time specified therein or, if none within a reasonable time, the Employer shall be entitled to employ and pay other persons to carry out the same and all costs consequent thereon or incidental thereto shall, after due consultation with the Employer and the Contractor be determined by the Engineer and shall be recoverable from the Contractor by the Employer, and may be deducted by the Employer from any monies due or to become due to the Contractor and the Engineer shall notify the Contractor accordingly with a copy to the Employer. 
+ Suspension of Work 
+ 
+ 40.1 The Contractor shall on the instructions of the Engineer suspend the progress of the W orks or any part thereof for such time and in such manner as the Engineer may consider necessary and shall, during such suspension, properly protect and secure the Works or such part thereof so far as is necessary i n the opinion of the Engineer. Unless such suspension is : 
+ 
+ otherwise provided for in the Contract, or 
+ necessary by reason of some default of or breach of 
+ Contract by the Contractor or for which he is responsible, or 
+ necessary by reason of climatic conditions on the Site, or 
+ necessary for the proper execution of the Works for the safety of the Works or any part thereof (save to the extent that such necessity arises from any act or default by the Engineer or the Employer or from any of the risks defined in Sub-Clause 20.4), Sub-Clause 40.2 shall apply. 
+ 
+ Engineer’s Determination following Suspension. 
+ 
+ 40.2 Where, pursuant to Sub-Clause 40.1, this Sub-Clause applies the Engineer shall, after due consultation with the Employer and the Contractor, determine: 
+ (a) any extension of time to which the Contractor is entitled under Clause 44, and 
+ (b) the amount, which shall be added to the Contract Price, in respect of the Cost incurred by the Contractor by reason of such suspension. 
+ and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Suspension lasting more than Eighty-Four ( 84 ) days. 
+ 
+ 40.3 If the progress of the Works or any part thereof is suspended on the written instructions of the Engineer and if permission to resume work is not given by the Engineer within a period of eighty-four ( 84 ) days from the date of suspension then, unless such suspension is within paragraph (a) , (b) , (c) and (d) of Sub-Clause 40.1, the Contractor may give notice to the Engineer requiring permission, within 28 days from the receipt thereof, to proceed with the Works or that part thereof in regard to which progress is suspended if, within the said time, such permission is not granted, the Contractor may, but is not bound to , elect to treat the suspension, wher e it affects part only of the Works, as an omission of such part under Clause 51 by giving a further notice to the Engineer to that effect or where it affects the whole of the Works treat the suspension as an event of default by the Employer and terminate his employment under the Contract in accordance with the provisions of Sub-Clause 69.1 whereupon the provision of Sub-Clause 69.2 and 69-3 shall apply. 
+ 
+ 
+ 
+ 
+ 
+ Commencement and Delays 
+ 
+ Commencement of Works 
+ 
+ 41.1 The Contractor shall commence the Works on Site within the period named in Appendix A to Tender. Thereafter, the Contractor shall proceed with the Works with due expeditious and without delay. 
+ 
+ Possession of Site and Access Thereto 
+ 
+ 42.1 Save insofar as the Contract may prescribe: 
+ 
+ t o the ext ent of portions of the Site of which the Contractor is to be given possession from time to time, and 
+ 
+ the order in which such portions shall be made available to the Contractor and subject to any requirement in the Contract as to the order in which the Works shall be executed, the Employer will, with the Engineer's/Employer's notice to commence the Works, give to the Contractor possession of 
+ 
+ so much of the Site, and 
+ 
+ such access as, in accordance with the Contract, is to be provided by the Employer 
+ as may be required to enable the Contractor to commence and proceed with the execution of the Works in accordance with the programme referred to in Clause 14, if any, and otherwise in accordance with such reasonable proposals as the Contractor shall, by notice to the Engineer with a copy to the Employer, make. The Employer wil l , from time to time as the Works proceed, give to the Contractor possession of such further portions of the Site as may be required to enable the Contractor to proceed with the execution of the Works with due dispatch in accordance with such programme or proposals, as the case may be. 
+ 
+ Failure to Give Possession 
+ 
+ 42.2 If the Contractor suffers delay and/or incurs costs from failure on the part of the Employer to give possession in accordance with the terms of Sub-Clause 42.1, the Engineer shalt, after due consultation with the Employer and the Contractor, determine: 
+ any extension of time to which the Contractor is entitled under Clause 44, and 
+ 
+ the amount of such costs, which shall be added to the Contract Price, and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Way leaves and Facilities 
+ 
+ 42.3 The Contractor shall bear all costs and charges for special or temporary way leaves required by him in connection with access to the Site. The Contractor shall also provide at his own cost any additional facilities outside the Site required by him for the purposes of the Works. 
+ 
+ Time for Completion 
+ 
+ 43.1 The whole of the Works and, if applicable, any Section required to be completed within a particular time as stated in the Appendix to A Tender, shal l be completed, in accordance with the provisions of Clause 48, within the time stated in the Appendix A Tender for the whole of the Works or the Section (as the case may be), calculated from the Commencement Date, or such extended time as may be allowed under Clause 44. 
+ 
+ Extension of Time for Completion 
+ 44.1 In the event of : 
+ 
+ the amount or nature of extra or additional work, or 
+ any cause of delay referred to in these conditions, or 
+ exceptionally adverse climatic conditions, or 
+ any delay, impediment or prevention by the Employer, or 
+ other special circumstances which may occur, other than through a default of or breach of Contract by the Contractor o r for which he is responsible, being such as fairly to entitle the Contractor to an extension of the Time for Completion of the Works or any Section or part thereof, the Engineer shall, after due consultation with the Employer and the Contractor, determine the amount of such extension and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Contractor to Provide Notification and Detailed Particulars 
+ 44.2 Provided that the Engineer is not bound to make any determination unless the Contractor has : 
+ 
+ Within twenty-eight ( 28 ) days after such event has first arisen notified the Engineer with a copy to the Employer, and 
+ Within twenty-eight ( 28 ) days or such other reasonable times may be agreed by the Engineer, after such notification submitted to the Engineer detailed particulars of any extension of time to which he may consider himself entitled in order that such submission may be investigated at the time. 
+ 
+ Interim Determination of Extension 
+ 44.3 Provided also that where an event has a continuing effect such that it is not practicable for the Contractor to submit detailed particulars within the period of twenty eight ( 28 ) days referred to in Sub-Clause 44.2(b), he shall nevertheless be entitled to an extension of time provided that he has submitted to the Engineer interim particulars at intervals of not more than twenty eight ( 28 ) days and final particulars within twenty eight ( 28 ) days of the end of the effect resulting from the event. On receipt of such interim particulars, the Engineer shall, without undue delay, make an interim determination of extension of time and, on receipt of the final particulars, the Engineer shall review all the circumstances and shall determine an overall extension of time in regard to the event. In both such cases the Engineer shall make his determination after due consultation with the Employer and the Contractor and shall notify the Contractor of the determination, with a copy to the Employer. No final review shall result in a decrease of any extension of time already determined by the Engineer. 
+ 
+ Restriction on Working Hours 
+ 45.1 Subject to any provision to the contrary contained in the Contract, none of the Works shall, save as hereinafter provided, be carried on during the night or on locally recognized days of rest without the consent of the Engineer, except when such w ork is unavoidable or absolutely necessary for the saving of life or property or for the safety of the Works, in which case the Contractor shall immediately advise the Engineer. Provided that the provisions of this Clause shall not be applicable in the case of any work which it is customary to carry out by multiple shifts. 
+ 
+ Rate of Progress 
+ 46.1 If for any reason, which does not entitle the Contractor to an extension of time, the rate of progress of the Works or any Section is at any time, in the opinion of the Engineer, too slow to comply with the Time for Completion, the Engineer shall so notify the Contractor who shall thereupon take such steps as are necessary, subject to the consent of the Engineer, to expedite progress so as to comply with the Time for Completion. The Contractor shall not be entitled to any additional payment for taking such steps. If, as a result of any notice given by the Engineer under this Clause, the Contractor considers that it is necessary to do any work at night or on locally recognized days of rest, he shall be entitled to seek the consent of the Engineer so to do, Provided that if any steps, taken by the Contractor in meeting his obligations under this Clause, involve the Employer in addition al supervision costs, such cost shall, after due consultation with the Employer and the Contractor be determined by the Engineer and shall be recoverable from the Contractor by the Employer and may be deducted by the Employer from any monies due or to become due to the Contractor and the Engineer shall notify the Contractor accordingly with a copy to the Employer. 
+ 
+ Liquidated Damages for Delay 
+ 
+ 47.1 If the Contractor fails to comply with the Time for Completion in accordance with Clause 48, for the whole of the Works or, if applicable any Section within the relevant time prescribed by Clause 43, then the Contractor shall pay to the Employer the relevant sum stated in the Appendix A to Tender as liquidated damages for such default and the liquidated damages for each day of delay in completion of the whole of the Works, or if applicable any Section, shall be as given in Appendix A to Tender, subject to a maximum limit stated in Appendix A to Tender of the Contract Price stated in the Letter of Acceptance (which sum shall be the only monies due from the Contractor for such default) for every day or part of a day which shall elapse between the relevant time for completion and the date stated in a Taking Over Certificate of the whole of the Works or the relevant Section, subject to the applicable limit stated in the Appendix A to Tender. The Employer may, without prejudice to any other method of recovery deduct the amount of such damages from any monies due or to become due to the Contractor. The payment or deduction of such damages shall not relieve the Contractor from his obligation to complete the Works, or from any other of his obligations and liabilities under the Contract. 
+ 
+ Reduction of Liquidated Damages 
+ 47.2 If, before the Time for Completion of the whole of the Works or, if applicable, any Section, a Taking-Over Certificate has been issued for any part of the Works or of a Section, the liquidated damages for delay in completion of the remainder of the Works or that Section shall, for any period of delay after the date stated in such Taking-Over Certificate, and in the absence of alternative provisions in the Contract, be reduced in the proportion which the value of the part so certified bears to the value of the whole of the Works or Section, as applicable. The provisions of this Sub-Clause shall only apply to the rate of liquidated damages and shall not affect the limit thereof. 
+ 
+ Bonus for Early Completion o f Works 
+ 47.3 The Contractor shall, in case of earlier completion of any part(s) of the Work/achievement of any milestone, be paid bonus up to a limit and at a rate equivalent to 50% of the relevant limit and rate of Liquidated damages prescribed under Clause 47.1 above. 
+ 
+ Taking-Over Certificate 
+ 48.1 When the whole of the Works have been substantially completed and have satisfactorily passed any Tests on Completion prescribed by the C ontract, the Contractor may give a notice to that effect to the Engineer, with a copy to the Employer, accompanied by a written undertaking to finish with due expedition any outstanding work during the Defects Liability Period. Such notice and undertaking shall be deemed to be a request by the Contractor for the Engineer to issue a Taking-Over Certificate in respect of the Works. The Engineer shall, within twenty one ( 21 ) days of the date of delivery of such notice, either issue to the Contractor, with a copy to the Employer, a Taking-Over Certificate, stating the date on which, in his opinion, the Works were substantially completed in accordance with the Contract, or give instructions in writing to the Contractor specifying all the work which, in the Engineer's opinion, is required to be done by the Contractor before the issue of such Certificate. The Engineer shall also notify the Contractor of any defects in the Works affecting substantial completion that may appear after such instructions and before completion of the Works specified therein. The Contractor shall be entitled to receive such Taking-Over Certificate within twenty - one ( 21 ) days of completion, to the satisfaction of the Engineer, of the Works so specified and remedying any defects so notified. 
+ 
+ Taking Over of Sections or Parts 
+ 
+ 48.2 Similarly, in accordance with the procedure set out in Sub-Clause 48.1, the Contractor may request and the Engineer shall issue a Taking Over Certificate in respect of: 
+ 
+ any Section in respect of which a separate Time for Completion is provided in the Appendix to Tender, or 
+ 
+ any Substantial part of the Permanent Works which has been both completed to the satisfaction of the Engineer and, otherwise than as provided for in the Contract, occupied or used by the Employer, or 
+ 
+ any part of the Permanent Works which the Employer has elected to occupy or use prior to competition (where such prior occupation or use is not provided for in the Contract or has not been agreed by the Contractor as to temporary measure). 
+ 
+ 
+ Substantial Completion of Parts 
+ 48.3 If any part of the Permanent Works has been substantially completed and has satisfactorily passed any Tests on Completion prescribed by the Contract, the Engineer may issue a Taking-Over Certificate in respect of that part of the Permanent Works before completion of the whole of the Works and, upon the issue of such Certificate, the Contractor shall be deemed to have undertaken to complete with due expedition any outstanding work in that part of the Permanent Works during the Defects Liability Period. 
+ 
+ Surfaces Requiring Reinstatement 
+ 48.4 Provided that a Taking-Over Certificate given in respect of any Section or part of the Permanent Works before completion of the whole of the Works sha ll not be deemed to certify completion of any ground or surfaces requiring reinstatement, unless such Taking-Over Certificate shall expressly so state. 
+ 
+ Defects Liability Period 
+ 
+ 49.1 In these Conditions the expression "Defects Liability " shall mean the defects liability period named in the Appendix A to Tender, calculated from: 
+ 
+ the date of completion of the Works certified by the Engineer in accordance with Clause 48, or 
+ 
+ in the event of more than one certificate having been issued by the Engineer under Clause 48, the respective dates so certified and in relation to the Defects Liability Period the expression "the Wo rk ” shall be construed accordingly. 
+ 
+ Completion of Outstanding Work and Remedying Defects 
+ 49.2 To the intent that the Works shall, at or as soon as practicable after the expiration of the Defects Liability Period, be delivered to the Employer in the condition required by the Contract, fair wear and tear excepted, to the satisfaction of the Engineer, the Contractor shall: 
+ 
+ complete the W ork, if any, outstanding on the date stated in the Taking-Over Certificate as soon as practicable after such date and 
+ 
+ execute all such work of amendment, reconstruction, and remedying defects, shrinkages or other faults as the Engineer may, during the Defects Liability Period or within fourteen ( 14 ) days after its expiration, as a result of an inspection made by or on behalf of the Engineer prior to its expiration, instruct the Contractor to execute. 
+ 
+ Cost of Remedying Defects 
+ 
+ 49.3 All works referred to in S ub-Clause 49.2(b) shall be executed by the Contractor at his own cost if the necessity thereof is, in the opinion of the Engineer, due to : 
+ the use of materials, Plant or workmanship not in accordance with the Contract, or 
+ 
+ Where the Contractor is responsible for the design of part of the Permanent Works, any fault in such design, or 
+ 
+ The neglect or failure on the part of the Contractor to comply with any obligation, expressed or implied, on the Contractor’s part under the Contract. 
+ If, in the opinion of the Engineer, such necessity is due to any other cause, he shall determine an addition to the Contract Price in accordance with Clause 52 and shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Contractor's Failure to Carry Out Instructions 
+ 
+ 49.4 In case of default on the part of the Contractor in carrying out such instruction within a reasonable time, the Employer shall be entitled to employ and pay other persons to carry out the same and if such work is work which, in the opinion of the Engineer, the Contractor was liable to do at his own cost under the Contract, then all costs consequent thereon or incidental thereto shall, after due consultation with the Employer and the Contractor, be determined by the Engineer and shall be recoverable from the Contractor by the Employer, and may be deducted by the Employer from any monies due or to become due to the Contractor and the Engineer shall notify the Contractor accordingly, with a copy to the Employer. 
+ 
+ Contractor to Search 
+ 50.1 If any defect, shrinkage or other fault in the Works appears at any time prior to the end of the Defects Liability Period, the Engineer may instruct the Contractor, with copy to the Employer, to search under the directions of the Engineer for the cause thereof. Unless such defect, shrinkage or other fault is one for which the Contractor is liable under the Contract, the Engineer shall, after due consultation with the Employer and the Contractor, determine the amount in respect of the costs of such search incurred by the Contractor, which shall be added to the Contract Price and shall notify the Contractor accordingly, with a copy to the Employer. If such defect, shrinkage or other fault is one for which the Contractor is liable, the cost of the work carried out in searching as aforesaid shall be borne by the Contractor and he shall in such case remedy such defect, shrinkage or other fault at his own cost in accordance with the provisions of Clause 49. 
+ 
+ 
+ Alterations, Additions and Omissions 
+ 
+ Variations 
+ 
+ 51.1 The Engineer shall make any variation of the form, quality or quantity of the W orks or any part thereof that may, in his opinion, be necessary and for that purpose, or if for any other reason it shall, in his opinion, be appropriate, he shall have the authority to instruct the Contractor to do and the Contractor shall do any of the following: 
+ 
+ Increase or decrease the quantity of any W ork included in the Contract ; 
+ 
+ Omit any such work (but not if the omitted W ork is to be carried out by the Employer or by another contractor), 
+ 
+ Change the character or quality or kind of any such W ork, 
+ 
+ Change the levels, lines, position and dimensions of any part of the Works, 
+ 
+ Execute additional work of any kind necessary for the completion of the Works, 
+ 
+ Change any specified sequence or timing of construction of any part of the Works. 
+ 
+ Instructions for Variations 
+ 51.2 The Contractor shall not make any such variation without an instruction of the Engineer in writing. Provided that no instruction shall be required for increase or decrease in the quantity of any W ork where such increase or decrease is not the result of an instruction given under this Clause, but is the result of the quantities exceeding or being less than those stated in the Bill of Quantities. 
+ 
+ Valuation of Variations 
+ 
+ 52.1 All variations referred to in Clause 51 and any additions to the Contract Price which are required to be determined in accordance with Clause 52 (for the purposes of this Clause referred to as "varied work"), shall be valued at the rates and prices set out in the Contract if, in the opinion of the Engineer, the same shall be applicable. If the Contract does not contain any rates or prices applicable to the varied work, the rates and prices in the Contract shall be used as the basis for valuation so far as may be reasonable, failing which, after due consultation by the Engineer with the Employer and the Contractor, suitable rates or prices shall be agreed upon between the Engineer and the Contractor. In the event of disagreement, the Engineer, within a period not exceeding one-eighth of the completion time subject to a minimum of fifty-six ( 56 ) days from the date of disagreement whichever is later, shall fix such rates or prices as are, in his opinion, appropriate and shall notify the Contractor accordingly, with a copy to the Employer. Until such time as rates or prices are agreed or fixed, the Engineer shall determine provisional rates or prices to enable on-account payments to be included in certificates issued in accordance with Clause 60 . 
+ 
+ Power of Engineer to Fix Rate 
+ 
+ 52.2 Provided that if the nature or amount of any varied work relative to the nature or amount of the whole of the Works or to any part thereof, is such that, in the opinion of the Engineer, the rate or price contained in the Contract for any item of the Works is, by reason of such varied work, rendered inappropriate or inapplicable, then, after due consultation by the Engineer with the Employer and the Contractor, a suitable rate or price shall be agreed upon between the Engineer and the Contractor. In the event of disagreement , the Engineer shall fix such other rate or price as is, in his opinion, appropriate and shalt notify the Contractor accordingly, with a copy to the Employer. Until such time as rates or prices are agreed or fixed, the Engineer shall determine provisional rates or prices to enable on-account payments to be included in certificates issued in accordance with Clause 60. 
+ Provided also that no varied work instructed to be done by the Engineer pursuant to Clause 51 shall be valued under Sub-Clause 52.1 or under this Sub-Clause unless, within fourteen ( 14 ) days of the date of such instruction and, other than in the case of omitted work, before the commencement of the varied work, notice shall have been given either: 
+ by the Contractor to the Engineer of his intention to claim extra payment or a varied rate or price, or 
+ 
+ by the Engineer to the Contractor of his intention to vary a rate or price. 
+ 
+ Variations Exceeding 15 per cent 
+ 
+ 52.3 If, on the issue of the taking Over Certificate for the whole of the Works, it is found that as a result of: 
+ all varied works valued under Sub-Clauses 52.1 and 52.2, and 
+ 
+ all adjustments upon measurement of the estimated quantities set out in the Summary of Cost, excluding Provisional Sums, dayworks and adjustments of price made under Clause 70. 
+ but not from any other cause, there have been additions to or deductions from the Contract Price which taken together are in excess of fifteen per cent ( 15 %) of the Contract Price (which for the purposes of this Sub-Clause shall mean the Contract Price, excluding Provisional Sums and allowance for dayworks, if any) then and in such event (subject to any action already taken under any other Sub-Clause of this Clause), after due consultation by the Engineer with the Employer and the Contractor, there shall be added to or deducted from the Contract Price such further sum as may be agreed between the Contractor and the Engineer or, failing agreement, determined by the Engineer having regard to the Contractor's Site and general overhead costs of the Contract. The Engineer shall notify the Contractor of any determination made under this Sub-Clause, with a copy to the Employer. Such sum shall be based only on the amount by which such additions or deductions shall be in excess of 15 per cent of the Effective Contract Price. 
+ 
+ Daywork 
+ 52.4 The Engineer may, if in his opinion it is necessary or desirable, issue an instruction that any varied work shall be executed on a daywork basis. The Contractor shall then be paid for such varied work under the terms set out in the daywork schedule included in the Contract and at the rates and prices affixed thereto by him in the Tender. 
+ The Contractor shall furnish to the Engineer such receipts or other vouchers as may be necessary to prove the amounts paid and, before ordering materials, shall submit to the Engineer quotations for the same for his approval. 
+ In respect of such of the Works executed on a daywork basis, the Contractor shall, during the continuance of such work, deliver each day to the Engineer an exact list in duplicate of the names, occupation and time of all workmen employed on such work and a statement, also in duplicate, showing the description and quantity of all materials and Contractor's Equipment used thereon or therefor other than Contractor's Equipment which is included in the percentage addition in accordance with such daywork schedule. One copy of each list and statement will, if correct, or when agreed, be signed by the Engineer and returned to the Contractor. 
+ 
+ At the end of each month the Contractor shall deliver to the Engineer a priced statement of the labour , materials and Contractor's Equipment, except as aforesaid, used and the Contractor shalt not be entitled to any payment unless such lists and statements have been fully and punctually rendered. Provided always that if the Engineer considers that for any reason the sending of such lists or statements by the Contractor, in accordance with the foregoing provision, was impracticable he shall nevertheless be entitled to authorise payment for such work, either as daywork, on being satisfied as to the time employed and the labour , materials and Contractor's Equipment used on such work, or at such value therefor as shall, in his opinion, be fair and reasonable. 
+ 
+ 
+ Procedure for Claims 
+ 
+ Notice of Claims 
+ 53.1 Notwithstanding any other provision of the Contract, if the Contractor intends to claim any additional payment pursuant to any Clause of these Conditions or otherwise, he shall give notice of his intention to the Engineer, with a copy to the Employer, within twenty-eight ( 28 ) days after the, event giving rise to the claim has first arisen. 
+ 
+ Contemporary Records 
+ 53.2 Upon the happening of the event referred to in Sub-Clause 53.1 , the Contractor shall keep such contemporary records as may reasonably be necessary to support any claim he may subsequently wish to make. Without necessarily admitting the Employer's liability, the Engineer shall, on receipt of a notice under Sub-Clause 53.1, inspect such contemporary records and may instruct the Contractor to keep any further contemporary records as are reasonable and may be material to the claim of which notice has been given. The Contractor shall permit the Engineer to inspect all records kept pursuant to this Sub-Clause and shall supply him with copies thereof as and when the Engineer so instructs. 
+ 
+ Substantiation of Claims 
+ 53.3 Within twenty-eight ( 28 ) days or such other reasonable time as may be agreed by the Engineer, of giving notice under Sub-Clause 53.1, the Contractor shall send to the Engineer an account giving detailed particulars of the amount claimed and the grounds upon which the claim i s based. Where the event giving rise to the claim has a continuing effect, such account shall be considered to be an interim account and the Contractor shall, at such intervals as the Engineer may reasonably require, send further interim accounts giving the accumulated amount of the claim and any further grounds upon which it is based. I n cases where interim accounts are sent to the Engineer, the Contractor shall send a final account within twenty-eight ( 28 ) days of the end of the effects resulting from the event. The Contractor shall, if required by the Engineer so to do, copy to the Employer all accounts sent to the Engineer pursuant to this Sub-Clause. 
+ 
+ Payment of Claims 
+ 
+ 53.4 The Contractor shall be entitled to have included in any interim payment certified by the Engineer pursuant to Clause 60 such amount in respect of any claim as the Engineer, after due consultation with the Employer and the Contractor, may consider due to the Contractor provided that the Contractor has supplied sufficient particulars to enable the Engineer to determine the amount due. If such particulars are insufficient to substantiate the whole of the claim, the Contractor shall be entitled to payment in respect of such part of the claim as such particulars may substantiate to the satisfaction of the Engineer. The Engineer shall notify the Contractor of any determination made under this Sub-Clause, with a copy to the Employer. 
+ 
+ 
+ Contractor's Equipment, Temporary Works and Materials 
+ Contractor's Equipment, Temporary Works and Materials; Exclusive Use for the Works 
+ 54.1 All Contractor's Equipment, Temporary Works and materials provided by the Contractor shall, when brought on to the Site, be deemed to be exclusively intended for the execution of the Works and the Contractor shall not remove the same or any part thereof, except for the purpose of moving it from one part of the Site to another, without the consent of the Engineer. Provided that consent shall not be required for vehicles engaged in transporting any staff, labour , Contractor's Equipment, Temporary Works, Plant or materials to or from the Site. 
+ Employer not Liable for Damage 
+ 
+ 54.2 The Employer shall not at any time be liable, save as mentioned in Clauses 20 and 65, for the loss of or damage to any of the said Contractor's Equipment, Temporary Works or materials. 
+ 
+ Customs Clearance 
+ 
+ 54.3 The Employer will use his best endeavors assisting the Contractor, where required, in obtaining clearance through the Customs of Contractor's Equipment, materials and other things required for the Works. 
+ 
+ Re-export of Contractor's Equipment 
+ 54.4 In respect of any Contractor's Equipment which the Contractor has imported for the purposes of the Works, the Employer will use his best endeavors to assist the Contractor, where required, in procuring any necessary Government consent to the re-export of such Contractor’s Equipment by the Contractor upon the removal thereof pursuant to the terms of the Contract. 
+ 
+ Conditions of Hire of Contractor's Equipment 
+ 54.5 With a view to securing , in the event of termination under Clause 63, the continued availability, for the purpose of executing the Works, of any hired Contractor's Equipment, the Contractor shall not bring on to the Site any hired Contractor's Equipment unless there is an agreement for the hire thereof (which agreement shall be deemed not to include an agreement for hire purchase) which contains a provision that the owner thereof will, on request in writing made by the Employer within seven ( 7 ) days after the date on which any termination has become effective, and on the Employer undertaking to pay all hire charges in respect thereof from such date, hire such Contractor's Equipment to the Employer on the same terms in all respects as the same was hired to the Contractor save that the Employer shall be entitled to permit the use thereof by any other contractor employed by him for the purpose of executing and completing the Works and remedying any defects therein, under the terms of the said Clause 63. 
+ 
+ The Contractor shall, upon request by the Engineer at any time in relation to any item of hired Constructor's Equipment, forthwith notify the Engineer in writing the name and address of the owner of the equipment and shall certify that the agreement for the hire thereof contains a provision in accordance with the requirements set forth above. 
+ 
+ Costs for the Purpose of 
+ Clause 63 
+ 54.6 In the event of the Employer entering into any agreement for the hire of Contractors Equipment pursuant to Sub-Clause 54.5, all sums properly paid by the Employer under the provisions of any such agreement and all costs incurred by him (including stamp duties) in entering into such agreement shall be deemed, for the purpose of Clause 63, to be part of the cost of executing and completing the Works and the remedying of any defects therein. 
+ 
+ Incorporation of Clause in Subcontracts 
+ 
+ 54.7 The Contractor shall, where entering into any subcontract for the execution of any part of the Works, incorporate in such subcontract (by reference or otherwise) the provisions of this Clause in relation to Contractor's Equipment, Temporary Works or materials brought on to the Site by the Subcontractor. 
+ 
+ Approval of Materials not Implied 
+ 54.8 The operation of this Clause shall not be deemed to imply any approval by the Engineer of the materials or other matters referred to therein nor shall it prevent the rejection of any such materials at any time by the Engineer. 
+ 
+ Measurement 
+ 
+ Quantities 
+ 55.1 The quantities set out in the Summary of Cost are the estimated quantities for the Works, and they are not to be taken as the actual and correct quantities of the Works to be executed by the Contractor in fulfillment of his obligations under the Contract. 
+ 
+ Works to be Measured 
+ 56.1 The Engineer shall, except as otherwise stated, ascertain and determine by measurement the value of the Works in accordance with the Contract and the Contractor shall be paid that value in accordance with Clause 60. The Engineer shall, when he requires any part of the Works to be measured, give reasonable notice to the Contractor's authorized agent, who shall: 
+ forthwith attend or send a qualified representative to assist the Engineer in making such measurement, and 
+ 
+ supply all particulars required by the Engineer. 
+ Should the Contractor not attend, or neglect or omit to send such representative, then the measurement made by the Engineer or approved by him shall be taken to be the correct measurement of such part of the Works. For the purpose of measuring such permanent Works as are to be measured by records and drawings, the Engineer shall prepare records and drawings as the W ork s proceeds and the Contractor, as and when called upon to do so in writing, shall, within fourteen ( 14 ) days, attend to examine and agree such records and drawings with the Engineer and shall sign the same when so agreed. I f the Contractor does not attend to examine and agree such records and drawings, they shall be taken to be correct. If, after examination of such records and drawings, the Contractor does not agree the same or does not sign the same as agreed, they shall nevertheless be taken to be correct, unless the Contractor, within fourteen ( 14 ) days of such examination, lodges with the Engineer notice of the respects in which such records and drawings are claimed by him to be incorrect. On receipt of such notice, the Engineer shall review the records and drawings and either confirm or vary them. 
+ 
+ Method of Measurement 
+ 57.1 The Works shal l be measured net, notwithstanding any general or local custom, except where otherwise provided for in the Contract. 
+ 
+ Breakdown of Lump Sum Items 
+ 
+ 57.2 For the purposes of statements submitted in accordance with Sub-Clause 60.1, the Contractor shall submit to the Engineer, within twenty-eight ( 28 ) days after the receipt of the Letter of Acceptance, a breakdown for each of the lump sum items contained in the Tender. Such breakdowns shall be subject to the approval of the Engineer. 
+ 
+ Definition of "Provisional Sum" 
+ 
+ 58.1 "Provisional Sum" means a sum included in the Contract and so designated in the Summary of Cost for the execution of any part of the Works or for the supply of goods, materials, Plant or services, or for contingencies, which sum may be used in whole or in part, or not at all, on the instructions of the Engineer. The Contractor shall be entitled to only such amounts in respect of the work, supply of contingencies to which such Provisional Sums relate as the Engineer shall determine in accordance with this Clause. The Engineer shall notify the Contractor of any determination made under this Sub-Clause, with a copy to the Employer. 
+ 
+ Use of Provisional Sums 
+ 58.2 In respect of every Provisional Sum the Engineer shall have authority to issue instructions for the execution of work or for the supply of goods, materials, Plant or services by: 
+ 
+ (a) the Contractor, in which case the Contractor shall be entitled to an amount equal to the value thereof determined in accordance with Clause 52, 
+ 
+ (b) a nominated Subcontractor, as hereinafter defined, in which case the sum to be paid to the Contractor therefor shall be determined and paid in accordance with Sub-Clause 59.4. 
+ 
+ Production of Vouchers 
+ 58.3 The Contractor shall produce to the Engineer all quotations, invoices, vouchers and accounts or receipts in connection with expenditure in respect of Provisional Sums, except where work is valued in accordance with rates or prices set out in the Tender. 
+ 
+ 
+ Nominated Sub-contractors 
+ 
+ Definition of “Nominated Sub-contractors” 
+ 59.1 All specialists, merchants, tradesmen and others executing any work or supplying any goods, material, plant or services for which Provisional sums are included in the Contract, who may have been or be nominated or selected or approved by the Employer or the Engineer, and all persons to whom by virtue of the provisions of the Contract the Contractor is required to subcontract shall, in the execution of such work or the supply of such goods, materials, Plant or services be deemed to be subcontractors to the Contractor and are referred to in this Contract as “nominated Subcontractors”. 
+ Nominated Sub-Contractors; Objection to Nomination. 
+ 
+ 59.2 The Contractor shall not be required by the Employer or the Engineer, or be deemed to be under any obligation, to employ any nominated Subcontractor against whom the Contractor may raise reasonable objection, or who declines to enter into a subcontract with the Contractor containing provisions: 
+ (a) that in respect of the work, goods, materials, Plant or services the subject of the subcontract, the nominated Subcontractor will undertake towards the Contractor such obligations and liabilities as will enable the Contractor to discharge his own obligations and liabilities towards the Employer under the terms of the Contract and will save harmless and indemnify the Contractor from and against the same and from aLL claims, proceedings, damages, costs, charges and expenses whatsoever arising out of or in connection therewith, or arising out of or in connection with any failure to perform such obligations or to fulfil such liabilities, and 
+ (b) that the nominated Subcontractor will save harmless and indemnify the Contractor from and against any negligence by the nominated Subcontractor, his agents, workmen and servants and from and against any misuse by him or them of any Temporary Works provided by the Contractor for the purposes of the Contract and from all claims as aforesaid. 
+ 
+ Design 
+ Requirements to be Expressly Stated 
+ 
+ 59.3 If in connection with any Provisional Sum the services to be provided include any matter of design or specification of any part of the Permanent Works or of any Plant to be incorporated therein, such requirement shall be expressly stated in the Contract and shall be included in any nominated Subcontract. The nominated Subcontract shall specify that the nominated Subcontractor providing such services will save harmless and indemnify the Contractor from and against the same and from all claims, proceedings, damages, costs, charges and expenses whatsoever arising out of or in connection with any failure to perform such obligations or to fulfil such liabilities. 
+ 
+ Payments to nominated Subcontractors 
+ 59.4 For all work executed or goods, materials, Plant or services supplied by any nominated Subcontractor, the Contractor shall be entitled to: 
+ (a) the actual price paid or due to be paid by the Contractor, on the instructions of the Engineer, and in accordance with the subcontract; 
+ (b) in respect of labour supplied by the Contractor, the sum, if any, entered in the Bill of Quantities or, if instructed by the Engineer pursuant to paragraph (a) of Sub-Clause 58.2, as may be determined in accordance with Clause 52 
+ (c) in respect of all other charges and profit, a sum being a percentage rate of the actual price paid or due to be paid calculated where provision has been made in the Bill of Quantities for a rate to be set against the relevant Provisional Sum, at the rate inserted by the Contractor against that item or, where no such provision has been made, at the rate inserted by the Contractor in the Appendix to Tender and repeated where provision for such is made in a special item provided in the Bill of Quantities for such purpose. 
+ For the purposes of this Sub-Clause provisions if any, made by the Employer in Part II shall apply. 
+ 
+ Certification of Payments to Nominated Subcontractors 
+ 
+ 59.5 Before issuing, under clause 60, any certificate, which includes any payment in respect of work done or goods, materials, Plant or services supplied by any nominated Subcontractor, the Engineer shall be entitled to demand from the Contractor reasonable proof that all payments, less retentions, included in previous certificates in respect of the work or goods, materials, Plant or services of such nominated Subcontractor have been paid or discharged by the Contractor. If the Contractor fails to supply such proof then, unless the Contractor : 
+ 
+ satisfies the Engineer in writing that he has reasonable cause for withholding or refusing to make such payments and 
+ produces to the Engineer reasonable proof that he has so informed such nominated Subcontractor in writing, the Employer shall be entitled to pay such nominated Subcontractor direct, upon the certificate of the Engineer, all payments, less retentions, provided for in the nominated Subcontract, which the Contractor has failed to make to such nominated Subcontractor and to deduct by way of set-off the amount so paid by the Employer from any sums due or to become due from the Employer to the Contractor. 
+ 
+ Provided that, where the Engineer has certified and the Employer has paid direct as aforesaid, the Engineer shall, in issuing any further certificate in favour of the Contractor, deduct from the amount thereof the amount so paid, direct as aforesaid, but shall not withhold or delay the issue of the certificate itself when due to be issued under the terms of the Contract. 
+ 
+ Certificates and Payment 
+ 
+ Monthly Statements 
+ 
+ 60.1 The Contractor shall, on the basis of the joint measurement of W ork done under Clause 56.1, submit to the Engineer after the end of each month six (6) copies, each signed by the Contractor's representative approved by the Engineer in accordance with Sub-Clause 15.1, of a statement, in such form as the Engineer may from time to time prescribe, showing the amounts to which the Contractor considers himself to be entitled up to the end of the month in respect of : 
+ the value of the Permanent Works executed , 
+ 
+ any other items in the Bill of Quantities including those for C
